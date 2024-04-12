@@ -4,7 +4,7 @@ backend:
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
-  site_domain: kaleidoscopic-croquembouche-15a954.netlify.app
+  site_domain: resilient-dasik-e50a03.netlify.app
 
 local_backend: true
 # change url to a link to the image you want to use, no file paths, must be a URL
