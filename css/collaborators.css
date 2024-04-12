@@ -1,0 +1,162 @@
+/*-- -------------------------- -->
+<---          Content           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #content-1450 {
+    padding: var(--sectionPadding);
+  }
+  #content-1450 .cs-container {
+    width: 100%;
+    max-width: 51.25rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: var(--sectionGap);
+  }
+  #content-1450 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #content-1450 .cs-title,
+  #content-1450 .cs-text {
+    max-width: 100%;
+  }
+}
+/*-- -------------------------- -->
+<---       Collaborators        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #collaborator-current-cards .cs-item {
+    height: fit-content;
+  }
+  #collaborator-current-cards,
+  #collaborator-past-cards {
+    padding: var(--sectionPadding);
+  }
+  #collaborator-current-cards .cs-item .cs-flex-group,
+  #collaborator-past-cards .cs-item .cs-flex-group {
+    align-items: flex-start;
+  }
+  #collaborator-current-cards .cs-item .cs-item-social,
+  #collaborator-past-cards .cs-item .cs-item-social {
+    width: 100%;
+  }
+  #collaborator-current-cards .cs-container,
+  #collaborator-past-cards .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: 1rem;
+  }
+  #collaborator-current-cards .cs-content,
+  #collaborator-past-cards .cs-content {
+    /* set text aling to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    overflow: auto;
+  }
+  #collaborator-current-cards .cs-topper,
+  #collaborator-past-cards .cs-topper,
+  #collaborator-current-cards .cs-title,
+  #collaborator-past-cards .cs-title,
+  #collaborator-current-cards .cs-text,
+  #collaborator-past-cards .cs-text {
+    color: var(--bodyTextColor);
+  }
+  #collaborator-current-cards .cs-card-group,
+  #collaborator-past-cards .cs-card-group {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #collaborator-current-cards .cs-picture,
+  #collaborator-past-cards .cs-picture {
+    width: 100%;
+    height: auto;
+    /* height divided by width, changed at desktop */
+    aspect-ratio: 1;
+    /* clips image tag from overflowing on hover */
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  #collaborator-current-cards .cs-picture img,
+  #collaborator-past-cards .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* makes image behave like a background image */
+    object-fit: cover;
+    /* places top of the image at the top of the box */
+    object-position: top;
+    transition: transform 0.6s;
+  }
+  #collaborator-current-cards .cs-name,
+  #collaborator-past-cards .cs-name {
+    font-size: var(--bodyFontSize);
+  }
+  #collaborator-current-cards .cs-title-card-wrapper .cs-title,
+  #collaborator-past-cards .cs-title-card-wrapper .cs-title {
+    margin: 0 0 1.25rem 0;
+  }
+  #collaborator-current-cards .cs-job-title,
+  #collaborator-past-cards .cs-job-title {
+    /* 20px - 25px */
+    font-size: var(--regularFontSize);
+    margin: 0 0 0.125rem 0;
+    width: 100%;
+    line-height: 1.2em;
+    font-weight: 400;
+    text-align: inherit;
+    color: var(--bodyTextColor);
+    display: block;
+    text-align: left;
+  }
+  #collaborator-current-cards .cs-desc,
+  #collaborator-past-cards .cs-desc {
+    position: relative;
+  }
+  #collaborator-current-cards .cs-desc.show-more,
+  #collaborator-past-cards .cs-desc.show-more {
+    overflow: unset;
+    max-height: unset;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #collaborator-current-cards .cs-card-group,
+  #collaborator-past-cards .cs-card-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #collaborator-current-cards .cs-container,
+  #collaborator-past-cards .cs-container {
+    max-width: 80rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #collaborator-current-cards .cs-card-group,
+  #collaborator-past-cards .cs-card-group {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

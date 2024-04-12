@@ -1,0 +1,358 @@
+/*-- -------------------------- -->
+<---          Content           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #content-1450 {
+    padding: var(--sectionPadding);
+    padding-top: 6.25rem;
+  }
+  #content-1450 .cs-container {
+    width: 100%;
+    max-width: 56.25rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: var(--sectionGap);
+  }
+  #content-1450 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #content-1450 .cs-title,
+  #content-1450 .cs-text {
+    max-width: fit-content;
+  }
+}
+/*-- -------------------------- -->
+<---       Service Cards        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #list-of-cards {
+    padding: var(--sectionPadding);
+  }
+  #list-of-cards .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* 48px - 64px */
+    gap: var(--sectionGap);
+  }
+  #list-of-cards .cs-content {
+    /* set text aling to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #list-of-cards .cs-content .cs-text {
+    width: 100%;
+    max-width: unset;
+    text-align: left;
+  }
+  #list-of-cards .cs-name {
+    text-align: center;
+  }
+  #list-of-cards .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    gap: 2rem;
+  }
+  #list-of-cards .cs-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -30px;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, 0);
+    left: 50%;
+    background-color: white;
+    border-radius: 100%;
+  }
+  #list-of-cards .cs-flex-group {
+    position: relative;
+  }
+  #list-of-cards .cs-picture {
+    width: 100%;
+    height: auto;
+    /* height divided by width, changed at desktop */
+    aspect-ratio: 1.312;
+    /* clips image tag from overflowing on hover */
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  #list-of-cards .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* makes image behave like a background image */
+    object-fit: cover;
+    /* places top of the image at the top of the box */
+    object-position: top;
+    transition: transform 0.6s;
+  }
+  #list-of-cards .cs-desc {
+    margin: 0.25rem 0;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #list-of-cards .cs-card-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #list-of-cards .cs-container {
+    max-width: 80rem;
+  }
+  #list-of-cards .cs-card-group {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #list-of-cards .cs-title {
+    top: -30px;
+  }
+  #list-of-cards .cs-flex-group {
+    align-items: flex-start;
+  }
+}
+/*-- -------------------------- -->
+<---       dropdown Cards       -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #dropdown-cards {
+    padding: var(--sectionPadding);
+  }
+  #dropdown-cards .cs-item {
+    display: none;
+  }
+  #dropdown-cards .cs-item:nth-child(-n+3),
+  #dropdown-cards.show-all .cs-item {
+    display: block;
+  }
+  #dropdown-cards .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: var(--sectionGap);
+  }
+  #dropdown-cards .cs-content {
+    /* set text aling to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+    overflow: auto;
+  }
+  #dropdown-cards .cs-content .cs-title {
+    text-align: center;
+  }
+  #dropdown-cards .cs-topper,
+  #dropdown-cards .cs-title,
+  #dropdown-cards .cs-text,
+  #dropdown-cards .cs-dropdown-content p {
+    color: var(--bodyTextColor);
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+  #dropdown-cards .cs-picture {
+    width: 100%;
+    height: auto;
+    /* height divided by width, changed at desktop */
+    aspect-ratio: 1;
+    /* clips image tag from overflowing on hover */
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  #dropdown-cards .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* makes image behave like a background image */
+    object-fit: cover;
+    /* places top of the image at the top of the box */
+    object-position: top;
+    transition: transform 0.6s;
+  }
+  #dropdown-cards .line {
+    margin: 0 0 1.25rem 0;
+  }
+  #dropdown-cards .cs-title-card-wrapper .cs-title {
+    margin: 0 0 1.25rem 0;
+  }
+  #dropdown-cards .cs-job-title {
+    /* 20px - 25px */
+    font-size: var(--regularFontSize);
+    margin: 0 0 0.5rem 0;
+    width: 100%;
+    line-height: 1.2em;
+    font-weight: 400;
+    text-align: inherit;
+    color: var(--bodyTextColor);
+    display: block;
+    text-align: left;
+  }
+  #dropdown-cards .cs-desc {
+    position: relative;
+  }
+  #dropdown-cards .cs-desc.show-more {
+    overflow: unset;
+    max-height: unset;
+  }
+  #dropdown-cards .cs-item {
+    height: fit-content;
+    flex: 0 0 calc(100%);
+  }
+  #dropdown-cards .cs-flex-group {
+    position: relative;
+    max-height: inherit;
+  }
+  #dropdown-cards .cs-flex-group:not(.is-active) .cs-dropdown {
+    display: none!important;
+  }
+  #dropdown-cards .cs-flex-group {
+    transition: max-height 0.5s linear;
+    overflow: hidden;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  #dropdown-cards .cs-flex-group.is-active {
+    max-height: 1300px;
+  }
+  #dropdown-cards.student-evaluations .cs-flex-group {
+    cursor: pointer;
+  }
+  #dropdown-cards.student-evaluations .cs-flex-group.is-active {
+    max-height: 2000px;
+  }
+  #dropdown-cards .cs-dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #dropdown-cards .cs-dropdown-show {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #dropdown-cards .cs-dropdown-content > .cs-text,
+  #dropdown-cards .cs-dropdown-content > p {
+    border-bottom: 2px solid #8B8B8B;
+    padding: 0.5rem 0;
+  }
+  #dropdown-cards .cs-dropdown-content .teaching-table {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #dropdown-cards .cs-dropdown-content .table-header,
+  #dropdown-cards .cs-dropdown-content .table-row {
+    display: block;
+    border: 2px solid #8B8B8B;
+    color: var(--bodyTextColor);
+  }
+  #dropdown-cards .cs-dropdown-content .header-item,
+  #dropdown-cards .cs-dropdown-content .data-item {
+    font-size: var(--bodyFontSize);
+    padding: 8px;
+    /* Adjust padding as you like */
+  }
+  #dropdown-cards .cs-dropdown-content .table-header {
+    display: none;
+  }
+  #dropdown-cards .cs-dropdown-content .data-item:before {
+    /* Adds labels */
+    content: attr(data-label) ": ";
+    font-weight: bold;
+  }
+  #dropdown-cards .cs-timeline {
+    margin: 0.375rem 0 0.375rem 0;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #dropdown-cards .cs-container {
+    max-width: 80rem;
+    align-items: flex-start;
+  }
+  #dropdown-cards .cs-item {
+    height: fit-content;
+    flex: 0 0 100%;
+    max-width: unset;
+  }
+  #dropdown-cards .cs-flex-group {
+    cursor: pointer;
+  }
+  #dropdown-cards .cs-flex-group.is-active {
+    max-height: 800px;
+  }
+  #dropdown-cards .cs-dropdown-content .teaching-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    gap: unset;
+  }
+  #dropdown-cards .cs-dropdown-content .table-header,
+  #dropdown-cards .cs-dropdown-content .table-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Divide into 4 equal columns */
+    border: none;
+  }
+  #dropdown-cards .cs-dropdown-content .header-item,
+  #dropdown-cards .cs-dropdown-content .data-item {
+    border-top: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    margin: 0;
+    display: block;
+  }
+  #dropdown-cards .cs-dropdown-content .header-item:before,
+  #dropdown-cards .cs-dropdown-content .data-item:before {
+    /* Adds labels */
+    content: "";
+  }
+  #dropdown-cards .cs-dropdown-content .table-header {
+    background-color: #f2f2f2;
+  }
+  #dropdown-cards .cs-content {
+    width: 100%;
+    overflow: hidden;
+  }
+}

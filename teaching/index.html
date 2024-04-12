@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script async="async" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+        <!--Swap our for actual link-->
+        <link rel="canonical" href="https://datadiversitylab.github.io/teaching/">
+
+        <meta name="description" content="Teaching at the Data Diversity Lab">
+        <meta name="keywords" content="Data Diversity Lab and Development">
+
+        <!--Social Media Display-->
+        <meta property="og:title" content="Teaching"/>
+        <meta property="og:description" content="Teaching at the Data Diversity Lab"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://datadiversitylab.github.io/teaching/"/>
+        <meta property="og:image" content="/images/social.jpg"/>
+        <meta property="og:image:secure_url" content="/images/social.jpg"/>
+
+        <!--Favicons-->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v1">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/assets/favicons/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Preload -->
+        <link rel="preload" as="image" href="/assets/images/logo-dark.svg">
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+
+        <link rel="stylesheet" href="/css/root.css">
+        <link rel="stylesheet" href="/css/dark.css">
+
+        
+
+        <!-- Loading in page specific CSS sheets from css block -->
+        <link rel="stylesheet" href="/css/critical.css"/>
+        <link rel="stylesheet" href="/css/teaching.css">
+
+        <script defer src="https://us.umami.is/script.js" data-website-id="5e1a739c-ba5f-4c57-b23a-7d8dae02505c"></script>
+
+        <!-- For home page, use full title, including location for SEO. Other pages should just include the page name -->
+        <title>
+            
+                Teaching | Data Diversity Lab
+            
+        </title>
+    </head>
+    <body>
+
+        <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
+
+        <!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+
+<header id="cs-navigation">
+    <div aria-hidden="true" class="background-color-div">
+    </div>
+    <div class="cs-container">
+        <!--Nav Logo-->
+        <a href="/" class="cs-logo" aria-label="back to home">
+            
+                
+                    
+                        <img class="cs-dark" src="../../assets/images/logos/logo-dark.svg" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+                    
+                
+                    
+                
+            
+        </a>
+        <!--Navigation List-->
+        <nav class="cs-nav" role="navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" aria-label="mobile menu toggle">
+                <div class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1" aria-hidden="true"></span>
+                    <span class="cs-line cs-line2" aria-hidden="true"></span>
+                    <span class="cs-line cs-line3" aria-hidden="true"></span>
+                </div>
+            </button>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+            <div class="cs-ul-wrapper">
+                <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="/the-lab/">
+                                    The lab
+                                    
+                                        <img class="cs-drop-icon" src="../assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="/the-lab/" class="cs-li-link cs-drop-link">The lab</a>
+                                    </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/our-team/" class="cs-li-link cs-drop-link">Our team</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/lab-policies/" class="cs-li-link cs-drop-link">Lab policies</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/our-resources/" class="cs-li-link cs-drop-link">Our resources</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/social/" class="cs-li-link cs-drop-link">Social</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/collaborators/" class="cs-li-link cs-drop-link">Collaborators</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/join-us/" class="cs-li-link cs-drop-link">Join us</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="/research/">
+                                    Research
+                                    
+                                        <img class="cs-drop-icon" src="../assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="/research/" class="cs-li-link cs-drop-link">Research</a>
+                                    </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/publications/" class="cs-li-link cs-drop-link">Publications</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/grants/" class="cs-li-link cs-drop-link">Grants</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/conferences/" class="cs-li-link cs-drop-link">Conferences</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/lab-ops/" class="cs-li-link cs-drop-link">LabOps</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link cs-active"  href="/teaching/">
+                                    Teaching
+                                    
+                                        <img class="cs-drop-icon" src="../assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="/teaching/" class="cs-li-link cs-drop-link">Teaching</a>
+                                    </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/the-data-hub/" class="cs-li-link cs-drop-link">The Data Hub</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/ms-advising/" class="cs-li-link cs-drop-link">MS advising</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/software/">
+                                    Software
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/news/">
+                                    News
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/transparency/">
+                                    Transparency
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/contact/">
+                                    Contact
+                                </a>
+                            </li>
+                        
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+        <main id="main"><!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Teaching</h1>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="list-of-cards">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="cs-text">
+                Welcome to the teaching section at the data diversity lab. Our commitment to teaching extends beyond the classroom, aiming to equip students with the tools to ask meaningful questions and navigate the complexities of scientific inquiry. In the courses that we teach, we go beyond the textbook, fostering an environment where students gain skills that transcend the boundaries of academia. We are primarily interested in implementing the following four key teaching principles in the classes that we are involved in:
+            </p>
+        </div>
+        <div class="cs-card-group">
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <h4 class="cs-title">1</h4>
+                    <span class="cs-name">Relevance across careers</span>
+                    <span class="cs-desc">We believe that the training gained in coursework serves as a foundation for success in any career path. Whether you choose a research-intensive role, industry, healthcare, or beyond, the skills cultivated in our courses, such as critical thinking, problem-solving, and data analysis, are universally applicable.</span>
+                </div>
+            </div>
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <h4 class="cs-title">2</h4>
+                    <span class="cs-name">Question-driven learning</span>
+                    <span class="cs-desc">Our teaching philosophy revolves around empowering students to ask relevant questions based on existing knowledge. This skill is central to scientific inquiry, encouraging curiosity and driving discovery. Through engaging coursework, we inspire students to think beyond the facts and develop a deeper understanding of the processes that shape our world.</span>
+                </div>
+            </div>
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <h4 class="cs-title">3</h4>
+                    <span class="cs-name">Methods matter</span>
+                    <span class="cs-desc">In our courses, emphasis is placed on choosing the most appropriate methods to address scientific questions. From experimental design to statistical analysis, students learn to navigate the toolkit of a researcher, gaining practical skills that extend far beyond the classroom.</span>
+                </div>
+            </div>
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <h4 class="cs-title">4</h4>
+                    <span class="cs-name">Real-world applications</span>
+                    <span class="cs-desc">We bridge theory and practice, showcasing how the principles learned in the classroom are applied in real-world scenarios. Through case studies, hands-on projects, and collaborative research opportunities, students see the immediate and tangible impact of their education. </span>
+                </div>
+            </div>
+        </div>
+        <div class="cs-content">
+            <p class="cs-text">
+                As you explore this section, we invite you to consider the broader implications of your education, recognizing that the ability to ask relevant questions and apply appropriate methods is a skill set that transcends academic disciplines and prepares you for a myriad of career paths. If you have any questions or would like to learn more about our teaching approach, feel free to reach out.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="dropdown-cards" class="teaching-experience">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h3 class="cs-title">Teaching experience</h3>
+            <p class="cs-text">
+                Our goal is to demonstrate to students that the training they receive in coursework can benefit them irrespective of their chosen career. Overall, my primary focus is on instructing them in the art of asking relevant questions based on existing knowledge and employing the most appropriate methods to address these questions.
+            </p>
+        </div>
+        <div class="cs-card-group"><div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <h4 class="cs-title">Year 2023</h4>
+                                <p class="cs-text">Explore the teaching activities and accomplishments of the team in year 2023.</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                <div class="teaching-table">
+                                    <div class="table-header">
+                                        <div class="header-item" data-label="Semester">Semester</div>
+                                        <div class="header-item" data-label="Course">Course</div>
+                                        <div class="header-item" data-label="Role">Role</div>
+                                        <div class="header-item" data-label="Students">Students</div>
+                                    </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2023-Summer</div>
+                                            <div class="data-item" data-label="Course">Data mining and discovery (INFO-523)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">23</div>
+                                        </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2023-Spring</div>
+                                            <div class="data-item" data-label="Course">Data mining and discovery (INFO-523)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">18</div>
+                                        </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2023-Spring</div>
+                                            <div class="data-item" data-label="Course">Introduction to machine learning (ISTA-421/INFO-521)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">38</div>
+                                        </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <h4 class="cs-title">Year 2022</h4>
+                                <p class="cs-text">Explore the teaching activities and accomplishments of the team in year 2022.</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                <div class="teaching-table">
+                                    <div class="table-header">
+                                        <div class="header-item" data-label="Semester">Semester</div>
+                                        <div class="header-item" data-label="Course">Course</div>
+                                        <div class="header-item" data-label="Role">Role</div>
+                                        <div class="header-item" data-label="Students">Students</div>
+                                    </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2022-Fall</div>
+                                            <div class="data-item" data-label="Course">Data Mining and Discovery (INFO-523)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">23</div>
+                                        </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2022-Fall</div>
+                                            <div class="data-item" data-label="Course">Introduction to Machine Learning (ISTA-421/INFO-521)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">43</div>
+                                        </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2022-Summer</div>
+                                            <div class="data-item" data-label="Course">Data Mining and Discovery (INFO-523)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">20</div>
+                                        </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2022-Spring</div>
+                                            <div class="data-item" data-label="Course">Data Mining and Discovery (INFO-523)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">30</div>
+                                        </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2022-Spring</div>
+                                            <div class="data-item" data-label="Course">Introduction to Machine Learning (ISTA-421/INFO-521)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">37</div>
+                                        </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <h4 class="cs-title">Year 2021</h4>
+                                <p class="cs-text">Explore the teaching activities and accomplishments of the team in year 2021.</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                <div class="teaching-table">
+                                    <div class="table-header">
+                                        <div class="header-item" data-label="Semester">Semester</div>
+                                        <div class="header-item" data-label="Course">Course</div>
+                                        <div class="header-item" data-label="Role">Role</div>
+                                        <div class="header-item" data-label="Students">Students</div>
+                                    </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2021-Fall</div>
+                                            <div class="data-item" data-label="Course">Introduction to Data Mining and Discovery (INFO-523)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">20</div>
+                                        </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2021-Fall</div>
+                                            <div class="data-item" data-label="Course">Introduction to Machine Learning (ISTA-421/INFO-521)</div>
+                                            <div class="data-item" data-label="Role">Co-taught with Dr. Clayton Morrison</div>
+                                            <div class="data-item" data-label="Students">34</div>
+                                        </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <h4 class="cs-title">Year 2020</h4>
+                                <p class="cs-text">Explore the teaching activities and accomplishments of the team in year 2020.</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                <div class="teaching-table">
+                                    <div class="table-header">
+                                        <div class="header-item" data-label="Semester">Semester</div>
+                                        <div class="header-item" data-label="Course">Course</div>
+                                        <div class="header-item" data-label="Role">Role</div>
+                                        <div class="header-item" data-label="Students">Students</div>
+                                    </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2020-Fall</div>
+                                            <div class="data-item" data-label="Course">Marine Biology (ECOL-170)</div>
+                                            <div class="data-item" data-label="Role">Mostly grading</div>
+                                            <div class="data-item" data-label="Students">127</div>
+                                        </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2020-Summer</div>
+                                            <div class="data-item" data-label="Course">Genetics (ECOL-320)</div>
+                                            <div class="data-item" data-label="Role">Mostly grading</div>
+                                            <div class="data-item" data-label="Students">50</div>
+                                        </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2020-Spring</div>
+                                            <div class="data-item" data-label="Course">Introductory Biology (ECOL-182L)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">48</div>
+                                        </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <h4 class="cs-title">Year 2019</h4>
+                                <p class="cs-text">Explore the teaching activities and accomplishments of the team in year 2019.</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                <div class="teaching-table">
+                                    <div class="table-header">
+                                        <div class="header-item" data-label="Semester">Semester</div>
+                                        <div class="header-item" data-label="Course">Course</div>
+                                        <div class="header-item" data-label="Role">Role</div>
+                                        <div class="header-item" data-label="Students">Students</div>
+                                    </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2019-Fall</div>
+                                            <div class="data-item" data-label="Course">Marine Biology (ECOL-170)</div>
+                                            <div class="data-item" data-label="Role">Mostly grading</div>
+                                            <div class="data-item" data-label="Students">100</div>
+                                        </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2019-Spring</div>
+                                            <div class="data-item" data-label="Course">Introductory Biology (ECOL-182L)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">48</div>
+                                        </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <h4 class="cs-title">Year 2018</h4>
+                                <p class="cs-text">Explore the teaching activities and accomplishments of the team in year 2018.</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                <div class="teaching-table">
+                                    <div class="table-header">
+                                        <div class="header-item" data-label="Semester">Semester</div>
+                                        <div class="header-item" data-label="Course">Course</div>
+                                        <div class="header-item" data-label="Role">Role</div>
+                                        <div class="header-item" data-label="Students">Students</div>
+                                    </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2018-Fall</div>
+                                            <div class="data-item" data-label="Course">Marine Biology (ECOL-170)</div>
+                                            <div class="data-item" data-label="Role">Mostly grading</div>
+                                            <div class="data-item" data-label="Students">100</div>
+                                        </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2018-Spring</div>
+                                            <div class="data-item" data-label="Course">Introductory Biology (ECOL-182L)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">48</div>
+                                        </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <h4 class="cs-title">Year 2017</h4>
+                                <p class="cs-text">Explore the teaching activities and accomplishments of the team in year 2017.</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                <div class="teaching-table">
+                                    <div class="table-header">
+                                        <div class="header-item" data-label="Semester">Semester</div>
+                                        <div class="header-item" data-label="Course">Course</div>
+                                        <div class="header-item" data-label="Role">Role</div>
+                                        <div class="header-item" data-label="Students">Students</div>
+                                    </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2017-Fall</div>
+                                            <div class="data-item" data-label="Course">Marine Biology (ECOL-170)</div>
+                                            <div class="data-item" data-label="Role">Mostly grading</div>
+                                            <div class="data-item" data-label="Students">100</div>
+                                        </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2017-Spring</div>
+                                            <div class="data-item" data-label="Course">Introductory Biology (ECOL-182L)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">48</div>
+                                        </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <h4 class="cs-title">Year 2016</h4>
+                                <p class="cs-text">Explore the teaching activities and accomplishments of the team in year 2016.</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                <div class="teaching-table">
+                                    <div class="table-header">
+                                        <div class="header-item" data-label="Semester">Semester</div>
+                                        <div class="header-item" data-label="Course">Course</div>
+                                        <div class="header-item" data-label="Role">Role</div>
+                                        <div class="header-item" data-label="Students">Students</div>
+                                    </div><div class="table-row">
+                                            <div class="data-item" data-label="Semester">2016-Fall</div>
+                                            <div class="data-item" data-label="Course">Introductory Biology (ECOL-182L)</div>
+                                            <div class="data-item" data-label="Role">Primary instructor</div>
+                                            <div class="data-item" data-label="Students">48</div>
+                                        </div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><a class="cs-button-link">
+                <span>View all</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="dropdown-cards" class="student-evaluations">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h3 class="cs-title">Student evaluations</h3>
+            <p class="cs-text">
+                Below are the answers to three short questions from teaching course evaluations for multiple courses that Dr. Román-Palacios taught between 2016 (the first year in the US*) and 2019. No TCEs were available during 2020 due to the COVID pandemic. Only comments concerning Dr. Román-Palacios’ performance as an instructor are available. No comments were filtered out, and students' identities are completely anonymous, even to me! We will be curating TCEs for 2021+ in future years. 
+            </p>
+            <br>
+            <p class="cs-text">
+                *Please note that I taught my first course in August 2016, which was also my first time speaking publicly in English. I moved to the US roughly one month before the start of the semester.
+            </p>
+        </div>
+        <div class="cs-card-group"><div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <p class="cs-text cs-bold">What did you especially like about this section?</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                <p>2019 - Christian was always super helpful, bouncing around the lab a lot so he was always available.</p>
+<p>2019 - He has fun with the class and is easy to come to</p>
+<p>2019 - I honestly loved that Cristian always made himself really approachable with questions. He's one of the best TA's I have had throughout my academic career. I felt challenged enough in this lab that it made me like it a lot and it's one of the most interesting labs I have taken so far. The class is a bit long but Cristian makes it a good experience for his students and he's always very helpful.</p>
+<p>2019 - I liked how it was a small class and it made me feel as if I could talk to the instructor one on one more easily</p>
+<p>2019 - Our TA is very helpful and clears up all confusion if any.</p>
+<p>2019 - Christian is a God</p>
+<p>2019 - Cristian made it enjoyable and I felt comfortable with the material because I knew he was willing to assist us if I was unsure about a certain question or subject</p>
+<p>2019 - He always was willing to help us when we needed it</p>
+<p>2019 - I could do labs at my own pace (and leave early). Roman was also helpful whenever I had questions.</p>
+<p>2019 - I really enjoyed the nature of the laboratory instructor as they were always very willing to help and could sense when you needed further explanation.</p>
+<p>2019 - My TA is very good and knows what he is teaching. It is evident that he loves Ecol!</p>
+<p>2019 - The TA is amazing</p>
+<p>2018 - How open and helpful Christian was to questions. Whenever I was confused or needed help, he was always extremely helpful and helped explain it until I really understood it.</p>
+<p>2018 - I really liked that the TA was so helpful with any questions we had about subject matter/ procedure difficulty. He was always kind and willing to help.</p>
+<p>2018 - Openness to ask questions</p>
+<p>2018 - comfortable setting</p>
+<p>2018 - Cristian was an amazing and very knowledgable and helpful TA. He really inspired me to do my best.</p>
+<p>2018 - The lab teacher was really nice and made everything interesting. I actually really wanted to be in class.</p>
+<p>2018 - The TA was very knowledgable on the topic at hand and did a great job at explaining concepts that I did not understand.</p>
+<p>2017 - Cristian was very polite and responded quickly to emails.</p>
+<p>2017 - This is my first science lab I've taken in college and it has been okay. The TA is a hard grader so I am not always happy with my grades. The TA is very nice and cares about the students.</p>
+<p>2017 - We were allotted enough time to complete lab assignments in class. Assignments were clear, as well as labs and directions. If there were any questions, confusion, etc., I felt comfortable asking Cristian.</p>
+<p>2016 - Christian is always willing to meet up with me when i need extra help and understanding.</p>
+<p>2016 - the instructor</p>
+<p>2016 - The TA did a great job.</p>
+<p>2016 - The instructor was very nice and always encouraging</p>
+<p>2016 - The willingness of the instructor to answer questions and provide additional materials when something was unclear</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <p class="cs-text cs-bold">What suggestions would you make to improve this section?</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                <p>2019 - I think one suggestion is that his voice is a bit low and a bit fast. Therefore, I think he should slow down a bit in the lecture portion and engage students a bit more in interactive activities.</p>
+<p>2019 - slow down when going through the slideshow, don't call students out post-presentation...</p>
+<p>2018 - Cristine needs to practice speaking clearer when he is flustered/excited. It was just hard to understand him.</p>
+<p>2018 - grading criteria changes &amp; is unclear. cannot understand TA's accent. Lack of English proficiency makes his explanations confusing, i.e. TA: &quot;there are petidoglycan in that tissue sample&quot; Me: &quot;so there are multiple peptidoglycan?&quot; TA: &quot;no there is only one&quot; See how improper grammar causes his explanations to be incorrect and misleading?</p>
+<p>2017 - I do not think any changes need to be made; this lab was excellent!</p>
+<p>2016 - Grading was fair in the begging, then out of nowhere it changed to harsh grading without notice. Therefore, I would suggest making grading less harsh and more fair.</p>
+<p>2016 - The TA did a great job, but a lot of the procedures in the lab manual just didn't feel important. A lot of the sections felt like busy work. I don't have a great way to improve this, but I would try to incorporate some kind of feedback where students are asked which lab section specifically didn't work and which ones worked well.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <p class="cs-text cs-bold">Please write any additional comments you may have</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                <p>2019 - An enjoyable environment, with medium stress.</p>
+<p>2019 - Cristian made lab enjoyable and kinda fun, made the presentations in lab engaging</p>
+<p>2019 - Cristian was a very good lab TA. I appreciate that he was so helpful in class. My one criticism would be to talk louder when lecturing because sometimes it was difficult to hear.</p>
+<p>2019 - Cristian was really great at helping when I was confused though was sometimes hard to understand.</p>
+<p>2019 - I liked Cristian as an instructor.</p>
+<p>2019 - I think he's a great TA!</p>
+<p>2019 - Thank you</p>
+<p>2019 - Christian is the best TA even.</p>
+<p>2019 - Cristian is great!</p>
+<p>2019 - Cristian is the best, he helped my lab partners and I whenever we needed it and was always very patient with us</p>
+<p>2019 - Good instructor and very helpful.</p>
+<p>2019 - Have a good summer vacation (if you have one).</p>
+<p>2019 - This TA was very caring and passionate about the subject which made the lab overall more enjoyable.</p>
+<p>2019 - This TA was very helpful in lab.</p>
+<p>2018 - Cristian was a very good lab TA.</p>
+<p>2018 - Great TA. One of the best I've had so far. Glad I had the opportunity to take Ecol Lab with Christian.</p>
+<p>2018 - Cristian has made my lab experience a positive one. I didnt find that any of the other lab sections were happy with their instructors as much as our section.</p>
+<p>2018 - Cristian was a good TA and was always willing to help me on an individual basis.</p>
+<p>2018 - Cristian was one of the best, if not the best TA I've had at the UofA. He knew the topic completely, always explained topics in depth, and always answered questions completely.</p>
+<p>2018 - I really liked the way this lab was organized. I knew what was expected of me and I felt good about the material when I went over a project.</p>
+<p>2018 - The instructor was very hard to understand while lecturing to the class</p>
+<p>2017 - Christian was great, but really hard to understand. I would almost always have to go through his lecture slides after class because I would have no idea what we learned in class.</p>
+<p>2017 - Christian was a great teacher, very kind and respectful, he always explained things in different ways to make sure everyone understood and was always patient in explaining concepts to people and kept trying until they understood it. I think he was a hard grader though for reports.</p>
+<p>2017 - it was unfortunate, but it was very hard to understand this TA due to the accent.</p>
+<p>2017 - The TA did a great job teaching this section to the best of his ability.</p>
+<p>2016 - I liked my instructor, but I did not enjoy the class</p>
+<p>2016 - the teacher was great and the overall structure of the class was great as well</p>
+<p>2016 - Cristian is a really knowledgeable TA. There is a small language barrier, but he was able to convey his lessons to the best of his ability.</p>
+<p>2016 - Cristian is a wonderful person - very nice, very easy to talk to, but does not speak enough english to be teaching a course. I know that he was always trying to help us, but it was not adequate or on topic when he tried. It is a lose-lose situation because I'm sure he is uncomfortable when we ask questions he cannot understand or answer. However, he did always try.</p>
+<p>2016 - Cristian is very intelligent, that much is clear. But his lack of communication with students hurts the lab significantly. The way that assignments were graded didn't really seem to fit with rubrics on some occasions, and because of that students did not really know what was expected of them. There was a lot of trial and error that resulted in poorer grades in the beginning of the semester, which certainly could have been avoided. I do not think he was the right choice to being teaching a lab.</p>
+<p>2016 - great TA</p>
+<p>2016 - Instructor has a very thick accent and can be hard to understand but is willing to take the time to help you understand.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div></div>
+        </div>
+    </div>
+</section></main>
+        <!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="footer">
+    <div aria-hidden="true" class="line footer"></div>
+    <div class="container">
+        
+        <div class="full-section">
+            <a class="logo" href="/">
+                
+                    
+                        <img class="cs-dark" src="../../assets/images/logos/logo-dark.svg" alt="logo" width="210" height="29" aria-hidden="true" decoding="async" loading="lazy">
+                    
+                
+                    
+                
+            </a>
+            <div class="credit">
+                <span>Designed and hand coded by</span>
+                <a href="https://columbiavalleywebdesigns.com/" target="_blank" rel="noopener">columbia valley web designs</a>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+        <script>
+            const appHeight = () => {
+                const doc = document.documentElement
+                doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+            }
+            window.addEventListener('onload', appHeight);
+
+            appHeight();
+        </script>
+
+        <script defer src="/assets/js/nav.js"></script>
+
+        
+            <script defer src="/assets//js/dropdownCards.js"></script>
+        
+
+        
+            <script defer src="/assets//js/teaching.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script async="async" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+        <!--Swap our for actual link-->
+        <link rel="canonical" href="https://datadiversitylab.github.io/software/">
+
+        <meta name="description" content="Software of the Data Diversity Lab">
+        <meta name="keywords" content="Data Diversity Lab and Development">
+
+        <!--Social Media Display-->
+        <meta property="og:title" content="Software"/>
+        <meta property="og:description" content="Software of the Data Diversity Lab"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://datadiversitylab.github.io/software/"/>
+        <meta property="og:image" content="/images/social.jpg"/>
+        <meta property="og:image:secure_url" content="/images/social.jpg"/>
+
+        <!--Favicons-->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v1">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/assets/favicons/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Preload -->
+        <link rel="preload" as="image" href="/assets/images/logo-dark.svg">
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+
+        <link rel="stylesheet" href="/css/root.css">
+        <link rel="stylesheet" href="/css/dark.css">
+
+        
+
+        <!-- Loading in page specific CSS sheets from css block -->
+        <link rel="stylesheet" href="/css/critical.css"/>
+        <link rel="stylesheet" href="/css/software.css">
+
+        <script defer src="https://us.umami.is/script.js" data-website-id="5e1a739c-ba5f-4c57-b23a-7d8dae02505c"></script>
+
+        <!-- For home page, use full title, including location for SEO. Other pages should just include the page name -->
+        <title>
+            
+                Software | Data Diversity Lab
+            
+        </title>
+    </head>
+    <body>
+
+        <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
+
+        <!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+
+<header id="cs-navigation">
+    <div aria-hidden="true" class="background-color-div">
+    </div>
+    <div class="cs-container">
+        <!--Nav Logo-->
+        <a href="/" class="cs-logo" aria-label="back to home">
+            
+                
+                    
+                        <img class="cs-dark" src="../../assets/images/logos/logo-dark.svg" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+                    
+                
+                    
+                
+            
+        </a>
+        <!--Navigation List-->
+        <nav class="cs-nav" role="navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" aria-label="mobile menu toggle">
+                <div class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1" aria-hidden="true"></span>
+                    <span class="cs-line cs-line2" aria-hidden="true"></span>
+                    <span class="cs-line cs-line3" aria-hidden="true"></span>
+                </div>
+            </button>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+            <div class="cs-ul-wrapper">
+                <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="/the-lab/">
+                                    The lab
+                                    
+                                        <img class="cs-drop-icon" src="../assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="/the-lab/" class="cs-li-link cs-drop-link">The lab</a>
+                                    </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/our-team/" class="cs-li-link cs-drop-link">Our team</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/lab-policies/" class="cs-li-link cs-drop-link">Lab policies</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/our-resources/" class="cs-li-link cs-drop-link">Our resources</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/social/" class="cs-li-link cs-drop-link">Social</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/collaborators/" class="cs-li-link cs-drop-link">Collaborators</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/join-us/" class="cs-li-link cs-drop-link">Join us</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="/research/">
+                                    Research
+                                    
+                                        <img class="cs-drop-icon" src="../assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="/research/" class="cs-li-link cs-drop-link">Research</a>
+                                    </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/publications/" class="cs-li-link cs-drop-link">Publications</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/grants/" class="cs-li-link cs-drop-link">Grants</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/conferences/" class="cs-li-link cs-drop-link">Conferences</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/lab-ops/" class="cs-li-link cs-drop-link">LabOps</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="/teaching/">
+                                    Teaching
+                                    
+                                        <img class="cs-drop-icon" src="../assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="/teaching/" class="cs-li-link cs-drop-link">Teaching</a>
+                                    </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/the-data-hub/" class="cs-li-link cs-drop-link">The Data Hub</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/ms-advising/" class="cs-li-link cs-drop-link">MS advising</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link cs-active"  href="/software/">
+                                    Software
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/news/">
+                                    News
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/transparency/">
+                                    Transparency
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/contact/">
+                                    Contact
+                                </a>
+                            </li>
+                        
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+        <main id="main"><!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Software</h1>
+            <p class="cs-text">
+                Our software development focuses on enhancing accessibility and functionality in various areas. We're interested in simplifying and optimizing processes in phylogenetics, data analysis, regression tasks, among others. All our code is open source and available on github. Click on the links below to learn more about the software we've developed.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                Softwares                   -->
+<!-- ============================================ --><section id="software-547">
+    <div class="cs-container">
+        <div class="cs-content cs-sidebar">
+            <h6 class="cs-title">Libraries & packages</h6>
+            <div class="cs-filter-wrapper cs-text">
+                <div data-filter="All" class="active">All</div><div data-filter="Web applications">Web applications</div><div data-filter="R packages">R packages</div><div data-filter="Python libraries">Python libraries</div></div>
+        </div>
+        <div class="cs-title-card-wrapper"><h3 class="cs-title cs-group-title web-applications">Web applications</h3>
+                <div id="sectionWeb applications" class="cs-card-group"><div class="cs-item">
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="/assets/images/softwares/salphycon.png">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="/assets/images/softwares/salphycon.png">
+                                    <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/salphycon.png" alt="Salphycon  image" width="522" height="370" aria-hidden="true">
+                                </picture>
+                                <div class="cs-flex-group">
+                                    <span class="cs-name">Salphycon</span>
+                                    <span class="cs-timeline"></span>
+                                    <span class="cs-desc">
+                                        <span class="read-more-text"><p>Salphycon is a shiny app that extends the functionalities of the (phruta) R package. Salphycon is able to (1) find potentially (phylogenetically) relevant gene regions for a given set of taxa on GenBank, (2) retrieve gene sequences and curate taxonomic information from the same database, (3) combine downloaded and local gene sequences, and (4) perform sequence alignment, phylogenetic inference, and basic tree dating tasks. Both phruta and salphycon are focused on species-level analyses.</p>
+</span>
+                                        <span class="read-more-btn">...read more</span>
+                                    </span>
+                                    <div class="cs-item-filters" style="display: none;"><div class="cs-filter">softwares</div><div class="cs-filter">Web applications</div></div>      
+                                    <div aria-hidden="true" class="line line-full"></div><div class="cs-item-social"><a href="https://github.com/datadiversitylab/salphycon" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
+                            </div><div class="cs-item">
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="/assets/images/softwares/barriomap.png">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="/assets/images/softwares/barriomap.png">
+                                    <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/barriomap.png" alt="BarrioMap  image" width="522" height="370" aria-hidden="true">
+                                </picture>
+                                <div class="cs-flex-group">
+                                    <span class="cs-name">BarrioMap</span>
+                                    <span class="cs-timeline"></span>
+                                    <span class="cs-desc">
+                                        <span class="read-more-text"><p>Barrio Map offers fundamental functionalities like finding locations by conducting searches or selecting coordinates. Users can select from predefined scales and export the scaled maps to particular page sizes. Maps generated using Barrio Map are formal descriptions of particular sites with defined values of resolution, scales, and explicit information on distances. Barrio Map, in conjunction with OpenStreetMaps, is written in R, with functionalities largely leveraged from packages such as Leaflet and Shiny.</p>
+</span>
+                                        <span class="read-more-btn">...read more</span>
+                                    </span>
+                                    <div class="cs-item-filters" style="display: none;"><div class="cs-filter">softwares</div><div class="cs-filter">Web applications</div></div>      
+                                    <div aria-hidden="true" class="line line-full"></div><div class="cs-item-social"><a href="https://github.com/datadiversitylab/BarrioMap" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
+                            </div><div class="cs-item">
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="/assets/images/softwares/citycomp.png">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="/assets/images/softwares/citycomp.png">
+                                    <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/citycomp.png" alt="CityComp  image" width="522" height="370" aria-hidden="true">
+                                </picture>
+                                <div class="cs-flex-group">
+                                    <span class="cs-name">CityComp</span>
+                                    <span class="cs-timeline"></span>
+                                    <span class="cs-desc">
+                                        <span class="read-more-text"><p>CityComp is a Shiny app developed to support the use of the comparative framework developed in Arechiga et al. (2023). In the app, users can directly visualize the results presented in the same paper. Specifically, a graphical and interactive version of Fig. 6 in the same paper is presented in the app. Users can further define a target city and estimate their similarity to cities across the globe. Dynamic filtering and mapping are implemented within the app.</p>
+</span>
+                                        <span class="read-more-btn">...read more</span>
+                                    </span>
+                                    <div class="cs-item-filters" style="display: none;"><div class="cs-filter">softwares</div><div class="cs-filter">Web applications</div></div>      
+                                    <div aria-hidden="true" class="line line-full"></div><div class="cs-item-social"><a href="https://github.com/datadiversitylab/CityComp" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
+                            </div></div><h3 class="cs-title cs-group-title r-packages">R packages</h3>
+                <div id="sectionR packages" class="cs-card-group"><div class="cs-item">
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="/assets/images/softwares/phruta.png">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="/assets/images/softwares/phruta.png">
+                                    <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/phruta.png" alt="Phruta  image" width="522" height="370" aria-hidden="true">
+                                </picture>
+                                <div class="cs-flex-group">
+                                    <span class="cs-name">Phruta</span>
+                                    <span class="cs-timeline"></span>
+                                    <span class="cs-desc">
+                                        <span class="read-more-text"><p>The phruta R package is designed to simplify the basic phylogenetic pipeline. All the code is run within the same program and data from intermediate steps are saved in independent folders (optional). phruta retrieves gene sequences, combines newly downloaded to local gene sequences, performs sequence alignments, and basic phylogenetic inference.</p>
+</span>
+                                        <span class="read-more-btn">...read more</span>
+                                    </span>
+                                    <div class="cs-item-filters" style="display: none;"><div class="cs-filter">softwares</div><div class="cs-filter">R packages</div></div>      
+                                    <div aria-hidden="true" class="line line-full"></div><div class="cs-item-social"><a href="https://github.com/ropensci/phruta/" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://ropensci.github.io/phruta/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
+                            </div><div class="cs-item">
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="/assets/images/softwares/treedata-table.png">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="/assets/images/softwares/treedata-table.png">
+                                    <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/treedata-table.png" alt="treedata.table  image" width="522" height="370" aria-hidden="true">
+                                </picture>
+                                <div class="cs-flex-group">
+                                    <span class="cs-name">treedata.table</span>
+                                    <span class="cs-timeline"></span>
+                                    <span class="cs-desc">
+                                        <span class="read-more-text"><p>The <a href="https://github.com/Rdatatable/data.table">data.table package</a> enables high-performance extended functionality for data tables in R. treedata.table is a wrapper for data.table for phylogenetic analyses that matches a phylogeny to the data.table, and preserves matching during data.table operations.</p>
+</span>
+                                        <span class="read-more-btn">...read more</span>
+                                    </span>
+                                    <div class="cs-item-filters" style="display: none;"><div class="cs-filter">softwares</div><div class="cs-filter">R packages</div></div>      
+                                    <div aria-hidden="true" class="line line-full"></div><div class="cs-item-social"><a href="https://github.com/ropensci/treedata.table" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://ropensci.github.io/treedata.table" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
+                            </div></div><h3 class="cs-title cs-group-title python-libraries">Python libraries</h3>
+                <div id="sectionPython libraries" class="cs-card-group"><div class="cs-item">
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="/assets/images/softwares/barn.png">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="/assets/images/softwares/barn.png">
+                                    <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/barn.png" alt="BARN  image" width="522" height="370" aria-hidden="true">
+                                </picture>
+                                <div class="cs-flex-group">
+                                    <span class="cs-name">BARN</span>
+                                    <span class="cs-timeline"></span>
+                                    <span class="cs-desc">
+                                        <span class="read-more-text"><p>Bayesian Additive Regression Networks. We apply Bayesian Additive Regression Tree (BART) principles to training an ensemble of small neural networks for regression tasks. Using Markov Chain Monte Carlo, Bayesian Additive Regression Net- works (BARN) samples from the space of single hidden layer neural networks that are conditioned on their fit to data. You can find more information in <a href="https://github.com/dvbuntu/barmpy">barnpy</a> and its associated <a href="https://dvbuntu.github.io/barmpy/">documentation</a></p>
+</span>
+                                        <span class="read-more-btn">...read more</span>
+                                    </span>
+                                    <div class="cs-item-filters" style="display: none;"><div class="cs-filter">softwares</div><div class="cs-filter">Python libraries</div></div>      
+                                    <div aria-hidden="true" class="line line-full"></div><div class="cs-item-social"><a href="https://github.com/dvbuntu/barn" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
+                            </div></div></div>
+        </div>
+    </div>
+</section></main>
+        <!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="footer">
+    <div aria-hidden="true" class="line footer"></div>
+    <div class="container">
+        
+        <div class="full-section">
+            <a class="logo" href="/">
+                
+                    
+                        <img class="cs-dark" src="../../assets/images/logos/logo-dark.svg" alt="logo" width="210" height="29" aria-hidden="true" decoding="async" loading="lazy">
+                    
+                
+                    
+                
+            </a>
+            <div class="credit">
+                <span>Designed and hand coded by</span>
+                <a href="https://columbiavalleywebdesigns.com/" target="_blank" rel="noopener">columbia valley web designs</a>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+        <script>
+            const appHeight = () => {
+                const doc = document.documentElement
+                doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+            }
+            window.addEventListener('onload', appHeight);
+
+            appHeight();
+        </script>
+
+        <script defer src="/assets/js/nav.js"></script>
+
+        
+            <script defer src="/assets//js/software.js"></script>
+        
+
+        
+    </body>
+</html>
