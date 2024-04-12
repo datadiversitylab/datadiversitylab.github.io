@@ -1,0 +1,381 @@
+/*-- -------------------------- -->
+<---          Content           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #content-1450 {
+    padding: var(--sectionPadding);
+  }
+  #content-1450 .cs-container {
+    width: 100%;
+    max-width: 51.25rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: var(--sectionGap);
+  }
+  #content-1450 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #content-1450 .cs-title,
+  #content-1450 .cs-text {
+    max-width: 100%;
+  }
+}
+/*-- -------------------------- -->
+<---       New                  -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #new-547 {
+    padding: var(--sectionPadding);
+  }
+  #new-547 .cs-filter-wrapper {
+    justify-content: center;
+  }
+  #new-547 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: 1rem;
+  }
+  #new-547 .cs-content {
+    /* set text aling to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #new-547 .cs-topper,
+  #new-547 .cs-title,
+  #new-547 .cs-text {
+    color: var(--bodyTextColor);
+  }
+  #new-547 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 0 1.25rem 0;
+  }
+  #new-547 .cs-item {
+    /* changed to left at desktop */
+    text-align: center;
+    list-style: none;
+    width: 100%;
+    height: fit-content;
+    max-width: unset;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bodyTextColorWhite);
+    box-shadow: var(--boxCardShadow);
+  }
+  #new-547 .cs-picture {
+    width: 100%;
+    height: auto;
+    /* height divided by width, changed at desktop */
+    aspect-ratio: 1;
+    /* clips image tag from overflowing on hover */
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  #new-547 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* makes image behave like a background image */
+    object-fit: cover;
+    /* places top of the image at the top of the box */
+    object-position: top;
+    transition: transform 0.6s;
+  }
+  #new-547 .cs-name {
+    font-size: var(--headerFourFontSize);
+  }
+  #new-547 .cs-filter-wrapper {
+    gap: 0;
+  }
+  #new-547 .cs-filter-wrapper a {
+    padding: 0.625rem;
+    border-bottom: white 3px solid;
+  }
+  #new-547 .cs-filter-wrapper a.active {
+    border-bottom: var(--primary) 3px solid;
+  }
+  #new-547 .cs-title-card-wrapper .cs-title {
+    margin: 0 0 1.25rem 0;
+  }
+  #new-547 .cs-timeline {
+    /* 20px - 25px */
+    font-size: var(--mediumFontSize);
+    margin: 0 0 0.125rem 0;
+    width: 100%;
+    line-height: 1.2em;
+    font-weight: 400;
+    text-align: inherit;
+    color: var(--bodyTextColor);
+    display: block;
+    text-align: left;
+  }
+  #new-547 .cs-desc {
+    font-size: var(--bodyFontSize);
+    overflow: hidden;
+    position: relative;
+  }
+  #new-547 .cs-desc.show-more {
+    overflow: unset;
+    max-height: unset;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #new-547 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #new-547 .cs-filter-wrapper {
+    gap: 0;
+  }
+  #new-547 .cs-filter-wrapper a {
+    padding: 0.625rem;
+    border-bottom: none;
+    border-left: white 3px solid;
+  }
+  #new-547 .cs-filter-wrapper a.active {
+    border-left: var(--primary) 3px solid;
+    border-bottom: none;
+  }
+  #new-547 .cs-filter-wrapper {
+    justify-content: flex-start;
+  }
+  #new-547 .cs-content {
+    width: 20%;
+    align-items: flex-start;
+  }
+}
+/*-- -------------------------- -->
+<---       dropdown Cards       -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #dropdown-cards.cs-title-card-wrapper {
+    width: 100%;
+  }
+  #dropdown-cards .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: var(--sectionGap);
+  }
+  #dropdown-cards .cs-content {
+    /* set text aling to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+    overflow: auto;
+  }
+  #dropdown-cards .cs-content .cs-title {
+    text-align: center;
+  }
+  #dropdown-cards .cs-topper,
+  #dropdown-cards .cs-title,
+  #dropdown-cards .cs-text {
+    color: var(--bodyTextColor);
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+  #dropdown-cards .cs-picture {
+    width: 100%;
+    height: auto;
+    /* height divided by width, changed at desktop */
+    aspect-ratio: 1;
+    /* clips image tag from overflowing on hover */
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  #dropdown-cards .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* makes image behave like a background image */
+    object-fit: cover;
+    /* places top of the image at the top of the box */
+    object-position: top;
+    transition: transform 0.6s;
+  }
+  #dropdown-cards .line {
+    margin: 0 0 1.25rem 0;
+  }
+  #dropdown-cards .cs-title-card-wrapper .cs-title {
+    margin: 0 0 1.25rem 0;
+  }
+  #dropdown-cards .cs-job-title {
+    /* 20px - 25px */
+    font-size: var(--regularFontSize);
+    margin: 0 0 0.5rem 0;
+    width: 100%;
+    line-height: 1.2em;
+    font-weight: 400;
+    text-align: inherit;
+    color: var(--bodyTextColor);
+    display: block;
+    text-align: left;
+  }
+  #dropdown-cards .cs-desc {
+    position: relative;
+  }
+  #dropdown-cards .cs-desc.show-more {
+    overflow: unset;
+    max-height: unset;
+  }
+  #dropdown-cards .cs-item {
+    height: fit-content;
+    flex: 0 0 calc(100%);
+  }
+  #dropdown-cards .cs-flex-group {
+    position: relative;
+    max-height: inherit;
+    gap: 1rem;
+  }
+  #dropdown-cards .cs-flex-group:not(.is-active) .cs-dropdown {
+    display: none!important;
+  }
+  #dropdown-cards .cs-dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #dropdown-cards .cs-dropdown-show {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #dropdown-cards .cs-dropdown-show .cs-title {
+    margin: 0;
+  }
+  #dropdown-cards .cs-dropdown-content ul {
+    list-style-position: inside;
+    text-align: left;
+  }
+  #dropdown-cards .cs-dropdown-content ul ul {
+    padding-left: 2rem;
+  }
+  #dropdown-cards .cs-dropdown-content > .cs-text {
+    border-bottom: 2px solid #8B8B8B;
+    padding: 0.5rem 0;
+  }
+  #dropdown-cards .cs-dropdown-content .teaching-table {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #dropdown-cards .cs-dropdown-content .table-header,
+  #dropdown-cards .cs-dropdown-content .table-row {
+    display: block;
+    border: 2px solid #8B8B8B;
+  }
+  #dropdown-cards .cs-dropdown-content .header-item,
+  #dropdown-cards .cs-dropdown-content .data-item {
+    font-size: var(--bodyFontSize);
+    padding: 8px;
+    /* Adjust padding as you like */
+  }
+  #dropdown-cards .cs-dropdown-content .table-header {
+    display: none;
+  }
+  #dropdown-cards .cs-dropdown-content .data-item:before {
+    /* Adds labels */
+    content: attr(data-label) ": ";
+    font-weight: bold;
+  }
+  #dropdown-cards .cs-timeline {
+    margin: 0.375rem 0 0.375rem 0;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #dropdown-cards .cs-container {
+    max-width: 80rem;
+    align-items: flex-start;
+  }
+  #dropdown-cards .cs-item {
+    height: fit-content;
+    flex: 0 0 100%;
+    max-width: unset;
+  }
+  #dropdown-cards .cs-flex-group {
+    cursor: pointer;
+    max-height: 5.625rem;
+  }
+  #dropdown-cards .cs-flex-group.is-active {
+    max-height: 500px;
+  }
+  #dropdown-cards .cs-dropdown-content .teaching-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    gap: unset;
+  }
+  #dropdown-cards .cs-dropdown-content .table-header,
+  #dropdown-cards .cs-dropdown-content .table-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Divide into 4 equal columns */
+    border: none;
+  }
+  #dropdown-cards .cs-dropdown-content .header-item,
+  #dropdown-cards .cs-dropdown-content .data-item {
+    border-top: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    margin: 0;
+    display: block;
+  }
+  #dropdown-cards .cs-dropdown-content .header-item:before,
+  #dropdown-cards .cs-dropdown-content .data-item:before {
+    /* Adds labels */
+    content: "";
+  }
+  #dropdown-cards .cs-dropdown-content .table-header {
+    background-color: #f2f2f2;
+  }
+  #dropdown-cards .cs-content {
+    width: 100%;
+    overflow: hidden;
+  }
+}

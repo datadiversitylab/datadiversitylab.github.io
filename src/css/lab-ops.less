@@ -1,0 +1,439 @@
+/*-- -------------------------- -->
+<---          Content           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #content-1450 {
+        padding: var(--sectionPadding);
+        padding-top: 100/16rem;
+
+        .cs-container {
+            width: 100%;
+            max-width: (900/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: var(--sectionGap);;
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title, .cs-text {
+            max-width: fit-content;
+        }
+
+    }
+}
+
+
+/*-- -------------------------- -->
+<---       Service Cards        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #list-of-cards {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            // max-width: (496/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* 48px - 64px */
+            gap: var(--sectionGap);
+        }
+
+        .cs-content {
+            /* set text aling to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+
+            .cs-text {
+                width: 100%;
+                max-width: unset;
+                text-align: left;
+            }
+        }
+
+        .cs-name {
+            text-align: center;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            justify-items: center;
+            gap: 2rem;
+        }
+
+        .cs-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -30px;
+            width: 40px;
+            height: 40px;
+            transform: translate(-50%, 0);
+            left: 50%;
+            background-color: white;
+            border-radius: 100%;
+            // box-shadow: var(--boxCardShadow);
+        }
+
+        .cs-flex-group {
+            position: relative;
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: auto;
+            /* height divided by width, changed at desktop */
+            aspect-ratio: 328/250;
+            /* clips image tag from overflowing on hover */
+            overflow: hidden;
+            display: block;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* makes image behave like a background image */
+                object-fit: cover;
+                /* places top of the image at the top of the box */
+                object-position: top;
+                transition: transform 0.6s;
+            }
+        }
+
+        .cs-desc {
+            margin: (4/16rem) 0;
+        }
+
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #list-of-cards {
+        .cs-card-group {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #list-of-cards {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-card-group {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .cs-title {
+            top: -30px;
+        }
+
+        .cs-flex-group {
+            align-items: flex-start;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---       dropdown Cards       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #dropdown-cards {
+        padding: var(--sectionPadding);
+
+        .cs-item {
+            display: none;
+        }
+
+        .cs-item:nth-child(-n+3),
+        &.show-all .cs-item {
+            display: block;
+        }
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            // max-width: (496/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: var(--sectionGap);
+        }
+
+        .cs-content {
+            /* set text aling to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+            overflow: auto;
+            .cs-title {
+                text-align: center;
+            }
+        }
+
+        .cs-topper,
+        .cs-title,
+        .cs-text,
+        .cs-dropdown-content p {
+            color: var(--bodyTextColor);
+            width: 100%;
+            max-width: 100%;
+            text-align: left;
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: auto;
+            /* height divided by width, changed at desktop */
+            aspect-ratio: 304/304;
+            /* clips image tag from overflowing on hover */
+            overflow: hidden;
+            display: block;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* makes image behave like a background image */
+                object-fit: cover;
+                /* places top of the image at the top of the box */
+                object-position: top;
+                transition: transform 0.6s;
+            }
+        }
+
+
+
+        .line {
+            margin: 0 0 (20/16rem) 0;
+        }
+
+        .cs-title-card-wrapper {
+            .cs-title {
+                margin: 0 0 20/16rem 0;
+            }
+        }
+
+        .cs-job-title {
+            /* 20px - 25px */
+            font-size: var(--regularFontSize);
+            margin: 0 0 (8/16rem) 0;
+            width: 100%;
+            line-height: 1.2em;
+            font-weight: 400;
+            text-align: inherit;
+            color: var(--bodyTextColor);
+            display: block;
+            text-align: left;
+        }
+
+        .cs-desc {
+            position: relative;
+            &.show-more{
+                overflow: unset;
+                max-height: unset;
+            }
+        }
+
+        .cs-item {
+            height: fit-content;
+            flex: 0 0 calc(100%);
+        }
+
+        .cs-flex-group {
+            position: relative;
+            max-height: inherit;
+
+            &:not(.is-active) {
+                .cs-dropdown {
+                    display: none!important;
+                }
+            }
+        }
+
+        .cs-flex-group {
+            // max-height: (125/16rem);
+            transition: max-height 0.5s linear;
+            overflow: hidden;
+            gap: 1rem;
+            cursor: pointer;
+            &.is-active {
+                max-height: 1300px;
+            }
+        }
+
+        &.student-evaluations {
+            .cs-flex-group {
+                cursor: pointer;
+                // max-height: (90/16rem);
+                &.is-active {
+                    max-height: 2000px;
+                }
+            }
+        }
+
+        .cs-dropdown {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .cs-dropdown-show {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cs-dropdown-content {
+            > .cs-text, > p {
+                border-bottom: 2px solid #8B8B8B;
+                padding: (8/16rem) 0;
+            }
+
+            .teaching-table {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .table-header,
+            .table-row {
+                display: block;
+                border: 2px solid #8B8B8B;
+                color: var(--bodyTextColor);
+            }
+
+            .header-item,
+            .data-item {
+                font-size: var(--bodyFontSize);
+                padding: 8px; /* Adjust padding as you like */
+            }
+
+            .table-header {
+                display: none;
+            }
+
+            .data-item:before { /* Adds labels */
+                content: attr(data-label) ": ";
+                font-weight: bold;
+            }
+
+        }
+
+        .cs-timeline {
+            margin: 6/16rem 0 (6/16rem) 0;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #dropdown-cards {
+        .cs-container {
+            max-width: (1280/16rem);
+            align-items: flex-start;
+        }
+
+
+        .cs-item {
+            height: fit-content;
+            flex: 0 0 100%;
+            max-width: unset;
+        }
+
+        .cs-flex-group {
+            cursor: pointer;
+            // max-height: (125/16rem);
+            &.is-active {
+                max-height: 800px;
+            }
+        }
+
+        .cs-dropdown-content {
+            .teaching-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 15px;
+                gap: unset;
+            }
+
+            .table-header,
+            .table-row {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr); /* Divide into 4 equal columns */
+                border: none;
+            }
+
+            .header-item,
+            .data-item {
+                border-top: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+                margin: 0;
+                display: block;
+            }
+
+            .header-item:before,
+            .data-item:before { /* Adds labels */
+                content: "";
+            }
+
+            .table-header {
+                background-color: #f2f2f2;
+            }
+
+        }
+
+        .cs-content {
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+}

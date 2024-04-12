@@ -1,0 +1,147 @@
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbsr-579 {
+        padding: var(--sectionPadding);
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            // align-items: center;
+            /* 48px - 64px */
+            gap: var(--sectionGap);;
+        }
+
+        .cs-title {
+            max-width: (1280/16rem);
+            margin: auto;
+            width: 100%;
+            margin-bottom: (16/16rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            /* moved section padding to the .cs-content so we can have the cs-picture be full width on mobile without the padding preventing it from doing so */
+            padding-top: 0;
+            /* prevents padding from affecting width and height */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-text {
+            margin-bottom: (16/16rem);
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        .cs-arrow {
+            border-radius: 100%;
+            border-color: var(--lineColor);
+            width: 45px;
+            height: 45px;
+            border: 2px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cs-caption-slider-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: (8/16rem);
+            }
+
+        .cs-arrow-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .cs-image-slider {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: (8/16rem);
+            flex: 1;
+            .cs-image-selector {
+                width: 8px;
+                height: 8px;
+                background-color: var(--Neutral-Gray, #8D8D8D);
+                border-radius: 100%;
+                &.active {
+                    background-color: var(--lineColor);
+                }
+            }
+        }
+
+        .cs-picture-caption {
+            .cs-picture {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: (300/16rem);
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #sbsr-579 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .cs-content {
+            width: 50%;
+            /* reset the padding, add the section padding back to the section container */
+            padding: 0;
+        }
+
+        .cs-picture-caption {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            /* sends it to the right in the 2nd position */
+            order: 2;
+            .cs-picture {
+                // max-width: (494/16rem);
+                /* 518px - 700px */
+                height: 100%;
+                // height: clamp(32.375rem, 63vw, 43.75rem);
+                position: relative;
+            }
+        }
+
+        .cs-text-caption {
+            font-size: var(--mediumFontSize);
+        }
+    }
+}

@@ -1,0 +1,348 @@
+backend:
+  name: github
+  repo: datadiversitylab/datadiversitylab.github.io
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  site_domain: kaleidoscopic-croquembouche-15a954.netlify.app
+
+local_backend: true
+# change url to a link to the image you want to use, no file paths, must be a URL
+logo_url: https://datadiversitylab.github.io/assets/images/logos/logo-dark.svg
+
+media_folder: 'src/assets/images/uploads'
+public_folder: '/assets/images/uploads'
+
+collections:
+  - name: 'team'
+    label: 'Team'
+    folder: 'src/team'
+    media_folder: '/src/assets/images/our-team'
+    public_folder: '/assets/images/our-team'
+    create: true
+    identifier_field: memberName
+    slug: '{{memberName}}'
+    fields:
+      - { label: 'Member Name', name: 'memberName', widget: 'string', required: true }
+      - { label: 'Member Education', name: 'memberEducation', widget: 'string', required: false }
+      - { label: 'Member Date', name: 'memberDate', widget: 'string', required: false }
+      - { label: 'Member Bio', name: 'memberBio', widget: 'string', required: true }
+      - { label: 'Tags', name: 'tags', widget: 'list', required: true}
+      - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false }
+      - { label: 'Email', name: 'email', widget: 'string', required: false }
+      - { label: 'Github', name: 'github', widget: 'string', required: false }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Resume', name: 'resume', widget: 'string', required: false }
+      - { label: 'Member Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+  - name: 'publication'
+    label: 'Publication'
+    folder: 'src/publications'
+    media_folder: '/src/assets/images/publications'
+    public_folder: '/assets/images/publications'
+    create: true
+    identifier_field: publicationTitle
+    slug: '{{publicationTitle}}'
+    fields:
+      - { label: 'Publication Title', name: 'publicationTitle', widget: 'markdown', required: true }
+      - { label: 'Author', name: 'publicationAuthor', widget: 'string', required: false }
+      - { label: 'Date', name: 'publicationDate', widget: 'string', required: false }
+      - { label: 'Type', name: 'publicationType', widget: 'string', required: false }
+      - { label: 'Abstract', name: 'publicationAbstract', widget: 'markdown', required: true }
+      - { label: 'Keywords', name: 'tags', widget: 'list', required: true }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'PDF', name: 'pdfDocument', widget: 'file', required: false, media_folder: '/src/assets/documents/publications', public_folder: '/assets/documents/publications'}
+      - { label: 'Badge', name: 'badgeImage', widget: 'string', required: false }
+      - { label: 'PDF Url', name: 'pdfLink', widget: 'string', required: false }
+      - { label: 'Web Url', name: 'webLink', widget: 'string', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+  - name: 'collaborators'
+    label: 'Collaborators'
+    folder: 'src/collaborators'
+    media_folder: '/src/assets/images/collaborators'
+    public_folder: '/assets/images/collaborators'
+    create: true
+    identifier_field: collaboratorName
+    slug: '{{collaboratorName}}'
+    fields:
+      - { label: 'Collaborator Name', name: 'collaboratorName', widget: 'string', required: true }
+      - { label: 'Collaborator Title', name: 'collaboratorTitle', widget: 'string', required: false }
+      - { label: 'Collaborator Date', name: 'collaboratorDate', widget: 'string', required: false }
+      - { label: 'Collaborator Bio', name: 'collaboratorBio', widget: 'string', required: false }
+      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
+      - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false }
+      - { label: 'Email', name: 'email', widget: 'string', required: false }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Resume', name: 'resume', widget: 'string', required: false }
+      - { label: 'Member Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+  - name: 'conferences'
+    label: 'Conferences'
+    folder: 'src/conferences'
+    media_folder: '/src/assets/images/conferences'
+    public_folder: '/assets/images/conferences'
+    create: true
+    identifier_field: Title
+    slug: '{{Title}}'
+    fields:
+      - { label: 'Title', name: 'Title', widget: 'string', required: true }
+      - { label: 'Date Season', name: 'DateSeason', widget: 'string', required: false }
+      - { label: 'Location', name: 'Location', widget: 'string', required: false }
+      - { label: 'Description', name: 'Description', widget: 'markdown', required: true }
+      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
+      - { label: 'Document', name: 'document', widget: 'file', required: false, media_folder: '/src/assets/documents/conferences', public_folder: '/assets/documents/conferences' }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+  - name: 'grants'
+    label: 'Grants'
+    folder: 'src/grants'
+    media_folder: '/src/assets/images/grants'
+    public_folder: '/assets/images/grants'
+    create: true
+    identifier_field: grantName
+    slug: '{{grantName}}'
+    fields:
+      - { label: 'Name', name: 'grantName', widget: 'string', required: true }
+      - { label: 'Amount', name: 'grantAmount', widget: 'string', required: false }
+      - { label: 'Description', name: 'grantDesc', widget: 'string', required: false }
+      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
+      - { label: 'Document', name: 'document', widget: 'file', required: false, media_folder: '/src/assets/documents/grants', public_folder: '/assets/documents/grants' }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Member Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+  - name: 'softwares'
+    label: 'Softwares'
+    folder: 'src/softwares'
+    media_folder: '/src/assets/images/softwares'
+    public_folder: '/assets/images/softwares'
+    create: true
+    identifier_field: Name
+    slug: '{{Name}}'
+    fields:
+      - { label: 'Name', name: 'Name', widget: 'string', required: true }
+      - { label: 'Description', name: 'Description', widget: 'markdown', required: false }
+      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
+      - { label: 'Github', name: 'github', widget: 'string', required: false }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+  - name: 'socials'
+    label: 'Socials'
+    folder: 'src/socials'
+    media_folder: '/src/assets/images/socials'
+    public_folder: '/assets/images/socials'
+    create: true
+    identifier_field: socialName
+    slug: '{{socialName}}'
+    fields:
+      - { label: 'Name', name: 'socialName', widget: 'string', required: true }
+      - { label: 'Social Date', name: 'socialDate', widget: 'string', required: false }
+      - { label: 'Description', name: 'socialDesc', widget: 'string', required: false }
+      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+  - name: 'news'
+    label: 'News'
+    folder: 'src/news'
+    media_folder: '/src/assets/images/news'
+    public_folder: '/assets/images/news'
+    create: true
+    identifier_field: body
+    slug: '{{order}}'
+    fields:
+      - { label: 'Name', name: 'Name', widget: 'string', required: true }
+      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
+      - { label: 'Order',name: 'order', widget: 'number', required: false }
+      - { label: "Body", name: "body", widget: "markdown"}
+  - name: 'jobs'
+    label: 'Jobs'
+    folder: 'src/jobs'
+    media_folder: '/src/assets/images/jobs'
+    public_folder: '/assets/images/jobs'
+    create: true
+    identifier_field: jobTitle
+    slug: '{{jobTitle}}'
+    fields:
+      - { label: 'Job Title', name: 'jobTitle', widget: 'string', required: true }
+      - { label: 'Job Start Date', name: 'jobStartDate', widget: 'string', required: false }
+      - { label: 'Job Apply By', name: 'jobApplyBy', widget: 'string', required: false }
+      - { label: 'Job Description', name: 'jobDesc', widget: 'markdown', required: false }
+      - { label: 'Job Pdf', name: 'jobPdf', widget: 'file', required: false, media_folder: '/src/assets/documents/jobs', public_folder: '/assets/documents/jobs' }
+      - { label: 'Order',name: 'order', widget: 'number', required: false }
+  - name: 'logos'
+    label: 'Logos'
+    folder: 'src/logos'
+    media_folder: '/src/assets/images/logos'
+    public_folder: '/assets/images/logos'
+    create: false
+    delete: false
+    identifier_field: title
+    slug: '{{title}}'
+    fields:
+      - { label: 'Logo Image', name: 'image', widget: 'image', required: true }
+  - name: 'labPolicies'
+    label: 'Lab Policies'
+    folder: 'src/labPolicies'
+    media_folder: '/src/assets/images/lab-policies'
+    public_folder: '/assets/images/lab-policies'
+    create: true
+    identifier_field: title
+    slug: '{{title}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Description', name: 'body', widget: 'markdown', required: true }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+  - name: 'teachingExperience'
+    label: 'Teaching Experience'
+    folder: 'src/teachingExperience'
+    media_folder: '/src/assets/images/teaching-experience'
+    public_folder: '/assets/images/teaching-experience'
+    create: true
+    identifier_field: title
+    slug: '{{title}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Rows', name: 'rows', widget: 'list', required: true, fields: [
+          { label: 'Year-Semester', name: 'yearSemester', widget: 'string', required: true },
+          { label: 'Course', name: 'course', widget: 'string', required: true },
+          { label: 'Role', name: 'role', widget: 'string', required: true },
+          { label: 'Number of Students', name: 'studentsAmount', widget: 'number', required: true }
+        ]
+      }
+      - { label: 'Year', name: 'year', widget: 'number', required: true }
+  - name: 'studentEvaluations'
+    label: 'Student Evaluations'
+    folder: 'src/studentEvaluations'
+    media_folder: '/src/assets/images/student-evaluations'
+    public_folder: '/assets/images/student-evaluations'
+    identifier_field: title
+    create: true
+    slug: '{{title}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+  - name: 'transparencys'
+    label: 'Transparency Cards'
+    folder: 'src/transparencys'
+    media_folder: '/src/assets/images/transparencys'
+    public_folder: '/assets/images/transparencys'
+    create: true
+    identifier_field: title
+    slug: '{{title}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Year Range', name: 'yearRange', widget: 'string', required: true }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+  - name: "pages"
+    label: "Pages"
+    media_folder: '/src/assets/images'
+    public_folder: '/assets/images'
+    files:
+      - label: "Home Page"
+        name: "Home"
+        file: "src/_data/home.json"
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: sub title
+            name: subTitle
+            widget: string
+          - label: Description
+            name: description
+            widget: markdown
+          - label: Buttons
+            name: buttons
+            widget: list
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Link', name: 'link', widget: 'string' }
+          - label: Background Images
+            name: backgroundImages
+            widget: list
+            fields:
+              - { label: 'Image', name: 'image', widget: 'image' }
+          - label: Cards
+            name: cards
+            widget: list
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'markdown' }
+      - label: "MS Advising Page"
+        name: "MS Advising"
+        file: "src/_data/msadvising.json"
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Paragraph One
+            name: paragraphOne
+            widget: markdown
+          - label: Numbered Cards
+            name: numberedCards
+            widget: list
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'markdown' }
+          - label: Paragraph Two
+            name: paragraphTwo
+            widget: markdown
+          - label: Second Title
+            name: secondTitle
+            widget: string
+          - label: Paragraph Three
+            name: paragraphThree
+            widget: markdown
+          - label: Advising Cards
+            name: advisingCards
+            widget: list
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Order', name: 'order', widget: 'number' }
+              - { label: 'Description', name: 'description', widget: 'markdown' }
+      - label: "LabOps Page"
+        name: "LabOps"
+        file: "src/_data/labops.json"
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Paragraph One
+            name: paragraphOne
+            widget: markdown
+          - label: Numbered Cards
+            name: numberedCards
+            widget: list
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'markdown' }
+          - label: Paragraph Two
+            name: paragraphTwo
+            widget: markdown
+          - label: Second Title
+            name: secondTitle
+            widget: string
+          - label: Paragraph Three
+            name: paragraphThree
+            widget: markdown
+          - label: LabOps Cards
+            name: labopsCards
+            widget: list
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Order', name: 'order', widget: 'number' }
+              - { label: 'Description', name: 'description', widget: 'markdown' }

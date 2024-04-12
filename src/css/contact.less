@@ -1,0 +1,268 @@
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbsr-579 {
+        padding: var(--sectionPadding);
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            // align-items: center;
+            /* 48px - 64px */
+            gap: var(--sectionGap);;
+        }
+
+        .cs-title {
+            max-width: (1280/16rem);
+            width: 100%;
+            margin: 0 auto (32/16rem) auto;
+            text-align: center;
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            /* moved section padding to the .cs-content so we can have the cs-picture be full width on mobile without the padding preventing it from doing so */
+            padding-top: 0;
+            /* prevents padding from affecting width and height */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+            gap: var(--sectionGap);
+
+            .cs-item {
+                max-width: unset;
+
+                .cs-flex-group {
+                    padding: 1rem;
+
+                    .cs-desc {
+                        margin-top: 0.5rem;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .cs-item-social {
+            display: flex;
+            flex-direction: column;
+            gap: (8/16rem);
+            margin: auto;
+            margin-top: (16/16rem);
+            a {
+                font-size: var(--mediumFontSize);
+                display: flex;
+                align-items: center;
+                gap: (8/16rem);
+            }
+        }
+
+        .cs-arrow {
+            border-radius: 100%;
+            border-color: var(--lineColor);
+            width: 45px;
+            height: 45px;
+            border: 2px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cs-caption-slider-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: (8/16rem);
+            }
+
+        .cs-arrow-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .cs-image-slider {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: (8/16rem);
+            flex: 1;
+            .cs-image-selector {
+                width: 8px;
+                height: 8px;
+                background-color: var(--Neutral-Gray, #8D8D8D);
+                border-radius: 100%;
+                &.active {
+                    background-color: var(--lineColor);
+                }
+            }
+        }
+
+        .cs-picture-caption {
+            order: 2;
+
+            .cs-picture {
+                display: block;
+                position: relative;
+                width: 100%;
+                min-height: (250/16rem);
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .cs-card-group {
+                margin: 32/16rem 0;
+                height: 100%;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                justify-content: flex-start;
+
+                .cs-item {
+                    width: 100%;
+                    max-width: unset;
+                    flex: unset;
+                    .cs-flex-group {
+                        align-items: flex-start;
+                        padding: 1rem;
+
+                        .cs-desc {
+                            margin-bottom: 0;
+                        }
+
+                        .cs-name {
+                            text-align: center;
+                        }
+
+                        .cs-job-title {
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+
+                    &.mailing-address {
+                        flex: 1;
+
+                        iframe {
+                            width: 100%;
+                            flex: 1;
+                        }
+
+                        .cs-flex-group {
+                            height: auto;
+                            flex-direction: row;
+                            align-items: center;
+                            padding: 1rem;
+                            gap: 0.5rem;
+                            justify-content: space-between;
+
+                            .cs-icon-map {
+                                margin-left: auto;
+                                margin-bottom: auto;
+                            }
+
+                            .cs-name {
+                                width: 50%;
+                            }
+
+                            .cs-text {
+                                font-size: var(--mediumFontSize);
+                                text-align: left;
+                                width: 30%;
+                            }
+
+                            .cs-desc {
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        flex-direction: column-reverse;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #sbsr-579 {
+        .cs-title {
+            text-align: left;
+        }
+        padding: var(--sectionPadding);
+        .cs-container {
+            flex-direction: row;
+            justify-content: flex-end;
+            &.cs-reverse {
+                flex-direction: row-reverse;
+            }
+        }
+
+        .cs-content {
+            width: 50%;
+            /* reset the padding, add the section padding back to the section container */
+            padding: 0;
+        }
+
+        .cs-picture-caption {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            gap: 1rem;
+            /* sends it to the right in the 2nd position */
+            order: 2;
+
+            .cs-card-group {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+
+                .cs-item {
+                    display: flex;
+                    flex-direction: row;
+
+                    .cs-flex-group {
+                        align-items: center;
+
+                        .cs-name {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            .cs-picture {
+                // max-width: (494/16rem);
+                /* 518px - 700px */
+                height: 100%;
+                // height: clamp(32.375rem, 63vw, 43.75rem);
+                position: relative;
+            }
+        }
+
+        .cs-text-caption {
+            font-size: var(--mediumFontSize);
+        }
+    }
+}

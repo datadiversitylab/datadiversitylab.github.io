@@ -1,0 +1,83 @@
+---
+layout: 'base.html'
+description: 'Discover the intersection of data science and bioinformatics at the Data Diversity Lab, where innovation meets inquiry across disciplines. Our research is a dynamic exploration of ecology, evolution, human health, and software development, driven by the power of extensive datasets and cutting-edge machine learning approaches.'
+metaTitle: 'Data Diversity Lab University of Arizona'
+tagTitle: 'Home'
+preloadImg: '/assets/images/landing.webp'
+preloadCSS: '/css/local.css'
+permalink: '/'
+eleventyNavigation:
+  key: Home
+  order: 100
+---
+<section id="hero">
+    <div class="hero-content">
+        <div class="heroText">
+            <div>
+                <h1 id="home-h" class="cs-title">{{ home.title }}</h1>
+                <h3 class="cs-title">{{ home.subTitle }}</h3>
+            </div>
+            <p>
+                {{ home.description }}
+            </p>
+            <div class="button-container">
+                {%- for button in home.buttons -%}
+                    <a class="button-solid" href="{{ button.link }}" rel="noopener">
+                        {{ button.title }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="cs-picture-caption">
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="/assets/images/landing-m.webp">
+            <source media="(min-width: 601px)" srcset="/assets/images/landing.webp">
+            <img
+                aria-hidden="true"
+                decoding="async"
+                src="/assets/images/landing.webp"
+                alt="new home"
+            >
+        </picture>
+        <div class="cs-caption-slider-wrapper">
+            {%- for image in home.backgroundImages -%}
+                <p class="cs-text-caption" data-srcset="{{ image.image }}">
+                </p>
+            {% endfor %}
+            <div class="cs-arrow-wrapper">
+                <div class="cs-image-slider">
+                    {%- for image in home.backgroundImages -%}
+                        <div class="cs-image-selector {{ 'active' if loop.index == 1 else '' }}"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                service cards                 -->
+<!-- ============================================ -->
+
+<section id="service-cards">
+    <div class="cs-container">
+        <div class="cs-card-group">
+            {%- for card in home.cards -%}
+                <div class="cs-item">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{{ card.image }}">
+                        <!--Tablet and up Image-->
+                        <source media="(min-width: 601px)" srcset="{{ card.image }}">
+                        <img loading="lazy" decoding="async" src="{{ card.image }}" alt="employee" width="522" height="370" aria-hidden="true">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-name">{{card.title}}</span>
+                        <span class="cs-desc">{{card.description}}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

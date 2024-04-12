@@ -1,0 +1,154 @@
+---
+layout: 'base.html'
+description: "Publications of the Data Diversity Lab"
+metaTitle: 'Publications'
+tagTitle: 'Publications'
+preloadImg: ''
+preloadCSS: '/css/publications.css'
+preloadJS: '/js/publications.js'
+permalink: 'publications/'
+eleventyNavigation:
+    key: Publications
+    parent: Research
+    order: 100
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+<script id="altmetric-embed-js" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/altmetric_badges-e7ba41a192efc3e63f5d48f8a1916dec4b1b49c01075bc7b39481408957b3b28.js"></script>
+<script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Publications</h1>
+            <p class="cs-text">
+                Browse through our lab's publications and stay informed about our latest findings.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                The Team                      -->
+<!-- ============================================ -->
+
+{# Use the processedPublications collection #}
+{# Use the processedPublicationsJournalTypes collection #}
+
+<section id="meet-team-547">
+    <div class="cs-container">
+        <div class="cs-content cs-sidebar cs-filter-searchable">
+            <div class="cs-search-title-wrapper">
+                <h6 class="cs-title">Search</h6>
+                <div aria-hidden="true" class="line line-full"></div>
+                <div class="cs-search-wrapper">
+                    <input type="text" id="search" class="cs-search" placeholder="Title or Author">
+                    <img src="../assets/icons/order-desc.svg" class="order-by-button" alt="order by" width="25" height="25">
+                </div>
+            </div>
+            <div class="cs-filter-button-wrapper">
+                <div class="cs-add-filter-wrapper">
+                    <h6 class="cs-title">Add filters</h6>
+                    <img src="../assets/icons/plus.svg" class="plus-button" alt="filter" width="25" height="25">
+                </div>
+
+                <div class="cs-filter-year-wrapper">
+                    <h6 class="cs-title">Year</h6>
+                    <div aria-hidden="true" class="line line-full"></div>
+                    <div class="cs-start-end-wrapper">
+                        <input type="text" id="startYear" placeholder="Start Year">
+                        <input type="text" id="endYear" placeholder="End Year">
+                    </div>
+                </div>
+
+                <div class="cs-filter-keywords-wrapper">
+                    <h6 class="cs-title">Keywords</h6>
+                    <div aria-hidden="true" class="line line-full"></div>
+                    <div class="cs-filter-wrapper cs-text">
+                        <div data-filter="all" class="active filter-option">All ({{ collections.processedPublications["publications"] }})</div>
+                        {% for keyword, count in collections.processedPublications %}
+                            {% if keyword != 'publications' %}
+                                <div data-filter="{{ keyword }}" class="filter-option">{{ keyword }} ({{ count }})</div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="cs-filter-journal-type-wrapper">
+                    <h6 class="cs-title">Journals</h6>
+                    <div aria-hidden="true" class="line line-full"></div>
+                    <div class="cs-filter-wrapper cs-text">
+                        <div data-filter="all" class="active filter-option">All ({{ collections.processedPublications["publications"] }})</div>
+                        {% set sortedPublications = collections.processedPublicationsJournalTypes | dictsort %}
+                        {% for item in sortedPublications %}
+                            <div data-filter="{{ item[0] }}" class="filter-option">{{ item[0] }} ({{ item[1] }})</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-title-card-wrapper">
+            <div class="cs-card-group">
+                {%- for publication in collections.publications | sort(attribute='data.order') -%}
+                    <div class="cs-item">
+                        {%- if publication.data.badgeImage -%}
+                            <div class="cs-badge">{{ publication.data.badgeImage | safe }}</div>
+                        {%- endif -%}
+                        <picture class="cs-picture">
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)" srcset="{{ publication.data.image }}">
+                            <!--Tablet and up Image-->
+                            <source media="(min-width: 601px)" srcset="{{ publication.data.image }}">
+                            <img loading="lazy" decoding="async" src="{{ publication.data.image }}" alt="" width="522" height="370" aria-hidden="true">
+                        </picture>
+                        <div class="cs-flex-group">
+                            <span class="cs-publication-type">{{ publication.data.publicationType }}</span>
+                            <span class="cs-name">{{ publication.data.publicationTitle | markdown | safe }}</span>
+                            <span class="cs-publication-author">{{ publication.data.publicationAuthor | highlightAuthors(collections.team) | safe }}</span>
+                            <span class="cs-publication-year">{{ publication.data.publicationDate }}</span>
+                            <span class="cs-desc">
+                                <div class="read-more-text">{{ publication.data.publicationAbstract | markdown | safe }}</div>
+                                <span class="read-more-btn">...read more</span>
+                            </span>
+                            <div aria-hidden="true" class="line line-full"></div>
+                            <div class="cs-item-filters">
+                                {%- for filter in publication.data.tags -%}
+                                    {%- if filter != 'publications' -%}
+                                        <div class="cs-filter">{{ filter }}</div>
+                                    {%- endif -%}
+                                {%- endfor -%}
+                            </div>
+                            {%- if publication.data.pdfLink or publication.data.webLink or publication.data.pdfDocument -%}
+                                <div aria-hidden="true" class="line line-full"></div>
+                                <div class="cs-item-social">
+                                    {%- set socials = [ {'platform': 'pdfLink', 'icon': 'pdf.svg'}, {'platform': 'pdfDocument', 'icon': 'pdf.svg'}, {'platform': 'webLink', 'icon': 'link.svg'}] -%}
+                                    {%- for social in socials -%}
+                                        {%- if publication.data[social.platform] -%}
+                                            <a href="{{ publication.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                </div>
+                            {%- endif -%}
+                        </div>
+                    </div>
+                {%- endfor -%}
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="copyright-notice">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h5 class="cs-title">Statement: Copyright Notice</h5>
+            <p class="cs-text">
+                These documents are protected by various copyright laws. However, I may distribute copies to individuals for personal, research use. Your click on any of the PDF links above constitutes your request for a personal copy of the linked article and my delivery of a personal copy. Any other use or distribution is prohibited. These are provided as a means to ensure timely dissemination of scholarly and technical work on a noncommercial basis.
+            </p>
+        </div>
+    </div>
+</section>

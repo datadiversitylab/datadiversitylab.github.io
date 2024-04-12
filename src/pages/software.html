@@ -1,0 +1,102 @@
+---
+layout: 'base.html' 
+description: "Software of the Data Diversity Lab"
+metaTitle: 'Software'
+tagTitle: 'Software'
+preloadImg: ''
+preloadCSS: '/css/software.css'
+preloadJS: '/js/software.js'
+permalink: 'software/'
+eleventyNavigation:
+    key: Software
+    order: 600
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Software</h1>
+            <p class="cs-text">
+                Our software development focuses on enhancing accessibility and functionality in various areas. We're interested in simplifying and optimizing processes in phylogenetics, data analysis, regression tasks, among others. All our code is open source and available on github. Click on the links below to learn more about the software we've developed.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                Softwares                   -->
+<!-- ============================================ -->
+{%- set tags = [] -%}
+{%- for software in collections.softwares | sort(attribute='data.order') -%}
+    {%- for tag in software.data.tags -%}
+        {%- if not tags.includes(tag | string) and tag != "softwares" -%}
+            {%- set tags = tags.concat(tag | string) -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endfor -%}
+
+<section id="software-547">
+    <div class="cs-container">
+        <div class="cs-content cs-sidebar">
+            <h6 class="cs-title">Libraries & packages</h6>
+            <div class="cs-filter-wrapper cs-text">
+                <div data-filter="All" class="active">All</div>
+                {%- for tag in tags | sort(true) -%}
+                    <div data-filter="{{ tag }}">{{ tag }}</div>
+                {%- endfor -%}
+            </div>
+        </div>
+        <div class="cs-title-card-wrapper">
+            {%- for tag in tags | sort(true) -%}
+                <h3 class="cs-title cs-group-title {{ tag | replace(' ', '-') | lower }}">{{ tag }}</h3>
+                <div id="section{{ tag }}" class="cs-card-group">
+                    {%- for software in collections.softwares | sort(attribute='data.order') -%}
+                        {%- if software.data.tags.toString().includes(tag) -%}
+                            <div class="cs-item">
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="{{ software.data.image }}">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="{{ software.data.image }}">
+                                    <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="{{ software.data.image }}" alt="{{ software.data.imageAlt }}" width="522" height="370" aria-hidden="true">
+                                </picture>
+                                <div class="cs-flex-group">
+                                    <span class="cs-name">{{ software.data.Name }}</span>
+                                    <span class="cs-timeline">{{ software.data.Location }}</span>
+                                    <span class="cs-desc">
+                                        <span class="read-more-text">{{ software.data.Description | markdown | safe }}</span>
+                                        <span class="read-more-btn">...read more</span>
+                                    </span>
+                                    <div class="cs-item-filters" style="display: none;">
+                                        {%- for filter in software.data.tags -%}
+                                            {%- if filter != 'software' -%}
+                                                <div class="cs-filter">{{ filter }}</div>
+                                            {%- endif -%}
+                                        {%- endfor -%}
+                                    </div>      
+                                    <div aria-hidden="true" class="line line-full"></div>
+                                    {%- if software.data.github or software.data.link -%}
+                                        <div class="cs-item-social">
+                                            {%- set socials = [{'platform': 'github', 'icon': 'github.svg'}, {'platform': 'link', 'icon': 'link.svg'}] -%}
+                                            {%- for social in socials -%}
+                                                {%- if software.data[social.platform] -%}
+                                                    <a href="{{ software.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                                {%- endif -%}
+                                            {%- endfor -%}
+                                        </div>
+                                    {%- endif -%}
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+            {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,96 @@
+---
+layout: 'base.html' 
+description: "Meta description for the page"
+metaTitle: 'Title that shows up on social OG tags'
+tagTitle: 'Conferences'
+preloadImg: ''
+preloadCSS: '/css/conferences.css'
+preloadJS: '/js/scrollTo.js'
+permalink: 'conferences/'
+eleventyNavigation:
+    key: Conferences
+    parent: Research
+    order: 300
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Conferences</h1>
+            <p class="cs-text">
+                At the data diversity lab, we believe in the importance of dialogue and collaboration to propel scientific inquiry forward. In this section, we invite you to explore our engagement in conferences, symposia, and workshops that have been instrumental in shaping our research narrative.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                Conferences                   -->
+<!-- ============================================ -->
+{%- set tags = [] -%}
+{%- for conference in collections.conferences | sort(attribute='data.order') -%}
+    {%- for tag in conference.data.tags -%}
+        {%- if not tags.includes(tag | string) and tag != "conferences" -%}
+            {%- set tags = tags.concat(tag | string) -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endfor -%}
+
+<section id="conference-547">
+    <div class="cs-container">
+        <div class="cs-content cs-sidebar">
+            <h6 class="cs-title">Years</h6>
+            <div class="cs-filter-wrapper cs-text">
+                {%- for tag in tags | sort(true) -%}
+                    <a href="#section{{ tag }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ tag }}</a>
+                {%- endfor -%}
+            </div>
+        </div>
+        <div class="cs-title-card-wrapper">
+            {%- for tag in tags | sort(true) -%}
+                <h3 class="cs-title">{{ tag }}</h3>
+                <div id="section{{ tag }}" class="cs-card-group">
+                    {%- for conference in collections.conferences | sort(attribute='data.order') -%}
+                        {%- if conference.data.tags.toString().includes(tag) -%}
+                            <div class="cs-item">
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="{{ conference.data.image }}">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="{{ conference.data.image }}">
+                                    <img loading="lazy" decoding="async" src="{{ conference.data.image }}" alt="{{ conference.data.imageAlt }}" width="522" height="370" aria-hidden="true">
+                                </picture>
+                                <div class="cs-flex-group">
+                                    <span class="cs-timeline">{{ conference.data.DateSeason }}</span>
+                                    <span class="cs-name">{{ conference.data.Title }}</span>
+                                    <span class="cs-timeline">{{ conference.data.Location }}</span>
+                                    <span class="cs-desc">
+                                        <span class="read-more-text">{{ conference.data.Description | markdown | safe }}</span>
+                                        <span class="read-more-btn">...read more</span>
+                                    </span>
+                                    {%- if conference.data.link or conference.data.document -%}
+                                        <div aria-hidden="true" class="line line-full"></div>
+                                        <div class="cs-item-social">
+                                            {%- set socials = [{'platform': 'link', 'icon': 'link.svg'}, {'platform': 'document', 'icon': 'pdf.svg'}] -%}
+                                            {%- for social in socials -%}
+                                                {%- if conference.data[social.platform] -%}
+                                                    <a href="{{ conference.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                                {%- endif -%}
+                                            {%- endfor -%}
+                                        </div>
+                                    {%- endif -%}
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+            {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</section>

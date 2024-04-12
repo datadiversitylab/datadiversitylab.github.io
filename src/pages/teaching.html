@@ -1,0 +1,166 @@
+---
+layout: 'base.html'
+description: "Teaching at the Data Diversity Lab"
+metaTitle: 'Teaching'
+tagTitle: 'Teaching'
+preloadImg: ''
+preloadCSS: '/css/teaching.css'
+preloadJS: '/js/dropdownCards.js'
+preloadSecondJS: '/js/teaching.js'
+permalink: 'teaching/'
+eleventyNavigation:
+    key: Teaching
+    order: 500
+navOptions:
+    includeSelf: true
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Teaching</h1>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="list-of-cards">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="cs-text">
+                Welcome to the teaching section at the data diversity lab. Our commitment to teaching extends beyond the classroom, aiming to equip students with the tools to ask meaningful questions and navigate the complexities of scientific inquiry. In the courses that we teach, we go beyond the textbook, fostering an environment where students gain skills that transcend the boundaries of academia. We are primarily interested in implementing the following four key teaching principles in the classes that we are involved in:
+            </p>
+        </div>
+        <div class="cs-card-group">
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <h4 class="cs-title">1</h4>
+                    <span class="cs-name">Relevance across careers</span>
+                    <span class="cs-desc">We believe that the training gained in coursework serves as a foundation for success in any career path. Whether you choose a research-intensive role, industry, healthcare, or beyond, the skills cultivated in our courses, such as critical thinking, problem-solving, and data analysis, are universally applicable.</span>
+                </div>
+            </div>
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <h4 class="cs-title">2</h4>
+                    <span class="cs-name">Question-driven learning</span>
+                    <span class="cs-desc">Our teaching philosophy revolves around empowering students to ask relevant questions based on existing knowledge. This skill is central to scientific inquiry, encouraging curiosity and driving discovery. Through engaging coursework, we inspire students to think beyond the facts and develop a deeper understanding of the processes that shape our world.</span>
+                </div>
+            </div>
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <h4 class="cs-title">3</h4>
+                    <span class="cs-name">Methods matter</span>
+                    <span class="cs-desc">In our courses, emphasis is placed on choosing the most appropriate methods to address scientific questions. From experimental design to statistical analysis, students learn to navigate the toolkit of a researcher, gaining practical skills that extend far beyond the classroom.</span>
+                </div>
+            </div>
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <h4 class="cs-title">4</h4>
+                    <span class="cs-name">Real-world applications</span>
+                    <span class="cs-desc">We bridge theory and practice, showcasing how the principles learned in the classroom are applied in real-world scenarios. Through case studies, hands-on projects, and collaborative research opportunities, students see the immediate and tangible impact of their education. </span>
+                </div>
+            </div>
+        </div>
+        <div class="cs-content">
+            <p class="cs-text">
+                As you explore this section, we invite you to consider the broader implications of your education, recognizing that the ability to ask relevant questions and apply appropriate methods is a skill set that transcends academic disciplines and prepares you for a myriad of career paths. If you have any questions or would like to learn more about our teaching approach, feel free to reach out.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="dropdown-cards" class="teaching-experience">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h3 class="cs-title">Teaching experience</h3>
+            <p class="cs-text">
+                Our goal is to demonstrate to students that the training they receive in coursework can benefit them irrespective of their chosen career. Overall, my primary focus is on instructing them in the art of asking relevant questions based on existing knowledge and employing the most appropriate methods to address these questions.
+            </p>
+        </div>
+        <div class="cs-card-group">
+            {%- for experience in collections.teachingExperience | sort(attribute='data.year') | reverse -%}
+                <div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <h4 class="cs-title">Year {{ experience.data.year }}</h4>
+                                <p class="cs-text">Explore the teaching activities and accomplishments of the team in {{ experience.data.title }}.</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                <div class="teaching-table">
+                                    <div class="table-header">
+                                        <div class="header-item" data-label="Semester">Semester</div>
+                                        <div class="header-item" data-label="Course">Course</div>
+                                        <div class="header-item" data-label="Role">Role</div>
+                                        <div class="header-item" data-label="Students">Students</div>
+                                    </div>
+                                    {%- for row in experience.data.rows -%}
+                                        <div class="table-row">
+                                            <div class="data-item" data-label="Semester">{{ row.yearSemester }}</div>
+                                            <div class="data-item" data-label="Course">{{ row.course }}</div>
+                                            <div class="data-item" data-label="Role">{{ row.role }}</div>
+                                            <div class="data-item" data-label="Students">{{ row.studentsAmount }}</div>
+                                        </div>
+                                    {%- endfor -%}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {%- endfor -%}
+            <a class="cs-button-link">
+                <span>View all</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="dropdown-cards" class="student-evaluations">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h3 class="cs-title">Student evaluations</h3>
+            <p class="cs-text">
+                Below are the answers to three short questions from teaching course evaluations for multiple courses that Dr. Román-Palacios taught between 2016 (the first year in the US*) and 2019. No TCEs were available during 2020 due to the COVID pandemic. Only comments concerning Dr. Román-Palacios’ performance as an instructor are available. No comments were filtered out, and students' identities are completely anonymous, even to me! We will be curating TCEs for 2021+ in future years. 
+            </p>
+            <br>
+            <p class="cs-text">
+                *Please note that I taught my first course in August 2016, which was also my first time speaking publicly in English. I moved to the US roughly one month before the start of the semester.
+            </p>
+        </div>
+        <div class="cs-card-group">
+            {%- for evaluation in collections.studentEvaluations | sort(attribute='data.order') -%}
+                <div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <p class="cs-text cs-bold">{{ evaluation.data.title }}</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                {{ evaluation.content | safe }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,84 @@
+---
+layout: 'base.html' 
+description: "News of the Data Diversity Lab"
+metaTitle: 'News'
+tagTitle: 'News'
+preloadImg: ''
+preloadCSS: '/css/news.css'
+preloadJS: '/js/scrollTo.js'
+preloadSecondJS: '/js/dropdownCards.js'
+permalink: 'news/'
+eleventyNavigation:
+    key: News
+    order: 700
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">News</h1>
+            <p class="cs-text">
+                Stay informed and connected with the latest developments, achievements, and exciting happenings at the data diversity lab. Our news section is a space where we share insights, breakthroughs, and stories that reflect the work of our research community. Explore the stories that shape our journey and connect with the dynamic spirit of innovation at the lab. If you have news to share or inquiries about our latest updates, feel free to reach out—we'd love to hear from you.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                News                          -->
+<!-- ============================================ -->
+{%- set tags = [] -%}
+{%- for new in collections.news | sort(attribute='data.order') -%}
+    {%- for tag in new.data.tags -%}
+        {%- if not tags.includes(tag) and tag != "news" -%}
+            {%- set tags = tags.concat(tag) -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endfor -%}
+
+<section id="new-547">
+    <div class="cs-container">
+        <div class="cs-content cs-sidebar">
+            <h6 class="cs-title">Years</h6>
+            <div class="cs-filter-wrapper cs-text">
+                {%- for tag in tags | sort(true) -%}
+                    <a href="#section{{ tag }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ tag }}</a>
+                {%- endfor -%}
+            </div>
+        </div>
+        <div id="dropdown-cards" class="cs-title-card-wrapper">
+            {%- for tag in tags | sort(true) -%}
+                <h3 class="cs-title">{{ tag }}</h3>
+                <div id="section{{ tag }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
+                    {%- for new in collections.news | sort(attribute='data.tags[0]') -%}
+                        {%- if new.data.tags.includes(tag) -%}
+                            <div class="cs-item">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <div>
+                                            <h4 class="cs-title">{{ new.data.Name }}</h4>
+                                        </div>
+                                        <div class="cs-dropdown-icon">
+                                            <img src="../assets/icons/{{ 'chevron-up' if loop.index == 1 else 'chevron-down' }}.svg">
+                                        </div>
+                                    </div>
+                                    <div class="cs-dropdown">
+                                        <div class="cs-dropdown-content">                    
+                                            {{ new.content | safe }}
+                                        </div>
+                                    </div>                    
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+            {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</section>

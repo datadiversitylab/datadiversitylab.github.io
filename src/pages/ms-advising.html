@@ -1,0 +1,83 @@
+---
+layout: 'base.html'
+description: "Advising at the Data Diversity Lab"
+metaTitle: 'MS advising'
+tagTitle: 'MS advising'
+preloadImg: ''
+preloadCSS: '/css/ms-advising.css'
+preloadJS: '/js/dropdownCards.js'
+preloadSecondJS: '/js/ms-advising.js'
+permalink: 'ms-advising/'
+eleventyNavigation:
+    key: MS advising
+    parent: Teaching
+    order: 600
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">{{ msadvising.title }}</h1>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="list-of-cards">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="cs-text">{{ msadvising.paragraphOne }}</p>
+        </div>
+        <div class="cs-card-group">
+            {%- for card in msadvising.numberedCards -%}
+                <div class="cs-item">
+                    <div class="cs-flex-group">
+                        <h4 class="cs-title">{{ loop.index }}</h4>
+                        <span class="cs-name">{{ card.title }}</span>
+                        <span class="cs-desc">{{ card.description }}</span>
+                    </div>
+                </div>
+            {%- endfor -%}
+        </div>
+        <div class="cs-content">
+            <p class="cs-text">{{ msadvising.paragraphTwo }}</p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="dropdown-cards" class="student-evaluations">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h3 class="cs-title">{{ msadvising.secondTitle }}</h3>
+            <p class="cs-text">{{ msadvising.paragraphThree }}</p>
+        </div>
+        <div class="cs-card-group">
+            {%- for card in msadvising.advisingCards | sort(attribute='order') -%}
+                <div class="cs-item">
+                    <div class="cs-flex-group">
+                        <div class="cs-dropdown-show">
+                            <div>
+                                <p class="cs-text cs-bold">{{ card.title }}</p>
+                            </div>
+                            <div class="cs-dropdown-icon">
+                                <img src="../assets/icons/chevron-down.svg">
+                            </div>
+                        </div>
+                        <div class="cs-dropdown">
+                            <div class="cs-dropdown-content">
+                                {{ card.description | safe }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</section>

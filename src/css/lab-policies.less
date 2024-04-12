@@ -1,0 +1,122 @@
+/*-- -------------------------- -->
+<---          Content           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #content-1450 {
+        padding: var(--sectionPadding);
+        .cs-container {
+            width: 100%;
+            max-width: (820/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: var(--sectionGap);;
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title, .cs-text {
+            max-width: 100%;
+        }
+
+
+
+    }
+}
+
+/*-- -------------------------- -->
+<---       Information Cards     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #information-cards {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (496/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cs-flex-group {
+            gap: 0.5rem;
+        }
+
+        .cs-content {
+            /* set text aling to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-name {
+            text-align: center;
+        }
+
+        .cs-desc {
+            text-align: left;
+        }
+
+        .cs-topper,
+        .cs-title,
+        .cs-text {
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: auto;
+            /* height divided by width, changed at desktop */
+            aspect-ratio: 328/250;
+            /* clips image tag from overflowing on hover */
+            overflow: hidden;
+            display: block;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* makes image behave like a background image */
+                object-fit: cover;
+                /* places top of the image at the top of the box */
+                object-position: top;
+                transition: transform 0.6s;
+            }
+        }
+
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #information-cards {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+        .cs-item {
+            flex: 0 0 calc(25% - 14px);
+        }
+    }
+}

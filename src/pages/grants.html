@@ -1,0 +1,99 @@
+---
+layout: 'base.html' 
+description: "Grants of the Data Diversity Lab"
+metaTitle: 'Grants'
+tagTitle: 'Grants'
+preloadImg: ''
+preloadCSS: '/css/grants.css'
+preloadJS: '/js/scrollTo.js'
+permalink: 'grants/'
+eleventyNavigation:
+    key: Grants
+    parent: Research
+    order: 200
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Explore grants</h1>
+            <p class="cs-text">
+                At the data diversity lab, our work is often supported by research grants. In this grants section, we offer a window into the current and past funding landscape within the lab. We are committed to transparency and accountability in our research program.
+            </p>
+            <br>
+            <p class="cs-text">
+                We express our gratitude to the funding agencies and organizations that believe in our work. If you have any inquiries or would like to collaborate on future grant opportunities, please contact us.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                Grant                         -->
+<!-- ============================================ -->
+{%- set tags = [] -%}
+{%- for grant in collections.grants | sort(attribute='data.order') -%}
+    {%- for tag in grant.data.tags -%}
+        {%- if not tags.includes(tag | string) and tag != "grants" -%}
+            {%- set tags = tags.concat(tag | string) -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endfor -%}
+
+<section id="grant-547">
+    <div class="cs-container">
+        <div class="cs-content cs-sidebar">
+            <h6 class="cs-title">Grant providers</h6>
+            <div class="cs-filter-wrapper cs-text">
+                {%- for tag in tags | sort(true) -%}
+                    <a href="#section{{ tag }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ tag }}</a>
+                {%- endfor -%}
+            </div>
+        </div>
+        <div class="cs-title-card-wrapper">
+            {%- for tag in tags | sort(true) -%}
+                <h3 class="cs-title">{{ tag }}</h3>
+                <div id="section{{ tag }}" class="cs-card-group">
+                    {%- for grant in collections.grants | sort(attribute='data.order') -%}
+                        {%- if grant.data.tags.toString().includes(tag) -%}
+                            <div class="cs-item">
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="{{ grant.data.image }}">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="{{ grant.data.image }}">
+                                    <img loading="lazy" decoding="async" src="{{ grant.data.image }}" alt="{{ grant.data.imageAlt }}" width="522" height="370" aria-hidden="true">
+                                </picture>
+                                <div class="cs-flex-group">
+                                    <span class="cs-name">{{ grant.data.grantName }}</span>
+                                    <span class="cs-timeline">{{ grant.data.grantAmount }}</span>
+                                    <span class="cs-desc">
+                                        <span class="read-more-text">{{ grant.data.grantDesc }}</span>
+                                        <span class="read-more-btn">...read more</span>
+                                    </span>
+                                    {%- if grant.data.link or grant.data.document -%}
+                                        <div aria-hidden="true" class="line line-full"></div>
+                                        <div class="cs-item-social">
+                                            {%- set socials = [{'platform': 'link', 'icon': 'link.svg'}, {'platform': 'document', 'icon': 'pdf.svg'}] -%}
+                                            {%- for social in socials -%}
+                                                {%- if grant.data[social.platform] -%}
+                                                    <a href="{{ grant.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                                {%- endif -%}
+                                            {%- endfor -%}
+                                        </div>
+                                    {%- endif -%}
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+            {%- endfor -%}
+        </div>
+        
+    </div>
+</section>

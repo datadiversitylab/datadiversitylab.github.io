@@ -1,0 +1,15 @@
+{
+  "name": "Data Diversity Lab",
+  "email": "odb.developer@gmail.com",
+  "phone": "509-903-6860",
+  "phoneFormatted": "(509) 903-6860",
+  "address": {
+    "lineOne": "1103 E. 2nd St.",
+    "lineTwo": "Richard A. Harvill Room 409",
+    "city": "Tucson",
+    "county": "AZ",
+    "postcode": "85721",
+    "mapLink": "https://maps.app.goo.gl/SqdnkhY7Grod4WcW9"
+  },
+  "domain": "datadiversitylab.github.io"
+}

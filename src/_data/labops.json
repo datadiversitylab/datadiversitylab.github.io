@@ -1,0 +1,37 @@
+{
+  "title": "LabOps",
+  "paragraphOne": "Paragraph one",
+  "numberedCards" : [
+    {
+      "title": "Title",
+      "description": "description"
+    },
+    {
+      "title": "Title",
+      "description": "description"
+    },
+    {
+      "title": "Title",
+      "description": "description"
+    },
+    {
+      "title": "Title",
+      "description": "description"
+    }
+  ],
+  "paragraphTwo": "Paragraph two",
+  "secondTitle": "Second title",
+  "paragraphThree": "Paragraph three",
+  "labopsCards" : [
+    {
+      "order": 1,
+      "title": "LabOps card one",
+      "description": "Description"
+    },
+    {
+      "order": 2,
+      "title": "LabOps card two",
+      "description": "Description"
+    }
+  ]
+}

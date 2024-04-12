@@ -1,0 +1,96 @@
+.cs-logo .cs-dark {
+  display: none;
+}
+/*-- -------------------------- -->
+<---       Service Cards        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #service-cards {
+    padding: var(--sectionPadding);
+  }
+  #service-cards .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 31rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: var(--sectionGap);
+  }
+  #service-cards .cs-content {
+    /* set text aling to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #service-cards .cs-topper,
+  #service-cards .cs-title,
+  #service-cards .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+  #service-cards .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #service-cards .cs-picture {
+    width: 100%;
+    height: auto;
+    /* height divided by width, changed at desktop */
+    aspect-ratio: 1.312;
+    /* clips image tag from overflowing on hover */
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  #service-cards .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* makes image behave like a background image */
+    object-fit: cover;
+    /* places top of the image at the top of the box */
+    object-position: top;
+    transition: transform 0.6s;
+  }
+  #service-cards .cs-flex-group {
+    padding-top: 0;
+  }
+  #service-cards .cs-desc {
+    margin: 0.25rem 0;
+  }
+  #cs-navigation img.cs-drop-icon {
+    filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(346deg) brightness(102%) contrast(104%);
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #cs-navigation img.cs-drop-icon {
+    filter: unset;
+  }
+  #cs-navigation .cs-li-link {
+    color: var(--bodyTextColorWhite);
+  }
+  body.scroll #cs-navigation img.cs-drop-icon {
+    filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(346deg) brightness(102%) contrast(104%);
+  }
+  #service-cards .cs-container {
+    max-width: 80rem;
+  }
+  #service-cards .cs-card-group {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #service-cards .cs-flex-group {
+    align-items: flex-start;
+  }
+}

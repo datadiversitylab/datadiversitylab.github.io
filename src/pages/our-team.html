@@ -1,0 +1,136 @@
+---
+layout: 'base.html' 
+description: "Our Team at the Data Diversity Lab"
+metaTitle: 'Our Team'
+tagTitle: 'Our Team'
+preloadImg: ''
+preloadCSS: '/css/our-team.css'
+preloadJS: '/js/our-team.js'
+permalink: 'our-team/'
+eleventyNavigation:
+    key: Our team
+    parent: The lab
+    order: 100
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Our team</h1>
+            <p class="cs-text">
+                Below is a list of the current members affiliated to the lab. Feel free to visit their personal or academic websites for additional details on their research. Everyone is also available in case you’re interested in reaching out to them by email. 
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                The Team                      -->
+<!-- ============================================ -->
+
+{%- set tags = ["Current", "Former"] -%}
+{# Use the processedTeams collection #}
+
+<section id="meet-team-547">
+    <div class="cs-container">
+        <div class="cs-content cs-sidebar">
+            <h6 class="cs-title">Member types</h6>
+            <div aria-hidden="true" class="line line-full"></div>
+            <div class="cs-filter-wrapper cs-text">
+                <div data-filter="All" class="active">All ({{ collections.processedTeams["team"] }})</div>
+                <div data-filter="PI">PI ({{ collections.processedTeams["PI"] }})</div>
+                <div data-filter="Staff">Staff ({{ collections.processedTeams["Staff"] }})</div>
+                <div data-filter="MSc student">MSc student ({{ collections.processedTeams["MSc student"] }})</div>
+                <div data-filter="PhD student">PhD student ({{ collections.processedTeams["PhD student"] }})</div>
+                <div data-filter="Capstone student">Capstone student ({{ collections.processedTeams["Capstone student"] }})</div>
+                <div data-filter="Undergraduate student">Undergraduate student ({{ collections.processedTeams["Undergraduate student"] }})</div>
+                <div data-filter="Intern">Intern ({{ collections.processedTeams["Intern"] }})</div>
+            </div>
+            <div class="cs-filter-button-wrapper">
+                <div class="cs-filter-year-wrapper">
+                    <h6 class="cs-title">Year</h6>
+                    <div aria-hidden="true" class="line line-full"></div>
+                    <div class="cs-start-end-wrapper">
+                        <input type="text" id="startYear" placeholder="Start Year">
+                        <input type="text" id="endYear" placeholder="End Year">
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="cs-title-card-wrapper">
+            {%- for tag in tags -%}
+                <h3 class="cs-title">{{ tag }} members</h3>
+                {%- if tag == "Current" -%}
+                    {%- set members = collections.team | sortMulti('memberDate', false, 'order', true) -%}
+                {%- else -%}
+                    {%- set members = collections.team | sortMulti('memberDate', true, 'order', true) -%}
+                {%- endif -%}
+                <div class="cs-card-group">
+                    {% for member in members %}
+                        {%- if tag in member.data.tags -%}
+                            <div class="cs-item">
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="{{ member.data.image }}">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="{{ member.data.image }}">
+                                    <img loading="lazy" decoding="async" src="{{ member.data.image }}" alt="{{ member.data.imageAlt }}" width="522" height="370" aria-hidden="true">
+                                </picture>
+                                <div class="cs-flex-group">
+                                    <span class="cs-name">{{ member.data.memberName }} 
+                                        {%- if member.data.memberEducation -%}
+                                            <span class="cs-education">, {{ member.data.memberEducation }}</span>
+                                        {%- endif -%}
+                                    </span>
+                                    <span class="cs-job-title">{{ member.data.memberTitle }}</span>
+                                    <span class="cs-timeline"><span class="cs-start-date-year-data">{{ member.data.memberDate }}</span> {%- if member.data.memberDateEnd -%} {{" - "}} {{ member.data.memberDateEnd }} {%- endif -%}</span>
+                                    <span class="cs-desc">
+                                        <span class="read-more-text">{{ member.data.memberBio }}</span>
+                                        <span class="read-more-btn">...read more</span>
+                                    </span>
+                                    <div aria-hidden="true" class="line line-full"></div>
+                                    <div class="cs-item-filters">
+                                        {%- for filter in member.data.tags -%}
+                                            {%- if filter != 'team' and filter != 'Current' and filter != 'Former' -%}
+                                                <div class="cs-filter">{{ filter }}</div>
+                                            {%- endif -%}
+                                        {%- endfor -%}
+                                    </div>                                
+                                    {%- if member.data.linkedin or member.data.email or member.data.link or member.data.resume or member.data.github -%}
+                                        <div aria-hidden="true" class="line line-full"></div>
+                                        <div class="cs-item-social">
+                                            {%- set socials = [{'platform': 'linkedin', 'icon': 'linkedin.svg'}, {'platform': 'email', 'icon': 'mail.svg'}, {'platform': 'link', 'icon': 'link.svg'}, {'platform': 'resume', 'icon': 'demography.svg'}, {'platform': 'github', 'icon': 'github.svg'}] -%}
+                                            {%- for social in socials -%}
+                                                {%- if member.data[social.platform] -%}
+                                                    {%- if social.platform == 'email' -%}
+                                                        {%- if ',' in member.data[social.platform] -%}
+                                                            {%- set emails = member.data[social.platform] | split(',') -%}
+                                                            {%- for email in emails -%}
+                                                                <a href="mailto:{{ email }}"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                                            {%- endfor -%}
+                                                        {%- else -%}
+                                                            <a href="mailto:{{ member.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                                        {%- endif -%}
+                                                    {%- elif social.platform == 'github' -%}                                                
+                                                        <a href="https://github.com/{{ member.data[social.platform] }}" target="_blank" rel="noopener noreferrer"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                                    {%- else -%}
+                                                        <a href="{{ member.data[social.platform] }}" target="_blank" rel="noopener noreferrer"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                                    {%- endif -%}
+                                                {%- endif -%}
+                                            {%- endfor -%}
+                                        </div>
+                                    {%- endif -%}
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</section>   

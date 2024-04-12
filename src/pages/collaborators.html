@@ -1,0 +1,133 @@
+---
+layout: 'base.html' 
+description: "Collaborators of the Data Diversity Lab"
+metaTitle: 'Collaborators'
+tagTitle: 'Collaborators'
+preloadImg: ''
+preloadCSS: '/css/collaborators.css'
+permalink: 'collaborators/'
+eleventyNavigation:
+    key: Collaborators
+    parent: The lab
+    order: 500
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Collaborators</h1>
+            <p class="cs-text">
+                Welcome to the collaborators page, where the synergy of shared knowledge and expertise comes to life. On this page, you'll find a curated list of our closest collaborators, individuals and teams who often interact with us in multiple projects, pushing the boundaries of discovery in data science, phylogenetics, climate science, among other fields.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                The Team                      -->
+<!-- ============================================ -->
+
+<section id="collaborator-current-cards">
+    <div class="cs-container">
+        <div class="cs-title-card-wrapper">
+            <div class="cs-card-group">
+                {%- for collaborator in collections.collaborators | sort(attribute='data.order') -%}
+                    {%- if 'Current' in collaborator.data.tags -%}
+                        <div class="cs-item">
+                            {%- if collaborator.data.image -%}
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="{{ collaborator.data.image }}">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="{{ collaborator.data.image }}">
+                                    <img loading="lazy" decoding="async" src="{{ collaborator.data.image }}" alt="{{ collaborator.data.imageAlt }}" width="522" height="370" aria-hidden="true">
+                                </picture>
+                            {%- endif -%}
+                            <div class="cs-flex-group">
+                                <span class="cs-name">{{ collaborator.data.collaboratorName }}</span>
+                                <span class="cs-job-title">{{ collaborator.data.collaboratorTitle }}</span>
+                                <span class="cs-timeline">{{ collaborator.data.collaboratorDate }}</span>
+                                <span class="cs-desc">
+                                    {{ collaborator.data.collaboratorBio }}
+                                </span>
+                                <div aria-hidden="true" class="line line-full"></div>
+                                {%- if collaborator.data.linkedin or collaborator.data.email or collaborator.data.link or collaborator.data.resume -%}
+                                    <div class="cs-item-social">
+                                        {%- set socials = [{'platform': 'linkedin', 'icon': 'linkedin.svg'}, {'platform': 'email', 'icon': 'mail.svg'}, {'platform': 'link', 'icon': 'link.svg'}, {'platform': 'resume', 'icon': 'demography.svg'}] -%}
+                                        {%- for social in socials -%}
+                                            {%- if collaborator.data[social.platform] -%}
+                                                <a href="{{ collaborator.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                            {%- endif -%}
+                                        {%- endfor -%}
+                                    </div>
+                                {%- endif -%}
+                            </div>
+                        </div>
+                    {%- endif -%}
+                {%- endfor -%}
+            </div>
+        </div>   
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="content-1450">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="cs-text">
+                Our collaborative network extends far and wide, and while we cherish the relationships highlighted on this page, it is by no means an exhaustive list of our dynamic partnerships. The non-extensive list below provides a glimpse into the diverse tapestry of collaborators who have enriched our research landscape.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="collaborator-past-cards">
+    <div class="cs-container">
+        <div class="cs-title-card-wrapper">
+            <div class="cs-card-group">
+                {%- for collaborator in collections.collaborators | sort(attribute='data.order') -%}
+                    {%- if 'Past' in collaborator.data.tags -%}
+                        <div class="cs-item">
+                            {%- if collaborator.data.image -%}
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="{{ collaborator.data.image }}">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="{{ collaborator.data.image }}">
+                                    <img loading="lazy" decoding="async" src="{{ collaborator.data.image }}" alt="{{ collaborator.data.imageAlt }}" width="522" height="370" aria-hidden="true">
+                                </picture>
+                            {%- endif -%}
+                            <div class="cs-flex-group">
+                                <span class="cs-name">{{ collaborator.data.collaboratorName }}</span>
+                                <span class="cs-job-title">{{ collaborator.data.collaboratorTitle }}</span>
+                                <span class="cs-timeline">{{ collaborator.data.collaboratorDate }}</span>
+                                <span class="cs-desc">
+                                    {{ collaborator.data.collaboratorBio }}
+                                </span>
+                                <div aria-hidden="true" class="line line-full"></div>
+                                {%- if collaborator.data.linkedin or collaborator.data.email or collaborator.data.link or collaborator.data.resume -%}
+                                    <div class="cs-item-social">
+                                        {%- set socials = [{'platform': 'linkedin', 'icon': 'linkedin.svg'}, {'platform': 'email', 'icon': 'mail.svg'}, {'platform': 'link', 'icon': 'link.svg'}, {'platform': 'resume', 'icon': 'demography.svg'}] -%}
+                                        {%- for social in socials -%}
+                                            {%- if collaborator.data[social.platform] -%}
+                                                <a href="{{ collaborator.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                            {%- endif -%}
+                                        {%- endfor -%}
+                                    </div>
+                                {%- endif -%}
+                            </div>
+                        </div>
+                    {%- endif -%}
+                {%- endfor -%}
+            </div>
+        </div>   
+    </div>
+</section>

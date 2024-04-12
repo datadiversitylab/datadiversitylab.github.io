@@ -1,0 +1,186 @@
+/*-- -------------------------- -->
+<---          Content           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #content-1450 {
+    padding: var(--sectionPadding);
+  }
+  #content-1450 .cs-container {
+    width: 100%;
+    max-width: 51.25rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: var(--sectionGap);
+  }
+  #content-1450 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #content-1450 .cs-title,
+  #content-1450 .cs-text {
+    max-width: 100%;
+  }
+}
+/*-- -------------------------- -->
+<---       Software             -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #software-547 {
+    padding: var(--sectionPadding);
+  }
+  #software-547 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: 1rem;
+  }
+  #software-547 .cs-content {
+    /* set text aling to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #software-547 .cs-filter-wrapper {
+    justify-content: center;
+  }
+  #software-547 .cs-topper,
+  #software-547 .cs-title,
+  #software-547 .cs-text {
+    color: var(--bodyTextColor);
+  }
+  #software-547 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 0 1.25rem 0;
+  }
+  #software-547 .cs-item {
+    /* changed to left at desktop */
+    text-align: center;
+    list-style: none;
+    width: 100%;
+    height: fit-content;
+    max-width: 32.625rem;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bodyTextColorWhite);
+    box-shadow: var(--boxCardShadow);
+  }
+  #software-547 .cs-picture {
+    width: 100%;
+    height: auto;
+    /* height divided by width, changed at desktop */
+    aspect-ratio: 1.5;
+    /* clips image tag from overflowing on hover */
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+  #software-547 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* makes image behave like a background image */
+    object-fit: contain;
+    /* places top of the image at the top of the box */
+    object-position: top;
+    transition: transform 0.6s;
+  }
+  #software-547 .cs-name {
+    font-size: var(--headerFourFontSize);
+  }
+  #software-547 .cs-filter-wrapper {
+    gap: 0;
+  }
+  #software-547 .cs-filter-wrapper a {
+    padding: 0.625rem;
+    border-bottom: white 3px solid;
+  }
+  #software-547 .cs-filter-wrapper a.active {
+    border-bottom: var(--primary) 3px solid;
+  }
+  #software-547 .cs-title-card-wrapper .cs-title {
+    margin: 0 0 1.25rem 0;
+  }
+  #software-547 .cs-timeline {
+    /* 20px - 25px */
+    font-size: var(--mediumFontSize);
+    margin: 0 0 0.125rem 0;
+    width: 100%;
+    line-height: 1.2em;
+    font-weight: 400;
+    text-align: inherit;
+    color: var(--bodyTextColor);
+    display: block;
+    text-align: left;
+  }
+  #software-547 .cs-desc {
+    font-size: var(--bodyFontSize);
+    max-height: 9em;
+    overflow: hidden;
+    position: relative;
+  }
+  #software-547 .cs-desc.show-more {
+    overflow: unset;
+    max-height: unset;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #software-547 .cs-card-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #software-547 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #software-547 .cs-filter-wrapper {
+    gap: 0;
+  }
+  #software-547 .cs-filter-wrapper a {
+    padding: 0.625rem;
+    border-bottom: none;
+    border-left: white 3px solid;
+  }
+  #software-547 .cs-filter-wrapper a.active {
+    border-left: var(--primary) 3px solid;
+    border-bottom: none;
+  }
+  #software-547 .cs-filter-wrapper {
+    justify-content: flex-start;
+  }
+  #software-547 .cs-content {
+    width: 20%;
+    align-items: flex-start;
+  }
+  #software-547 .cs-card-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
