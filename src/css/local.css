@@ -65,6 +65,7 @@
   }
   #service-cards .cs-flex-group {
     padding-top: 0;
+    height: auto;
   }
   #service-cards .cs-desc {
     margin: 0.25rem 0;
