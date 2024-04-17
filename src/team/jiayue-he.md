@@ -1,18 +1,18 @@
 ---
-order: 80
 memberName: Jiayue He
-memberTitle: MSc student
 memberDate: 2023
-memberDateEnd: Present
 memberBio: TBD
+resume: null
+imageAlt: Portrait of Jiayue He
+order: 80
+date: 2024-04-17T10:45:00.000Z
+memberDateEnd: Present
 tags:
   - Current
-  - MSc student
-  - Capstone student
-linkedin:
-email:
-link:
-resume:
+  - MSc capstone student
+linkedin: null
+email: null
+link: null
 image: /assets/images/our-team/jiayue-he.png
-imageAlt: Portrait of Jiayue He
+memberTitle: MSc student
 ---
