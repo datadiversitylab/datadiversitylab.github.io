@@ -7,18 +7,17 @@ memberBio: Hector is the data diversity lab’s Manager. He holds dual degrees i
   humanities to advance equitable causes. From his position at the data
   diversity lab, Hector is interested in offering a unique perspective and a
   commitment to creating a just future. 
-tags:
-  - Current
-  - Staff
-  - X
-linkedin: https://www.linkedin.com/in/hectordanielgarcia/
-email: hdg1@arizona.edu
-link: null
 resume: null
-image: /assets/images/our-team/hector-d-garcia-verdugo.png
 imageAlt: Portrait of Hector D. Garcia-Verdugo
 order: 20
 date: 2024-04-17T11:55:00.000Z
 memberDateEnd: Present
+tags:
+  - Current
+  - Staff
+linkedin: https://www.linkedin.com/in/hectordanielgarcia/
+email: hdg1@arizona.edu
+link: null
+image: /assets/images/our-team/hector-d-garcia-verdugo.png
 memberTitle: Research Laboratory Manager
 ---
