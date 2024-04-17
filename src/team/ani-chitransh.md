@@ -1,20 +1,19 @@
 ---
 memberName: Ani Chitransh
-memberDate: 2023
-resume: null
 memberEducation: ""
-memberDateEnd: Present
+memberDate: 2023
 memberBio: TBD
-tags:
-  - Current
-  - MSc student
-  - Capstone student
-image: /assets/images/our-team/ani-chitransh.png
+resume: null
 imageAlt: Portrait of Ani Chitransh
 order: 90
 date: 2024-03-09T08:03:44.405Z
-link: null
-email: null
+memberDateEnd: Present
+tags:
+  - Current
+  - Capstone student
 linkedin: null
+email: null
+link: null
+image: /assets/images/our-team/ani-chitransh.png
 memberTitle: MSc student
 ---
