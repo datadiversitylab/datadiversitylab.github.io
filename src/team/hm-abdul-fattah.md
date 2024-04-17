@@ -9,7 +9,7 @@ date: 2024-04-17T10:44:00.000Z
 memberDateEnd: Present
 tags:
   - Current
-  - MSc Capstone student
+  - MSc capstone student
 linkedin: null
 email: null
 link: null
