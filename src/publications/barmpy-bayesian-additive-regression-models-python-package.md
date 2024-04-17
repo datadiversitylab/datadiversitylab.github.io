@@ -12,6 +12,8 @@ publicationAbstract: We make Bayesian Additive Regression Networks (BARN)
   information in the documentation. Any interested user can `pip install barmpy`
   from the official `PyPi` repository. `barmpy` also serves as a baseline Python
   library for generic Bayesian Additive Regression Models.
+tags:
+  - Data science
 pdfDocument: /assets/documents/publications/2404.04738.pdf
 webLink: https://arxiv.org/abs/2404.04738
 ---
