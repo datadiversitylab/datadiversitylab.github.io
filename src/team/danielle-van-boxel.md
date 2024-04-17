@@ -7,18 +7,18 @@ memberBio: With a background in statistical computing, Danielle research
   precision in a wide range of datasets. Danielle also mentors junior graduate
   students in scientific computing and contributes to grant writing within the
   lab. 
+tags:
+  - Current
+  - ""
+linkedin: null
+email: vanboxel@math.arizona.edu
 github: dvbuntu
+link: https://dvbuntu.github.io
 resume: null
+image: /assets/images/our-team/danielle-van-boxel.png
 imageAlt: Portrait of Danielle Van Boxel
 order: 30
 date: 2024-04-17T10:43:00.000Z
 memberDateEnd: Present
-tags:
-  - Current
-  - PhD student
-linkedin: null
-email: vanboxel@math.arizona.edu
-link: https://dvbuntu.github.io
-image: /assets/images/our-team/danielle-van-boxel.png
 memberTitle: PhD candidate / Graduate Associate
 ---
