@@ -11,7 +11,7 @@ date: 2024-04-17T10:43:00.000Z
 memberDateEnd: null
 tags:
   - Former
-  - MSc Capstone student
+  - MSc capstone student
 linkedin: null
 email: dkangsim@arizona.edu
 link: null
