@@ -10,7 +10,7 @@ Description: Bayesian Additive Regression Networks. We apply Bayesian Additive
 tags:
   - Python libraries
 github: https://github.com/dvbuntu/barn
-link: null
+link: https://dvbuntu.github.io/barmpy/
 image: /assets/images/softwares/barmpy_logo.png
 imageAlt: BARN  image
 order: 60
