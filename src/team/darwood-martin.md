@@ -13,7 +13,7 @@ date: 2024-04-17T10:42:00.000Z
 memberDateEnd: null
 tags:
   - Former
-  - MSc Capstone student
+  - MSc capstone student
 linkedin: null
 email: Darwood.martin@gmail.com
 link: null
