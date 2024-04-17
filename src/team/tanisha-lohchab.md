@@ -1,17 +1,18 @@
 ---
-order: 40
 memberName: Tanisha Lohchab
-memberTitle: Research Data Support Specialist
 memberDate: 2023
-memberDateEnd: Present
 memberBio: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-tags:
-  - Staff
-  - Current
-linkedin: 
-email: 
-link: 
-resume: 
-image: /assets/images/our-team/tanisha-lohchab.png
+resume: null
 imageAlt: Portrait of Tanisha Lohchab
+order: 40
+date: 2024-04-17T10:47:00.000Z
+memberDateEnd: Present
+tags:
+  - Intern
+  - Current
+linkedin: null
+email: null
+link: null
+image: /assets/images/our-team/tanisha-lohchab.png
+memberTitle: Research Data Support Specialist
 ---
