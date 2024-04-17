@@ -22,5 +22,6 @@ publicationAbstract: Despite tropical species comprising nearly 60% of Psocidae
   (i.e. Neotropics).
 tags:
   - Taxonomy
+image: /assets/images/publications/large.jpg
 pdfDocument: /assets/documents/publications/ise_1148_rodriguez_rev5.pdf
 ---
