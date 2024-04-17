@@ -1,17 +1,20 @@
 ---
-order: 180
 memberName: Eastern Kang
-memberTitle: MSc student
 memberDate: 2022
-memberDateEnd:
-memberBio: Eastern worked generating a reproducible survey pipeline for social sciences. This work was co-advised by Dr. Javier Osorio, Assistant Professor in the School of Government and Public Policy at the University of Arizona.
+memberBio: Eastern worked generating a reproducible survey pipeline for social
+  sciences. This work was co-advised by Dr. Javier Osorio, Assistant Professor
+  in the School of Government and Public Policy at the University of Arizona.
+resume: null
+imageAlt: Portrait of Eastern Kang
+order: 180
+date: 2024-04-17T10:43:00.000Z
+memberDateEnd: null
 tags:
   - Former
-  - MSc student
-linkedin: 
+  - MSc Capstone student
+linkedin: null
 email: dkangsim@arizona.edu
-link:
-resume: 
+link: null
 image: /assets/images/our-team/eastern-kang.png
-imageAlt: Portrait of Eastern Kang
+memberTitle: MSc student
 ---
