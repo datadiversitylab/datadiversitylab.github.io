@@ -1,8 +1,8 @@
 {
   "title": "The Data Diversity Lab",
   "subTitle": "At the University of Arizona",
-  "description": "Discover the intersection of data science and bioinformatics at the data diversity lab, where innovation meets inquiry across disciplines. Our research is a dynamic exploration of ecology, evolution, human health, and software development, driven by the power of extensive datasets and cutting-edge machine learning approaches.",
-  "buttons" : [
+  "description": "Welcome to our website! Our research is a dynamic exploration of ecology, evolution, and software development, driven by the power of extensive datasets and cutting-edge data science approaches.",
+  "buttons": [
     {
       "title": "Lab Members",
       "link": "/our-team"
@@ -16,7 +16,7 @@
       "link": "/join-us"
     }
   ],
-  "backgroundImages" : [
+  "backgroundImages": [
     {
       "image": "assets/images/landing.webp"
     },
@@ -27,7 +27,7 @@
       "image": "assets/images/landing-three.jpg"
     }
   ],
-  "cards" : [
+  "cards": [
     {
       "image": "assets/images/research-card.png",
       "title": "Research",
