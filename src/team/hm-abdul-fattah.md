@@ -1,18 +1,18 @@
 ---
-order: 50
 memberName: HM Abdul Fattah
-memberTitle: MSc student
 memberDate: 2023
-memberDateEnd: Present
 memberBio: TBD
+resume: null
+imageAlt: Portrait of HM Abdul Fattah
+order: 50
+date: 2024-04-17T10:44:00.000Z
+memberDateEnd: Present
 tags:
   - Current
-  - MSc student
-  - Capstone student
-linkedin:
-email:
-link:
-resume:
+  - MSc Capstone student
+linkedin: null
+email: null
+link: null
 image: /assets/images/our-team/hm-abdul-fattah.png
-imageAlt: Portrait of HM Abdul Fattah
+memberTitle: MSc student
 ---
