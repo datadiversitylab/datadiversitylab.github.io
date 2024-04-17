@@ -18,7 +18,7 @@ tags:
   - PI
 linkedin: null
 email: cromanpa94@arizona.edu
-link: null
+link: https://cromanpa94.github.io/
 image: /assets/images/our-team/cristian-roman-palacios.png
 memberTitle: Principal Investigator, Assistant Professor
 ---
