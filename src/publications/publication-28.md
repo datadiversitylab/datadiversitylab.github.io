@@ -26,7 +26,7 @@ publicationAbstract: The anuran assemblages in three habitats (forest, lake and
   habitats.
 tags:
   - Ecology
-image:
+image: /assets/images/publications/usodemicrohabitat.jpg
 pdfDocument: /assets/documents/publications/2016_Uso de microhábitat por anuros
   _Roman-Palacios et al_2016_Guarinocito.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.17151/bccm.2016.20.2.14"
