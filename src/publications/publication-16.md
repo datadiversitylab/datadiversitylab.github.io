@@ -24,7 +24,7 @@ publicationAbstract: Although polyploidy is widespread across the plant Tree of
   patterns across the plant Tree of Life.
 tags:
   - Evolution
-image: null
+image: /assets/images/publications/polyploidyincreasesoverall.jpg
 pdfDocument: /assets/documents/publications/2020_Roman-Palaciosetal_Brassicaceae_.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1098/rspb.2020.0962"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
