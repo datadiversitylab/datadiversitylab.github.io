@@ -14,7 +14,7 @@ publicationAbstract: Two new species of *Elaphopsocoides* n. gen. from Valle del
   Colombia.
 tags:
   - Taxonomy
-image:
+image: /assets/images/publications/elaphopsicoides.png
 pdfDocument: /assets/documents/publications/2014_Elaphopsocoides, a new genus of
   Psocidae _Roman-P_et_al_2014_Elaphopsocus.pdf
 badgeImage: <span class="__dimensions_badge_embed__"
