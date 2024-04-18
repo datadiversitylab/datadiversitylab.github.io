@@ -31,5 +31,6 @@ tags:
   - Data science
   - Ecology
   - Software
+image: /assets/images/publications/onlinetoolkits.png
 webLink: https://www.authorea.com/users/765260/articles/773945-online-toolkits-for-collaborative-and-inclusive-global-research-in-urban-evolutionary-ecology
 ---
