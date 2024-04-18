@@ -21,7 +21,7 @@ publicationAbstract: With more than 900 valid species, Psocidae is the most
 tags:
   - Evolution
   - Taxonomy
-image:
+image: /assets/images/publications/onthedivergenceofpsocidae.png
 pdfDocument: /assets/documents/publications/2017_On the divergence of
   Psocidae_Roman-Palacios et al. 2017_Psocidae_Divergence.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.15517/rbt.v66i3.30818"
