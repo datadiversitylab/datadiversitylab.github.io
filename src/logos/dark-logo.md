@@ -1,4 +1,4 @@
 ---
 title: dark logo
-image: /assets/images/logos/logo-dark.svg
+image: /assets/images/logos/draft2v2-removebg-preview.png
 ---
