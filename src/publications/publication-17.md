@@ -28,7 +28,7 @@ publicationAbstract: Climate change may be a major threat to biodiversity in the
   to survive
 tags:
   - Climate change
-image:
+image: /assets/images/publications/recentresponsestoclimatechange.jpeg
 pdfDocument: /assets/documents/publications/2020_Roman-Palacios_Wiens_PNAS.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1073/pnas.1913007117"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
