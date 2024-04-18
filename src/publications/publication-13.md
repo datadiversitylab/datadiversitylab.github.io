@@ -35,7 +35,7 @@ publicationAbstract: Much of what we know about speciation comes from detailed
 tags:
   - Evolution
   - Ecology
-image: null
+image: /assets/images/publications/specieationacrossthetreeoflife.jpg
 pdfDocument: /assets/documents/publications/2021_HernandezHernandezEtAl.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1111/brv.12698"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
