@@ -20,7 +20,7 @@ publicationAbstract: "To date, only one species of whip spider has been recorded
   Museum of Biology, East China Normal University (ECNU)."
 tags:
   - Taxonomy
-image:
+image: /assets/images/publications/anewspeciesofwhipspiderweygoldtiahainanensis.jpg
 pdfDocument: /assets/documents/publications/2021_Zhu_Weygoldtia.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.11646/zootaxa.5082.1.6"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
