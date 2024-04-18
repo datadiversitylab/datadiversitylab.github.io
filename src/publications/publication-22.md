@@ -37,7 +37,7 @@ publicationAbstract: "Aims: Islands are widely recognized as natural
   and turtles overall."
 tags:
   - Evolution
-image:
+image: /assets/images/publications/thetortoiseandthefinch.jpg
 pdfDocument: /assets/documents/publications/2018_The Tortoise and the Finch
   _Roman_Palacios_Wiens_JBI_2018.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1111/jbi.13366"
