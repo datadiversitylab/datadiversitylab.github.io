@@ -17,7 +17,7 @@ publicationAbstract: "Five species of geckos in the genus Goniurosaurus had been
   China Normal University (ECNU)."
 tags:
   - Taxonomy
-image: null
+image: /assets/images/publications/goniurosaurusgezhi.jpg
 pdfDocument: /assets/documents/publications/ZhuEtAl2020.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.11646/zootaxa.4852.2.6"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
