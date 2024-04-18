@@ -14,6 +14,7 @@ publicationAbstract: We make Bayesian Additive Regression Networks (BARN)
   library for generic Bayesian Additive Regression Models.
 tags:
   - Data science
+image: /assets/images/publications/barmpy.jpg
 pdfDocument: /assets/documents/publications/2404.04738.pdf
 webLink: https://arxiv.org/abs/2404.04738
 ---
