@@ -7,7 +7,7 @@ publicationAbstract: Cristian Román-Palacios discusses how to deal with the
   bureaucracy and make a great case for yourself.
 tags:
   - Academia
-image: null
+image: /assets/images/publications/fivetipsfornailingyourusbased.jpg
 pdfDocument: /assets/documents/publications/2019_Nature_.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1038/d41586-019-00845-z"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
