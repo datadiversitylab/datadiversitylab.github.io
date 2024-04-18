@@ -35,7 +35,7 @@ publicationAbstract: "Aim: The evolutionary causes of the latitudinal diversity
 tags:
   - Evolution
   - Ecology
-image: null
+image: /assets/images/publications/evolutionarytimebestexplains.jpg
 pdfDocument: /assets/documents/publications/2021_MillerRoman_freshwater.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1111/geb.13253"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
