@@ -23,7 +23,7 @@ publicationAbstract: The increasing uncertainty about the conservation status of
   as a reservoir of diversity regarding surrounding areas.
 tags:
   - Taxonomy
-image: null
+image: /assets/images/publications/listaanotada.png
 pdfDocument: /assets/documents/publications/2017_Lista anotada de la
   herpetofauna_Roman-Palacios et al. 2017_Quindio_Herps.pdf
 badgeImage: <span class="__dimensions_badge_embed__"
