@@ -49,7 +49,7 @@ publicationAbstract: Although variation in effect sizes and predicted values
 tags:
   - Data science
   - Ecology
-image: null
+image: /assets/images/publications/samedatadifferentanalyst.jpg
 pdfDocument: /assets/documents/publications/2023_Same data different
   analysts_gould_etal_.pdf
 badgeImage: null
