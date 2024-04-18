@@ -21,7 +21,7 @@ tags:
   - Evolution
   - Software
   - Data science
-image: null
+image: /assets/images/publications/thephrutarpackage.jpg
 pdfDocument: /assets/documents/publications/2023_The phruta R package.pdf
 badgeImage: null
 pdfLink: ""
