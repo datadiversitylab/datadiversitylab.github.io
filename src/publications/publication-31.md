@@ -22,7 +22,7 @@ publicationAbstract: When based on phylogenetic proposals, biogeographic
   genera.
 tags:
   - Taxonomy
-image:
+image: /assets/images/publications/historicalbiogeographyofpsocids.jpg
 pdfDocument: /assets/documents/publications/2016_Historical biogeography of
   Thyrsophorini _Roman-Palacios et al 2016_Thyrso.pdf
 badgeImage: <span class="__dimensions_badge_embed__"
