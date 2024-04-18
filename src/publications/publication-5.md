@@ -18,7 +18,7 @@ publicationAbstract: A new species of Tiger Gecko in the genus Goniurosaurus is
   congeners
 tags:
   - Taxonomy
-image: null
+image: /assets/images/publications/goniurosauruswangshu.jpg
 pdfDocument: /assets/documents/publications/ZhuEtAl_Gwangshu.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.11646/zootaxa.5188.6.3"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
