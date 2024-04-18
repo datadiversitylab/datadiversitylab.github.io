@@ -24,7 +24,7 @@ publicationAbstract: "In a previous paper, we used simulations and empirical
 tags:
   - Evolution
   - Data science
-image:
+image: /assets/images/publications/bammgivesmisleading.jpg
 pdfDocument: /assets/documents/publications/2018_BAMM gives misleading results
   _Meyer_et_al_Evol_2018_BAMM.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1111/evo.13574"
