@@ -24,7 +24,7 @@ publicationAbstract: We present a list of 720 species of ‘Psocoptera’ record
   fieldwork is highly required.
 tags:
   - Taxonomy
-image:
+image: /assets/images/publications/checklistofpsocopterapsocodea.jpg
 pdfDocument: /assets/documents/publications/2018_Checklist of
   ‘Psocoptera’(Psocodea)_Garcia-Aldrete et al 2018_Psocoptera_Colombia.pdf
 badgeImage: <span class="__dimensions_badge_embed__"
