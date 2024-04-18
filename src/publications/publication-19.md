@@ -26,7 +26,7 @@ publicationAbstract: What an animal eats is a fundamental aspect of its biology,
 tags:
   - Evolution
   - Ecology
-image: null
+image: /assets/images/publications/evolutionofdiet.jpeg
 pdfDocument: /assets/documents/publications/2019_Evolution of diet across the
   Animal Tree of Life_Roman-Palacios_et_al_EvoLett_2019.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1002/evl3.127"
