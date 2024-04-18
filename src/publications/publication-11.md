@@ -22,7 +22,7 @@ publicationAbstract: Understanding the mechanisms that underlie chromosome
 tags:
   - Evolution
   - Data science
-image: null
+image: /assets/images/publications/animalchromosomecounts.jpeg
 pdfDocument: /assets/documents/publications/RomanPalaciosetal2021.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1111/jeb.13884"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
