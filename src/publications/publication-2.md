@@ -25,7 +25,7 @@ publicationAbstract: Understanding how plants respond to thermal stress is
   the upcoming century
 tags:
   - Evolution
-image: null
+image: /assets/images/publications/physiologicalresponses.jpg
 pdfDocument: /assets/documents/publications/2023_Physiological cold tolerance
   evolves faster _Wen_etAl.pdf
 badgeImage: null
