@@ -17,7 +17,7 @@ publicationAbstract: "Six species of geckos in the genus Goniurosaurus have been
   (ECNU)."
 tags:
   - Taxonomy
-image: null
+image: /assets/images/publications/goniurosauruschengzheng.jpg
 pdfDocument: /assets/documents/publications/2021ZhuEtAl.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.11646/zootaxa.4996.3.8"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
