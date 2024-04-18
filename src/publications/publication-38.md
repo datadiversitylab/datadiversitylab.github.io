@@ -17,7 +17,7 @@ publicationAbstract: "Hemibrycon brevispini is a Neotropical characid fish
   oocytes per female."
 tags:
   - Ecology
-image:
+image: /assets/images/publications/trophicandreproductiveecology.jpg
 pdfDocument: /assets/documents/publications/2015_Trophic and reproductive
   ecology _Roman-Palacios_et_al_2015_Brevi.pdf
 badgeImage: <span class="__dimensions_badge_embed__"
