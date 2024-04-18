@@ -38,7 +38,7 @@ publicationAbstract: "Whereas most of the studies that discuss the evolutionary
   deeply in the tree, for fossil–based divergence dating analyses."
 tags:
   - Evolution
-image:
+image: /assets/images/publications/whendidanolislizardsdiverge.jpg
 pdfDocument: /assets/documents/publications/2018_roman-palacios_et_al_anolis.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1016/j.ympev.2018.06.012"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
