@@ -40,7 +40,7 @@ tags:
   - Evolution
   - Ecology
   - Geosciences
-image: null
+image: /assets/images/publications/patternsofelementincorporation.jpg
 pdfDocument: /assets/documents/publications/UlrichEtAl2021.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.3389/feart.2021.641760"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
