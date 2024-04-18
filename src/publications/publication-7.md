@@ -21,7 +21,7 @@ publicationAbstract: Many biodiversity studies focus on explaining high tropical
 tags:
   - Ecology
   - Evolution
-image: null
+image: /assets/images/publications/theoriginsofglobalbiodiversity.jpg
 pdfDocument: /assets/documents/publications/2022_Roman-Palacios_et_al._EL_.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1111/ele.13999"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
