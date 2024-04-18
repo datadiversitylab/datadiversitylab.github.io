@@ -23,7 +23,7 @@ tags:
   - Evolution
   - Software
   - Data science
-image: null
+image: /assets/images/publications/treedata.tablerwrappperfordatatable.jpg
 pdfDocument: /assets/documents/publications/2021_Roman-Palacios_treedata.table.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.7717/peerj.12450"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
