@@ -30,7 +30,7 @@ publicationAbstract: "Objectives: The reproductive and trophic ecology of
   September-November)."
 tags:
   - Ecology
-image:
+image: /assets/images/publications/dietayreproduccion.jpg
 pdfDocument: /assets/documents/publications/2016_Dieta y reproducción de
   Bryconamericus_Roman-Palacios et al_2016_caucanus.pdf
 badgeImage: <span class="__dimensions_badge_embed__"
