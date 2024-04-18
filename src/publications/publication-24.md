@@ -22,7 +22,7 @@ publicationAbstract: "We investigated the phylogenetic relationships among seven
   subfamily."
 tags:
   - Evolution
-image:
+image: /assets/images/publications/molecularseaskaters.jpg
 pdfDocument: /assets/documents/publications/2018_Molecular phylogeny of sea
   skaters_Roman-Palacios_et_al._Halobatinae.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1163/1876312x-00002197"
