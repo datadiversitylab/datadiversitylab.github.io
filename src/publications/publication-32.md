@@ -11,7 +11,7 @@ publicationAbstract: For 75 years, the genus Elaphopsocus was considered a
   We here describe three new species from the East Colombian high Andes.
 tags:
   - Taxonomy
-image:
+image: /assets/images/publications/uncoveringthediversity.png
 pdfDocument: /assets/documents/publications/2015_Uncovering the diversity of the
   neotropical genus Elaphopsocus _Roman-Palacios_et_al_2015_Elaphosocus.pdf
 badgeImage: <span class="__dimensions_badge_embed__"
