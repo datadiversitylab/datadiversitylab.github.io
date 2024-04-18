@@ -23,7 +23,7 @@ publicationAbstract: When carrying out modelling analysis using experimental
   biological data.
 tags:
   - Data science
-image:
+image: /assets/images/publications/informationcriteria.jpg
 pdfDocument: /assets/documents/publications/2015_Information criteria on
   multimodel selection_Moraga_Lopez_Roman-Palacios_2015_Multimodel.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.21897/rmvz.1134"
