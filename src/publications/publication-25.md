@@ -30,7 +30,7 @@ publicationAbstract: "Whereas more than 10 % of global amphibian richness is
 tags:
   - Ecology
   - Data science
-image: null
+image: /assets/images/publications/onthedatadeficientamphibians.jpg
 pdfDocument: /assets/documents/publications/2018_On the Data Deficient
   amphibians _Roman-Palacios_&_Valencia-Zuleta 2018_Colombian_DD.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.15517/rbt.v66i3.30818"
