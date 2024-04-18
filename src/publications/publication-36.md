@@ -19,7 +19,7 @@ publicationAbstract: "To analyze the degree of trophic overlap, 2 species of
 tags:
   - Ecology
   - Data science
-image: null
+image: /assets/images/publications/habitostroficosdedosespecies.jpg
 pdfDocument: /assets/documents/publications/2015_Hábitos tróficos de dos
   especies sintópicas_Roman-Palacios_&_Roman-Valencia_2015_Two_freshwater.pdf
 badgeImage: <span class="__dimensions_badge_embed__"
