@@ -15,7 +15,7 @@ publicationAbstract: Although many studies looking at the role that sexual
   clades.
 tags:
   - Evolution
-image: null
+image: /assets/images/publications/digestunveilingevolution.jpg
 pdfDocument: /assets/documents/publications/2023_Digest_unveiling the
   role_Roman_palacios.pdf
 badgeImage: null
