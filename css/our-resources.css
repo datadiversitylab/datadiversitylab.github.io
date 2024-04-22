@@ -133,7 +133,7 @@
     border-radius: 100%;
   }
   #sbsr-579 .cs-image-slider .cs-image-selector.active {
-    background-color: var(--lineColor);
+    background-color: var(--bodyTextColor);
   }
   #sbsr-579 .cs-picture-caption .cs-picture {
     display: block;

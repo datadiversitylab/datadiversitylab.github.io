@@ -238,6 +238,7 @@
     overflow: hidden;
     display: block;
     position: relative;
+    border-bottom: 1px solid var(--bodyTextColor);
   }
   #meet-team-547 .cs-picture img {
     position: absolute;
@@ -246,7 +247,7 @@
     height: 100%;
     width: 100%;
     /* makes image behave like a background image */
-    object-fit: cover;
+    object-fit: contain;
     /* places top of the image at the top of the box */
     object-position: center;
     transition: transform 0.6s;

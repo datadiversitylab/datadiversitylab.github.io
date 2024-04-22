@@ -289,11 +289,17 @@
     margin: 0;
   }
   #dropdown-cards .cs-dropdown-content ul {
-    list-style-position: inside;
+    padding-left: 20px;
+  }
+  #dropdown-cards .cs-dropdown-content ul li {
     text-align: left;
+    padding-left: 0;
   }
   #dropdown-cards .cs-dropdown-content ul ul {
     padding-left: 2rem;
+  }
+  #dropdown-cards .cs-dropdown-content ul ::marker {
+    margin: 0;
   }
   #dropdown-cards .cs-dropdown-content > .cs-text {
     border-bottom: 2px solid #8B8B8B;
@@ -340,10 +346,6 @@
   }
   #dropdown-cards .cs-flex-group {
     cursor: pointer;
-    max-height: 5.625rem;
-  }
-  #dropdown-cards .cs-flex-group.is-active {
-    max-height: 500px;
   }
   #dropdown-cards .cs-dropdown-content .teaching-table {
     width: 100%;
