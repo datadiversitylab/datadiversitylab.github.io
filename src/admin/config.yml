@@ -24,15 +24,16 @@ collections:
     slug: '{{memberName}}'
     fields:
       - { label: 'Member Name', name: 'memberName', widget: 'string', required: true }
+      - { label: 'Member Title', name: 'memberTitle', widget: 'string', required: false }
       - { label: 'Member Education', name: 'memberEducation', widget: 'string', required: false }
       - { label: 'Member Date', name: 'memberDate', widget: 'string', required: false }
       - { label: 'Member Bio', name: 'memberBio', widget: 'string', required: true }
-      - { label: 'Tags', name: 'tags', widget: 'list', required: true}
+      - { label: 'Tags', name: 'tags', widget: 'list', default: ['Current'], required: true}
       - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false }
       - { label: 'Email', name: 'email', widget: 'string', required: false }
       - { label: 'Github', name: 'github', widget: 'string', required: false }
       - { label: 'Link', name: 'link', widget: 'string', required: false }
-      - { label: 'Resume', name: 'resume', widget: 'string', required: false }
+      - { label: 'Resume', name: 'resume', widget: 'file', required: false, media_folder: '/src/assets/documents/our-team', public_folder: '/assets/documents/our-team' }
       - { label: 'Member Image', name: 'image', widget: 'image', required: false }
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
@@ -48,8 +49,8 @@ collections:
     fields:
       - { label: 'Publication Title', name: 'publicationTitle', widget: 'markdown', required: true }
       - { label: 'Author', name: 'publicationAuthor', widget: 'string', required: false }
-      - { label: 'Date', name: 'publicationDate', widget: 'string', required: false }
-      - { label: 'Type', name: 'publicationType', widget: 'string', required: false }
+      - { label: 'Year', name: 'publicationDate', widget: 'string', required: false }
+      - { label: 'Journal Name', name: 'publicationType', widget: 'string', required: false }
       - { label: 'Abstract', name: 'publicationAbstract', widget: 'markdown', required: true }
       - { label: 'Keywords', name: 'tags', widget: 'list', required: true }
       - { label: 'Image', name: 'image', widget: 'image', required: false }

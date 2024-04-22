@@ -12,7 +12,7 @@ var CSbody = document.querySelector("body");
 const CSnavbarMenu = document.querySelector("#cs-navigation");
 const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
 
-CShamburgerMenu.addEventListener('click', function() {
+CShamburgerMenu.addEventListener('click', function () {
     CShamburgerMenu.classList.toggle("cs-active");
     CSnavbarMenu.classList.toggle("cs-active");
     CSbody.classList.toggle("cs-open");
@@ -50,7 +50,7 @@ img.forEach((img) => {
         img.src = '../assets/images/placeholder-image.png';
     }
 
-    img.onerror = function() {
+    img.onerror = function () {
         // this.parentElement.querySelector('source').srcset = '../assets/images/placeholder-image.png';
         this.parentElement.querySelectorAll('source').forEach((source) => {
             source.srcset = '../assets/images/placeholder-image.png';
@@ -69,31 +69,50 @@ captionSliders.forEach((slider) => {
     const captions = Array.from(slider.querySelectorAll(".cs-text-caption"));
     const selectors = Array.from(slider.querySelectorAll(".cs-image-selector"));
     let currentIndex = 0;
+    let timer = null;
 
     function updateContent() {
         const newSrcset = captions[currentIndex].dataset.srcset;
         const newCaption = captions[currentIndex].innerHTML;
 
         images.forEach((img) => {
-            img.srcset = newSrcset;
+            // Update srcset for lazy-loaded images
+            if (img.tagName === 'SOURCE') {
+                img.srcset = newSrcset; // Update only if the tag is <source>
+            } else {
+                img.src = newSrcset; // Update <img> src if necessary
+            }
         });
 
         captions.forEach((caption, index) => {
+            caption.style.display = index === currentIndex ? "block" : "none";
             if (index === currentIndex) {
-                caption.style.display = "block";
                 caption.innerHTML = newCaption;
-            } else {
-                caption.style.display = "none";
             }
         });
 
         selectors.forEach((selector, index) => {
-            if (index === currentIndex) {
-                selector.classList.add("active");
-            } else {
-                selector.classList.remove("active");
-            }
+            selector.classList.toggle("active", index === currentIndex);
         });
+    }
+
+    function resetTimer() {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            moveRight();
+        }, 10000);
+    }
+
+    function moveRight() {
+        if (currentIndex === selectors.length - 1) {
+            currentIndex = 0;
+        } else {
+            currentIndex++;
+        }
+        updateContent();
+        if (slider.classList.contains("timer-slider")) {
+            resetTimer();
+        }
     }
 
     if (leftArrow && rightArrow) {
@@ -104,24 +123,33 @@ captionSliders.forEach((slider) => {
                 currentIndex--;
             }
             updateContent();
+            if (slider.classList.contains("timer-slider")) {
+                resetTimer();
+            }
         });
 
         rightArrow.addEventListener("click", () => {
-            if (currentIndex === selectors.length - 1) {
-                currentIndex = 0;
-            } else {
-                currentIndex++;
+            moveRight();
+            if (slider.classList.contains("timer-slider")) {
+                resetTimer();
             }
-            updateContent();
         });
-    } else {
-        selectors.forEach((selector, index) => {
-            selector.addEventListener("click", () => {
-                currentIndex = index;
-                updateContent();
-            });
-        });
+    }
 
+    // Apply event listeners for direct selection
+    selectors.forEach((selector, index) => {
+        selector.addEventListener("click", () => {
+            currentIndex = index;
+            updateContent();
+            if (slider.classList.contains("timer-slider")) {
+                resetTimer();
+            }
+        });
+    });
+
+    // Initialize the timer only if 'timer-slider' class is present
+    if (slider.classList.contains("timer-slider")) {
+        resetTimer();
     }
 });
 

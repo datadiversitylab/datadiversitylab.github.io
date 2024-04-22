@@ -352,10 +352,18 @@
 
         .cs-dropdown-content {
             ul {
-                list-style-position: inside;
-                text-align: left;
+                padding-left: 20px;
+                li {
+                    text-align: left;
+                    padding-left: 0;
+                }
+
                 ul {
                     padding-left: 2rem;
+                }
+
+                ::marker {
+                    margin: 0;
                 }
             }
 
@@ -416,10 +424,6 @@
 
         .cs-flex-group {
             cursor: pointer;
-            max-height: (90/16rem);
-            &.is-active {
-                max-height: 500px;
-            }
         }
 
         .cs-dropdown-content {

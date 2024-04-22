@@ -1,5 +1,5 @@
 ---
-layout: 'base.html' 
+layout: 'base.html'
 description: "Our Team at the Data Diversity Lab"
 metaTitle: 'Our Team'
 tagTitle: 'Our Team'
@@ -43,13 +43,11 @@ eleventyNavigation:
             <div aria-hidden="true" class="line line-full"></div>
             <div class="cs-filter-wrapper cs-text">
                 <div data-filter="All" class="active">All ({{ collections.processedTeams["team"] }})</div>
-                <div data-filter="PI">PI ({{ collections.processedTeams["PI"] }})</div>
-                <div data-filter="Staff">Staff ({{ collections.processedTeams["Staff"] }})</div>
-                <div data-filter="MSc student">MSc student ({{ collections.processedTeams["MSc student"] }})</div>
-                <div data-filter="PhD student">PhD student ({{ collections.processedTeams["PhD student"] }})</div>
-                <div data-filter="Capstone student">Capstone student ({{ collections.processedTeams["Capstone student"] }})</div>
-                <div data-filter="Undergraduate student">Undergraduate student ({{ collections.processedTeams["Undergraduate student"] }})</div>
-                <div data-filter="Intern">Intern ({{ collections.processedTeams["Intern"] }})</div>
+                {% for keyword, count in collections.processedTeams | dictsort %}
+                    {% if keyword != 'team' and keyword != 'Current' and keyword != 'Former' and keyword != '' %}
+                        <div data-filter="{{ keyword }}">{{ keyword }} ({{ count }})</div>
+                    {% endif %}
+                {% endfor %}
             </div>
             <div class="cs-filter-button-wrapper">
                 <div class="cs-filter-year-wrapper">
@@ -60,7 +58,7 @@ eleventyNavigation:
                         <input type="text" id="endYear" placeholder="End Year">
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="cs-title-card-wrapper">
             {%- for tag in tags -%}
@@ -82,7 +80,7 @@ eleventyNavigation:
                                     <img loading="lazy" decoding="async" src="{{ member.data.image }}" alt="{{ member.data.imageAlt }}" width="522" height="370" aria-hidden="true">
                                 </picture>
                                 <div class="cs-flex-group">
-                                    <span class="cs-name">{{ member.data.memberName }} 
+                                    <span class="cs-name">{{ member.data.memberName }}
                                         {%- if member.data.memberEducation -%}
                                             <span class="cs-education">, {{ member.data.memberEducation }}</span>
                                         {%- endif -%}
@@ -96,11 +94,11 @@ eleventyNavigation:
                                     <div aria-hidden="true" class="line line-full"></div>
                                     <div class="cs-item-filters">
                                         {%- for filter in member.data.tags -%}
-                                            {%- if filter != 'team' and filter != 'Current' and filter != 'Former' -%}
+                                            {%- if filter != 'team' and filter != 'Current' and filter != 'Former' and filter != '' -%}
                                                 <div class="cs-filter">{{ filter }}</div>
                                             {%- endif -%}
                                         {%- endfor -%}
-                                    </div>                                
+                                    </div>
                                     {%- if member.data.linkedin or member.data.email or member.data.link or member.data.resume or member.data.github -%}
                                         <div aria-hidden="true" class="line line-full"></div>
                                         <div class="cs-item-social">
@@ -116,7 +114,7 @@ eleventyNavigation:
                                                         {%- else -%}
                                                             <a href="mailto:{{ member.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
                                                         {%- endif -%}
-                                                    {%- elif social.platform == 'github' -%}                                                
+                                                    {%- elif social.platform == 'github' -%}
                                                         <a href="https://github.com/{{ member.data[social.platform] }}" target="_blank" rel="noopener noreferrer"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
                                                     {%- else -%}
                                                         <a href="{{ member.data[social.platform] }}" target="_blank" rel="noopener noreferrer"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
@@ -133,4 +131,4 @@ eleventyNavigation:
             {%- endfor -%}
         </div>
     </div>
-</section>   
+</section>

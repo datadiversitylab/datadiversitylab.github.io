@@ -11,6 +11,7 @@ order: 260
 date: 2024-04-17T10:47:00.000Z
 memberDateEnd: null
 tags:
+  - Former
   - Staff
   - MSc capstone student
   - Intern
