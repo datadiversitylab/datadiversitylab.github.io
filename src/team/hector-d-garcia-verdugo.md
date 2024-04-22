@@ -11,7 +11,6 @@ memberBio: Hector is the data diversity lab’s Manager. He holds dual degrees i
 tags:
   - Current
   - Staff
-  - X
   - ""
 linkedin: https://www.linkedin.com/in/hectordanielgarcia/
 email: hdg1@arizona.edu
