@@ -359,6 +359,7 @@
             justify-content: center;
             max-width: 100%;
             width: 1000px;
+            min-width: 80%;
             height: auto;
             margin: auto;
             flex-direction: row;
@@ -386,13 +387,14 @@
             align-items: center;
             justify-content: center;
             flex-direction: row;
-            height: 400px!important;
+            height: auto!important;
             border-left: none;
             border-right: none;
             opacity: 0;
 
             .cs-picture {
-                display: block;
+                display: flex;
+                align-items: center;
                 position: relative;
                 width: auto;
                 height: 100%;
@@ -419,7 +421,7 @@
             }
 
             > div {
-                min-width: 400px;
+                min-width: 25vw;
             }
         }
 
