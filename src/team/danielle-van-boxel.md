@@ -10,8 +10,7 @@ memberBio: With a background in statistical computing, Danielle research
   lab. 
 tags:
   - Current
-  - PhD Student
-  - ""
+  - PhD student
 linkedin: null
 email: vanboxel@math.arizona.edu
 github: dvbuntu
