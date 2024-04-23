@@ -17,7 +17,7 @@ link: null
 resume: null
 image: /assets/images/our-team/wonkyun-yim.png
 imageAlt: Portrait of Wonkyun Yim
-order: 27
+order: 26
 date: 2024-04-17T10:47:00.000Z
 memberDateEnd: null
 ---
