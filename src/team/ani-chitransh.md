@@ -2,7 +2,7 @@
 memberName: Ani Chitransh
 memberTitle: MSc student
 memberEducation: ""
-memberDate: 2023
+memberDate: 2024 - Present
 memberBio: TBD
 tags:
   - Current
