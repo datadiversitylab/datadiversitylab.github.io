@@ -12,7 +12,7 @@ link: null
 resume: null
 image: /assets/images/our-team/jiayue_he_self-edited-_head.jpg
 imageAlt: Portrait of Jiayue He
-order: 80
+order: 7
 date: 2024-04-17T10:45:00.000Z
 memberDateEnd: Present
 ---
