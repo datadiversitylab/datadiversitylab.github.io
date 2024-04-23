@@ -13,7 +13,7 @@ link: null
 resume: null
 image: /assets/images/our-team/ani2_head.jpg
 imageAlt: Portrait of Ani Chitransh
-order: 90
+order: 8
 date: 2024-03-09T08:03:44.405Z
 memberDateEnd: Present
 ---
