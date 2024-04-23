@@ -12,7 +12,7 @@ link: null
 resume: null
 image: /assets/images/our-team/tom_olla_head.jpg
 imageAlt: Portrait of Tom Olla
-order: 70
+order: 9
 date: 2024-04-17T10:47:00.000Z
 memberDateEnd: Present
 ---
