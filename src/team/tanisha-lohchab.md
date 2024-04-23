@@ -1,7 +1,7 @@
 ---
 memberName: Tanisha Lohchab
 memberTitle: Research Data Support Specialist
-memberDate: 2023
+memberDate: "2024"
 memberBio: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 tags:
   - Intern
