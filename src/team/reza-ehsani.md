@@ -1,5 +1,6 @@
 ---
 memberName: Reza Ehsani
+memberTitle: MSc student
 memberDate: 2023
 memberBio: Reza finalized his capstone for his MS in Data Science at the lab
   with a project entitled 'Using CloudSat to Advance the Global Precipitation
@@ -9,18 +10,17 @@ memberBio: Reza finalized his capstone for his MS in Data Science at the lab
   primarily interested in remote sensing of precipitation, retrieval
   combinations, and error estimation. After graduation, he joined Zipline as a
   Climate Data Scientist (Machine Learning Engineer).
-github: rehsani
-resume: null
-imageAlt: Portrait of Reza Ehsani
-order: 170
-date: 2024-04-17T10:46:00.000Z
-memberDateEnd: null
 tags:
   - Former
   - MSc capstone student
 linkedin: null
 email: rehsani@arizona.edu
+github: rehsani
 link: https://rehsani.github.io
+resume: null
 image: /assets/images/our-team/reza-ehsani.png
-memberTitle: MSc student
+imageAlt: Portrait of Reza Ehsani
+order: 18
+date: 2024-04-17T10:46:00.000Z
+memberDateEnd: null
 ---
