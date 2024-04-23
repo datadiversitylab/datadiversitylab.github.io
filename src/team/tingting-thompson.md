@@ -17,7 +17,7 @@ link: null
 resume: null
 image: /assets/images/our-team/tingting-thompson.png
 imageAlt: Portrait of Tingting Thompson
-order: 28
+order: 27
 date: 2024-04-17T10:47:00.000Z
 memberDateEnd: null
 ---
