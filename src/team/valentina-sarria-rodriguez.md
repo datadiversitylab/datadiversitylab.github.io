@@ -1,7 +1,7 @@
 ---
 memberName: Valentina Sarria-Rodríguez
 memberTitle: Undergraduate student
-memberDate: 2018
+memberDate: "2018"
 memberBio: Valentina was Dr. Román-Palacios’ first undergraduate advisee (2018).
   Her project focused on reviewing the evolutionary relationships within
   Psocidae (Insecta) and inferring the phylogenetic position of newly collected
