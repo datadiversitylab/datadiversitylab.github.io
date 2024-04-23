@@ -10,8 +10,8 @@ memberBio: "Tom is a Tucson native with a passion for data visualization. He
 tags:
   - Current
   - MSc capstone student
-linkedin: null
-email: null
+linkedin: www.linkedin.com/in/tom-olla
+email: tollajr@gmail.com
 link: null
 resume: null
 image: /assets/images/our-team/tom_olla_head.jpg
