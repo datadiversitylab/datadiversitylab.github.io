@@ -18,7 +18,7 @@ link: https://dvbuntu.github.io
 resume: null
 image: /assets/images/our-team/danielle-van-boxel.png
 imageAlt: Portrait of Danielle Van Boxel
-order: 30
+order: 2
 date: 2024-04-17T10:43:00.000Z
 memberDateEnd: Present
 ---
