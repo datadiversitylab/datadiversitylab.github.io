@@ -1,7 +1,7 @@
 ---
 memberName: Kiran Basava
 memberTitle: Postdoctoral Researcher
-memberDate: "2023"
+memberDate: 2024 - Present
 memberBio: TBD
 tags:
   - Current
