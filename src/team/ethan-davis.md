@@ -18,7 +18,7 @@ link: null
 resume: null
 image: /assets/images/our-team/ethan-davis.png
 imageAlt: Portrait of Ethan Davis
-order: 120
+order: 13
 date: 2024-04-17T10:44:00.000Z
 memberDateEnd: null
 ---
