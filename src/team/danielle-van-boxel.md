@@ -1,5 +1,6 @@
 ---
 memberName: Danielle Van Boxel
+memberTitle: PhD candidate / Graduate Associate
 memberDate: 2022
 memberBio: With a background in statistical computing, Danielle research
   approaches ensemble machine learning.  Her PhD dissertation focuses on
@@ -9,6 +10,7 @@ memberBio: With a background in statistical computing, Danielle research
   lab. 
 tags:
   - Current
+  - PhD Student
   - ""
 linkedin: null
 email: vanboxel@math.arizona.edu
@@ -20,5 +22,4 @@ imageAlt: Portrait of Danielle Van Boxel
 order: 30
 date: 2024-04-17T10:43:00.000Z
 memberDateEnd: Present
-memberTitle: PhD candidate / Graduate Associate
 ---
