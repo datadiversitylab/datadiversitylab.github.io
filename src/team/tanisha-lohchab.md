@@ -12,7 +12,7 @@ link: null
 resume: null
 image: /assets/images/our-team/tanisha_lohchab_8758_head2.jpg
 imageAlt: Portrait of Tanisha Lohchab
-order: 40
+order: 4
 date: 2024-04-17T10:47:00.000Z
 memberDateEnd: Present
 ---
