@@ -9,9 +9,9 @@ grantDesc: Seed grant from the College of Architecture, Planning and Landscape
   Architecture at the University of Arizona.
 tags:
   - College of Architecture Planning and Landscape Architecture (UArizona)
-document: null
+document: /assets/documents/grants/images.jpeg
 link: null
-image: /assets/images/grants/capla.png
+image: /assets/images/grants/images.jpeg
 imageAlt: OneHealth Image
 order: 30
 ---
