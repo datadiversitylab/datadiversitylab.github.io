@@ -1,6 +1,6 @@
 ---
 title: Lab life hacks
-link:
+link: https://owncloud.cromanpa.synology.me/s/So3b8GpD7hwiiPw
 order: 6
 ---
 
