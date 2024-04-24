@@ -1,5 +1,5 @@
 ---
-title: Lab meetings
+title: Lab meetings & schedule
 link: https://github.com/datadiversitylab/DDL-Lab-Meeting-Schedule
 order: 1
 ---
