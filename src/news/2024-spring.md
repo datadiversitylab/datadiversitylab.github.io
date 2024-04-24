@@ -4,6 +4,7 @@ tags:
   - 2024
 order: 10
 ---
+* Danielle defended her PhD dissertation and passed with flying colors! Congratulations Danielle!
 * We have a new lab website!!!
 * Shih-Hsuan took professional headshot photos for the whole lab this semester. Thank you Shih-Hsuan.
 * A research paper from the lab has been shortlisted for the 2023 Robert May Prize. The prize is awarded each year for the best paper in the journal Methods in Ecology and Evolution. Blog post: <https://methodsblog.com/2024/03/20/early-career-research-increasing-access-reproducibility-and-transparency-in-phylogenetic-analyses-with-cristian-roman-palacioshttps-besjournals-onlinelibrary-wiley-com-doi-full-10-1111-2041-210x-1/>.
