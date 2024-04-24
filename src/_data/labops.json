@@ -1,28 +1,36 @@
 {
   "title": "LabOps",
-  "paragraphOne": "Paragraph one",
-  "numberedCards" : [
+  "paragraphOne": "The Data Diversity Lab performs its research operations with a solid foundation based on the use of free and open source software (FOSS) to facilitate communication, enable cross border collaboration, increase Open Access and Open Research efforts, and maintaining sovereignty over one's own personal and scientific data. Below you can explore our current and evolving set of tools that help us support our operations.",
+  "numberedCards": [
     {
-      "title": "Title",
-      "description": "description"
+      "title": "Mattermost",
+      "description": "TBD"
     },
     {
-      "title": "Title",
-      "description": "description"
+      "title": "Owncloud",
+      "description": "TBD"
     },
     {
-      "title": "Title",
-      "description": "description"
+      "title": "OnlyOffice",
+      "description": "TBD"
     },
     {
-      "title": "Title",
-      "description": "description"
+      "title": "Zotero",
+      "description": "TBD"
+    },
+    {
+      "title": "Synology NAS",
+      "description": "TBD"
+    },
+    {
+      "title": "Inkscape & GIMP",
+      "description": "TBD"
     }
   ],
   "paragraphTwo": "Paragraph two",
   "secondTitle": "Second title",
   "paragraphThree": "Paragraph three",
-  "labopsCards" : [
+  "labopsCards": [
     {
       "order": 1,
       "title": "LabOps card one",
