@@ -8,5 +8,6 @@ grantDesc: A seed grant was awarded to our team as a new member of the UA's
 tags:
   - Vertically Integrated Projects (VIP)
   - ""
-document: /assets/documents/grants/vip-web-logo_2x.png
+document: ""
+image: /assets/images/grants/vip-web-logo_2x.png
 ---
