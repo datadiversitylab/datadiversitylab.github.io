@@ -6,7 +6,7 @@ memberBio: TBD
 tags:
   - Current
   - MSc capstone student
-linkedin: null
+linkedin: https://www.linkedin.com/in/h-m-abdul-fattah-b2942a12b/
 email: null
 link: null
 resume: null
