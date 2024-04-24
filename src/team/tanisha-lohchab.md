@@ -11,6 +11,7 @@ memberBio: "With a background in Data Science, Tanisha joined the Data Diversity
 tags:
   - Intern
   - Current
+  - Staff
 linkedin: null
 email: null
 link: null
