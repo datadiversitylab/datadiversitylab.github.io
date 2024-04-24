@@ -12,7 +12,7 @@ tags:
   - National Institutes of Health (NIH)
 document: null
 link: null
-image: /assets/images/grants/nih_master_logo_vertical_2color.png
+image: /assets/images/grants/nih_master_logo_vertical_2coloredit2.png
 imageAlt: NIH P20 Image
 order: 10
 ---
