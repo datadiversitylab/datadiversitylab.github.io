@@ -15,7 +15,11 @@
       "description": "TBD"
     },
     {
-      "title": "Zotero",
+      "title": "Radicale",
+      "description": "TBD"
+    },
+    {
+      "title": "Umami",
       "description": "TBD"
     },
     {
@@ -23,11 +27,15 @@
       "description": "TBD"
     },
     {
+      "title": "Zotero",
+      "description": "TBD"
+    },
+    {
       "title": "Inkscape & GIMP",
       "description": "TBD"
     }
   ],
-  "paragraphTwo": "Paragraph two",
+  "paragraphTwo": "TBD",
   "secondTitle": "Second title",
   "paragraphThree": "Paragraph three",
   "labopsCards": [
