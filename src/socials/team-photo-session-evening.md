@@ -1,5 +1,5 @@
 ---
-socialName: Team photo session evening
+socialName: Team photo session evening, UA
 socialDate: April 15 (2024)
 socialDesc: "One of our lab members (Shih-Hsuan Lo) took professional level
   headshots and group photos for the Data Diversity Lab team of Spring 2024!  "
