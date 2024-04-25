@@ -1,19 +1,7 @@
 {
-  "title": "MS advising",
-  "paragraphOne": "Paragraph one",
-  "numberedCards" : [
-    {
-      "title": "Title",
-      "description": "description"
-    },
-    {
-      "title": "Title",
-      "description": "description"
-    },
-    {
-      "title": "Title",
-      "description": "description"
-    },
+  "title": "MSDS & MSIS advising",
+  "paragraphOne": "Dr. Román-Palacios is Coordinator and Advisor for the Masters in Data Science and Masters in Information Systems programs at the University of Arizona. \n\nTo contact Dr.Román-Palacios about an advising-related matter, please email si-ms_advisor@arizona.edu. To schedule an appointment, please use the Calendly link below: https://calendly.com/cromanpa/15min ",
+  "numberedCards": [
     {
       "title": "Title",
       "description": "description"
@@ -22,16 +10,5 @@
   "paragraphTwo": "Paragraph two",
   "secondTitle": "Second title",
   "paragraphThree": "Paragraph three",
-  "advisingCards" : [
-    {
-      "order": 1,
-      "title": "Advising card one",
-      "description": "Description"
-    },
-    {
-      "order": 2,
-      "title": "Advising card two",
-      "description": "Description"
-    }
-  ]
+  "advisingCards": []
 }
