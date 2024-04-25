@@ -6,4 +6,5 @@ socialDesc: "One of our lab members (Shih-Hsuan Lo) took professional level
 tags:
   - "2024"
 image: /assets/images/socials/edited_dscf8821-cropped.jpg
+order: 1
 ---
