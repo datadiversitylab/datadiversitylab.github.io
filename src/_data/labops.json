@@ -36,7 +36,13 @@
     }
   ],
   "paragraphTwo": "We encourage other labs to use these powerful suite of tools to complement, enhance and accelerate research.",
-  "secondTitle": "Second title",
+  "secondTitle": "Direct Links ",
   "paragraphThree": "Paragraph three",
-  "labopsCards": []
+  "labopsCards": [
+    {
+      "description": "<https://mattermost.com/platform-overview/>",
+      "title": "Mattermost",
+      "order": 3
+    }
+  ]
 }
