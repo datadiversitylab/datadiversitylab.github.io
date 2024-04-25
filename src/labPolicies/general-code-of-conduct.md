@@ -1,6 +1,6 @@
 ---
 title: General code of conduct
-link: 
+link: https://owncloud.cromanpa.synology.me/s/lQzRN1bIaxlrBGT
 order: 2
 ---
 
