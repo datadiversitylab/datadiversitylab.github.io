@@ -8,7 +8,7 @@
     },
     {
       "title": "ownCloud",
-      "description": "ownCloud is a free and open-source, self-hostable project for content collaboration, sharing, and syncing files. In the Data Diversity Lab, we have replaced One Drive and Google Drive for ownCloud."
+      "description": "ownCloud is a free and open-source, self-hostable project for content collaboration, organization, creation, sharing, and syncing files. In the Data Diversity Lab, we have replaced One Drive and Google Drive for ownCloud."
     },
     {
       "title": "OnlyOffice Docs",
@@ -20,7 +20,7 @@
     },
     {
       "title": "Umami",
-      "description": "TBD"
+      "description": "Is an open source, self-hostable, privacy-focused alternative to Google Analytics. We at the Data Diversity Lab use Umami to monitor our website's traffic activity."
     },
     {
       "title": "Synology NAS",
