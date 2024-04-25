@@ -43,11 +43,6 @@
       "order": 1,
       "title": "LabOps card one",
       "description": "Description"
-    },
-    {
-      "order": 2,
-      "title": "LabOps card two",
-      "description": "Description"
     }
   ]
 }
