@@ -24,7 +24,7 @@
     },
     {
       "title": "Synology NAS",
-      "description": "TBD"
+      "description": "The Data Diversity Lab self hosts most of its open source applications in a Synology Network Attached Storage. Our NAS not only serves is capable of hosting multiple open source applications, but also works as a scientific data storage and backup system that has privacy and security at its core."
     },
     {
       "title": "Zotero",
