@@ -5,5 +5,11 @@
   "paragraphTwo": "Schedule an advising appointment here: <https://calendly.com/cromanpa/15min>",
   "secondTitle": "Preparing for an advising meeting ",
   "paragraphThree": "If you are seeking for academic advise on the MS in Data Science and MS in Information Science at the iSchool (UArizona), please review the the relevant student handbooks before scheduling a meeting.\n\nData Science: https://ischool.arizona.edu/ms-data-science\n\nInformation Science: https://ischool.arizona.edu/ms-information-science/student-resources \n\n\n\nPlease include an informative statement on the topic(s) that you would like to discuss during our meeting.\n\n\n\nWe will both will receive an email confirming your appointment with me. Keep that e-mail in your records.\n\n\n\nIf you were able to address your question/concern before the meeting, please cancel your appointment in advance.\n\n\n\nPlease schedule a new meeting if you know that you will be 5+ minutes late to your original appointment.\n\n\n\nIf you have scheduled a meeting weeks in advance, please be open to have your meeting re-scheduled in accordance of my latest availability. I will notify of any updates over email.",
-  "advisingCards": []
+  "advisingCards": [
+    {
+      "description": "If you are seeking for academic advise on the MS in Data Science and MS in Information Science at the iSchool (UArizona), please review the the relevant student handbooks before scheduling a meeting.\n\nData Science: https://ischool.arizona.edu/ms-data-science\n\nInformation Science: https://ischool.arizona.edu/ms-information-science/student-resources",
+      "title": "Handbooks",
+      "order": 1
+    }
+  ]
 }
