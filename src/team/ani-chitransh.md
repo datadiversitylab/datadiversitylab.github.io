@@ -14,8 +14,8 @@ memberBio: "Ani is a graduate student working towards her capstone. Ani’s
 tags:
   - Current
   - MSc capstone student
-linkedin: null
-email: null
+linkedin: https://www.linkedin.com/in/ani-chitransh-a763b9170/
+email: anichitransh@arizona.edu
 link: "https://www.datascienceportfol.io/AniChitransh "
 resume: null
 image: /assets/images/our-team/ani2_head.jpg
