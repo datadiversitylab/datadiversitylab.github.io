@@ -364,6 +364,9 @@
     gap: 1rem;
     text-align: center;
     user-select: none;
+    align-items: flex-end;
+    justify-content: flex-start;
+    overflow: auto;
   }
   .cs-filter-wrapper div {
     width: 100%;

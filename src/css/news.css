@@ -104,9 +104,9 @@
     height: 100%;
     width: 100%;
     /* makes image behave like a background image */
-    object-fit: cover;
+    object-fit: contain;
     /* places top of the image at the top of the box */
-    object-position: top;
+    object-position: center;
     transition: transform 0.6s;
   }
   #new-547 .cs-name {
@@ -230,9 +230,9 @@
     height: 100%;
     width: 100%;
     /* makes image behave like a background image */
-    object-fit: cover;
+    object-fit: contain;
     /* places top of the image at the top of the box */
-    object-position: top;
+    object-position: center;
     transition: transform 0.6s;
   }
   #dropdown-cards .line {
@@ -298,9 +298,6 @@
   #dropdown-cards .cs-dropdown-content ul ul {
     padding-left: 2rem;
   }
-  #dropdown-cards .cs-dropdown-content ul ::marker {
-    margin: 0;
-  }
   #dropdown-cards .cs-dropdown-content > .cs-text {
     border-bottom: 2px solid #8B8B8B;
     padding: 0.5rem 0;
@@ -344,7 +341,7 @@
     flex: 0 0 100%;
     max-width: unset;
   }
-  #dropdown-cards .cs-flex-group {
+  #dropdown-cards .cs-dropdown-show {
     cursor: pointer;
   }
   #dropdown-cards .cs-dropdown-content .teaching-table {

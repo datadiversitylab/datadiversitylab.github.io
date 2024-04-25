@@ -1,5 +1,5 @@
 ---
-layout: 'base.html' 
+layout: 'base.html'
 description: "Grants of the Data Diversity Lab"
 metaTitle: 'Grants'
 tagTitle: 'Grants'
@@ -39,7 +39,7 @@ eleventyNavigation:
 {%- set tags = [] -%}
 {%- for grant in collections.grants | sort(attribute='data.order') -%}
     {%- for tag in grant.data.tags -%}
-        {%- if not tags.includes(tag | string) and tag != "grants" -%}
+        {%- if not tags.includes(tag | string) and tag != "grants" and tag != "" -%}
             {%- set tags = tags.concat(tag | string) -%}
         {%- endif -%}
     {%- endfor -%}
@@ -94,6 +94,6 @@ eleventyNavigation:
                 </div>
             {%- endfor -%}
         </div>
-        
+
     </div>
 </section>

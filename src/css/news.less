@@ -119,9 +119,9 @@
                 height: 100%;
                 width: 100%;
                 /* makes image behave like a background image */
-                object-fit: cover;
+                object-fit: contain;
                 /* places top of the image at the top of the box */
-                object-position: top;
+                object-position: center;
                 transition: transform 0.6s;
             }
         }
@@ -274,9 +274,9 @@
                 height: 100%;
                 width: 100%;
                 /* makes image behave like a background image */
-                object-fit: cover;
+                object-fit: contain;
                 /* places top of the image at the top of the box */
-                object-position: top;
+                object-position: center;
                 transition: transform 0.6s;
             }
         }
@@ -361,10 +361,6 @@
                 ul {
                     padding-left: 2rem;
                 }
-
-                ::marker {
-                    margin: 0;
-                }
             }
 
             > .cs-text {
@@ -422,7 +418,7 @@
             max-width: unset;
         }
 
-        .cs-flex-group {
+        .cs-dropdown-show {
             cursor: pointer;
         }
 

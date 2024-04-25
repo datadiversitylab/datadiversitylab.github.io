@@ -1,5 +1,5 @@
 ---
-layout: 'base.html' 
+layout: 'base.html'
 description: "Social of the Data Diversity Lab"
 metaTitle: 'Social'
 tagTitle: 'Social'
@@ -35,8 +35,8 @@ eleventyNavigation:
 {%- set years = [] -%}
 {%- for social in collections.socials | sort(attribute='data.order') -%}
     {%- for tag in social.data.tags -%}
-        {%- if tag is number and not years.includes(tag) -%}
-            {%- set years = years.concat(tag) -%}
+        {%- if not years.includes(tag | string) and tag != "socials" -%}
+            {%- set years = years.concat(tag | string) -%}
         {%- endif -%}
     {%- endfor -%}
 {%- endfor -%}
@@ -79,6 +79,6 @@ eleventyNavigation:
                 </div>
             {%- endfor -%}
         </div>
-        
+
     </div>
 </section>

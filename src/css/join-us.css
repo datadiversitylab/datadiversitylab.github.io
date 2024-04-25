@@ -49,6 +49,13 @@
     /* 48px - 64px */
     gap: 1rem;
   }
+  #job-cards .cs-name {
+    width: 90%;
+    margin-right: auto;
+  }
+  #job-cards .cs-dropdown-icon {
+    cursor: pointer;
+  }
   #job-cards .cs-content {
     /* set text aling to left if content needs to be left aligned */
     text-align: center;
@@ -84,9 +91,9 @@
     height: 100%;
     width: 100%;
     /* makes image behave like a background image */
-    object-fit: cover;
+    object-fit: contain;
     /* places top of the image at the top of the box */
-    object-position: top;
+    object-position: center;
     transition: transform 0.6s;
   }
   #job-cards .cs-title-card-wrapper .cs-title {
