@@ -4,15 +4,15 @@
   "numberedCards": [
     {
       "title": "Mattermost",
-      "description": "TBD"
+      "description": "Mattermost is a free and open-source, self-hostable, online chat service with integrated file sharing. In the Data Diversity Lab, we have replaced Discord with Mattermost as an alternative for efficient communication, planning and collaboration."
     },
     {
-      "title": "Owncloud",
-      "description": "TBD"
+      "title": "ownCloud",
+      "description": "ownCloud is a free and open-source, self-hostable project for content collaboration, sharing, and syncing files. In the Data Diversity Lab, we have replaced One Drive and Google Drive for ownCloud."
     },
     {
-      "title": "OnlyOffice",
-      "description": "TBD"
+      "title": "OnlyOffice Docs",
+      "description": "OnlyOffice is a free and open-source collaborative system developed to manage documents and projects. In the Data Diversity Lab, we have replaced various aspects of the Microsoft 365 systems, more specifically the now phased out \"office\" suites. We use only office for editing and creating documents, spreadsheets, presentations and PDFs."
     },
     {
       "title": "Radicale",
