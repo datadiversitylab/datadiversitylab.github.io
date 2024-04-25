@@ -3,7 +3,7 @@ memberName: Jiayue He
 memberTitle: MSc student
 memberDate: 2024
 memberDateEnd: Present
-memberBio: Jiayue is a masters student majored in Information Science with the
+memberBio: Jiayue is a masters student majored in Information Science with a
   focus on Human-Centered Compute. She has a diverse background in game
   development, machine learning, and education. As she plans to embark on a
   Ph.D. in Mining at the University of Arizona, her research in the lab focuses
