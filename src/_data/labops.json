@@ -38,11 +38,5 @@
   "paragraphTwo": "TBD",
   "secondTitle": "Second title",
   "paragraphThree": "Paragraph three",
-  "labopsCards": [
-    {
-      "order": 1,
-      "title": "LabOps card one",
-      "description": "Description"
-    }
-  ]
+  "labopsCards": []
 }
