@@ -40,7 +40,7 @@
   "paragraphThree": "Paragraph three",
   "labopsCards": [
     {
-      "description": "https://mattermost.com/platform-overview/",
+      "description": "[Mattermost](https://mattermost.com/platform-overview/)",
       "title": "                                                                         Mattermost",
       "order": 3
     }
