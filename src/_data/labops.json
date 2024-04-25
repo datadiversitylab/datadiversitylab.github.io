@@ -12,11 +12,11 @@
     },
     {
       "title": "OnlyOffice Docs",
-      "description": "OnlyOffice is a free and open-source collaborative system developed to manage documents and projects. In the Data Diversity Lab, we have replaced various aspects of Microsoft 365, more specifically the now phased out \"office\" suites and use OnlyOffice for editing and creating documents, spreadsheets, and PDFs."
+      "description": "OnlyOffice is a free and open-source collaborative system developed to manage and create documents, spreadsheets and PDFs. In the Data Diversity Lab, we have replaced various aspects of Microsoft 365, more specifically the now phased out \"office\" suites."
     },
     {
       "title": "Radicale",
-      "description": "TBD"
+      "description": "Radicale is a free and open source, self-hostable, calendar and address book server. It uses and implements CalDAV and CardDAV standards, that when used in conjunction with open source clients such as Thunderbird and Evolution Calendar, create a strong replacement for classic closed-source clients and services such as Google Calendar."
     },
     {
       "title": "Umami",
@@ -35,7 +35,7 @@
       "description": "TBD"
     }
   ],
-  "paragraphTwo": "TBD",
+  "paragraphTwo": "We encourage other labs to use these powerful suite of tools to complement, enhance and accelerate research.",
   "secondTitle": "Second title",
   "paragraphThree": "Paragraph three",
   "labopsCards": []
