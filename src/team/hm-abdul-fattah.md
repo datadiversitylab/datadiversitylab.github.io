@@ -13,7 +13,7 @@ tags:
   - Current
   - MSc capstone student
 linkedin: https://www.linkedin.com/in/h-m-abdul-fattah-b2942a12b/
-email: null
+email: hmfattah@arizona.edu
 link: null
 resume: null
 image: /assets/images/our-team/hm-abdul_8781_head.jpg
