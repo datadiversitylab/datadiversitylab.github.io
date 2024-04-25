@@ -57,9 +57,6 @@
     /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
-  #conference-547 .cs-filter-wrapper {
-    justify-content: center;
-  }
   #conference-547 .cs-topper,
   #conference-547 .cs-title,
   #conference-547 .cs-text {
@@ -104,9 +101,9 @@
     height: 100%;
     width: 100%;
     /* makes image behave like a background image */
-    object-fit: cover;
+    object-fit: contain;
     /* places top of the image at the top of the box */
-    object-position: top;
+    object-position: center;
     transition: transform 0.6s;
   }
   #conference-547 .cs-filter-wrapper {

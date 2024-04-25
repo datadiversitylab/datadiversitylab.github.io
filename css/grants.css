@@ -48,9 +48,6 @@
     /* 48px - 64px */
     gap: 1rem;
   }
-  #grant-547 .cs-filter-wrapper {
-    justify-content: center;
-  }
   #grant-547 .cs-content {
     /* set text aling to left if content needs to be left aligned */
     text-align: center;
@@ -104,15 +101,17 @@
     height: 100%;
     width: 100%;
     /* makes image behave like a background image */
-    object-fit: cover;
+    object-fit: contain;
     /* places top of the image at the top of the box */
-    object-position: top;
+    object-position: center;
     transition: transform 0.6s;
   }
   #grant-547 .cs-name {
     font-size: var(--headerFourFontSize);
   }
   #grant-547 .cs-filter-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     gap: 0;
   }
   #grant-547 .cs-filter-wrapper a {
@@ -162,6 +161,7 @@
     align-items: flex-start;
   }
   #grant-547 .cs-filter-wrapper {
+    align-items: flex-start;
     gap: 0;
   }
   #grant-547 .cs-filter-wrapper a {
