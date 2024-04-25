@@ -147,10 +147,6 @@
     padding: var(--sectionPadding);
   }
   #dropdown-cards .cs-item {
-    display: none;
-  }
-  #dropdown-cards .cs-item:nth-child(-n+3),
-  #dropdown-cards.show-all .cs-item {
     display: block;
   }
   #dropdown-cards .cs-container {
@@ -266,11 +262,6 @@
     justify-content: space-between;
     align-items: center;
     padding: var(--cardPadding);
-  }
-  #dropdown-cards .cs-dropdown-content > .cs-text,
-  #dropdown-cards .cs-dropdown-content > p {
-    border-bottom: 2px solid #8B8B8B;
-    padding: 0.5rem 0;
   }
   #dropdown-cards .cs-dropdown-content .teaching-table {
     display: flex;
