@@ -3,17 +3,23 @@ memberName: Ani Chitransh
 memberTitle: MSc student
 memberEducation: ""
 memberDate: 2024
-memberBio: TBD
+memberDateEnd: Present
+memberBio: "Ani is a graduate student working towards her capstone. Ani’s
+  professional journey is characterized by her proficiency with a range of
+  technologies including Python, SQL, R, TensorFlow, and PyTorch, as well as her
+  adeptness with big data tools like Hadoop and Spark. Her work in the lab
+  involves transforming complex datasets into actionable insights, with a
+  significant focus on optimizing business outcomes through innovative
+  data-driven strategies. "
 tags:
   - Current
   - MSc capstone student
 linkedin: null
 email: null
-link: null
+link: "https://www.datascienceportfol.io/AniChitransh "
 resume: null
 image: /assets/images/our-team/ani2_head.jpg
 imageAlt: Portrait of Ani Chitransh
 order: 8
 date: 2024-03-09T08:03:44.405Z
-memberDateEnd: Present
 ---
