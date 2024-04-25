@@ -9,11 +9,6 @@ dropdowns.forEach(function(dropdown) {
             return;
         }
 
-        dropdowns.forEach(function(dropdown) {
-            dropdown.querySelector(".cs-dropdown-icon img").src = "../assets/icons/chevron-down.svg";
-            dropdown.classList.remove("is-active");
-        });
-
         dropdown.querySelector(".cs-dropdown-icon img").src = "../assets/icons/chevron-up.svg";
         dropdown.classList.toggle("is-active");
     });

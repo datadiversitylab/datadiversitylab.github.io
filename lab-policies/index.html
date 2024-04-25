@@ -320,6 +320,13 @@
             window.addEventListener('onload', appHeight);
 
             appHeight();
+
+            const scroll = document.documentElement.scrollTop;
+            if (scroll >= 50) {
+                document.querySelector('body').classList.add('scroll')
+            } else {
+                document.querySelector('body').classList.remove('scroll')
+            }
         </script>
 
         <script defer src="/assets/js/nav.js"></script>

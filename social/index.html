@@ -244,6 +244,7 @@
                                     <img loading="lazy" decoding="async" src="/assets/images/socials/edited_dscf8821-cropped.jpg" alt="" width="522" height="370" aria-hidden="true">
                                 </picture>
                                 <div class="cs-flex-group">
+                                    <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">Team photo session evening, UA</span>
                                     <span class="cs-timeline">April 15 (2024)</span>
                                     <span class="cs-desc">
@@ -260,6 +261,7 @@
                                     <img loading="lazy" decoding="async" src="/assets/images/socials/img_20240322_141750243.jpg" alt="" width="522" height="370" aria-hidden="true">
                                 </picture>
                                 <div class="cs-flex-group">
+                                    <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">Game evening, Data Diversity Lab</span>
                                     <span class="cs-timeline">March 22 (2024)</span>
                                     <span class="cs-desc">
@@ -277,6 +279,7 @@
                                     <img loading="lazy" decoding="async" src="/assets/images/social/churrasco.jpg" alt="Churrasco do brazil image" width="522" height="370" aria-hidden="true">
                                 </picture>
                                 <div class="cs-flex-group">
+                                    <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">Churrasco do Brasil, Tucson</span>
                                     <span class="cs-timeline">November 20 (2023)</span>
                                     <span class="cs-desc">
@@ -294,6 +297,7 @@
                                     <img loading="lazy" decoding="async" src="/assets/images/social/la-indita.jpg" alt="la indita image" width="522" height="370" aria-hidden="true">
                                 </picture>
                                 <div class="cs-flex-group">
+                                    <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">La Indita, Tucson</span>
                                     <span class="cs-timeline">December 1 (2022)</span>
                                     <span class="cs-desc">
@@ -338,6 +342,13 @@
             window.addEventListener('onload', appHeight);
 
             appHeight();
+
+            const scroll = document.documentElement.scrollTop;
+            if (scroll >= 50) {
+                document.querySelector('body').classList.add('scroll')
+            } else {
+                document.querySelector('body').classList.remove('scroll')
+            }
         </script>
 
         <script defer src="/assets/js/nav.js"></script>

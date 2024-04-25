@@ -267,7 +267,7 @@
   #dropdown-cards .cs-flex-group {
     position: relative;
     max-height: inherit;
-    gap: 1rem;
+    padding: 0;
   }
   #dropdown-cards .cs-flex-group:not(.is-active) .cs-dropdown {
     display: none!important;
@@ -276,6 +276,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: var(--cardPadding);
+    padding-top: 0;
     gap: 1rem;
   }
   #dropdown-cards .cs-dropdown-show {
@@ -284,6 +286,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: var(--cardPadding);
   }
   #dropdown-cards .cs-dropdown-show .cs-title {
     margin: 0;

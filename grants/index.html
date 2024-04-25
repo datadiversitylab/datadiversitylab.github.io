@@ -248,6 +248,7 @@
                                     <img loading="lazy" decoding="async" src="/assets/images/grants/vip-web-logo_2x.png" alt="" width="522" height="370" aria-hidden="true">
                                 </picture>
                                 <div class="cs-flex-group">
+                                    <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">Catalyst Seed Fund Award</span>
                                     <span class="cs-timeline">$3,500 (2024)</span>
                                     <span class="cs-desc">
@@ -264,6 +265,7 @@
                                     <img loading="lazy" decoding="async" src="/assets/images/grants/uaf-edu-onehealth-graphic.png" alt="OneHealth Image" width="522" height="370" aria-hidden="true">
                                 </picture>
                                 <div class="cs-flex-group">
+                                    <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">OneHealth</span>
                                     <span class="cs-timeline">$50.000 (2023)</span>
                                     <span class="cs-desc">
@@ -280,6 +282,7 @@
                                     <img loading="lazy" decoding="async" src="/assets/images/grants/nih_master_logo_vertical_2coloredit2.png" alt="NIH P20 Image" width="522" height="370" aria-hidden="true">
                                 </picture>
                                 <div class="cs-flex-group">
+                                    <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">Southwest Center for Outreach and Resilience in Climate and Health (SCORCH)</span>
                                     <span class="cs-timeline">$3.8M, sub-award: $290,453 (2024–2026)</span>
                                     <span class="cs-desc">
@@ -296,6 +299,7 @@
                                     <img loading="lazy" decoding="async" src="/assets/images/grants/images.jpeg" alt="OneHealth Image" width="522" height="370" aria-hidden="true">
                                 </picture>
                                 <div class="cs-flex-group">
+                                    <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">Building a Bridge Between Open Access Mapping  and Formal Planning Efforts</span>
                                     <span class="cs-timeline">$25.000 (2022)</span>
                                     <span class="cs-desc">
@@ -340,6 +344,13 @@
             window.addEventListener('onload', appHeight);
 
             appHeight();
+
+            const scroll = document.documentElement.scrollTop;
+            if (scroll >= 50) {
+                document.querySelector('body').classList.add('scroll')
+            } else {
+                document.querySelector('body').classList.remove('scroll')
+            }
         </script>
 
         <script defer src="/assets/js/nav.js"></script>
