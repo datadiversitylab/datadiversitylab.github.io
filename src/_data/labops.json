@@ -37,12 +37,47 @@
   ],
   "paragraphTwo": "We encourage other labs to use these powerful suite of tools to complement, enhance and accelerate research.",
   "secondTitle": "Direct links ",
-  "paragraphThree": "Paragraph three",
+  "paragraphThree": "Below you can find direct links to the websites of the tools described above",
   "labopsCards": [
     {
       "description": "<https://mattermost.com/download/>",
       "title": "                                                                         Mattermost",
-      "order": 3
+      "order": -1
+    },
+    {
+      "title": "ownCloud",
+      "order": 2,
+      "description": "<https://owncloud.com/>"
+    },
+    {
+      "title": "OnlyOffice",
+      "order": 3,
+      "description": "<https://www.onlyoffice.com/>"
+    },
+    {
+      "order": 4,
+      "title": "Radicale",
+      "description": "<https://radicale.org/v3.html>"
+    },
+    {
+      "order": 5,
+      "title": "Umami",
+      "description": "<https://umami.is/>"
+    },
+    {
+      "order": 6,
+      "title": "Synology NAS",
+      "description": "<https://www.synology.com/en-us/dsm/solution/what-is-nas/for-home>"
+    },
+    {
+      "order": 7,
+      "title": "Zotero",
+      "description": "<https://www.zotero.org/>"
+    },
+    {
+      "order": 8,
+      "title": "Inkscape & GIMP",
+      "description": "<https://inkscape.org/>\n\n<https://www.gimp.org/>[](https://inkscape.org/)"
     }
   ]
 }
