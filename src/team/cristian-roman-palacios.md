@@ -20,5 +20,5 @@ image: /assets/images/our-team/cristian-roman-palacios.png
 imageAlt: Portrait of Cristian Román-Palacios
 order: 1
 date: 2024-03-28T23:31:34.809Z
-memberDateEnd: null
+memberDateEnd: ""
 ---

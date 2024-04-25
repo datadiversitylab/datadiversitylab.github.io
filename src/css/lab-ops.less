@@ -296,23 +296,14 @@
         }
 
         .cs-flex-group {
-            // max-height: (125/16rem);
-            transition: max-height 0.5s linear;
             overflow: hidden;
-            gap: 1rem;
+            padding: 0;
             cursor: pointer;
-            &.is-active {
-                max-height: 1300px;
-            }
         }
 
         &.student-evaluations {
             .cs-flex-group {
                 cursor: pointer;
-                // max-height: (90/16rem);
-                &.is-active {
-                    max-height: 2000px;
-                }
             }
         }
 
@@ -321,6 +312,8 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            padding: var(--cardPadding);
+            padding-top: 0;
         }
 
         .cs-dropdown-show {
@@ -329,14 +322,10 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            padding: var(--cardPadding);
         }
 
         .cs-dropdown-content {
-            > .cs-text, > p {
-                border-bottom: 2px solid #8B8B8B;
-                padding: (8/16rem) 0;
-            }
-
             .teaching-table {
                 display: flex;
                 flex-direction: column;
@@ -390,10 +379,6 @@
 
         .cs-flex-group {
             cursor: pointer;
-            // max-height: (125/16rem);
-            &.is-active {
-                max-height: 800px;
-            }
         }
 
         .cs-dropdown-content {

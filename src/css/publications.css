@@ -238,7 +238,6 @@
     overflow: hidden;
     display: block;
     position: relative;
-    border-bottom: 1px solid var(--bodyTextColor);
   }
   #meet-team-547 .cs-picture img {
     position: absolute;

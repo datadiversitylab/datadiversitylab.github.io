@@ -86,7 +86,7 @@ eleventyNavigation:
                                         {%- endif -%}
                                     </span>
                                     <span class="cs-job-title">{{ member.data.memberTitle }}</span>
-                                    <span class="cs-timeline"><span class="cs-start-date-year-data">{{ member.data.memberDate }}</span> {%- if member.data.memberDateEnd -%} {{" - "}} {{ member.data.memberDateEnd }} {%- endif -%}</span>
+                                    <span class="cs-timeline"><span class="cs-start-date-year-data">{{ member.data.memberDate }}</span> {%- if member.data.memberDateEnd -%} {{" - "}} <span class="cs-end-date-year-data">{{ member.data.memberDateEnd }}</span> {%- endif -%}</span>
                                     <span class="cs-desc">
                                         <span class="read-more-text">{{ member.data.memberBio }}</span>
                                         <span class="read-more-btn">...read more</span>

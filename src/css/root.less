@@ -239,6 +239,13 @@
         &.line-full {
             width: 100%;
         }
+
+        &.card-image-line {
+            position: absolute;
+            margin: 0!important;
+            top: 0;
+            width: calc(100% - var(--cardPadding)*2 );
+        }
     }
 
     // Buttons
@@ -486,6 +493,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                position: relative;
 
                 .cs-name {
                     font-size: var(--headerSixFontSize);

@@ -1,7 +1,7 @@
 ---
 memberName: Tom Olla
 memberTitle: MSc student
-memberDate: 2024 - Present
+memberDate: 2024
 memberBio: "Tom is a Tucson native with a passion for data visualization. He
   leverages R to import, clean, and create visualizations to better answer
   research questions. His current work in the lab aims to show the impact of

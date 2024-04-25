@@ -106,6 +106,7 @@ eleventyNavigation:
                             <img loading="lazy" decoding="async" src="{{ publication.data.image }}" alt="" width="522" height="370" aria-hidden="true">
                         </picture>
                         <div class="cs-flex-group">
+                            <div aria-hidden="true" class="line line-full card-image-line"></div>
                             <span class="cs-publication-type">{{ publication.data.publicationType }}</span>
                             <span class="cs-name">{{ publication.data.publicationTitle | markdown | safe }}</span>
                             <span class="cs-publication-author">{{ publication.data.publicationAuthor | highlightAuthors(collections.team) | safe }}</span>

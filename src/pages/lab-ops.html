@@ -70,7 +70,7 @@ eleventyNavigation:
                         </div>
                         <div class="cs-dropdown">
                             <div class="cs-dropdown-content">
-                                {{ card.description | safe }}
+                                {{ card.description | markdown | safe }}
                             </div>
                         </div>
                     </div>

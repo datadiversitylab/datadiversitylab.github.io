@@ -1,5 +1,5 @@
 ---
-layout: 'base.html' 
+layout: 'base.html'
 description: "Meta description for the page"
 metaTitle: 'Title that shows up on social OG tags'
 tagTitle: 'Conferences'
@@ -66,6 +66,7 @@ eleventyNavigation:
                                     <img loading="lazy" decoding="async" src="{{ conference.data.image }}" alt="{{ conference.data.imageAlt }}" width="522" height="370" aria-hidden="true">
                                 </picture>
                                 <div class="cs-flex-group">
+                                    <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-timeline">{{ conference.data.DateSeason }}</span>
                                     <span class="cs-name">{{ conference.data.Title }}</span>
                                     <span class="cs-timeline">{{ conference.data.Location }}</span>

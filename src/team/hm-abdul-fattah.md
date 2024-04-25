@@ -1,7 +1,7 @@
 ---
 memberName: HM Abdul Fattah
 memberTitle: MSc student
-memberDate: 2024 - Present
+memberDate: 2024
 memberBio: TBD
 tags:
   - Current

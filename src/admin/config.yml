@@ -26,7 +26,8 @@ collections:
       - { label: 'Member Name', name: 'memberName', widget: 'string', required: true }
       - { label: 'Member Title', name: 'memberTitle', widget: 'string', required: false }
       - { label: 'Member Education', name: 'memberEducation', widget: 'string', required: false }
-      - { label: 'Member Date', name: 'memberDate', widget: 'string', required: false }
+      - { label: 'Member Date Start', name: 'memberDate', widget: 'string', required: false }
+      - { label: 'Member Date End', name: 'memberDateEnd', widget: 'string', required: false }
       - { label: 'Member Bio', name: 'memberBio', widget: 'string', required: true }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['Current'], required: true}
       - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false }
