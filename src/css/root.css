@@ -137,6 +137,9 @@
     -o-transition: 0.2s ease;
     transition: 0.2s ease;
   }
+  .cs-item div > p:not(:first-child) {
+    margin-top: 1rem;
+  }
   input {
     border: 1px solid #767676;
   }

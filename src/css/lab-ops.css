@@ -147,10 +147,6 @@
     padding: var(--sectionPadding);
   }
   #dropdown-cards .cs-item {
-    display: none;
-  }
-  #dropdown-cards .cs-item:nth-child(-n+3),
-  #dropdown-cards.show-all .cs-item {
     display: block;
   }
   #dropdown-cards .cs-container {

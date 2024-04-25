@@ -38,7 +38,7 @@ eleventyNavigation:
                     <div class="cs-flex-group">
                         <h4 class="cs-title">{{ loop.index }}</h4>
                         <span class="cs-name">{{ card.title }}</span>
-                        <span class="cs-desc">{{ card.description }}</span>
+                        <span class="cs-desc">{{ card.description | markdown | safe }}</span>
                     </div>
                 </div>
             {%- endfor -%}
