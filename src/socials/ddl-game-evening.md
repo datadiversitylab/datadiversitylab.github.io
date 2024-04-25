@@ -1,5 +1,5 @@
 ---
-socialName: DDL Game evening
+socialName: Game evening, Data Diversity Lab
 socialDate: March 22 (2024)
 socialDesc: A small game evening in the lab! Pizza, cinnamon dessert, games and
   fun was had!
