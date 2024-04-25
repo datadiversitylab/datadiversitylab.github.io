@@ -1,6 +1,6 @@
 {
   "title": "LabOps",
-  "paragraphOne": "The Data Diversity Lab performs its research operations with a solid foundation based on the use of free and open source software (FOSS) to facilitate communication, enable cross border collaboration, increase Open Access and Open Research efforts, and maintaining sovereignty over one's own personal and scientific data. Below you can explore our current and evolving set of tools that help us support our operations.",
+  "paragraphOne": "The Data Diversity Lab performs its research operations with a foundation based on the use of free and open source software (FOSS) to facilitate communication, enable cross border collaboration, increase Open Access and Open Research efforts, and maintaining sovereignty over one's own personal and scientific data. Below you can explore our current and evolving set of tools that help support our operations.",
   "numberedCards": [
     {
       "title": "Mattermost",
@@ -12,11 +12,11 @@
     },
     {
       "title": "OnlyOffice Docs",
-      "description": "OnlyOffice is a free and open-source collaborative system developed to manage documents and projects. In the Data Diversity Lab, we have replaced various aspects of Microsoft 365, more specifically the now phased out \"office\" suites and use OnlyOffice for editing and creating documents, spreadsheets, and PDFs."
+      "description": "OnlyOffice is a free and open-source collaborative system developed to manage and create documents, spreadsheets and PDFs. In the Data Diversity Lab, we have replaced various aspects of Microsoft 365, more specifically the now phased out \"office\" suites."
     },
     {
       "title": "Radicale",
-      "description": "TBD"
+      "description": "Radicale is a free and open source, self-hostable, calendar and address book server. It uses and implements CalDAV standards. When used in conjunction with open source clients such as Thunderbird and Evolution Calendar, it creates a strong replacement for classic closed-source clients and services such as Google Calendar."
     },
     {
       "title": "Umami",
@@ -35,8 +35,14 @@
       "description": "TBD"
     }
   ],
-  "paragraphTwo": "TBD",
-  "secondTitle": "Second title",
+  "paragraphTwo": "We encourage other labs to use these powerful suite of tools to complement, enhance and accelerate research.",
+  "secondTitle": "Direct links ",
   "paragraphThree": "Paragraph three",
-  "labopsCards": []
+  "labopsCards": [
+    {
+      "description": "https://mattermost.com/platform-overview/",
+      "title": "                                                                         Mattermost",
+      "order": 3
+    }
+  ]
 }
