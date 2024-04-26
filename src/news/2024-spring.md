@@ -16,5 +16,5 @@ order: 10
 * A lab retreat is planned during the semester, will be discussing research and future work plans.
 * We welcome our new lab members for the spring semester:
 
-  * Graduate students: Abdul HM Fattah, Shih-Suan Lo, Jiayue He, Ani Chitransh & Tom Olla .
+  * Graduate students: Abdul HM Fattah, Shih-Hsuan Lo, Jiayue He, Ani Chitransh & Tom Olla .
   * Research Data Support Specialist: Tanisha Lohchab.
