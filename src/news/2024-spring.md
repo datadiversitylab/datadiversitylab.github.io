@@ -4,8 +4,8 @@ tags:
   - 2024
 order: 10
 ---
-*PhD candidate Jhan C.Salazar flies from St. Louis to visit the lab for a week of collaboration! We welcome you back Jhan!
-*Our first postdoc has joined the lab, we welcome Kiran Basava!
+* PhD candidate Jhan C.Salazar flies from St. Louis to visit the lab for a week of collaboration! We welcome you back Jhan!
+* Our first postdoc has joined the lab, we welcome Kiran Basava!
 * Danielle defended her PhD dissertation and passed with flying colors! Congratulations Danielle!
 * Our application to the Vertically Integrated Projects program was accepted and funded with a $3500 seed grant!
 * We have a new lab website!!!
@@ -16,5 +16,5 @@ order: 10
 * A lab retreat is planned during the semester, will be discussing research and future work plans.
 * We welcome our new lab members for the spring semester:
 
-  * Graduate students: Abdul HM Fattah, Shih-Suan Lo,Jiayue He, Ani Chitransh & Tom Olla .
+  * Graduate students: Abdul HM Fattah, Shih-Suan Lo, Jiayue He, Ani Chitransh & Tom Olla .
   * Research Data Support Specialist: Tanisha Lohchab.
