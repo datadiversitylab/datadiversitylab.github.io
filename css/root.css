@@ -34,6 +34,7 @@
     --boxCardShadow: 0 -4px 24px 0 rgba(22, 22, 22, 0.25), 0 20px 24px 0 rgba(22, 22, 22, 0.25);
     --app-height: 100vh;
     --newsWidth: 2000px;
+    --newsHolderLeft: 30vw;
   }
   /* roboto-regular - latin */
   @font-face {
