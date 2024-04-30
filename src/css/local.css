@@ -95,3 +95,244 @@
     align-items: flex-start;
   }
 }
+/*-- -------------------------- -->
+<---          Timeline          -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #timeline-504 {
+    padding: var(--sectionPadding);
+    /* clips the white line through the bullets */
+    overflow: hidden;
+  }
+  #timeline-504 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sectionGap);
+  }
+  #timeline-504 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+  #timeline-504 .cs-card-timeline-wrapper {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    min-height: 200px;
+    padding: 30px;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    /* changes at tablet */
+    gap: 2rem;
+    position: relative;
+  }
+  #timeline-504 .cs-card-timeline-wrapper:before {
+    /* white line through the bullets */
+    content: "";
+    height: 2px;
+    background: var(--lineColor);
+    opacity: 1;
+    position: absolute;
+    display: block;
+    width: var(--newsWidth);
+    top: 2.5rem;
+    left: 2.5rem;
+  }
+  #timeline-504 .cs-card-timeline-wrapper .cs-card-group {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    justify-content: flex-start;
+    width: auto;
+  }
+  #timeline-504 .cs-card-timeline-wrapper .cs-card-group:before {
+    /* bullet circle */
+    content: "";
+    width: 1.25rem;
+    height: 1.25rem;
+    background: var(--primary);
+    border-radius: 50%;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+  }
+  #timeline-504 .cs-card-timeline-wrapper .cs-card-group h6.cs-title {
+    top: -52px;
+    left: -13px;
+    margin: 0;
+  }
+  #timeline-504 .cs-item {
+    width: 15rem;
+    list-style: none;
+    position: relative;
+    flex: unset;
+  }
+  #timeline-504 .cs-h3 {
+    /* 16px - 25px */
+    font-size: clamp(1rem, 2.5vw, 1.5625rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    /* changes to 100% at tablet */
+    width: 80%;
+    margin: 0;
+    margin-bottom: 1.25rem;
+    color: var(--bodyTextColorWhite);
+    position: relative;
+  }
+  #timeline-504 .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+  }
+  #timeline-504 .cs-flex-group {
+    position: relative;
+    max-height: inherit;
+    padding: 0;
+  }
+  #timeline-504 .cs-flex-group:not(.is-active) .cs-dropdown {
+    display: none!important;
+  }
+  #timeline-504 .cs-dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--cardPadding);
+    padding-top: 0;
+    gap: 1rem;
+    font-size: var(--bodyFontSize);
+  }
+  #timeline-504 .cs-dropdown-show {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--cardPadding);
+    cursor: pointer;
+  }
+  #timeline-504 .cs-dropdown-show .cs-title {
+    margin: 0;
+  }
+  #timeline-504 .cs-dropdown-content {
+    max-height: 9em;
+    overflow: hidden;
+    position: relative;
+  }
+  #timeline-504 .cs-dropdown-content.show-more {
+    overflow: unset;
+    max-height: unset;
+  }
+  #timeline-504 .cs-dropdown-content .read-more-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: max-content;
+    background-color: white;
+    text-decoration: none;
+    color: var(--secondaryDark);
+    font-size: var(--bodyFontSize);
+    cursor: pointer;
+    line-height: 1.5em;
+  }
+  #timeline-504 .cs-dropdown-content .read-more-btn img {
+    width: 35px;
+    height: 35px;
+  }
+  #timeline-504 .cs-dropdown-content.show-more .read-more-btn {
+    position: relative;
+  }
+  #timeline-504 .cs-dropdown-content ul {
+    padding-left: 20px;
+  }
+  #timeline-504 .cs-dropdown-content ul li {
+    text-align: left;
+    padding-left: 0;
+  }
+  #timeline-504 .cs-dropdown-content ul ul {
+    padding-left: 2rem;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #timeline-504 {
+    padding-right: 0;
+  }
+  #timeline-504 .cs-container {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 80rem;
+  }
+  #timeline-504 .cs-title {
+    margin: 0;
+  }
+  #timeline-504 .cs-content {
+    min-width: 30%;
+    align-items: flex-start;
+    text-align: start;
+  }
+  #timeline-504 .cs-content .cs-flex {
+    width: 100%;
+  }
+  #timeline-504 .cs-content .cs-text {
+    width: 100%;
+  }
+  #timeline-504 .cs-text {
+    width: 50%;
+    margin: 0;
+  }
+  #timeline-504 .cs-card-timeline-wrapper {
+    overflow-x: scroll;
+    scrollbar-width: none;
+    min-height: 200px;
+    padding: 30px;
+    flex-direction: row;
+    min-width: 61vw;
+  }
+  #timeline-504 .cs-card-timeline-wrapper:before {
+    width: var(--newsWidth);
+    height: 2px;
+    top: calc(30px + 0.5rem);
+    left: 2rem;
+  }
+  #timeline-504 .cs-card-timeline-wrapper .cs-card-group h6.cs-title {
+    top: -3.5rem;
+    left: -0.9rem;
+    margin: 0;
+  }
+  #timeline-504 .cs-item {
+    width: 22rem;
+    padding: 0;
+    z-index: 1;
+  }
+  #timeline-504 .cs-item::before {
+    /* 56px - 72px */
+    margin-bottom: clamp(3.5rem, 7vw, 4.5rem);
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+  #timeline-504 .cs-h3 {
+    width: 100%;
+  }
+}

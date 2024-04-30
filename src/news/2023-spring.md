@@ -1,7 +1,7 @@
 ---
 Name: Spring
 tags:
-  - 2023
+  - "2023"
 order: 30
 ---
 * Cristian accepted a Tenure Track faculty position at the School of Information!

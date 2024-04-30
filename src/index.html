@@ -5,6 +5,8 @@ metaTitle: 'Data Diversity Lab University of Arizona'
 tagTitle: 'Home'
 preloadImg: '/assets/images/landing.webp'
 preloadCSS: '/css/local.css'
+preloadJS: '/js/dropdownCards.js'
+preloadSecondJS: '/js/newsHome.js'
 permalink: '/'
 eleventyNavigation:
   key: Home
@@ -82,6 +84,78 @@ eleventyNavigation:
     </div>
 </section>
 
-<script>
+<div aria-hidden="true" class="line"></div>
 
+<!-- ============================================ -->
+<!--                  News Timeline               -->
+<!-- ============================================ -->
+{%- set tags = [] -%}
+{%- for new in collections.news | sort(attribute='data.order') -%}
+    {%- for tag in new.data.tags -%}
+        {%- if not tags.includes(tag) and tag != "news" -%}
+            {%- set tags = tags.concat(tag) -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endfor -%}
+<section id="timeline-504">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <h2 class="cs-title">Recent news</h2>
+            </div>
+            <p class="cs-text">
+                Stay updated on the latest happenings within the data diversity lab at the University of Arizona.
+            </p>
+            <a class="cs-button-link" href="/news">
+                See all news
+                <img src="../assets/icons/right-arrow.svg" class="filter-green">
+            </a>
+        </div>
+        <div id="dropdown-cards" class="cs-card-timeline-wrapper">
+            {%- for tag in tags | sort(true) -%}
+                {%- if loop.index <= 2 -%}
+                    <div id="section{{ tag }}" class="cs-card-group">
+                    <h6 class="cs-title">{{ tag }}</h6>
+                    {%- for new in collections.news | sort(attribute='data.tags[0]') -%}
+                        {%- if new.data.tags.includes(tag) -%}
+                            <div class="cs-item">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <div>
+                                            <h4 class="cs-title">{{ new.data.Name }}</h4>
+                                        </div>
+                                        <div class="cs-dropdown-icon">
+                                            <img src="../assets/icons/{{ 'chevron-up' if loop.index == 1 else 'chevron-down' }}.svg">
+                                        </div>
+                                    </div>
+                                    <div class="cs-dropdown">
+                                        <div class="cs-dropdown-content">
+                                            <div class="read-more-text">{{ new.content | safe }}</div>
+                                            <a href="/news#section{{ tag }}?year={{ tag }}&season={{ new.data.Name | lower }}" class="read-more-btn">...read all</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+                {%- endif -%}
+            </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</section>
+
+<script defer>
+    const newsWidth = () => {
+        const doc = document.documentElement
+        const newsElem = document.querySelectorAll("#dropdown-cards .cs-card-group")
+        var widthSum = 0
+        newsElem.forEach((newsElem) => {
+            widthSum += newsElem.offsetWidth
+        })
+        doc.style.setProperty('--newsWidth', `${widthSum}px`)
+    }
+    window.addEventListener('onload', newsWidth);
+
+    newsWidth();
 </script>

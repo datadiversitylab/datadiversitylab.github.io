@@ -40,6 +40,8 @@
         --boxCardShadow: 0 -4px 24px 0 rgba(22, 22, 22, 0.25), 0 20px 24px 0 rgba(22, 22, 22, 0.25);
 
         --app-height: 100vh;
+
+        --newsWidth: 2000px;
     }
 
     // Grab your fonts to locally host from https://google-webfonts-helper.herokuapp.com/fonts
@@ -612,7 +614,8 @@
         gap: (8/16rem);
 
         .cs-text-caption {
-            visibility: hidden;
+            height: 24px;
+            display: none;
         }
     }
 
@@ -1032,9 +1035,7 @@
         }
 
         .cs-logo {
-            width: 40%;
-            max-width: (146/16rem);
-            height: 100%;
+            height: 4rem;
             margin: 0 auto 0 0;
             /* prevents padding and border from affecting height and width */
             box-sizing: border-box;
@@ -1050,6 +1051,7 @@
 
             img {
                 width: auto;
+                height: 100%;
                 /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
                 object-fit: contain;
                 display: block;
@@ -1695,13 +1697,14 @@
             align-items: center;
             justify-content: center;
             width: 100%;
+            gap: 1rem;
 
             .logo {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 max-width: (250/16rem);
-                height: (65/16rem);
+                height: (90/16rem);
                 img {
                     width: 100%;
                     height: 100%;

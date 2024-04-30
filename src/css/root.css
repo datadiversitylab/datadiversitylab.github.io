@@ -33,6 +33,7 @@
     --sectionGap: clamp(2rem, 4vw, 2.5rem);
     --boxCardShadow: 0 -4px 24px 0 rgba(22, 22, 22, 0.25), 0 20px 24px 0 rgba(22, 22, 22, 0.25);
     --app-height: 100vh;
+    --newsWidth: 2000px;
   }
   /* roboto-regular - latin */
   @font-face {
@@ -514,7 +515,8 @@
     gap: 0.5rem;
   }
   .cs-caption-slider-wrapper .cs-text-caption {
-    visibility: hidden;
+    height: 24px;
+    display: none;
   }
   .cs-arrow-wrapper {
     display: flex;
@@ -845,9 +847,7 @@
     align-items: center;
   }
   #cs-navigation .cs-logo {
-    width: 40%;
-    max-width: 9.125rem;
-    height: 100%;
+    height: 4rem;
     margin: 0 auto 0 0;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
@@ -862,6 +862,7 @@
   }
   #cs-navigation .cs-logo img {
     width: auto;
+    height: 100%;
     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
     object-fit: contain;
     display: block;
@@ -1405,13 +1406,14 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    gap: 1rem;
   }
   #footer .full-section .logo {
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 15.625rem;
-    height: 4.0625rem;
+    height: 5.625rem;
   }
   #footer .full-section .logo img {
     width: 100%;

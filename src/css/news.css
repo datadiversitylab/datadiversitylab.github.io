@@ -279,6 +279,7 @@
     padding: var(--cardPadding);
     padding-top: 0;
     gap: 1rem;
+    font-size: var(--bodyFontSize);
   }
   #dropdown-cards .cs-dropdown-show {
     width: 100%;

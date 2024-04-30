@@ -1,5 +1,5 @@
 ---
-layout: 'base.html' 
+layout: 'base.html'
 description: "News of the Data Diversity Lab"
 metaTitle: 'News'
 tagTitle: 'News'
@@ -57,7 +57,7 @@ eleventyNavigation:
                 <div id="section{{ tag }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
                     {%- for new in collections.news | sort(attribute='data.tags[0]') -%}
                         {%- if new.data.tags.includes(tag) -%}
-                            <div class="cs-item">
+                            <div class="cs-item {{ new.data.Name | lower }}">
                                 <div class="cs-flex-group">
                                     <div class="cs-dropdown-show">
                                         <div>
@@ -68,10 +68,10 @@ eleventyNavigation:
                                         </div>
                                     </div>
                                     <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">                    
+                                        <div class="cs-dropdown-content">
                                             {{ new.content | safe }}
                                         </div>
-                                    </div>                    
+                                    </div>
                                 </div>
                             </div>
                         {%- endif -%}
@@ -82,3 +82,40 @@ eleventyNavigation:
         </div>
     </div>
 </section>
+
+<script defer>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Function to get query parameters
+        function getQueryParams(url) {
+            const queryParams = {};
+            const queryString = url.split('?')[1] || '';
+            const regex = /([^&=]+)=([^&]*)/g;
+            let m;
+
+            while (m = regex.exec(queryString)) {
+                queryParams[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+            }
+            return queryParams;
+        }
+
+        // Get the full URL
+        var fullUrl = window.location.href;
+
+        // Parse the hash and query parameters
+        var hash = window.location.hash.split('?')[0]; // Gets '#section2024'
+        var queryParams = getQueryParams(fullUrl);
+
+        // Check if the 'year' and 'season' query parameters match '2024' and 'spring'
+        if (queryParams.year && queryParams.season) {
+            // Construct the selector based on the hash and season
+            var selector = `${hash} .${queryParams.season} .cs-dropdown-show`;
+            var sectionElement = document.querySelector(hash)
+            // Find the element and click if it exists
+            var element = document.querySelector(selector);
+            element.scrollIntoView();
+            if (element && !sectionElement.classList.contains("first-news")) {
+                element.click();
+            }
+        }
+    });
+</script>

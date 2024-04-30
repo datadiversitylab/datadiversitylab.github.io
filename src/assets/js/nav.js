@@ -154,7 +154,7 @@ captionSliders.forEach((slider) => {
 });
 
 // JS for read more button with conditional display based on parent's height
-const itemsReadMore = document.querySelectorAll(".cs-item .cs-desc");
+const itemsReadMore = document.querySelectorAll(".cs-item .cs-desc, .cs-item .cs-dropdown-content");
 if (itemsReadMore.length > 0 && itemsReadMore[0].querySelector(".read-more-btn") !== null) {
     itemsReadMore.forEach((desc) => {
         const readMoreBtn = desc.querySelector(".read-more-btn");

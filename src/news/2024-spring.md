@@ -1,7 +1,7 @@
 ---
 Name: Spring
 tags:
-  - 2024
+  - "2024"
 order: 10
 ---
 * PhD candidate Jhan C.Salazar flies from St. Louis to visit the lab for a week of collaboration! We welcome you back Jhan!
