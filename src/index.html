@@ -156,6 +156,14 @@ eleventyNavigation:
         doc.style.setProperty('--newsWidth', `${widthSum}px`)
     }
     window.addEventListener('onload', newsWidth);
-
     newsWidth();
+
+    const newsHolderLeft = () => {
+        const doc = document.documentElement
+        const newsElem = document.querySelector("#dropdown-cards")
+        doc.style.setProperty('--newsHolderLeft', `${newsElem.offsetLeft}px`)
+    }
+    window.addEventListener('onload', newsHolderLeft);
+
+    newsHolderLeft();
 </script>

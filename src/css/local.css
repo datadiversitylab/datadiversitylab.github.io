@@ -305,15 +305,15 @@
     overflow-x: scroll;
     scrollbar-width: none;
     min-height: 200px;
-    padding: 30px;
+    padding: 35px;
     flex-direction: row;
-    min-width: 61vw;
+    min-width: calc(100vw - var(--newsHolderLeft));
   }
   #timeline-504 .cs-card-timeline-wrapper:before {
     width: var(--newsWidth);
     height: 2px;
-    top: calc(30px + 0.5rem);
-    left: 2rem;
+    top: calc(35px + 0.5rem);
+    left: 2.5rem;
   }
   #timeline-504 .cs-card-timeline-wrapper .cs-card-group h6.cs-title {
     top: -3.5rem;
