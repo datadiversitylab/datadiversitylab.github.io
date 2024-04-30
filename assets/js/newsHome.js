@@ -8,64 +8,37 @@ let timestamp;
 let ticker;
 
 const track = () => {
-    // Compare the current timestamp with the last timestamp
     const now = Date.now();
     const elapsed = now - timestamp;
     timestamp = now;
-
-    // How far have we moved since the last frame?
     const delta = container.scrollLeft - frame;
     frame = container.scrollLeft;
-
-    // Velocity is the movement per frame times the number of frames per second
-    // This gives a smooth approximation of speed at the last moment of drag
     velocity = (delta / elapsed) * (1000 / 60);
-
-    // Call track again next frame
     ticker = requestAnimationFrame(track);
 };
 
 const autoScroll = () => {
     if (!isDragging) {
-    // Slow down the scrolling speed
-    velocity *= 0.95;
-
-    // If the velocity is below a small threshold, stop the auto-scroll
-    if (Math.abs(velocity) < 0.5) {
-        cancelAnimationFrame(ticker);
-    } else {
-        container.scrollLeft += velocity;
-        // Keep the momentum going
-        requestAnimationFrame(autoScroll);
-    }
+        velocity *= 0.95;
+        if (Math.abs(velocity) < 0.5) {
+            cancelAnimationFrame(ticker);
+        } else {
+            container.scrollLeft += velocity;
+            requestAnimationFrame(autoScroll);
+        }
     }
 };
 
+// Mouse Event Listeners
 container.addEventListener('mousedown', (e) => {
     isDragging = true;
     startX = e.pageX - container.offsetLeft;
     scrollLeft = container.scrollLeft;
     container.classList.add('active');
-
-    // Kick off the tracking of the drag velocity
     frame = container.scrollLeft;
     timestamp = Date.now();
     clearInterval(ticker);
     ticker = requestAnimationFrame(track);
-});
-
-container.addEventListener('mouseleave', () => {
-    isDragging = false;
-    container.classList.remove('active');
-});
-
-container.addEventListener('mouseup', () => {
-    isDragging = false;
-    container.classList.remove('active');
-
-    // Stop tracking the velocity and start the momentum scroll
-    cancelAnimationFrame(ticker);
-    requestAnimationFrame(autoScroll);
 });
 
 container.addEventListener('mousemove', (e) => {
@@ -74,4 +47,46 @@ container.addEventListener('mousemove', (e) => {
     const x = e.pageX - container.offsetLeft;
     const walk = (x - startX);
     container.scrollLeft = scrollLeft - walk;
+});
+
+container.addEventListener('mouseup', () => {
+    isDragging = false;
+    container.classList.remove('active');
+    cancelAnimationFrame(ticker);
+    requestAnimationFrame(autoScroll);
+});
+
+container.addEventListener('mouseleave', () => {
+    isDragging = false;
+    container.classList.remove('active');
+});
+
+// Touch Event Listeners
+container.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    isDragging = true;
+    startX = touch.pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+    container.classList.add('active');
+    frame = container.scrollLeft;
+    timestamp = Date.now();
+    clearInterval(ticker);
+    ticker = requestAnimationFrame(track);
+    // e.preventDefault(); // Prevents scrolling the window
+});
+
+container.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const touch = e.touches[0];
+    e.preventDefault(); // Prevents scrolling the window
+    const x = touch.pageX - container.offsetLeft;
+    const walk = (x - startX);
+    container.scrollLeft = scrollLeft - walk;
+});
+
+container.addEventListener('touchend', () => {
+    isDragging = false;
+    container.classList.remove('active');
+    cancelAnimationFrame(ticker);
+    requestAnimationFrame(autoScroll);
 });

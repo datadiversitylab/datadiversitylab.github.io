@@ -3,6 +3,7 @@ var dropdowns = document.querySelectorAll("#dropdown-cards .cs-flex-group");
 dropdowns.forEach(function(dropdown) {
     clickable = dropdown.querySelector(".cs-dropdown-show")
     clickable.addEventListener("click", function(e) {
+        e.stopPropagation();
         if (dropdown.classList.contains("is-active")) {
             dropdown.querySelector(".cs-dropdown-icon img").src = "../assets/icons/chevron-down.svg";
             dropdown.classList.remove("is-active");
