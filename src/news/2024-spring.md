@@ -4,6 +4,8 @@ tags:
   - "2024"
 order: 10
 ---
+* All of our lab members got together to collaborate on potentially publishable materials during our organized lab retreat/workshop! Research, lunch and fun!
+* HM Abdul and Ani Chitransh represented the Data Diversity Lab by presenting their capstone research in this semester's iShowcase event!
 * PhD candidate Jhan C.Salazar flies from St. Louis to visit the lab for a week of collaboration! We welcome you back Jhan!
 * Our first postdoc has joined the lab, we welcome Kiran Basava!
 * Danielle defended her PhD dissertation and passed with flying colors! Congratulations Danielle!
