@@ -1,5 +1,5 @@
 ---
-socialName: "Lab warming "
+socialName: Lab warming, Data Diversity Lab
 socialDate: May 2nd 2024
 socialDesc: The iSchool organized a lab warming party get together at the end of
   the spring 2024 semester. Collaborators, iSchool staff, lab members friends
