@@ -6,5 +6,5 @@ socialDesc: A small game evening in the lab! Pizza, cinnamon dessert, games and
 tags:
   - "2024"
 image: /assets/images/socials/img_20240322_141750243.jpg
-order: 2
+order: 25
 ---
