@@ -1,8 +1,8 @@
 ---
 publicationTitle: Using CloudSat to advance the global precipitation climatology
   project (GPCP) over Antarctica
-publicationAuthor: Mohammad Reza Ehsania, Ali Behrangia, Cristian
-  Román-Palaciosb, George J. Huffmanc, Robert F. Adler
+publicationAuthor: Mohammad Reza Ehsani, Ali Behrangi, Cristian Román-Palacios,
+  George J. Huffman, Robert F. Adler
 publicationDate: "2024"
 publicationType: Remote Sensing of Environment
 publicationAbstract: Remote sensing-based precipitation products face several
