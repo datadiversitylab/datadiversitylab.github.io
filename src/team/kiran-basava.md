@@ -11,6 +11,9 @@ memberBio: "Kiran’s research uses phylogenetic methods and comparative databas
 tags:
   - Current
   - Postdoc
+email: kcb7@arizona.edu
+github: https://github.com/kcbasava
+link: https://kiranbasava.weebly.com/
 image: /assets/images/our-team/kiran_head2.jpg
 order: 2
 date: 2024-04-23T10:11:00.000Z
