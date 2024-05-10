@@ -2,6 +2,7 @@
 memberName: Kyle Arechiga
 memberTitle: MSc student
 memberDate: 2022
+memberDateEnd: null
 memberBio: Kyle developed an unsupervised learning framework to detect a stable
   arrangement of cities across the globe based on environmental and
   anthropogenic features. He is widely interested in data analyses, has strong
@@ -17,7 +18,6 @@ link: https://www.linkedin.com/in/kyle-arechiga-007a92132/
 resume: null
 image: /assets/images/our-team/kyle-arechiga.png
 imageAlt: Portrait of Kyle Arechiga
-order: 20
+order: 200
 date: 2024-04-17T10:45:00.000Z
-memberDateEnd: null
 ---
