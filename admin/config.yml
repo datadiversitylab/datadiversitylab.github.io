@@ -200,10 +200,14 @@ collections:
     media_folder: '/src/assets/favicons'
     public_folder: '/assets/favicons'
     files:
-      - label: "Favicons use https://realfavicongenerator.net/ to build favicon images"
+      - label: "Favicons refer to directions inside"
         name: "Favicons"
         file: "src/_data/favicons.json"
         fields:
+          - label: Directions
+            name: readonlyField
+            widget: text
+            required: false
           - label: Favicon ICO
             name: faviconIco
             widget: image
@@ -212,6 +216,15 @@ collections:
             widget: image
           - label: Favicon 16x16
             name: faviconBrowser16
+            widget: image
+          - label: Apple Touch Icon
+            name: appleTouchIcon
+            widget: image
+          - label: Android Chrome 192
+            name: androidChrome192
+            widget: image
+          - label: Android Chrome 384
+            name: androidChrome384
             widget: image
   - name: 'labPolicies'
     label: 'Lab Policies'
