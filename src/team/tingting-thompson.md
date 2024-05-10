@@ -2,6 +2,7 @@
 memberName: Tingting Thompson
 memberTitle: MSc student
 memberDate: 2022
+memberDateEnd: null
 memberBio: Tingting completed her MS in Data Science capstone in the lab. During
   this time, she came up with a project focused on assessing student's
   performance in online courses using data retrieved from D2L at the University
@@ -17,7 +18,6 @@ link: null
 resume: null
 image: /assets/images/our-team/tingting-thompson.png
 imageAlt: Portrait of Tingting Thompson
-order: 27
+order: 270
 date: 2024-04-17T10:47:00.000Z
-memberDateEnd: null
 ---
