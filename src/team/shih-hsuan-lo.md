@@ -2,7 +2,7 @@
 memberName: Shih-Hsuan Lo
 memberTitle: MSc student
 memberDate: 2024
-memberDateEnd: Present
+memberDateEnd: ""
 memberBio: "Shih Hsuan is a data science major with a passion for image
   processing and object detection. For his current capstone project at the lab,
   Shih Hsuan is applying machine learning techniques to enhance the capabilities
