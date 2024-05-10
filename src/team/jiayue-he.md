@@ -2,7 +2,7 @@
 memberName: Jiayue He
 memberTitle: MSc student
 memberDate: 2024
-memberDateEnd: Present
+memberDateEnd: ""
 memberBio: Jiayue is a masters student majored in Information Science with a
   focus on Human-Centered Compute. She has a diverse background in game
   development, machine learning, and education. As she plans to embark on a
