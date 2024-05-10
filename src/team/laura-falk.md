@@ -2,6 +2,7 @@
 memberName: Laura Falk
 memberTitle: MSc student
 memberDate: 2022
+memberDateEnd: null
 memberBio: Laura worked on creating a model to detect particular levels of E.
   coli in the Santa Cruz River in Arizona. She worked in the lab for two
   semesters (Spring and Fall, 2022). The results from her work, directly
@@ -20,7 +21,6 @@ link: https://laurafalk.github.io/
 resume: null
 image: /assets/images/our-team/laura-falk.png
 imageAlt: Portrait of Laura Falk
-order: 21
+order: 210
 date: 2024-04-17T10:45:00.000Z
-memberDateEnd: null
 ---
