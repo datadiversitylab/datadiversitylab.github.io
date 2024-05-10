@@ -2,7 +2,7 @@
 memberName: HM Abdul Fattah
 memberTitle: MSc student
 memberDate: 2024
-memberDateEnd: Present
+memberDateEnd: ""
 memberBio: With a strong foundation in computer science, HM is passionate about
   Natural Language Processing (NLP), Applied Machine Learning and Data
   Visualization. Currently his focus lies on analyzing the 3D shape of cities
