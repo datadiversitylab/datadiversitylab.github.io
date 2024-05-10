@@ -5,7 +5,7 @@ memberBio: Rob completed his MS in Data Science with Dr. Roman-Palacios with a
   Capstone project analyzing past water use and future water demand in the City
   of Flagstaff, where he currently works as the GIS Manager.
 tags:
-  - Current
+  - Former
   - MSc capstone student
 email: "robkspeer@arizona.edu "
 image: /assets/images/our-team/robspeer.jpg
