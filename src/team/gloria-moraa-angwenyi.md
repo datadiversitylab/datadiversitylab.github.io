@@ -1,5 +1,6 @@
 ---
 memberName: Gloria Moraa Angwenyi
+memberTitle: MSc student
 memberDate: "2024"
 memberBio: Gloria conducted her MS in Data Science capstone project at the Data
   Diversity Lab. She focused on examining patterns of acceptance in admissions
@@ -12,5 +13,6 @@ tags:
   - MSc capstone student
 email: gloriaa@arizona.edu
 image: /assets/images/our-team/gloria_headshot.jpg
+order: 12
 date: 2024-05-10T09:54:00.000Z
 ---

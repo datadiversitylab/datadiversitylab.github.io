@@ -14,12 +14,12 @@ memberBio: Reza finalized his capstone for his MS in Data Science at the lab
 tags:
   - Former
   - MSc capstone student
-linkedin: null
+linkedin: https://www.linkedin.com/in/rehsani/
 email: rehsani@arizona.edu
 github: rehsani
 link: https://rehsani.github.io
 resume: null
-image: /assets/images/our-team/reza-ehsani.png
+image: /assets/images/our-team/img-2049.jpg
 imageAlt: Portrait of Reza Ehsani
 order: 180
 date: 2024-04-17T10:46:00.000Z
