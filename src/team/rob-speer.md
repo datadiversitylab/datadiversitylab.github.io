@@ -9,6 +9,6 @@ tags:
   - MSc capstone student
 email: "robkspeer@arizona.edu "
 image: /assets/images/our-team/robspeer.jpg
-order: 10
+order: 11
 date: 2024-04-30T12:33:00.000Z
 ---
