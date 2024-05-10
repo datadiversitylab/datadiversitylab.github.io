@@ -2,6 +2,7 @@
 memberName: Reza Ehsani
 memberTitle: MSc student
 memberDate: 2023
+memberDateEnd: null
 memberBio: Reza finalized his capstone for his MS in Data Science at the lab
   with a project entitled 'Using CloudSat to Advance the Global Precipitation
   Climatology Project (GPCP) over Antarctica' which was submitted for
@@ -20,7 +21,6 @@ link: https://rehsani.github.io
 resume: null
 image: /assets/images/our-team/reza-ehsani.png
 imageAlt: Portrait of Reza Ehsani
-order: 18
+order: 180
 date: 2024-04-17T10:46:00.000Z
-memberDateEnd: null
 ---
