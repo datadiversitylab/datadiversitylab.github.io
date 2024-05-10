@@ -10,7 +10,7 @@ memberBio: With a background in statistical computing, Danielle's research
   students in scientific computing and contributes to grant writing within the
   lab. 
 tags:
-  - Current
+  - Former
   - PhD student
 linkedin: null
 email: vanboxel@math.arizona.edu
