@@ -2,6 +2,7 @@
 memberName: Darwood Martin
 memberTitle: MSc student
 memberDate: 2023
+memberDateEnd: null
 memberBio: Darwood worked towards his MS in Data Science capstone in the Lab. He
   collaborated with Katie Stringham on putting together regression and
   classification models to predict the occurrence of local extinction in
@@ -16,7 +17,6 @@ link: null
 resume: null
 image: /assets/images/our-team/darwood-martin.png
 imageAlt: Portrait of Darwood Martin
-order: 16
+order: 160
 date: 2024-04-17T10:42:00.000Z
-memberDateEnd: null
 ---
