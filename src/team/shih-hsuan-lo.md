@@ -8,7 +8,7 @@ memberBio: "Shih Hsuan is a data science major with a passion for image
   Shih Hsuan is applying machine learning techniques to enhance the capabilities
   of image analysis and object identification. "
 tags:
-  - Current
+  - Former
   - MSc capstone student
 linkedin: null
 email: shihhsuanlo@arizona.edu
