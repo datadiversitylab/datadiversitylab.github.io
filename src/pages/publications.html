@@ -33,13 +33,13 @@ eleventyNavigation:
 <div aria-hidden="true" class="line"></div>
 
 <!-- ============================================ -->
-<!--                The Team                      -->
+<!--                Publications                      -->
 <!-- ============================================ -->
 
 {# Use the processedPublications collection #}
 {# Use the processedPublicationsJournalTypes collection #}
 
-<section id="meet-team-547">
+<section id="publications-section">
     <div class="cs-container">
         <div class="cs-content cs-sidebar cs-filter-searchable">
             <div class="cs-search-title-wrapper">
@@ -48,6 +48,9 @@ eleventyNavigation:
                 <div class="cs-search-wrapper">
                     <input type="text" id="search" class="cs-search" placeholder="Title or Author">
                     <img src="../assets/icons/order-desc.svg" class="order-by-button" alt="order by" width="25" height="25">
+                </div>
+                <div class="cs-pi-only-checkbox">
+                    <input id="piOnlyCheckbox" type="checkbox"><label for="piOnlyCheckbox">PI only</label>
                 </div>
             </div>
             <div class="cs-filter-button-wrapper">
@@ -110,7 +113,14 @@ eleventyNavigation:
                             <span class="cs-publication-type">{{ publication.data.publicationType }}</span>
                             <span class="cs-name">{{ publication.data.publicationTitle | markdown | safe }}</span>
                             <span class="cs-publication-author">{{ publication.data.publicationAuthor | highlightAuthors(collections.team) | safe }}</span>
-                            <span class="cs-publication-year">{{ publication.data.publicationDate }}</span>
+                            <span>
+                                {%- if publication.data.publicationMonth -%}
+                                    <span class="cs-publication-month">{{ publication.data.publicationMonth }}</span>
+                                    <span> </span>
+                                {%- endif -%}
+                                <span class="cs-publication-year">{{ publication.data.publicationDate }}</span>
+                            </span>
+                            </span>
                             <span class="cs-desc">
                                 <div class="read-more-text">{{ publication.data.publicationAbstract | markdown | safe }}</div>
                                 <span class="read-more-btn">...read more</span>

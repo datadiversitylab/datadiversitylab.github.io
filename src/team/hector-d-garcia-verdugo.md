@@ -18,7 +18,7 @@ link: null
 resume: /assets/documents/our-team/hdg-curriculum-vitae-ultimate-june-17-2023.pdf
 image: /assets/images/our-team/hector-d-garcia-verdugo.png
 imageAlt: Portrait of Hector D. Garcia-Verdugo
-order: 3
+order: 1
 date: 2024-04-17T11:55:00.000Z
 memberDateEnd: Present
 ---

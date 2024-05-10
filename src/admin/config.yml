@@ -51,6 +51,7 @@ collections:
       - { label: 'Publication Title', name: 'publicationTitle', widget: 'markdown', required: true }
       - { label: 'Author', name: 'publicationAuthor', widget: 'string', required: false }
       - { label: 'Year', name: 'publicationDate', widget: 'string', required: false }
+      - { label: 'Month', name: 'publicationMonth', widget: 'select', options: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], required: false }
       - { label: 'Journal Name', name: 'publicationType', widget: 'string', required: false }
       - { label: 'Abstract', name: 'publicationAbstract', widget: 'markdown', required: true }
       - { label: 'Keywords', name: 'tags', widget: 'list', required: true }
@@ -194,6 +195,24 @@ collections:
     slug: '{{title}}'
     fields:
       - { label: 'Logo Image', name: 'image', widget: 'image', required: true }
+  - name: 'favicons'
+    label: 'Favicons'
+    media_folder: '/src/assets/favicons'
+    public_folder: '/assets/favicons'
+    files:
+      - label: "Favicons use https://realfavicongenerator.net/ to build favicon images"
+        name: "Favicons"
+        file: "src/_data/favicons.json"
+        fields:
+          - label: Favicon ICO
+            name: faviconIco
+            widget: image
+          - label: Favicon 32x32
+            name: faviconBrowser32
+            widget: image
+          - label: Favicon 16x16
+            name: faviconBrowser16
+            widget: image
   - name: 'labPolicies'
     label: 'Lab Policies'
     folder: 'src/labPolicies'

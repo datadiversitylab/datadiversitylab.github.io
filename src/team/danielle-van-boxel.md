@@ -1,6 +1,7 @@
 ---
-memberName: Danielle Van Boxel, PhD
+memberName: Danielle Van Boxel
 memberTitle: Graduate Associate
+memberEducation: PhD
 memberDate: 2022
 memberDateEnd: "2024"
 memberBio: With a background in statistical computing, Danielle's research

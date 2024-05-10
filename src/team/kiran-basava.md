@@ -1,7 +1,8 @@
 ---
 memberName: Kiran Basava
 memberTitle: Postdoctoral Researcher
-memberDate: 2024 - Present
+memberDate: 2024
+memberDateEnd: Present
 memberBio: "Kiran’s research uses phylogenetic methods and comparative databases
   to explore cultural evolution in humans and other animals. She completed her
   PhD in Anthropology at the University of Oxford. Her work in the lab will

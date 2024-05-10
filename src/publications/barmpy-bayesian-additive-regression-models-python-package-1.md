@@ -2,6 +2,7 @@
 publicationTitle: "BARMPy: Bayesian Additive Regression Models Python Package"
 publicationAuthor: Danielle Van Boxel
 publicationDate: "2024"
+publicationMonth:
 publicationType: arXiv
 publicationAbstract: We make Bayesian Additive Regression Networks (BARN)
   available as a Python package, `barmpy`, with documentation at this

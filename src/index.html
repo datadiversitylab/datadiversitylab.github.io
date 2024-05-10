@@ -113,13 +113,19 @@ eleventyNavigation:
         </div>
         <div id="dropdown-cards" class="cs-card-timeline-wrapper">
             {%- for tag in tags | sort(true) -%}
+                {%- if loop.index == 1 -%}
+                    {%- set class = 'is-active' -%}
+                {%- else -%}
+                    {%- set class = '' -%}
+                {%- endif -%}
+
                 {%- if loop.index <= 2 -%}
                     <div id="section{{ tag }}" class="cs-card-group">
                     <h6 class="cs-title">{{ tag }}</h6>
                     {%- for new in collections.news | sort(attribute='data.tags[0]') -%}
                         {%- if new.data.tags.includes(tag) -%}
                             <div class="cs-item">
-                                <div class="cs-flex-group">
+                                <div class="cs-flex-group {{ class }}">
                                     <div class="cs-dropdown-show">
                                         <div>
                                             <h4 class="cs-title">{{ new.data.Name }}</h4>

@@ -1,4 +1,6 @@
 const searchInput = document.getElementById('search');
+const piOnlyCheckbox = document.getElementById('piOnlyCheckbox');
+
 // Adjust selector to specifically target keyword and journal type filters
 const keywordFilterOptions = document.querySelectorAll('.cs-filter-keywords-wrapper .filter-option');
 const journalTypeFilterOptions = document.querySelectorAll('.cs-filter-journal-type-wrapper .filter-option');
@@ -18,11 +20,13 @@ function applyFiltersAndOrder() {
     const searchText = searchInput.value.toLowerCase();
     const startYear = parseInt(startYearInput.value, 10) || -Infinity;
     const endYear = parseInt(endYearInput.value, 10) || Infinity;
+    const filterByAuthor = piOnlyCheckbox.checked;
 
     cards.forEach(card => {
         const titleElement = card.querySelector('.cs-name');
         const authorElement = card.querySelector('.cs-publication-author');
         const publicationYearElement = card.querySelector('.cs-publication-year');
+        const publicationMonthElement = card.querySelector('.cs-publication-month');
         const publicationTypeElement = card.querySelector('.cs-publication-type');
 
         const title = titleElement ? titleElement.textContent.toLowerCase() : '';
@@ -33,11 +37,13 @@ function applyFiltersAndOrder() {
         const matchesSearch = title.includes(searchText) || author.includes(searchText);
         const matchesPublicationType = selectedJournalTypes.size === 0 || selectedJournalTypes.has(publicationType);
         const matchesKeywords = selectedKeywords.size === 0 || cardKeywords.some(keyword => selectedKeywords.has(keyword));
+        const matchesAuthor = !filterByAuthor || author.includes("cristian román-palacios");
 
         const publicationYear = publicationYearElement ? parseInt(publicationYearElement.textContent, 10) : null;
+        const publicationMonth = publicationMonthElement ? publicationMonthElement.textContent : "Dec"; // Treat missing month as December (latest)
         const matchesYear = publicationYear ? publicationYear >= startYear && publicationYear <= endYear : true;
 
-        if (matchesSearch && matchesYear && matchesPublicationType && matchesKeywords) {
+        if (matchesSearch && matchesYear && matchesPublicationType && matchesKeywords && matchesAuthor) {
             card.style.display = '';
             visibleKeywords = new Set([...visibleKeywords, ...cardKeywords]);
             if (publicationType) visibleJournalTypes.add(publicationType);
@@ -64,14 +70,21 @@ function updateFilterOptionVisibility(filterOptions, visibleItems) {
 
 function sortDisplayedCards() {
     const displayedCards = Array.from(cards).filter(card => card.style.display !== 'none');
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
     displayedCards.sort((a, b) => {
         const yearA = parseInt(a.querySelector('.cs-publication-year').textContent, 10);
         const yearB = parseInt(b.querySelector('.cs-publication-year').textContent, 10);
-        return isAscending ? yearA - yearB : yearB - yearA;
+        const monthA = months.indexOf(a.querySelector('.cs-publication-month') ? a.querySelector('.cs-publication-month').textContent : "Dec");
+        const monthB = months.indexOf(b.querySelector('.cs-publication-month') ? b.querySelector('.cs-publication-month').textContent : "Dec");
+
+        if (yearA !== yearB) {
+            return isAscending ? yearA - yearB : yearB - yearA;
+        } else {
+            return isAscending ? monthA - monthB : monthB - monthA;
+        }
     });
 
-    // Reattach sorted cards to the DOM
     const parent = cards[0].parentNode;
     displayedCards.forEach(card => parent.appendChild(card));
 }
@@ -134,10 +147,7 @@ filterOptions.forEach(option => option.addEventListener('click', function(event)
 
 orderByButton.addEventListener('click', function() {
     isAscending = !isAscending; // Toggle sort order
-
-    // Toggle the img src based on isAscending
-    orderByButton.src = isAscending ? "../assets/icons/order-asc.svg" : "../assets/icons/order-desc.svg";
-
+    orderByButton.textContent = isAscending ? "Ascending" : "Descending"; // Update the button text
     applyFiltersAndOrder(); // Reapply filters and order
 });
 
@@ -181,6 +191,8 @@ filterButton.addEventListener('click', function() {
         filterButtonImage.src = '../assets/icons/remove.svg';
     }
 });
+
+piOnlyCheckbox.addEventListener('change', applyFiltersAndOrder);
 
 // Initial check and setup based on screen size
 applyDisplayLogicBasedOnScreenSize();
