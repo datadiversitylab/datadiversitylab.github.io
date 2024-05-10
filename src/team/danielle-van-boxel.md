@@ -2,7 +2,7 @@
 memberName: Danielle Van Boxel, PhD
 memberTitle: Graduate Associate
 memberDate: 2022
-memberDateEnd: Present
+memberDateEnd: "2024"
 memberBio: With a background in statistical computing, Danielle's research
   approaches ensemble machine learning.  Her PhD dissertation focused on
   developing novel regression and classification algorithms that show consistent
