@@ -2,6 +2,7 @@
 memberName: Katie Stringham
 memberTitle: MSc student
 memberDate: 2023
+memberDateEnd: null
 memberBio: Katie worked with Darwood towards his MS in Data Science capstone in
   the Lab. Katie focused on assembling regression models to predict the
   frequency of local extinctions across elevational gradients. Katie was working
@@ -15,7 +16,6 @@ link: null
 resume: null
 image: /assets/images/our-team/katie-stringham.png
 imageAlt: Portrait of Katie Stringham
-order: 17
+order: 170
 date: 2024-04-17T10:45:00.000Z
-memberDateEnd: null
 ---
