@@ -3,6 +3,7 @@ memberName: Daniela E. Valladolid-Garnica
 memberTitle: Research Data Support Specialist II
 memberEducation: PhD
 memberDate: 2023
+memberDateEnd: null
 memberBio: Daniela’s project seeks to understand the effects of climate-related
   range shifts and local extinction in the trophic structure of marine
   communities. Her research borrows tools from ecology, data mining, and data
@@ -18,7 +19,6 @@ link: https://www.researchgate.net/profile/Daniela-Valladolid-Garnica
 resume: null
 image: /assets/images/our-team/daniela-e-valladolid-garnica.png
 imageAlt: Portrait of Daniela E Valladolid-Garnica
-order: 11
+order: 110
 date: 2024-03-28T23:31:49.579Z
-memberDateEnd: null
 ---
