@@ -10,7 +10,7 @@ memberBio: Jiayue is a masters student majored in Information Science with a
   on employing data-driven solution to advance mine safety and on integrating
   STEM education within the intelligent mining industry.
 tags:
-  - Current
+  - Former
   - MSc capstone student
 linkedin: https://www.linkedin.com/in/jiayue-he-0912/
 email: jiayue0912he@gmail.com
