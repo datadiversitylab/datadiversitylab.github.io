@@ -10,7 +10,7 @@ memberBio: With a strong foundation in computer science, HM is passionate about
   data and visualizations. This approach offers a more comprehensive
   understanding of cities, surpassing the limitations of traditional 2D studies.
 tags:
-  - Current
+  - Former
   - MSc capstone student
 linkedin: https://www.linkedin.com/in/h-m-abdul-fattah-b2942a12b/
 email: hmfattah@arizona.edu
