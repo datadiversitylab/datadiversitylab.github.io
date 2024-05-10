@@ -2,6 +2,7 @@
 memberName: Quan Gan
 memberTitle: MSc student
 memberDate: 2022
+memberDateEnd: null
 memberBio: Quan's project in the lab focused on implementing code in stan to
   perform Bayesian calibration and temperature reconstructions using clumped
   isotope datasets. After finalizing his capstone project in the lab, Quan
@@ -15,7 +16,6 @@ link: null
 resume: null
 image: /assets/images/our-team/quan-gan.png
 imageAlt: Portrait of Quan Gan
-order: 22
+order: 220
 date: 2024-04-17T10:46:00.000Z
-memberDateEnd: null
 ---
