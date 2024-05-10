@@ -2,6 +2,7 @@
 memberName: Salena Torres
 memberTitle: PhD student
 memberDate: 2022
+memberDateEnd: null
 memberBio: Dr. Román-Palacios was Salena’s faculty advisor for the Data Science
   ambassador’s fellowship during 2023. Salena project focused on discussing
   training opportunities and discussing access and instruction approaches for
@@ -17,7 +18,6 @@ link: https://datascience.arizona.edu/person/salena-torres-ashton
 resume: null
 image: /assets/images/our-team/salena-torres.png
 imageAlt: Portrait of Salena Torres
-order: 23
+order: 230
 date: 2024-04-23T12:20:00.000Z
-memberDateEnd: null
 ---
