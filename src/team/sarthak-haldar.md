@@ -2,6 +2,7 @@
 memberName: Sarthak Haldar
 memberTitle: Research Assistant
 memberDate: 2022
+memberDateEnd: null
 memberBio: Sarthak was hired as a Research Assistant during Spring 2022 to work
   on BarrioMap, a shiny app that arouse from the collaboration between Dr.
   Román-Palacios and Mackenzie Waller, faculty at the College of Architecture,
@@ -17,7 +18,6 @@ link: https://www.sarthakhaldar.com/
 resume: null
 image: /assets/images/our-team/sarthak-haldar.png
 imageAlt: Portrait of Sarthak Haldar
-order: 24
+order: 240
 date: 2024-04-17T10:46:00.000Z
-memberDateEnd: null
 ---
