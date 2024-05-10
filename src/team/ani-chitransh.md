@@ -3,6 +3,7 @@ memberName: Ani Chitransh
 memberTitle: MSc student
 memberEducation: ""
 memberDate: 2024
+memberDateEnd: Present
 memberBio: "Ani is a graduate student working towards her capstone. Ani’s
   professional journey is characterized by her proficiency with a range of
   technologies including Python, SQL, R, TensorFlow, and PyTorch, as well as her
@@ -11,7 +12,7 @@ memberBio: "Ani is a graduate student working towards her capstone. Ani’s
   significant focus on optimizing business outcomes through innovative
   data-driven strategies. "
 tags:
-  - Current
+  - Former
   - MSc capstone student
 linkedin: https://www.linkedin.com/in/ani-chitransh-a763b9170/
 email: anichitransh@arizona.edu
@@ -21,5 +22,4 @@ image: /assets/images/our-team/dscf8655-fotor-202404261639_head.jpg
 imageAlt: Portrait of Ani Chitransh
 order: 8
 date: 2024-03-09T08:03:44.405Z
-memberDateEnd: Present
 ---
