@@ -4,7 +4,7 @@ tags:
   - "2024"
 order: 10
 ---
-We congratulate our graduating lab members: Danielle Van Boxel, Ani Chitransh, Shih-Hsuan Lo,Jiayue He, Tom Olla, Rob Speer & Gloria Moraa Angwenyi! Keep in touch!
+We congratulate our graduating lab members: Danielle Van Boxel, Ani Chitransh, Shih-Hsuan Lo, Jiayue He, Tom Olla, Rob Speer & Gloria Moraa Angwenyi! Keep in touch!
 *All of our lab members got together to collaborate on potentially publishable materials during our organized lab retreat/workshop! Research, lunch and fun!
 * HM Abdul and Ani Chitransh represented the Data Diversity Lab by presenting their capstone research in this semester's iShowcase event!
 * PhD candidate Jhan C.Salazar flies from St. Louis to visit the lab for a week of collaboration! We welcome you back Jhan!
