@@ -8,4 +8,5 @@ socialDesc: "Attending the rainbow graduation at UA, Dr. Román hoods Danielle
 tags:
   - "2024"
 image: /assets/images/socials/daniellerainbowgrad.jpg
+order: 1
 ---
