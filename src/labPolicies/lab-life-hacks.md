@@ -1,5 +1,5 @@
 ---
-title: Lab life hacks
+title: Lab life hacks & funding
 link: https://owncloud.cromanpa.synology.me/s/So3b8GpD7hwiiPw
 order: 6
 ---
