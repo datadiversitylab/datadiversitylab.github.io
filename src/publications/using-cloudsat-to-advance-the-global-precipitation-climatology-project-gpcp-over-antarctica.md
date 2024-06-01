@@ -4,6 +4,7 @@ publicationTitle: Using CloudSat to advance the global precipitation climatology
 publicationAuthor: Mohammad Reza Ehsani, Ali Behrangi, Cristian Román-Palacios,
   George J. Huffman, Robert F. Adler
 publicationDate: "2024"
+publicationMonth: May
 publicationType: Remote Sensing of Environment
 publicationAbstract: Remote sensing-based precipitation products face several
   challenges in high latitudes and specifically over frozen surfaces (i.e., snow
