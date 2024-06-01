@@ -2,7 +2,7 @@
 publicationTitle: Bayesian Additive Regression Networks
 publicationAuthor: Danielle Van Boxel
 publicationDate: "2024"
-publicationMonth:
+publicationMonth: Mar
 publicationType: arXiv
 publicationAbstract: We apply Bayesian Additive Regression Tree (BART)
   principles to training an ensemble of small neural networks for regression
