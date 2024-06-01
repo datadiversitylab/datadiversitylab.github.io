@@ -8,6 +8,7 @@ publicationAuthor: Amy Savage, Meredith Willmott, Pablo Moreno, Daijiang Li,
   Marzluff, Jason Munshi-South, Megan Phifer-Rixey, Ignacy Stadnicki, Marta
   Szulkin, Santago Bonilla-Bedoya, Yuyu Zhou, Kiyoko Gotanda
 publicationDate: "2024"
+publicationMonth: Feb
 publicationType: Authorea
 publicationAbstract: "Urban evolutionary ecology is inherently
   interdisciplinary. Moreover, it is a field with global significance. However,
