@@ -1,5 +1,5 @@
 ---
-memberName: Cristian Román-Palacios
+memberName: Cristian Román Palacios
 memberTitle: Principal Investigator, Assistant Professor
 memberEducation: PhD
 memberDate: null
@@ -16,7 +16,7 @@ linkedin: null
 email: cromanpa@arizona.edu
 github: cromanpa94
 link: https://cromanpa94.github.io/
-resume: null
+resume: /assets/documents/our-team/cv_cristian_roman_palacios-2.pdf
 image: /assets/images/our-team/cristian-roman-palacios.png
 imageAlt: Portrait of Cristian Román-Palacios
 order: 1
