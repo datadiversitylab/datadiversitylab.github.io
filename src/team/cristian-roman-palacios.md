@@ -4,11 +4,12 @@ memberTitle: Principal Investigator, Assistant Professor
 memberEducation: PhD
 memberDate: null
 memberDateEnd: ""
-memberBio: Early Career fellow at the Center for Diverse Leadership in Science,
-  University of California, Los Angeles. Cristian's research is focused on the
-  intersection between evolutionary biology, climate change, and applied machine
-  learning. He is generally interested in answering questions in Evolutionary
-  Biology and developing methods and tools for different fields.
+memberBio: Asistant Professor at the School of Information, UArizona and Early
+  Career fellow at the Center for Diverse Leadership in Science, University of
+  California, Los Angeles. Cristian's research is focused on the intersection
+  between evolutionary biology, climate change, and applied machine learning. He
+  is generally interested in answering questions in Evolutionary Biology and
+  developing methods and tools for different fields.
 tags:
   - Current
   - PI
