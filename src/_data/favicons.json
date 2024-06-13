@@ -5,5 +5,5 @@
   "appleTouchIcon": "/assets/favicons/apple-touch-icon.png",
   "androidChrome192": "/assets/favicons/android-chrome-384x384.png",
   "androidChrome384": "assets/favicons/android-chrome-384x384.png",
-  "readonlyField": "Use https://realfavicongenerator.net/ to build favicon images and you will get a zip file that contains favicon-32x32.png, favicon-16x16.png, etc ... The easiest will be to update manually in the assets/favicons through github using vscode since you cant upload ico files through decap cms. If to confusing just send me the image and I can update."
+  "readonlyField": "So the best way to update the favicons is to use https://realfavicongenerator.net/ and when you upload an image and continue it will give you a zip file with all the favicons. Then unzip the folder somewhere on your computer. Then come back here and select \"Choose different image\" on any of sections below.\n\nThen once you get the popup click \"upload\" and upload all the files in the unzipped folder overwritting all the current images one by one. "
 }
