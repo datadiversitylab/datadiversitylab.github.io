@@ -2,7 +2,7 @@
 Name: Spring
 tags:
   - "2024"
-order: 10
+order: 100
 ---
 * We congratulate our graduating lab members: Danielle Van Boxel, Ani Chitransh, Shih-Hsuan Lo, Jiayue He, Tom Olla, Rob Speer & Gloria Moraa Angwenyi! We will miss you. Keep in touch!
 * All of our lab members got together to collaborate on potentially publishable materials during our organized lab retreat/workshop! Research, lunch and fun!
