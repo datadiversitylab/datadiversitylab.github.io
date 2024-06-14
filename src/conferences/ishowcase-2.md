@@ -7,6 +7,6 @@ Description: Ani Chitransh (pictured) presented her MSc capstone research
 tags:
   - "2024"
 image: /assets/images/conferences/spring2024-ishowcase-ani-edit.jpg
-order: 98
+order: 102
 date: 2024-05-06T14:11:00.000Z
 ---
