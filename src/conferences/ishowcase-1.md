@@ -7,6 +7,6 @@ Description: HM Abdul (pictured) presented his MSc capstone research project at
 tags:
   - "2024"
 image: /assets/images/conferences/spring2024-ishowcase-hm-edit.jpg
-order: 99
+order: 101
 date: 2024-05-06T14:08:00.000Z
 ---
