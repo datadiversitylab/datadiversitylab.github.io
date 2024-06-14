@@ -2,7 +2,7 @@
 Name: Spring
 tags:
   - "2023"
-order: 30
+order: 10
 ---
 * Cristian accepted a Tenure Track faculty position at the School of Information!
 * Seed grant funded: Mackenzie Waller and I received ~20k from CAPLA (College of Architecture, Planning and Landscape Architecture) at UA towards working on open access software for formal planning. The app is still under development and can be foung here.
