@@ -122,7 +122,7 @@ eleventyNavigation:
                 {%- if loop.index <= 2 -%}
                     <div id="section{{ tag }}" class="cs-card-group">
                     <h6 class="cs-title">{{ tag }}</h6>
-                    {%- for new in collections.news | sort(attribute='data.tags[0]') -%}
+                    {%- for new in collections.news | sort(attribute='data.order') -%}
                         {%- if new.data.tags.includes(tag) -%}
                             <div class="cs-item">
                                 <div class="cs-flex-group {{ class }}">
