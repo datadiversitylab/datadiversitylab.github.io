@@ -34,6 +34,7 @@ publicationAbstract: Remote sensing-based precipitation products face several
 tags:
   - Data science
   - Climatology
+  - Remote sensing
 image: /assets/images/publications/screenshot-2024-05-09-at-8.37.17-am.png
 pdfDocument: /assets/documents/publications/ehsanietal2024.pdf
 webLink: https://www.sciencedirect.com/science/article/pii/S0034425724002177
