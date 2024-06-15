@@ -55,7 +55,7 @@ eleventyNavigation:
             {%- for tag in tags | sort(true) -%}
                 <h3 class="cs-title">{{ tag }}</h3>
                 <div id="section{{ tag }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
-                    {%- for new in collections.news | sort(attribute='data.tags[0]') -%}
+                    {%- for new in collections.news | sort(attribute='data.order') -%}
                         {%- if new.data.tags.includes(tag) -%}
                             <div class="cs-item {{ new.data.Name | lower }}">
                                 <div class="cs-flex-group">
