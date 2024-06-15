@@ -1,5 +1,5 @@
 ---
-memberName: Cristian Román Palacios
+memberName: Cristian Román-Palacios
 memberTitle: Principal Investigator, Assistant Professor
 memberEducation: PhD
 memberDate: null
