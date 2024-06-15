@@ -13,7 +13,7 @@ memberBio: Asistant Professor at the School of Information, UArizona and Early
 tags:
   - Current
   - PI
-linkedin: null
+linkedin: https://www.linkedin.com/in/cromanpa/
 email: cromanpa@arizona.edu
 github: cromanpa94
 link: https://cromanpa94.github.io/
