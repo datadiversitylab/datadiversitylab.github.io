@@ -34,6 +34,6 @@ tags:
   - Software
 image: /assets/images/publications/onlinetoolkits.png
 pdfDocument: /assets/documents/publications/savageetal_2024.pdf
-pdfLink: https://onlinelibrary.wiley.com/doi/epdf/10.1002/ece3.11633
+pdfLink: ""
 webLink: https://onlinelibrary.wiley.com/doi/10.1002/ece3.11633
 ---
