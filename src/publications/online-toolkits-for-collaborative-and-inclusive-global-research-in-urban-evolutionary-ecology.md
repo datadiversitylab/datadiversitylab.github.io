@@ -8,8 +8,8 @@ publicationAuthor: Amy Savage, Meredith Willmott, Pablo Moreno, Daijiang Li,
   Marzluff, Jason Munshi-South, Megan Phifer-Rixey, Ignacy Stadnicki, Marta
   Szulkin, Santago Bonilla-Bedoya, Yuyu Zhou, Kiyoko Gotanda
 publicationDate: "2024"
-publicationMonth: Feb
-publicationType: Authorea
+publicationMonth: Jun
+publicationType: Ecology and Evolution
 publicationAbstract: "Urban evolutionary ecology is inherently
   interdisciplinary. Moreover, it is a field with global significance. However,
   bringing researchers and resources together across fields and countries is
@@ -33,5 +33,7 @@ tags:
   - Ecology
   - Software
 image: /assets/images/publications/onlinetoolkits.png
-webLink: https://www.authorea.com/users/765260/articles/773945-online-toolkits-for-collaborative-and-inclusive-global-research-in-urban-evolutionary-ecology
+pdfDocument: /assets/documents/publications/savageetal_2024.pdf
+pdfLink: https://onlinelibrary.wiley.com/doi/epdf/10.1002/ece3.11633
+webLink: https://onlinelibrary.wiley.com/doi/10.1002/ece3.11633
 ---
