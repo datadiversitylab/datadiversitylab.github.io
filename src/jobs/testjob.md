@@ -9,7 +9,10 @@ jobDesc: >-
   implication for future conservation efforts.  
 
 
-  Compensation options: Either a payed position at $14.50-$16/Hr or research credit units.
+  Compensation options: Either a payed position at $14.50-$16/Hr or research credit units. 
+
+
+  Click on the link below for more information!
 jobPdf: https://uavip.arizona.edu/historical-biogeography-and-extinction-risk-assessment-recently-extinct-animals
 order: 1
 ---
