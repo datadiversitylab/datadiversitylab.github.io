@@ -50,6 +50,7 @@
     overflow: hidden;
     display: block;
     position: relative;
+    margin-bottom: 10px;
   }
   #service-cards .cs-picture img {
     position: absolute;
