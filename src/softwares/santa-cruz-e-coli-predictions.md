@@ -1,6 +1,6 @@
 ---
 Name: Santa Cruz E. coli Predictions
-Description: This tool predicts Escherichia coli (E. coli) levels in the Upper
+Description: This tool predicts *Escherichia coli (E. coli*) levels in the Upper
   Santa Cruz River using a model trained on public data from 2009-2022. It is
   intended as a warning of possible high bacterial loads; water quality must
   still be verified using coliform testing procedures to ensure public safety.
