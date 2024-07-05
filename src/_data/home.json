@@ -1,7 +1,7 @@
 {
   "title": "The Data Diversity Lab",
   "subTitle": "At the University of Arizona",
-  "description": "Welcome to our website! Our research is a dynamic exploration of ecology, evolution, and software development, driven by the power of extensive datasets and cutting-edge data science approaches.",
+  "description": "Welcome to our website! Our research is a dynamic exploration of ecology, evolution, and software development, driven by the power of large datasets and cutting-edge data science methods.",
   "buttons": [
     {
       "title": "Lab Members",
@@ -47,12 +47,12 @@
     {
       "image": "/assets/images/img_3602.jpeg",
       "title": "Our Values",
-      "description": "At the heart of our lab is the concept of data diversity, symbolizing our commitment to utilizing information from diverse origins. We embrace inclusivity and support diversity initiatives within academia, fostering an environment where varied perspectives drive groundbreaking discoveries."
+      "description": "At the heart of our lab is the concept of data diversity, symbolizing our commitment to using information from diverse origins. We embrace inclusivity and support diversity initiatives within academia, fostering an environment where varied perspectives drive novel contributions."
     },
     {
       "image": "/assets/images/leadership-card-updated.png",
       "title": "Leadership",
-      "description": "The Data Diversity lab is led by Dr. Cristian Román-Palacios, assistant professor at the school of information at the University of Arizona. His research interests often relate to phylogenetics, systematics, conservation biology, and the effects of climate change on biodiversity at different scales."
+      "description": "The Data Diversity lab is led by [Dr. Cristian Román-Palacios](https://cromanpa94.github.io/), assistant professor at the school of information at the University of Arizona. His research interests often relate to phylogenetics, systematics, conservation biology, and the effects of climate change on biodiversity at different scales."
     }
   ]
 }
