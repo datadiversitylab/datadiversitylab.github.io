@@ -16,7 +16,7 @@ tags:
 linkedin: https://www.linkedin.com/in/hectordanielgarcia/
 email: hdg1@arizona.edu
 link: null
-resume: /assets/documents/our-team/hdg-curriculum-vitae-july-11-2024-1-.pdf
+resume: /assets/documents/our-team/hdg-curriculum-vitae-july-11-2024.pdf
 image: /assets/images/our-team/hector-d-garcia-verdugo.png
 imageAlt: Portrait of Hector D. Garcia-Verdugo
 order: 3
