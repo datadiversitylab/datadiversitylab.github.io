@@ -13,7 +13,7 @@ tags:
   - Current
   - Staff
   - ""
-linkedin: https://www.linkedin.com/in/hectordanielgarcia/
+linkedin: " https://www.linkedin.com/in/hectordanielgarcia/"
 email: hdg1@arizona.edu
 link: null
 resume: /assets/documents/our-team/hdg-curriculum-vitae-july-11-2024.pdf
