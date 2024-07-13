@@ -8,7 +8,7 @@ memberBio: Hector is the data diversity lab’s Manager. He holds dual degrees i
   biology-focused career since 2013, he is dedicated to bridging science and the
   humanities to advance equitable causes. From his position at the data
   diversity lab, Hector is interested in offering a unique perspective and a
-  commitment to creating a just future. 
+  commitment to creating a just future.
 tags:
   - Current
   - Staff
