@@ -1,6 +1,6 @@
 ---
 title: Lab manual
-link: https://owncloud.cromanpa.synology.me/s/QAVUvs59c8VPffF
+link: https://nextcloud.datadiversitylab.synology.me/s/pqH6D78zrFRQAbs
 order: 3
 ---
 
