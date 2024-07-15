@@ -1,6 +1,6 @@
 ---
 title: Lab life hacks & funding
-link: https://owncloud.cromanpa.synology.me/s/So3b8GpD7hwiiPw
+link: https://nextcloud.datadiversitylab.synology.me/s/Z3CzwQtqgBWyW8W
 order: 6
 ---
 
