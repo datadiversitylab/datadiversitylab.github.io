@@ -1,6 +1,6 @@
 ---
 title: Onboarding
-link: https://owncloud.cromanpa.synology.me/s/YOzgG1iuGCG4LMS
+link: https://nextcloud.datadiversitylab.synology.me/s/Q2GxnPSmZ25NBKs
 order: 4
 ---
 
