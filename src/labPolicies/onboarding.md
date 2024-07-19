@@ -1,6 +1,6 @@
 ---
 title: Onboarding
-link: https://nextcloud.datadiversitylab.synology.me/s/Q2GxnPSmZ25NBKs
+link: https://nextcloud.datadiversitylab.synology.me/s/JMFbSc7C4jjGKwF
 order: 4
 ---
 
