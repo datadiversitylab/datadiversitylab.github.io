@@ -1,6 +1,6 @@
 ---
 title: Photo headshot guide
-link: https://nextcloud.datadiversitylab.synology.me/s/Q2GxnPSmZ25NBKs
+link: https://nextcloud.datadiversitylab.synology.me/s/PXbCw98x6oQA5ct
 order: 5
 ---
 
