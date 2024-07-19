@@ -1,6 +1,6 @@
 ---
 title: Offboarding
-link: https://owncloud.cromanpa.synology.me/s/qEM5iRdLrmkFXGo
+link: https://nextcloud.datadiversitylab.synology.me/s/H8PniJRg2P9iYCx
 order: 7
 ---
 
