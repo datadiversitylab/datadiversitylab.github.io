@@ -1,6 +1,6 @@
 ---
 title: Photo headshot guide
-link: https://owncloud.cromanpa.synology.me/s/aZoulUmay0fHjwM
+link: https://nextcloud.datadiversitylab.synology.me/s/Q2GxnPSmZ25NBKs
 order: 5
 ---
 
