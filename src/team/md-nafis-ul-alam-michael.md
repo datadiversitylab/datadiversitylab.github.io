@@ -11,7 +11,7 @@ tags:
   - PhD student
 email: mdalam@arizona.edu
 github: https://github.com/DeadlineWasYesterday
-image: /assets/images/our-team/michael00hs3.jpg
+image: /assets/images/our-team/michael00hs4.png
 order: 4
 date: 2024-07-23T16:12:00.000Z
 ---
