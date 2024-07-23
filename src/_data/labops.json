@@ -3,6 +3,10 @@
   "paragraphOne": "The Data Diversity Lab performs its research operations with a foundation based on the use of free and open source software (FOSS) to facilitate communication, enable cross border collaboration, facilitate project management, increase Open Access and Open Research efforts, and maintaining sovereignty over one's own personal and scientific data.\n\nOur team has developed a collaborative framework based on the aforementioned principles, known as \"LabOps\". LabOps shares similarities with DevOps, MLOps, and other frameworks in data science-related fields, but its primary focus is on enhancing operations of research laboratories. \n\nBelow you can explore our current and evolving set of tools that help support our operations as part of LabOps",
   "numberedCards": [
     {
+      "title": "Nextcloud",
+      "description": "Nextcloud is an encompassive free and open source, self-hostable suit of client-server software for creating and using file hosting services. Originally a fork of OwnCloud, Nextcloud has become a great alternative for Google Workspace and Office 365 Suites. The Data Diversity Lab has started using Nextcloud to facilitate the integration of needed tools (Calendar, video calls, file management & external links)"
+    },
+    {
       "title": "Mattermost",
       "description": "Mattermost is a free and open-source, self-hostable, online chat service with integrated file sharing. In the Data Diversity Lab, we have replaced Discord with Mattermost as an alternative for efficient communication, planning and collaboration."
     },
