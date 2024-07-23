@@ -8,6 +8,7 @@ memberBio: Md has a background in statistical and computational genomics. He
   methods for ancestral reconstruction within the eukaryotic domain.
 tags:
   - Current
+  - PhD student
 email: mdalam@arizona.edu
 github: https://github.com/DeadlineWasYesterday
 image: /assets/images/our-team/michael00hs2.jpg
