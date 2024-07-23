@@ -14,7 +14,7 @@ tags:
 linkedin: https://www.linkedin.com/in/ian-estacio/
 email: estacioian@arizona.edu
 github: https://github.com/IanEstacio
-image: /assets/images/our-team/ian08hs.jpg
+image: /assets/images/our-team/ian08hs2.jpg
 order: 6
 date: 2024-07-23T16:41:00.000Z
 ---
