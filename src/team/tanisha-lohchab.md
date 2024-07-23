@@ -2,7 +2,7 @@
 memberName: Tanisha Lohchab
 memberTitle: Research Data Support Specialist
 memberDate: "2024"
-memberDateEnd: Present
+memberDateEnd: ""
 memberBio: "With a background in Data Science, Tanisha joined the Data Diversity
   lab as a Research Data Support Specialist, working on a project centered
   around exploring the transferability of species distribution models to
