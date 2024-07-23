@@ -14,5 +14,6 @@ linkedin: www.linkedin.com/in/paigemcherry
 email: cherry1@arizona.edu
 github: https://github.com/okaypaigem
 image: /assets/images/our-team/thumbnail_paige04hs.jpg
+order: 5
 date: 2024-07-23T15:57:00.000Z
 ---
