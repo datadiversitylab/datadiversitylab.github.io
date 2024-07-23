@@ -4,7 +4,7 @@ tags:
   - "2024"
 order: 2
 ---
-* Our first undergrad has joined the lab. We welcome Paige Cherry!
+* A new undergrad has joined the lab. We welcome Paige Cherry!
 * Postdoc Ian Estacio has joined the lab. Welcome Ian!
 * Two new papers where Dr. Roman collaborated in have been published in Ecology and Evolution and the ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences journals!
 * Our postdoc Kiran started leading team collaboration data collection efforts for a project based on cultural behavior in animals 
