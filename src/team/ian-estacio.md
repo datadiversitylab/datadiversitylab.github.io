@@ -2,12 +2,12 @@
 memberName: Ian Estacio
 memberTitle: Postdoctoral Researcher
 memberDate: 2024-Present
-memberBio: Ian's research interests focus on the analysis and modeling of
+memberBio: " Ian's research interests focus on the analysis and modeling of
   socio-ecological systems using spatial science methods such as remote sensing,
   GIS, spatial statistics, and Agent-Based Modeling. He has applied spatial
   science in various social-ecological settings such as coastal ecosystems,
   urban areas, and agricultural landscapes to promote science-based
-  environmental management.
+  environmental management."
 tags:
   - Current
   - Postdoc
