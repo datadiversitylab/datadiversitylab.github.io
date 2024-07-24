@@ -13,7 +13,7 @@ tags:
   - Current
   - Postdoc
 email: kcb7@arizona.edu
-github: https://github.com/kcbasava
+github: kcbasava
 link: https://kiranbasava.weebly.com/
 image: /assets/images/our-team/kiran05hs3.jpg
 order: 2
