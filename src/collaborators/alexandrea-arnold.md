@@ -1,17 +1,17 @@
 ---
-order: 10
 collaboratorName: Alexandrea Arnold
-collaboratorTitle: Ph.D. Candidate
-collaboratorDate:
+collaboratorTitle: Postdoc
+collaboratorDate: null
 collaboratorBio: University of California Los Angeles
-date: 2022-11-30T19:40:18.253Z
 tags:
   - Past
   - Ph.D. Candidate
-linkedin: 
-email: 
+linkedin: null
+email: null
 link: https://www.ioes.ucla.edu/person/alexandrea-arnold/
-resume:
-image:
-imageAlt:
+resume: null
+image: null
+imageAlt: null
+order: 10
+date: 2022-11-30T19:40:18.253Z
 ---
