@@ -12,7 +12,7 @@ tags:
   - Former
   - MSc capstone student
 email: gloriaa@arizona.edu
-image: /assets/images/our-team/gloria2.png
+image: /assets/images/our-team/gloria3.png
 order: 12
 date: 2024-05-10T09:54:00.000Z
 ---
