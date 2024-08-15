@@ -4,8 +4,8 @@ tags:
   - "2024"
 order: 2
 ---
-
-
+* A new postdoc joins the lab! We welcome Kristen Martinet!
+* Former PhD student in the lab, now Dr. Van Boxel had a paper published in Springer's Computational Statistics journal!
 * An NSF-NRT (Research Traineeship) grant in which Dr. Román-Palacios will collaborate as personnel has been approved for funding! 
 * A new undergrad has joined the lab. We welcome Paige Cherry!
 * Postdoc Ian Estacio has joined the lab. Welcome Ian!
