@@ -1,5 +1,5 @@
 ---
-memberName: "MD Nafis Ul Alam (Michael) "
+memberName: MD Nafis Ul Alam
 memberTitle: PhD student
 memberDate: 2024-Present
 memberBio: Md has a background in statistical and computational genomics. He
