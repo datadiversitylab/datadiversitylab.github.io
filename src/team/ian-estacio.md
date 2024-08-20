@@ -1,6 +1,7 @@
 ---
 memberName: Ian Estacio
 memberTitle: Postdoctoral Researcher
+memberEducation: PhD
 memberDate: 2024-Present
 memberBio: " Ian's research interests focus on the analysis and modeling of
   socio-ecological systems using spatial science methods such as remote sensing,
