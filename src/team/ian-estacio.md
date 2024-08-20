@@ -7,7 +7,9 @@ memberBio: " Ian's research interests focus on the analysis and modeling of
   GIS, spatial statistics, and Agent-Based Modeling. He has applied spatial
   science in various social-ecological settings such as coastal ecosystems,
   urban areas, and agricultural landscapes to promote science-based
-  environmental management."
+  environmental management. Ian is co-advised by Dr. Chris Lim, Assistant
+  Professor at Mel & Enid Zuckerman College of Public Health, University of
+  Arizona."
 tags:
   - Current
   - Postdoc
