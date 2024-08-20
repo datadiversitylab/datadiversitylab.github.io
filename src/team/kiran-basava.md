@@ -1,6 +1,7 @@
 ---
 memberName: Kiran Basava
 memberTitle: Postdoctoral Researcher
+memberEducation: PhD
 memberDate: 2024
 memberDateEnd: Present
 memberBio: "Kiran’s research uses phylogenetic methods and comparative databases
