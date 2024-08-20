@@ -5,8 +5,8 @@ memberDate: 2024-Present
 memberBio: Md has a background in statistical and computational genomics. He
   specializes in the analysis of DNA sequence data and genome assembly. His PhD
   is co-advised by Rod Wing. He is presently focused on developing phylogenomic
-  methods for ancestral reconstruction within the eukaryotic domain. Md is
-  co-advised by Dr. Rod A. Wind (Professor at Plant Science, University of
+  methods for ancestral reconstruction within the eukaryotic domain. Michael is
+  co-advised by Dr. Rod A. Wing (Professor at Plant Science, University of
   Arizona)
 tags:
   - Current
