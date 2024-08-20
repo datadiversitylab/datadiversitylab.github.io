@@ -14,6 +14,6 @@ tags:
 email: mdalam@arizona.edu
 github: DeadlineWasYesterday
 image: /assets/images/our-team/michael00hs6.png
-order: 5
+order: 6
 date: 2024-07-23T16:12:00.000Z
 ---
