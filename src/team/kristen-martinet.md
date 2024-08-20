@@ -15,7 +15,7 @@ tags:
 email: kmartinet@arizona.edu
 github: kmartinet
 link: https://kmartinet.github.io/
-image: /assets/images/our-team/kmartinet_photo.png
+image: /assets/images/our-team/kristen-martinet.jpg
 order: 3
 date: 2024-08-20T10:34:00.000Z
 ---
