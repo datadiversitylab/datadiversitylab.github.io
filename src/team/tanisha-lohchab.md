@@ -12,8 +12,9 @@ memberBio: "With a background in Data Science, Tanisha joined the Data Diversity
 tags:
   - Intern
   - Former
-linkedin: null
-email: null
+linkedin: https://www.linkedin.com/in/tanishal67
+email: tanishal@arizona.edu
+github: TanishaL67
 link: null
 resume: null
 image: /assets/images/our-team/tanisha_lohchab_8758_head2.jpg
