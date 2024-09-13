@@ -10,6 +10,7 @@ memberBio: Yichao has long been interested in the interplay of species
   interactions such as mutualisms and antagonisms.
 tags:
   - Current
+  - Postdoc
 email: yichaozeng@arizona.edu
 github: yichaozeng
 link: https://yichaozeng.github.io/
