@@ -1,9 +1,9 @@
 {
-  "faviconIco": "/assets/favicons/favicon2.ico",
-  "faviconBrowser32": "/assets/favicons/favicon-32x32_2.png",
-  "faviconBrowser16": "/assets/favicons/favicon-16x16_2.png",
-  "appleTouchIcon": "/assets/favicons/apple-touch-icon_2.png",
-  "androidChrome192": "/assets/favicons/android-chrome-192x192_2.png",
-  "androidChrome384": "/assets/favicons/android-chrome-512x512_2.png",
+  "faviconIco": "/assets/favicons/favicon.ico",
+  "faviconBrowser32": "/assets/favicons/favicon-32x32.png",
+  "faviconBrowser16": "/assets/favicons/favicon-16x16.png",
+  "appleTouchIcon": "/assets/favicons/apple-touch-icon.png",
+  "androidChrome192": "/assets/favicons/android-chrome-192x192.png",
+  "androidChrome384": "/assets/favicons/android-chrome-384x384.png",
   "readonlyField": "So the best way to update the favicons is to use https://realfavicongenerator.net/ and when you upload an image and continue it will give you a zip file with all the favicons. Then unzip the folder somewhere on your computer. Then come back here and select \"Choose different image\" on any of sections below.\n\nThen once you get the popup click \"upload\" and upload all the files in the unzipped folder overwritting all the current images one by one. "
 }
