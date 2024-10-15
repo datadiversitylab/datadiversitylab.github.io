@@ -40,7 +40,7 @@ tags:
   - Data science
   - Geosciences
   - Paleoclimatology
-image: /assets/images/publications/screenshot-2024-10-14-at-11.31.44-pm.png
+image: /assets/images/publications/dep2312-fig-0001-m.jpg
 pdfDocument: /assets/documents/publications/arnoldetal_2024.pdf
 webLink: https://onlinelibrary.wiley.com/doi/full/10.1002/dep2.312
 ---
