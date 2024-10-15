@@ -1,6 +1,6 @@
 ---
-publicationTitle: " Holarctic Lineages Cannot Inform Diversity and Evolution in
-  the Neotropics – the barklice family Psocidae as a case study "
+publicationTitle: Holarctic Lineages Cannot Inform Diversity and Evolution in
+  the Neotropics – the barklice family Psocidae as a case study
 publicationAuthor: Valentina Sarria-Rodríguez, Ranulfo Gonzalez-Obando, Nelson
   Rivera-Franco, Heiber Cardenas-Henao, and Cristian Román-Palacios
 publicationDate: "2024"
