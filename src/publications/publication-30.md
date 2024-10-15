@@ -1,5 +1,5 @@
 ---
-publicationTitle: "Dieta y reproducción de Bryconamericus caucanus
+publicationTitle: "Dieta y reproducción de *Bryconamericus caucanus*
   (Characiformes: Characidae) en La Venada, Río Quindío, Colombia"
 publicationAuthor: Cristian Román-Palacios, and Cesar Román Valencia
 publicationDate: 2016
