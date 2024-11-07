@@ -1,7 +1,7 @@
 ---
 memberName: Erika Kirkpatrick
 memberEducation: "BS in Information Science and Technology in Data Science "
-memberDate: Fall 2024
+memberDate: Fall 2024-Current
 memberBio: "Erika is a graduate student pursuing her MS in Data Science, she has
   a BS in Information Science and Technology from the University of Arizona. She
   is working on the VIP project Historical Biogeographical and Extinction Risk
@@ -10,5 +10,5 @@ memberBio: "Erika is a graduate student pursuing her MS in Data Science, she has
 tags:
   - Current
 image: /assets/images/our-team/image000000.jpg
-date: 2024-11-02T13:04:00.000Z
+date: 2024-11-07T11:26:00.000Z
 ---
