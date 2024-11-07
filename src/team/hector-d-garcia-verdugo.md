@@ -1,8 +1,8 @@
 ---
 memberName: Hector D. Garcia-Verdugo
 memberTitle: Research Laboratory Manager
-memberDate: 2023
-memberDateEnd: "2024"
+memberDate: 2023-2024
+memberDateEnd: ""
 memberBio: Hector is the data diversity lab’s Manager. He holds dual degrees in
   Neuroscience and Philosophy from the University of Arizona. With a
   biology-focused career since 2013, he is dedicated to bridging science and the
