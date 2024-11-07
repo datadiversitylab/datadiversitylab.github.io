@@ -1,5 +1,7 @@
 ---
 memberName: Eleanor Tuck
+memberDate: 2024-Current
+memberDateEnd: ""
 memberBio: Eleanor is a student worker here at the Data Diversity Lab and a part
   of the MS Advising Team. She supports student engagement and advising. Through
   managing communications, coordinating events, and overseeing programs, she
