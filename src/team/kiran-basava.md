@@ -16,7 +16,7 @@ tags:
 email: kcb7@arizona.edu
 github: kcbasava
 link: https://kiranbasava.weebly.com/
-image: /assets/images/our-team/kiran05hs3.jpg
+image: /assets/images/our-team/kiran05hs.jpg
 order: 2
 date: 2024-04-23T10:11:00.000Z
 ---
