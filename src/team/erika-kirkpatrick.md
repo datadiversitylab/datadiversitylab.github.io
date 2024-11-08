@@ -1,6 +1,6 @@
 ---
 memberName: Erika Kirkpatrick
-memberEducation: "BS in Information Science and Technology in Data Science "
+memberEducation: BS
 memberDate: Fall 2024-Present
 memberBio: "Erika is a graduate student pursuing her MS in Data Science, she has
   a BS in Information Science and Technology from the University of Arizona. She
