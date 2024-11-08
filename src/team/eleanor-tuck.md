@@ -1,5 +1,6 @@
 ---
 memberName: Eleanor Tuck
+memberTitle: MS advising team member
 memberDate: 2024-Present
 memberDateEnd: ""
 memberBio: Eleanor is a student worker here at the Data Diversity Lab and a part
