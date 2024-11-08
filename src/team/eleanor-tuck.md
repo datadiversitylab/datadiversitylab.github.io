@@ -10,6 +10,7 @@ memberBio: Eleanor is a student worker here at the Data Diversity Lab and a part
   students.
 tags:
   - Current
+  - MS advising team
 image: /assets/images/our-team/img_7421.png
 date: 2024-11-07T11:24:00.000Z
 ---
