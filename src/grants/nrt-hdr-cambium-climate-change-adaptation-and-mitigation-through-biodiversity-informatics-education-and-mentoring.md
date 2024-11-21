@@ -29,5 +29,7 @@ grantDesc: "As the Intergovernmental Science-Policy Platform on Biodiversity and
   stipends for a total of 192 students funded through CAMBIUM. Keywords:
   Biodiversity; Data Science; Informatics; Ecology; Ecosystem Services; Species
   Distributions; Food Security; Public Health; Track 1"
+tags:
+  - NRT-HDR
 image: /assets/images/grants/cambium-grant-image.png
 ---
