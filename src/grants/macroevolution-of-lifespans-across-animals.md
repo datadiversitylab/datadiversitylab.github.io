@@ -16,6 +16,8 @@ grantDesc: Decades of research have uncovered extensive variation in lifespans
   fraction of the variance in lifespan across organisms? These and other
   questions could provide insights into the potential malleability of lifespan
   at smaller taxonomic scales.
+tags:
+  - Faculty Seed Grants
 document: /assets/documents/grants/research-innovation-and-impact.png
 link: https://research.arizona.edu/development/find-funding/internal-funding/faculty-seed-grants
 image: /assets/images/grants/research-innovation-and-impact.png
