@@ -10,5 +10,6 @@ grantDesc: "The WAESO grant funded a project that will allow for the
   efforts on biodiversity conservation and action. "
 tags:
   - WAESO
-document: /assets/documents/grants/waeso-pic.jpg
+document: ""
+image: /assets/images/grants/waeso-pic.jpg
 ---
