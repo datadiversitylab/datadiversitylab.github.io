@@ -7,4 +7,5 @@ socialDesc: A few of our members were able to get together for some team bonding
 tags:
   - "2024"
 image: /assets/images/socials/group-hike.jpg
+order: 5
 ---
