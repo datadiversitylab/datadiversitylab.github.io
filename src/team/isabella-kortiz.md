@@ -1,6 +1,6 @@
 ---
 memberName: Isabella Kortiz
-memberTitle: "MS Advisor "
+memberTitle: MS advising team member
 memberDateEnd: ""
 memberBio: "Isabella is a student worker here at the Data Diversity Lab and a
   part of the MS Advising Team. She supports student engagement and advising
