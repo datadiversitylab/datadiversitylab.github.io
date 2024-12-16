@@ -8,5 +8,5 @@ socialDesc: The iSchool organized a lab warming party get together at the end of
 tags:
   - "2024"
 image: /assets/images/socials/lab_warming.jpeg
-order: 10
+order: 6
 ---
