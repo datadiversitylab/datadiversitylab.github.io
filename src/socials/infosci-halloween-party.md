@@ -6,4 +6,5 @@ socialDesc: Members of our lab were able to celebrate the Halloween Holiday by
 tags:
   - "2024"
 image: /assets/images/socials/info-sci-halloween-party.jpg
+order: 3
 ---
