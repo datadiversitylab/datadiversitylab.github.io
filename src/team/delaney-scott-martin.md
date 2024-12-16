@@ -11,5 +11,6 @@ tags:
   - Current
 email: dscottmartin@arizona.edu
 image: /assets/images/our-team/delaney04.jpg
+order: 9
 date: 2024-12-02T14:58:00.000Z
 ---
