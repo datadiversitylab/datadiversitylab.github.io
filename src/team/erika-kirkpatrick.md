@@ -11,5 +11,5 @@ memberBio: "Erika is a graduate student pursuing her MS in Data Science, she has
 tags:
   - Former
 image: /assets/images/our-team/image000000.jpg
-date: 2024-11-07T11:26:00.000Z
+date: 2024-12-16T15:24:00.000Z
 ---
