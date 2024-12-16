@@ -14,5 +14,5 @@ tags:
   - MS advising team
 email: etuck@arizona.edu
 image: /assets/images/our-team/img_7421.png
-date: 2024-11-07T11:24:00.000Z
+date: 2024-12-16T15:27:00.000Z
 ---
