@@ -10,6 +10,7 @@ memberBio: Delaney Scott-Martin is a sophomore at the University of Arizona,
   chordates.
 tags:
   - Current
+  - Undergraduate student
 email: dscottmartin@arizona.edu
 image: /assets/images/our-team/delaney04.jpg
 order: 9
