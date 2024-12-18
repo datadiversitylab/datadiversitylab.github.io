@@ -12,6 +12,7 @@ tags:
   - Former
   - MSc capstone student
   - VIP student
+email: elk1@arizona.edu
 image: /assets/images/our-team/image000000.jpg
 date: 2024-12-16T15:24:00.000Z
 ---
