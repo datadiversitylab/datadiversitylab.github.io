@@ -1,7 +1,7 @@
 ---
 memberName: Pradnya Raut
-memberTitle: MCA
-memberEducation: MS Student 2024
+memberTitle: ""
+memberEducation: ""
 memberDate: Fall 2024
 memberDateEnd: Winter 2024
 memberBio: Pradnya has a master's of computer application degree from Mumbai
@@ -11,6 +11,8 @@ memberBio: Pradnya has a master's of computer application degree from Mumbai
   machine learning models in python/R for her capstone project
 tags:
   - Former
+  - MSc capstone student
+email: pradnyaraut@arizona.edu
 image: /assets/images/our-team/pradnya03.jpg
 date: 2024-12-16T15:24:00.000Z
 ---
