@@ -2,8 +2,8 @@
 memberName: Pradnya Raut
 memberTitle: ""
 memberEducation: ""
-memberDate: Fall 2024
-memberDateEnd: Winter 2024
+memberDate: "2024"
+memberDateEnd: ""
 memberBio: Pradnya has a master's of computer application degree from Mumbai
   University and currently pursuing an MS in Information science(machine
   learning) from the University of Arizona. She is working on analyzing and
