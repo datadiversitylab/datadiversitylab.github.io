@@ -1,6 +1,6 @@
 ---
 memberName: Pradnya Raut
-memberTitle: ""
+memberTitle: Capstone student
 memberEducation: ""
 memberDate: "2024"
 memberDateEnd: ""
