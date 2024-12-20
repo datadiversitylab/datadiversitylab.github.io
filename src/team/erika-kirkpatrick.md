@@ -1,5 +1,6 @@
 ---
 memberName: Erika Kirkpatrick
+memberTitle: VIP/Capstone student
 memberEducation: ""
 memberDate: "2024"
 memberDateEnd: ""
