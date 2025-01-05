@@ -11,6 +11,7 @@ memberBio: "Isabella is a student worker here at the Data Diversity Lab and a
 tags:
   - Current
   - MS advising team
+linkedin: https://www.linkedin.com/in/isabella-ortiz-14320032a/
 email: isabellakortiz@gmail.com
 image: /assets/images/our-team/isabella-picture.jpeg
 date: 2024-11-21T15:25:00.000Z
