@@ -10,7 +10,7 @@ memberBio: Paige Cherry is a third-year BA student at the University of Arizona
 tags:
   - Undergraduate student
   - Current
-linkedin: www.linkedin.com/in/paigemcherry
+linkedin: https://www.linkedin.com/in/paigemcherry?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrQE5cGKRTWiA9HE5SuwXqw%3D%3D
 email: cherry1@arizona.edu
 github: okaypaigem
 image: /assets/images/our-team/thumbnail_paige04hs.jpg
