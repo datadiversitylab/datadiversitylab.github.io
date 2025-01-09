@@ -15,5 +15,5 @@ email: cherry1@arizona.edu
 github: okaypaigem
 image: /assets/images/our-team/thumbnail_paige04hs.jpg
 order: 7
-date: 2024-07-23T15:57:00.000Z
+date: 2025-01-09T16:14:00.000Z
 ---
