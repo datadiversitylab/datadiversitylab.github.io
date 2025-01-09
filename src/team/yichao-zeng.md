@@ -12,10 +12,10 @@ tags:
   - Current
   - Postdoc
 email: yichaozeng@arizona.edu
-github: https://yichaozeng.github.io/
+github: https://yichaozeng.github.io/index.html
 link: https://bsky.app/profile/yichaozeng.bsky.social
 resume: /assets/documents/our-team/cv_yichao_20zeng.pdf
 image: /assets/images/our-team/img_7362.jpeg
 order: 5
-date: 2024-12-17T17:29:00.000Z
+date: 2025-01-09T16:15:00.000Z
 ---
