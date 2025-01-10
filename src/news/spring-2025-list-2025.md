@@ -1,5 +1,5 @@
 ---
-Name: Spring 2025
+Name: Spring
 tags:
   - "2025"
 order: 1
