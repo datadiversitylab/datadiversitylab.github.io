@@ -17,5 +17,5 @@ github: kmartinet
 link: https://kmartinet.github.io/
 image: /assets/images/our-team/kristen05.jpg
 order: 3
-date: 2024-08-20T10:34:00.000Z
+date: 2025-01-17T16:20:00.000Z
 ---
