@@ -35,6 +35,7 @@ publicationAbstract: " The carbonate ”clumped” isotope thermometer (Δ47) in
   more realistic understanding of uncertainties."
 tags:
   - Geosciences
+image: /assets/images/publications/screenshot-2025-01-23-at-8.54.36-am.png
 pdfDocument: /assets/documents/publications/1021433_0_merged_1737233943.pdf
 webLink: https://essopenarchive.org/users/529500/articles/1262022-clumped-isotope-thermometry-in-foraminifera-as-a-tool-in-paleoceanography-new-planktic-and-benthic-data-and-constraints-on-non-thermal-effects
 ---
