@@ -1,8 +1,7 @@
 ---
-publicationTitle: |-
-  Clumped isotope thermometry in foraminifera as a tool in
-  paleoceanography: New planktic and benthic data and constraints on
-  non-thermal effects
+publicationTitle: "Clumped isotope thermometry in foraminifera as a tool in
+  paleoceanography: New planktic and benthic data and constraints on non-thermal
+  effects"
 publicationAuthor: Aradhna Tripati, Hannah Tylee Tandy, A Villa, Randy Flores,
   Alexandrea Jay Arnold, Hannah M Carroll, Maxence Guillermic, Ingrid Maradiaga,
   Christian Blair, Bisrat Zerehaimanot, Dana Brown, Robert N Ulrich, Cristian
