@@ -1,87 +1,9 @@
 {
   "title": "LabOps",
-  "paragraphOne": "The Data Diversity Lab performs its research operations with a foundation based on the use of free and open source software (FOSS) to facilitate communication, enable cross border collaboration, facilitate project management, increase Open Access and Open Research efforts, and maintaining sovereignty over one's own personal and scientific data.\n\nOur team has developed a collaborative framework based on the aforementioned principles, known as \"LabOps\". LabOps shares similarities with DevOps, MLOps, and other frameworks in data science-related fields, but its primary focus is on enhancing operations of research laboratories. \n\nBelow you can explore our current and evolving set of tools that help support our operations as part of LabOps",
-  "numberedCards": [
-    {
-      "title": "Nextcloud",
-      "description": "Nextcloud is an encompassive free and open source, self-hostable suit of client-server software for creating and using file hosting services. Originally a fork of OwnCloud, Nextcloud has become a great alternative for Google Workspace and Office 365 Suites. The Data Diversity Lab has started using Nextcloud to facilitate the integration of needed tools (Calendar, video calls, file management & external links)"
-    },
-    {
-      "title": "Mattermost",
-      "description": "Mattermost is a free and open-source, self-hostable, online chat service with integrated file sharing. In the Data Diversity Lab, we have replaced Discord with Mattermost as an alternative for efficient communication, planning and collaboration."
-    },
-    {
-      "title": "ownCloud",
-      "description": "ownCloud is a free and open-source, self-hostable project for content collaboration, organization, creation, sharing, and syncing files. In the Data Diversity Lab, we have replaced One Drive and Google Drive for ownCloud."
-    },
-    {
-      "title": "OnlyOffice Docs",
-      "description": "OnlyOffice is a free and open-source collaborative system developed to manage and create documents, spreadsheets and PDFs. In the Data Diversity Lab, we have replaced various aspects of Microsoft 365, more specifically the now phased out \"office\" suites."
-    },
-    {
-      "title": "Radicale",
-      "description": "Radicale is a free and open source, self-hostable, calendar and address book server. It uses and implements CalDAV standards. When used in conjunction with open source clients such as Thunderbird and Evolution Calendar, it creates a strong replacement for classic closed-source clients and services such as Google Calendar."
-    },
-    {
-      "title": "Umami",
-      "description": "Umami is an open source, self-hostable, privacy-focused alternative to Google Analytics. We at the Data Diversity Lab use Umami to monitor our website's traffic activity, from views and total visits, to origin of sources."
-    },
-    {
-      "title": "Synology NAS",
-      "description": "The Data Diversity Lab self hosts most of its open source applications in a Synology Network Attached Storage. Our NAS not only is capable of hosting multiple open source applications, but also works as a scientific data storage and backup system that has privacy and security at its core."
-    },
-    {
-      "title": "Zotero",
-      "description": "Zotero is a free and open-source reference management software to manage bibliographic data and related research materials. The Data Diversity Lab has a Zotero team group that holds and organizes our cited research materials."
-    },
-    {
-      "title": "Inkscape & GIMP",
-      "description": "Inkscape and GIMP are open-source vector graphics and raster graphics editors respectively. The Data Diversity Lab encourages their members to use these powerful tools in place of Adobe Illustrator and Adobe Photoshop."
-    }
-  ],
-  "paragraphTwo": "We encourage other labs to use these powerful suite of tools to complement, enhance and accelerate research.",
-  "secondTitle": "Direct links ",
-  "paragraphThree": "Below you can find direct links to the websites of the tools described above",
-  "labopsCards": [
-    {
-      "description": "<https://mattermost.com/download/>",
-      "title": "                                                                         Mattermost",
-      "order": -1
-    },
-    {
-      "title": "ownCloud",
-      "order": 2,
-      "description": "<https://owncloud.com/>"
-    },
-    {
-      "title": "OnlyOffice",
-      "order": 3,
-      "description": "<https://www.onlyoffice.com/>"
-    },
-    {
-      "order": 4,
-      "title": "Radicale",
-      "description": "<https://radicale.org/v3.html>"
-    },
-    {
-      "order": 5,
-      "title": "Umami",
-      "description": "<https://umami.is/>"
-    },
-    {
-      "order": 6,
-      "title": "Synology NAS",
-      "description": "<https://www.synology.com/en-us/dsm/solution/what-is-nas/for-home>"
-    },
-    {
-      "order": 7,
-      "title": "Zotero",
-      "description": "<https://www.zotero.org/>"
-    },
-    {
-      "order": 8,
-      "title": "Inkscape & GIMP",
-      "description": "<https://inkscape.org/>\n\n<https://www.gimp.org/>[](https://inkscape.org/)"
-    }
-  ]
+  "paragraphOne": "The Data Diversity Lab performs its research operations with a foundation based on the use of free and open source software (FOSS) to facilitate communication, enable cross border collaboration, facilitate project management, increase Open Access and Open Research efforts, and maintaining sovereignty over one's own personal and scientific data.",
+  "numberedCards": [],
+  "paragraphTwo": "Our team has developed a collaborative framework based on the aforementioned principles, known as \"LabOps\". LabOps shares similarities with DevOps, MLOps, and other frameworks in data science-related fields, but its primary focus is on enhancing operations of research laboratories.",
+  "secondTitle": "Publications",
+  "paragraphThree": "We will soon be sharing our publications in the topic.",
+  "labopsCards": []
 }
