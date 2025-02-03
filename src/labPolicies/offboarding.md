@@ -1,6 +1,6 @@
 ---
 title: Offboarding
-link: https://nextcloud.datadiversitylab.synology.me/s/zEPoz6FaNSezsnw
+link: https://wiki.datadiversitylab.synology.me/offboarding
 order: 7
 ---
 
