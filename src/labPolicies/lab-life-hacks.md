@@ -1,6 +1,6 @@
 ---
 title: Lab life hacks & funding
-link: https://nextcloud.datadiversitylab.synology.me/s/WESDwwSrcK5PTdi
+link: https://wiki.datadiversitylab.synology.me/general-information
 order: 6
 ---
 
