@@ -1,6 +1,6 @@
 ---
 title: Lab manual
-link: https://nextcloud.datadiversitylab.synology.me/s/XieiaDAD7naNn8g
+link: https://wiki.datadiversitylab.synology.me/onboarding/lab-manual
 order: 3
 ---
 
