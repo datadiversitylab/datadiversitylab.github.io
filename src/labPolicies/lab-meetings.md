@@ -1,5 +1,5 @@
 ---
-title: Lab meetings & schedule
+title: Lab meetings and schedule
 link: https://wiki.datadiversitylab.synology.me/general-information/lab-meeting-schedule
 order: 1
 ---
