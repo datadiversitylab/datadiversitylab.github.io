@@ -7,5 +7,5 @@ grantDesc: "UA’s OneHealth initiative pilot grant aimed at examining spatial a
   outcomes such as hospitalizations. co-PI: Chris Lim, Cristian Román-Palacios."
 tags:
   - University of Arizona
-image: /assets/images/grants/onehealth.png
+image: /assets/images/grants/uaf-edu-onehealth-graphic.png
 ---
