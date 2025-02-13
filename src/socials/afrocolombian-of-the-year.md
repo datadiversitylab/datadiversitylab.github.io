@@ -1,5 +1,6 @@
 ---
 socialName: AfroColombian of the Year
+Location: Colombia
 socialDate: Fall
 socialDesc: "Dr. Román-Palacios was named 'Afro-Colombian' of the Year by the
   oldest newspaper in Colombia and Fundacion Color de Colombia. Dr.
