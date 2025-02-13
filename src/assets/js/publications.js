@@ -202,39 +202,31 @@ applyFiltersAndOrder();
 // Reapply logic on window resize to accommodate dynamic changes
 window.addEventListener('resize', applyDisplayLogicBasedOnScreenSize);
 
-
-// et al
 document.addEventListener("DOMContentLoaded", function() {
-    const authorElements = document.querySelectorAll(".cs-publication-author");
+    document.querySelectorAll(".cs-publication-author").forEach(authorElement => {
+        const fullAuthors = authorElement.getAttribute("data-full-authors");
 
-    authorElements.forEach(authorElement => {
-        const fullAuthors = authorElement.textContent.split(',');
-        const authorCount = fullAuthors.length;
+        if (fullAuthors.includes(",")) {
+            // Create tooltip
+            authorElement.addEventListener("mouseover", function(event) {
+                let tooltip = document.querySelector("#author-tooltip");
+                if (!tooltip) {
+                    tooltip = document.createElement("div");
+                    tooltip.id = "author-tooltip";
+                    tooltip.className = "author-tooltip";
+                    document.body.appendChild(tooltip);
+                }
+                tooltip.innerHTML = fullAuthors.replaceAll(',', '<br>');
+                tooltip.style.display = "block";
+                tooltip.style.left = `${event.pageX + 10}px`;
+                tooltip.style.top = `${event.pageY + 10}px`;
+            });
 
-        if (authorCount > 3) {
-            // Show only the first author + "et al."
-            authorElement.setAttribute("data-full-authors", fullAuthors.join(', '));
-            authorElement.innerHTML = `${fullAuthors[0]} et al.`;
-            authorElement.classList.add("has-tooltip");
+            // Hide tooltip on mouseout
+            authorElement.addEventListener("mouseout", function() {
+                document.querySelector("#author-tooltip").style.display = "none";
+            });
         }
-    });
-
-    // Tooltip for full author list
-    const tooltip = document.createElement("div");
-    tooltip.classList.add("author-tooltip");
-    document.body.appendChild(tooltip);
-
-    document.querySelectorAll(".has-tooltip").forEach(item => {
-        item.addEventListener("mouseover", function(event) {
-            tooltip.innerHTML = this.getAttribute("data-full-authors").replaceAll(',', '<br>');
-            tooltip.style.display = "block";
-            tooltip.style.left = `${event.pageX + 10}px`;
-            tooltip.style.top = `${event.pageY + 10}px`;
-        });
-
-        item.addEventListener("mouseout", function() {
-            tooltip.style.display = "none";
-        });
     });
 });
 

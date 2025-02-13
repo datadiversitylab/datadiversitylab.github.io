@@ -376,12 +376,12 @@
 
 .author-tooltip {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.85);
     color: #fff;
-    padding: 10px;
+    padding: 8px;
     border-radius: 5px;
     font-size: 0.9rem;
-    max-width: 300px;
+    max-width: 250px;
     white-space: normal;
     display: none;
     z-index: 1000;
