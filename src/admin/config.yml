@@ -138,6 +138,23 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image', required: false }
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
+  - name: 'databases'
+    label: 'Databases'
+    folder: 'src/databases'
+    media_folder: '/src/assets/images/databases'
+    public_folder: '/assets/images/databases'
+    create: true
+    identifier_field: Name
+    slug: '{{Name}}'
+    fields:
+      - { label: 'Name', name: 'Name', widget: 'string', required: true }
+      - { label: 'Description', name: 'Description', widget: 'markdown', required: false }
+      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
+      - { label: 'Github', name: 'github', widget: 'string', required: false }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
   - name: 'socials'
     label: 'Socials'
     folder: 'src/socials'
