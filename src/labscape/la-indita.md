@@ -8,7 +8,7 @@ socialDesc: Attendees at the lab dinner organized in Fall 2022 at La Indita,
   significant others!
 tags:
   - "2022"
-image: /assets/images/social/la-indita.jpg
+image: /assets/images/labscape/la-indita.jpg
 imageAlt: la indita image
 order: 29
 ---
