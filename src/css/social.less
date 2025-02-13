@@ -38,12 +38,12 @@
 }
 
 /*-- -------------------------- -->
-<---       Social        -->
+<---       Grants               -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #social-547 {
+    #conference-547 {
         padding: var(--sectionPadding);
 
         .cs-container {
@@ -65,7 +65,7 @@
             display: flex;
             flex-direction: column;
             /* centers content horizontally, set to flex-start to left align */
-            align-items: flex-start;
+            align-items: center;
         }
 
         .cs-topper,
@@ -102,7 +102,7 @@
             width: 100%;
             height: auto;
             /* height divided by width, changed at desktop */
-            aspect-ratio: 304/304;
+            aspect-ratio: 1.24;
             /* clips image tag from overflowing on hover */
             overflow: hidden;
             display: block;
@@ -120,10 +120,6 @@
                 object-position: center;
                 transition: transform 0.6s;
             }
-        }
-
-        .cs-name {
-            font-size: var(--headerFourFontSize);
         }
 
         .cs-filter-wrapper {
@@ -163,7 +159,6 @@
             max-height: 9em;
             overflow: hidden;
             position: relative;
-            margin-bottom: 0;
             &.show-more{
                 overflow: unset;
                 max-height: unset;
@@ -176,7 +171,7 @@
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #social-547 {
+    #conference-547 {
         .cs-card-group {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -185,7 +180,7 @@
 
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-    #social-547 {
+    #conference-547 {
         .cs-container {
             max-width: (1280/16rem);
             flex-direction: row;
@@ -205,8 +200,13 @@
             }
         }
 
+        .cs-filter-wrapper {
+            justify-content: flex-start;
+        }
+
         .cs-content {
             width: 20%;
+            align-items: flex-start;
         }
 
         .cs-card-group {
