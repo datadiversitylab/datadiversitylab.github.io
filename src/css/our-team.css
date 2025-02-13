@@ -225,3 +225,21 @@
     display: none;
 }
 
+.toggle-former-members {
+    background-color: var(--buttonColor, #007bff);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.toggle-former-members:hover {
+    background-color: var(--buttonHoverColor, #0056b3);
+}
+
+
