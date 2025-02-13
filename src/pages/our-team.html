@@ -68,7 +68,7 @@ eleventyNavigation:
                 {%- else -%}
                     {%- set members = collections.team | sortMulti('order', false, 'memberDate', true) -%}
                 {%- endif -%}
-                <div class="cs-card-group">
+                <div class="cs-card-group" data-group="{{ tag }}">
                     {% for member in members %}
                         {%- if tag in member.data.tags -%}
                             <div class="cs-item">
