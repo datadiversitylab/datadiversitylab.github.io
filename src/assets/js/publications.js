@@ -202,14 +202,12 @@ applyFiltersAndOrder();
 // Reapply logic on window resize to accommodate dynamic changes
 window.addEventListener('resize', applyDisplayLogicBasedOnScreenSize);
 
+
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll(".cs-publication-author").forEach(authorElement => {
         const fullAuthors = authorElement.getAttribute("data-full-authors") || "";
-        const authorList = fullAuthors.split(',').map(author => author.trim());
 
-        // Ensure we only modify if there are more than 3 authors
-        if (authorList.length > 3) {
-            authorElement.innerHTML = `${authorList[0]} et al.`;
+        if (fullAuthors.includes(",")) {
             authorElement.classList.add("has-tooltip");
 
             // Create tooltip on hover
@@ -221,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     tooltip.className = "author-tooltip";
                     document.body.appendChild(tooltip);
                 }
-                tooltip.innerHTML = authorList.join("<br>"); // Display all authors
+                tooltip.innerHTML = fullAuthors; // Keep HTML (including highlights)
                 tooltip.style.display = "block";
                 tooltip.style.left = `${event.pageX + 10}px`;
                 tooltip.style.top = `${event.pageY + 10}px`;
@@ -234,4 +232,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 

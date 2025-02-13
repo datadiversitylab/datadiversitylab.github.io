@@ -112,12 +112,12 @@ eleventyNavigation:
                             <div aria-hidden="true" class="line line-full card-image-line"></div>
                             <span class="cs-publication-type">{{ publication.data.publicationType }}</span>
                             <span class="cs-name">{{ publication.data.publicationTitle | markdown | safe }}</span>
-                            <span class="cs-publication-author" data-full-authors="{{ publication.data.publicationAuthor }}">
+                            <span class="cs-publication-author" data-full-authors="{{ publication.data.publicationAuthor | highlightAuthors(collections.team) | safe }}">
                                 {%- set authors = publication.data.publicationAuthor.split(',') -%}
                                 {%- if authors | length > 3 -%}
-                                    {{ authors[0] }} et al.
+                                    {{ authors[0] | highlightAuthors(collections.team) | safe }} et al.
                                 {%- else -%}
-                                    {{ publication.data.publicationAuthor }}
+                                    {{ publication.data.publicationAuthor | highlightAuthors(collections.team) | safe }}
                                 {%- endif %}
                             </span>
 
