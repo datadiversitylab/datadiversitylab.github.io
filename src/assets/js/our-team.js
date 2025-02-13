@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formerToggle.textContent = "Show Former Members";
         formerToggle.classList.add("toggle-former-members");
 
-        sidebar.appendChild(formerToggle); // Place the button inside the sidebar
+        sidebar.appendChild(formerToggle); // Place button inside the sidebar
 
         let formerVisible = false;
         const formerMembersSection = document.querySelector('.cs-card-group[data-group="Former"]');
@@ -87,6 +87,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 formerVisible = !formerVisible;
                 formerMembersSection.classList.toggle("visible", formerVisible);
                 formerToggle.textContent = formerVisible ? "Hide Former Members" : "Show Former Members";
+
+                // Adjust height dynamically
+                if (formerVisible) {
+                    formerMembersSection.style.height = formerMembersSection.scrollHeight + "px";
+                } else {
+                    formerMembersSection.style.height = "0px";
+                }
             });
         }
     }
