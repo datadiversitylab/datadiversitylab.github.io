@@ -74,6 +74,20 @@ eleventyNavigation:
                                         <span class="read-more-text">{{ social.data.socialDesc }}</span>
                                         <span class="read-more-btn">...read more</span>
                                     </span>
+
+                                      {%- if social.data.link or social.data.document -%}
+                                        <div aria-hidden="true" class="line line-full"></div>
+                                        <div class="cs-item-social">
+                                            {%- set socials = [{'platform': 'link', 'icon': 'link.svg'}, {'platform': 'document', 'icon': 'pdf.svg'}] -%}
+                                            {%- for social in socials -%}
+                                                {%- if social.data[social.platform] -%}
+                                                    <a href="{{ conference.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                                {%- endif -%}
+                                            {%- endfor -%}
+                                        </div>
+                                    {%- endif -%}
+
+                                    
                                 </div>
                             </div>
                         {%- endif -%}
