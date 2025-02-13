@@ -148,6 +148,8 @@ collections:
     slug: '{{socialName}}'
     fields:
       - { label: 'Name', name: 'socialName', widget: 'string', required: true }
+      - { label: 'Location', name: 'Location', widget: 'string', required: false }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
       - { label: 'Social Date', name: 'socialDate', widget: 'string', required: false }
       - { label: 'Description', name: 'socialDesc', widget: 'string', required: false }
       - { label: 'Tags', name: 'tags', widget: 'list', required: true }
