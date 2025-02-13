@@ -22,40 +22,86 @@ navOptions:
 <section id="content-1450" class="cs-top-section">
     <div class="cs-container">
         <div class="cs-content">
-            <h1 class="cs-title">Space and tech</h1>
+            <h1 class="cs-title">databases</h1>
             <p class="cs-text">
-                Test for databases:
+                TBD.
             </p>
         </div>
     </div>
 </section>
 
 <div aria-hidden="true" class="line"></div>
-<!-- ============================================ -->
-<!--             Side By Side Reverse             -->
-<!-- ============================================ -->
-
 
 <!-- ============================================ -->
-<!--                  Content                     -->
+<!--                databases                   -->
 <!-- ============================================ -->
+{%- set tags = [] -%}
+{%- for databases in collections.databases | sort(attribute='data.order') -%}
+    {%- for tag in databases.data.tags -%}
+        {%- if not tags.includes(tag | string) and tag != "databases" -%}
+            {%- set tags = tags.concat(tag | string) -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endfor -%}
 
-<section id="content-1450">
+<section id="databases-547">
     <div class="cs-container">
-        <div class="cs-content">
-            <h2 class="cs-title">The Animal Chromosome Counttest</h2>
-            <p class="cs-text">
-                Test description
-            </p>
-            <a class="cs-button-link" target="_blank" href="https://cromanpa94.github.io/ACC/">
-                <span>Catalog</span>
-                <img src="../assets/icons/right-arrow.svg" class="filter-green">
-            </a>
+        <div class="cs-content cs-sidebar">
+            <h6 class="cs-title">Libraries & packages</h6>
+            <div class="cs-filter-wrapper cs-text">
+                <div data-filter="All" class="active">All</div>
+                {%- for tag in tags | sort(true) -%}
+                    <div data-filter="{{ tag }}">{{ tag }}</div>
+                {%- endfor -%}
+            </div>
+        </div>
+        <div class="cs-title-card-wrapper">
+            {%- for tag in tags | sort(true) -%}
+                <h3 class="cs-title cs-group-title {{ tag | replace(' ', '-') | lower }}">{{ tag }}</h3>
+                <div id="section{{ tag }}" class="cs-card-group">
+                    {%- for databases in collections.databases | sort(attribute='data.order') -%}
+                        {%- if databases.data.tags.toString().includes(tag) -%}
+                            <div class="cs-item">
+                                <picture class="cs-picture">
+                                    <!--Mobile Image-->
+                                    <source media="(max-width: 600px)" srcset="{{ databases.data.image }}">
+                                    <!--Tablet and up Image-->
+                                    <source media="(min-width: 601px)" srcset="{{ databases.data.image }}">
+                                    <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="{{ databases.data.image }}" alt="{{ databases.data.imageAlt }}" width="522" height="370" aria-hidden="true">
+                                </picture>
+                                <div class="cs-flex-group">
+                                    <div aria-hidden="true" class="line line-full card-image-line"></div>
+                                    <span class="cs-name">{{ databases.data.Name }}</span>
+                                    <span class="cs-timeline">{{ databases.data.Location }}</span>
+                                    <span class="cs-desc">
+                                        <span class="read-more-text">{{ databases.data.Description | markdown | safe }}</span>
+                                        <span class="read-more-btn">...read more</span>
+                                    </span>
+                                    <div class="cs-item-filters" style="display: none;">
+                                        {%- for filter in databases.data.tags -%}
+                                            {%- if filter != 'databases' -%}
+                                                <div class="cs-filter">{{ filter }}</div>
+                                            {%- endif -%}
+                                        {%- endfor -%}
+                                    </div>
+                                    <div aria-hidden="true" class="line line-full"></div>
+                                    {%- if databases.data.github or databases.data.link -%}
+                                        <div class="cs-item-social">
+                                            {%- set socials = [{'platform': 'github', 'icon': 'github.svg'}, {'platform': 'link', 'icon': 'link.svg'}] -%}
+                                            {%- for social in socials -%}
+                                                {%- if databases.data[social.platform] -%}
+                                                    <a href="{{ databases.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                                {%- endif -%}
+                                            {%- endfor -%}
+                                        </div>
+                                    {%- endif -%}
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+            {%- endfor -%}
+            </div>
         </div>
     </div>
 </section>
-
-<div aria-hidden="true" class="line"></div>
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
