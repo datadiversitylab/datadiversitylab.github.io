@@ -66,3 +66,18 @@ function updateItemsVisibility() {
 
 startYearInput.addEventListener('input', updateItemsVisibility);
 endYearInput.addEventListener('input', updateItemsVisibility);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const formerToggle = document.createElement("button");
+    formerToggle.textContent = "Show Former Members";
+    formerToggle.classList.add("toggle-former-members");
+    document.querySelector("#meet-team-547 .cs-container").prepend(formerToggle);
+
+    let formerVisible = false;
+    formerToggle.addEventListener("click", function () {
+        formerVisible = !formerVisible;
+        document.querySelector('.cs-card-group[data-group="Former"]').style.display = formerVisible ? "grid" : "none";
+        formerToggle.textContent = formerVisible ? "Hide Former Members" : "Show Former Members";
+    });
+});
+
