@@ -31,7 +31,7 @@
   }
 }
 /*-- -------------------------- -->
-<---       Social        -->
+<---       Grants               -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
@@ -55,7 +55,7 @@
     display: flex;
     flex-direction: column;
     /* centers content horizontally, set to flex-start to left align */
-    align-items: flex-start;
+    align-items: center;
   }
   #social-547 .cs-topper,
   #social-547 .cs-title,
@@ -88,7 +88,7 @@
     width: 100%;
     height: auto;
     /* height divided by width, changed at desktop */
-    aspect-ratio: 1;
+    aspect-ratio: 1.24;
     /* clips image tag from overflowing on hover */
     overflow: hidden;
     display: block;
@@ -105,9 +105,6 @@
     /* places top of the image at the top of the box */
     object-position: center;
     transition: transform 0.6s;
-  }
-  #social-547 .cs-name {
-    font-size: var(--headerFourFontSize);
   }
   #social-547 .cs-filter-wrapper {
     gap: 0;
@@ -139,7 +136,6 @@
     max-height: 9em;
     overflow: hidden;
     position: relative;
-    margin-bottom: 0;
   }
   #social-547 .cs-desc.show-more {
     overflow: unset;
@@ -171,8 +167,12 @@
     border-left: var(--primary) 3px solid;
     border-bottom: none;
   }
+  #social-547 .cs-filter-wrapper {
+    justify-content: flex-start;
+  }
   #social-547 .cs-content {
     width: 20%;
+    align-items: flex-start;
   }
   #social-547 .cs-card-group {
     grid-template-columns: repeat(3, 1fr);
