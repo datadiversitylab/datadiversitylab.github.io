@@ -202,6 +202,7 @@ applyFiltersAndOrder();
 // Reapply logic on window resize to accommodate dynamic changes
 window.addEventListener('resize', applyDisplayLogicBasedOnScreenSize);
 
+// et al
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll(".cs-publication-author").forEach(authorElement => {
         const fullAuthors = authorElement.getAttribute("data-full-authors") || "";
@@ -231,6 +232,83 @@ document.addEventListener("DOMContentLoaded", function() {
             authorElement.addEventListener("mouseout", function() {
                 document.querySelector("#author-tooltip").style.display = "none";
             });
+        }
+    });
+});
+
+
+// stats
+
+document.addEventListener("DOMContentLoaded", function () {
+    const publications = document.querySelectorAll(".cs-item");
+    let uniqueCoauthors = new Set();
+    let uniqueJournals = new Set();
+    let uniqueKeywords = new Set();
+    let publicationYears = {};
+
+    publications.forEach(pub => {
+        const authors = pub.querySelector(".cs-publication-author")?.getAttribute("data-full-authors") || "";
+        const journal = pub.querySelector(".cs-publication-type")?.textContent.trim() || "";
+        const year = pub.querySelector(".cs-publication-year")?.textContent.trim() || "";
+        const keywords = Array.from(pub.querySelectorAll(".cs-filter")).map(el => el.textContent.trim());
+
+        // Add unique authors
+        authors.split(",").forEach(author => uniqueCoauthors.add(author.trim()));
+
+        // Add unique journals
+        if (journal) uniqueJournals.add(journal);
+
+        // Add unique keywords
+        keywords.forEach(keyword => uniqueKeywords.add(keyword));
+
+        // Track publication count per year
+        if (year) {
+            publicationYears[year] = (publicationYears[year] || 0) + 1;
+        }
+    });
+
+    // Update stats
+    document.getElementById("total-publications").textContent = publications.length;
+    document.getElementById("unique-coauthors").textContent = uniqueCoauthors.size;
+    document.getElementById("unique-journals").textContent = uniqueJournals.size;
+    document.getElementById("unique-keywords").textContent = uniqueKeywords.size;
+
+    // Prepare data for chart
+    const years = Object.keys(publicationYears).sort();
+    const counts = years.map(year => publicationYears[year]);
+
+    // Render Chart.js Bar Chart
+    const ctx = document.getElementById("publicationRateChart").getContext("2d");
+    new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: years,
+            datasets: [{
+                label: "Publications per Year",
+                data: counts,
+                backgroundColor: "rgba(54, 162, 235, 0.6)",
+                borderColor: "rgba(54, 162, 235, 1)",
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: "Number of Publications"
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: "Year"
+                    }
+                }
+            }
         }
     });
 });
