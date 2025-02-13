@@ -1,18 +1,15 @@
 ---
 layout: 'base.html'
-description: "Space and tech is a page that showcases the resources available at the Data Diversity Lab."
+description: "Databases of the Data Diversity Lab"
 metaTitle: 'Databases'
 tagTitle: 'Databases'
 preloadImg: ''
-preloadCSS: '/css/databases.css'
-preloadJS: '/js/dynamic-cards.js'
+preloadCSS: '/css/software.css'
+preloadJS: '/js/software.js'
 permalink: 'databases/'
 eleventyNavigation:
     key: Databases
-    parent:
-    order: 500
-navOptions:
-  includeSelf: true
+    order: 600
 ---
 
 <!-- ============================================ -->
@@ -22,9 +19,9 @@ navOptions:
 <section id="content-1450" class="cs-top-section">
     <div class="cs-container">
         <div class="cs-content">
-            <h1 class="cs-title">databases</h1>
+            <h1 class="cs-title">Databases</h1>
             <p class="cs-text">
-                TBD.
+                TBD
             </p>
         </div>
     </div>
@@ -47,7 +44,7 @@ navOptions:
 <section id="databases-547">
     <div class="cs-container">
         <div class="cs-content cs-sidebar">
-            <h6 class="cs-title">Libraries & packages</h6>
+            <h6 class="cs-title">Topics</h6>
             <div class="cs-filter-wrapper cs-text">
                 <div data-filter="All" class="active">All</div>
                 {%- for tag in tags | sort(true) -%}
