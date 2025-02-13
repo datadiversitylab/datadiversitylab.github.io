@@ -221,19 +221,22 @@
   }
 }
 
+
 .cs-card-group[data-group="Former"] {
-    display: none; /* Remove !important to allow JavaScript to toggle */
-    visibility: hidden; /* Ensures it's not visible initially */
+    display: none; /* Ensures it's hidden by default */
+    visibility: hidden;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    height: 0;
+    overflow: hidden; /* Prevents extra space */
+    transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
 }
 
 .cs-card-group[data-group="Former"].visible {
     display: grid;
     visibility: visible;
     opacity: 1;
+    height: auto; /* Expands properly when shown */
 }
-
 
 .toggle-former-members {
     background-color: var(--buttonColor, #007bff);
