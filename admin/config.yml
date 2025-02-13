@@ -155,11 +155,11 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image', required: false }
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
-  - name: 'socials'
-    label: 'Socials'
-    folder: 'src/socials'
-    media_folder: '/src/assets/images/socials'
-    public_folder: '/assets/images/socials'
+  - name: 'labscape'
+    label: 'Labscape'
+    folder: 'src/labscape'
+    media_folder: '/src/assets/images/labscape'
+    public_folder: '/assets/images/labscape'
     create: true
     identifier_field: socialName
     slug: '{{socialName}}'
@@ -173,6 +173,8 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image', required: false }
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Document', name: 'document', widget: 'file', required: false, media_folder: '/src/assets/documents/labscape', public_folder: '/assets/documents/labscape' }
+
   - name: 'news'
     label: 'News'
     folder: 'src/news'
