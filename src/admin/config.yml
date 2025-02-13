@@ -139,7 +139,7 @@ collections:
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
   - name: 'databases'
-    label: 'Databases'
+    label: 'databases'
     folder: 'src/databases'
     media_folder: '/src/assets/images/databases'
     public_folder: '/assets/images/databases'
