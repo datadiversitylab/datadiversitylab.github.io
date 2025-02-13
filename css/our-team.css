@@ -222,7 +222,16 @@
 }
 
 .cs-card-group[data-group="Former"] {
-    display: none !important;
+    display: none; /* Remove !important to allow JavaScript to toggle */
+    visibility: hidden; /* Ensures it's not visible initially */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.cs-card-group[data-group="Former"].visible {
+    display: grid;
+    visibility: visible;
+    opacity: 1;
 }
 
 
