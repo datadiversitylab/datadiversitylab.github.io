@@ -2,3 +2,7 @@
 node_modules
 public
 .history
+.Rproj.user
+.Rproj.user/*
+.Rhistory
+*.Rproj
