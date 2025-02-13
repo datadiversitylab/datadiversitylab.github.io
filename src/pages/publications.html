@@ -114,8 +114,11 @@ eleventyNavigation:
                             <span class="cs-name">{{ publication.data.publicationTitle | markdown | safe }}</span>
                             <span class="cs-publication-author" data-full-authors="{{ publication.data.publicationAuthor }}">
                                 {%- set authors = publication.data.publicationAuthor.split(',') -%}
-                                {{ authors[0] }}
-                                {%- if authors | length > 3 -%} et al.{% endif %}
+                                {%- if authors | length > 3 -%}
+                                    {{ authors[0] }} et al.
+                                {%- else -%}
+                                    {{ publication.data.publicationAuthor }}
+                                {%- endif %}
                             </span>
 
                             <span>
