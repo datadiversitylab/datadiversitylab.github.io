@@ -222,8 +222,9 @@
 }
 
 .cs-card-group[data-group="Former"] {
-    display: none;
+    display: none !important;
 }
+
 
 .toggle-former-members {
     background-color: var(--buttonColor, #007bff);

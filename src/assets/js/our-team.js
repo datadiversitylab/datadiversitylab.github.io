@@ -75,15 +75,23 @@ document.addEventListener("DOMContentLoaded", function () {
         formerToggle.textContent = "Show Former Members";
         formerToggle.classList.add("toggle-former-members");
 
-        sidebar.appendChild(formerToggle); // Adds button inside the sidebar
+        sidebar.appendChild(formerToggle); // Place the button inside the sidebar
 
         let formerVisible = false;
+
+        // Ensure former members are hidden when the page loads
+        const formerMembersSection = document.querySelector('.cs-card-group[data-group="Former"]');
+        if (formerMembersSection) {
+            formerMembersSection.style.display = "none";
+        }
+
         formerToggle.addEventListener("click", function () {
             formerVisible = !formerVisible;
-            document.querySelector('.cs-card-group[data-group="Former"]').style.display = formerVisible ? "grid" : "none";
+            formerMembersSection.style.display = formerVisible ? "grid" : "none";
             formerToggle.textContent = formerVisible ? "Hide Former Members" : "Show Former Members";
         });
     }
 });
+
 
 
