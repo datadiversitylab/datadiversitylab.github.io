@@ -8,7 +8,7 @@ preloadCSS: '/css/social.css'
 preloadJS: '/js/scrollTo.js'
 permalink: 'social/'
 eleventyNavigation:
-    key: Social
+    key: Labscape
     parent: The lab
     order: 400
 ---
@@ -19,9 +19,9 @@ eleventyNavigation:
 <section id="content-1450" class="cs-top-section">
     <div class="cs-container">
         <div class="cs-content">
-            <h1 class="cs-title">Social events</h1>
+            <h1 class="cs-title">Lab events</h1>
             <p class="cs-text">
-                We tend to post updates on different social activities that happen within the lab. You can also find a more dynamic timeline in our Nextcloud memories by clicking this   <a href="https://nextcloud.datadiversitylab.synology.me/apps/memories/s/jCtTKgq96fb37d2">link</a>.
+                We tend to post updates on different social activities that happen within and outide of the lab. You can also find a more dynamic timeline in our Nextcloud memories by clicking this   <a href="https://nextcloud.datadiversitylab.synology.me/apps/memories/s/jCtTKgq96fb37d2">link</a>.
             </p>
         </div>
     </div>
@@ -33,7 +33,7 @@ eleventyNavigation:
 <!--                Social                      -->
 <!-- ============================================ -->
 {%- set years = [] -%}
-{%- for social in collections.socials | sort(attribute='data.order') -%}
+{%- for social in collections.labscape | sort(attribute='data.order') -%}
     {%- for tag in social.data.tags -%}
         {%- if not years.includes(tag | string) and tag != "socials" -%}
             {%- set years = years.concat(tag | string) -%}
@@ -55,7 +55,7 @@ eleventyNavigation:
             {%- for year in years | sort(true) -%}
                 <h3 class="cs-title">{{ year }}</h3>
                 <div id="section{{ year }}" class="cs-card-group">
-                    {%- for social in collections.socials | sort(attribute='data.order') -%}
+                    {%- for social in collections.labscape | sort(attribute='data.order') -%}
                         {%- if social.data.tags.includes(year) -%}
                             <div class="cs-item">
                                 <picture class="cs-picture">
