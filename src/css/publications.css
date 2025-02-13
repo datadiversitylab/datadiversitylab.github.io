@@ -373,17 +373,3 @@
     max-width: 80rem;
   }
 }
-
-.author-tooltip {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    max-width: 300px;
-    white-space: normal;
-    display: none;
-    z-index: 1000;
-}
-

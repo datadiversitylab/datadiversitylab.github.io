@@ -83,13 +83,14 @@ collections:
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
       - { label: 'Date', name: 'date', widget: 'datetime' }
+
   - name: 'siteSettings'
     label: 'Site Settings'
     folder: 'src/_data'
     media_folder: '/src/assets/images/preloaded'
     public_folder: '/assets/images/preloaded'
-    create: false
-    delete: false
+    create: true
+    delete: true
     identifier_field: title
     slug: 'settings'
     fields:

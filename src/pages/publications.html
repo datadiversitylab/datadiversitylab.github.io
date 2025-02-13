@@ -112,13 +112,7 @@ eleventyNavigation:
                             <div aria-hidden="true" class="line line-full card-image-line"></div>
                             <span class="cs-publication-type">{{ publication.data.publicationType }}</span>
                             <span class="cs-name">{{ publication.data.publicationTitle | markdown | safe }}</span>
-                            <span class="cs-publication-author"
-      data-full-authors="{{ publication.data.publicationAuthor }}"
-      data-author-count="{{ publication.data.publicationAuthor.split(',').length }}">
-    {{ publication.data.publicationAuthor.split(',')[0] }}
-    {%- if publication.data.publicationAuthor.split(',').length > 3 -%} et al.{% endif %}
-</span>
-
+                            <span class="cs-publication-author">{{ publication.data.publicationAuthor | highlightAuthors(collections.team) | safe }}</span>
                             <span>
                                 {%- if publication.data.publicationMonth -%}
                                     <span class="cs-publication-month">{{ publication.data.publicationMonth }}</span>
