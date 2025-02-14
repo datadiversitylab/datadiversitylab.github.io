@@ -103,34 +103,6 @@ eleventyNavigation:
     </div>
 </section>
 
-<!-- Timeline Section -->
-<section id="social-timeline">
-    <div class="timeline-container">
-        <div class="timeline-wrapper">
-            {%- for social in collections.socials | sort(attribute='data.socialDate') -%}
-                <div class="timeline-event" data-id="{{ loop.index }}" data-title="{{ social.data.socialName }}"
-                     data-date="{{ social.data.socialDate }}" data-desc="{{ social.data.socialDesc }}"
-                     data-image="{{ social.data.images[0] if social.data.images else social.data.image }}">
-                    <span class="timeline-marker"></span>
-                    <span class="timeline-label">{{ social.data.socialDate }}</span>
-                </div>
-            {%- endfor -%}
-        </div>
-    </div>
-</section>
-
-<!-- Event Details Modal -->
-<div id="timeline-popup" class="popup">
-    <div class="popup-content">
-        <span class="popup-close">&times;</span>
-        <h3 id="popup-title"></h3>
-        <p id="popup-date"></p>
-        <img id="popup-image" src="" alt="">
-        <p id="popup-desc"></p>
-    </div>
-</div>
-
-
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -163,35 +135,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const events = document.querySelectorAll(".timeline-event");
-    const popup = document.getElementById("timeline-popup");
-    const popupTitle = document.getElementById("popup-title");
-    const popupDate = document.getElementById("popup-date");
-    const popupImage = document.getElementById("popup-image");
-    const popupDesc = document.getElementById("popup-desc");
-    const closeBtn = document.querySelector(".popup-close");
-
-    // Open Popup
-    events.forEach(event => {
-        event.addEventListener("click", function () {
-            popupTitle.textContent = this.getAttribute("data-title");
-            popupDate.textContent = this.getAttribute("data-date");
-            popupImage.src = this.getAttribute("data-image");
-            popupDesc.textContent = this.getAttribute("data-desc");
-            popup.style.display = "flex";
-        });
-    });
-
-    // Close Popup when clicking outside
-    popup.addEventListener("click", function (event) {
-        if (event.target === popup || event.target === closeBtn) {
-            popup.style.display = "none";
-        }
-    });
-});
-</script>
-
 
