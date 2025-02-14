@@ -12,6 +12,7 @@ eleventyNavigation:
     key: News
     order: 700
 ---
+
 <!-- ============================================ -->
 <!--                  Content                     -->
 <!-- ============================================ -->
@@ -21,7 +22,10 @@ eleventyNavigation:
         <div class="cs-content">
             <h1 class="cs-title">News</h1>
             <p class="cs-text">
-                Stay informed and connected with the latest developments, achievements, and exciting happenings at the data diversity lab. Our news section is a space where we share insights, breakthroughs, and stories that reflect the work of our research community. Explore the stories that shape our journey and connect with the dynamic spirit of innovation at the lab. If you have news to share or inquiries about our latest updates, feel free to reach out—we'd love to hear from you.
+                Stay informed and connected with the latest developments, achievements, and exciting happenings at the Data Diversity Lab.
+                Our news section is a space where we share insights, breakthroughs, and stories that reflect the work of our research community.
+                Explore the stories that shape our journey and connect with the dynamic spirit of innovation at the lab.
+                If you have news to share or inquiries about our latest updates, feel free to reach out—we'd love to hear from you.
             </p>
         </div>
     </div>
@@ -51,118 +55,110 @@ eleventyNavigation:
                 {%- endfor -%}
             </div>
         </div>
+
         <div id="dropdown-cards" class="cs-title-card-wrapper">
             {%- for tag in tags | sort(true) -%}
                 <h3 class="cs-title">{{ tag }}</h3>
                 <div id="section{{ tag }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
 
-<section id="lab-news">
-    <div class="news-container">
-        <h2 class="news-title">Lab News & Updates</h2>
-
-        {%- for tag in tags | sort(true) -%}
-            <h3 class="cs-title">{{ tag }}</h3>
-            <div id="section{{ tag }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
-
-                <!-- Manually Added News Entries (Existing Markdown Files) -->
-                {%- for new in collections.news | sort(attribute='data.order') -%}
-                    {%- if new.data.tags.includes(tag) -%}
-                        <div class="cs-item {{ new.data.Name | lower }}">
-                            <div class="cs-flex-group">
-                                <div class="cs-dropdown-show">
-                                    <div>
-                                        <h4 class="cs-title">{{ new.data.Name }}</h4>
+                    <!-- Manually Added News Entries -->
+                    {%- for new in collections.news | sort(attribute='data.order') -%}
+                        {%- if new.data.tags.includes(tag) -%}
+                            <div class="cs-item {{ new.data.Name | lower }}">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <div>
+                                            <h4 class="cs-title">{{ new.data.Name }}</h4>
+                                        </div>
+                                        <div class="cs-dropdown-icon">
+                                            <img src="../assets/icons/{{ 'chevron-up' if loop.index == 1 else 'chevron-down' }}.svg">
+                                        </div>
                                     </div>
-                                    <div class="cs-dropdown-icon">
-                                        <img src="../assets/icons/{{ 'chevron-up' if loop.index == 1 else 'chevron-down' }}.svg">
-                                    </div>
-                                </div>
-                                <div class="cs-dropdown">
-                                    <div class="cs-dropdown-content">
-                                        {{ new.content | safe }}
+                                    <div class="cs-dropdown">
+                                        <div class="cs-dropdown-content">
+                                            {{ new.content | safe }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    {%- endif -%}
-                {%- endfor -%}
+                        {%- endif -%}
+                    {%- endfor -%}
 
-                <!-- Auto-Generated News from Publications -->
-                {%- for pub in collections.publications | sort(attribute='data.date', reverse=true) -%}
-                    {%- if pub.data.date contains tag -%}
-                        <div class="cs-item publications">
-                            <div class="cs-flex-group">
-                                <div class="cs-dropdown-show">
-                                    <h4 class="cs-title">New Paper: {{ pub.data.title }}</h4>
-                                    <p class="cs-text">Published in <strong>{{ pub.data.journal }}</strong>.</p>
+                    <!-- Auto-Generated News from Publications -->
+                    {%- for pub in collections.publications | sort(attribute='data.date', reverse=true) -%}
+                        {%- if pub.data.date contains tag -%}
+                            <div class="cs-item publications">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <h4 class="cs-title">New Paper: {{ pub.data.title }}</h4>
+                                        <p class="cs-text">Published in <strong>{{ pub.data.journal }}</strong>.</p>
 
-                                    {%- if pub.data.link -%}
-                                        <a href="{{ pub.data.link }}" target="_blank">Read the Paper</a>
-                                    {%- endif -%}
-
+                                        {%- if pub.data.link -%}
+                                            <a href="{{ pub.data.link }}" target="_blank">Read the Paper</a>
+                                        {%- endif -%}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    {%- endif -%}
-                {%- endfor -%}
+                        {%- endif -%}
+                    {%- endfor -%}
 
-                <!-- Auto-Generated News from Team Members -->
-                {%- for member in collections.team | sort(attribute='data.start_date', reverse=true) -%}
-                    {%- if member.data.start_date contains tag -%}
-                        <div class="cs-item members">
-                            <div class="cs-flex-group">
-                                <div class="cs-dropdown-show">
-                                    <h4 class="cs-title">Welcome {{ member.data.name }}!</h4>
-                                    <p class="cs-text">{{ member.data.name }} joins as a {{ member.data.position }}.</p>
+                    <!-- Auto-Generated News from Team Members -->
+                    {%- for member in collections.team | sort(attribute='data.start_date', reverse=true) -%}
+                        {%- if member.data.start_date contains tag -%}
+                            <div class="cs-item members">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <h4 class="cs-title">Welcome {{ member.data.name }}!</h4>
+                                        <p class="cs-text">{{ member.data.name }} joins as a {{ member.data.position }}.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    {%- endif -%}
-                    {%- if member.data.end_date contains tag -%}
-                        <div class="cs-item members">
-                            <div class="cs-flex-group">
-                                <div class="cs-dropdown-show">
-                                    <h4 class="cs-title">Farewell {{ member.data.name }}</h4>
-                                    <p class="cs-text">We wish {{ member.data.name }} the best in their next chapter!</p>
+                        {%- endif -%}
+                        {%- if member.data.end_date contains tag -%}
+                            <div class="cs-item members">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <h4 class="cs-title">Farewell {{ member.data.name }}</h4>
+                                        <p class="cs-text">We wish {{ member.data.name }} the best in their next chapter!</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    {%- endif -%}
-                {%- endfor -%}
+                        {%- endif -%}
+                    {%- endfor -%}
 
-                <!-- Auto-Generated News from Grants -->
-                {%- for grant in collections.grants | sort(attribute='data.date', reverse=true) -%}
-                    {%- if grant.data.date contains tag -%}
-                        <div class="cs-item grants">
-                            <div class="cs-flex-group">
-                                <div class="cs-dropdown-show">
-                                    <h4 class="cs-title">New Grant Awarded: {{ grant.data.name }}</h4>
-                                    <p class="cs-text">The lab has received <strong>{{ grant.data.name }}</strong> for ${{ grant.data.amount }}.</p>
+                    <!-- Auto-Generated News from Grants -->
+                    {%- for grant in collections.grants | sort(attribute='data.date', reverse=true) -%}
+                        {%- if grant.data.date contains tag -%}
+                            <div class="cs-item grants">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <h4 class="cs-title">New Grant Awarded: {{ grant.data.name }}</h4>
+                                        <p class="cs-text">The lab has received <strong>{{ grant.data.name }}</strong> for ${{ grant.data.amount }}.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    {%- endif -%}
-                {%- endfor -%}
+                        {%- endif -%}
+                    {%- endfor -%}
 
-                <!-- Auto-Generated News from Socials -->
-                {%- for social in collections.socials | sort(attribute='data.date', reverse=true) -%}
-                    {%- if social.data.date contains tag -%}
-                        <div class="cs-item socials">
-                            <div class="cs-flex-group">
-                                <div class="cs-dropdown-show">
-                                    <h4 class="cs-title">New Social Event: {{ social.data.title }}</h4>
-                                    <p class="cs-text">{{ social.data.description }}</p>
+                    <!-- Auto-Generated News from Socials -->
+                    {%- for social in collections.socials | sort(attribute='data.date', reverse=true) -%}
+                        {%- if social.data.date contains tag -%}
+                            <div class="cs-item socials">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <h4 class="cs-title">New Social Event: {{ social.data.title }}</h4>
+                                        <p class="cs-text">{{ social.data.description }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    {%- endif -%}
-                {%- endfor -%}
+                        {%- endif -%}
+                    {%- endfor -%}
 
-            </div>
-        {%- endfor -%}
+                </div>
+            {%- endfor -%}
+        </div>
     </div>
 </section>
-
 
 
 <script defer>
