@@ -9,5 +9,6 @@ socialDesc: Dr. Román-Palacios presented at UCLA's Geocheminar seminar on
   work related on clumped isotope datasets.
 tags:
   - "2025"
-image: /assets/images/socials/ucla-s-geocheminar-seminar-.png
+images:
+  - /assets/images/socials/ucla-s-geocheminar-seminar-.png
 ---

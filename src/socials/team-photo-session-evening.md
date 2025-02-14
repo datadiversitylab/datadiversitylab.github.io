@@ -8,6 +8,7 @@ socialDesc: "One of our lab members (Shih-Hsuan Lo) took professional level
   Shih-Hsuan Lo."
 tags:
   - "2024"
-image: /assets/images/socials/edited_dscf8821-cropped.jpg
+images:
+  - /assets/images/socials/edited_dscf8821-cropped.jpg
 order: 8
 ---

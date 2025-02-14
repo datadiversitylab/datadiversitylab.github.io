@@ -6,6 +6,7 @@ socialDesc: Kristen Martinet (front row, left), Postdoc in our lab celebrated
   Information Science Halloween party.
 tags:
   - "2024"
-image: /assets/images/socials/info-sci-halloween-party.jpg
+images:
+  - /assets/images/socials/info-sci-halloween-party.jpg
 order: 3
 ---

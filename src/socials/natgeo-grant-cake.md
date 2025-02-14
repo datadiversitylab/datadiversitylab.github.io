@@ -6,6 +6,7 @@ socialDesc: In order to properly celebrate being awarded our National Geographic
   Kristen Martinet, Eleanor Tuck, Cristian Roman.
 tags:
   - "2024"
-image: /assets/images/socials/cake-in-lab.jpeg
+images:
+  - /assets/images/socials/cake-in-lab.jpeg
 order: 3
 ---

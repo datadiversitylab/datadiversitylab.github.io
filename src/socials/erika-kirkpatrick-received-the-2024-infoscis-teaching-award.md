@@ -6,5 +6,6 @@ socialDesc: Erika Kirkpatrick (front row, first on the left), MS in Data Science
   Award in the College of Information Science (UArizona). Congrats Erika!!
 tags:
   - "2024"
-image: /assets/images/socials/image002.jpg
+images:
+  - /assets/images/socials/image002.jpg
 ---

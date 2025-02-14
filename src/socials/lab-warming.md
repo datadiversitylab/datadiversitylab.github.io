@@ -7,6 +7,7 @@ socialDesc: The iSchool organized a lab warming party get together at the end of
   warm welcome of the Data Diversity Lab ! :)
 tags:
   - "2024"
-image: /assets/images/socials/lab_warming.jpeg
+images:
+  - /assets/images/socials/lab_warming.jpeg
 order: 7
 ---

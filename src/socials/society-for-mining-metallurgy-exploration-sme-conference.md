@@ -7,5 +7,6 @@ socialDesc: Jiayue He (pictured 3rd from the left) attended the 2024 Society for
   multidisciplinary mining research.
 tags:
   - "2024"
-image: /assets/images/socials/society-for-mining-metallurgy-exploration-sme-conference.jpg
+images:
+  - /assets/images/socials/society-for-mining-metallurgy-exploration-sme-conference.jpg
 ---

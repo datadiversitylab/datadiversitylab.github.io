@@ -7,5 +7,6 @@ socialDesc: Dr. Román-Palacios help put together a fraction of the slides and
   (https://www.youtube.com/watch?v=LGrBMnf5PhM&t=3194s)
 tags:
   - "2021"
-image: /assets/images/socials/pre-icfes-pa’l-barrio.png
+images:
+  - /assets/images/socials/pre-icfes-pa’l-barrio.png
 ---

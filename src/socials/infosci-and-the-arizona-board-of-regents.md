@@ -8,5 +8,6 @@ socialDesc: Paige Cherry, Undergraduate student in the lab, represented the
   highlight the progress her assisting Dr. Kiran Basava. Congrats Paige!!
 tags:
   - "2024"
-image: /assets/images/socials/infosci-and-the-arizona-board-of-regents.jpg
+images:
+  - /assets/images/socials/infosci-and-the-arizona-board-of-regents.jpg
 ---

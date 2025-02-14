@@ -12,5 +12,6 @@ socialDesc: Jhan proudly presented his first-ever poster at a conference during
   evolutionary patterns in these fascinating reptiles.
 tags:
   - "2025"
-image: /assets/images/socials/honorary-member-jhan-c.-salazar-presents-at-sicb-conference-.jpg
+images:
+  - /assets/images/socials/honorary-member-jhan-c.-salazar-presents-at-sicb-conference-.jpg
 ---

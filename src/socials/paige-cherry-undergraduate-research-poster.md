@@ -11,5 +11,6 @@ socialDesc: Paige is assisting on a comparative database of animal culture and
   accessibility.
 tags:
   - "2024"
-image: /assets/images/socials/paige-cherry-undergraduate-research-poster-.png
+images:
+  - /assets/images/socials/paige-cherry-undergraduate-research-poster-.png
 ---

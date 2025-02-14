@@ -6,5 +6,6 @@ socialDesc: Dr. Román-Palacios presented his research on polyploidy at the
   (https://www.youtube.com/watch?v=2PD7c-cyCQY)
 tags:
   - "2020"
-image: /assets/images/socials/polyploidy-webinar.png
+images:
+  - /assets/images/socials/polyploidy-webinar.png
 ---

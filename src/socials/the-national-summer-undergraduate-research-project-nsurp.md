@@ -7,5 +7,6 @@ socialDesc: Dr. Roman was a featured speaker for the 2024 NSURP cohort. The
   in Microbiology, Immunology, Cancer Biology, and Biomedical Engineering.
 tags:
   - "2024"
-image: /assets/images/socials/the-national-summer-undergraduate-research-project-nsurp-.jpg
+images:
+  - /assets/images/socials/the-national-summer-undergraduate-research-project-nsurp-.jpg
 ---

@@ -11,5 +11,6 @@ socialDesc: Dr. Wiens and Dr. Román-Palacios discuss our climate change paper
   (https://theclimatepod.libsyn.com/new-record-temperatures-and-the-looming-extinction-crisis-w-washington-posts-matthew-cappucci-and-university-of-arizonas-dr-john-j-wiens-and-cristian-romn-palacios)
 tags:
   - "2020"
-image: /assets/images/socials/the-climate-pod.png
+images:
+  - /assets/images/socials/the-climate-pod.png
 ---

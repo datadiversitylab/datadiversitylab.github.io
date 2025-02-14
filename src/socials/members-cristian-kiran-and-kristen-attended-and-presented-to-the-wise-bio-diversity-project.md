@@ -10,5 +10,6 @@ socialDesc: WISE, the Women in Science and Engineering program granted an
   sharing her expertise in the biodiversity and data science subject!
 tags:
   - "2024"
-image: /assets/images/socials/members-cristian-kiran-and-kristen-attended-and-presented-to-the-wise-bio-diversity-project-.jpg
+images:
+  - /assets/images/socials/members-cristian-kiran-and-kristen-attended-and-presented-to-the-wise-bio-diversity-project-.jpg
 ---

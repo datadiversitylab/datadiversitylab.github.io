@@ -7,6 +7,7 @@ socialDesc: Available lab members joined in an Italian cuisine dinner at Locale
   Cristian Roman, Ian Estacio, Yichao Zeng.
 tags:
   - "2024"
-image: /assets/images/socials/lab-dinner.jpeg
+images:
+  - /assets/images/socials/lab-dinner.jpeg
 order: 1
 ---

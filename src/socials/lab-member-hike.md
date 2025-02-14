@@ -7,6 +7,7 @@ socialDesc: A few of our members were able to get together for some team bonding
   Michael Nafis, Hector Garcia.
 tags:
   - "2024"
-image: /assets/images/socials/group-hike.jpg
+images:
+  - /assets/images/socials/group-hike.jpg
 order: 5
 ---

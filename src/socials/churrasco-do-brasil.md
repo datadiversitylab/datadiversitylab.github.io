@@ -7,7 +7,8 @@ socialDesc: "A lab dinner was organized in Fall 2023 at Churrasco de Brasil,
   Garcia."
 tags:
   - "2023"
-image: /assets/images/social/churrasco.jpg
+images:
+  - /assets/images/social/churrasco.jpg
 imageAlt: Churrasco do brazil image
 order: 30
 ---

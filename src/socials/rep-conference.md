@@ -6,5 +6,6 @@ socialDesc: Dr. Román-Palacios presented BarrioMap along with Mackenzie Waller
   Professor, University of Washington)
 tags:
   - "2023"
-image: /assets/images/socials/rep-conference.png
+images:
+  - /assets/images/socials/rep-conference.png
 ---

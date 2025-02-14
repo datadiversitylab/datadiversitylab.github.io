@@ -8,5 +8,6 @@ socialDesc: Danielle Van Boxel (pictured in the very back left-hand corner)
   about their projects with each other and with community members.
 tags:
   - "2023"
-image: /assets/images/socials/arizona-women-s-symposium-in-mathematics-awsim-.png
+images:
+  - /assets/images/socials/arizona-women-s-symposium-in-mathematics-awsim-.png
 ---

@@ -7,5 +7,6 @@ socialDesc: Danielle Van Boxel (pictured) presenting her research at the
   iSchool's students.
 tags:
   - "2023"
-image: /assets/images/socials/ishowcase.png
+images:
+  - /assets/images/socials/ishowcase.png
 ---

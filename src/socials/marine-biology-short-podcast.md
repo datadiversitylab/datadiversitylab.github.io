@@ -6,5 +6,6 @@ socialDesc: Dr. Román-Palacios was interviewed very briefly by Dr. Katrina
   some general and personal advice on science and academia.
 tags:
   - "2020"
-image: /assets/images/socials/marine-biology-short-podcast.png
+images:
+  - /assets/images/socials/marine-biology-short-podcast.png
 ---

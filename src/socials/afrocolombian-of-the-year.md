@@ -12,5 +12,5 @@ tags:
 image: /assets/images/socials/afrocolombian-of-the-year.png
 images:
   - /assets/images/socials/afrocolombian-of-the-year.png
-  - /assets/images/socials/afrocolombian-of-the-year.png
+  - /assets/images/socials/world-climate-research-programme-open-science.png
 ---

@@ -8,5 +8,6 @@ socialDesc: Dr. Kristen Martinet and Dr. Kiran Basava (postdocs at the lab)
   awardees. Congrats to both Kristen and Kiran for presenting!
 tags:
   - "2024"
-image: /assets/images/socials/dr.-basava-and-dr.-martinet-at-the-6th-annual-arizona-postdoctoral-research-conference-.png
+images:
+  - /assets/images/socials/dr.-basava-and-dr.-martinet-at-the-6th-annual-arizona-postdoctoral-research-conference-.png
 ---

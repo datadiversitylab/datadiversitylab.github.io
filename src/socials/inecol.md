@@ -6,5 +6,6 @@ socialDesc: Dr. Román-Palacios was the keynote speaker at the 2023 Simposio
   event. In the photo, organizers and two speakers.
 tags:
   - "2023"
-image: /assets/images/socials/inecol.png
+images:
+  - /assets/images/socials/inecol.png
 ---

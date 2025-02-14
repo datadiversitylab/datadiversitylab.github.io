@@ -7,5 +7,6 @@ socialDesc: Yi Chien Lee (pictured) was in attendance of the Grace Hopper
   fairs, sessions and poster presentations were all main parts of the event.
 tags:
   - "2023"
-image: /assets/images/socials/grace-hopper-celebration-of-women-in-computing.png
+images:
+  - /assets/images/socials/grace-hopper-celebration-of-women-in-computing.png
 ---

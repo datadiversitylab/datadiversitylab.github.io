@@ -7,5 +7,6 @@ socialDesc: Kristen gave a talk covering the functionality of her R package
   for Integrative & Comparative Biology) conference in January 2025.
 tags:
   - "2025"
-image: /assets/images/socials/postdoc-kristen-martinet-presents-at-society-for-integrative-comparative-biology-conference-.jpg
+images:
+  - /assets/images/socials/postdoc-kristen-martinet-presents-at-society-for-integrative-comparative-biology-conference-.jpg
 ---

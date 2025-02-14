@@ -8,5 +8,6 @@ socialDesc: "Our PI, Cristian attended the UN-COP16 in Colombia along with Dr.
   -reflections-from-the-back-row-of-cop16/ "
 tags:
   - "2024"
-image: /assets/images/socials/united-nations-biodiversity-conference.jpg
+images:
+  - /assets/images/socials/united-nations-biodiversity-conference.jpg
 ---

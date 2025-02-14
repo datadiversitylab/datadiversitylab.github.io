@@ -6,6 +6,7 @@ socialDesc: "Attending the rainbow graduation at UA, Dr. Román hoods Dr. Van
   the achievements of LGBTQ+ students at the University of Arizona. "
 tags:
   - "2024"
-image: /assets/images/socials/daniellerainbowgrad.jpg
+images:
+  - /assets/images/socials/daniellerainbowgrad.jpg
 order: 6
 ---

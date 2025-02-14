@@ -6,5 +6,6 @@ socialDesc: Dr. Román-Palacios attended and presented in the iSchool's Spring
   on the latest information-related research, apps publications and more.
 tags:
   - "2023"
-image: /assets/images/socials/faculty-research-blitz.png
+images:
+  - /assets/images/socials/faculty-research-blitz.png
 ---
