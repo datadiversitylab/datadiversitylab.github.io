@@ -67,6 +67,12 @@ eleventyNavigation:
                                     <button class="prev-btn">❮</button>
                                     <button class="next-btn">❯</button>
                                 </div>
+                                <!-- Lightbox (Hidden by Default) -->
+                                <div id="lightbox" class="lightbox">
+                                    <span class="close-btn">&times;</span>
+                                    <img class="lightbox-content" id="lightbox-img">
+                                </div>
+
                                 <div class="cs-flex-group">
                                     <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">{{ social.data.socialName }}</span>
@@ -135,4 +141,60 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Image slider logic
+    document.querySelectorAll(".cs-gallery").forEach(gallery => {
+        let slides = gallery.querySelectorAll(".cs-slide img");
+        let index = 0;
+
+        function showSlide(i) {
+            slides.forEach((slide, idx) => {
+                slide.style.display = idx === i ? "block" : "none";
+            });
+        }
+
+        let prevBtn = gallery.querySelector(".prev-btn");
+        let nextBtn = gallery.querySelector(".next-btn");
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener("click", function () {
+                index = index === 0 ? slides.length - 1 : index - 1;
+                showSlide(index);
+            });
+
+            nextBtn.addEventListener("click", function () {
+                index = index === slides.length - 1 ? 0 : index + 1;
+                showSlide(index);
+            });
+        }
+
+        showSlide(index); // Initialize first image
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close-btn");
+
+    document.querySelectorAll(".enlargeable-image").forEach(img => {
+        img.addEventListener("click", function () {
+            lightbox.style.display = "flex";
+            lightboxImg.src = this.src;
+        });
+    });
+
+    closeBtn.addEventListener("click", function () {
+        lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", function (event) {
+        if (event.target !== lightboxImg) {
+            lightbox.style.display = "none";
+        }
+    });
+});
+</script>
+
 
