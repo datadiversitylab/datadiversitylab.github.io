@@ -212,12 +212,17 @@
 .next-btn { right: 10px; }
 
 
-/* Hover Zoom Effect */
+/* Ensure All Images Are the Same Size */
 .enlargeable-image {
+    width: 100%; /* Makes images fill their container */
+    height: 300px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Ensures images are cropped properly */
+    border-radius: 5px; /* Optional: Adds smooth edges */
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
 
+/* Hover Effect - Enlarge Slightly */
 .enlargeable-image:hover {
     transform: scale(1.2); /* Enlarges image slightly */
     z-index: 10;
