@@ -10,4 +10,7 @@ socialDesc: "Dr. Román-Palacios was named 'Afro-Colombian' of the Year by the
 tags:
   - "2022"
 image: /assets/images/socials/afrocolombian-of-the-year.png
+images:
+  - /assets/images/socials/afrocolombian-of-the-year.png
+  - /assets/images/socials/afrocolombian-of-the-year.png
 ---
