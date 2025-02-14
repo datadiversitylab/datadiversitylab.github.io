@@ -22,7 +22,9 @@ eleventyNavigation:
         <div class="cs-content">
             <h1 class="cs-title">News</h1>
             <p class="cs-text">
-                Stay informed and connected with the latest developments, achievements, and exciting happenings at the Data Diversity Lab. Our news section is a space where we share insights, breakthroughs, and stories that reflect the work of our research community. Explore the stories that shape our journey and connect with the dynamic spirit of innovation at the lab. If you have news to share or inquiries about our latest updates, feel free to reach out—we'd love to hear from you.
+                Stay informed and connected with the latest developments, achievements, and exciting happenings at the Data Diversity Lab.
+                Explore the stories that shape our journey and connect with the dynamic spirit of innovation at the lab.
+                If you have news to share or inquiries about our latest updates, feel free to reach out—we'd love to hear from you.
             </p>
         </div>
     </div>
@@ -34,10 +36,12 @@ eleventyNavigation:
 <!--                News by Year                 -->
 <!-- ============================================ -->
 {%- set years = [] -%}
-{%- for new in collections.news | sort(attribute='data.order') -%}
-    {%- set year = new.data.date | date('YYYY') -%}
-    {%- if not years.includes(year) -%}
-        {%- set years = years.concat(year) -%}
+{%- for new in collections.news | sort(attribute='data.date', reverse=true) -%}
+    {%- if new.data.date -%}
+        {%- set year = new.data.date | dateFormat("yyyy") -%}
+        {%- if not years.includes(year) -%}
+            {%- set years = years.concat(year) -%}
+        {%- endif -%}
     {%- endif -%}
 {%- endfor -%}
 
@@ -58,8 +62,8 @@ eleventyNavigation:
                 <div id="section{{ year }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
 
                     <!-- Manually Added News Entries -->
-                    {%- for new in collections.news | sort(attribute='data.order') -%}
-                        {%- if new.data.date and (new.data.date | date('YYYY') == year) -%}
+                    {%- for new in collections.news | sort(attribute='data.date', reverse=true) -%}
+                        {%- if new.data.date and (new.data.date | dateFormat("yyyy") == year) -%}
                             <div class="cs-item {{ new.data.Name | lower }}">
                                 <div class="cs-flex-group">
                                     <div class="cs-dropdown-show">
@@ -82,7 +86,7 @@ eleventyNavigation:
 
                     <!-- Auto-Generated News from All Site Content -->
                     {%- for item in collections.all | sort(attribute='data.date', reverse=true) -%}
-                        {%- if item.data.date and (item.data.date is string) and (item.data.date | date('YYYY') == year) -%}
+                        {%- if item.data.date and (item.data.date | dateFormat("yyyy") == year) -%}
                             <div class="cs-item {{ item.data.type }}">
                                 <div class="cs-flex-group">
                                     <div class="cs-dropdown-show">
@@ -120,6 +124,7 @@ eleventyNavigation:
         </div>
     </div>
 </section>
+
 
 
 <script defer>
