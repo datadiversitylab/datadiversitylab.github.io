@@ -41,6 +41,114 @@ eleventyNavigation:
     {%- endfor -%}
 {%- endfor -%}
 
+<!-- Auto-Generate News from Publications, Members, Grants, and Socials -->
+<section id="new-547">
+    <div class="cs-container">
+        <div class="cs-content cs-sidebar">
+            <h6 class="cs-title">Years</h6>
+            <div class="cs-filter-wrapper cs-text">
+                {%- for tag in tags | sort(true) -%}
+                    <a href="#section{{ tag }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ tag }}</a>
+                {%- endfor -%}
+            </div>
+        </div>
+
+        <div id="dropdown-cards" class="cs-title-card-wrapper">
+            {%- for tag in tags | sort(true) -%}
+                <h3 class="cs-title">{{ tag }}</h3>
+                <div id="section{{ tag }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
+
+                    <!-- Automatically Generated News from Publications -->
+                    {%- for pub in collections.publications -%}
+                        {%- if pub.data.date contains tag -%}
+                            <div class="cs-item publications">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <h4 class="cs-title">New Paper: {{ pub.data.title }}</h4>
+                                        <p class="cs-text">Published in <strong>{{ pub.data.journal }}</strong>.</p>
+                                        <a href="{{ pub.data.link }}" target="_blank">Read the Paper</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+
+                    <!-- Automatically Generated News from Members -->
+                    {%- for member in collections.team -%}
+                        {%- if member.data.start_date contains tag -%}
+                            <div class="cs-item members">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <h4 class="cs-title">Welcome {{ member.data.name }}!</h4>
+                                        <p class="cs-text">{{ member.data.name }} joins as a {{ member.data.position }}.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- endif -%}
+                        {%- if member.data.end_date contains tag -%}
+                            <div class="cs-item members">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <h4 class="cs-title">Farewell {{ member.data.name }}</h4>
+                                        <p class="cs-text">We wish {{ member.data.name }} the best in their next chapter!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+
+                    <!-- Automatically Generated News from Grants -->
+                    {%- for grant in collections.grants -%}
+                        {%- if grant.data.date contains tag -%}
+                            <div class="cs-item grants">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <h4 class="cs-title">New Grant Awarded: {{ grant.data.name }}</h4>
+                                        <p class="cs-text">The lab has received <strong>{{ grant.data.name }}</strong> for ${{ grant.data.amount }}.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+
+                    <!-- Automatically Generated News from Socials -->
+                    {%- for social in collections.socials -%}
+                        {%- if social.data.date contains tag -%}
+                            <div class="cs-item socials">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <h4 class="cs-title">New Social Event: {{ social.data.title }}</h4>
+                                        <p class="cs-text">{{ social.data.description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+
+                    <!-- Manually Added News Entries -->
+                    {%- for new in collections.news | sort(attribute='data.order') -%}
+                        {%- if new.data.tags.includes(tag) -%}
+                            <div class="cs-item {{ new.data.Name | lower }}">
+                                <div class="cs-flex-group">
+                                    <div class="cs-dropdown-show">
+                                        <h4 class="cs-title">{{ new.data.Name }}</h4>
+                                    </div>
+                                    <div class="cs-dropdown">
+                                        <div class="cs-dropdown-content">
+                                            {{ new.content | safe }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</section>
+
+
 <section id="new-547">
     <div class="cs-container">
         <div class="cs-content cs-sidebar">
@@ -119,3 +227,31 @@ eleventyNavigation:
         }
     });
 </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".news-filter button");
+    const newsItems = document.querySelectorAll(".news-item");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const category = this.getAttribute("data-filter");
+
+            // Highlight active button
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+
+            // Show or hide news items based on filter
+            newsItems.forEach(item => {
+                if (category === "all" || item.getAttribute("data-category") === category) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        });
+    });
+});
+</script>
+
