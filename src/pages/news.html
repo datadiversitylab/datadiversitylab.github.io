@@ -13,19 +13,13 @@ eleventyNavigation:
     order: 700
 ---
 
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
-
 <section id="content-1450" class="cs-top-section">
     <div class="cs-container">
         <div class="cs-content">
             <h1 class="cs-title">News</h1>
             <p class="cs-text">
                 Stay informed and connected with the latest developments, achievements, and exciting happenings at the Data Diversity Lab.
-                Our news section is a space where we share insights, breakthroughs, and stories that reflect the work of our research community.
                 Explore the stories that shape our journey and connect with the dynamic spirit of innovation at the lab.
-                If you have news to share or inquiries about our latest updates, feel free to reach out—we'd love to hear from you.
             </p>
         </div>
     </div>
@@ -33,9 +27,6 @@ eleventyNavigation:
 
 <div aria-hidden="true" class="line"></div>
 
-<!-- ============================================ -->
-<!--                News                          -->
-<!-- ============================================ -->
 {%- set tags = [] -%}
 {%- for new in collections.news | sort(attribute='data.order') -%}
     {%- for tag in new.data.tags -%}
@@ -86,7 +77,7 @@ eleventyNavigation:
 
                     <!-- Auto-Generated News from Publications -->
                     {%- for pub in collections.publications | sort(attribute='data.date', reverse=true) -%}
-                        {%- if pub.data.date contains tag -%}
+                        {%- if pub.data.date and (tag in pub.data.date) -%}
                             <div class="cs-item publications">
                                 <div class="cs-flex-group">
                                     <div class="cs-dropdown-show">
@@ -104,7 +95,7 @@ eleventyNavigation:
 
                     <!-- Auto-Generated News from Team Members -->
                     {%- for member in collections.team | sort(attribute='data.start_date', reverse=true) -%}
-                        {%- if member.data.start_date contains tag -%}
+                        {%- if member.data.start_date and (tag in member.data.start_date) -%}
                             <div class="cs-item members">
                                 <div class="cs-flex-group">
                                     <div class="cs-dropdown-show">
@@ -114,7 +105,7 @@ eleventyNavigation:
                                 </div>
                             </div>
                         {%- endif -%}
-                        {%- if member.data.end_date contains tag -%}
+                        {%- if member.data.end_date and (tag in member.data.end_date) -%}
                             <div class="cs-item members">
                                 <div class="cs-flex-group">
                                     <div class="cs-dropdown-show">
@@ -128,7 +119,7 @@ eleventyNavigation:
 
                     <!-- Auto-Generated News from Grants -->
                     {%- for grant in collections.grants | sort(attribute='data.date', reverse=true) -%}
-                        {%- if grant.data.date contains tag -%}
+                        {%- if grant.data.date and (tag in grant.data.date) -%}
                             <div class="cs-item grants">
                                 <div class="cs-flex-group">
                                     <div class="cs-dropdown-show">
@@ -142,7 +133,7 @@ eleventyNavigation:
 
                     <!-- Auto-Generated News from Socials -->
                     {%- for social in collections.socials | sort(attribute='data.date', reverse=true) -%}
-                        {%- if social.data.date contains tag -%}
+                        {%- if social.data.date and (tag in social.data.date) -%}
                             <div class="cs-item socials">
                                 <div class="cs-flex-group">
                                     <div class="cs-dropdown-show">
