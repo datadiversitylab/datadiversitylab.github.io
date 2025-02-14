@@ -149,48 +149,6 @@ eleventyNavigation:
 </section>
 
 
-<section id="new-547">
-    <div class="cs-container">
-        <div class="cs-content cs-sidebar">
-            <h6 class="cs-title">Years</h6>
-            <div class="cs-filter-wrapper cs-text">
-                {%- for tag in tags | sort(true) -%}
-                    <a href="#section{{ tag }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ tag }}</a>
-                {%- endfor -%}
-            </div>
-        </div>
-        <div id="dropdown-cards" class="cs-title-card-wrapper">
-            {%- for tag in tags | sort(true) -%}
-                <h3 class="cs-title">{{ tag }}</h3>
-                <div id="section{{ tag }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
-                    {%- for new in collections.news | sort(attribute='data.order') -%}
-                        {%- if new.data.tags.includes(tag) -%}
-                            <div class="cs-item {{ new.data.Name | lower }}">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">{{ new.data.Name }}</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/{{ 'chevron-up' if loop.index == 1 else 'chevron-down' }}.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            {{ new.content | safe }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
-                </div>
-            {%- endfor -%}
-            </div>
-        </div>
-    </div>
-</section>
-
 <script defer>
     document.addEventListener("DOMContentLoaded", function() {
         // Function to get query parameters
