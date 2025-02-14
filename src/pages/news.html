@@ -103,86 +103,60 @@ eleventyNavigation:
             {%- endif -%}
 
             <!-- Current Team Members -->
-            {%- set total_members = collections.team | filter(attribute='data.status', value='current') | length -%}
-            {%- set new_members = collections.team | filter(attribute='data.status', value='current') | sort(attribute='data.start_date', reverse=true) | slice(0,3) -%}
+            {%- set total_members = 0 -%}
+            {%- for member in collections.team -%}
+                {%- if member.data.status == "current" -%}
+                    {%- set total_members = total_members + 1 -%}
+                {%- endif -%}
+            {%- endfor -%}
             {%- if total_members > 0 -%}
                 <div class="cs-stat">
                     <h3>👩‍🎓 {{ total_members }} Active Team Members</h3>
-                    <ul>
-                        {%- for member in new_members -%}
-                            <li>{{ member.data.name }} - {{ member.data.position }}</li>
-                        {%- endfor -%}
-                    </ul>
                 </div>
             {%- endif -%}
 
             <!-- Former Team Members -->
-            {%- set former_members = collections.team | filter(attribute='data.status', value='former') | length -%}
-            {%- set departed_members = collections.team | filter(attribute='data.status', value='former') | sort(attribute='data.end_date', reverse=true) | slice(0,3) -%}
+            {%- set former_members = 0 -%}
+            {%- for member in collections.team -%}
+                {%- if member.data.status == "former" -%}
+                    {%- set former_members = former_members + 1 -%}
+                {%- endif -%}
+            {%- endfor -%}
             {%- if former_members > 0 -%}
                 <div class="cs-stat">
                     <h3>😢 {{ former_members }} Former Team Members</h3>
-                    <ul>
-                        {%- for member in departed_members -%}
-                            <li>{{ member.data.name }} has moved on</li>
-                        {%- endfor -%}
-                    </ul>
                 </div>
             {%- endif -%}
 
             <!-- Software Projects -->
             {%- set total_software = collections.software | length -%}
-            {%- set new_software = collections.software | sort(attribute='data.date', reverse=true) | slice(0,3) -%}
             {%- if total_software > 0 -%}
                 <div class="cs-stat">
                     <h3>💻 {{ total_software }} Software Projects</h3>
-                    <ul>
-                        {%- for software in new_software -%}
-                            <li><a href="{{ software.data.link }}" target="_blank">{{ software.data.title }}</a></li>
-                        {%- endfor -%}
-                    </ul>
                 </div>
             {%- endif -%}
 
             <!-- Social Events -->
             {%- set total_socials = collections.socials | length -%}
-            {%- set recent_socials = collections.socials | sort(attribute='data.date', reverse=true) | slice(0,3) -%}
             {%- if total_socials > 0 -%}
                 <div class="cs-stat">
                     <h3>🎉 {{ total_socials }} Social Events</h3>
-                    <ul>
-                        {%- for event in recent_socials -%}
-                            <li>{{ event.data.title }} – {{ event.data.date }}</li>
-                        {%- endfor -%}
-                    </ul>
                 </div>
             {%- endif -%}
 
             <!-- Grants -->
             {%- set total_grants = collections.grants | length -%}
-            {%- set recent_grants = collections.grants | sort(attribute='data.date', reverse=true) | slice(0,3) -%}
             {%- if total_grants > 0 -%}
                 <div class="cs-stat">
                     <h3>🏆 {{ total_grants }} Research Grants</h3>
-                    <ul>
-                        {%- for grant in recent_grants -%}
-                            <li>{{ grant.data.name }} - ${{ grant.data.amount }}</li>
-                        {%- endfor -%}
-                    </ul>
                 </div>
             {%- endif -%}
 
             <!-- Databases -->
             {%- set total_databases = collections.database | length -%}
-            {%- set new_databases = collections.database | sort(attribute='data.date', reverse=true) | slice(0,3) -%}
             {%- if total_databases > 0 -%}
                 <div class="cs-stat">
                     <h3>📊 {{ total_databases }} Research Databases</h3>
-                    <ul>
-                        {%- for db in new_databases -%}
-                            <li><a href="{{ db.data.link }}" target="_blank">{{ db.data.title }}</a></li>
-                        {%- endfor -%}
-                    </ul>
                 </div>
             {%- endif -%}
 
