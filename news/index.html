@@ -257,7 +257,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- Auto-Generated News from Publications --><!-- Auto-Generated News from Team Members --><!-- Auto-Generated News from Grants --><!-- Auto-Generated News from Socials (Fix Applied) --></div><h3 class="cs-title">2024</h3>
+                            </div><!-- Auto-Generated News from Entire Website --></div><h3 class="cs-title">2024</h3>
                 <div id="section2024" class="cs-card-group ">
 
                     <!-- Manually Added News Entries --><div class="cs-item fall">
@@ -440,7 +440,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- Auto-Generated News from Publications --><!-- Auto-Generated News from Team Members --><!-- Auto-Generated News from Grants --><!-- Auto-Generated News from Socials (Fix Applied) --></div><h3 class="cs-title">2023</h3>
+                            </div><!-- Auto-Generated News from Entire Website --></div><h3 class="cs-title">2023</h3>
                 <div id="section2023" class="cs-card-group ">
 
                     <!-- Manually Added News Entries --><div class="cs-item fall">
@@ -522,7 +522,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- Auto-Generated News from Publications --><!-- Auto-Generated News from Team Members --><!-- Auto-Generated News from Grants --><!-- Auto-Generated News from Socials (Fix Applied) --></div><h3 class="cs-title">2022</h3>
+                            </div><!-- Auto-Generated News from Entire Website --></div><h3 class="cs-title">2022</h3>
                 <div id="section2022" class="cs-card-group ">
 
                     <!-- Manually Added News Entries --><div class="cs-item fall">
@@ -591,7 +591,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- Auto-Generated News from Publications --><!-- Auto-Generated News from Team Members --><!-- Auto-Generated News from Grants --><!-- Auto-Generated News from Socials (Fix Applied) --></div><h3 class="cs-title">2021</h3>
+                            </div><!-- Auto-Generated News from Entire Website --></div><h3 class="cs-title">2021</h3>
                 <div id="section2021" class="cs-card-group ">
 
                     <!-- Manually Added News Entries --><div class="cs-item fall">
@@ -616,14 +616,13 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- Auto-Generated News from Publications --><!-- Auto-Generated News from Team Members --><!-- Auto-Generated News from Grants --><!-- Auto-Generated News from Socials (Fix Applied) --></div></div>
+                            </div><!-- Auto-Generated News from Entire Website --></div></div>
     </div>
 </section>
 
 
 <script defer>
     document.addEventListener("DOMContentLoaded", function() {
-        // Function to get query parameters
         function getQueryParams(url) {
             const queryParams = {};
             const queryString = url.split('?')[1] || '';
@@ -636,19 +635,13 @@
             return queryParams;
         }
 
-        // Get the full URL
         var fullUrl = window.location.href;
-
-        // Parse the hash and query parameters
-        var hash = window.location.hash.split('?')[0]; // Gets '#section2024'
+        var hash = window.location.hash.split('?')[0];
         var queryParams = getQueryParams(fullUrl);
 
-        // Check if the 'year' and 'season' query parameters match '2024' and 'spring'
         if (queryParams.year && queryParams.season) {
-            // Construct the selector based on the hash and season
             var selector = `${hash} .${queryParams.season} .cs-dropdown-show`;
-            var sectionElement = document.querySelector(hash)
-            // Find the element and click if it exists
+            var sectionElement = document.querySelector(hash);
             var element = document.querySelector(selector);
             element.scrollIntoView();
             if (element && !sectionElement.classList.contains("first-news")) {
