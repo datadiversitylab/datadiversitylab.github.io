@@ -12,14 +12,16 @@ eleventyNavigation:
     key: News
     order: 700
 ---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
 
 <section id="content-1450" class="cs-top-section">
     <div class="cs-container">
         <div class="cs-content">
             <h1 class="cs-title">News</h1>
             <p class="cs-text">
-                Stay informed and connected with the latest developments, achievements, and exciting happenings at the Data Diversity Lab.
-                Explore the stories that shape our journey and connect with the dynamic spirit of innovation at the lab.
+                Stay informed and connected with the latest developments, achievements, and exciting happenings at the data diversity lab. Our news section is a space where we share insights, breakthroughs, and stories that reflect the work of our research community. Explore the stories that shape our journey and connect with the dynamic spirit of innovation at the lab. If you have news to share or inquiries about our latest updates, feel free to reach out—we'd love to hear from you.
             </p>
         </div>
     </div>
@@ -27,6 +29,9 @@ eleventyNavigation:
 
 <div aria-hidden="true" class="line"></div>
 
+<!-- ============================================ -->
+<!--                News                          -->
+<!-- ============================================ -->
 {%- set tags = [] -%}
 {%- for new in collections.news | sort(attribute='data.order') -%}
     {%- for tag in new.data.tags -%}
@@ -46,13 +51,10 @@ eleventyNavigation:
                 {%- endfor -%}
             </div>
         </div>
-
         <div id="dropdown-cards" class="cs-title-card-wrapper">
             {%- for tag in tags | sort(true) -%}
                 <h3 class="cs-title">{{ tag }}</h3>
                 <div id="section{{ tag }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
-
-                    <!-- Manually Added News Entries -->
                     {%- for new in collections.news | sort(attribute='data.order') -%}
                         {%- if new.data.tags.includes(tag) -%}
                             <div class="cs-item {{ new.data.Name | lower }}">
@@ -74,31 +76,9 @@ eleventyNavigation:
                             </div>
                         {%- endif -%}
                     {%- endfor -%}
-
-                    <!-- Auto-Generated News Entries for Each Paper -->
-                    {%- for paper in collections.publications | sort(attribute='data.date', reverse=true) -%}
-                        {%- if paper.data.date and (paper.data.date is string) and (tag in paper.data.date) -%}
-                            <div class="cs-item publications">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">New Publication: {{ paper.data.title }}</h4>
-                                        <p class="cs-text">Published in <strong>{{ paper.data.journal }}</strong>.</p>
-
-                                        {%- if paper.data.authors -%}
-                                            <p class="cs-text"><strong>Authors:</strong> {{ paper.data.authors | join(', ') }}</p>
-                                        {%- endif -%}
-
-                                        {%- if paper.data.link -%}
-                                            <a href="{{ paper.data.link }}" target="_blank">Read the Paper</a>
-                                        {%- endif -%}
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
-
                 </div>
             {%- endfor -%}
+            </div>
         </div>
     </div>
 </section>
@@ -129,7 +109,7 @@ eleventyNavigation:
         if (queryParams.year && queryParams.season) {
             // Construct the selector based on the hash and season
             var selector = `${hash} .${queryParams.season} .cs-dropdown-show`;
-            var sectionElement = document.querySelector(hash);
+            var sectionElement = document.querySelector(hash)
             // Find the element and click if it exists
             var element = document.querySelector(selector);
             element.scrollIntoView();
