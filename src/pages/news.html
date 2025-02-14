@@ -75,73 +75,34 @@ eleventyNavigation:
                         {%- endif -%}
                     {%- endfor -%}
 
-                    <!-- Auto-Generated News from Publications -->
-                    {%- for pub in collections.publications | sort(attribute='data.date', reverse=true) -%}
-                        {%- if pub.data.date and tag in pub.data.date -%}
-                            <div class="cs-item publications">
+                    <!-- Auto-Generated News from Entire Website -->
+                    {%- for item in collections.all | sort(attribute='data.date', reverse=true) -%}
+                        {%- if item.data.date and tag in item.data.date -%}
+                            <div class="cs-item {{ item.data.type }}">
                                 <div class="cs-flex-group">
                                     <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">New Paper: {{ pub.data.title }}</h4>
-                                        <p class="cs-text">Published in <strong>{{ pub.data.journal }}</strong>.</p>
+                                        <h4 class="cs-title">
+                                            {%- if item.data.type == "publication" -%}
+                                                New Publication: {{ item.data.title }}
+                                            {%- elif item.data.type == "software" -%}
+                                                New Software Release: {{ item.data.title }}
+                                            {%- elif item.data.type == "database" -%}
+                                                New Database Entry: {{ item.data.title }}
+                                            {%- elif item.data.type == "social" -%}
+                                                New Social Event: {{ item.data.title }}
+                                            {%- elif item.data.type == "team" and item.data.status == "current" -%}
+                                                Welcome {{ item.data.name }} to the Lab!
+                                            {%- elif item.data.type == "team" and item.data.status == "former" -%}
+                                                Farewell to {{ item.data.name }}
+                                            {%- else -%}
+                                                {{ item.data.title }}
+                                            {%- endif -%}
+                                        </h4>
 
-                                        {%- if pub.data.link -%}
-                                            <a href="{{ pub.data.link }}" target="_blank">Read the Paper</a>
-                                        {%- endif -%}
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
+                                        <p class="cs-text">{{ item.data.description }}</p>
 
-                    <!-- Auto-Generated News from Team Members -->
-                    {%- for member in collections.team | sort(attribute='data.start_date', reverse=true) -%}
-                        {%- if member.data.start_date and tag in member.data.start_date -%}
-                            <div class="cs-item members">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">Welcome {{ member.data.name }}!</h4>
-                                        <p class="cs-text">{{ member.data.name }} joins as a {{ member.data.position }}.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                        {%- if member.data.end_date and tag in member.data.end_date -%}
-                            <div class="cs-item members">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">Farewell {{ member.data.name }}</h4>
-                                        <p class="cs-text">We wish {{ member.data.name }} the best in their next chapter!</p>
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
-
-                    <!-- Auto-Generated News from Grants -->
-                    {%- for grant in collections.grants | sort(attribute='data.date', reverse=true) -%}
-                        {%- if grant.data.date and tag in grant.data.date -%}
-                            <div class="cs-item grants">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">New Grant Awarded: {{ grant.data.name }}</h4>
-                                        <p class="cs-text">The lab has received <strong>{{ grant.data.name }}</strong> for ${{ grant.data.amount }}.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
-
-                    <!-- Auto-Generated News from Socials (Fix Applied) -->
-                    {%- for social in collections.socials | sort(attribute='data.date', reverse=true) -%}
-                        {%- if social.data.date and tag in social.data.date -%}
-                            <div class="cs-item socials">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">New Social Event: {{ social.data.title }}</h4>
-                                        <p class="cs-text">{{ social.data.description }}</p>
-
-                                        {%- if social.data.link -%}
-                                            <a href="{{ social.data.link }}" target="_blank">More Details</a>
+                                        {%- if item.data.link -%}
+                                            <a href="{{ item.data.link }}" target="_blank">More Details</a>
                                         {%- endif -%}
                                     </div>
                                 </div>
@@ -155,10 +116,8 @@ eleventyNavigation:
     </div>
 </section>
 
-
 <script defer>
     document.addEventListener("DOMContentLoaded", function() {
-        // Function to get query parameters
         function getQueryParams(url) {
             const queryParams = {};
             const queryString = url.split('?')[1] || '';
@@ -171,19 +130,13 @@ eleventyNavigation:
             return queryParams;
         }
 
-        // Get the full URL
         var fullUrl = window.location.href;
-
-        // Parse the hash and query parameters
-        var hash = window.location.hash.split('?')[0]; // Gets '#section2024'
+        var hash = window.location.hash.split('?')[0];
         var queryParams = getQueryParams(fullUrl);
 
-        // Check if the 'year' and 'season' query parameters match '2024' and 'spring'
         if (queryParams.year && queryParams.season) {
-            // Construct the selector based on the hash and season
             var selector = `${hash} .${queryParams.season} .cs-dropdown-show`;
-            var sectionElement = document.querySelector(hash)
-            // Find the element and click if it exists
+            var sectionElement = document.querySelector(hash);
             var element = document.querySelector(selector);
             element.scrollIntoView();
             if (element && !sectionElement.classList.contains("first-news")) {
