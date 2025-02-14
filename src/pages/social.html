@@ -58,13 +58,15 @@ eleventyNavigation:
                     {%- for social in collections.socials | sort(attribute='data.order') -%}
                         {%- if social.data.tags.includes(year) -%}
                             <div class="cs-item">
-                                <picture class="cs-picture">
-                                    <!--Mobile Image-->
-                                    <source media="(max-width: 600px)" srcset="{{ social.data.image }}">
-                                    <!--Tablet and up Image-->
-                                    <source media="(min-width: 601px)" srcset="{{ social.data.image }}">
-                                    <img loading="lazy" decoding="async" src="{{ social.data.image }}" alt="{{ social.data.imageAlt }}" width="522" height="370" aria-hidden="true">
-                                </picture>
+                                <div class="cs-gallery">
+                                    {%- for image in social.data.images -%}
+                                        <picture class="cs-slide">
+                                            <img loading="lazy" decoding="async" src="{{ image }}" alt="{{ social.data.imageAlt }}" width="522" height="370">
+                                        </picture>
+                                    {%- endfor -%}
+                                    <button class="prev-btn">❮</button>
+                                    <button class="next-btn">❯</button>
+                                </div>
                                 <div class="cs-flex-group">
                                     <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">{{ social.data.socialName }}</span>
@@ -100,3 +102,37 @@ eleventyNavigation:
 
     </div>
 </section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".cs-gallery").forEach(gallery => {
+        let slides = gallery.querySelectorAll(".cs-slide img");
+        let index = 0;
+
+        function showSlide(i) {
+            slides.forEach((slide, idx) => {
+                slide.style.display = idx === i ? "block" : "none";
+            });
+        }
+
+        let prevBtn = gallery.querySelector(".prev-btn");
+        let nextBtn = gallery.querySelector(".next-btn");
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener("click", function () {
+                index = index === 0 ? slides.length - 1 : index - 1;
+                showSlide(index);
+            });
+
+            nextBtn.addEventListener("click", function () {
+                index = index === slides.length - 1 ? 0 : index + 1;
+                showSlide(index);
+            });
+        }
+
+        showSlide(index); // Initialize the first image
+    });
+});
+</script>
+

@@ -178,3 +178,36 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+
+.cs-gallery {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.cs-slide img {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.cs-slide img:first-child {
+    display: block; /* Show first image by default */
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
