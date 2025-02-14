@@ -214,18 +214,66 @@
 
 /* Ensure All Images Are the Same Size */
 .enlargeable-image {
-    width: 100%; /* Makes images fill their container */
-    height: 300px; /* Set a fixed height for uniformity */
-    object-fit: cover; /* Ensures images are cropped properly */
-    border-radius: 5px; /* Optional: Adds smooth edges */
+    width: 100%;
+    height: 300px; /* Forces a fixed height */
+    object-fit: cover; /* Ensures consistent cropping */
+    border-radius: 5px; /* Smooth edges */
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
 
-/* Hover Effect - Enlarge Slightly */
+/* Hover Effect - Slight Enlargement */
 .enlargeable-image:hover {
-    transform: scale(1.2); /* Enlarges image slightly */
+    transform: scale(1.1);
     z-index: 10;
 }
 
+/* Lightbox Styling */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
 
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 5px;
+}
+
+.close-area {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Hide Arrows by Default */
+.lightbox .prev-btn, .lightbox .next-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Show Arrows When Multiple Images Exist */
+.lightbox.multiple-images .prev-btn,
+.lightbox.multiple-images .next-btn {
+    display: block;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
