@@ -41,107 +41,79 @@ eleventyNavigation:
     {%- endfor -%}
 {%- endfor -%}
 
-<!-- Auto-Generate News from Publications, Members, Grants, and Socials -->
-<section id="new-547">
-    <div class="cs-container">
-        <div class="cs-content cs-sidebar">
-            <h6 class="cs-title">Years</h6>
-            <div class="cs-filter-wrapper cs-text">
-                {%- for tag in tags | sort(true) -%}
-                    <a href="#section{{ tag }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ tag }}</a>
-                {%- endfor -%}
-            </div>
+<section id="lab-news">
+    <div class="news-container">
+        <h2 class="news-title">Lab News & Updates</h2>
+
+        <!-- Category Filter Buttons -->
+        <div class="news-filter">
+            <button data-filter="all" class="active">All</button>
+            <button data-filter="members">Members</button>
+            <button data-filter="publications">Publications</button>
+            <button data-filter="grants">Grants</button>
+            <button data-filter="socials">Socials</button>
+            <button data-filter="manual">Manual</button>
         </div>
 
-        <div id="dropdown-cards" class="cs-title-card-wrapper">
-            {%- for tag in tags | sort(true) -%}
-                <h3 class="cs-title">{{ tag }}</h3>
-                <div id="section{{ tag }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
+        <!-- News Feed -->
+        <div class="news-feed">
+            <!-- Auto-Generated News from Publications -->
+            {%- for pub in collections.publications -%}
+                <div class="news-item" data-category="publications">
+                    <h3 class="news-heading">New Paper: {{ pub.data.title }}</h3>
+                    <p class="news-date">{{ pub.data.date }}</p>
+                    <p class="news-description">Published in <strong>{{ pub.data.journal }}</strong>.</p>
+                    {%- if pub.data.link -%}
+                        <a href="{{ pub.data.link }}" target="_blank">Read the Paper</a>
+                    {%- endif -%}
+                </div>
+            {%- endfor -%}
 
-                    <!-- Automatically Generated News from Publications -->
-                    {%- for pub in collections.publications -%}
-                        {%- if pub.data.date contains tag -%}
-                            <div class="cs-item publications">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">New Paper: {{ pub.data.title }}</h4>
-                                        <p class="cs-text">Published in <strong>{{ pub.data.journal }}</strong>.</p>
-                                        <a href="{{ pub.data.link }}" target="_blank">Read the Paper</a>
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
+            <!-- Auto-Generated News from Team Members -->
+            {%- for member in collections.team -%}
+                {%- if member.data.status == "current" -%}
+                    <div class="news-item" data-category="members">
+                        <h3 class="news-heading">Welcome {{ member.data.name }}!</h3>
+                        <p class="news-date">{{ member.data.start_date }}</p>
+                        <p class="news-description">{{ member.data.name }} joins as a {{ member.data.position }}.</p>
+                    </div>
+                {%- endif -%}
+                {%- if member.data.status == "former" -%}
+                    <div class="news-item" data-category="members">
+                        <h3 class="news-heading">Farewell {{ member.data.name }}</h3>
+                        <p class="news-date">{{ member.data.end_date }}</p>
+                        <p class="news-description">We wish {{ member.data.name }} the best in their next chapter!</p>
+                    </div>
+                {%- endif -%}
+            {%- endfor -%}
 
-                    <!-- Automatically Generated News from Members -->
-                    {%- for member in collections.team -%}
-                        {%- if member.data.start_date contains tag -%}
-                            <div class="cs-item members">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">Welcome {{ member.data.name }}!</h4>
-                                        <p class="cs-text">{{ member.data.name }} joins as a {{ member.data.position }}.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                        {%- if member.data.end_date contains tag -%}
-                            <div class="cs-item members">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">Farewell {{ member.data.name }}</h4>
-                                        <p class="cs-text">We wish {{ member.data.name }} the best in their next chapter!</p>
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
+            <!-- Auto-Generated News from Grants -->
+            {%- for grant in collections.grants -%}
+                <div class="news-item" data-category="grants">
+                    <h3 class="news-heading">New Grant Awarded: {{ grant.data.name }}</h3>
+                    <p class="news-date">{{ grant.data.date }}</p>
+                    <p class="news-description">The lab has received <strong>{{ grant.data.name }}</strong> for ${{ grant.data.amount }}.</p>
+                </div>
+            {%- endfor -%}
 
-                    <!-- Automatically Generated News from Grants -->
-                    {%- for grant in collections.grants -%}
-                        {%- if grant.data.date contains tag -%}
-                            <div class="cs-item grants">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">New Grant Awarded: {{ grant.data.name }}</h4>
-                                        <p class="cs-text">The lab has received <strong>{{ grant.data.name }}</strong> for ${{ grant.data.amount }}.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
+            <!-- Auto-Generated News from Socials -->
+            {%- for social in collections.socials -%}
+                <div class="news-item" data-category="socials">
+                    <h3 class="news-heading">New Social Event: {{ social.data.title }}</h3>
+                    <p class="news-date">{{ social.data.date }}</p>
+                    <p class="news-description">{{ social.data.description }}</p>
+                </div>
+            {%- endfor -%}
 
-                    <!-- Automatically Generated News from Socials -->
-                    {%- for social in collections.socials -%}
-                        {%- if social.data.date contains tag -%}
-                            <div class="cs-item socials">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">New Social Event: {{ social.data.title }}</h4>
-                                        <p class="cs-text">{{ social.data.description }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
-
-                    <!-- Manually Added News Entries -->
-                    {%- for new in collections.news | sort(attribute='data.order') -%}
-                        {%- if new.data.tags.includes(tag) -%}
-                            <div class="cs-item {{ new.data.Name | lower }}">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">{{ new.data.Name }}</h4>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            {{ new.content | safe }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
+            <!-- Manual News Posts -->
+            {%- for new in collections.news | sort(attribute='data.date', reverse=true) -%}
+                <div class="news-item" data-category="{{ new.data.category }}">
+                    <h3 class="news-heading">{{ new.data.title }}</h3>
+                    <p class="news-date">{{ new.data.date }}</p>
+                    <p class="news-description">{{ new.data.description }}</p>
+                    {%- if new.data.link -%}
+                        <a href="{{ new.data.link }}" target="_blank">Read more</a>
+                    {%- endif -%}
                 </div>
             {%- endfor -%}
         </div>
