@@ -77,7 +77,7 @@ eleventyNavigation:
 
                     <!-- Auto-Generated News from Entire Website -->
                     {%- for item in collections.all | sort(attribute='data.date', reverse=true) -%}
-                        {%- if item.data.date and tag in item.data.date -%}
+                        {%- if item.data.date and (item.data.date is string) and (tag in item.data.date) -%}
                             <div class="cs-item {{ item.data.type }}">
                                 <div class="cs-flex-group">
                                     <div class="cs-dropdown-show">
@@ -115,6 +115,7 @@ eleventyNavigation:
         </div>
     </div>
 </section>
+
 
 <script defer>
     document.addEventListener("DOMContentLoaded", function() {
