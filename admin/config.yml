@@ -192,20 +192,15 @@ collections:
     media_folder: '/src/assets/images/news'
     public_folder: '/assets/images/news'
     create: true
-    summary: "{{title}} - {{tags[0]}}"
-    identifier_field: title
-    sortable_fields: ['date', 'tags']
-    slug: '{{title}}-{{tags}}'
+    summary: "{{Name}} - {{tags[0]}}"
+    identifier_field: body
+    sortable_fields: ['tags']
+    slug: '{{Name}}-{{tags}}'
     fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Date', name: 'date', widget: 'datetime', required: true }
-      - { label: 'Category', name: 'category', widget: 'select', options: ['members', 'publications', 'grants', 'socials', 'manual'], required: true }
-      - { label: 'Description', name: 'description', widget: 'text', required: true }
-      - { label: 'Link', name: 'link', widget: 'string', required: false }
-      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Name', name: 'Name', widget: 'string', required: true }
       - { label: 'Tags', name: 'tags', widget: 'list', required: true }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
-
+      - { label: 'Order',name: 'order', widget: 'number', required: false }
+      - { label: "Body", name: "body", widget: "markdown"}
   - name: 'jobs'
     label: 'Jobs'
     folder: 'src/jobs'
