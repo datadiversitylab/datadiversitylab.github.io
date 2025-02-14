@@ -75,34 +75,21 @@ eleventyNavigation:
                         {%- endif -%}
                     {%- endfor -%}
 
-                    <!-- Auto-Generated News from Entire Website -->
-                    {%- for item in collections.all | sort(attribute='data.date', reverse=true) -%}
-                        {%- if item.data.date and (item.data.date is string) and (tag in item.data.date) -%}
-                            <div class="cs-item {{ item.data.type }}">
+                    <!-- Auto-Generated News Entries for Each Paper -->
+                    {%- for paper in collections.publications | sort(attribute='data.date', reverse=true) -%}
+                        {%- if paper.data.date and (paper.data.date is string) and (tag in paper.data.date) -%}
+                            <div class="cs-item publications">
                                 <div class="cs-flex-group">
                                     <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">
-                                            {%- if item.data.type == "publication" -%}
-                                                New Publication: {{ item.data.title }}
-                                            {%- elif item.data.type == "software" -%}
-                                                New Software Release: {{ item.data.title }}
-                                            {%- elif item.data.type == "database" -%}
-                                                New Database Entry: {{ item.data.title }}
-                                            {%- elif item.data.type == "social" -%}
-                                                New Social Event: {{ item.data.title }}
-                                            {%- elif item.data.type == "team" and item.data.status == "current" -%}
-                                                Welcome {{ item.data.name }} to the Lab!
-                                            {%- elif item.data.type == "team" and item.data.status == "former" -%}
-                                                Farewell to {{ item.data.name }}
-                                            {%- else -%}
-                                                {{ item.data.title }}
-                                            {%- endif -%}
-                                        </h4>
+                                        <h4 class="cs-title">New Publication: {{ paper.data.title }}</h4>
+                                        <p class="cs-text">Published in <strong>{{ paper.data.journal }}</strong>.</p>
 
-                                        <p class="cs-text">{{ item.data.description }}</p>
+                                        {%- if paper.data.authors -%}
+                                            <p class="cs-text"><strong>Authors:</strong> {{ paper.data.authors | join(', ') }}</p>
+                                        {%- endif -%}
 
-                                        {%- if item.data.link -%}
-                                            <a href="{{ item.data.link }}" target="_blank">More Details</a>
+                                        {%- if paper.data.link -%}
+                                            <a href="{{ paper.data.link }}" target="_blank">Read the Paper</a>
                                         {%- endif -%}
                                     </div>
                                 </div>
@@ -116,9 +103,9 @@ eleventyNavigation:
     </div>
 </section>
 
-
 <script defer>
     document.addEventListener("DOMContentLoaded", function() {
+        // Function to get query parameters
         function getQueryParams(url) {
             const queryParams = {};
             const queryString = url.split('?')[1] || '';
@@ -131,13 +118,19 @@ eleventyNavigation:
             return queryParams;
         }
 
+        // Get the full URL
         var fullUrl = window.location.href;
-        var hash = window.location.hash.split('?')[0];
+
+        // Parse the hash and query parameters
+        var hash = window.location.hash.split('?')[0]; // Gets '#section2024'
         var queryParams = getQueryParams(fullUrl);
 
+        // Check if the 'year' and 'season' query parameters match '2024' and 'spring'
         if (queryParams.year && queryParams.season) {
+            // Construct the selector based on the hash and season
             var selector = `${hash} .${queryParams.season} .cs-dropdown-show`;
             var sectionElement = document.querySelector(hash);
+            // Find the element and click if it exists
             var element = document.querySelector(selector);
             element.scrollIntoView();
             if (element && !sectionElement.classList.contains("first-news")) {
