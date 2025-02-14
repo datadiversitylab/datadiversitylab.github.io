@@ -12,7 +12,6 @@ eleventyNavigation:
     key: News
     order: 700
 ---
-
 <!-- ============================================ -->
 <!--                  Content                     -->
 <!-- ============================================ -->
@@ -22,9 +21,7 @@ eleventyNavigation:
         <div class="cs-content">
             <h1 class="cs-title">News</h1>
             <p class="cs-text">
-                Stay informed and connected with the latest developments, achievements, and exciting happenings at the Data Diversity Lab.
-                Explore the stories that shape our journey and connect with the dynamic spirit of innovation at the lab.
-                If you have news to share or inquiries about our latest updates, feel free to reach out—we'd love to hear from you.
+                Stay informed and connected with the latest developments, achievements, and exciting happenings at the data diversity lab. Our news section is a space where we share insights, breakthroughs, and stories that reflect the work of our research community. Explore the stories that shape our journey and connect with the dynamic spirit of innovation at the lab. If you have news to share or inquiries about our latest updates, feel free to reach out—we'd love to hear from you.
             </p>
         </div>
     </div>
@@ -33,37 +30,33 @@ eleventyNavigation:
 <div aria-hidden="true" class="line"></div>
 
 <!-- ============================================ -->
-<!--                News by Year                 -->
+<!--                News                          -->
 <!-- ============================================ -->
-{%- set years = [] -%}
-{%- for new in collections.news | sort(attribute='data.date', reverse=true) -%}
-    {%- if new.data.date -%}
-        {%- set year = new.data.date | dateFormat("yyyy") -%}
-        {%- if not years.includes(year) -%}
-            {%- set years = years.concat(year) -%}
+{%- set tags = [] -%}
+{%- for new in collections.news | sort(attribute='data.order') -%}
+    {%- for tag in new.data.tags -%}
+        {%- if not tags.includes(tag) and tag != "news" -%}
+            {%- set tags = tags.concat(tag) -%}
         {%- endif -%}
-    {%- endif -%}
+    {%- endfor -%}
 {%- endfor -%}
 
-<section id="news-by-year">
+<section id="new-547">
     <div class="cs-container">
         <div class="cs-content cs-sidebar">
             <h6 class="cs-title">Years</h6>
             <div class="cs-filter-wrapper cs-text">
-                {%- for year in years | sort(true) -%}
-                    <a href="#section{{ year }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ year }}</a>
+                {%- for tag in tags | sort(true) -%}
+                    <a href="#section{{ tag }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ tag }}</a>
                 {%- endfor -%}
             </div>
         </div>
-
         <div id="dropdown-cards" class="cs-title-card-wrapper">
-            {%- for year in years | sort(true) -%}
-                <h3 class="cs-title">{{ year }}</h3>
-                <div id="section{{ year }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
-
-                    <!-- Manually Added News Entries -->
-                    {%- for new in collections.news | sort(attribute='data.date', reverse=true) -%}
-                        {%- if new.data.date and (new.data.date | dateFormat("yyyy") == year) -%}
+            {%- for tag in tags | sort(true) -%}
+                <h3 class="cs-title">{{ tag }}</h3>
+                <div id="section{{ tag }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
+                    {%- for new in collections.news | sort(attribute='data.order') -%}
+                        {%- if new.data.tags.includes(tag) -%}
                             <div class="cs-item {{ new.data.Name | lower }}">
                                 <div class="cs-flex-group">
                                     <div class="cs-dropdown-show">
@@ -83,49 +76,12 @@ eleventyNavigation:
                             </div>
                         {%- endif -%}
                     {%- endfor -%}
-
-                    <!-- Auto-Generated News from All Site Content -->
-                    {%- for item in collections.all | sort(attribute='data.date', reverse=true) -%}
-                        {%- if item.data.date and (item.data.date | dateFormat("yyyy") == year) -%}
-                            <div class="cs-item {{ item.data.type }}">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <h4 class="cs-title">
-                                            {%- if item.data.type == "publication" -%}
-                                                New Publication: {{ item.data.title }}
-                                            {%- elif item.data.type == "software" -%}
-                                                New Software Release: {{ item.data.title }}
-                                            {%- elif item.data.type == "database" -%}
-                                                New Database Entry: {{ item.data.title }}
-                                            {%- elif item.data.type == "social" -%}
-                                                New Social Event: {{ item.data.title }}
-                                            {%- elif item.data.type == "team" and item.data.status == "current" -%}
-                                                Welcome {{ item.data.name }} to the Lab!
-                                            {%- elif item.data.type == "team" and item.data.status == "former" -%}
-                                                Farewell to {{ item.data.name }}
-                                            {%- else -%}
-                                                {{ item.data.title }}
-                                            {%- endif -%}
-                                        </h4>
-
-                                        <p class="cs-text">{{ item.data.description }}</p>
-
-                                        {%- if item.data.link -%}
-                                            <a href="{{ item.data.link }}" target="_blank">More Details</a>
-                                        {%- endif -%}
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
-
                 </div>
             {%- endfor -%}
+            </div>
         </div>
     </div>
 </section>
-
-
 
 <script defer>
     document.addEventListener("DOMContentLoaded", function() {
