@@ -616,59 +616,6 @@
     </div>
 </section>
 
-<section id="labscape-summary">
-    <div class="cs-container">
-        <h2 class="cs-title">Labscape Summary</h2>
-        <div class="cs-summary-stats">
-
-            <!-- Total Publications & New Papers --><div class="cs-stat">
-                    <h3>📄 46 Total Publications!</h3>
-                    <ul></ul>
-                </div><!-- Current Team Members --><!-- Former Team Members --><!-- Software Projects --><!-- Social Events --><div class="cs-stat">
-                    <h3>🎉 42 Social Events</h3>
-                </div><!-- Grants --><div class="cs-stat">
-                    <h3>🏆 9 Research Grants</h3>
-                </div><!-- Databases --></div>
-    </div>
-</section>
-
-
-<script defer>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Function to get query parameters
-        function getQueryParams(url) {
-            const queryParams = {};
-            const queryString = url.split('?')[1] || '';
-            const regex = /([^&=]+)=([^&]*)/g;
-            let m;
-
-            while (m = regex.exec(queryString)) {
-                queryParams[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
-            }
-            return queryParams;
-        }
-
-        // Get the full URL
-        var fullUrl = window.location.href;
-
-        // Parse the hash and query parameters
-        var hash = window.location.hash.split('?')[0]; // Gets '#section2024'
-        var queryParams = getQueryParams(fullUrl);
-
-        // Check if the 'year' and 'season' query parameters match '2024' and 'spring'
-        if (queryParams.year && queryParams.season) {
-            // Construct the selector based on the hash and season
-            var selector = `${hash} .${queryParams.season} .cs-dropdown-show`;
-            var sectionElement = document.querySelector(hash)
-            // Find the element and click if it exists
-            var element = document.querySelector(selector);
-            element.scrollIntoView();
-            if (element && !sectionElement.classList.contains("first-news")) {
-                element.click();
-            }
-        }
-    });
-</script>
 </main>
         <!-- ============================================ -->
 <!--                   Footer                     -->
