@@ -1,0 +1,20 @@
+---
+Name: Universal Ortholog Based Phylogenomic Database and Toolset
+Description: >-
+  This research is being conducted with the following goals in mind:
+
+
+  * Facilitate evolutionary genomic analysis in the eukaryotic domain
+
+  * Make public genomic data more accessible by increasing information content per unit volume of data
+
+  * Develop improved methods and algorithms for genome informatics
+
+  * Streamline downstream analyses in genomic workflows
+
+  * Analyze patterns of genome evolution during the process of adaptation, speciation, diversification and domestication
+tags:
+  - Evolution
+link: http://www.phyca.org/index.html
+image: /assets/images/databases/screenshot-2025-02-19-at-1.43.15 pm.png
+---
