@@ -26,12 +26,14 @@ eleventyNavigation:
 <div aria-hidden="true" class="line"></div>
 
 {%- set tags = [] -%}
-{%- for databases in collections.databases | sort(attribute='data.order') -%}
-  {%- for tag in databases.data.tags -%}
-    {%- if tag and not tags.includes(tag | string) and tag != "databases" -%}
-      {%- set tags = tags.concat(tag | string) -%}
-    {%- endif -%}
-  {%- endfor -%}
+{%- for db in collections.databases | sort(attribute='data.order') -%}
+  {%- if db.data.tags -%}
+    {%- for tag in db.data.tags -%}
+      {%- if tag and not tags.includes(tag | string) and tag != "databases" -%}
+        {%- set tags = tags.concat(tag | string) -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
 {%- endfor -%}
 
 <section id="databases-547">
@@ -49,40 +51,40 @@ eleventyNavigation:
       {%- for tag in tags | sort(true) -%}
         <h3 class="cs-title cs-group-title {{ tag | replace(' ', '-') | lower }}">{{ tag }}</h3>
         <div id="section{{ tag }}" class="cs-card-group">
-          {%- for databases in collections.databases | sort(attribute='data.order') -%}
-            {%- if databases.data.tags -%}
-              {%- set tagString = databases.data.tags | join(",") | lower -%}
+          {%- for db in collections.databases | sort(attribute='data.order') -%}
+            {%- if db.data.tags -%}
+              {%- set tagString = db.data.tags | join(",") | lower -%}
               {%- if tagString contains (tag | lower) -%}
                 <div class="cs-item">
                   <picture class="cs-picture">
                     <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{{ databases.data.image }}">
+                    <source media="(max-width: 600px)" srcset="{{ db.data.image }}">
                     <!--Tablet and up Image-->
-                    <source media="(min-width: 601px)" srcset="{{ databases.data.image }}">
-                    <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="{{ databases.data.image }}" alt="{{ databases.data.imageAlt }}" width="522" height="370" aria-hidden="true">
+                    <source media="(min-width: 601px)" srcset="{{ db.data.image }}">
+                    <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="{{ db.data.image }}" alt="{{ db.data.imageAlt }}" width="522" height="370" aria-hidden="true">
                   </picture>
                   <div class="cs-flex-group">
                     <div aria-hidden="true" class="line line-full card-image-line"></div>
-                    <span class="cs-name">{{ databases.data.Name }}</span>
-                    <span class="cs-timeline">{{ databases.data.Location }}</span>
+                    <span class="cs-name">{{ db.data.Name }}</span>
+                    <span class="cs-timeline">{{ db.data.Location }}</span>
                     <span class="cs-desc">
-                      <span class="read-more-text">{{ databases.data.Description | markdown | safe }}</span>
+                      <span class="read-more-text">{{ db.data.Description | markdown | safe }}</span>
                       <span class="read-more-btn">...read more</span>
                     </span>
                     <div class="cs-item-filters" style="display: none;">
-                      {%- for filter in databases.data.tags -%}
+                      {%- for filter in db.data.tags -%}
                         {%- if filter and filter != 'databases' -%}
                           <div class="cs-filter">{{ filter }}</div>
                         {%- endif -%}
                       {%- endfor -%}
                     </div>
                     <div aria-hidden="true" class="line line-full"></div>
-                    {%- if databases.data.github or databases.data.link -%}
+                    {%- if db.data.github or db.data.link -%}
                       <div class="cs-item-social">
                         {%- set socials = [{'platform': 'github', 'icon': 'github.svg'}, {'platform': 'link', 'icon': 'link.svg'}] -%}
                         {%- for social in socials -%}
-                          {%- if databases.data[social.platform] -%}
-                            <a href="{{ databases.data[social.platform] }}" target="_blank">
+                          {%- if db.data[social.platform] -%}
+                            <a href="{{ db.data[social.platform] }}" target="_blank">
                               <img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true">
                             </a>
                           {%- endif -%}
