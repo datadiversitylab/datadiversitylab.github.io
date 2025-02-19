@@ -54,7 +54,7 @@ eleventyNavigation:
           {%- for db in collections.databases | sort(attribute='data.order') -%}
             {%- if db.data.tags -%}
               {%- set tagString = db.data.tags | join(",") | lower -%}
-              {%- if tagString contains (tag | lower) -%}
+              {%- if tagString.indexOf(tag | lower) != -1 -%}
                 <div class="cs-item">
                   <picture class="cs-picture">
                     <!--Mobile Image-->
