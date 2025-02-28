@@ -229,5 +229,21 @@
 }
 
 
+.cs-card-timeline-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.cs-item {
+    min-width: 300px;
+    flex-shrink: 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background: white;
+}
+
 
 
