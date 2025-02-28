@@ -6,7 +6,6 @@ tagTitle: 'Social'
 preloadImg: ''
 preloadCSS: '/css/social.css'
 preloadJS: '/js/scrollTo.js'
-preloadSecondJS: '/js/newsHome.js'
 permalink: 'social/'
 eleventyNavigation:
     key: Social
@@ -29,52 +28,6 @@ eleventyNavigation:
 </section>
 
 <div aria-hidden="true" class="line"></div>
-
-<!-- ============================================ -->
-<!--                Recent News                   -->
-<!-- ============================================ -->
-<section id="timeline-504">
-    <div class="cs-container">
-        <div class="cs-content">
-            <div class="cs-flex">
-                <h2 class="cs-title">Recent News</h2>
-            </div>
-            <p class="cs-text">
-                Stay updated on the latest happenings within the Data Diversity Lab at the University of Arizona.
-            </p>
-            <a class="cs-button-link" href="/news">
-                See all news
-                <img src="../assets/icons/right-arrow.svg" class="filter-green">
-            </a>
-        </div>
-        <div id="dropdown-cards" class="cs-card-timeline-wrapper">
-            {%- set newsItems = collections.news | sort(attribute='data.order') | slice(0, 3) -%}
-            <div class="cs-card-group">
-                {%- for news in newsItems -%}
-                    <div class="cs-item">
-                        <div class="cs-flex-group">
-                            <div class="cs-dropdown-show">
-                                <div>
-                                    <h4 class="cs-title">{{ news.data.Name }}</h4>
-                                </div>
-                                <div class="cs-dropdown-icon">
-                                    <img src="../assets/icons/chevron-down.svg">
-                                </div>
-                            </div>
-                            <div class="cs-dropdown">
-                                <div class="cs-dropdown-content">
-                                    <div class="read-more-text">{{ news.content | safe }}</div>
-                                    <a href="/news#section{{ news.data.tags[0] }}?year={{ news.data.tags[0] }}&season={{ news.data.Name | lower }}" class="read-more-btn">...read all</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {%- endfor -%}
-            </div>
-        </div>
-    </div>
-</section>
-
 
 <!-- ============================================ -->
 <!--                Social                      -->
