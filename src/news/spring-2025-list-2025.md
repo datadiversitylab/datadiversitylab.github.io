@@ -4,6 +4,7 @@ tags:
   - "2025"
 order: 1
 ---
+* Members of the DDL were a part of submitting a project to the NSF CAIG grant.
 * Senior Clinical Data Scientist, Heidi Steiner, will be attending and speaking at an upcoming professional development meeting. Thank you Heidi! Read more about Heidi here: [Heidi Steiner](https://heidiesteiner.netlify.app/)
 * Bioinformatics scientist, Daniel Portik will be attending an upcoming professional development meeting to discuss finding academic career opportunities. Thank you Daniel! Read more about Daniel here: [Daniel Portik](https://scholar.google.com/citations?user=xZFaH9oAAAAJ&hl=en)
 * Researcher, Leandro Aristide was able to speak at one of our lab's professional development meetings. Thank you Leandro! Read more about Leandro's research here: [Leandro Aristide](https://scholar.google.com/citations?user=6t56KMIAAAAJ&hl=es)
