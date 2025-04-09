@@ -1,5 +1,5 @@
 ---
-socialName: Cristian is giving a talk at the Charles Darwin Foundation
+socialName: Cristian gave a talk at the Charles Darwin Foundation
 Location: Galapagos
 link: https://www.darwinfoundation.org/en/
 socialDate: Spring
@@ -9,4 +9,8 @@ tags:
   - "2025"
 images:
   - /assets/images/socials/6633fdd2-4d40-4b98-8ea1-9332a733c35d.jpg
+  - /assets/images/socials/cd-1.jpg
+  - /assets/images/socials/cd-2.jpg
+  - /assets/images/socials/cd-3.jpg
+  - /assets/images/socials/cd-4.jpg
 ---
