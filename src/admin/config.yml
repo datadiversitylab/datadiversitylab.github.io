@@ -24,17 +24,16 @@ collections:
     slug: '{{memberName}}'
     fields:
       - { label: 'Member Name', name: 'memberName', widget: 'string', required: true }
-      - { label: 'Member Title', name: 'memberTitle', widget: 'string', required: false }
+      - { label: 'Member title in the lab (current member) or current position (alumni)', name: 'memberTitle', widget: 'string', required: true }
       - { label: 'Member Education', name: 'memberEducation', widget: 'string', required: false }
-      - { label: 'Member Date Start', name: 'memberDate', widget: 'string', required: false }
+      - { label: 'Member Date Start', name: 'memberDate', widget: 'string', required: true }
       - { label: 'Member Date End', name: 'memberDateEnd', widget: 'string', required: false }
       - { label: 'Member Bio', name: 'memberBio', widget: 'string', required: true }
-      - { label: 'Tags - Check existing ones', name: 'tags', widget: 'list', default: ['Current'], required: true}
-      - { label: 'Current Position', name: 'currentPosition', widget: 'string', required: false }
+      - { label: 'Role in the lab (tag) - Check existing ones', name: 'tags', widget: 'list', default: ['Current'], required: true}
       - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false }
       - { label: 'Email', name: 'email', widget: 'string', required: false }
-      - { label: 'Github handle', name: 'github', widget: 'string', required: false }
-      - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Github handle (not full link)', name: 'github', widget: 'string', required: false }
+      - { label: 'Website', name: 'link', widget: 'string', required: false }
       - { label: 'Resume or CV', name: 'resume', widget: 'file', required: false, media_folder: '/src/assets/documents/our-team', public_folder: '/assets/documents/our-team' }
       - { label: 'Member Image', name: 'image', widget: 'image', required: false }
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
