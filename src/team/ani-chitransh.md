@@ -1,9 +1,9 @@
 ---
 memberName: Ani Chitransh
 memberTitle: MSc student
-memberEducation: ""
+memberEducation: Test company
 memberDate: 2024
-memberDateEnd: ""
+memberDateEnd: "2024"
 memberBio: "Ani is a graduate student working towards her capstone. Ani’s
   professional journey is characterized by her proficiency with a range of
   technologies including Python, SQL, R, TensorFlow, and PyTorch, as well as her
