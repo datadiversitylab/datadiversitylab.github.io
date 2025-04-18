@@ -30,6 +30,7 @@ collections:
       - { label: 'Member Date End', name: 'memberDateEnd', widget: 'string', required: false }
       - { label: 'Member Bio', name: 'memberBio', widget: 'string', required: true }
       - { label: 'Tags - Check existing ones', name: 'tags', widget: 'list', default: ['Current'], required: true}
+      - { label: 'Current Position', name: 'currentPosition', widget: 'string', required: false }
       - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false }
       - { label: 'Email', name: 'email', widget: 'string', required: false }
       - { label: 'Github handle', name: 'github', widget: 'string', required: false }
