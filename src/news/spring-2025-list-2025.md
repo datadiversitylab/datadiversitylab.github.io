@@ -4,6 +4,8 @@ tags:
   - "2025"
 order: 1
 ---
+* Our PI, Cristian, was selected to receive the 2025 Faculty Excellence award for research. This is a huge accomplishment that is well deserved, congratulations Cristian! 
+* Yichao Zeng, one of our lab members, has been selected as one of four Junior Research Chair holders at Université PSL (Paris Sciences et Lettres University). This experimental recruitment campaign aims to attract postdoctoral researchers of the highest international caliber. The four funded projects span the natural sciences, engineering, humanities, and social sciences. Developed in collaboration with Dr. Hélène Morlon and previously awarded a Seal of Excellence in a Marie Curie fellowship call, Zeng’s project focuses on the micro-macroevolution and resilience of species interaction networks. Zeng will carry out the research in Dr. Morlon’s group at École Normale Supérieure (ENS), a member of Université PSL. Congratulations Yichao!
 * Members of the DDL were a part of submitting a project to the NSF CAIG grant.
 * Senior Clinical Data Scientist, Heidi Steiner, will be attending and speaking at an upcoming professional development meeting. Thank you Heidi! Read more about Heidi here: [Heidi Steiner](https://heidiesteiner.netlify.app/)
 * Bioinformatics scientist, Daniel Portik will be attending an upcoming professional development meeting to discuss finding academic career opportunities. Thank you Daniel! Read more about Daniel here: [Daniel Portik](https://scholar.google.com/citations?user=xZFaH9oAAAAJ&hl=en)
