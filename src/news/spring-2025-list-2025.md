@@ -4,6 +4,7 @@ tags:
   - "2025"
 order: 1
 ---
+* Lab members Paige Cherry and Eleanor Tuck presented their capstone project along with their group. Congratulations Paige and Eleanor, your hard work is recognized!
 * Big Idea Challenge grant proposal by DDL members, Ian Estacio and Cristian Román-Palacios has been selected to be presented at a pitch session in Mid May. Congrats Ian and Cristian! 
 * Our PI, Cristian, was selected to receive the 2025 Faculty Excellence award for research. This is a huge accomplishment that is well deserved, congratulations Cristian! 
 * Yichao Zeng, one of our lab members, has been selected as one of four Junior Research Chair holders at Université PSL (Paris Sciences et Lettres University). This experimental recruitment campaign aims to attract postdoctoral researchers of the highest international caliber. The four funded projects span the natural sciences, engineering, humanities, and social sciences. Developed in collaboration with Dr. Hélène Morlon and previously awarded a Seal of Excellence in a Marie Curie fellowship call, Zeng’s project focuses on the micro-macroevolution and resilience of species interaction networks. Zeng will carry out the research in Dr. Morlon’s group at École Normale Supérieure (ENS), a member of Université PSL. Congratulations Yichao!
