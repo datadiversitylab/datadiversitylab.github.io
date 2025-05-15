@@ -7,7 +7,7 @@ Description: The Animal Culture Database (ACDB) is a database of cultural
   the environment, to facilitate comparative research on interactions between
   animal social learning and climate change.
 tags:
-  - Animal culture
+  - Websites
 link: https://viz.datascience.arizona.edu/ACDB/
 image: /assets/images/databases/screenshot-2025-02-19-at-1.52.00 pm.png
 ---
