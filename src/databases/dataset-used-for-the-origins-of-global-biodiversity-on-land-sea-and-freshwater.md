@@ -7,7 +7,7 @@ Description: The dataset includes species richness and phylogenetic diversity
   ancestral habitat reconstructions, and the evolutionary origins of
   biodiversity patterns.
 tags:
-  - Biodiversity
+  - Papers
 link: https://datadryad.org/stash/dataset/doi:10.5061/dryad.stqjq2c50
 image: /assets/images/databases/theoriginsofglobalbiodiversity.jpg
 ---
