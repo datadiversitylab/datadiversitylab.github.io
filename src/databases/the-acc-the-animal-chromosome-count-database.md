@@ -5,7 +5,7 @@ Description: The **ACC** is the largest database of animal chromosomal counts.
   accessible for people interested in understanding the potential links between
   biological processes and patterns to broad chromosomal changes in animals.
 tags:
-  - Chromosome Counts
+  - Websites
 link: https://cromanpa94.github.io/ACC/
 image: /assets/images/databases/screenshot-2025-02-13-at-9.58.39 pm.png
 ---
