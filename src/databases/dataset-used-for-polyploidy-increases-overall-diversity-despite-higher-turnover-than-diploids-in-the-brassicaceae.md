@@ -6,7 +6,7 @@ Description: The dataset includes haploid chromosome numbers for 80% of species
   supports analyses of polyploidy’s influence on diversification rates, species
   richness, and long-term evolutionary patterns within the family.
 tags:
-  - Biodiversity
+  - Papers
 link: https://datadryad.org/stash/dataset/doi:10.5061/dryad.31zcrjdhw
 image: /assets/images/databases/polyploidyincreasesoverall.jpg
 ---
