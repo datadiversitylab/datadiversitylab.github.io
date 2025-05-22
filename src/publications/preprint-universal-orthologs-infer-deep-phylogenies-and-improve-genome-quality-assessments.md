@@ -1,7 +1,7 @@
 ---
-publicationTitle: "**Preprint:** Universal orthologs infer deep phylogenies and
-  improve genome quality assessments"
-publicationAuthor: MD Nafis Ul Alam, Cristian Román-Palacios, Dario Copetti, and Rod A. Wing
+publicationTitle: Universal orthologs infer deep phylogenies and improve genome
+  quality assessments
+publicationAuthor: MD Nafis Ul Alam, Cristian Román-Palacios, Dario Copetti, Rod A. Wing
 publicationDate: "2025"
 publicationMonth: Feb
 publicationType: bioRxiv
