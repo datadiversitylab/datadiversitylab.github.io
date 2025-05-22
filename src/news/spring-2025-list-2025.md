@@ -4,6 +4,7 @@ tags:
   - "2025"
 order: 1
 ---
+* Lab members, Paige Cherry and Eleanor Tuck graduated with their bachelors degree! Congratulations Paige and Eleanor!
 * Cristian Román-Palacios, our labs PI, and lab members, Kiran Basava, Kristen Martinet, Yichao Zeng, and Ian Estacio, shared current research on the Animal culture database and conservation implications, consistency in breakpoints for species/area relationships, modeling speciation in co-phylogenies, and a NAS-based Collaboratory at the weekly CAMBIUM meeting. 
 * Lab members Paige Cherry and Eleanor Tuck presented their capstone project along with their group. Congratulations Paige and Eleanor, your hard work is recognized!
 * Big Idea Challenge grant proposal by DDL members, Ian Estacio and Cristian Román-Palacios has been selected to be presented at a pitch session in Mid May. Congrats Ian and Cristian! 
