@@ -1,7 +1,7 @@
 ---
 publicationTitle: "Macroevolutionary Rates of Species Interactions: Approximate
   Bayesian Inference from Cophylogenies"
-publicationAuthor: Yichao Zeng and Cristian Román-Palacios
+publicationAuthor: Yichao Zeng, Cristian Román-Palacios
 publicationDate: "2025"
 publicationMonth: May
 publicationType: bioRxiv
