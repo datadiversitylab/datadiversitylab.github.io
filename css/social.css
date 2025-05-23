@@ -13,16 +13,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* 48px - 64px */
     gap: var(--sectionGap);
   }
   #content-1450 .cs-content {
-    /* set text align to left if content needs to be left aligned */
     text-align: center;
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
   #content-1450 .cs-title,
@@ -30,8 +27,9 @@
     max-width: 100%;
   }
 }
+
 /*-- -------------------------- -->
-<---       Grants               -->
+<---       Social Section       -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
@@ -40,21 +38,17 @@
   }
   #social-547 .cs-container {
     width: 100%;
-    /* changes to 1280px at desktop */
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* 48px - 64px */
     gap: 1rem;
   }
   #social-547 .cs-content {
-    /* set text aling to left if content needs to be left aligned */
     text-align: center;
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
   #social-547 .cs-topper,
@@ -64,16 +58,14 @@
   }
   #social-547 .cs-card-group {
     width: 100%;
-    margin: 0;
+    margin: 0 0 1.25rem 0;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-content: center;
     gap: 1rem;
-    margin: 0 0 1.25rem 0;
   }
   #social-547 .cs-item {
-    /* changed to left at desktop */
     text-align: center;
     list-style: none;
     width: 100%;
@@ -83,13 +75,13 @@
     padding: 0;
     background-color: var(--bodyTextColorWhite);
     box-shadow: var(--boxCardShadow);
+    display: flex;
+    flex-direction: column;
   }
   #social-547 .cs-picture {
     width: 100%;
     height: auto;
-    /* height divided by width, changed at desktop */
     aspect-ratio: 1.24;
-    /* clips image tag from overflowing on hover */
     overflow: hidden;
     display: block;
     position: relative;
@@ -100,9 +92,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    /* makes image behave like a background image */
     object-fit: contain;
-    /* places top of the image at the top of the box */
     object-position: center;
     transition: transform 0.6s;
   }
@@ -120,7 +110,6 @@
     margin: 0 0 1.25rem 0;
   }
   #social-547 .cs-timeline {
-    /* 20px - 25px */
     font-size: var(--mediumFontSize);
     margin: 0 0 0.125rem 0;
     width: 100%;
@@ -142,12 +131,14 @@
     max-height: unset;
   }
 }
+
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #social-547 .cs-card-group {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
   #social-547 .cs-container {
@@ -179,55 +170,53 @@
   }
 }
 
-
+/*-------------------------------------
+  Gallery Carousel and Image Uniformity
+--------------------------------------*/
 .cs-gallery {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 300px; /* Enforce uniform image height */
+  text-align: center;
+  overflow: hidden;
 }
 
 .cs-slide img {
-    width: 100%;
-    height: auto;
-    display: none;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: none; /* Controlled by JS */
 }
 
-.cs-slide img:first-child {
-    display: block; /* Show first image by default */
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+.prev-btn {
+  left: 10px;
+}
+.next-btn {
+  right: 10px;
 }
 
-.prev-btn { left: 10px; }
-.next-btn { right: 10px; }
-
-
-/* Ensure All Images Are the Same Size */
 .enlargeable-image {
-    width: 100%; /* Makes images fill their container */
-    height: 300px; /* Set a fixed height for uniformity */
-    object-fit: cover; /* Ensures images are cropped properly */
-    border-radius: 5px; /* Optional: Adds smooth edges */
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-/* Hover Effect - Enlarge Slightly */
 .enlargeable-image:hover {
-    transform: scale(1.2); /* Enlarges image slightly */
-    z-index: 10;
+  transform: scale(1.2);
+  z-index: 10;
 }
-
-
-
-
