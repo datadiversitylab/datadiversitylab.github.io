@@ -8,6 +8,6 @@ Description: Polapp is a live polling platform designed for conferences, events,
 tags:
   - Web applications
 github: https://github.com/datadiversitylab/polapp
-link: https://datadiversitylab.github.io/polapp/
+link: https://viz.datascience.arizona.edu/polapp/
 image: /assets/images/softwares/screenshot-2025-05-07-at-11.47.06-am.png
 ---
