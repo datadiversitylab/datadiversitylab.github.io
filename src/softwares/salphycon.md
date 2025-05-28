@@ -10,7 +10,7 @@ Description: Salphycon is a shiny app that extends the functionalities of the
 tags:
   - Web applications
 github: https://github.com/datadiversitylab/salphycon
-link: https://viz.datascience.arizona.edu/salphycon/
+link: ""
 image: /assets/images/softwares/salphycon.png
 imageAlt: Salphycon  image
 order: 10
