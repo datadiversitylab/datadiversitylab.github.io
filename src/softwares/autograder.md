@@ -8,5 +8,6 @@ Description: autogradeR is expected to help instructors grade pre-defined
 tags:
   - R packages
 github: https://github.com/datadiversitylab/autogradeR
+link: https://datadiversitylab.github.io/autogradeR/
 image: /assets/images/softwares/logo.png
 ---
