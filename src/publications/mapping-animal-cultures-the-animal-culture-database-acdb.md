@@ -24,5 +24,6 @@ tags:
   - Ecology
   - Data Science
 image: /assets/images/publications/acdb.jpg
+pdfDocument: /assets/documents/publications/mapping-animal.pdf
 webLink: https://www.biorxiv.org/content/10.1101/2025.02.26.640400v1.full
 ---
