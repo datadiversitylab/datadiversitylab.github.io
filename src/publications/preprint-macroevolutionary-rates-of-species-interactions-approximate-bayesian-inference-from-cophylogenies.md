@@ -36,6 +36,6 @@ publicationAbstract: "Understanding the macroevolutionary dynamics of species
   for future efforts to compile time-calibrated cophylogenies."
 tags:
   - Evolution
-image: /assets/images/publications/screenshot-2025-05-20-at-12.39.46 pm.png
+image: /assets/images/publications/screenshot-2025-06-13-at-8.03.38 pm.png
 webLink: https://doi.org/10.1101/2025.05.15.653894
 ---
