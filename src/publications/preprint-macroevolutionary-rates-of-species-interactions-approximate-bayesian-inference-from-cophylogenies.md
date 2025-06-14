@@ -37,5 +37,6 @@ publicationAbstract: "Understanding the macroevolutionary dynamics of species
 tags:
   - Evolution
 image: /assets/images/publications/screenshot-2025-06-13-at-8.03.38 pm.png
+pdfDocument: /assets/documents/publications/macroevolutionary-rates-of-specoes-interactions.pdf
 webLink: https://doi.org/10.1101/2025.05.15.653894
 ---
