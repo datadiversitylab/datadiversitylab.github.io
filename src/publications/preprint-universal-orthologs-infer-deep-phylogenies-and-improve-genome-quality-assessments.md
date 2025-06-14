@@ -34,5 +34,6 @@ tags:
   - Data Science
   - Evolution
 image: /assets/images/publications/screenshot-2025-03-06-at-3.58.37 pm.png
+pdfDocument: /assets/documents/publications/universal-orthologs.pdf
 webLink: https://www.biorxiv.org/content/10.1101/2025.02.17.638702v1.full
 ---
