@@ -23,5 +23,6 @@ tags:
   - Data Science
 image: /assets/images/publications/acdb.jpg
 pdfDocument: /assets/documents/publications/basavaetal2025.pdf
+badgeImage: https://nature.altmetric.com/details/178143304
 webLink: https://www.nature.com/articles/s41597-025-05315-y
 ---
