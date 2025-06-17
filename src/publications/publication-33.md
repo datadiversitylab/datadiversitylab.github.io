@@ -1,5 +1,5 @@
 ---
-publicationTitle: "A new Neotropical genus of Blastini (Psocodea:’Psocoptera’:
+publicationTitle: "A new Neotropical genus of Blastini (Psocodea: ’Psocoptera’:
   Psocidae: Amphigerontiinae)"
 publicationAuthor: Cristian Román-Palacios, and Alfonso N. García Aldrete
 publicationDate: 2015
