@@ -19,5 +19,8 @@ images:
   - /assets/images/socials/kiran-talk-on-6-21-.jpg
   - /assets/images/socials/kristen-talk-6-21-.jpg
   - /assets/images/socials/delaney-talk-on-6-21.jpg
+  - /assets/images/socials/whatsapp-image-2025-06-25-at-16.35.53-1-.jpeg
+  - /assets/images/socials/whatsapp-image-2025-06-25-at-16.35.53.jpeg
+  - /assets/images/socials/whatsapp-image-2025-06-25-at-16.35.54.jpeg
 order: 1
 ---
