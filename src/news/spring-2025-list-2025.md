@@ -2,7 +2,7 @@
 Name: Spring
 tags:
   - "2025"
-order: 1
+order: ""
 ---
 * Lab members, Paige Cherry and Eleanor Tuck graduated with their bachelors degree! Congratulations Paige and Eleanor!
 * Cristian Román-Palacios, our labs PI, and lab members, Kiran Basava, Kristen Martinet, Yichao Zeng, and Ian Estacio, shared current research on the Animal culture database and conservation implications, consistency in breakpoints for species/area relationships, modeling speciation in co-phylogenies, and a NAS-based Collaboratory at the weekly CAMBIUM meeting. 
