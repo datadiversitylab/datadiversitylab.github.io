@@ -21,8 +21,10 @@ publicationAbstract: Socially transmitted behaviors are widespread across the
 tags:
   - Ecology
   - Data Science
+  - Social learning
 image: /assets/images/publications/acdb.jpg
 pdfDocument: /assets/documents/publications/basavaetal2025.pdf
-badgeImage: ""
+badgeImage: <div data-badge-type="donut" data-doi="10.1038/s41597-025-05315-y"
+  data-hide-no-mentions="true" class="altmetric-embed"></div>
 webLink: https://www.nature.com/articles/s41597-025-05315-y
 ---
