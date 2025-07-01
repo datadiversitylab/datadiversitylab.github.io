@@ -31,7 +31,7 @@ publicationAbstract: Universal single-copy orthologs are the most conserved
   and release the phyca software toolkit that reconstructs consistent
   phylogenies and reports phylogenetically informed assembly assessments.
 tags:
-  - Data Science
+  - Data science
   - Evolution
 image: /assets/images/publications/screenshot-2025-03-06-at-3.58.37 pm.png
 pdfDocument: /assets/documents/publications/universal-orthologs.pdf
