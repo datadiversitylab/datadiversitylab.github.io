@@ -50,6 +50,7 @@ publicationAbstract: >-
 tags:
   - Education
   - LabOps
+  - Academia
 image: /assets/images/publications/journal.pcbi.1013248.g001.png
 pdfDocument: /assets/documents/publications/labops_2025.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1371/journal.pcbi.1013248"
