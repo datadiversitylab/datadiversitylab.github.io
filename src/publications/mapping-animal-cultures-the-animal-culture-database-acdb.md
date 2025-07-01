@@ -20,7 +20,7 @@ publicationAbstract: Socially transmitted behaviors are widespread across the
   the role of social learning in animal populations.
 tags:
   - Ecology
-  - Data Science
+  - Data science
   - Social learning
 image: /assets/images/publications/acdb.jpg
 pdfDocument: /assets/documents/publications/basavaetal2025.pdf
