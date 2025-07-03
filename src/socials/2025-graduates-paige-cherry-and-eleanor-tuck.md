@@ -12,5 +12,5 @@ images:
   - /assets/images/socials/img_6676-2.png
   - /assets/images/socials/pc-grad-1.jpg
   - /assets/images/socials/img_6686-2.png
-order: 1
+order: ""
 ---
