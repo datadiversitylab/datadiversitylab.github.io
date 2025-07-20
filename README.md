@@ -2,7 +2,7 @@
 
 ## How to run this site locally?
 
-First, check that `Node.js` (v12 or later) and npm are installed:
+First, check that `Node.js` (v12 or later) and `npm` are installed:
 
 ```
 node -v
