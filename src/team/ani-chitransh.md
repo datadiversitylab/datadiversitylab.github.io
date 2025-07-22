@@ -1,7 +1,6 @@
 ---
 memberName: Ani Chitransh
 memberTitle: MSc student
-memberEducation: Test company
 memberDate: 2024
 memberDateEnd: "2024"
 memberBio: "Ani is a graduate student working towards her capstone. Ani’s
