@@ -223,8 +223,8 @@
 
 
 .cs-card-group[data-group="Former"] {
-    display: none; /* Ensures it's hidden by default */
-    visibility: hidden;
+    display: grid; /* Ensures it's hidden by default */
+    visibility: visible;
     opacity: 0;
     height: 0;
     overflow: hidden; /* Prevents extra space */
@@ -255,4 +255,33 @@
     background-color: var(--buttonHoverColor, #0056b3);
 }
 
+.cs-section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.team-section-header {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.line.line-full {
+  height: 2px;
+  background-color: #ccc;
+  width: 100%;
+  margin: 0 auto 1.5rem auto;
+}
+
+.cs-current-position {
+  display: block;
+  margin-top: 0.25rem;
+  font-style: italic;
+  color: #444;
+}
 

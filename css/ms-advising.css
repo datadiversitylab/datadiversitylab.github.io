@@ -340,3 +340,48 @@
     overflow: hidden;
   }
 }
+
+.cs-centered-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.cs-card-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.cs-centered-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.cs-card-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 700px;
+  width: 100%;
+}
+
+.cs-desc ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+}
+
+.cs-desc li {
+  margin-bottom: 0.4rem;
+}
+
+

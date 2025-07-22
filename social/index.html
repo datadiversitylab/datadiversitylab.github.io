@@ -1181,6 +1181,12 @@
     </div>
 </section>
 
+<!-- Image modal: hidden by default -->
+<div id="image-modal">
+  <img class="modal-content" id="modal-img" alt="">
+  <div class="modal-caption" id="modal-caption"></div>
+</div>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -1214,6 +1220,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalCap = document.getElementById('modal-caption');
+
+  document.querySelectorAll('.enlargeable-image').forEach(img => {
+    img.addEventListener('click', () => {
+      modalImg.src = img.src;
+      modalCap.textContent = img.alt || '';  // show alt text if you like
+      modal.style.display = 'flex';
+    });
+  });
+
+  // Clicking anywhere closes
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+});
+</script>
 </main>
         <!-- ============================================ -->
 <!--                   Footer                     -->
@@ -1223,18 +1249,9 @@ document.addEventListener("DOMContentLoaded", function () {
     <div aria-hidden="true" class="line footer"></div>
     <div class="container">
         <div class="full-section">
-            <a class="logo" href="/">
-                
-                    
-                        <img class="cs-dark" src="../../assets/images/logos/ddl-logo.png" alt="logo" width="210" height="29" aria-hidden="true" decoding="async" loading="lazy">
-                    
-                
-                    
-                
-            </a>
             <div class="credit">
-                <span>Designed and hand coded by</span>
-                <a href="https://columbiavalleywebdesigns.com/" target="_blank" rel="noopener">columbia valley web designs</a>
+                <span>Originally designed and hand coded by</span>
+                <a href="https://columbiavalleywebdesigns.com/" target="_blank" rel="noopener">Columbia Valley Web Designs</a>
             </div>
         </div>
     </div>

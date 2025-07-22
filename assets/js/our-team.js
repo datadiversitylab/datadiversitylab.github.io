@@ -66,39 +66,3 @@ function updateItemsVisibility() {
 
 startYearInput.addEventListener('input', updateItemsVisibility);
 endYearInput.addEventListener('input', updateItemsVisibility);
-
-document.addEventListener("DOMContentLoaded", function () {
-    const sidebar = document.querySelector("#meet-team-547 .cs-content.cs-sidebar");
-
-    if (sidebar) {
-        const formerToggle = document.createElement("button");
-        formerToggle.textContent = "Show Former Members";
-        formerToggle.classList.add("toggle-former-members");
-
-        sidebar.appendChild(formerToggle); // Place button inside the sidebar
-
-        let formerVisible = false;
-        const formerMembersSection = document.querySelector('.cs-card-group[data-group="Former"]');
-
-        if (formerMembersSection) {
-            formerMembersSection.classList.remove("visible"); // Ensure hidden on load
-
-            formerToggle.addEventListener("click", function () {
-                formerVisible = !formerVisible;
-                formerMembersSection.classList.toggle("visible", formerVisible);
-                formerToggle.textContent = formerVisible ? "Hide Former Members" : "Show Former Members";
-
-                // Adjust height dynamically
-                if (formerVisible) {
-                    formerMembersSection.style.height = formerMembersSection.scrollHeight + "px";
-                } else {
-                    formerMembersSection.style.height = "0px";
-                }
-            });
-        }
-    }
-});
-
-
-
-

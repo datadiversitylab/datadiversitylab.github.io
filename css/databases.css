@@ -184,3 +184,11 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.cs-authors {
+  display: block;
+  text-align: left;
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+  color: #333;
+}
