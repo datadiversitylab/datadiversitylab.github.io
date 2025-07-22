@@ -62,13 +62,16 @@ eleventyNavigation:
         </div>
         <div class="cs-title-card-wrapper">
             {%- for tag in tags -%}
-                <h3 class="cs-title">{{ tag }} members</h3>
+                <div class="team-section-header">
+                  <h2 class="cs-section-title">{{ tag }} Members</h2>
+                  <div class="line line-full"></div>
+                </div>
                 {%- if tag == "Current" -%}
                     {%- set members = collections.team | sortMulti('order', false, 'memberDate', true) -%}
                 {%- else -%}
                     {%- set members = collections.team | sortMulti('order', false, 'memberDate', true) -%}
                 {%- endif -%}
-                <div class="cs-card-group" data-group="{{ tag }}">
+                <div class="cs-card-group">
                     {% for member in members %}
                         {%- if tag in member.data.tags -%}
                             <div class="cs-item">
@@ -85,8 +88,13 @@ eleventyNavigation:
                                             <span class="cs-education">, {{ member.data.memberEducation }}</span>
                                         {%- endif -%}
                                     </span>
-                                    <span class="cs-job-title">{{ member.data.memberTitle }}</span>
-                                    <span class="cs-timeline"><span class="cs-start-date-year-data">{{ member.data.memberDate }}</span> {%- if member.data.memberDateEnd -%} {{" - "}} <span class="cs-end-date-year-data">{{ member.data.memberDateEnd }}</span> {%- endif -%}</span>
+                                    <span class="cs-job-title"><strong>Role in the lab:</strong> {{ member.data.memberTitle }}</span>
+                                    {%- if "Former" in member.data.tags and member.data.currentPosition -%}
+                                      <span class="cs-timeline"><strong>Current position:</strong> {{ member.data.currentPosition }}</span>
+                                    {%- endif -%}
+                                    {%- if member.data.memberDate -%}
+                                      <span class="cs-timeline"><span class="cs-start-date-year-data"><strong>Term:</strong> {{ member.data.memberDate }}</span> {%- if member.data.memberDateEnd -%} {{" - "}} <span class="cs-end-date-year-data">{{ member.data.memberDateEnd }}</span> {%- endif -%}</span>
+                                    {%- endif -%}
                                     <span class="cs-desc">
                                         <span class="read-more-text">{{ member.data.memberBio }}</span>
                                         <span class="read-more-btn">...read more</span>

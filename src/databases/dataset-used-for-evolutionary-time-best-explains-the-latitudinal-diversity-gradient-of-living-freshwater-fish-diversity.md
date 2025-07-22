@@ -8,4 +8,7 @@ tags:
   - Papers
 link: https://figshare.com/s/552e7549303de8f2a823
 image: /assets/images/databases/freshwater-fish.jpg
+authors:
+  - Cristian Roman
+  - Elizabeth Miller
 ---

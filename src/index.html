@@ -89,6 +89,7 @@ eleventyNavigation:
 <!-- ============================================ -->
 <!--                  News Timeline               -->
 <!-- ============================================ -->
+<!--
 {%- set tags = [] -%}
 {%- for new in collections.news | sort(attribute='data.order') -%}
     {%- for tag in new.data.tags -%}
@@ -151,6 +152,7 @@ eleventyNavigation:
         </div>
     </div>
 </section>
+-->
 
 <script defer>
     const newsWidth = () => {

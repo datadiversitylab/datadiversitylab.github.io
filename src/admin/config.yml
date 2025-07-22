@@ -126,7 +126,11 @@ collections:
     slug: '{{grantName}}'
     fields:
       - { label: 'Name', name: 'grantName', widget: 'string', required: true }
-      - { label: 'Amount', name: 'grantAmount', widget: 'string', required: false }
+      - { label: 'Subaward', name: 'subawardAmount', widget: 'string', required: false }
+      - { label: 'Years', name: 'grantYears', widget: 'string', required: false }
+      - { label: 'PI', name: 'pi', widget: 'string', required: false }
+      - { label: 'Co-PI(s)', name: 'copi', widget: 'list', required: false }
+      - { label: 'Total amount', name: 'grantAmount', widget: 'string', required: false }
       - { label: 'Description', name: 'grantDesc', widget: 'string', required: false }
       - { label: 'Funder', name: 'tags', widget: 'list', required: true }
       - { label: 'Document', name: 'document', widget: 'file', required: false, media_folder: '/src/assets/documents/grants', public_folder: '/assets/documents/grants' }
@@ -144,6 +148,7 @@ collections:
     slug: '{{Name}}'
     fields:
       - { label: 'Name', name: 'Name', widget: 'string', required: true }
+      - { label: 'Authors', name: 'authors', widget: 'list', required: true }
       - { label: 'Description', name: 'Description', widget: 'markdown', required: false }
       - { label: 'Tags', name: 'tags', widget: 'list', required: true }
       - { label: 'Github', name: 'github', widget: 'string', required: false }
@@ -161,6 +166,7 @@ collections:
     slug: '{{Name}}'
     fields:
       - { label: 'Name', name: 'Name', widget: 'string', required: true }
+      - { label: 'Authors', name: 'authors', widget: 'list', required: true }
       - { label: 'Description', name: 'Description', widget: 'markdown', required: true }
       - { label: 'Tags', name: 'tags', widget: 'list', required: true }
       - { label: 'Github', name: 'github', widget: 'string', required: false }

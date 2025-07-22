@@ -220,3 +220,32 @@
   transform: scale(1.2);
   z-index: 10;
 }
+
+/* Modal backdrop sits above everything */
+#image-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.8);
+  z-index: 9999;
+  padding-top: 60px; /* if you have a 60px‑tall fixed header */
+  box-sizing: border-box;
+}
+
+/* The enlarged image */
+#image-modal .modal-content {
+  max-width: 90vw;
+  max-height: calc(90vh - 60px); /* account for header height too */
+  object-fit: contain;
+}
+
+#event-map {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+
+

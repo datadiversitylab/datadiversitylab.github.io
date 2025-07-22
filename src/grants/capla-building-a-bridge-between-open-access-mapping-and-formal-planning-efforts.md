@@ -1,7 +1,7 @@
 ---
 grantName: "CAPLA: Building a Bridge Between Open Access Mapping and Formal
   Planning Efforts"
-grantAmount: $25,000 (2022)
+grantAmount: $25,000
 grantDesc: Seed grant from the College of Architecture, Planning and Landscape
   Architecture (UArizona). Project aimed at funding the development of a pilot
   software to bridge formal planning efforts and open-source software for
@@ -11,4 +11,9 @@ grantDesc: Seed grant from the College of Architecture, Planning and Landscape
 tags:
   - University of Arizona
 image: /assets/images/grants/images.jpeg
+subawardAmount: ""
+grantYears: "2022"
+pi: "Cristian Roman-Palacios"
+copi:
+  - "Mackenzie Waller"
 ---

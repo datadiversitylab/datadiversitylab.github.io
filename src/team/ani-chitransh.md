@@ -22,4 +22,5 @@ image: /assets/images/our-team/dscf8655-fotor-202404261639_head.jpg
 imageAlt: Portrait of Ani Chitransh
 order: 8
 date: 2024-03-09T08:03:44.405Z
+currentPosition: TestPosition
 ---

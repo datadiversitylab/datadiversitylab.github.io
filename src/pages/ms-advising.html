@@ -9,74 +9,112 @@ preloadJS: '/js/dropdownCards.js'
 preloadSecondJS: '/js/ms-advising.js'
 permalink: 'ms-advising/'
 eleventyNavigation:
-    key: MS advising
-    parent: Teaching
-    order: 600
+  key: MS advising
+  parent: Teaching
+  order: 600
 ---
+
 <!-- ============================================ -->
 <!--                  Content                     -->
 <!-- ============================================ -->
 
 <section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">{{ msadvising.title }}</h1>
-        </div>
+  <div class="cs-container">
+    <div class="cs-content">
+      <h1 class="cs-title">MSDS & MSIS Advising</h1>
     </div>
+  </div>
 </section>
 
 <div aria-hidden="true" class="line"></div>
 
 <section id="list-of-cards">
-    <div class="cs-container">
-        <div class="cs-content">
-            <p class="cs-text">{{ msadvising.paragraphOne }}</p>
-        </div>
-        <div class="cs-card-group">
-            {%- for card in msadvising.numberedCards -%}
-                <div class="cs-item">
-                    <div class="cs-flex-group">
-                        <h4 class="cs-title">{{ loop.index }}</h4>
-                        <span class="cs-name">{{ card.title }}</span>
-                        <span class="cs-desc">{{ card.description | markdown | safe }}</span>
-                    </div>
-                </div>
-            {%- endfor -%}
-        </div>
-        <div class="cs-content">
-        </div>
+  <div class="cs-container">
+    <div class="cs-content">
+      <p class="cs-text">
+        Dr. Cristian Román-Palacios serves as the Coordinator and Advisor for the Master of Science in Data Science (MSDS) and Master of Science in Information Science (MSIS) programs at the University of Arizona. For any advising-related inquiries, please reach out via email at 
+        <a href="mailto:si-ms_advisor@arizona.edu">si-ms_advisor@arizona.edu</a>.
+      </p>
     </div>
+
+    <div class="cs-centered-wrapper">
+  <div class="cs-card-group">
+    <div class="cs-item">
+      <div class="cs-flex-group">
+        <h4 class="cs-title">1</h4>
+        <span class="cs-name">Schedule an Appointment</span>
+        <span class="cs-desc">
+          Book a 15-minute advising session using Calendly:
+          <br>
+          <a href="https://calendly.com/cromanpa/15min" target="_blank">calendly.com/cromanpa/15min</a>
+        </span>
+      </div>
+    </div>
+
+
+    <div class="cs-item">
+      <div class="cs-flex-group">
+        <h4 class="cs-title">2</h4>
+        <span class="cs-name">iSchool Advising Resources</span>
+        <span class="cs-desc">
+          General advising information is available at:
+          <br>
+          <a href="https://ischool.arizona.edu/students-and-career/advising" target="_blank">ischool.arizona.edu/students-and-career/advising</a>
+        </span>
+      </div>
+    </div>
+    
+    <div class="cs-item">
+      <div class="cs-flex-group">
+        <h4 class="cs-title">3</h4>
+          <span class="cs-name">Review student handbook</span>
+            <span class="cs-desc">
+              Before scheduling a meeting, please consult the relevant program handbooks:
+              <ul>
+                <li>
+                  <strong>MS in Data Science:</strong>
+                  <a href="https://ischool.arizona.edu/ms-data-science" target="_blank">ischool.arizona.edu/ms-data-science</a>
+                </li>
+                <li>
+                  <strong>MS in Information Science:</strong>
+                  <a href="https://ischool.arizona.edu/ms-information-science/student-resources" target="_blank">ischool.arizona.edu/ms-information-science/student-resources</a>
+                </li>
+              </ul>        </span>
+      </div>
+    
+  </div>
+  
+  <div class="cs-item">
+      <div class="cs-flex-group">
+        <h4 class="cs-title">4</h4>
+          <span class="cs-name">Meeting etiquette</span>
+            <span class="cs-desc">
+              Please consider the following once your meeting has been scheduled:
+              <ul>
+                <li>
+                  Provide a brief description of the topic(s) you'd like to discuss when booking your meeting
+                </li>
+                <li>
+                  <strong>Review the student handbook:</strong>
+                  <a href="https://ischool.arizona.edu/ms-information-science/student-resources" target="_blank">ischool.arizona.edu/ms-information-science/student-resources</a>
+                </li>
+                <li>
+                  Please reschedule instead of arriving late.
+                </li>
+                <li>
+                  Appointments scheduled far in advance may be rescheduled based on advisor availability.
+                </li>
+              </ul>        
+              </span>
+      </div>
+    
+  </div>
+    
+
+</div>
+
+  </div>
 </section>
 
-<div aria-hidden="true" class="line"></div>
 
-<section id="dropdown-cards" class="student-evaluations">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h3 class="cs-title">{{ msadvising.secondTitle }}</h3>
-            <p class="cs-text">{{ msadvising.paragraphThree }}</p>
-        </div>
-        <div class="cs-card-group">
-            {%- for card in msadvising.advisingCards | sort(attribute='order') -%}
-                <div class="cs-item">
-                    <div class="cs-flex-group">
-                        <div class="cs-dropdown-show">
-                            <div>
-                                <p class="cs-text cs-bold">{{ card.title }}</p>
-                            </div>
-                            <div class="cs-dropdown-icon">
-                                <img src="../assets/icons/chevron-down.svg">
-                            </div>
-                        </div>
-                        <div class="cs-dropdown">
-                            <div class="cs-dropdown-content">
-                                {{ card.description | markdown | safe }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {%- endfor -%}
-            </div>
-        </div>
-    </div>
-</section>
+

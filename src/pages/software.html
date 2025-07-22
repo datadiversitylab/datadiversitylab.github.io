@@ -69,6 +69,9 @@ eleventyNavigation:
                                     <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">{{ software.data.Name }}</span>
                                     <span class="cs-timeline">{{ software.data.Location }}</span>
+                                    {%- if software.data.authors -%}
+                                      <span class="cs-timeline">{{ software.data.authors | join(', ') }}</span>
+                                    {%- endif -%}
                                     <span class="cs-desc">
                                         <span class="read-more-text">{{ software.data.Description | markdown | safe }}</span>
                                         <span class="read-more-btn">...read more</span>

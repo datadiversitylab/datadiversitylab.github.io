@@ -72,7 +72,19 @@ eleventyNavigation:
                                 <div class="cs-flex-group">
                                     <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">{{ grant.data.grantName }}</span>
-                                    <span class="cs-timeline">{{ grant.data.grantAmount }}</span>
+                                    <span class="cs-timeline"><strong>Grant amount:</strong> {{ grant.data.grantAmount }}</span>
+                                    {%- if grant.data.pi -%}
+                                      <span class="cs-timeline"><strong>PI:</strong> {{ grant.data.pi }}</span>
+                                    {%- endif -%}
+                                    {%- if grant.data.copi -%}
+                                      <span class="cs-timeline"><strong>Co-PI(s):</strong> {{ grant.data.copi | join(', ') }}</span>
+                                    {%- endif -%}
+                                    {%- if grant.data.subawardAmount -%}
+                                      <span class="cs-timeline"><strong>Subaward:</strong> {{ grant.data.subawardAmount }}</span>
+                                    {%- endif -%}
+                                    {%- if grant.data.grantYears -%}
+                                      <span class="cs-timeline"><strong>Years:</strong> {{ grant.data.grantYears }}</span>
+                                    {%- endif -%}
                                     <span class="cs-desc">
                                         <span class="read-more-text">{{ grant.data.grantDesc }}</span>
                                         <span class="read-more-btn">...read more</span>

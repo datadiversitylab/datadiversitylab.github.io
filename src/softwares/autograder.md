@@ -10,4 +10,6 @@ tags:
 github: https://github.com/datadiversitylab/autogradeR
 link: https://datadiversitylab.github.io/autogradeR/
 image: /assets/images/softwares/logo.png
+authors:
+  - Cristian Roman
 ---
