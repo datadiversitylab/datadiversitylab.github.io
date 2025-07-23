@@ -1,5 +1,7 @@
 ---
 Name: BarrioMap
+authors:
+  - Cristian Román-Palacios & Sarthak Halder
 Description: Barrio Map offers fundamental functionalities like finding
   locations by conducting searches or selecting coordinates. Users can select
   from predefined scales and export the scaled maps to particular page sizes.
