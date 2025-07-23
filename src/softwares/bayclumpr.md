@@ -1,5 +1,9 @@
 ---
 Name: bayclumpr
+authors:
+  - Cristian Román-Palacios
+  - Hannah M. Carroll
+  - "& Aradhna Tripati"
 Description: bayclumpr is a self-contained R package that supports the use of
   Bayesian models and the analytical framework developed in Román-Palacios et
   al. (2022) for clumped isotope calibration, temperature reconstructions, and
