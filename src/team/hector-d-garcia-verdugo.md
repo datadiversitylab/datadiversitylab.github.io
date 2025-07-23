@@ -1,6 +1,8 @@
 ---
 memberName: Hector D. Garcia-Verdugo
-memberTitle: Research Laboratory Manager
+memberTitle:
+  - Research Laboratory Manager
+currentPosition: Research Scientist 2
 memberDate: 2023-2024
 memberDateEnd: ""
 memberBio: Hector is the data diversity lab’s Manager. He holds dual degrees in
