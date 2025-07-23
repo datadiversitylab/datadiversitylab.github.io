@@ -1,8 +1,9 @@
 ---
 Name: Universal Ortholog Based Phylogenomic Database and Toolset
+authors:
+  - Cristian Román-Palacios & MD Nafis Ul Alam
 Description: >-
   This research is being conducted with the following goals in mind:
-
 
 
   * Facilitate evolutionary genomic analysis in the eukaryotic domain

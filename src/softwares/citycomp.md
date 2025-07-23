@@ -1,5 +1,7 @@
 ---
 Name: CityComp
+authors:
+  - Cristian Román-Palacios
 Description: CityComp is a Shiny app developed to support the use of the
   comparative framework developed in Arechiga et al. (2023). In the app, users
   can directly visualize the results presented in the same paper. Specifically,

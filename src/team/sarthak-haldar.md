@@ -1,6 +1,8 @@
 ---
 memberName: Sarthak Haldar
-memberTitle: Research Assistant
+memberTitle:
+  - Research Assistant
+currentPosition: Cofounder of AcharyaG
 memberDate: 2022
 memberDateEnd: null
 memberBio: Sarthak was hired as a Research Assistant during Spring 2022 to work

@@ -1,5 +1,7 @@
 ---
 Name: BayClump
+authors:
+  - Cristian Román-Palacios & Hannah Carroll
 Description: BayClump is a Shiny Dashboard application that is associated with
   the bayclumpr R package. All the functions implemented in BayClump are sourced
   from bayclumpr. We eveloped BayClump to allow users with less coding
