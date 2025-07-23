@@ -32,28 +32,43 @@ eleventyNavigation:
         </div>
     </div>
     <div class="cs-picture-caption timer-slider">
-        <picture class="cs-picture">
-            <source media="(max-width: 600px)" srcset="/assets/images/landing-m.webp">
-            <source media="(min-width: 601px)" srcset="/assets/images/landing.webp">
-            <img
+        <div class="cs-picture-caption timer-slider">
+          {% set sliderImages = [] %}
+          {% if home.backgroundImages %}
+            {% set sliderImages = sliderImages.concat(home.backgroundImages) %}
+          {% endif %}
+        
+          {% for social in collections.socials %}
+            {% if social.data.images %}
+              {% for img in social.data.images %}
+                {% set sliderImages = sliderImages.concat([{ image: img, alt: social.data.socialName }]) %}
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        
+          {% if sliderImages.length > 0 %}
+            <picture class="cs-picture">
+              <source media="(max-width: 600px)" srcset="{{ sliderImages[0].image }}">
+              <source media="(min-width: 601px)" srcset="{{ sliderImages[0].image }}">
+              <img
                 aria-hidden="true"
                 decoding="async"
-                src="/assets/images/landing.webp"
-                alt="new home"
-            >
-        </picture>
+                src="{{ sliderImages[0].image }}"
+                alt="{{ sliderImages[0].alt or 'Event image' }}"
+              >
+            </picture>
+        
+        
+            </div>
+          {% endif %}
+        </div>
+
         <div class="cs-caption-slider-wrapper">
             {%- for image in home.backgroundImages -%}
                 <p class="cs-text-caption" data-srcset="{{ image.image }}">
                 </p>
             {% endfor %}
-            <div class="cs-arrow-wrapper">
-                <div class="cs-image-slider">
-                    {%- for image in home.backgroundImages -%}
-                        <div class="cs-image-selector {{ 'active' if loop.index == 1 else '' }}"></div>
-                    {% endfor %}
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>

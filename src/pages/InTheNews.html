@@ -1,0 +1,164 @@
+---
+layout: 'base.html'
+description: "The Data Diversity Lab in the News"
+metaTitle: 'In the News'
+tagTitle: 'in the news'
+preloadImg: ''
+preloadCSS: '/css/social.css'
+preloadJS: '/js/scrollTo.js'
+permalink: 'innews/'
+eleventyNavigation:
+    key: In the news
+    parent: Lab news
+    order: 100
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">The Data Diversity Lab in the News</h1>
+            <p class="cs-text">
+                Below, you can find news outlets where our work has been featured in.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                Social                      -->
+<!-- ============================================ -->
+{%- set years = [] -%}
+{%- for newsItem in collections.inthenews | sort(attribute='data.order') -%}
+    {%- for tag in newsItem.data.tags -%}
+        {%- if not years.includes(tag | string) and tag != "inthenews" -%}
+            {%- set years = years.concat(tag | string) -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endfor -%}
+
+
+<section id="social-547">
+    <div class="cs-container">
+        <div class="cs-content cs-sidebar">
+            <h6 class="cs-title">Years</h6>
+            <div class="cs-filter-wrapper cs-text">
+                {%- for year in years | sort(true) -%}
+                    <a href="#section{{ year }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ year }}</a>
+                {%- endfor -%}
+            </div>
+        </div>
+        <div class="cs-title-card-wrapper">
+            {%- for year in years | sort(true) -%}
+              <h3 class="cs-title">{{ year }}</h3>
+              <div id="section{{ year }}" class="cs-card-group">
+                  {%- for newsItem in collections.inthenews | sort(attribute='data.order') -%}
+                      {%- if newsItem.data.tags.includes(year) -%}
+                          <div class="cs-item">
+                              <div class="cs-gallery">
+                                  {%- for image in newsItem.data.images -%}
+                                      <picture class="cs-slide">
+                                          <img loading="lazy" decoding="async" src="{{ image }}" alt="{{ newsItem.data.imageAlt }}" width="522" height="370" class="enlargeable-image">
+                                      </picture>
+                                  {%- endfor -%}
+                                  <button class="prev-btn">❮</button>
+                                  <button class="next-btn">❯</button>
+                              </div>
+                              <div class="cs-flex-group">
+                                  <div aria-hidden="true" class="line line-full card-image-line"></div>
+                                  <span class="cs-name">{{ newsItem.data.newsTitle }}</span>
+                                  <span class="cs-timeline">{{ newsItem.data.newsDate }}</span>
+                                  <span class="cs-timeline">{{ newsItem.data.Outlet }}</span>
+                                  <span class="cs-desc">
+                                      <span class="read-more-text">{{ newsItem.data.newsDesc }}</span>
+                                      <span class="read-more-btn">...read more</span>
+                                  </span>
+          
+                                  {%- if newsItem.data.link or newsItem.data.document -%}
+                                      <div aria-hidden="true" class="line line-full"></div>
+                                      <div class="cs-item-social">
+                                          {%- set socials = [{'platform': 'link', 'icon': 'link.svg'}, {'platform': 'document', 'icon': 'pdf.svg'}] -%}
+                                          {%- for item in socials -%}
+                                              {%- if newsItem.data[item.platform] -%}
+                                                  <a href="{{ newsItem.data[item.platform] }}" target="_blank">
+                                                      <img src="../assets/icons/{{ item.icon }}" alt="{{ item.platform }}" width="30" height="30" decoding="async" aria-hidden="true">
+                                                  </a>
+                                              {%- endif -%}
+                                          {%- endfor -%}
+                                      </div>
+                                  {%- endif -%}
+                              </div>
+                          </div>
+                      {%- endif -%}
+                  {%- endfor -%}
+              </div>
+          {%- endfor -%}
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Image modal: hidden by default -->
+<div id="image-modal">
+  <img class="modal-content" id="modal-img" alt="">
+  <div class="modal-caption" id="modal-caption"></div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".cs-gallery").forEach(gallery => {
+        let slides = gallery.querySelectorAll(".cs-slide img");
+        let index = 0;
+
+        function showSlide(i) {
+            slides.forEach((slide, idx) => {
+                slide.style.display = idx === i ? "block" : "none";
+            });
+        }
+
+        let prevBtn = gallery.querySelector(".prev-btn");
+        let nextBtn = gallery.querySelector(".next-btn");
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener("click", function () {
+                index = index === 0 ? slides.length - 1 : index - 1;
+                showSlide(index);
+            });
+
+            nextBtn.addEventListener("click", function () {
+                index = index === slides.length - 1 ? 0 : index + 1;
+                showSlide(index);
+            });
+        }
+
+        showSlide(index); // Initialize the first image
+    });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalCap = document.getElementById('modal-caption');
+
+  document.querySelectorAll('.enlargeable-image').forEach(img => {
+    img.addEventListener('click', () => {
+      modalImg.src = img.src;
+      modalCap.textContent = img.alt || '';  // show alt text if you like
+      modal.style.display = 'flex';
+    });
+  });
+
+  // Clicking anywhere closes
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+});
+</script>
