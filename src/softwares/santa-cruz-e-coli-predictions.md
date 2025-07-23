@@ -1,5 +1,7 @@
 ---
 Name: Santa Cruz E. coli Predictions
+authors:
+  - Cristian Román-Palacios & Laura Palacios-Falk
 Description: This tool predicts *Escherichia coli (E. coli*) levels in the Upper
   Santa Cruz River using a model trained on public data from 2009-2022. It is
   intended as a warning of possible high bacterial loads; water quality must
