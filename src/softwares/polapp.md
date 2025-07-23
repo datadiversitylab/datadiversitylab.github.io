@@ -1,5 +1,7 @@
 ---
 Name: polapp
+authors:
+  - Cristian Román-Palacios
 Description: Polapp is a live polling platform designed for conferences, events,
   workshops, meetings, and similar events. Admins can create unique rooms,
   design questions, and enable access for attendees via unique tokens. Attendees
