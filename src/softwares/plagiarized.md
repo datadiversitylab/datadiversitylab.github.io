@@ -1,5 +1,7 @@
 ---
 Name: plagiaRized
+authors:
+  - Cristian Román-Palacios
 Description: This is a basic shiny dashboard to perform pairwise comparison of
   different file submissions. The app is intended to help identify instances of
   potential plagiarism in coding-based assignments.
