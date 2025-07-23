@@ -1,5 +1,7 @@
 ---
 Name: Salphycon
+authors:
+  - Cristian Román-Palacios
 Description: Salphycon is a shiny app that extends the functionalities of the
   (phruta) R package. Salphycon is able to (1) find potentially
   (phylogenetically) relevant gene regions for a given set of taxa on GenBank,
