@@ -1,6 +1,8 @@
 ---
 Name: "Dataset used for: Polyploidy increases overall diversity despite
   higher   turnover than diploids in the Brassicaceae"
+authors:
+  - Cristian Román-Palacios
 Description: The dataset includes haploid chromosome numbers for 80% of species
   in the most comprehensive species-level chronogram for the Brassicaceae. It
   supports analyses of polyploidy’s influence on diversification rates, species
