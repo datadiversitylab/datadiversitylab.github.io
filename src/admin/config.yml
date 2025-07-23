@@ -206,11 +206,6 @@ collections:
       - { label: 'Tags', name: 'tags', widget: 'list', required: true }
       - { label: 'Order',name: 'order', widget: 'number', required: false }
       - { label: "Body", name: "body", widget: "markdown"}
-  - label: Background Images
-    name: backgroundImages
-    widget: list
-    fields:
-      - { label: 'Image', name: 'image', widget: 'image' }  
   - name: 'jobs'
     label: 'Jobs'
     folder: 'src/jobs'
@@ -325,24 +320,24 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown', required: true }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
   - name: "inthenews"
-  label: "In the News"
-  folder: "src/inthenews"
-  create: true
-  slug: "{{slug}}"
-  fields:
-    - { label: "Title", name: "newsTitle", widget: "string" }
-    - { label: "Outlet", name: "Outlet", widget: "string", required: true }
-    - { label: "Year", name: "tags", widget: "list", required: true }
-    - { label: "Semester", name: "newsDate", widget: "string" , required: true}
-    - { label: "Description", name: "newsDesc", widget: "text" }
-    - { label: "Link to article", name: "link", widget: "string", required: false }
-    - { label: "Document (PDF)", name: "document", widget: "file", required: false }
-    - {
-        label: "Images",
-        name: "images",
-        widget: "list",
-        field: { label: "Image", name: "", widget: "image" }
-      }
+    label: "In the News"
+    folder: "src/inthenews"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "newsTitle", widget: "string" }
+      - { label: "Outlet", name: "Outlet", widget: "string", required: true }
+      - { label: "Year", name: "tags", widget: "list", required: true }
+      - { label: "Semester", name: "newsDate", widget: "string" , required: true}
+      - { label: "Description", name: "newsDesc", widget: "text" }
+      - { label: "Link to article", name: "link", widget: "string", required: false }
+      - { label: "Document (PDF)", name: "document", widget: "file", required: false }
+      - {
+          label: "Images",
+          name: "images",
+          widget: "list",
+          field: { label: "Image", name: "", widget: "image" }
+        }
   - name: "pages"
     label: "Pages"
     media_folder: '/src/assets/images'
