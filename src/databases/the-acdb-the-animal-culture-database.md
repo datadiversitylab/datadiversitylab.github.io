@@ -1,5 +1,7 @@
 ---
 Name: "The ACDB: The Animal Culture Database"
+authors:
+  - Cristian Román-Palacios & Kiran Basava
 Description: The Animal Culture Database (ACDB) is a database of cultural
   behaviors across nonhuman animal species. It synthesizes current literature on
   intra-species behavioral variation in contexts such as communication,
