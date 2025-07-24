@@ -40,7 +40,7 @@ collections:
       - { label: 'Order', name: 'order', widget: 'number', required: false }
       - { label: 'Date', name: 'date', widget: 'datetime' }
   - name: 'publication'
-    label: 'Publication'
+    label: 'Publications'
     folder: 'src/publications'
     media_folder: '/src/assets/images/publications'
     public_folder: '/assets/images/publications'
@@ -61,61 +61,6 @@ collections:
       - { label: 'PDF Url', name: 'pdfLink', widget: 'string', required: false }
       - { label: 'Web Url', name: 'webLink', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
-  - name: 'collaborators'
-    label: 'Collaborators'
-    folder: 'src/collaborators'
-    media_folder: '/src/assets/images/collaborators'
-    public_folder: '/assets/images/collaborators'
-    create: true
-    identifier_field: collaboratorName
-    slug: '{{collaboratorName}}'
-    fields:
-      - { label: 'Collaborator Name', name: 'collaboratorName', widget: 'string', required: true }
-      - { label: 'Collaborator Title', name: 'collaboratorTitle', widget: 'string', required: false }
-      - { label: 'Collaborator Date', name: 'collaboratorDate', widget: 'string', required: false }
-      - { label: 'Collaborator Bio', name: 'collaboratorBio', widget: 'string', required: false }
-      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
-      - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false }
-      - { label: 'Email', name: 'email', widget: 'string', required: false }
-      - { label: 'Link', name: 'link', widget: 'string', required: false }
-      - { label: 'Resume', name: 'resume', widget: 'string', required: false }
-      - { label: 'Member Image', name: 'image', widget: 'image', required: false }
-      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
-      - { label: 'Date', name: 'date', widget: 'datetime' }
-
-  - name: 'siteSettings'
-    label: 'Site Settings'
-    folder: 'src/_data'
-    media_folder: '/src/assets/images/preloaded'
-    public_folder: '/assets/images/preloaded'
-    create: true
-    delete: true
-    identifier_field: title
-    slug: 'settings'
-    fields:
-      - { label: 'Preloaded Image', name: 'preloadImg', widget: 'image', required: true }
-
-  - name: 'conferences'
-    label: 'Conferences'
-    folder: 'src/conferences'
-    media_folder: '/src/assets/images/conferences'
-    public_folder: '/assets/images/conferences'
-    create: true
-    identifier_field: Title
-    slug: '{{Title}}'
-    fields:
-      - { label: 'Title', name: 'Title', widget: 'string', required: true }
-      - { label: 'Date Season', name: 'DateSeason', widget: 'string', required: false }
-      - { label: 'Location', name: 'Location', widget: 'string', required: false }
-      - { label: 'Description', name: 'Description', widget: 'markdown', required: true }
-      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
-      - { label: 'Document', name: 'document', widget: 'file', required: false, media_folder: '/src/assets/documents/conferences', public_folder: '/assets/documents/conferences' }
-      - { label: 'Link', name: 'link', widget: 'string', required: false }
-      - { label: 'Image', name: 'image', widget: 'image', required: false }
-      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
-      - { label: 'Date', name: 'date', widget: 'datetime' }
   - name: 'grants'
     label: 'Grants'
     folder: 'src/grants'
@@ -139,7 +84,7 @@ collections:
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
   - name: 'softwares'
-    label: 'Softwares'
+    label: 'Software'
     folder: 'src/softwares'
     media_folder: '/src/assets/images/softwares'
     public_folder: '/assets/images/softwares'
@@ -157,7 +102,7 @@ collections:
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
   - name: 'databases'
-    label: 'databases'
+    label: 'Databases'
     folder: 'src/databases'
     media_folder: '/src/assets/images/databases'
     public_folder: '/assets/images/databases'
@@ -206,6 +151,25 @@ collections:
       - { label: 'Tags', name: 'tags', widget: 'list', required: true }
       - { label: 'Order',name: 'order', widget: 'number', required: false }
       - { label: "Body", name: "body", widget: "markdown"}
+  - name: "inthenews"
+    label: "In the News"
+    folder: "src/inthenews"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "newsTitle", widget: "string" }
+      - { label: "Outlet", name: "Outlet", widget: "string", required: true }
+      - { label: "Year", name: "tags", widget: "list", required: true }
+      - { label: "Semester", name: "newsDate", widget: "string" , required: true}
+      - { label: "Description", name: "newsDesc", widget: "text" }
+      - { label: "Link to article", name: "link", widget: "string", required: false }
+      - { label: "Document (PDF)", name: "document", widget: "file", required: false }
+      - {
+          label: "Images",
+          name: "images",
+          widget: "list",
+          field: { label: "Image", name: "", widget: "image" }
+        }
   - name: 'jobs'
     label: 'Jobs'
     folder: 'src/jobs'
@@ -221,6 +185,120 @@ collections:
       - { label: 'Job Description', name: 'jobDesc', widget: 'markdown', required: false }
       - { label: 'Job Pdf', name: 'jobPdf', widget: 'file', required: false, media_folder: '/src/assets/documents/jobs', public_folder: '/assets/documents/jobs' }
       - { label: 'Order',name: 'order', widget: 'number', required: false }
+  - name: 'collaborators'
+    label: 'Collaborators'
+    folder: 'src/collaborators'
+    media_folder: '/src/assets/images/collaborators'
+    public_folder: '/assets/images/collaborators'
+    create: true
+    identifier_field: collaboratorName
+    slug: '{{collaboratorName}}'
+    fields:
+      - { label: 'Collaborator Name', name: 'collaboratorName', widget: 'string', required: true }
+      - { label: 'Collaborator Title', name: 'collaboratorTitle', widget: 'string', required: false }
+      - { label: 'Collaborator Date', name: 'collaboratorDate', widget: 'string', required: false }
+      - { label: 'Collaborator Bio', name: 'collaboratorBio', widget: 'string', required: false }
+      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
+      - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false }
+      - { label: 'Email', name: 'email', widget: 'string', required: false }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Resume', name: 'resume', widget: 'string', required: false }
+      - { label: 'Member Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Date', name: 'date', widget: 'datetime' }
+  - name: 'teachingExperience'
+    label: 'Teaching Experience'
+    folder: 'src/teachingExperience'
+    media_folder: '/src/assets/images/teaching-experience'
+    public_folder: '/assets/images/teaching-experience'
+    create: true
+    identifier_field: title
+    slug: '{{title}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Rows', name: 'rows', widget: 'list', required: true, fields: [
+          { label: 'Year-Semester', name: 'yearSemester', widget: 'string', required: true },
+          { label: 'Course', name: 'course', widget: 'string', required: true },
+          { label: 'Role', name: 'role', widget: 'string', required: true },
+          { label: 'Number of Students', name: 'studentsAmount', widget: 'number', required: true }
+        ]
+      }
+      - { label: 'Year', name: 'year', widget: 'number', required: true }
+  - name: 'labPolicies'
+    label: 'Lab Policies'
+    folder: 'src/labPolicies'
+    media_folder: '/src/assets/images/lab-policies'
+    public_folder: '/assets/images/lab-policies'
+    create: true
+    identifier_field: title
+    slug: '{{title}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Description', name: 'body', widget: 'markdown', required: true }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+  - name: 'transparencys'
+    label: 'Transparency cards'
+    folder: 'src/transparencys'
+    media_folder: '/src/assets/images/transparencys'
+    public_folder: '/assets/images/transparencys'
+    create: true
+    identifier_field: title
+    slug: '{{title}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Year Range', name: 'yearRange', widget: 'string', required: true }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+  - name: 'studentEvaluations'
+    label: 'Student Evaluations'
+    folder: 'src/studentEvaluations'
+    media_folder: '/src/assets/images/student-evaluations'
+    public_folder: '/assets/images/student-evaluations'
+    identifier_field: title
+    create: true
+    slug: '{{title}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+  - name: 'pages'
+    label: "Home page"
+    media_folder: '/src/assets/images'
+    public_folder: '/assets/images'
+    files:
+      - label: "Home Page"
+        name: "Home"
+        file: "src/_data/home.json"
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: sub title
+            name: subTitle
+            widget: string
+          - label: Description
+            name: description
+            widget: markdown
+          - label: Buttons
+            name: buttons
+            widget: list
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Link', name: 'link', widget: 'string' }
+          - label: Background Images
+            name: backgroundImages
+            widget: list
+            fields:
+              - { label: 'Image', name: 'image', widget: 'image' }
+          - label: Cards
+            name: cards
+            widget: list
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Description', name: 'description', widget: 'markdown' }
   - name: 'logos'
     label: 'Logos'
     folder: 'src/logos'
@@ -263,114 +341,3 @@ collections:
           - label: Android Chrome 384
             name: androidChrome384
             widget: image
-  - name: 'labPolicies'
-    label: 'Lab Policies'
-    folder: 'src/labPolicies'
-    media_folder: '/src/assets/images/lab-policies'
-    public_folder: '/assets/images/lab-policies'
-    create: true
-    identifier_field: title
-    slug: '{{title}}'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Description', name: 'body', widget: 'markdown', required: true }
-      - { label: 'Link', name: 'link', widget: 'string', required: false }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
-  - name: 'teachingExperience'
-    label: 'Teaching Experience'
-    folder: 'src/teachingExperience'
-    media_folder: '/src/assets/images/teaching-experience'
-    public_folder: '/assets/images/teaching-experience'
-    create: true
-    identifier_field: title
-    slug: '{{title}}'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Rows', name: 'rows', widget: 'list', required: true, fields: [
-          { label: 'Year-Semester', name: 'yearSemester', widget: 'string', required: true },
-          { label: 'Course', name: 'course', widget: 'string', required: true },
-          { label: 'Role', name: 'role', widget: 'string', required: true },
-          { label: 'Number of Students', name: 'studentsAmount', widget: 'number', required: true }
-        ]
-      }
-      - { label: 'Year', name: 'year', widget: 'number', required: true }
-  - name: 'studentEvaluations'
-    label: 'Student Evaluations'
-    folder: 'src/studentEvaluations'
-    media_folder: '/src/assets/images/student-evaluations'
-    public_folder: '/assets/images/student-evaluations'
-    identifier_field: title
-    create: true
-    slug: '{{title}}'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
-  - name: 'transparencys'
-    label: 'Transparency Cards'
-    folder: 'src/transparencys'
-    media_folder: '/src/assets/images/transparencys'
-    public_folder: '/assets/images/transparencys'
-    create: true
-    identifier_field: title
-    slug: '{{title}}'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Year Range', name: 'yearRange', widget: 'string', required: true }
-      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
-  - name: "inthenews"
-    label: "In the News"
-    folder: "src/inthenews"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "newsTitle", widget: "string" }
-      - { label: "Outlet", name: "Outlet", widget: "string", required: true }
-      - { label: "Year", name: "tags", widget: "list", required: true }
-      - { label: "Semester", name: "newsDate", widget: "string" , required: true}
-      - { label: "Description", name: "newsDesc", widget: "text" }
-      - { label: "Link to article", name: "link", widget: "string", required: false }
-      - { label: "Document (PDF)", name: "document", widget: "file", required: false }
-      - {
-          label: "Images",
-          name: "images",
-          widget: "list",
-          field: { label: "Image", name: "", widget: "image" }
-        }
-  - name: "pages"
-    label: "Pages"
-    media_folder: '/src/assets/images'
-    public_folder: '/assets/images'
-    files:
-      - label: "Home Page"
-        name: "Home"
-        file: "src/_data/home.json"
-        fields:
-          - label: Title
-            name: title
-            widget: string
-          - label: sub title
-            name: subTitle
-            widget: string
-          - label: Description
-            name: description
-            widget: markdown
-          - label: Buttons
-            name: buttons
-            widget: list
-            fields:
-              - { label: 'Title', name: 'title', widget: 'string' }
-              - { label: 'Link', name: 'link', widget: 'string' }
-          - label: Background Images
-            name: backgroundImages
-            widget: list
-            fields:
-              - { label: 'Image', name: 'image', widget: 'image' }
-          - label: Cards
-            name: cards
-            widget: list
-            fields:
-              - { label: Image, name: image, widget: image }
-              - { label: 'Title', name: 'title', widget: 'string' }
-              - { label: 'Description', name: 'description', widget: 'markdown' }
