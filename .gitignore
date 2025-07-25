@@ -6,3 +6,4 @@ public
 .Rproj.user/*
 .Rhistory
 *.Rproj
+.DS_Store
