@@ -127,15 +127,15 @@ collections:
     identifier_field: socialName
     slug: '{{socialName}}'
     fields:
-      - { label: 'Name', name: 'socialName', widget: 'string', required: true }
-      - { label: 'Location', name: 'Location', widget: 'string', required: false }
-      - { label: 'Link', name: 'link', widget: 'string', required: false }
-      - { label: 'Semester', name: 'socialDate', widget: 'string', required: false }
-      - { label: 'Description', name: 'socialDesc', widget: 'string', required: false }
-      - { label: 'Year', name: 'tags', widget: 'list', required: true }
+      - { label: 'Name', name: 'publicationTitle', widget: 'string', required: true }
+      - { label: 'Location', name: 'Location', widget: 'string', required: true }
+      - { label: 'Year', name: 'publicationDate', widget: 'list', required: true }
+      - { label: 'Month', name: 'publicationMonth', widget: 'select', options: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], required: true }
+      - { label: 'Description', name: 'publicationAbstract', widget: 'string', required: false }
       - { label: 'Images', name: 'images', widget: 'list', required: false, field: { label: 'Image', name: 'image', widget: 'image' } }
-      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Tag', name: 'tags', widget: 'string', required: true }
+      - { label: 'Link', name: 'webLink', widget: 'string', required: false }
+      - { label: 'PDF', name: 'pdfDocument', widget: 'string', required: false }
   - name: 'news'
     label: 'News'
     folder: 'src/news'
