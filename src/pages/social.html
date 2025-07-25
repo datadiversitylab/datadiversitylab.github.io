@@ -105,8 +105,11 @@ eleventyNavigation:
                                   <img loading="lazy" decoding="async" src="{{ image }}" alt="Image {{ loop.index }}" width="522" height="370" class="enlargeable-image">
                               </picture>
                           {%- endfor -%}
-                          <button class="prev-btn">❮</button>
-                          <button class="next-btn">❯</button>
+                          {% if publication.data.images | length > 1 %}
+                              <button class="prev-btn">❮</button>
+                              <button class="next-btn">❯</button>
+                          {% endif %}
+
                       </div>
 
                         <div class="cs-flex-group">

@@ -124,11 +124,11 @@ collections:
     media_folder: '/src/assets/images/socials'
     public_folder: '/assets/images/socials'
     create: true
-    identifier_field: socialName
-    slug: '{{socialName}}'
+    identifier_field: publicationTitle
+    slug: '{{publicationTitle}}'
     fields:
       - { label: 'Name', name: 'publicationTitle', widget: 'string', required: true }
-      - { label: 'Location', name: 'Location', widget: 'string', required: true }
+      - { label: 'Location', name: 'Location', widget: 'string', required: false }
       - { label: 'Year', name: 'publicationDate', widget: 'list', required: true }
       - { label: 'Month', name: 'publicationMonth', widget: 'select', options: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], required: true }
       - { label: 'Description', name: 'publicationAbstract', widget: 'string', required: false }
