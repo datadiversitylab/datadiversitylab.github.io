@@ -1,6 +1,14 @@
 const searchInput = document.getElementById('search');
 const piOnlyCheckbox = document.getElementById('piOnlyCheckbox');
 
+piOnlyCheckbox.checked = false;
+piOnlyCheckbox.disabled = true;
+
+const checkboxContainer = document.querySelector('.cs-pi-only-checkbox');
+if (checkboxContainer) {
+    checkboxContainer.remove(); // removes the entire <div> and its contents
+}
+
 // Adjust selector to specifically target keyword and journal type filters
 const keywordFilterOptions = document.querySelectorAll('.cs-filter-keywords-wrapper .filter-option');
 const journalTypeFilterOptions = document.querySelectorAll('.cs-filter-journal-type-wrapper .filter-option');
