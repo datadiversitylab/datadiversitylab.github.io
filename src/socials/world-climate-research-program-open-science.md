@@ -1,10 +1,14 @@
 ---
-socialName: World Climate Research Program Open Science
-socialDate: Fall
-socialDesc: Dr. Román-Palacios presented along with members of Esperanza
+images:  
+ - /assets/images/socials/world-climate-research-programme-open-science.png
+publicationTitle: World Climate Research Program Open Science
+publicationMonth: Oct
+publicationAbstract: Dr. Román-Palacios presented along with members of Esperanza
   Community Housing on 'GIS and community health'.
-tags:
-  - "2023"
-images:
-  - /assets/images/socials/world-climate-research-programme-open-science.png
+publicationDate: '2023'
+publicationAuthor: NA
+publicationType: NA
+tags: Conference
 ---
+
+

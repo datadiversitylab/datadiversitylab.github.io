@@ -5,7 +5,7 @@ metaTitle: 'Social'
 tagTitle: 'Social'
 preloadImg: ''
 preloadCSS: '/css/social.css'
-preloadJS: '/js/scrollTo.js'
+preloadJS: '/js/social.js'
 permalink: 'social/'
 eleventyNavigation:
     key: Social
@@ -29,79 +29,192 @@ eleventyNavigation:
 
 <div aria-hidden="true" class="line"></div>
 
-<!-- ============================================ -->
-<!--                Social                      -->
-<!-- ============================================ -->
-{%- set years = [] -%}
-{%- for social in collections.socials | sort(attribute='data.order') -%}
-    {%- for tag in social.data.tags -%}
-        {%- if not years.includes(tag | string) and tag != "socials" -%}
-            {%- set years = years.concat(tag | string) -%}
-        {%- endif -%}
-    {%- endfor -%}
-{%- endfor -%}
 
-<section id="social-547">
+<!-- ============================================ -->
+<!--                Publications                      -->
+<!-- ============================================ -->
+
+{# Use the processedPublications1 collection #}
+{# Use the processedPublicationsJournalTypes1 collection #}
+
+<section id="publications-section">
     <div class="cs-container">
-        <div class="cs-content cs-sidebar">
-            <h6 class="cs-title">Years</h6>
-            <div class="cs-filter-wrapper cs-text">
-                {%- for year in years | sort(true) -%}
-                    <a href="#section{{ year }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ year }}</a>
-                {%- endfor -%}
+        <div class="cs-content cs-sidebar cs-filter-searchable">
+            <div class="cs-search-title-wrapper">
+                <h6 class="cs-title">Search</h6>
+                <div aria-hidden="true" class="line line-full"></div>
+                <div class="cs-search-wrapper">
+                    <input type="text" id="search" class="cs-search" placeholder="Title or Author">
+                    <img src="../assets/icons/order-desc.svg" class="order-by-button" alt="order by" width="25" height="25">
+                </div>
+                <div class="cs-pi-only-checkbox">
+                    <input id="piOnlyCheckbox" type="checkbox"><label for="piOnlyCheckbox">PI author</label>
+                </div>
+            </div>
+            <div class="cs-filter-button-wrapper">
+                <div class="cs-add-filter-wrapper">
+                    <h6 class="cs-title">Add filters</h6>
+                    <img src="../assets/icons/plus.svg" class="plus-button" alt="filter" width="25" height="25">
+                </div>
+
+                <div class="cs-filter-year-wrapper">
+                    <h6 class="cs-title">Year</h6>
+                    <div aria-hidden="true" class="line line-full"></div>
+                    <div class="cs-start-end-wrapper">
+                        <input type="text" id="startYear" placeholder="Start Year">
+                        <input type="text" id="endYear" placeholder="End Year">
+                    </div>
+                </div>
+
+                <div class="cs-filter-keywords-wrapper">
+                    <h6 class="cs-title">Tag</h6>
+                    <div aria-hidden="true" class="line line-full"></div>
+                    <div class="cs-filter-wrapper cs-text">
+                        <div data-filter="all" class="active filter-option">All ({{ collections.processedPublications1["socials"] }})</div>
+                        {% for keyword, count in collections.processedPublications1 %}
+                            {% if keyword != 'socials' %}
+                                <div data-filter="{{ keyword }}" class="filter-option">{{ keyword }} ({{ count }})</div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="cs-filter-journal-type-wrapper">
+                    <h6 class="cs-title">~</h6>
+                    <div aria-hidden="true" class="line line-full"></div>
+                    <div class="cs-filter-wrapper cs-text">
+                        <div data-filter="all" class="active filter-option">All ({{ collections.processedPublications1["socials"] }})</div>
+                        {% set sortedPublications = collections.processedPublicationsJournalTypes1 | dictsort %}
+                        {% for item in sortedPublications %}
+                            <div data-filter="{{ item[0] }}" class="filter-option">{{ item[0] }} ({{ item[1] }})</div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
         <div class="cs-title-card-wrapper">
-            {%- for year in years | sort(true) -%}
-                <h3 class="cs-title">{{ year }}</h3>
-                <div id="section{{ year }}" class="cs-card-group">
-                    {%- for social in collections.socials | sort(attribute='data.order') -%}
-                        {%- if social.data.tags.includes(year) -%}
-                            <div class="cs-item">
-                                <div class="cs-gallery">
-                                    {%- for image in social.data.images -%}
-                                        <picture class="cs-slide">
-                                            <img loading="lazy" decoding="async" src="{{ image }}" alt="{{ social.data.imageAlt }}" width="522" height="370" class="enlargeable-image">
-                                        </picture>
-                                    {%- endfor -%}
-                                    <button class="prev-btn">❮</button>
-                                    <button class="next-btn">❯</button>
-                                </div>
-                                <div class="cs-flex-group">
-                                    <div aria-hidden="true" class="line line-full card-image-line"></div>
-                                    <span class="cs-name">{{ social.data.socialName }}</span>
-                                    <span class="cs-timeline">{{ social.data.socialDate }}</span>
-                                    <span class="cs-timeline">{{ social.data.Location }}</span>
-                                    <span class="cs-desc">
-                                        <span class="read-more-text">{{ social.data.socialDesc }}</span>
-                                        <span class="read-more-btn">...read more</span>
-                                    </span>
+            <div class="cs-card-group">
+                {%- for publication in collections.socials | sort(attribute='data.order') -%}
+                    <div class="cs-item">
+                           
+                        <div class="cs-gallery">
+                          {%- for image in publication.data.images -%}
+                              <picture class="cs-slide">
+                                  <source media="(max-width: 600px)" srcset="{{ image }}">
+                                  <source media="(min-width: 601px)" srcset="{{ image }}">
+                                  <img loading="lazy" decoding="async" src="{{ image }}" alt="Image {{ loop.index }}" width="522" height="370" class="enlargeable-image">
+                              </picture>
+                          {%- endfor -%}
+                          <button class="prev-btn">❮</button>
+                          <button class="next-btn">❯</button>
+                      </div>
 
-                                    {%- if social.data.link or social.data.document -%}
-                                        <div aria-hidden="true" class="line line-full"></div>
-                                        <div class="cs-item-social">
-                                            {%- set socials = [{'platform': 'link', 'icon': 'link.svg'}, {'platform': 'document', 'icon': 'pdf.svg'}] -%}
-                                                {%- for item in socials -%}
-                                                    {%- if social.data[item.platform] -%}
-                                                        <a href="{{ social.data[item.platform] }}" target="_blank">
-                                                            <img src="../assets/icons/{{ item.icon }}" alt="{{ item.platform }}" width="30" height="30" decoding="async" aria-hidden="true">
-                                                        </a>
-                                                    {%- endif -%}
-                                                {%- endfor -%}
-
-                                        </div>
+                        <div class="cs-flex-group">
+                            <div aria-hidden="true" class="line line-full card-image-line"></div>
+                            <span class="cs-name">{{ publication.data.publicationTitle | markdown | safe }}</span>
+                            <span>
+                                {%- if publication.data.publicationMonth -%}
+                                    <span class="cs-publication-month">{{ publication.data.publicationMonth }}</span>
+                                    <span> </span>
+                                {%- endif -%}
+                                <span class="cs-publication-year">{{ publication.data.publicationDate }}</span>
+                            </span>
+                            </span>
+                            <span class="cs-timeline">{{ publication.data.Location }}</span>
+                            <span class="cs-desc">
+                                <div class="read-more-text">{{ publication.data.publicationAbstract | markdown | safe }}</div>
+                                <span class="read-more-btn">...read more</span>
+                            </span>
+                            <div aria-hidden="true" class="line line-full"></div>
+                            <div class="cs-item-filters">
+                                {%- for filter in publication.data.tags -%}
+                                    {%- if filter != 'socials' -%}
+                                        <div class="cs-filter">{{ filter }}</div>
                                     {%- endif -%}
-
-                                </div>
+                                {%- endfor -%}
                             </div>
-                        {%- endif -%}
-                    {%- endfor -%}
-                </div>
-            {%- endfor -%}
+                            {%- if publication.data.pdfLink or publication.data.webLink or publication.data.pdfDocument -%}
+                                <div aria-hidden="true" class="line line-full"></div>
+                                <div class="cs-item-social">
+                                    {%- set socials = [ {'platform': 'pdfLink', 'icon': 'pdf.svg'}, {'platform': 'pdfDocument', 'icon': 'pdf.svg'}, {'platform': 'webLink', 'icon': 'link.svg'}] -%}
+                                    {%- for social in socials -%}
+                                        {%- if publication.data[social.platform] -%}
+                                            <a href="{{ publication.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                </div>
+                            {%- endif -%}
+                        </div>
+                    </div>
+                {%- endfor -%}
+            </div>
         </div>
 
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const freq = {}, yearsSet = new Set(), topicsSet = new Set();
+
+  document.querySelectorAll('#publications-section .cs-item').forEach(item => {
+    const year = item.querySelector('.cs-publication-year')?.textContent.trim();
+    if(!year) return;
+    yearsSet.add(year);
+    item.querySelectorAll('.cs-item-filters .cs-filter').forEach(f => {
+      const kw = f.textContent.trim();
+      topicsSet.add(kw);
+      freq[year] = freq[year] || {};
+      freq[year][kw] = (freq[year][kw]||0) + 1;
+    });
+  });
+
+  const years = Array.from(yearsSet)
+    .map(y => parseInt(y,10)).sort((a,b)=>b-a).map(String);
+
+  const totalByTopic = {};
+  topicsSet.forEach(kw => {
+    totalByTopic[kw] = years.reduce((sum, yr) => sum + (freq[yr]?.[kw]||0), 0);
+  });
+  const topics = Array.from(topicsSet)
+    .sort((a,b) => totalByTopic[b] - totalByTopic[a]);
+
+  const nodeLabels = years.concat(topics);
+  const source = [], target = [], value = [];
+
+  years.forEach((yr,i) => {
+    topics.forEach((kw,j) => {
+      const v = freq[yr]?.[kw]||0;
+      if(v>0){
+        source.push(i);
+        target.push(years.length + j);
+        value.push(v);
+      }
+    });
+  });
+
+  Plotly.newPlot('sankeyPlot',[{
+    type:'sankey',
+    orientation:'v',  // ← vertical!
+    node:{
+      label: nodeLabels,
+      pad: 15,
+      thickness: 20,
+      line: { color:'#888', width:0.5 }
+    },
+    link: {
+      source, target, value,
+      hoverlabel: { namelength: -1 }
+    }
+  }], {
+    margin:{ t:20, b:20, l:20, r:20 },
+    font:{ size:12 }
+
+  });
+});
+</script>
+
+
 
 <!-- Image modal: hidden by default -->
 <div id="image-modal">
@@ -141,6 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {

@@ -1,10 +1,15 @@
 ---
-socialName: Universidad del Valle, Cali, Colombia
-socialDate: Summer
-socialDesc: Dr. Román-Palacios gave a talk on his PhD research at Universidad
+images:   
+ - /assets/images/socials/universidad-del-valle-cali-colombia.png
+publicationTitle: Universidad del Valle, Cali, Colombia
+publicationMonth: Jun
+publicationAbstract: Dr. Román-Palacios gave a talk on his PhD research at Universidad
   del Valle, Colombia.
-tags:
-  - "2019"
-images:
-  - /assets/images/socials/universidad-del-valle-cali-colombia.png
+publicationDate: '2019'
+publicationAuthor: NA
+publicationType: NA
+tags: Talk
+---
+
+NA
 ---

@@ -133,10 +133,38 @@ module.exports = function (eleventyConfig) {
     // Return the tag counts for use in templates
     return tagCounts;
   });
+  
+  eleventyConfig.addCollection("processedPublications1", function(collection) {
+    let tagCounts = {};
+    const publications = collection.getFilteredByGlob("./src/socials/*.md");
+
+    // Count occurrences of each tag
+    publications.forEach(pub => {
+      (pub.data.tags || []).forEach(tag => {
+        tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+      });
+    });
+
+    // Return the tag counts for use in templates
+    return tagCounts;
+  });
 
   eleventyConfig.addCollection("processedPublicationsJournalTypes", function(collection) {
     let journalTypes = {};
     const publications = collection.getFilteredByGlob("./src/publications/*.md");
+
+    // Count occurrences of each tag
+    publications.forEach(pub => {
+      journalTypes[pub.data.publicationType] = (journalTypes[pub.data.publicationType] || 0) + 1;
+    });
+
+    // Return the tag counts for use in templates
+    return journalTypes;
+  });
+
+  eleventyConfig.addCollection("processedPublicationsJournalTypes1", function(collection) {
+    let journalTypes = {};
+    const publications = collection.getFilteredByGlob("./src/socials/*.md");
 
     // Count occurrences of each tag
     publications.forEach(pub => {

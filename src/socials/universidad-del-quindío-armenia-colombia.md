@@ -1,10 +1,15 @@
 ---
-socialName: Universidad del Quindío, Armenia, Colombia
-socialDate: Summer
-socialDesc: Dr. Román-Palacios gave a talk on his PhD research at Universidad
+images:   
+ - /assets/images/socials/universidad-del-quindío-armenia-colombia.png
+publicationTitle: Universidad del Quindío, Armenia, Colombia
+publicationMonth: Jun
+publicationAbstract: Dr. Román-Palacios gave a talk on his PhD research at Universidad
   del Quindío, Colombia.
-tags:
-  - "2019"
-images:
-  - /assets/images/socials/universidad-del-quindío-armenia-colombia.png
+publicationDate: '2019'
+publicationAuthor: NA
+publicationType: NA
+tags: Talk
+---
+
+NA
 ---
