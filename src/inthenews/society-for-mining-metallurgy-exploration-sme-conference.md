@@ -1,15 +1,18 @@
 ---
-newsTitle: Society for Mining, Metallurgy & Exploration (SME) conference
-newsDate: Spring
-newsDesc: Jiayue He (pictured 3rd from the left) attended the 2024 Society for
-  Mining, Metallurgy & Exploration conference. The SME Annual Conference & Expo
-  is widely recognized as the most distinguished forum for the publication of
-  multidisciplinary mining research.
-Outlet:
+newsTitle: Climate change may doom 1 in 3 species of plants and animals in the
+  next 50 years
+Outlet: CNN
 tags:
-  - "2024"
+  - "2020"
+newsDate: Spring
+newsDesc: Using data from surveys that studied 538 animals, insects and plants
+  from 581 sites across the globe, researchers John J. Wiens and Cristian
+  Román-Palacios from the University of Arizona found that approximately one in
+  three plant, insect and animal species could face extinction by 2070. However,
+  things could be even worse if emissions continue to rise as rapidly as they
+  have in recent decades.
+link: https://edition.cnn.com/2020/02/21/weather/species-extinction-climate-trnd/index.html
+document: ""
 images:
-  - /assets/images/socials/society-for-mining-metallurgy-exploration-sme-conference.jpg
-link: https://www.nature.com/articles/s41597-025-05315-y
-document: /assets/documents/publications/basavaetal2025.pdf
+  - /assets/images/uploads/screenshot-2025-07-26-at-7.41.47 am.png
 ---
