@@ -1,14 +1,15 @@
 ---
-newsTitle: Freshwater habitats are fragile pockets of exceptional biodiversity,
-  study finds
+newsTitle: "The Paleozoic Diet: Why Animals Eat What They Eat"
 Outlet: University of Arizona News
 tags:
-  - "2022"
-newsDate: Spring
+  - "2019"
+newsDate: Fall
 newsDesc: >
-  While much research has focused on the striking differences in biodiversity
-  between tropical and temperate regions, another, equally dramatic, pattern has
-  gone largely unstudied: the differences in species richness among Earth's
-  three major habitat types – land, oceans and freshwater.
-link: https://news.arizona.edu/news/freshwater-habitats-are-fragile-pockets-exceptional-biodiversity-study-finds
+  What an animal eats is a fundamental aspect of its biology, but surprisingly,
+  the evolution of diet had not been studied across the animal kingdom until
+  now. Scientists at the University of Arizona report several unexpected
+  findings from taking a deep dive into the evolutionary history of more than
+  one million animal species and going back 800 million years, when the first
+  animals appeared on our planet.
+link: https://news.arizona.edu/news/paleozoic-diet-why-animals-eat-what-they-eat
 ---
