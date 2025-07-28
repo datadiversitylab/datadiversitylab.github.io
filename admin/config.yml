@@ -26,7 +26,7 @@ collections:
       - { label: 'Member Name', name: 'memberName', widget: 'string', required: true }
       - { label: 'Member title in the lab (current and former members)', name: 'memberTitle', widget: 'select', required: true, options: ['Intern', 'MS advising team', 'MSc capstone student', 'PhD student', 'PI', 'Postdoc', Staff, 'Undergraduate student', 'VIP student'], multiple: true }
       - { label: 'Alumni current position (former member)', name: 'currentPosition', widget: 'string', required: false }
-      - { label: 'Member Date Start', name: 'memberDate', widget: 'string', required: true }
+      - { label: 'Member Date Start', name: 'memberDate', widget: 'string', required: false }
       - { label: 'Member Date End', name: 'memberDateEnd', widget: 'string', required: false }
       - { label: 'Member Bio', name: 'memberBio', widget: 'string', required: true }
       - { label: 'Role in the lab (tags)', name: 'tags', widget: 'select', default: ['Current'], required: true, options: ['Current', 'Former', 'Intern', 'MS advising team', 'MSc capstone student', 'PhD student', 'PI', 'Postdoc', Staff, 'Undergraduate student', 'VIP student'], multiple: true}
