@@ -1,5 +1,7 @@
 ---
 Name: Enhanced Personal Protective Equipment Detection (UI)
+authors:
+  - Jiayue He
 Description: Enhannced PPE2 is a Human-Machine Interface (HMI) tailored for
   real-time object detection, with a specific focus on hard hat compliance
   monitoring in industrial settings. Although this project is tailored for hard
