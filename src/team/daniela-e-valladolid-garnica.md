@@ -1,7 +1,8 @@
 ---
 memberName: Daniela E. Valladolid-Garnica
-memberTitle: Research Data Support Specialist II
-memberEducation: PhD
+memberTitle:
+  - Research Data Support Specialist II
+currentPosition: Laboratory QA/QC Chemist at RWRD
 memberDate: 2023
 memberDateEnd: null
 memberBio: Daniela’s project seeks to understand the effects of climate-related
@@ -15,8 +16,9 @@ tags:
   - Intern
 linkedin: null
 email: valladolid@arizona.edu,valladolid@comunidad.unam.mx
-link: https://www.researchgate.net/profile/Daniela-Valladolid-Garnica
 resume: null
+memberEducation: PhD
+link: https://www.researchgate.net/profile/Daniela-Valladolid-Garnica
 image: /assets/images/our-team/daniela-e-valladolid-garnica.png
 imageAlt: Portrait of Daniela E Valladolid-Garnica
 order: 110
