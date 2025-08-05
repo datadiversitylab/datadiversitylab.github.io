@@ -1,7 +1,6 @@
 ---
-newsTitle: "A third of the world’s plant and animal species could be gone in 50
-  years, study says  Read more at:
-  https://www.sacbee.com/news/nation-world/article240239806.html#storylink=cpy"
+newsTitle: A third of the world’s plant and animal species could be gone in 50
+  years, study says
 Outlet: The Sacramento Bee
 tags:
   - "2020"
