@@ -1,8 +1,6 @@
 ---
-newsTitle: "A third of the world’s plant and animal species could be gone in 50
-  years, study says  Read more at:
-  https://www.charlotteobserver.com/news/nation-world/national/article240239806\
-  .html#storylink=cpy"
+newsTitle: A third of the world’s plant and animal species could be gone in 50
+  years, study says
 Outlet: The Charlotte Observer
 tags:
   - "2020"
