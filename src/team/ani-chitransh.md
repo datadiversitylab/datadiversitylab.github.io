@@ -1,6 +1,8 @@
 ---
 memberName: Ani Chitransh
-memberTitle: MSc student
+memberTitle:
+  - MSc student
+currentPosition: ""
 memberDate: 2024
 memberDateEnd: "2024"
 memberBio: "Ani is a graduate student working towards her capstone. Ani’s
@@ -21,5 +23,4 @@ image: /assets/images/our-team/dscf8655-fotor-202404261639_head.jpg
 imageAlt: Portrait of Ani Chitransh
 order: 8
 date: 2024-03-09T08:03:44.405Z
-currentPosition: TestPosition
 ---
