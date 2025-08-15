@@ -1,7 +1,7 @@
 ---
 memberName: Cristian Román-Palacios
-memberTitle: Principal Investigator, Assistant Professor
-memberEducation: PhD
+memberTitle:
+  - Principal Investigator, Assistant Professor
 memberDate: null
 memberDateEnd: ""
 memberBio: Assistant Professor at the School of Information, UArizona and Early
@@ -17,7 +17,8 @@ linkedin: https://www.linkedin.com/in/cromanpa/
 email: cromanpa@arizona.edu
 github: cromanpa94
 link: https://cromanpa94.github.io/
-resume: /assets/documents/our-team/cv_cristian_roman_palacios-2.pdf
+resume: /assets/documents/our-team/cv_cristian_roman_palacios_su25.pdf
+memberEducation: PhD
 image: /assets/images/our-team/cristian-roman-palacios.png
 imageAlt: Portrait of Cristian Román-Palacios
 order: 1
