@@ -1,7 +1,14 @@
 ---
 grantName: "NRT-HDR: CAMBIUM - Climate Change Adaptation and Mitigation through
   Biodiversity Informatics Education and Mentoring"
-grantAmount: $250
+grantYears: 2021-2026
+pi: "Mike Barker "
+copi:
+  - Brian Enquist
+  - Kacey Ernst
+  - Aaron Lien
+  - Channah Rock
+grantAmount: ~$2,800,000
 grantDesc: "As the Intergovernmental Science-Policy Platform on Biodiversity and
   Ecosystem Services (IPBES) makes clear, Earth is at a biodiversity tipping
   point, with over one-million species threatened with extinction. A major
