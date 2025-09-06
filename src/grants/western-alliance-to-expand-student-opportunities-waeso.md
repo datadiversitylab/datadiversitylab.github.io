@@ -1,5 +1,9 @@
 ---
-grantName: Western Alliance to Expand Student Opportunities (WAESO)
+grantName: "WAESO: Historical Biogeography and Extinction Risk Assessment of
+  Recently Extinct Animals"
+subawardAmount: ""
+grantYears: "2024"
+pi: Cristian Román-Palacios
 grantAmount: $3,000
 grantDesc: The WAESO grant funded a project that will allow for the
   visualization and reconstruction of historical landscapes and ranges of
