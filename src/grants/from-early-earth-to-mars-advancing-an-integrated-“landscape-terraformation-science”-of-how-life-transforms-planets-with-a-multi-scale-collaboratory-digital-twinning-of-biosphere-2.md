@@ -3,7 +3,11 @@ grantName: "From early Earth to Mars: Advancing an integrated “Landscape
   Terraformation science” of how life transforms planets with a multi-scale
   collaboratory digital twinning of Biosphere 2"
 grantYears: "2025"
-pi: Cristian Román-Palacios
+pi: Scott Saleska
+copi:
+  - Cristian Román-Palacios
+  - Solange Duhamel
+  - Jennifer Croissant
 grantAmount: $250,000
 grantDesc: Our grand challenge is to solve global problems with a unified
   science of biological Landscape Terraformation, a science inspired by the
