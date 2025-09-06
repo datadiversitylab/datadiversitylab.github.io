@@ -1,5 +1,7 @@
 ---
 grantName: "Faculty Seed Grant: Macroevolution of Lifespans Across Animals"
+grantYears: "2024"
+pi: Cristian Román-Palacios
 grantAmount: $15,000
 grantDesc: Decades of research have uncovered extensive variation in lifespans
   across the tree of life, yet the degree of variability in aging across
