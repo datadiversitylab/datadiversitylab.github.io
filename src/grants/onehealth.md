@@ -1,6 +1,8 @@
 ---
 grantName: OneHealth
-grantAmount: $50,000 (2023)
+grantYears: "2023"
+pi: Cristian Román-Palacios
+grantAmount: $50,000
 grantDesc: "UA’s OneHealth initiative pilot grant aimed at examining spatial and
   temporal patterns of power outages in the US. Ultimately, this project focused
   on testing the role of power outages across in the US in health-related
