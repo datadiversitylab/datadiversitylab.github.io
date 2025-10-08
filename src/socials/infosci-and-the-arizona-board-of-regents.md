@@ -1,6 +1,7 @@
 ---
 publicationType: NA
 publicationTitle: InfoSci and the Arizona Board of Regents
+Location: Tucson, Arizona
 publicationDate: "2024"
 publicationMonth: Sep
 publicationAbstract: Paige Cherry, an undergraduate student in the lab,
