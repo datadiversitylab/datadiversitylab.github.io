@@ -1,15 +1,16 @@
 ---
-images: 
- - /assets/images/socials/info-sci-halloween-party.jpg
-order: 3
-publicationTitle: InfoSci Halloween Party
-publicationMonth: Oct
-publicationAbstract: Kristen Martinet (front row, left), Postdoc in our lab celebrated
-  the Halloween Holiday by dressing up and getting together for the College of Information
-  Science Halloween party.
-publicationDate: '2024'
-publicationAuthor: NA
 publicationType: NA
+publicationTitle: InfoSci Halloween Party
+publicationDate: "2024"
+publicationAbstract: Kristen Martinet (front row, left), Postdoc in our lab
+  celebrated the Halloween holiday by dressing up and getting together with
+  other UA InfoSci members for the College of Information Science Halloween
+  party.
+order: 3
+publicationMonth: Oct
+publicationAuthor: NA
+images:
+  - /assets/images/socials/info-sci-halloween-party.jpg
 tags: Social
 ---
 
