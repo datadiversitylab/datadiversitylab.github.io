@@ -1,6 +1,6 @@
 ---
 publicationTitle: DDL Lab Mt. Lemmon Adventure
-Location: Mt. Lemmon
+Location: Mt. Lemmon, Arizona
 publicationDate:
   - "2025"
 publicationMonth: Sep
