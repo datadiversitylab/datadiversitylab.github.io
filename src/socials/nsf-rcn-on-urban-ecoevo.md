@@ -1,7 +1,7 @@
 ---
 publicationType: NA
 publicationTitle: NSF RCN on Urban EcoEvo
-Location: Seattle
+Location: Seattle, Washington
 publicationDate: "2024"
 publicationMonth: Oct
 publicationAbstract: Dr. Román-Palacios attended the Urban Eco-Evol and
