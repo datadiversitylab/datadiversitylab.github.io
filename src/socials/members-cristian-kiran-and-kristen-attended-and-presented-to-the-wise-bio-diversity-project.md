@@ -2,6 +2,7 @@
 publicationType: NA
 publicationTitle: Members, Cristian, Kiran, and Kristen Attended and Presented
   to the WISE Bio/Diversity Project
+Location: Tucson
 publicationDate: "2024"
 publicationMonth: Oct
 publicationAbstract: WISE, the Women in Science and Engineering program granted
