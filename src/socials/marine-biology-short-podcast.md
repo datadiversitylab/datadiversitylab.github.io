@@ -1,6 +1,6 @@
 ---
 publicationType: NA
-publicationTitle: Marine Biology short podcast
+publicationTitle: Cristian Román-Palacios on Marine Biology Podcast
 Location: Online Podcast
 publicationDate: "2020"
 publicationMonth: Oct
