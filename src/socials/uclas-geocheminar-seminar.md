@@ -1,8 +1,9 @@
 ---
 publicationType: NA
 publicationTitle: UCLA's Geocheminar Seminar
+Location: ""
 publicationDate: "2025"
-publicationMonth: Feb
+publicationMonth: Jan
 publicationAbstract: Dr. Román-Palacios presented at UCLA's Geocheminar seminar
   on Thursday Jan 23, 2025. His talk, “Integrating Bayesian, machine learning,
   and collaborative computing methods for geochemistry and other applications”,
