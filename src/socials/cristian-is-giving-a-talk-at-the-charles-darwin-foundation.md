@@ -1,7 +1,7 @@
 ---
 publicationType: NA
 publicationTitle: Cristiam Román-Palacios - Talk at the Charles Darwin Foundation
-Location: Galapagos Islands
+Location: "Galapagos Islands, Ecuador "
 publicationDate: "2025"
 publicationMonth: Apr
 publicationAbstract: "Our PI, Cristian Román-Palacios was asked to give a talk
