@@ -1,6 +1,6 @@
 ---
 publicationTitle: Cristian's talk at the Ecological Society of America Conference (ESA 2025)
-Location: "Baltimore "
+Location: Baltimore, Maryland
 publicationDate:
   - "2025"
 publicationMonth: Aug
