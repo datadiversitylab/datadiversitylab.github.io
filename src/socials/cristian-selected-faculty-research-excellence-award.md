@@ -1,6 +1,7 @@
 ---
 publicationType: NA
 publicationTitle: Cristian Román-Palacios Selected for UA Faculty Research Excellence Award
+Location: Tucson, Arizona
 publicationDate: "2025"
 publicationMonth: Apr
 publicationAbstract: Cristian received a much deserving recognition award for
