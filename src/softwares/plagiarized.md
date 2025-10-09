@@ -8,5 +8,6 @@ Description: This is a basic shiny dashboard to perform pairwise comparison of
 tags:
   - Web applications
 github: https://github.com/datadiversitylab/plagiaRized
+link: https://viz.datascience.arizona.edu/plagiarized/
 image: /assets/images/softwares/screenshot-2024-06-27-at-8.51.02-am.png
 ---
