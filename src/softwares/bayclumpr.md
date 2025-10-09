@@ -13,6 +13,6 @@ Description: bayclumpr is a self-contained R package that supports the use of
 tags:
   - R packages
 github: https://github.com/Tripati-Lab/bayclumpr
-link: ""
+link: https://tripati-lab.github.io/bayclumpr/
 image: /assets/images/softwares/logobayclumpr.png
 ---
