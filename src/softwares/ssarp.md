@@ -11,6 +11,7 @@ Description: "`ssarp` (Species-/Speciation-Area Relationship Projector) is an R
   occurrence data."
 tags:
   - R packages
+github: https://github.com/ropensci/ssarp
 link: https://docs.ropensci.org/ssarp/
 image: /assets/images/softwares/screenshot-2025-10-02-at-9.09.11 am.png
 ---
