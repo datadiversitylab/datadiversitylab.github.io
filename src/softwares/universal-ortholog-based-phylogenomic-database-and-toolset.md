@@ -17,6 +17,7 @@ Description: >-
   * Analyze patterns of genome evolution during the process of adaptation, speciation, diversification and domestication
 tags:
   - Web applications
+github: https://github.com/DeadlineWasYesterday/phyca/
 link: http://www.phyca.org/index.html
 image: /assets/images/softwares/universal-ortholog.png
 ---
