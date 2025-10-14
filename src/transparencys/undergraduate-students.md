@@ -1,7 +1,6 @@
 ---
 title: Undergraduate students (FWS)
-yearRange: 2023-2024
+yearRange: Last updated October, 2025
 order: 4
 ---
-
-$14.50 - $22.50/Hour
+Starts at $19/Hour
