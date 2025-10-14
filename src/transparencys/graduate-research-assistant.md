@@ -1,6 +1,6 @@
 ---
 title: Graduate research assistant (GRA) MsC & PhD
-yearRange: 2023-2024
+yearRange: Last updated October, 2025
 order: 3
 ---
 $43,500 - $44,500/Year - 1.0FTE
