@@ -1,7 +1,7 @@
 ---
 publicationType: NA
 publicationTitle: UCLA's Geocheminar Seminar
-Location: ""
+Location: Los Angeles, California
 publicationDate: "2025"
 publicationMonth: Jan
 publicationAbstract: Dr. Román-Palacios presented at UCLA's Geocheminar seminar
