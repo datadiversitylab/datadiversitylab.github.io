@@ -11,4 +11,4 @@ order: 3
 * Danielle van Boxel, PhD candidate at the Applied Math department and who I co-advice, passed her COMPS and is moving forward with BARN/BARM!
 * Lia Ossana, PhD at the School of Natural Resources, passed her COMPS!
 * Reza Ehsani defended at the end of the semester, obtained his Ms in Data Science at the iSchool, and moved to San Francisco to start a Data Science position at Zipline.
-* Laura Falk (got married yay!! and changed her last name) completed her MsC in Data Science at the iSchool and presented at the Santa Cruz River Research Days. Check out her capstone project here.
+* Laura Falk (got married yay!! and changed her last name) completed her MsC in Data Science at the iSchool and presented at the Santa Cruz River Research Days.
