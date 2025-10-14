@@ -5,7 +5,7 @@ pi: Cristian Román-Palacios
 copi:
   - Kiran Basava
 grantAmount: $15,000
-grantDesc: . Decades of research have uncovered extensive variation in lifespans
+grantDesc: Decades of research have uncovered extensive variation in lifespans
   across the tree of life, yet the degree of variability in aging across
   organisms remains largely unquantified (Medawar, 1952). Similarly, there has
   not been a comprehensive analysis of the drivers of such variation across
