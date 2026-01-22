@@ -18,7 +18,7 @@ publicationAbstract: Machine learning is a robust framework to analyze questions
   intersection can be further enhanced through collaboration and innovation on
   parallelization, interpretability, and preprocessing.
 tags:
-  - Data Science
+  - Data science
   - Ecology
 image: /assets/images/publications/machine-learning-publication.png
 pdfDocument: /assets/documents/publications/alam_etal_2025_bmc.pdf
