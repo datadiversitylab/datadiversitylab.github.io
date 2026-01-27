@@ -12,7 +12,7 @@ newsDesc: Using data from surveys that studied 538 animals, insects and plants
   things could be even worse if emissions continue to rise as rapidly as they
   have in recent decades.
 link: https://edition.cnn.com/2020/02/21/weather/species-extinction-climate-trnd/index.html
-document: ""
+document: /assets/images/uploads/cnn-climate-change.pdf
 images:
   - /assets/images/uploads/screenshot-2025-07-26-at-7.41.47 am.png
 ---
