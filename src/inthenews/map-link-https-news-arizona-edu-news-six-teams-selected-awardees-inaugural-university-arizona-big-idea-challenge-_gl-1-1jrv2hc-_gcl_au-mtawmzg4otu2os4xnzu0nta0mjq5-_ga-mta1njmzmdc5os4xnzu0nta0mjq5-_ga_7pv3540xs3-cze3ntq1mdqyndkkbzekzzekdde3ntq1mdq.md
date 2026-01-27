@@ -13,4 +13,5 @@ link: https://news.arizona.edu/news/six-teams-selected-awardees-inaugural-univer
 document: /assets/images/uploads/six-teams-selected-as-awardees-of-the-inaugural-university-of-arizona-big-idea-challenge-_-university-of-arizona-news.pdf
 images:
   - /assets/images/uploads/bic-pitch_0004-web.jpg.webp
+  - /assets/images/uploads/6teams.png
 ---
