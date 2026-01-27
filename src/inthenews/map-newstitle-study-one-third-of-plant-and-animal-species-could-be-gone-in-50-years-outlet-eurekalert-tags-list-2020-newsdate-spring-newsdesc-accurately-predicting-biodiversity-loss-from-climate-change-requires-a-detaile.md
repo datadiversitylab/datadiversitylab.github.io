@@ -14,6 +14,7 @@ newsDesc: Accurately predicting biodiversity loss from climate change requires a
   face extinction. Their results are based on data from hundreds of plant and
   animal species surveyed around the globe.
 link: https://www.eurekalert.org/news-releases/850063
+document: /assets/images/uploads/eurekalert.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-10.23.44 am.png
 ---
