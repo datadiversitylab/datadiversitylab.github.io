@@ -15,6 +15,7 @@ newsDesc: ' In 50 years, Billie Eilish will be turning 69 years old, technology
   "larger and faster changes in hottest yearly temperatures than those
   without."'
 link: https://www.cbsnews.com/news/climate-change-may-eradicate-one-third-of-animal-and-plant-species-in-50-years/
+document: /assets/images/uploads/cbs-climate-change.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-11.02.45 am.png
 ---
