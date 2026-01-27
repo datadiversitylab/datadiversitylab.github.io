@@ -16,6 +16,7 @@ newsDesc: >+
   civilization and, yes, figured out what's up with all those crane flies.
 
 link: https://news.arizona.edu/news/covid-19-asteroid-dust-and-crane-flies-uarizonas-top-stories-2020
+document: /assets/images/uploads/covid-19-asteroid-dust-and-crane-flies_-uarizona-s-top-stories-of-2020-_-university-of-arizona-news.pdf
 images:
   - /assets/images/uploads/covid-uofa.webp
 ---
