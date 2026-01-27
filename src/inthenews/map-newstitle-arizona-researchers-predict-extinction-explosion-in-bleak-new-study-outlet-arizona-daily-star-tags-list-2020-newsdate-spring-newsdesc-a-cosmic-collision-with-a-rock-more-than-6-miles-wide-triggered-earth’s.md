@@ -12,6 +12,7 @@ newsDesc: A cosmic collision with a rock more than 6 miles wide triggered
   50 years, according to a new study by researchers at the University of
   Arizona.
 link: https://tucson.com/news/local/arizona-researchers-predict-extinction-explosion-in-bleak-new-study/article_cb9db6d2-dbef-542e-9a76-9de794b59003.html
+document: /assets/images/uploads/arizona-researchers-predict-extinction-explosion-in-bleak-new-study.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-10.58.45 am.png
 ---
