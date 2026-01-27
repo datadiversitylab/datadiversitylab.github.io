@@ -15,6 +15,7 @@ newsDesc: A new study led by ecologists at the University of Arizona reveals the
   Biology in the College of Science. It was co-authored by Daniela Moraga-López,
   a doctoral student at Pontificia Universidad Católica in Santiago, Chile.
 link: https://news.arizona.edu/news/freshwater-habitats-are-fragile-pockets-exceptional-biodiversity-study-finds
+document: /assets/images/uploads/freshwater-habitats-are-fragile-pockets-of-exceptional-biodiversity-study-finds-_-university-of-arizona-news.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-04-at-11.57.18 am.png
 ---
