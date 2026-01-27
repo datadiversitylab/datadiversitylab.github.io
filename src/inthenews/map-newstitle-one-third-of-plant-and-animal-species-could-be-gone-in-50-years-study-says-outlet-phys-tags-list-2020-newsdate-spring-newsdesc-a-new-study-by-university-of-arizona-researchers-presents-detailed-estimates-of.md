@@ -12,6 +12,7 @@ newsDesc: A new study by University of Arizona researchers presents detailed
   based on data from hundreds of plant and animal species surveyed around the
   globe.
 link: https://phys.org/news/2020-02-one-third-animal-species-years.html#google_vignette
+document: /assets/images/uploads/2020-02-one-third-animal-species-years.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-10.28.54 am.png
 ---
