@@ -10,6 +10,7 @@ newsDesc: One-third of all plant and animal species on Earth could face
   of Arizona predicts that one in three species of plants and animals could face
   extinction by 2070 because of climate change.
 link: https://www.sacbee.com/news/nation-world/article240239806.html
+document: /assets/images/uploads/sacbee-one-third.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-10.31.32 am.png
 ---
