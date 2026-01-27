@@ -13,6 +13,7 @@ newsDesc: Si no empezamos a tomar medidas para mitigar los efectos de la crisis
   tres especies de plantas y animales pueden enfrentar la extinción global para
   2070.
 link: https://www.lavanguardia.com/natural/20200214/473550257574/tercio-especies-plantas-animales-desaparecer-50-anos.html
+document: /assets/images/uploads/un-tercio-de-las-especies-de-plantas-y-animales-podrían-desaparecer-en-50-años.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-10.56.56 am.png
 ---
