@@ -14,6 +14,7 @@ newsDesc: >+
 
 
 link: https://www.thesun.ie/tech/5094059/earth-could-lose-a-third-of-all-animal-and-plant-species-in-our-lifetimes-scientists-warn/
+document: /assets/images/uploads/earth-could-lose-a-third-of-all-animal-and-plant-species-in-our-lifetimes-scientists-warn.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-10.47.29 am.png
 ---
