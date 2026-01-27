@@ -9,6 +9,7 @@ newsDesc: The researchers of a new study estimate that about a third of all
   is just 50 years from now. The extinctions are about two to four times more
   common in the tropics, where the majority of animal and plant species are.
 link: https://www.ibtimes.com/earth-could-lose-one-third-plants-animals-within-50-years-study-says-2921315
+document: /assets/images/uploads/international-business-earth-could-lose.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-10.45.52 am.png
 ---
