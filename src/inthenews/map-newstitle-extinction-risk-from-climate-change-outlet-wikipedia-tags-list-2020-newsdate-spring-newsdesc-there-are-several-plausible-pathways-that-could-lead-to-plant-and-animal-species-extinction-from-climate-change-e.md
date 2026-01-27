@@ -17,6 +17,7 @@ newsDesc: There are several plausible pathways that could lead to plant and
   habitat within 50 km of their current location at the end of this century (for
   a mid-range scenario of future global warming).
 link: https://en.wikipedia.org/?curid=9068275
+document: /assets/images/uploads/extinction-risk-from-climate-change-wikipedia.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-11.18.11 am.png
 ---
