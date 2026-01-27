@@ -14,6 +14,7 @@ newsDesc: "Accurately predicting biodiversity loss from climate change requires
   face extinction. Their results are based on data from hundreds of plant and
   animal species surveyed around the globe. "
 link: https://news.arizona.edu/news/one-third-plant-and-animal-species-could-be-gone-50-years
+document: /assets/images/uploads/one-third-of-plant-and-animal-species-could-be-gone-in-50-years-_-university-of-arizona-news.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-04-at-11.25.24 am.png
 ---
