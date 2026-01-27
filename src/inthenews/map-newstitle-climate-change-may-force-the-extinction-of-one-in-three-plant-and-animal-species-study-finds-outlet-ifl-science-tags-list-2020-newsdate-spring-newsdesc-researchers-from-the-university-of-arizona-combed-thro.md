@@ -12,6 +12,7 @@ newsDesc: Researchers from the University of Arizona combed through previous
   clues that would help to illuminate what aspects of climate change cause
   extinctions and what adaptations help a species to survive.
 link: https://www.iflscience.com/climate-change-may-force-the-extinction-of-one-in-three-plant-and-animal-species-study-finds-55017
+document: /assets/images/uploads/climate-change-may-force-the-extinction-of-one-in-three-plant-and-animal-species-study-finds.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-10.49.31 am.png
 ---
