@@ -17,6 +17,7 @@ newsDesc: "Animal conservationists often move elephants between herds to improve
   some chimpanzees master stone tools while others don't? How did rats
   specialize in eating pinecones? "
 link: https://news.arizona.edu/news/creature-culture-what-animal-behavior-can-teach-us-about-saving-nature
+document: /assets/images/uploads/creature-culture_-what-animal-behavior-can-teach-us-about-saving-nature-_-university-of-arizona-news.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-04-at-11.47.04 am.png
 ---
