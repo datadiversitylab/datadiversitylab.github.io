@@ -11,6 +11,7 @@ newsDesc: Estimer le taux d’extinction des espèces dû au réchauffement
   dix. Dans un scénario moins optimiste, il faudrait dire adieu au tiers, voire
   à la moitié, de nos compagnons d’aventure sur cette Terre.
 link: https://www.futura-sciences.com/planete/actualites/environnement-biodiversite-espece-trois-pourrait-disparaitre-ici-2070-75834/#xtor%3DRSS-8
+document: /assets/images/uploads/biodiversité-_-une-espèce-sur-trois-pourrait-disparaître-d’ici-2070.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-10.53.23 am.png
 ---
