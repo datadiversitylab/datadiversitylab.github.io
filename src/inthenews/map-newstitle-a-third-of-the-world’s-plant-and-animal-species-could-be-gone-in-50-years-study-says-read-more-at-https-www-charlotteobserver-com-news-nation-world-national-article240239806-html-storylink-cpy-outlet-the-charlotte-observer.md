@@ -14,6 +14,7 @@ newsDesc: One-third of all plant and animal species on Earth could face
   from 538 species and 581 places around the world in the study published in the
   Proceedings of the National Academy of Sciences.
 link: https://www.charlotteobserver.com/news/nation-world/national/article240239806.html
+document: /assets/images/uploads/charlotte-observer-one-third.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-10.33.35 am.png
 ---
