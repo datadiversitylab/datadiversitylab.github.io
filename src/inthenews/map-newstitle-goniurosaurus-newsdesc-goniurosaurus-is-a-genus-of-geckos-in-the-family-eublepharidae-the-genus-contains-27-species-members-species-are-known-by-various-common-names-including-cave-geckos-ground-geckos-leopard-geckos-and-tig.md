@@ -10,6 +10,7 @@ newsDesc: Goniurosaurus is a genus of geckos in the family Eublepharidae. The
   Members of this genus are found in China, Japan, and Vietnam. For this reason
   they are also known commonly as Asian geckos.
 link: https://en.wikipedia.org/?curid=323655
+document: /assets/images/uploads/goniurosaurus-wikipedia.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-11.21.40 am.png
 ---
