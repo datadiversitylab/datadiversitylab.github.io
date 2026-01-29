@@ -11,6 +11,7 @@ newsDesc: What an animal eats is a fundamental aspect of its biology, but
   more than one million animal species and going back 800 million years, when
   the first animals appeared on our planet.
 link: https://noticiasdelaciencia.com/art/34051/the-paleozoic-diet-why-animals-eat-what-they-eat
+document: /assets/images/uploads/the-paleozoic-diet_-why-animals-eat-what-they-eat-_-noticias-de-la-ciencia-y-la-tecnología-amazings®-_-ncyt®-.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-11.11.55 am.png
 ---
