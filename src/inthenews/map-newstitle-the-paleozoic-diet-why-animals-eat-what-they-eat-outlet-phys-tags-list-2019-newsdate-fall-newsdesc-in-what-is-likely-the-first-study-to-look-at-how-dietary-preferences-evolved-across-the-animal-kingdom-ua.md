@@ -10,6 +10,7 @@ newsDesc: In what is likely the first study to look at how dietary preferences
   unexpected discoveries, including that the first animal likely was a carnivore
   and that humans, along with other omnivores, belong to a rare breed.
 link: https://phys.org/news/2019-08-paleozoic-diet-animals.html
+document: /assets/images/uploads/2019-08-paleozoic-diet-animals.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-11.07.36 am.png
 ---
