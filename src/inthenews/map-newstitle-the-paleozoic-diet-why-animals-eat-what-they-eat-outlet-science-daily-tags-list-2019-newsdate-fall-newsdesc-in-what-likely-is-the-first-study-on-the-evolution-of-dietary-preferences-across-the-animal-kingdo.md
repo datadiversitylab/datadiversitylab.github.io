@@ -9,6 +9,7 @@ newsDesc: In what likely is the first study on the evolution of dietary
   discoveries, including that the first animal likely was a carnivore and that
   humans, along with other omnivores, belong to a rare breed.
 link: https://www.sciencedaily.com/releases/2019/08/190822165028.htm
+document: /assets/images/uploads/sd-the-paleozoic-diet_-why-animals-eat-what-they-eat-_-sciencedaily.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-11.10.22 am.png
 ---
