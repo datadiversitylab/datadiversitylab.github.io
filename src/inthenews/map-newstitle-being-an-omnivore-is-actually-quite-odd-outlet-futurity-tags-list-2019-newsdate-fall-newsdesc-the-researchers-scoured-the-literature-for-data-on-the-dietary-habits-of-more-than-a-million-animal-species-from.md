@@ -15,6 +15,7 @@ newsDesc: The researchers scoured the literature for data on the dietary habits
   an evolutionary tree built from DNA-sequence data to untangle the evolutionary
   relationships between them.
 link: https://www.futurity.org/omnivores-evolution-of-diet-animals-2140632/
+document: /assets/images/uploads/being-an-omnivore-is-actually-quite-odd-futurity.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-11.09.04 am.png
 ---
