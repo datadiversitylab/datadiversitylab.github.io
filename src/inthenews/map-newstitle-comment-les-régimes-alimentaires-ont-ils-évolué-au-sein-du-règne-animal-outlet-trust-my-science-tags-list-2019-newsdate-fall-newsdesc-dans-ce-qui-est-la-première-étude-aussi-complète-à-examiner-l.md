@@ -12,6 +12,7 @@ newsDesc: Dans ce qui est la première étude aussi complète à examiner
   et que les humains, ainsi que d’autres omnivores, appartiennent à une espèce
   rare.
 link: https://trustmyscience.com/comment-regimes-alimentaires-ont-evolue-dans-regne-animal/
+document: /assets/images/uploads/comment-les-régimes-alimentaires-ont-ils-évolué-au-sein-du-règne-animal-_.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-11.16.19 am.png
 ---
