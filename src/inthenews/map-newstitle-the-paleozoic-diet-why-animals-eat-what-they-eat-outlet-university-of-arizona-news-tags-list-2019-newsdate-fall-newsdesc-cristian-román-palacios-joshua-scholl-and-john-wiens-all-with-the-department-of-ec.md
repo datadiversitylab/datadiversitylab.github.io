@@ -14,6 +14,7 @@ newsDesc: Cristian Román-Palacios, Joshua Scholl and John Wiens, all with the
   cyanobacteria for food, and omnivorous if they eat a mixture of carnivorous
   and herbivorous diets.
 link: https://news.arizona.edu/news/paleozoic-diet-why-animals-eat-what-they-eat
+document: /assets/images/uploads/ua-the-paleozoic-diet_-why-animals-eat-what-they-eat-_-university-of-arizona-news.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-04-at-11.55.54 am.png
 ---
