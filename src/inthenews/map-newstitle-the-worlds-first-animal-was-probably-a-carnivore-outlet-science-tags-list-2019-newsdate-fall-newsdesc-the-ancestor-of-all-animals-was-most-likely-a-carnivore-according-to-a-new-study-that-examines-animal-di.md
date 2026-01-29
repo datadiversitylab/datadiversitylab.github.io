@@ -15,6 +15,7 @@ newsDesc: The ancestor of all animals was most likely a carnivore, according to
   habits. The researchers then created a phylogeny—a huge family tree—of all the
   creatures to determine what their ancestors likely ate.
 link: https://www.science.org/content/article/world-s-first-animal-was-probably-carnivore
+document: /assets/images/uploads/the-world-s-first-animal-was-probably-a-carnivore-_-science-_-aaas.pdf
 images:
   - /assets/images/uploads/screenshot-2025-08-05-at-11.05.50 am.png
 ---
