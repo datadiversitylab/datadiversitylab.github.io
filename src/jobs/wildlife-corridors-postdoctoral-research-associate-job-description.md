@@ -1,26 +1,35 @@
 ---
-jobTitle: Wildlife Corridors Postdoctoral Research Associate Job Description
-jobStartDate: May 1st, 2026
-jobApplyBy: February 14th, 2025
+jobTitle: Tom Lovejoy Conservation Fellow
+jobStartDate: July 1st, 2026
+jobApplyBy: January 30th, 2026
 jobDesc: >-
-  #### **Duties and Responsibilities: [read more
-  here](https://lovejoycenter.arizona.edu/who-we-are/join-us/wildlife-corridors-postdoctoral-research-associate)**
+  **Job Description:** [read more
+  here](https://lovejoycenter.arizona.edu/who-we-are/join-us/tom-lovejoy-conservation-fellow-job-description)
 
 
-  * Work under the supervision of Jesse Alston and Willem van Leeuwen in SNRE, in partnership with the Arizona chapter of TNC.
+  * Work under the supervision of a primary 
 
-  * Collaborate with community partners to provide scientific analyses that improve conservation practice across southern and central Arizona.
+    [Lovejoy BBCS Faculty Member](https://lovejoycenter.arizona.edu/bbcs)
 
-  * Collaborate with graduate students, postdocs, and faculty at the University of Arizona on complementary research projects as appropriate.
+    , at least one faculty from another discipline, and/or a non-academic community partner.
+  * Collaborate with post-doctoral fellows and faculty on additional interdisciplinary projects and group synthesis papers.
 
-  * Disseminate project outcomes to relevant community partners.
+  * Develop proposals for external funding in line with the Lovejoy BBCS mission to bridge disciplines.
 
-  * Present research findings and methodologies at relevant scientific and conservation meetings with travel sponsored by the University.
+  * Coordinate an annual research dissemination event.
 
-  * Participation in department-wide trainings.
+  * Present research findings and methodologies at relevant conferences with travel sponsored by the University.
+
+  * Opportunity to collaborate with community partners to advance or diversify skillsets.
+
+  * Ability to be flexible and adapt to support emerging projects or needs that uphold the Lovejoy BBCS mission.
+
+  * Participation in department-wide trainings in building an anti-racist and more equitable society for the promotion of social, racial, and environmental justice.
+
+  * Additional duties may be assigned.
 
 
-  **Knowledge, Skills, & Abilities:**
+  **Knowledge, skills, & abilities:**
 
 
   * Effective communication.
@@ -36,6 +45,4 @@ jobDesc: >-
   * Public presentation skills.
 
   * Time management and organizational skills.
-
-  * Ability to be flexible and adapt to support emerging projects or needs that uphold the Lovejoy Center’s mission.
 ---
