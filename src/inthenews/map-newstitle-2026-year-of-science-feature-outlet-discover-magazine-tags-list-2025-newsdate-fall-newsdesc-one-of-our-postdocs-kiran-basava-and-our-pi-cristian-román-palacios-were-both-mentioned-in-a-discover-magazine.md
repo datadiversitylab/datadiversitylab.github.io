@@ -2,8 +2,8 @@
 newsTitle: 2026 Year of Science Feature
 Outlet: Discover Magazine
 tags:
-  - "2025"
-newsDate: Fall
+  - "2026"
+newsDate: Spring
 newsDesc: One of our postdocs, Kiran Basava, and our PI, Cristian Román-Palacios
   were both mentioned in a Discover Magazine article by Richard Pallardy, for
   the 2026 Year of Science Addition. This article was related to animal culture
