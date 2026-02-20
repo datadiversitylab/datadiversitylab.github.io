@@ -10,10 +10,6 @@ publicationAbstract: A few of our members were able to get together for some
   Kristen Martinet, Kiran Basava, Delaney Scott-Martin, Kennedy Gezella, Ian
   Estacio, and Cristian Roman-Palacios behind the camera!
 images:
-  - /assets/images/socials/hike-1.jpg
-  - /assets/images/socials/hike-2.jpg
-  - /assets/images/socials/hike-3.jpg
-  - /assets/images/socials/hike-4.jpg
   - /assets/images/socials/hike-5.jpg
 tags: Social
 ---
