@@ -17,6 +17,7 @@ publicationAbstract: "The photo above is Cristian with the members of O’Meara
   surrounding applied math and large language models (LLMs)."
 images:
   - /assets/images/socials/cristian-utk.jpg
+  - /assets/images/socials/screenshot-2026-03-06-at-6.32.48 pm.png
 tags: Outreach
 webLink: https://brianomeara.info/
 ---
