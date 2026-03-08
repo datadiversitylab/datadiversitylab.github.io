@@ -43,11 +43,12 @@ eleventyNavigation:
             <div aria-hidden="true" class="line line-full"></div>
             <div class="cs-filter-wrapper cs-text">
                 <div data-filter="All" class="active">All ({{ collections.processedTeams["team"] }})</div>
-                {% for keyword, count in collections.processedTeams | dictsort %}
-                    {% if keyword != 'team' and keyword != 'Current' and keyword != 'Former' and keyword != '' %}
-                        <div data-filter="{{ keyword }}">{{ keyword }} ({{ count }})</div>
-                    {% endif %}
-                {% endfor %}
+                    {%- set filterOrder = ["PI", "Postdoc", "PhD student", "Undergraduate student", "Staff", "MSc capstone student", "VIP student", "Intern", "MS advising team"] -%}
+                    {% for keyword in filterOrder %}
+                        {% if collections.processedTeams[keyword] %}
+                            <div data-filter="{{ keyword }}">{{ keyword }} ({{ collections.processedTeams[keyword] }})</div>
+                        {% endif %}
+                    {% endfor %}
             </div>
             <div class="cs-filter-button-wrapper">
                 <div class="cs-filter-year-wrapper">
@@ -88,9 +89,9 @@ eleventyNavigation:
                                             <span class="cs-education">, {{ member.data.memberEducation }}</span>
                                         {%- endif -%}
                                     </span>
-                                    <span class="cs-job-title"><strong>Role in the lab:</strong> {{ member.data.memberTitle }}</span>
+                                    <span class="cs-job-title"><strong>In the lab:</strong> {{ member.data.memberTitle }}</span>
                                     {%- if "Former" in member.data.tags and member.data.currentPosition -%}
-                                      <span class="cs-timeline"><strong>Current position:</strong> {{ member.data.currentPosition }}</span>
+                                      <span class="cs-timeline"><strong>After the lab:</strong> {{ member.data.currentPosition }}</span>
                                     {%- endif -%}
                                     {%- if member.data.memberDate -%}
                                       <span class="cs-timeline"><span class="cs-start-date-year-data"><strong>Term:</strong> {{ member.data.memberDate }}</span> {%- if member.data.memberDateEnd -%} {{" - "}} <span class="cs-end-date-year-data">{{ member.data.memberDateEnd }}</span> {%- endif -%}</span>
