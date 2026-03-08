@@ -1,9 +1,7 @@
 .cs-logo .cs-dark {
   display: none;
 }
-/*-- -------------------------- -->
-<---       Service Cards        -->
-<--- -------------------------- -*/
+
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #service-cards {
@@ -273,6 +271,74 @@
   #timeline-504 .cs-dropdown-content ul ul {
     padding-left: 2rem;
   }
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 0.6rem 0.7rem;
+    justify-content: flex-start;
+    margin-top: 2rem;
+}
+
+.button-container .button-solid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.4rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Green sliding fill on hover — all buttons */
+.button-container .button-solid {
+    border-color: var(--primary);
+}
+
+.button-container .button-solid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--primary);
+    transform: translateX(-101%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-container .button-solid:hover::before {
+    transform: translateX(0);
+}
+
+.button-container .button-solid:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile: tighten up */
+@media only screen and (max-width: 30rem) {
+    .button-container {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+    .button-container .button-solid {
+        font-size: 0.68rem;
+        padding: 0.55rem 0.85rem;
+    }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
