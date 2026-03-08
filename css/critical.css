@@ -19,7 +19,7 @@
     height: 100%;
     width: 100%;
     background: #000;
-    opacity: 0.6;
+    opacity: 0.65;
     top: 0;
     left: 0;
     z-index: -10;
@@ -114,5 +114,131 @@
   }
   #hero h1 {
     max-width: 14.125em;
+  }
+}
+
+/* Desktop — all content pinned to bottom, photo unobscured above */
+@media only screen and (min-width: 48em) {
+  #hero {
+    z-index: 1;
+    overflow: hidden;
+    /* Stack children, anchor to bottom */
+    justify-content: flex-end;
+  }
+
+  /* Photo full bleed, no overlay fighting it */
+  #hero picture img {
+    object-position: center 20%;
+  }
+
+  /* Gradient only on the bottom third — fades up from black */
+  #hero:before {
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.92) 0%,
+      rgba(0,0,0,0.7)  30%,
+      rgba(0,0,0,0.0)  65%
+    );
+    opacity: 1;
+  }
+
+  /* Content sits at the bottom */
+  #hero .hero-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 2.5rem clamp(1.5rem, 5vw, 5rem) 3rem;
+    position: relative;
+    z-index: 10;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  #hero .heroText {
+    align-items: flex-start;
+    margin: 0;
+    max-width: 100%;
+    gap: 1rem;
+    /* Lay everything out in a row across the bottom */
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  /* Title takes its own row */
+  #hero .heroText > div:first-child {
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+
+  #hero h1 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    text-align: left;
+    margin: 0;
+    max-width: none;
+    line-height: 1.1;
+  }
+  #hero h3 { text-align: left; }
+
+  /* Description inline beside buttons on wide screens */
+  #hero p {
+    text-align: left;
+    margin: 0;
+    max-width: 28rem;
+    font-size: 0.9rem;
+    opacity: 0.75;
+    flex: 1 1 20rem;
+  }
+
+  /* Buttons group */
+  #hero .button-container {
+    margin: 0;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+  }
+
+  /* Subscribe row */
+  #hero .subscribe-row {
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  /* Stats sit on same bottom row, pushed to the right */
+  #hero .hero-stats {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    border-left: 1px solid rgba(255,255,255,0.2);
+    padding-left: 2rem;
+    margin-left: auto;
+    flex: 0 0 auto;
+    align-self: flex-end;
+  }
+}
+
+/* Tighten heroText gap at desktop for compact bottom bar */
+@media only screen and (min-width: 48em) {
+  #hero .heroText {
+    gap: 0.75rem 1.5rem;
+  }
+}
+
+/* Nav readability — subtle dark veil at very top */
+@media only screen and (min-width: 48em) {
+  #hero:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.0)  100%
+    );
+    z-index: -9;
+    pointer-events: none;
   }
 }

@@ -42,7 +42,7 @@
 
         <!-- Loading in page specific CSS sheets from css block -->
         <link rel="stylesheet" href="/css/critical.css"/>
-        <link rel="stylesheet" href="/css/social.css">
+        <link rel="stylesheet" href="/css/innews.css">
 
         <script defer src="https://umami.datadiversitylab.synology.me/script.js" data-website-id="543cffef-a100-47af-9dd9-2cf39517077b"></script>
 
@@ -1273,6 +1273,7 @@ A study found that a third of animal and plant species could be wiped from exist
 
 <!-- Image modal: hidden by default -->
 <div id="image-modal">
+  <button class="modal-close" id="modal-close" aria-label="Close" style="position:absolute;top:1.25rem;right:1.5rem;color:rgba(255,255,255,0.6);font-size:1.5rem;cursor:pointer;background:none;border:none;line-height:1;">&times;</button>
   <img class="modal-content" id="modal-img" alt="">
   <div class="modal-caption" id="modal-caption"></div>
 </div>
@@ -1280,57 +1281,85 @@ A study found that a third of animal and plant species could be wiped from exist
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".cs-gallery").forEach(gallery => {
-        let slides = gallery.querySelectorAll(".cs-slide img");
-        let index = 0;
 
-        function showSlide(i) {
-            slides.forEach((slide, idx) => {
-                slide.style.display = idx === i ? "block" : "none";
-            });
-        }
-
-        let prevBtn = gallery.querySelector(".prev-btn");
-        let nextBtn = gallery.querySelector(".next-btn");
-
-        if (prevBtn && nextBtn) {
-            prevBtn.addEventListener("click", function () {
-                index = index === 0 ? slides.length - 1 : index - 1;
-                showSlide(index);
-            });
-
-            nextBtn.addEventListener("click", function () {
-                index = index === slides.length - 1 ? 0 : index + 1;
-                showSlide(index);
-            });
-        }
-
-        showSlide(index); // Initialize the first image
+  /* ── Gallery carousel ── */
+  document.querySelectorAll(".cs-gallery").forEach(function (gallery) {
+    const pictures = gallery.querySelectorAll(".cs-slide");
+    let index = 0;
+    function showSlide(i) {
+      pictures.forEach(function (pic, idx) {
+        pic.style.display = idx === i ? "block" : "none";
+      });
+    }
+    showSlide(0);
+    const prev = gallery.querySelector(".prev-btn");
+    const next = gallery.querySelector(".next-btn");
+    if (prev) prev.addEventListener("click", function (e) {
+      e.stopPropagation();
+      index = index === 0 ? pictures.length - 1 : index - 1;
+      showSlide(index);
     });
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById('image-modal');
-  const modalImg = document.getElementById('modal-img');
-  const modalCap = document.getElementById('modal-caption');
-
-  document.querySelectorAll('.enlargeable-image').forEach(img => {
-    img.addEventListener('click', () => {
-      modalImg.src = img.src;
-      modalCap.textContent = img.alt || '';  // show alt text if you like
-      modal.style.display = 'flex';
+    if (next) next.addEventListener("click", function (e) {
+      e.stopPropagation();
+      index = index === pictures.length - 1 ? 0 : index + 1;
+      showSlide(index);
     });
   });
 
-  // Clicking anywhere closes
-  modal.addEventListener('click', () => {
-    modal.style.display = 'none';
+  /* ── Read more toggle ── */
+  document.querySelectorAll(".cs-desc").forEach(function (desc) {
+    const btn = desc.querySelector(".read-more-btn");
+    if (!btn) return;
+
+    // cs-desc is a <span> (inline) — measure via scrollHeight after forcing block
+    desc.style.display = "block";
+
+    function checkOverflow() {
+      if (desc.classList.contains("show-more")) return;
+      // Temporarily remove max-height to measure true height
+      desc.style.maxHeight = "none";
+      const full = desc.scrollHeight;
+      desc.style.maxHeight = "";
+      // Compute the clamped height from CSS (4.5em)
+      const clamped = parseFloat(getComputedStyle(desc).maxHeight);
+      btn.style.display = (isNaN(clamped) || full > clamped + 4) ? "inline" : "none";
+    }
+
+    checkOverflow();
+    window.addEventListener("load", checkOverflow);
+
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      desc.classList.toggle("show-more");
+      btn.textContent = desc.classList.contains("show-more") ? " show less" : "...read more";
+    });
   });
+
+  /* ── Lightbox ── */
+  const modal    = document.getElementById("image-modal");
+  const modalImg = document.getElementById("modal-img");
+  const modalCap = document.getElementById("modal-caption");
+  const closeBtn = document.getElementById("modal-close");
+
+  function openModal(src, alt) {
+    modalImg.src = src;
+    if (modalCap) modalCap.textContent = alt || "";
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+  function closeModal() {
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  }
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("enlargeable-image")) openModal(e.target.src, e.target.alt);
+  });
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+
 });
-</script>
-</main>
+</script></main>
         <!-- ============================================ -->
 <!--                   Footer                     -->
 <!-- ============================================ -->

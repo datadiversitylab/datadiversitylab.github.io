@@ -276,9 +276,9 @@
 .button-container {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    gap: 0.6rem 0.7rem;
+    gap: 0.5rem 0.6rem;
     justify-content: flex-start;
-    margin-top: 2rem;
+    margin-top: 0;
 }
 
 .button-container .button-solid {
@@ -404,22 +404,72 @@
   }
 }
 /*-- -------------------------- -->
-<---     Hero Entrance Anim     -->
+<---     Subscribe Button       -->
 <--- -------------------------- -*/
-@keyframes heroFadeUp {
-    from { opacity: 0; transform: translateY(28px); }
-    to   { opacity: 1; transform: translateY(0); }
+.subscribe-row {
+    margin-top: 0.9rem;
+    display: flex;
+    justify-content: center;
 }
 
-.hero-animate {
+.button-subscribe {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 1.5rem 0.55rem 1.1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    position: relative;
+    overflow: hidden;
+    transition: color 0.25s ease, border-color 0.25s ease,
+                background 0.25s ease, transform 0.2s ease,
+                box-shadow 0.25s ease;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.button-subscribe::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--primary);
     opacity: 0;
-    animation: heroFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+.button-subscribe:hover::before { opacity: 0.18; }
+.button-subscribe:hover {
+    color: #ffffff;
+    border-color: var(--primaryLight);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(140, 191, 168, 0.2);
+}
+.subscribe-icon {
+    font-size: 0.5rem;
+    color: var(--primaryLight);
+    position: relative;
+    z-index: 1;
+    line-height: 1;
+}
+.button-subscribe span,
+.button-subscribe {
+    position: relative;
+    z-index: 1;
 }
 
-.hero-animate-1 { animation-delay: 0.10s; }
-.hero-animate-2 { animation-delay: 0.28s; }
-.hero-animate-3 { animation-delay: 0.44s; }
-.hero-animate-4 { animation-delay: 0.62s; }
+@media only screen and (max-width: 30rem) {
+    .subscribe-row { justify-content: flex-start; }
+    .button-subscribe { font-size: 0.68rem; padding: 0.5rem 1.2rem 0.5rem 0.9rem; }
+}
 
 /*-- -------------------------- -->
 <---        Hero Stats          -->
@@ -432,7 +482,6 @@
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     width: fit-content;
 }
-
 .hero-stat {
     display: flex;
     flex-direction: column;
@@ -440,9 +489,7 @@
     padding: 0 2rem;
     gap: 0.25rem;
 }
-
 .hero-stat:first-child { padding-left: 0; }
-
 .hero-stat-number {
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 700;
@@ -450,7 +497,6 @@
     line-height: 1;
     letter-spacing: -0.02em;
 }
-
 .hero-stat-label {
     font-size: 0.7rem;
     font-weight: 500;
@@ -459,17 +505,31 @@
     color: rgba(255, 255, 255, 0.6);
     white-space: nowrap;
 }
-
 .hero-stat-divider {
     width: 1px;
     height: 2.5rem;
     background: rgba(255, 255, 255, 0.2);
     flex-shrink: 0;
 }
-
 @media only screen and (max-width: 30rem) {
     .hero-stats { width: 100%; }
     .hero-stat { padding: 0 1rem; }
     .hero-stat:first-child { padding-left: 0; }
     .hero-stat-number { font-size: 1.5rem; }
 }
+
+/*-- -------------------------- -->
+<---     Hero Entrance Anim     -->
+<--- -------------------------- -*/
+@keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.hero-animate {
+    opacity: 0;
+    animation: heroFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-animate-1 { animation-delay: 0.10s; }
+.hero-animate-2 { animation-delay: 0.28s; }
+.hero-animate-3 { animation-delay: 0.44s; }
+.hero-animate-4 { animation-delay: 0.62s; }
