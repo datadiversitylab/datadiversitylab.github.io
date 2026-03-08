@@ -15,14 +15,7 @@ eleventyNavigation:
 <section id="hero">
     <div class="hero-content">
         <div class="heroText">
-            <div class="hero-animate hero-animate-1">
-                <h1 id="home-h" class="cs-title">{{ home.title }}</h1>
-                <h3 class="cs-title">{{ home.subTitle }}</h3>
-            </div>
-            <p class="hero-animate hero-animate-2">
-                {{ home.description }}
-            </p>
-            <div class="button-container hero-animate hero-animate-3">
+            <div class="button-container hero-animate hero-animate-1">
                 {%- for button in home.buttons -%}
                     {%- if button.title != "Subscribe" -%}
                         <a class="button-solid" href="{{ button.link }}" rel="noopener">
@@ -31,7 +24,13 @@ eleventyNavigation:
                     {%- endif -%}
                 {% endfor %}
             </div>
-            <div class="subscribe-row hero-animate hero-animate-3">
+            <div class="hero-animate hero-animate-2">
+                <h1 id="home-h" class="cs-title">{{ home.title }}</h1>
+            </div>
+            <p class="hero-description hero-animate hero-animate-3">
+                {{ home.description }}
+            </p>
+            <div class="subscribe-row hero-animate hero-animate-4">
                 {%- for button in home.buttons -%}
                     {%- if button.title == "Subscribe" -%}
                         <a class="button-subscribe" href="{{ button.link }}" rel="noopener" target="_blank">
@@ -70,12 +69,6 @@ eleventyNavigation:
             </div>
         </div>
     </div>
-        <a href="#service-cards" class="scroll-indicator" aria-label="Scroll to content">
-            <div class="scroll-mouse">
-                <div class="scroll-dot"></div>
-            </div>
-            <span class="scroll-label">scroll</span>
-        </a>
 
         <div class="cs-picture-caption timer-slider">
         <div class="cs-picture-caption timer-slider">
@@ -220,12 +213,47 @@ eleventyNavigation:
 -->
 
 <style>
+/* ---- Hero layout overrides ---- */
+#hero .heroText {
+    gap: 0.5rem;           /* tight gap between all elements */
+}
+#hero .button-container {
+    margin-bottom: 0.75rem;  /* small breathing room before title */
+    gap: 0.35rem 0.45rem;
+    justify-content: flex-start;
+}
+#hero .button-container .button-solid {
+    font-size: 0.6rem;
+    padding: 0.32rem 0.8rem;
+    letter-spacing: 0.13em;
+    opacity: 0.75;
+    border-color: rgba(255,255,255,0.3);
+}
+#hero .button-container .button-solid:hover {
+    opacity: 1;
+}
+#hero h1.cs-title {
+    margin: 0;
+    line-height: 1.05;
+}
+p.hero-description {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin: 0.2rem 0 0 0;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 500;
+}
+#hero .subscribe-row {
+    margin-top: 0.6rem;
+}
+
 /* ---- Scroll Indicator ---- */
 .scroll-indicator {
     position: absolute;
     bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
