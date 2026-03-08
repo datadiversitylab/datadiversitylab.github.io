@@ -4,13 +4,14 @@
 /* Mobile */
 @media only screen and (min-width: 0em) {
   :root {
-    --primary: #4DB6AC;
-    --primaryLight: #808080;
-    --secondary: #E4C509;
-    --secondaryDark: #E2725B;
-    --headerColor: #333333;
-    --bodyTextColor: #333333;
-    --lineColor: #333333;
+    --primary: #8cbfa8;         /* pastel sage green — main accent */
+    --primaryLight: #b8d9c9;    /* soft mint — hover states, tag backgrounds */
+    --primaryDark: #5a9e82;     /* deeper green — borders, active states */
+    --secondary: #c9dfd5;       /* very soft green — subtle backgrounds */
+    --secondaryDark: #4a7c65;   /* dark green — emphasized text, links */
+    --headerColor: #2b3a32;     /* deep forest — headings */
+    --bodyTextColor: #3d4d44;   /* muted dark green-grey — body text */
+    --lineColor: #c2d6cc;       /* soft sage — dividers */
     --bodyTextColorWhite: #ffffff;
     --largeFontSize: 3.5rem;
     /* 13px - 16px */
@@ -36,7 +37,10 @@
     --newsWidth: 2000px;
     --newsHolderLeft: 30vw;
   }
-  /* roboto-regular - latin */
+  /* Fraunces (headings) + Figtree (body) */
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Figtree:wght@300;400;500;600;700&display=swap');
+
+    /* roboto-regular - latin */
   @font-face {
     font-family: 'Roboto';
     font-style: normal;
@@ -68,7 +72,7 @@
     margin: 0;
     padding: 0;
     font-size: 100%;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Figtree', Arial, sans-serif;
     color: var(--bodyText);
     scroll-behavior: smooth;
     scroll-padding-top: 150px;
@@ -107,6 +111,8 @@
   h6 {
     margin: 0;
     color: var(--headerColor);
+    font-family: 'Fraunces', Georgia, serif;
+    letter-spacing: -0.01em;
   }
   p,
   li {
@@ -1198,7 +1204,7 @@
     transition: color 0.3s, background-color 0.3s;
   }
   #cs-navigation .cs-li-link.cs-drop-link:hover {
-    background-color: #f7f7f7;
+    background-color: var(--primaryLight);
   }
   #cs-navigation .cs-li-link.cs-drop-link:before {
     display: none;
