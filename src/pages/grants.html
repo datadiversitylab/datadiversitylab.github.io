@@ -51,13 +51,13 @@ eleventyNavigation:
             <h6 class="cs-title">Grant providers</h6>
             <div class="cs-filter-wrapper cs-text">
                 {%- for tag in tags | sort(true) -%}
-                    <a href="#section{{ tag }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ tag }}</a>
+                    <div data-filter="{{ tag }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ tag }}</div>
                 {%- endfor -%}
             </div>
         </div>
         <div class="cs-title-card-wrapper">
             {%- for tag in tags | sort(true) -%}
-                <h3 class="cs-title">{{ tag }}</h3>
+                <h3 class="cs-title cs-group-title">{{ tag }}</h3>
                 <div id="section{{ tag }}" class="cs-card-group">
                     {%- for grant in collections.grants | sort(attribute='data.order') -%}
                         {%- if grant.data.tags.toString().includes(tag) -%}
@@ -70,7 +70,6 @@ eleventyNavigation:
                                     <img loading="lazy" decoding="async" src="{{ grant.data.image }}" alt="{{ grant.data.imageAlt }}" width="522" height="370" aria-hidden="true">
                                 </picture>
                                 <div class="cs-flex-group">
-                                    <div aria-hidden="true" class="line line-full card-image-line"></div>
                                     <span class="cs-name">{{ grant.data.grantName }}</span>
                                     <span class="cs-timeline"><strong>Grant amount:</strong> {{ grant.data.grantAmount }}</span>
                                     {%- if grant.data.pi -%}

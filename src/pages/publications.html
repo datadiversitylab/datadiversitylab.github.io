@@ -15,11 +15,7 @@ eleventyNavigation:
 <!-- ============================================ -->
 <!--                  Content                     -->
 <!-- ============================================ -->
-<script id="altmetric-embed-js" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/altmetric_badges-e7ba41a192efc3e63f5d48f8a1916dec4b1b49c01075bc7b39481408957b3b28.js"></script>
-<script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
-<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 
 <section id="content-1450" class="cs-top-section">
@@ -33,11 +29,6 @@ eleventyNavigation:
     </div>
 </section>
 
-<div aria-hidden="true" class="line"></div>
-
-<div id="sankeyPlot" style="width:100%;height:200px;"></div>
-
-<div aria-hidden="true" class="line"></div>
 
 <!-- ============================================ -->
 <!--                Publications                      -->
@@ -109,14 +100,11 @@ eleventyNavigation:
                             <div class="cs-badge">{{ publication.data.badgeImage | safe }}</div>
                         {%- endif -%}
                         <picture class="cs-picture">
-                            <!--Mobile Image-->
                             <source media="(max-width: 600px)" srcset="{{ publication.data.image }}">
-                            <!--Tablet and up Image-->
                             <source media="(min-width: 601px)" srcset="{{ publication.data.image }}">
                             <img loading="lazy" decoding="async" src="{{ publication.data.image }}" alt="" width="522" height="370" aria-hidden="true">
                         </picture>
                         <div class="cs-flex-group">
-                            <div aria-hidden="true" class="line line-full card-image-line"></div>
                             <span class="cs-publication-type">{{ publication.data.publicationType }}</span>
                             <span class="cs-name">{{ publication.data.publicationTitle | markdown | safe }}</span>
                             <span class="cs-publication-author" data-full-authors="{{ publication.data.publicationAuthor }}">
@@ -178,66 +166,3 @@ eleventyNavigation:
         </div>
     </div>
 </section>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  const freq = {}, yearsSet = new Set(), topicsSet = new Set();
-
-  document.querySelectorAll('#publications-section .cs-item').forEach(item => {
-    const year = item.querySelector('.cs-publication-year')?.textContent.trim();
-    if(!year) return;
-    yearsSet.add(year);
-    item.querySelectorAll('.cs-item-filters .cs-filter').forEach(f => {
-      const kw = f.textContent.trim();
-      topicsSet.add(kw);
-      freq[year] = freq[year] || {};
-      freq[year][kw] = (freq[year][kw]||0) + 1;
-    });
-  });
-
-  const years = Array.from(yearsSet)
-    .map(y => parseInt(y,10)).sort((a,b)=>b-a).map(String);
-
-  const totalByTopic = {};
-  topicsSet.forEach(kw => {
-    totalByTopic[kw] = years.reduce((sum, yr) => sum + (freq[yr]?.[kw]||0), 0);
-  });
-  const topics = Array.from(topicsSet)
-    .sort((a,b) => totalByTopic[b] - totalByTopic[a]);
-
-  const nodeLabels = years.concat(topics);
-  const source = [], target = [], value = [];
-
-  years.forEach((yr,i) => {
-    topics.forEach((kw,j) => {
-      const v = freq[yr]?.[kw]||0;
-      if(v>0){
-        source.push(i);
-        target.push(years.length + j);
-        value.push(v);
-      }
-    });
-  });
-
-  Plotly.newPlot('sankeyPlot',[{
-    type:'sankey',
-    orientation:'v',  // ← vertical!
-    node:{
-      label: nodeLabels,
-      pad: 15,
-      thickness: 20,
-      line: { color:'#888', width:0.5 }
-    },
-    link: {
-      source, target, value,
-      hoverlabel: { namelength: -1 }
-    }
-  }], {
-    margin:{ t:20, b:20, l:20, r:20 },
-    font:{ size:12 }
-
-  });
-});
-</script>
-

@@ -43,12 +43,12 @@ eleventyNavigation:
             <div aria-hidden="true" class="line line-full"></div>
             <div class="cs-filter-wrapper cs-text">
                 <div data-filter="All" class="active">All ({{ collections.processedTeams["team"] }})</div>
-                    {%- set filterOrder = ["PI", "Postdoc", "PhD student", "Undergraduate student", "Staff", "MSc capstone student", "VIP student", "Intern", "MS advising team"] -%}
-                    {% for keyword in filterOrder %}
-                        {% if collections.processedTeams[keyword] %}
-                            <div data-filter="{{ keyword }}">{{ keyword }} ({{ collections.processedTeams[keyword] }})</div>
-                        {% endif %}
-                    {% endfor %}
+                {%- set filterOrder = ["PI", "Postdoc", "PhD student", "Undergraduate student", "Staff", "MSc capstone student", "VIP student", "Intern", "MS advising team"] -%}
+                {%- for keyword in filterOrder -%}
+                    {%- if collections.processedTeams[keyword] -%}
+                        <div data-filter="{{ keyword }}">{{ keyword }} ({{ collections.processedTeams[keyword] }})</div>
+                    {%- endif -%}
+                {%- endfor -%}
             </div>
             <div class="cs-filter-button-wrapper">
                 <div class="cs-filter-year-wrapper">
@@ -64,8 +64,8 @@ eleventyNavigation:
         <div class="cs-title-card-wrapper">
             {%- for tag in tags -%}
                 <div class="team-section-header">
-                  <h2 class="cs-section-title">{{ tag }} Members</h2>
-                  <div class="line line-full"></div>
+                  <h2 class="cs-section-title">{{ tag }} members</h2>
+                  <div aria-hidden="true" class="line line-full"></div>
                 </div>
                 {%- if tag == "Current" -%}
                     {%- set members = collections.team | sortMulti('order', false, 'memberDate', true) -%}
@@ -89,7 +89,6 @@ eleventyNavigation:
                                             <span class="cs-education">, {{ member.data.memberEducation }}</span>
                                         {%- endif -%}
                                     </span>
-                                    <span class="cs-job-title"><strong>In the lab:</strong> {{ member.data.memberTitle }}</span>
                                     {%- if "Former" in member.data.tags and member.data.currentPosition -%}
                                       <span class="cs-timeline"><strong>After the lab:</strong> {{ member.data.currentPosition }}</span>
                                     {%- endif -%}
