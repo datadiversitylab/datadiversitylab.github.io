@@ -17,14 +17,14 @@
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
-    --heroFontSize: clamp(2.5rem, 4.2vw, 3.375rem);
-    --headerFontSize: clamp(2.25rem, 4.2vw, 3rem);
-    --headerTwoFontSize: clamp(2rem, 3vw, 2.5rem);
-    --headerThreeFontSize: clamp(1.875rem, 3vw, 2.125rem);
-    --headerFourFontSize: clamp(1.4rem, 3vw, 1.5rem);
-    --headerFiveFontSize: clamp(1.25rem, 3vw, 1.375rem);
-    --headerSixFontSize: clamp(1.125rem, 3vw, 1.25rem);
-    --bodyFontSize: clamp(1rem, 2vw, 1.125rem);
+    --heroFontSize: clamp(3rem, 6vw, 5rem);
+    --headerFontSize: clamp(2.75rem, 5vw, 4rem);
+    --headerTwoFontSize: clamp(2.25rem, 4vw, 3rem);
+    --headerThreeFontSize: clamp(1.75rem, 3vw, 2.25rem);
+    --headerFourFontSize: clamp(1.375rem, 2.5vw, 1.625rem);
+    --headerFiveFontSize: clamp(1.125rem, 2vw, 1.375rem);
+    --headerSixFontSize: clamp(1rem, 1.5vw, 1.125rem);
+    --bodyFontSize: clamp(1rem, 1.5vw, 1.0625rem);
     --mediumFontSize: clamp(0.875rem, 2vw, 1rem);
     --regularFontSize: clamp(0.75rem, 2vw, 0.875rem);
     --smallFontSize: clamp(0.625rem, 2vw, 0.75rem);
@@ -200,10 +200,11 @@
   }
   .line {
     width: 85%;
-    background: var(--bodyTextColor);
+    background: var(--lineColor);
     height: 1px;
     margin: 0 auto;
     max-width: 850px;
+    opacity: 0.7;
   }
   .line.line-full {
     width: 100%;
@@ -228,7 +229,7 @@
     position: relative;
     z-index: 1;
     background-color: var(--primary);
-    border-radius: 2.5em;
+    border-radius: 4px;
     color: white;
     transition: color 0.3s;
     transition-delay: 0.1s;
@@ -1024,19 +1025,7 @@
     position: relative;
   }
   #cs-navigation .cs-li-link:before {
-    /* active state underline */
-    content: "";
-    width: 100%;
-    height: 1px;
-    background: currentColor;
-    opacity: 1;
     display: none;
-    position: absolute;
-    bottom: -0.125rem;
-    left: 0;
-  }
-  #cs-navigation .cs-li-link.cs-active:before {
-    display: block;
   }
   #cs-navigation .cs-button-solid {
     display: none;
@@ -1217,9 +1206,8 @@
 @media only screen and (min-width: 64rem) {
   #cs-navigation {
     width: 100%;
-    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     position: fixed;
     z-index: 10000;
   }
@@ -1230,7 +1218,8 @@
     width: 100%;
     background-color: #fff;
     height: 0;
-    transition: height 0.3s;
+    border-bottom: 1px solid var(--lineColor);
+    transition: height 0.3s, box-shadow 0.3s;
   }
   #cs-navigation .cs-container {
     width: 100%;
@@ -1266,27 +1255,33 @@
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
-    /* 20px - 36px */
-    gap: clamp(1.25rem, 2.6vw, 2.25rem);
+    gap: clamp(1.5rem, 2.4vw, 2rem);
   }
   #cs-navigation .cs-li {
     list-style: none;
-    padding: 2rem 0;
-    /* prevent flexbox from squishing it */
+    padding: 1.75rem 0;
     flex: none;
   }
   #cs-navigation .cs-li-link {
-    /* 14px - 16px */
-    font-size: var(--bodyFontSize);
+    font-size: 0.9375rem;
     line-height: 1.5em;
     text-decoration: none;
     margin: 0;
     color: var(--bodyTextColor);
+    opacity: 0.72;
+    letter-spacing: 0.01em;
     display: flex;
     gap: 0.25rem;
     position: relative;
+    transition: opacity 0.2s;
+  }
+  #cs-navigation .cs-li-link:hover {
+    opacity: 1;
+  }
+  #cs-navigation .cs-li-link.cs-active {
+    opacity: 1;
   }
   #cs-navigation .cs-li-link:hover:before {
     width: 100%;
@@ -1298,14 +1293,14 @@
     /* active state underline */
     content: "";
     width: 0%;
-    height: 2px;
+    height: 1px;
     background: var(--primary);
     opacity: 1;
     display: block;
     position: absolute;
-    bottom: 0rem;
+    bottom: -0.25rem;
     left: 0;
-    transition: width 0.3s;
+    transition: width 0.25s ease;
   }
   #cs-navigation .cs-button-solid {
     font-size: var(--mediumFontSize);
@@ -1344,7 +1339,7 @@
   }
   body.scroll #cs-navigation .background-color-div {
     height: 100%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: 0 4px 24px rgba(43, 58, 50, 0.1);
   }
   body.scroll #cs-navigation .cs-logo .cs-light {
     display: none;

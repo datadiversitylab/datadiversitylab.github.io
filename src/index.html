@@ -15,19 +15,35 @@ eleventyNavigation:
 <section id="hero">
     <div class="hero-content">
         <div class="heroText">
-            <div>
+            <div class="hero-animate hero-animate-1">
                 <h1 id="home-h" class="cs-title">{{ home.title }}</h1>
                 <h3 class="cs-title">{{ home.subTitle }}</h3>
             </div>
-            <p>
+            <p class="hero-animate hero-animate-2">
                 {{ home.description }}
             </p>
-            <div class="button-container">
+            <div class="button-container hero-animate hero-animate-3">
                 {%- for button in home.buttons -%}
                     <a class="button-solid" href="{{ button.link }}" rel="noopener">
                         {{ button.title }}
                     </a>
                 {% endfor %}
+            </div>
+            <div class="hero-stats hero-animate hero-animate-4">
+                <div class="hero-stat">
+                    <span class="hero-stat-number" data-target="{{ collections.processedTeams['Current'] }}">0</span>
+                    <span class="hero-stat-label">Lab Members</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number" data-target="{{ collections.publications | length }}">0</span>
+                    <span class="hero-stat-label">Publications</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number" data-target="2022">0</span>
+                    <span class="hero-stat-label">Founded</span>
+                </div>
             </div>
         </div>
     </div>
@@ -168,6 +184,38 @@ eleventyNavigation:
     </div>
 </section>
 -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function animateCounter(el) {
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const duration = 1600;
+            const start = performance.now();
+            const from = target > 100 ? target - 3 : 0;
+            function step(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(2, -10 * progress);
+                el.textContent = Math.floor(from + (target - from) * eased);
+                if (progress < 1) requestAnimationFrame(step);
+                else el.textContent = target;
+            }
+            requestAnimationFrame(step);
+        }
+        const statsEl = document.querySelector('.hero-stats');
+        if (statsEl) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelectorAll('.hero-stat-number').forEach(animateCounter);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            observer.observe(statsEl);
+        }
+    });
+</script>
 
 <script defer>
     const newsWidth = () => {
