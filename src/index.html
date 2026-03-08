@@ -24,9 +24,21 @@ eleventyNavigation:
             </p>
             <div class="button-container hero-animate hero-animate-3">
                 {%- for button in home.buttons -%}
-                    <a class="button-solid" href="{{ button.link }}" rel="noopener">
-                        {{ button.title }}
-                    </a>
+                    {%- if button.title != "Subscribe" -%}
+                        <a class="button-solid" href="{{ button.link }}" rel="noopener">
+                            {{ button.title }}
+                        </a>
+                    {%- endif -%}
+                {% endfor %}
+            </div>
+            <div class="subscribe-row hero-animate hero-animate-3">
+                {%- for button in home.buttons -%}
+                    {%- if button.title == "Subscribe" -%}
+                        <a class="button-subscribe" href="{{ button.link }}" rel="noopener" target="_blank">
+                            <span class="subscribe-icon">✦</span>
+                            {{ button.title }} to our newsletter
+                        </a>
+                    {%- endif -%}
                 {% endfor %}
             </div>
             <div class="hero-stats hero-animate hero-animate-4">
