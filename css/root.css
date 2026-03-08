@@ -1025,7 +1025,22 @@
     position: relative;
   }
   #cs-navigation .cs-li-link:before {
-    display: none;
+    /* active state indicator - small dot */
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 50%;
+    opacity: 0;
+    display: block;
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.2s;
+  }
+  #cs-navigation .cs-li-link.cs-active:before {
+    opacity: 1;
   }
   #cs-navigation .cs-button-solid {
     display: none;
@@ -1206,8 +1221,9 @@
 @media only screen and (min-width: 64rem) {
   #cs-navigation {
     width: 100%;
+    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     position: fixed;
     z-index: 10000;
   }
@@ -1255,33 +1271,27 @@
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
-    gap: clamp(1.5rem, 2.4vw, 2rem);
+    /* 20px - 36px */
+    gap: clamp(1.25rem, 2.6vw, 2.25rem);
   }
   #cs-navigation .cs-li {
     list-style: none;
-    padding: 1.75rem 0;
+    padding: 2rem 0;
+    /* prevent flexbox from squishing it */
     flex: none;
   }
   #cs-navigation .cs-li-link {
-    font-size: 0.9375rem;
+    /* 14px - 16px */
+    font-size: var(--bodyFontSize);
     line-height: 1.5em;
     text-decoration: none;
     margin: 0;
     color: var(--bodyTextColor);
-    opacity: 0.72;
-    letter-spacing: 0.01em;
     display: flex;
     gap: 0.25rem;
     position: relative;
-    transition: opacity 0.2s;
-  }
-  #cs-navigation .cs-li-link:hover {
-    opacity: 1;
-  }
-  #cs-navigation .cs-li-link.cs-active {
-    opacity: 1;
   }
   #cs-navigation .cs-li-link:hover:before {
     width: 100%;
@@ -1293,14 +1303,14 @@
     /* active state underline */
     content: "";
     width: 0%;
-    height: 1px;
+    height: 2px;
     background: var(--primary);
     opacity: 1;
     display: block;
     position: absolute;
-    bottom: -0.25rem;
+    bottom: 0rem;
     left: 0;
-    transition: width 0.25s ease;
+    transition: width 0.3s;
   }
   #cs-navigation .cs-button-solid {
     font-size: var(--mediumFontSize);
