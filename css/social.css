@@ -1,10 +1,10 @@
 /*-- -------------------------- -->
-<---          Content           -->
+<---          Hero/Intro        -->
 <--- -------------------------- -*/
-/* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #content-1450 {
     padding: var(--sectionPadding);
+    padding-bottom: 1.5rem;
   }
   #content-1450 .cs-container {
     width: 100%;
@@ -13,16 +13,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* 48px - 64px */
     gap: var(--sectionGap);
   }
   #content-1450 .cs-content {
-    /* set text align to left if content needs to be left aligned */
     text-align: center;
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
   #content-1450 .cs-title,
@@ -30,335 +27,563 @@
     max-width: 100%;
   }
 }
+
 /*-- -------------------------- -->
-<---       Publications         -->
+<---      Social / Gallery      -->
 <--- -------------------------- -*/
-/* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #publications-section {
-    padding: var(--sectionPadding);
+    padding: 1.5rem 1.25rem clamp(3rem, 6vw, 5rem);
+    background: #eef3f0;
   }
-  #publications-section .cs-item {
-    position: relative;
-  }
-  #publications-section .cs-pi-only-checkbox {
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    gap: 0.5rem;
-  }
-  #publications-section .cs-publication-year,
-  #publications-section .cs-publication-type {
-    font-size: var(--mediumFontSize);
-    color: var(--bodyTextColor);
-  }
-  #publications-section .cs-publication-type,
-  #publications-section .cs-name,
-  #publications-section .cs-publication-author {
-    margin: 0 0 0.5rem 0;
-    text-align: left;
-  }
-  #publications-section .cs-badge {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    width: 75px;
-    height: 75px;
-    z-index: 1;
-  }
-  #publications-section .cs-flex-group {
-    position: relative;
-    align-items: flex-start;
-  }
-  #publications-section .cs-item-social {
+
+  /* ── Layout ── */
+  #publications-section .cs-container {
     width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  #publications-section .cs-title-card-wrapper {
+    width: 100%;
+  }
+
+  /* ── Sidebar ── */
+  #publications-section .cs-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
   #publications-section .cs-search-title-wrapper {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+  }
+  #publications-section .cs-search-title-wrapper .cs-title,
+  #publications-section .cs-filter-year-wrapper .cs-title,
+  #publications-section .cs-filter-keywords-wrapper .cs-title,
+  #publications-section .cs-filter-journal-type-wrapper .cs-title,
+  #publications-section .cs-add-filter-wrapper .cs-title {
+    font-size: 0.6875rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primaryDark);
+    margin: 0 0 0.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--lineColor);
+    width: 100%;
   }
   #publications-section .cs-search-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.5rem;
   }
   #publications-section .cs-search-wrapper img {
     cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
   }
-  #publications-section .cs-type-wrapper {
-    font-size: var(--bodyFontSize);
+  #publications-section .cs-search-wrapper img:hover {
+    opacity: 1;
+  }
+  #publications-section .cs-content input.cs-search {
+    width: 100%;
+    height: 2.25rem;
+    border: 1px solid var(--lineColor);
+    border-radius: 4px;
+    padding: 0 0.75rem 0 2rem;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.875rem;
     color: var(--bodyTextColor);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
+    background: #fff url(../assets/icons/search.svg) no-repeat left 0.5rem center;
+    background-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
   }
-  #publications-section .cs-type-wrapper label {
+  #publications-section .cs-content input.cs-search:focus {
+    border-color: var(--primary);
+  }
+  #publications-section .cs-pi-only-checkbox {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
-    text-align: center;
+    margin-top: 0.5rem;
   }
-  #publications-section .cs-filter-wrapper {
-    overflow: auto;
-  }
-  #publications-section .cs-container {
-    width: 100%;
-    /* changes to 1280px at desktop */
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: 2rem;
-  }
-  #publications-section .cs-content {
-    /* set text aling to left if content needs to be left aligned */
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: flex-start;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  #publications-section .cs-content .line {
-    margin: 0 0 1rem 0;
-  }
-  #publications-section .cs-content > div {
-    width: 100%;
-  }
-  #publications-section .cs-content .cs-search {
-    width: 100%;
-    height: 2.5rem;
-  }
-  #publications-section .cs-content .cs-filter-button-wrapper {
+  #publications-section .cs-filter-button-wrapper {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    margin: 0;
-    gap: 1.5rem;
-    border: 2px solid var(--lineColor);
-    padding: 0.5rem 0.5rem;
+    gap: 1.25rem;
   }
-  #publications-section .cs-content .cs-filter-button-wrapper > div {
+  #publications-section .cs-filter-button-wrapper > div {
     display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.35rem;
   }
-  #publications-section .cs-content .cs-filter-button-wrapper .cs-add-filter-wrapper {
-    display: flex;
+  #publications-section .cs-add-filter-wrapper {
+    display: flex !important;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    border: 1px solid var(--lineColor);
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    background: #fff;
+  }
+  #publications-section .cs-add-filter-wrapper .cs-title {
+    border: none;
     margin: 0;
-    gap: 1rem;
+    padding: 0;
   }
-  #publications-section .cs-content .cs-filter-button-wrapper .cs-add-filter-wrapper .cs-title {
-    margin: 0;
+  #publications-section .plus-button {
+    opacity: 0.45;
+    transition: opacity 0.2s;
   }
-  #publications-section .cs-content .cs-filter-keywords-wrapper,
-  #publications-section .cs-content .cs-filter-journal-type-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
+  #publications-section .cs-add-filter-wrapper:hover .plus-button {
+    opacity: 1;
   }
-  #publications-section .cs-content .cs-filter-keywords-wrapper .cs-title,
-  #publications-section .cs-content .cs-filter-journal-type-wrapper .cs-title {
-    width: 100%;
-    text-align: center;
-  }
-  #publications-section .cs-content .cs-filter-type-wrapper,
-  #publications-section .cs-content .cs-filter-year-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: calc(100% - 1rem);
-  }
-  #publications-section .cs-content .cs-filter-type-wrapper .cs-title,
-  #publications-section .cs-content .cs-filter-year-wrapper .cs-title {
-    width: 100%;
-    text-align: center;
-  }
-  #publications-section .cs-content .cs-filter-keywords-wrapper,
-  #publications-section .cs-content .cs-filter-journal-type-wrapper {
-    width: calc(100% - 1rem);
-  }
-  #publications-section .cs-content input.cs-search {
-    background: url(../assets/icons/search.svg);
-    padding: 0 0 0 2.1875rem;
-    background-repeat: no-repeat;
-    background-position: center left 8px;
-    background-color: white;
-  }
-  #publications-section .cs-content .cs-start-end-wrapper {
+  #publications-section .cs-start-end-wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    gap: 1rem;
+    gap: 0.5rem;
   }
-  #publications-section .cs-content .cs-start-end-wrapper input {
+  #publications-section .cs-start-end-wrapper input {
     width: 100%;
-    margin: 0;
     height: 2rem;
-  }
-  #publications-section .cs-content .cs-start-end-wrapper input::placeholder {
+    border: 1px solid var(--lineColor);
+    border-radius: 4px;
+    padding: 0 0.5rem;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.8125rem;
     text-align: center;
+    outline: none;
   }
-  #publications-section .cs-topper,
-  #publications-section .cs-title,
-  #publications-section .cs-text {
+  #publications-section .cs-start-end-wrapper input:focus {
+    border-color: var(--primary);
+  }
+  /* Filter options */
+  #publications-section .cs-filter-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    overflow: visible;
+  }
+  #publications-section .filter-option {
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.8125rem;
     color: var(--bodyTextColor);
+    opacity: 0.6;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s, background 0.2s;
+    line-height: 1.3;
   }
+  #publications-section .filter-option:hover {
+    opacity: 1;
+    background: var(--secondary);
+  }
+  #publications-section .filter-option.active {
+    opacity: 1;
+    background: var(--secondary);
+    color: var(--secondaryDark);
+    font-weight: 600;
+  }
+
+  /* ── Card Grid ── */
   #publications-section .cs-card-group {
     width: 100%;
     margin: 0;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    justify-content: center;
-    gap: 1rem;
-    margin: 0 0 1.25rem 0;
+    gap: 1.5rem;
+    align-items: start;
   }
+
+  /* ── Individual Card ── */
   #publications-section .cs-item {
-    /* changed to left at desktop */
-    text-align: center;
-    list-style: none;
-    width: 100%;
-    height: fit-content;
-    max-width: 32.625rem;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bodyTextColorWhite);
-    box-shadow: var(--boxCardShadow);
-  }
-  #publications-section .cs-picture {
-    width: 100%;
-    height: auto;
-    /* height divided by width, changed at desktop */
-    aspect-ratio: 1.49342105;
-    /* clips image tag from overflowing on hover */
+    background: #fff;
+    border-radius: 8px;
     overflow: hidden;
-    display: block;
-    position: relative;
+    box-shadow: 0 2px 12px rgba(43,58,50,0.07);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
   }
-  #publications-section .cs-picture img {
-    position: absolute;
-    top: 0;
-    left: 0;
+  #publications-section .cs-item:hover {
+    box-shadow: 0 8px 32px rgba(43,58,50,0.13);
+    transform: translateY(-2px);
+  }
+
+  /* ── Gallery / Carousel ── */
+  .cs-gallery {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--secondary);
+  }
+  .cs-slide {
+    /* hidden by default — JS shows the active one */
+    display: none;
+    width: 100%;
     height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+  .cs-slide img,
+  .enlargeable-image {
     width: 100%;
-    /* makes image behave like a background image */
-    object-fit: contain;
-    /* places top of the image at the top of the box */
+    height: 100%;
+    object-fit: cover;
     object-position: center;
-    transition: transform 0.6s;
+    display: block;
+    cursor: zoom-in;
+    transition: transform 0.5s ease;
+    border-radius: 0;
   }
+  .cs-slide img:hover {
+    transform: scale(1.03);
+  }
+
+  /* Image counter pill */
+  .cs-gallery-counter {
+    position: absolute;
+    bottom: 0.6rem;
+    right: 0.6rem;
+    background: rgba(27,38,32,0.65);
+    color: rgba(255,255,255,0.9);
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  /* Prev / Next buttons */
+  .prev-btn,
+  .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.85);
+    color: var(--headerColor);
+    font-size: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s, background 0.2s;
+    backdrop-filter: blur(4px);
+  }
+  .cs-gallery:hover .prev-btn,
+  .cs-gallery:hover .next-btn {
+    opacity: 1;
+  }
+  .prev-btn:hover,
+  .next-btn:hover {
+    background: #fff;
+  }
+  .prev-btn { left: 0.6rem; }
+  .next-btn { right: 0.6rem; }
+
+  /* Dot indicator strip */
+  .cs-gallery-dots {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.35rem;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .cs-gallery-dot {
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .cs-gallery-dot.active {
+    background: #fff;
+    transform: scale(1.3);
+  }
+
+  /* ── Card text area ── */
+  #publications-section .cs-flex-group {
+    padding: 1rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+  }
+  .card-image-line { display: none; }
+
   #publications-section .cs-name {
-    font-size: var(--bodyFontSize);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--headerColor);
+    line-height: 1.3;
+    margin: 0;
   }
-  #publications-section .cs-title-card-wrapper .cs-title {
-    margin: 0 0 1.25rem 0;
+  #publications-section .cs-name p { margin: 0; }
+
+  /* Date + location row */
+  .cs-event-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 0.1rem 0 0.2rem;
+    justify-content: flex-start;
+    text-align: left;
   }
+  #publications-section .cs-filter-journal-type-wrapper {
+    display: none !important;
+  }
+  #publications-section .cs-publication-month,
+  #publications-section .cs-publication-year {
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primaryDark);
+    letter-spacing: 0.04em;
+  }
+  #publications-section .cs-timeline {
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.75rem;
+    color: var(--bodyTextColor);
+    opacity: 0.55;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    width: 100%;
+  }
+  #publications-section .cs-timeline::before {
+    content: "📍";
+    font-size: 0.65rem;
+  }
+
   #publications-section .cs-desc {
-    max-height: 9em;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.8125rem;
+    color: var(--bodyTextColor);
+    opacity: 0.75;
+    line-height: 1.6;
+    max-height: 4.5em;
     overflow: hidden;
     position: relative;
+    margin: 0.25rem 0 0;
   }
   #publications-section .cs-desc.show-more {
-    overflow: unset;
     max-height: unset;
+    overflow: visible;
+  }
+  .read-more-btn {
+    font-size: 0.8125rem;
+    color: var(--secondaryDark);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    display: inline;
+  }
+
+  /* Tags */
+  #publications-section .line.line-full { display: none; }
+  #publications-section .cs-item-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+  }
+  #publications-section .cs-filter {
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--secondaryDark);
+    background: var(--secondary);
+    border-radius: 3px;
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* Social icons */
+  #publications-section .cs-item-social {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  #publications-section .cs-item-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: var(--secondary);
+    opacity: 0.65;
+    transition: opacity 0.2s, background 0.2s;
+  }
+  #publications-section .cs-item-social a:hover {
+    opacity: 1;
+    background: var(--primaryLight);
+  }
+  #publications-section .cs-item-social img {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  /* Misc cleanup */
+  #publications-section .cs-publication-year,
+  #publications-section .cs-publication-type {
+    font-size: 0.75rem;
+  }
+  #publications-section .cs-badge { display: none; }
+  #publications-section .cs-topper,
+  #publications-section .cs-title,
+  #publications-section .cs-text {
+    color: var(--bodyTextColor);
   }
 }
+
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #publications-section .cs-card-group {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-/* Small Desktop - 1024px */
+
+/* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
   #publications-section .cs-container {
-    max-width: 80rem;
     flex-direction: row;
     align-items: flex-start;
-  }
-  #publications-section .cs-start-end-wrapper {
-    flex-direction: row;
-  }
-  #publications-section .cs-start-end-wrapper input {
-    width: 40%;
-    margin: 0;
   }
   #publications-section .cs-content {
+    width: 17rem;
+    min-width: 14rem;
+    flex-shrink: 0;
+    position: sticky;
+    top: 6rem;
+  }
+  #publications-section .cs-filter-button-wrapper {
     flex-direction: column;
-    flex-wrap: nowrap;
-    width: 20%;
-    overflow: hidden;
+    gap: 1.5rem;
   }
-  #publications-section .cs-content .cs-filter-type-wrapper,
-  #publications-section .cs-content .cs-filter-year-wrapper,
-  #publications-section .cs-content .cs-filter-keywords-wrapper,
-  #publications-section .cs-content .cs-filter-journal-type-wrapper {
-    width: 100%;
-    align-items: flex-start;
-  }
-  #publications-section .cs-content .cs-filter-type-wrapper .cs-title,
-  #publications-section .cs-content .cs-filter-year-wrapper .cs-title,
-  #publications-section .cs-content .cs-filter-keywords-wrapper .cs-title,
-  #publications-section .cs-content .cs-filter-journal-type-wrapper .cs-title {
-    width: 100%;
-    text-align: start;
-  }
-  #publications-section .cs-content .cs-type-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  #publications-section .cs-content .cs-start-end-wrapper {
-    flex-direction: row;
-  }
-  #publications-section .cs-content .cs-filter-button-wrapper {
-    flex-direction: column;
-    border: none;
-    flex-wrap: nowrap;
-    padding: 0;
-  }
-  #publications-section .cs-content .cs-filter-button-wrapper > div {
+  #publications-section .cs-filter-button-wrapper > div {
     display: flex;
   }
-  #publications-section .cs-content .cs-filter-button-wrapper .cs-add-filter-wrapper {
-    display: none;
+  #publications-section .cs-add-filter-wrapper {
+    display: none !important;
   }
   #publications-section .cs-card-group {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/*-- -------------------------- -->
+<---        Image Lightbox      -->
+<--- -------------------------- -*/
+#image-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(27, 38, 32, 0.92);
+  z-index: 9999;
+  padding: 2rem;
+  box-sizing: border-box;
+  cursor: zoom-out;
+  backdrop-filter: blur(6px);
+  animation: modalFadeIn 0.25s ease;
+}
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+#image-modal .modal-content {
+  max-width: min(90vw, 1000px);
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  animation: modalImgIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes modalImgIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+.modal-caption {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.6);
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.8125rem;
+  text-align: center;
+  max-width: 60ch;
+}
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  color: rgba(255,255,255,0.6);
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.modal-close:hover {
+  color: #fff;
+}
+
 /*-- -------------------------- -->
 <---      Copyright Notice      -->
 <--- -------------------------- -*/
-/* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #copyright-notice {
     padding: var(--sectionPadding);
   }
   #copyright-notice .cs-container {
     width: 100%;
-    /* changes to 1280px at desktop */
+    max-width: 80rem;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* 48px - 64px */
     gap: var(--sectionGap);
   }
   #copyright-notice .cs-content {
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
     align-items: flex-start;
   }
   #copyright-notice .cs-content .cs-text {
@@ -367,276 +592,16 @@
     text-align: left;
   }
 }
-/* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #copyright-notice .cs-container {
-    max-width: 80rem;
-  }
-}
-
 
 .author-tooltip {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.85);
-    color: #fff;
-    padding: 8px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    max-width: 250px;
-    white-space: normal;
-    display: none;
-    z-index: 1000;
-}
-
-/*-- -------------------------- -->
-<---          Content           -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #content-1450 {
-    padding: var(--sectionPadding);
-  }
-  #content-1450 .cs-container {
-    width: 100%;
-    max-width: 51.25rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--sectionGap);
-  }
-  #content-1450 .cs-content {
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #content-1450 .cs-title,
-  #content-1450 .cs-text {
-    max-width: 100%;
-  }
-}
-
-/*-- -------------------------- -->
-<---       Social Section       -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #social-547 {
-    padding: var(--sectionPadding);
-  }
-  #social-547 .cs-container {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  #social-547 .cs-content {
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #social-547 .cs-topper,
-  #social-547 .cs-title,
-  #social-547 .cs-text {
-    color: var(--bodyTextColor);
-  }
-  #social-547 .cs-card-group {
-    width: 100%;
-    margin: 0 0 1.25rem 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    justify-content: center;
-    gap: 1rem;
-  }
-  #social-547 .cs-item {
-    text-align: center;
-    list-style: none;
-    width: 100%;
-    height: fit-content;
-    max-width: 32.625rem;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bodyTextColorWhite);
-    box-shadow: var(--boxCardShadow);
-    display: flex;
-    flex-direction: column;
-  }
-  #social-547 .cs-picture {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1.24;
-    overflow: hidden;
-    display: block;
-    position: relative;
-  }
-  #social-547 .cs-picture img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    object-position: center;
-    transition: transform 0.6s;
-  }
-  #social-547 .cs-filter-wrapper {
-    gap: 0;
-  }
-  #social-547 .cs-filter-wrapper a {
-    padding: 0.625rem;
-    border-bottom: white 3px solid;
-  }
-  #social-547 .cs-filter-wrapper a.active {
-    border-bottom: var(--primary) 3px solid;
-  }
-  #social-547 .cs-title-card-wrapper .cs-title {
-    margin: 0 0 1.25rem 0;
-  }
-  #social-547 .cs-timeline {
-    font-size: var(--mediumFontSize);
-    margin: 0 0 0.125rem 0;
-    width: 100%;
-    line-height: 1.2em;
-    font-weight: 400;
-    text-align: inherit;
-    color: var(--bodyTextColor);
-    display: block;
-    text-align: left;
-  }
-  #social-547 .cs-desc {
-    font-size: var(--bodyFontSize);
-    max-height: 9em;
-    overflow: hidden;
-    position: relative;
-  }
-  #social-547 .cs-desc.show-more {
-    overflow: unset;
-    max-height: unset;
-  }
-}
-
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #social-547 .cs-card-group {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Small Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #social-547 .cs-container {
-    max-width: 80rem;
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  #social-547 .cs-filter-wrapper {
-    gap: 0;
-  }
-  #social-547 .cs-filter-wrapper a {
-    padding: 0.625rem;
-    border-bottom: none;
-    border-left: white 3px solid;
-  }
-  #social-547 .cs-filter-wrapper a.active {
-    border-left: var(--primary) 3px solid;
-    border-bottom: none;
-  }
-  #social-547 .cs-filter-wrapper {
-    justify-content: flex-start;
-  }
-  #social-547 .cs-content {
-    width: 20%;
-    align-items: flex-start;
-  }
-  #social-547 .cs-card-group {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/*-------------------------------------
-  Gallery Carousel and Image Uniformity
---------------------------------------*/
-.cs-gallery {
-  position: relative;
-  width: 100%;
-  height: 300px; /* Enforce uniform image height */
-  text-align: center;
-  overflow: hidden;
-}
-
-.cs-slide img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  display: none; /* Controlled by JS */
-}
-
-.prev-btn,
-.next-btn {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.prev-btn {
-  left: 10px;
-}
-.next-btn {
-  right: 10px;
-}
-
-.enlargeable-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 5px;
-  transition: transform 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-.enlargeable-image:hover {
-  transform: scale(1.2);
-  z-index: 10;
-}
-
-/* Modal backdrop sits above everything */
-#image-modal {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  background-color: var(--headerColor);
+  color: rgba(255,255,255,0.9);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8125rem;
+  max-width: 250px;
   display: none;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0,0,0,0.8);
-  z-index: 9999;
-  padding-top: 60px; /* if you have a 60px‑tall fixed header */
-  box-sizing: border-box;
+  z-index: 1000;
+  box-shadow: 0 4px 16px rgba(43,58,50,0.18);
 }
-
-/* The enlarged image */
-#image-modal .modal-content {
-  max-width: 90vw;
-  max-height: calc(90vh - 60px); /* account for header height too */
-  object-fit: contain;
-}
-
-#event-map {
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-
-
-
