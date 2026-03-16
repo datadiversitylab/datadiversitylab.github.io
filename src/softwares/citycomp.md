@@ -12,7 +12,7 @@ Description: CityComp is a Shiny app developed to support the use of the
 tags:
   - Web applications
 github: https://github.com/datadiversitylab/CityComp
-link: https://datadiversitylab.github.io/CityComp/
+link: https://datadiversitylab.github.io/citycomp/
 image: /assets/images/softwares/citycomp.png
 imageAlt: CityComp  image
 order: 30
