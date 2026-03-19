@@ -11,4 +11,5 @@ Description: This repo hosts a simple Firefox extension that checks on whether
 tags:
   - Web applications
 github: https://github.com/datadiversitylab/ms_advising_checker
+image: /assets/images/softwares/screenshot-2026-03-18-at-9.05.43 pm.png
 ---
