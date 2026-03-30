@@ -9,7 +9,7 @@ Description: This repo hosts a simple Firefox extension that checks on whether
   programs or subplans. It can also be adjusted in the requirements it check
   for. I did not implement an automatic submission.
 tags:
-  - Web applications
+  - Browser plugins
 github: https://github.com/datadiversitylab/ms_advising_checker
 image: /assets/images/softwares/screenshot-2026-03-18-at-9.05.43 pm.png
 ---
