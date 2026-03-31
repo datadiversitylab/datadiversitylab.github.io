@@ -11,7 +11,7 @@ publicationAbstract: The Data Diversity Lab recently had the privilege of
   this opportunity! To read or see more about what was discussed, see photos
   above and the website linked below.
 images:
-  - /assets/images/socials/f1198170-dd64-423e-965b-79fd98e64ec5.jpg
+  - /assets/images/socials/dscf2019_2.jpg
   - /assets/images/socials/dscf1990.jpg
   - /assets/images/socials/dscf1956.jpg
   - /assets/images/socials/dscf1934.jpg
