@@ -29,7 +29,7 @@ publicationAbstract: "Objectives: The reproductive and trophic ecology of
   for the species occur during the beginning of the wet seasons (March-April,
   September-November)."
 tags:
-  - Ecology
+  - Biodiversity
 image: /assets/images/publications/dietayreproduccion.jpg
 pdfDocument: /assets/documents/publications/2016_Dieta y reproducción de
   Bryconamericus_Roman-Palacios et al_2016_caucanus.pdf
