@@ -21,7 +21,7 @@ publicationAbstract: We apply Bayesian Additive Regression Tree (BART)
   hyperparameter tuning takes about the same amount of computation time as tuned
   other methods. Yet BARN is still typically more accurate.
 tags:
-  - Data science
+  - Data Science
 image: /assets/images/publications/barn.jpg
 pdfDocument: /assets/documents/publications/2404.04425.pdf
 webLink: https://arxiv.org/abs/2404.04425
