@@ -16,7 +16,7 @@ publicationAbstract: "Hemibrycon brevispini is a Neotropical characid fish
   reproduction: December, April and August. Average fecundity was 776 mature
   oocytes per female."
 tags:
-  - Ecology
+  - Biodiversity
 image: /assets/images/publications/trophicandreproductiveecology.jpg
 pdfDocument: /assets/documents/publications/2015_Trophic and reproductive
   ecology _Roman-Palacios_et_al_2015_Brevi.pdf
