@@ -16,7 +16,7 @@ publicationAbstract: "Five species of geckos in the genus Goniurosaurus had been
   Goniurosaurus. The type specimens are deposited in the Museum of Biology, East
   China Normal University (ECNU)."
 tags:
-  - Taxonomy
+  - Biodiversity
 image: /assets/images/publications/goniurosaurusgezhi.jpg
 pdfDocument: /assets/documents/publications/ZhuEtAl2020.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.11646/zootaxa.4852.2.6"
