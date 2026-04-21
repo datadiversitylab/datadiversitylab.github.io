@@ -17,8 +17,8 @@ publicationAbstract: "To analyze the degree of trophic overlap, 2 species of
   brevispini. In these taxa, syntopy is mainly due to the high abundance of
   resources available during the year"
 tags:
-  - Ecology
-  - Data science
+  - Biodiversity
+  - Data Science
 image: /assets/images/publications/habitostroficosdedosespecies.jpg
 pdfDocument: /assets/documents/publications/2015_Hábitos tróficos de dos
   especies sintópicas_Roman-Palacios_&_Roman-Valencia_2015_Two_freshwater.pdf
