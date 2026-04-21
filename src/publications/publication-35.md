@@ -10,7 +10,7 @@ publicationAbstract: Six new species of Elaphopsocus Roesler from Brazil and
   for Elaphopsocoides and Elaphopsocus; based on the structure of the male
   hypandrium and phallosome three species groups are recognized in Elaphopsocus.
 tags:
-  - Taxonomy
+  - Biodiversity
 image: /assets/images/publications/thegenuselaphopsocusroesler.jpg
 pdfDocument: /assets/documents/publications/2015_The genus Elaphopsocus
   Roesler_The_genus_Elaphopsocus.pdf
