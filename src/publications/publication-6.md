@@ -18,7 +18,7 @@ publicationAbstract: "To date, only two whip spider species have been recorded
   closest relative being distributed across the western Asia. The type specimens
   are deposited in the Museum of Biology, East China Normal University (ECNU)."
 tags:
-  - Taxonomy
+  - Biodiversity
 image: /assets/images/publications/anewspeciesofwhipspidersaraxsinesis.jpg
 pdfDocument: /assets/documents/publications/2022_A new species of whip spider,
   Sarax sinensis_WuEtAl_SS.pdf
