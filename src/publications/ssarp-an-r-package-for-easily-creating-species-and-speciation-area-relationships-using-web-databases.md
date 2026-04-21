@@ -23,8 +23,7 @@ publicationAbstract: >-
   tools to determine whether the GPS points in the occurrence data refer to valid land masses, associate those land masses with their areas using a built-in dataset of island names and areas, and create SARs using linear and segmented regression. SSARP also provides multiple functions for estimating speciation rates for use in creating a SpAR. Using SSARP allows researchers to dramatically increase the scope of their biodiversity research through the creation of SARs and SpARs with data from island systems across the globe.
 tags:
   - Software
-  - Evolution
-  - Ecology
+  - Biodiversity
 image: /assets/images/publications/screenshot-2025-01-03-at-12.02.25-pm.png
 pdfDocument: /assets/documents/publications/ssarp.pdf
 pdfLink: ""
