@@ -33,8 +33,7 @@ publicationAbstract: Much of what we know about speciation comes from detailed
   Overall, our study represents an initial step towards understanding general
   patterns in speciation across all organisms.
 tags:
-  - Evolution
-  - Ecology
+  - Biodiversity
 image: /assets/images/publications/specieationacrossthetreeoflife.jpg
 pdfDocument: /assets/documents/publications/2021_HernandezHernandezEtAl.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1111/brv.12698"
