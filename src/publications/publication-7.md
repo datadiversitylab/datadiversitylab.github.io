@@ -19,8 +19,7 @@ publicationAbstract: Many biodiversity studies focus on explaining high tropical
   but neglected biodiversity patterns, and highlight the conservation importance
   of freshwater habitats
 tags:
-  - Ecology
-  - Evolution
+  - Biodiversity
 image: /assets/images/publications/theoriginsofglobalbiodiversity.jpg
 pdfDocument: /assets/documents/publications/2022_Roman-Palacios_et_al._EL_.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1111/ele.13999"
