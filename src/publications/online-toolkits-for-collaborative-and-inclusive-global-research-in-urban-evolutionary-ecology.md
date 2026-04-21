@@ -29,8 +29,8 @@ publicationAbstract: "Urban evolutionary ecology is inherently
   sustain long-term global research that will advance our understanding of urban
   evolutionary ecology."
 tags:
-  - Data science
-  - Ecology
+  - Data Science
+  - Biodiversity
   - Software
 image: /assets/images/publications/onlinetoolkits.png
 pdfDocument: /assets/documents/publications/savageetal_2024.pdf
