@@ -31,9 +31,8 @@ publicationAbstract: Universal single-copy orthologs are the most conserved
   software toolkit that reconstructs consistent phylogenies and offers more
   precise assembly assessments.
 tags:
-  - Data science
-  - Evolution
-  - Genomics
+  - Data Science
+  - Biodiversity
 image: /assets/images/publications/screenshot-2025-03-06-at-3.58.37 pm.png
 pdfDocument: /assets/documents/publications/alametal2025.pdf
 webLink: https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-025-02328-2
