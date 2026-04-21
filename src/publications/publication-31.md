@@ -21,7 +21,7 @@ publicationAbstract: When based on phylogenetic proposals, biogeographic
   is well resolved, suggesting a dispersal event from the Neotropics for both
   genera.
 tags:
-  - Taxonomy
+  - Biodiversity
 image: /assets/images/publications/historicalbiogeographyofpsocids.jpg
 pdfDocument: /assets/documents/publications/2016_Historical biogeography of
   Thyrsophorini _Roman-Palacios et al 2016_Thyrso.pdf
