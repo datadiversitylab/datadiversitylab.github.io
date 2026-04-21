@@ -24,8 +24,7 @@ publicationAbstract: What an animal eats is a fundamental aspect of its biology,
   many carnivorous species living today may have maintained this diet through a
   continuous series of carnivorous ancestors for >800 million years.
 tags:
-  - Evolution
-  - Ecology
+  - Biodiversity
 image: /assets/images/publications/evolutionofdiet.jpeg
 pdfDocument: /assets/documents/publications/2019_Evolution of diet across the
   Animal Tree of Life_Roman-Palacios_et_al_EvoLett_2019.pdf
