@@ -27,7 +27,7 @@ publicationAbstract: Climate change may be a major threat to biodiversity in the
   climatic changes that cause extinction and the processes that may help species
   to survive
 tags:
-  - Climate change
+  - Biodiversity
 image: /assets/images/publications/recentresponsestoclimatechange.jpeg
 pdfDocument: /assets/documents/publications/2020_Roman-Palacios_Wiens_PNAS.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1073/pnas.1913007117"
