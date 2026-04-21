@@ -20,9 +20,9 @@ publicationAbstract: The number of terminals in phylogenetic trees has
   documentation can be accessed through rOpenSci
   (https://ropensci.github.io/treedata.table/).
 tags:
-  - Evolution
+  - Biodiversity
   - Software
-  - Data science
+  - Data Science
 image: /assets/images/publications/treedata.tablerwrappperfordatatable.jpg
 pdfDocument: /assets/documents/publications/2021_Roman-Palacios_treedata.table.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.7717/peerj.12450"
