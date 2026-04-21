@@ -19,9 +19,8 @@ publicationAbstract: Socially transmitted behaviors are widespread across the
   educators, and conservationists, the ACDB represents a step toward recognizing
   the role of social learning in animal populations.
 tags:
-  - Ecology
-  - Data science
-  - Social learning
+  - Biodiversity
+  - Data Science
 image: /assets/images/publications/acdb.jpg
 pdfDocument: /assets/documents/publications/basavaetal2025.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1038/s41597-025-05315-y"
