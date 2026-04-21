@@ -22,7 +22,7 @@ publicationAbstract: The increasing uncertainty about the conservation status of
   that have been recorded exhibit remarkable ecological importance and also act
   as a reservoir of diversity regarding surrounding areas.
 tags:
-  - Taxonomy
+  - Biodiversity
 image: /assets/images/publications/listaanotada.png
 pdfDocument: /assets/documents/publications/2017_Lista anotada de la
   herpetofauna_Roman-Palacios et al. 2017_Quindio_Herps.pdf
