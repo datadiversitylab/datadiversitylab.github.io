@@ -37,10 +37,8 @@ publicationAbstract: Lacustrine, riverine and spring carbonates represent
   values within 1.0–1.5°C of each other, and typically fall within calibration
   uncertainty given limitations of precision.
 tags:
-  - Data science
-  - Geosciences
-  - Paleoclimatology
-  - Climate change
+  - Data Science
+  - Biodiversity
 image: /assets/images/publications/dep2312-fig-0001-m.jpg
 pdfDocument: /assets/documents/publications/arnoldetal_2024.pdf
 webLink: https://onlinelibrary.wiley.com/doi/full/10.1002/dep2.312
