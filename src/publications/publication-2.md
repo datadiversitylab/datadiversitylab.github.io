@@ -24,7 +24,7 @@ publicationAbstract: Understanding how plants respond to thermal stress is
   the framework that is being used to estimate climate-related extinctions over
   the upcoming century
 tags:
-  - Evolution
+  - Biodiversity
 image: /assets/images/publications/physiologicalresponses.jpg
 pdfDocument: /assets/documents/publications/2023_Physiological cold tolerance
   evolves faster _Wen_etAl.pdf
