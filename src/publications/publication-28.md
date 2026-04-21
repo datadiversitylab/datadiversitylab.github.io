@@ -25,7 +25,7 @@ publicationAbstract: The anuran assemblages in three habitats (forest, lake and
   fragilis and L. colombiensis) showed high variability in the modified
   habitats.
 tags:
-  - Ecology
+  - Biodiversity
 image: /assets/images/publications/usodemicrohabitat.jpg
 pdfDocument: /assets/documents/publications/2016_Uso de microhábitat por anuros
   _Roman-Palacios et al_2016_Guarinocito.pdf
