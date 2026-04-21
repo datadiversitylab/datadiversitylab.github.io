@@ -37,7 +37,7 @@ publicationAbstract: "Whereas most of the studies that discuss the evolutionary
   importance of using of multiple node constraints, especially when placed
   deeply in the tree, for fossil–based divergence dating analyses."
 tags:
-  - Evolution
+  - Biodiversity
 image: /assets/images/publications/whendidanolislizardsdiverge.jpg
 pdfDocument: /assets/documents/publications/2018_roman-palacios_et_al_anolis.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1016/j.ympev.2018.06.012"
