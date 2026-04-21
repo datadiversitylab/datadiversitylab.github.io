@@ -18,9 +18,9 @@ publicationAbstract: Current practices for assembling phylogenetic trees often
   salphycon, a shiny web app that aims to increase access to the fundamental
   functions in the phruta r package.
 tags:
-  - Evolution
+  - Biodiversity
   - Software
-  - Data science
+  - Data Science
 image: /assets/images/publications/thephrutarpackage.jpg
 pdfDocument: /assets/documents/publications/2023_The phruta R package.pdf
 badgeImage: null
