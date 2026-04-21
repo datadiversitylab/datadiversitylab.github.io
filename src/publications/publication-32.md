@@ -10,7 +10,7 @@ publicationAbstract: For 75 years, the genus Elaphopsocus was considered a
   America, this genus presently includes seven species from Brazil and Colombia.
   We here describe three new species from the East Colombian high Andes.
 tags:
-  - Taxonomy
+  - Biodiversity
 image: /assets/images/publications/uncoveringthediversity.png
 pdfDocument: /assets/documents/publications/2015_Uncovering the diversity of the
   neotropical genus Elaphopsocus _Roman-Palacios_et_al_2015_Elaphosocus.pdf
