@@ -33,8 +33,7 @@ publicationAbstract: "Aim: The evolutionary causes of the latitudinal diversity
   likely path to building very high species richness is through diversification
   over long periods of time, rather than through rapid diversification."
 tags:
-  - Evolution
-  - Ecology
+  - Biodiversity
 image: /assets/images/publications/evolutionarytimebestexplains.jpg
 pdfDocument: /assets/documents/publications/2021_MillerRoman_freshwater.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1111/geb.13253"
