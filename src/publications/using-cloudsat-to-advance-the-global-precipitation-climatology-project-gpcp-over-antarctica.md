@@ -32,10 +32,8 @@ publicationAbstract: Remote sensing-based precipitation products face several
   other precipitation products over Antarctica at the pixel level, including
   satellites and reanalysis products.
 tags:
-  - Data science
-  - Climatology
-  - Remote sensing
-  - Climate change
+  - Data Science
+  - Biodiversity
 image: /assets/images/publications/screenshot-2024-05-09-at-8.37.17-am.png
 pdfDocument: /assets/documents/publications/ehsanietal2024.pdf
 webLink: https://www.sciencedirect.com/science/article/pii/S0034425724002177
