@@ -37,9 +37,7 @@ publicationAbstract: "Elemental ratios in biogenic marine calcium carbonates are
   elemental chemistry and species relatedness suggests mechanistic controls over
   element incorporation rooted in the evolution of biomineralization mechanisms"
 tags:
-  - Evolution
-  - Ecology
-  - Geosciences
+  - Biodiversity
 image: /assets/images/publications/patternsofelementincorporation.jpg
 pdfDocument: /assets/documents/publications/UlrichEtAl2021.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.3389/feart.2021.641760"
