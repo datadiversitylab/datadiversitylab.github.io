@@ -19,8 +19,7 @@ publicationAbstract: With more than 900 valid species, Psocidae is the most
   dates also correspond to diversification shifts in multiple angiosperm
   lineages and the increase in global temperature.
 tags:
-  - Evolution
-  - Taxonomy
+  - Biodiversity
 image: /assets/images/publications/onthedivergenceofpsocidae.png
 pdfDocument: /assets/documents/publications/2017_On the divergence of
   Psocidae_Roman-Palacios et al. 2017_Psocidae_Divergence.pdf
