@@ -23,7 +23,7 @@ publicationAbstract: We present a list of 720 species of ‘Psocoptera’ record
   psocids among and within localities, and emphasize that additional extensive
   fieldwork is highly required.
 tags:
-  - Taxonomy
+  - Biodiversity
 image: /assets/images/publications/checklistofpsocopterapsocodea.jpg
 pdfDocument: /assets/documents/publications/2018_Checklist of
   ‘Psocoptera’(Psocodea)_Garcia-Aldrete et al 2018_Psocoptera_Colombia.pdf
