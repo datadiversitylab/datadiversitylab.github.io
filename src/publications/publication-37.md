@@ -13,7 +13,7 @@ publicationAbstract: Two new species of *Elaphopsocoides* n. gen. from Valle del
   Entomology Museum, Universidad del Valle (MUSENUV), Santiago de Cali,
   Colombia.
 tags:
-  - Taxonomy
+  - Biodiversity
 image: /assets/images/publications/elaphopsicoides.png
 pdfDocument: /assets/documents/publications/2014_Elaphopsocoides, a new genus of
   Psocidae _Roman-P_et_al_2014_Elaphopsocus.pdf
