@@ -22,8 +22,8 @@ publicationAbstract: "In a previous paper, we used simulations and empirical
   rates: we argue that BAMM should be avoided for estimating both
   diversification rates and rate shifts."
 tags:
-  - Evolution
-  - Data science
+  - Biodiversity
+  - Data Science
 image: /assets/images/publications/bammgivesmisleading.jpg
 pdfDocument: /assets/documents/publications/2018_BAMM gives misleading results
   _Meyer_et_al_Evol_2018_BAMM.pdf
