@@ -9,7 +9,7 @@ publicationAbstract: "A monotypic genus of Psocidae (Amphigerontiinae: Blastini)
   from Chaetopsocidus Badonnel, from the Páramo de Monserrate, near Bogotá, in
   having setae on the forewing veins."
 tags:
-  - Taxonomy
+  - Biodiversity
 image: /assets/images/publications/anewneotropicalgenusofblastini.jpg
 pdfDocument: /assets/documents/publications/2015_A new Neotropical genus of
   Blastini_Garcia-Aldrete_Roman-Palacios_2015_Blastini.pdf
