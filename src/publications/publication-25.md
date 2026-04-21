@@ -28,8 +28,8 @@ publicationAbstract: "Whereas more than 10 % of global amphibian richness is
   the analyzed DD amphibians should be changed to account for the threats they
   face. Rev. Biol. Trop. 66(3): 1272-1281. Epub 2018 September 01."
 tags:
-  - Ecology
-  - Data science
+  - Biodiversity
+  - Data Science
 image: /assets/images/publications/onthedatadeficientamphibians.jpg
 pdfDocument: /assets/documents/publications/2018_On the Data Deficient
   amphibians _Roman-Palacios_&_Valencia-Zuleta 2018_Colombian_DD.pdf
