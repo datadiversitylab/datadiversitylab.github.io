@@ -22,7 +22,7 @@ publicationAbstract: When carrying out modelling analysis using experimental
   efficiency of the linear regression over other types of regression under
   biological data.
 tags:
-  - Data science
+  - Data Science
 image: /assets/images/publications/informationcriteria.jpg
 pdfDocument: /assets/documents/publications/2015_Information criteria on
   multimodel selection_Moraga_Lopez_Roman-Palacios_2015_Multimodel.pdf
