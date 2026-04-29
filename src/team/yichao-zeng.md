@@ -1,7 +1,8 @@
 ---
 memberName: Yichao Zeng
-memberTitle: Postdoctoral Researcher
-memberEducation: PhD
+memberTitle:
+  - Postdoctoral Researcher
+currentPosition: unior Research Chair Fellow Modélisation de la biodiversité, Université PSL
 memberDate: "2024"
 memberDateEnd: "2025"
 memberBio: Yichao has long been interested in the interplay of species
@@ -13,8 +14,9 @@ tags:
   - Postdoc
 email: yichaozeng@arizona.edu
 github: yichaozeng
-link: https://yichaozeng.github.io/index.html
 resume: /assets/documents/our-team/cv_yichao_20zeng.pdf
+memberEducation: PhD
+link: https://yichaozeng.github.io/index.html
 image: /assets/images/our-team/img_7362.jpeg
 order: 5
 date: 2025-01-09T16:15:00.000Z
