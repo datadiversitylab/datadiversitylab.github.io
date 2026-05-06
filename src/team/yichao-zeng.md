@@ -2,7 +2,7 @@
 memberName: Yichao Zeng
 memberTitle:
   - Postdoctoral Researcher
-currentPosition: unior Research Chair Fellow Modélisation de la biodiversité, Université PSL
+currentPosition: Junior Research Chair Fellow Modélisation de la biodiversité, Université PSL
 memberDate: "2024"
 memberDateEnd: "2025"
 memberBio: Yichao has long been interested in the interplay of species
