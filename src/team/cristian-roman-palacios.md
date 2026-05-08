@@ -16,9 +16,9 @@ tags:
 linkedin: https://www.linkedin.com/in/cromanpa/
 email: cromanpa@arizona.edu
 github: cromanpa94
-link: https://cromanpa94.github.io/
-resume: /assets/documents/our-team/cv_cristian_roman_palacios_su25.pdf
+resume: /assets/documents/our-team/cv_cristian_roman_palacios_may8.pdf
 memberEducation: PhD
+link: https://cromanpa94.github.io/
 image: /assets/images/our-team/cristian-roman-palacios.png
 imageAlt: Portrait of Cristian Román-Palacios
 order: 1
