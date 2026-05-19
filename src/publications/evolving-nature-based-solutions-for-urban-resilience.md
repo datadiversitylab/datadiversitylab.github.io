@@ -1,6 +1,11 @@
 ---
-publicationTitle: "# Evolving nature-based solutions for urban resilience"
-publicationAuthor: Marina Alberti, Nancy B. Grimm, Eric P. Palkovacs, et al.
+publicationTitle: Evolving nature-based solutions for urban resilience
+publicationAuthor: Marina Alberti, Nancy B. Grimm, Eric P. Palkovacs, Marc C.
+  Urban, Brian C. Verrelli, Philip Anderson, Elizabeth C. Carlen, Jocelyn M.
+  Cocciardi, Elizabeth M. Cook, Marie-Josée Fortin, Kiyoko M. Gotanda, Sarah
+  Hobbie, Marc T. J. Johnson, Alexis N. Malesis-Dahm, Lindsay S. Miles, Cristian
+  Román-Palacios, Megan Phifer-Rixey, David Salazar-Valenzuela, Amy M. Savage,
+  Riley Snyder, Kristin M. Winchell, Yuyu Zhou
 publicationDate: "2026"
 publicationMonth: May
 publicationType: Science
