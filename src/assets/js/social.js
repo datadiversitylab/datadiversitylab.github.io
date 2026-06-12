@@ -112,11 +112,13 @@ function updateFilterSets(filter, isKeyword, optionElement) {
         if (isKeyword) {
             // Toggle the current keyword selection and ensure 'All' is inactive
             selectedKeywords.has(filter) ? selectedKeywords.delete(filter) : selectedKeywords.add(filter);
-            document.querySelector('.cs-filter-keywords-wrapper .filter-option[data-filter="all"]').classList.remove('active');
+            const allKw = document.querySelector('.cs-filter-keywords-wrapper .filter-option[data-filter="all"]');
+            if (allKw) allKw.classList.remove('active');
         } else {
             // Toggle the current journal type selection and ensure 'All' is inactive
             selectedJournalTypes.has(filter) ? selectedJournalTypes.delete(filter) : selectedJournalTypes.add(filter);
-            document.querySelector('.cs-filter-journal-type-wrapper .filter-option[data-filter="all"]').classList.remove('active');
+            const allJt = document.querySelector('.cs-filter-journal-type-wrapper .filter-option[data-filter="all"]');
+            if (allJt) allJt.classList.remove('active');
         }
         optionElement.classList.toggle('active');
     }
@@ -127,16 +129,12 @@ function updateAllFilterActivation() {
     const allJournalTypeFilter = document.querySelector('.cs-filter-journal-type-wrapper .filter-option[data-filter="all"]');
     const allKeywordsFilter = document.querySelector('.cs-filter-keywords-wrapper .filter-option[data-filter="all"]');
 
-    if (selectedJournalTypes.size === 0) {
-        allJournalTypeFilter.classList.add('active');
-    } else {
-        allJournalTypeFilter.classList.remove('active');
+    if (allJournalTypeFilter) {
+        allJournalTypeFilter.classList.toggle('active', selectedJournalTypes.size === 0);
     }
 
-    if (selectedKeywords.size === 0) {
-        allKeywordsFilter.classList.add('active');
-    } else {
-        allKeywordsFilter.classList.remove('active');
+    if (allKeywordsFilter) {
+        allKeywordsFilter.classList.toggle('active', selectedKeywords.size === 0);
     }
 }
 
@@ -243,6 +241,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-
-

@@ -1,7 +1,7 @@
 {
   "title": "The Data Diversity Lab",
   "subTitle": "",
-  "description": "Biodiversity · Data Science · Software",
+  "description": "Biodiversity · Data Science · Software · People",
   "buttons": [
     {
       "title": "Lab Members",
@@ -18,10 +18,6 @@
     {
       "title": "Join Us",
       "link": "/join-us"
-    },
-    {
-      "title": "Subscribe",
-      "link": "https://nextcloud.datadiversitylab.synology.me/apps/listman/subscribe/3W3wRYcK"
     }
   ],
   "backgroundImages": [

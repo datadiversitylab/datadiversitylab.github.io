@@ -20,41 +20,34 @@ navOptions:
 <section id="sbsr-579" class="cs-top-section">
     <h1 class="cs-title">The lab</h1>
     <div class="cs-container">
-        <div class="cs-picture-caption">
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="../assets/images/lab-1.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="../assets/images/lab-1.jpg">
-                <img loading="lazy" decoding="async" src="../assets/images/lab-1.jpg" alt="room" width="494" height="700">
-            </picture>
-            <div class="cs-caption-slider-wrapper">
-                <p class="cs-text-caption" style="display:block;" data-srcset="../assets/images/lab-1.jpg">
-                    Passiflora, El Vinculo, Colombia
-                </p>
-                <p class="cs-text-caption" data-srcset="../assets/images/UAAdobeStock.jpeg">
+        <div class="cs-picture-caption le-panel">
+        <div class="le-inner">
+            <div class="le-head">
+            <h2 class="le-title">Explore our work</h2>
+            <p class="le-desc">Browse papers, software, databases, and grants by topic.</p>
+            </div>
 
-                </p>
+            <div class="le-topics" role="tablist" aria-label="Research topics">
+            <button class="le-topic active" data-topic="all">All</button>
+            <button class="le-topic" data-topic="Biodiversity">Biodiversity</button>
+            <button class="le-topic" data-topic="Data Science">Data Science</button>
+            <button class="le-topic" data-topic="Software">Software</button>
+            <button class="le-topic" data-topic="People">People</button>
+            </div>
 
-                <p class="cs-text-caption" data-srcset="../assets/images/lab-2.jpg">
-                    Odonata, Guarinocito, Colombia
-                </p>
-                <p class="cs-text-caption" data-srcset="../assets/images/lab-3.jpg">
-                    Atta, Tucson, USA
-                </p>
-                <div class="cs-arrow-wrapper">
-                    <div class="cs-arrow cs-arrow-left"><img src="../assets/icons/left-arrow.svg"></div>
-                    <div class="cs-image-slider">
-                        <div class="cs-image-selector active"></div>
-                        <div class="cs-image-selector"></div>
-                        <div class="cs-image-selector"></div>
-                        <div class="cs-image-selector"></div>
+            <input type="text" id="le-search" class="le-search" placeholder="Search…" aria-label="Search work by name">
 
-                    </div>
-                    <div class="cs-arrow cs-arrow-right"><img src="../assets/icons/right-arrow.svg"></div>
-                </div>
+            <div class="le-grid" id="le-grid"></div>
+            <p class="le-empty" id="le-empty" hidden>Nothing here yet.</p>
+
+            <div class="le-pager">
+            <button class="le-prev" id="le-prev" aria-label="Previous">&#8249;</button>
+            <span class="le-count" id="le-count"></span>
+            <button class="le-next" id="le-next" aria-label="Next">&#8250;</button>
             </div>
         </div>
+        </div>
+        
         <div class="cs-content">
             <p class="cs-text">
                 The Data Diversity Lab, established in 2023 and located in the main campus of the University of Arizona, is led by Dr. Cristian Román-Palacios, an ecologist and evolutionary biologist interested in solving long-standing questions in biology using bioinformatic and machine learning methods applied to big datasets. Some of our papers in evolutionary biology, conservation biology, ecology, biostatistics, and climate change, among other fields have been published in the journals PNAS, Proceedings B, Evolution, Journal of Biogeography, Evolution Letters, Global Ecology and Biogeography, among others.
@@ -68,3 +61,134 @@ navOptions:
         </div>
     </div>
 </section>
+
+
+<script type="application/json" id="le-data">
+[
+  {%- set sources = [
+    { "items": collections.publications, "type": "Paper",    "name": "publicationTitle", "link": "webLink" },
+    { "items": collections.softwares,    "type": "Software", "name": "Name",             "link": "link" },
+    { "items": collections.databases,    "type": "Database", "name": "Name",             "link": "link" },
+    { "items": collections.grants,       "type": "Grant",    "name": "grantName",        "link": "link" }
+  ] -%}
+  {%- set first = true -%}
+  {%- for source in sources -%}
+    {%- for item in source.items -%}
+      {%- if item.data.tags -%}
+        {%- if not first -%},{%- endif -%}{%- set first = false -%}
+        {
+          "name": {{ (item.data[source.name] | striptags) | dump | safe }},
+          "type": "{{ source.type }}",
+          "link": {{ (item.data[source.link] or "") | dump | safe }},
+          "tags": {{ item.data.tags | dump | safe }}
+        }
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+]
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const root = document.getElementById("le-data");
+  if (!root) return;
+
+  let data = [];
+  try { data = JSON.parse(root.textContent); } catch (e) { return; }
+
+  const grid = document.getElementById("le-grid");
+  const empty = document.getElementById("le-empty");
+  const count = document.getElementById("le-count");
+  const searchInput = document.getElementById("le-search");
+  const prevBtn = document.getElementById("le-prev");
+  const nextBtn = document.getElementById("le-next");
+  const topicButtons = document.querySelectorAll(".le-topic");
+
+  // Approx card height incl. gap, in px. Tuned to the CSS below.
+  const CARD_H = 60;
+  let perPage = 4;
+  let topic = "all";
+  let term = "";
+  let page = 0;
+
+  function computePerPage() {
+    const h = grid.clientHeight;
+    if (h > 0) perPage = Math.max(2, Math.floor(h / CARD_H));
+  }
+
+  function filtered() {
+    return data.filter(function (item) {
+      const topicOk = topic === "all" || item.tags.some(function (tag) {
+        return String(tag).toLowerCase() === topic.toLowerCase();
+      });
+      const termOk = term === "" || item.name.toLowerCase().indexOf(term) !== -1;
+      return topicOk && termOk;
+    });
+  }
+
+  function render() {
+    const all = filtered();
+    const pages = Math.max(1, Math.ceil(all.length / perPage));
+    if (page > pages - 1) page = pages - 1;
+    if (page < 0) page = 0;
+
+    const slice = all.slice(page * perPage, page * perPage + perPage);
+
+    grid.innerHTML = "";
+    slice.forEach(function (item) {
+      const card = document.createElement(item.link ? "a" : "div");
+      card.className = "le-card";
+      if (item.link) {
+        card.href = item.link;
+        card.target = "_blank";
+        card.rel = "noopener";
+      }
+
+      const badge = document.createElement("span");
+      badge.className = "le-badge le-badge-" + item.type.toLowerCase();
+      badge.textContent = item.type;
+
+      const name = document.createElement("span");
+      name.className = "le-name";
+      name.textContent = item.name;
+
+      card.appendChild(badge);
+      card.appendChild(name);
+      grid.appendChild(card);
+    });
+
+    empty.hidden = all.length !== 0;
+    count.textContent = all.length ? (page + 1) + " / " + pages : "0";
+    prevBtn.disabled = page === 0;
+    nextBtn.disabled = page >= pages - 1;
+  }
+
+  topicButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      topicButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      topic = btn.dataset.topic;
+      page = 0;
+      render();
+    });
+  });
+
+  searchInput.addEventListener("input", function () {
+    term = searchInput.value.trim().toLowerCase();
+    page = 0;
+    render();
+  });
+
+  prevBtn.addEventListener("click", function () { page -= 1; render(); });
+  nextBtn.addEventListener("click", function () { page += 1; render(); });
+
+  let resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () { computePerPage(); render(); }, 150);
+  });
+
+  computePerPage();
+  render();
+});
+</script>

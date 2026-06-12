@@ -39,6 +39,7 @@ collections:
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
       - { label: 'Date', name: 'date', widget: 'datetime' }
+      
   - name: 'publication'
     label: 'Publications'
     folder: 'src/publications'
@@ -61,6 +62,16 @@ collections:
       - { label: 'PDF Url', name: 'pdfLink', widget: 'string', required: false }
       - { label: 'Web Url', name: 'webLink', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - label: "Topics"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        options:
+          - "Biodiversity"
+          - "Data Science"
+          - "Software"
+          - "People"
+
   - name: 'grants'
     label: 'Grants'
     folder: 'src/grants'
@@ -83,6 +94,16 @@ collections:
       - { label: 'Member Image', name: 'image', widget: 'image', required: false }
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - label: "Topics"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        options:
+          - "Biodiversity"
+          - "Data Science"
+          - "Software"
+          - "People"
+
   - name: 'softwares'
     label: 'Software'
     folder: 'src/softwares'
@@ -101,6 +122,16 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image', required: false }
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - label: "Topics"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        options:
+          - "Biodiversity"
+          - "Data Science"
+          - "Software"
+          - "People"
+
   - name: 'databases'
     label: 'Databases'
     folder: 'src/databases'
@@ -118,6 +149,16 @@ collections:
       - { label: 'Link', name: 'link', widget: 'string', required: true }
       - { label: 'Image', name: 'image', widget: 'image', required: true }
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
+      - label: "Topics"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        options:
+          - "Biodiversity"
+          - "Data Science"
+          - "Software"
+          - "People"
+
   - name: 'socials'
     label: 'Socials'
     folder: 'src/socials'
