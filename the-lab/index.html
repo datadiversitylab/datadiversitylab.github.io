@@ -122,9 +122,6 @@
                                             <a href="/social/" class="cs-li-link cs-drop-link">Social</a>
                                         </li>
                                         <li class="cs-drop-li">
-                                            <a href="/collaborators/" class="cs-li-link cs-drop-link">Collaborators</a>
-                                        </li>
-                                        <li class="cs-drop-li">
                                             <a href="/join-us/" class="cs-li-link cs-drop-link">Join us</a>
                                         </li>
                                         <li class="cs-drop-li">
@@ -231,41 +228,34 @@
 <section id="sbsr-579" class="cs-top-section">
     <h1 class="cs-title">The lab</h1>
     <div class="cs-container">
-        <div class="cs-picture-caption">
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="../assets/images/lab-1.jpg">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="../assets/images/lab-1.jpg">
-                <img loading="lazy" decoding="async" src="../assets/images/lab-1.jpg" alt="room" width="494" height="700">
-            </picture>
-            <div class="cs-caption-slider-wrapper">
-                <p class="cs-text-caption" style="display:block;" data-srcset="../assets/images/lab-1.jpg">
-                    Passiflora, El Vinculo, Colombia
-                </p>
-                <p class="cs-text-caption" data-srcset="../assets/images/UAAdobeStock.jpeg">
+        <div class="cs-picture-caption le-panel">
+        <div class="le-inner">
+            <div class="le-head">
+            <h2 class="le-title">Explore our work</h2>
+            <p class="le-desc">Browse papers, software, databases, and grants by topic.</p>
+            </div>
 
-                </p>
+            <div class="le-topics" role="tablist" aria-label="Research topics">
+            <button class="le-topic active" data-topic="all">All</button>
+            <button class="le-topic" data-topic="Biodiversity">Biodiversity</button>
+            <button class="le-topic" data-topic="Data Science">Data Science</button>
+            <button class="le-topic" data-topic="Software">Software</button>
+            <button class="le-topic" data-topic="People">People</button>
+            </div>
 
-                <p class="cs-text-caption" data-srcset="../assets/images/lab-2.jpg">
-                    Odonata, Guarinocito, Colombia
-                </p>
-                <p class="cs-text-caption" data-srcset="../assets/images/lab-3.jpg">
-                    Atta, Tucson, USA
-                </p>
-                <div class="cs-arrow-wrapper">
-                    <div class="cs-arrow cs-arrow-left"><img src="../assets/icons/left-arrow.svg"></div>
-                    <div class="cs-image-slider">
-                        <div class="cs-image-selector active"></div>
-                        <div class="cs-image-selector"></div>
-                        <div class="cs-image-selector"></div>
-                        <div class="cs-image-selector"></div>
+            <input type="text" id="le-search" class="le-search" placeholder="Search…" aria-label="Search work by name">
 
-                    </div>
-                    <div class="cs-arrow cs-arrow-right"><img src="../assets/icons/right-arrow.svg"></div>
-                </div>
+            <div class="le-grid" id="le-grid"></div>
+            <p class="le-empty" id="le-empty" hidden>Nothing here yet.</p>
+
+            <div class="le-pager">
+            <button class="le-prev" id="le-prev" aria-label="Previous">&#8249;</button>
+            <span class="le-count" id="le-count"></span>
+            <button class="le-next" id="le-next" aria-label="Next">&#8250;</button>
             </div>
         </div>
+        </div>
+        
         <div class="cs-content">
             <p class="cs-text">
                 The Data Diversity Lab, established in 2023 and located in the main campus of the University of Arizona, is led by Dr. Cristian Román-Palacios, an ecologist and evolutionary biologist interested in solving long-standing questions in biology using bioinformatic and machine learning methods applied to big datasets. Some of our papers in evolutionary biology, conservation biology, ecology, biostatistics, and climate change, among other fields have been published in the journals PNAS, Proceedings B, Evolution, Journal of Biogeography, Evolution Letters, Global Ecology and Biogeography, among others.
@@ -279,7 +269,571 @@
         </div>
     </div>
 </section>
-</main>
+
+
+<script type="application/json" id="le-data">
+[{
+          "name": "A Web App for the Animal Culture Database and a Template for Deploying Comparative Trait Databases With Shiny",
+          "type": "Paper",
+          "link": "https://onlinelibrary.wiley.com/doi/10.1002/ece3.71913",
+          "tags": ["publications","Data Science","Biodiversity"]
+        },{
+          "name": "BARMPy: Bayesian additive regression models Python package",
+          "type": "Paper",
+          "link": "https://link.springer.com/article/10.1007/s00180-024-01535-9",
+          "tags": ["publications","Data Science"]
+        },{
+          "name": "Bayesian Additive Regression Networks",
+          "type": "Paper",
+          "link": "https://arxiv.org/abs/2404.04425",
+          "tags": ["publications","Data Science"]
+        },{
+          "name": "Clumped isotope thermometry in foraminifera as a tool in paleoceanography: New planktic and benthic data and constraints on non-thermal effects",
+          "type": "Paper",
+          "link": "https://essopenarchive.org/users/529500/articles/1262022-clumped-isotope-thermometry-in-foraminifera-as-a-tool-in-paleoceanography-new-planktic-and-benthic-data-and-constraints-on-non-thermal-effects",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Comparative clumped isotope temperature relationships in freshwater carbonates",
+          "type": "Paper",
+          "link": "https://onlinelibrary.wiley.com/doi/full/10.1002/dep2.312",
+          "tags": ["publications","Data Science","Biodiversity"]
+        },{
+          "name": "Evolving nature-based solutions for urban resilience",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","People","Biodiversity","Data Science"]
+        },{
+          "name": "Holarctic Lineages Cannot Inform Diversity and Evolution in the Neotropics – the barklice family Psocidae as a case study",
+          "type": "Paper",
+          "link": "https://brill.com/view/journals/ise/aop/article-10.1163-1876312X-bja10055/article-10.1163-1876312X-bja10055.xml",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "LabOps: A flexible self-hosted workflow of open source tools for efficient collaboration within research laboratories",
+          "type": "Paper",
+          "link": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013248",
+          "tags": ["publications","People"]
+        },{
+          "name": "Machine learning in biological research: key algorithms, applications, and future directions",
+          "type": "Paper",
+          "link": "https://link.springer.com/article/10.1186/s12915-025-02424-3",
+          "tags": ["publications","Data Science","Biodiversity"]
+        },{
+          "name": "Mapping nonhuman cultures with the Animal Culture Database",
+          "type": "Paper",
+          "link": "https://www.nature.com/articles/s41597-025-05315-y",
+          "tags": ["publications","Biodiversity","Data Science"]
+        },{
+          "name": "Online toolkits for collaborative and inclusive global research in urban evolutionary ecology",
+          "type": "Paper",
+          "link": "https://onlinelibrary.wiley.com/doi/10.1002/ece3.11633",
+          "tags": ["publications","Data Science","Biodiversity","Software"]
+        },{
+          "name": "Open-source automatic extraction of Urban Green Space: Application to assessing improvement in green space access",
+          "type": "Paper",
+          "link": "https://isprs-annals.copernicus.org/articles/X-2-2024/65/2024/",
+          "tags": ["publications","Data Science","Software"]
+        },{
+          "name": "Macroevolutionary Rates of Species Interactions: Approximate Bayesian Inference from Cophylogenies",
+          "type": "Paper",
+          "link": "https://doi.org/10.1101/2025.05.15.653894",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Universal orthologs infer deep phylogenies and improve genome quality assessments",
+          "type": "Paper",
+          "link": "https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-025-02328-2",
+          "tags": ["publications","Data Science","Biodiversity"]
+        },{
+          "name": "Same data, different analysts: variation in effect sizes due to analytical decisions in ecology and evolutionary biology",
+          "type": "Paper",
+          "link": "https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-024-02101-x",
+          "tags": ["publications","Data Science","Biodiversity"]
+        },{
+          "name": "Goniurosaurus chengzheng sp. nov., a new species of Leopard Gecko from Guangxi, China (Squamata: Eublepharidae)",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Animal chromosome counts reveal similar range of chromosome numbers but with less polyploidy in animals compared to flowering plants",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity","Data Science"]
+        },{
+          "name": "Patterns of element incorporation in calcium carbonate biominerals recapitulate phylogeny for a diverse range of marine calcifiers",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Speciation across the Tree of Life",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Evolutionary time best explains the latitudinal diversity gradient of living freshwater fish diversity",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Goniurosaurus gezhi, a new gecko species from Guangxi, China (Squamata: Sauria: Eublepharidae)",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Polyploidy increases overall diversity despite higher turnover than diploids in the Brassicaceae",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Recent responses to climate change reveal the drivers of species extinction and survival",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Five tips for nailing your US-based graduate-school applications",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","People"]
+        },{
+          "name": "Evolution of diet across the Animal Tree of Life",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Physiological cold tolerance evolves faster than climatic niches in plants",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "BAMM gives misleading results in simulated and empirical datasets",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity","Data Science"]
+        },{
+          "name": "Checklist of ‘Psocoptera’(Psocodea) of Colombia and identification key to families",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "The Tortoise and the Finch: testing for island effects on diversification using two iconic Galápagos radiations",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "When did Anolis lizards diverge? A comparison of multiple dating strategies",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Molecular phylogeny of sea skaters and their freshwater relatives (Hemiptera: Heteroptera: Gerridae: Halobatinae)",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "On the Data Deficient amphibians from Colombia",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity","Data Science"]
+        },{
+          "name": "On the divergence of Psocidae (Psocodea, Psocomorpha): Fossils or biogeography",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Lista anotada de la herpetofauna del departamento del Quindío, Colombia",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Uso de microhábitat por anuros en un fragmento de bosque seco intervenido del Magdalena medio, Guarinocito, Colombia",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Digest: Unveiling the role of chemical communication in lizard diversification",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Dieta y reproducción de *Bryconamericus caucanus* (Characiformes: Characidae) en La Venada, Río Quindío, Colombia",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Historical biogeography of Thyrsophorini psocids and description of a new Neotropical species of Thyrsopsocopsis (Psocodea: Psocomorpha: Psocidae)",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Uncovering the diversity of the neotropical genus Elaphopsocus (‘Psocoptera’: Psocidae: Amphigerontiinae): from one to ten species",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "A new Neotropical genus of Blastini (Psocodea: ’Psocoptera’: Psocidae: Amphigerontiinae)",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Information criteria on multimodel selection of parametric regression: Biological applications",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Data Science"]
+        },{
+          "name": "The genus Elaphopsocus Roesler (Psocodea:’Psocoptera’: Psocidae) with six new species from Brazil and Colombia",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Hábitos tróficos de dos especies sintópicas de carácidos en una quebrada de alta montaña en los Andes de Colombia",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity","Data Science"]
+        },{
+          "name": "Elaphopsocoides, a new genus of Psocidae (Psocodea: ’Psocoptera’) from Valle del Cauca, Colombia",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "Trophic and reproductive ecology of a neotropical characid fish Hemibrycon brevispini (Teleostei: Characiformes)",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "The phruta R package: increasing access, reproducibility, and transparency in phylogenetic analyses",
+          "type": "Paper",
+          "link": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.14147",
+          "tags": ["publications","Biodiversity","Software","Data Science"]
+        },{
+          "name": "Goniurosaurus wangshu sp. nov., a new species of Tiger Gecko from Guangdong, China (Squamata: Eublepharidae)",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "A new species of whip spider, Sarax sinensis sp. nov., from Fujian, China (Arachnida: Amblypygi: Charinidae)",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "The origins of global biodiversity on land, sea, and freshwater",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "treedata.table: a wrapper for data.table that enables fast manipulation of large phylogenetic trees matched to data",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity","Software","Data Science"]
+        },{
+          "name": "A new species of whip spider, Weygoldtia hainanensis sp. nov., from Hainan, China (Arachnida: Amblypygi: Charinidae)",
+          "type": "Paper",
+          "link": "",
+          "tags": ["publications","Biodiversity"]
+        },{
+          "name": "SSARP: An R Package for Easily Creating Species- and Speciation- Area Relationships Using Web Databases",
+          "type": "Paper",
+          "link": "https://www.biorxiv.org/content/10.1101/2024.12.31.630948v1",
+          "tags": ["publications","Software","Biodiversity"]
+        },{
+          "name": "Using CloudSat to advance the global precipitation climatology project (GPCP) over Antarctica",
+          "type": "Paper",
+          "link": "https://www.sciencedirect.com/science/article/pii/S0034425724002177",
+          "tags": ["publications","Data Science","Biodiversity"]
+        },{
+          "name": "autogradeR",
+          "type": "Software",
+          "link": "https://datadiversitylab.github.io/autogradeR/",
+          "tags": ["softwares","R packages"]
+        },{
+          "name": "BARN",
+          "type": "Software",
+          "link": "https://dvbuntu.github.io/barmpy/",
+          "tags": ["softwares","Python libraries"]
+        },{
+          "name": "BarrioMap",
+          "type": "Software",
+          "link": "https://datadiversitylab.github.io/BarrioMap/",
+          "tags": ["softwares","Web applications"]
+        },{
+          "name": "BayClump",
+          "type": "Software",
+          "link": "https://bayclump.tripatilab.epss.ucla.edu/",
+          "tags": ["softwares","Web applications"]
+        },{
+          "name": "bayclumpr",
+          "type": "Software",
+          "link": "https://tripati-lab.github.io/bayclumpr/",
+          "tags": ["softwares","R packages"]
+        },{
+          "name": "CityComp",
+          "type": "Software",
+          "link": "https://datadiversitylab.github.io/citycomp/",
+          "tags": ["softwares","Web applications"]
+        },{
+          "name": "Enhanced Personal Protective Equipment Detection (UI)",
+          "type": "Software",
+          "link": "",
+          "tags": ["softwares","Web applications"]
+        },{
+          "name": "GradPath Extension",
+          "type": "Software",
+          "link": "",
+          "tags": ["softwares","Browser plugins"]
+        },{
+          "name": "Facade Detection from Google Street View Images",
+          "type": "Software",
+          "link": "",
+          "tags": ["softwares","Web applications"]
+        },{
+          "name": "phruta",
+          "type": "Software",
+          "link": "https://ropensci.github.io/phruta/",
+          "tags": ["softwares","R packages"]
+        },{
+          "name": "plagiaRized",
+          "type": "Software",
+          "link": "https://viz.datascience.arizona.edu/plagiarized/",
+          "tags": ["softwares","Web applications"]
+        },{
+          "name": "Chorus",
+          "type": "Software",
+          "link": "https://viz.datascience.arizona.edu/chorus/",
+          "tags": ["softwares","Web applications"]
+        },{
+          "name": "Salphycon",
+          "type": "Software",
+          "link": "",
+          "tags": ["softwares","Web applications"]
+        },{
+          "name": "Santa Cruz E. coli Predictions",
+          "type": "Software",
+          "link": "https://laurafalk.github.io/SantaCruzPredictions.html",
+          "tags": ["softwares","Web applications"]
+        },{
+          "name": "ssarp",
+          "type": "Software",
+          "link": "https://docs.ropensci.org/ssarp/",
+          "tags": ["softwares","R packages"]
+        },{
+          "name": "treedata.table",
+          "type": "Software",
+          "link": "https://ropensci.github.io/treedata.table",
+          "tags": ["softwares","R packages"]
+        },{
+          "name": "Universal Ortholog Based Phylogenomic Database and Toolset",
+          "type": "Software",
+          "link": "http://www.phyca.org/index.html",
+          "tags": ["softwares","Web applications"]
+        },{
+          "name": "Dataset used for: Evolutionary time best explains the latitudinal diversity gradient of living freshwater fish diversity",
+          "type": "Database",
+          "link": "https://figshare.com/s/552e7549303de8f2a823",
+          "tags": ["databases","Papers"]
+        },{
+          "name": "Dataset used for: Open-source automatic extraction of Urban Green Space: Application to assessing improvement in green space access",
+          "type": "Database",
+          "link": "https://ee-geotools.projects.earthengine.app/view/theugsextractor",
+          "tags": ["databases","Papers"]
+        },{
+          "name": "Dataset used for: Polyploidy increases overall diversity despite higher turnover than diploids in the Brassicaceae",
+          "type": "Database",
+          "link": "https://datadryad.org/stash/dataset/doi:10.5061/dryad.31zcrjdhw",
+          "tags": ["databases","Papers"]
+        },{
+          "name": "Dataset used for: Recent responses to climate change reveal the drivers of species extinction and survival",
+          "type": "Database",
+          "link": "https://datadryad.org/stash/dataset/doi:10.5061/dryad.4tmpg4f5w",
+          "tags": ["databases","Papers"]
+        },{
+          "name": "Dataset used for: The origins of global biodiversity on land, sea, and freshwater",
+          "type": "Database",
+          "link": "https://datadryad.org/stash/dataset/doi:10.5061/dryad.stqjq2c50",
+          "tags": ["databases","Papers"]
+        },{
+          "name": "The ACC: The Animal Chromosome Count Database",
+          "type": "Database",
+          "link": "https://cromanpa94.github.io/ACC/",
+          "tags": ["databases","Websites"]
+        },{
+          "name": "The ACDB: The Animal Culture Database",
+          "type": "Database",
+          "link": "https://viz.datascience.arizona.edu/ACDB/",
+          "tags": ["databases","Websites"]
+        },{
+          "name": "Website for SCORCH Grant",
+          "type": "Database",
+          "link": "https://scorch-idvc.github.io/",
+          "tags": ["databases","Website"]
+        },{
+          "name": "Building a Bridge Between Open Access Mapping and Formal Planning Efforts",
+          "type": "Grant",
+          "link": "",
+          "tags": ["grants","University of Arizona"]
+        },{
+          "name": "Catalyst Seed Fund Award",
+          "type": "Grant",
+          "link": "",
+          "tags": ["grants","University of Arizona"]
+        },{
+          "name": "Faculty Seed Grant: Macroevolution of Lifespans Across Animals",
+          "type": "Grant",
+          "link": "",
+          "tags": ["grants","University of Arizona"]
+        },{
+          "name": "From early Earth to Mars: Advancing an integrated “Landscape Terraformation science” of how life transforms planets with a multi-scale collaboratory digital twinning of Biosphere 2",
+          "type": "Grant",
+          "link": "",
+          "tags": ["grants","University of Arizona"]
+        },{
+          "name": "Historical Biogeography and Extinction Risk Assessment of Recently Extinct Animals",
+          "type": "Grant",
+          "link": "",
+          "tags": ["grants","University of Arizona"]
+        },{
+          "name": "Macroevolution Of Lifespans Across Animals",
+          "type": "Grant",
+          "link": "",
+          "tags": ["grants","University of Arizona"]
+        },{
+          "name": "Molecular systematics of the genus Bryconamericus (Characidae: Stevardiinae)",
+          "type": "Grant",
+          "link": "",
+          "tags": ["grants","The Systematics Association"]
+        },{
+          "name": "NRT-HDR: CAMBIUM - Climate Change Adaptation and Mitigation through Biodiversity Informatics Education and Mentoring",
+          "type": "Grant",
+          "link": "https://cambium.arizona.edu/",
+          "tags": ["grants","NSF"]
+        },{
+          "name": "OneHealth",
+          "type": "Grant",
+          "link": "",
+          "tags": ["grants","University of Arizona"]
+        },{
+          "name": "Southwest Center for Outreach and Resilience in Climate and Health (SCORCH)",
+          "type": "Grant",
+          "link": "https://scorch.arizona.edu/",
+          "tags": ["grants","NIH"]
+        },{
+          "name": "Biotic and abiotic drivers of the prevalence of a tick and associated vector- borne disease.",
+          "type": "Grant",
+          "link": "",
+          "tags": ["grants","USGS"]
+        },{
+          "name": "Supporting Colombian Undergraduates through Programming and Phylogenetic Comparative Methods in R",
+          "type": "Grant",
+          "link": "",
+          "tags": ["grants","NatGeo"]
+        },{
+          "name": "WAESO: Historical Biogeography and Extinction Risk Assessment of Recently Extinct Animals",
+          "type": "Grant",
+          "link": "",
+          "tags": ["grants","NSF"]
+        }]
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const root = document.getElementById("le-data");
+  if (!root) return;
+
+  let data = [];
+  try { data = JSON.parse(root.textContent); } catch (e) { return; }
+
+  const grid = document.getElementById("le-grid");
+  const empty = document.getElementById("le-empty");
+  const count = document.getElementById("le-count");
+  const searchInput = document.getElementById("le-search");
+  const prevBtn = document.getElementById("le-prev");
+  const nextBtn = document.getElementById("le-next");
+  const topicButtons = document.querySelectorAll(".le-topic");
+
+  // Approx card height incl. gap, in px. Tuned to the CSS below.
+  const CARD_H = 60;
+  let perPage = 4;
+  let topic = "all";
+  let term = "";
+  let page = 0;
+
+  function computePerPage() {
+    const h = grid.clientHeight;
+    if (h > 0) perPage = Math.max(2, Math.floor(h / CARD_H));
+  }
+
+  function filtered() {
+    return data.filter(function (item) {
+      const topicOk = topic === "all" || item.tags.some(function (tag) {
+        return String(tag).toLowerCase() === topic.toLowerCase();
+      });
+      const termOk = term === "" || item.name.toLowerCase().indexOf(term) !== -1;
+      return topicOk && termOk;
+    });
+  }
+
+  function render() {
+    const all = filtered();
+    const pages = Math.max(1, Math.ceil(all.length / perPage));
+    if (page > pages - 1) page = pages - 1;
+    if (page < 0) page = 0;
+
+    const slice = all.slice(page * perPage, page * perPage + perPage);
+
+    grid.innerHTML = "";
+    slice.forEach(function (item) {
+      const card = document.createElement(item.link ? "a" : "div");
+      card.className = "le-card";
+      if (item.link) {
+        card.href = item.link;
+        card.target = "_blank";
+        card.rel = "noopener";
+      }
+
+      const badge = document.createElement("span");
+      badge.className = "le-badge le-badge-" + item.type.toLowerCase();
+      badge.textContent = item.type;
+
+      const name = document.createElement("span");
+      name.className = "le-name";
+      name.textContent = item.name;
+
+      card.appendChild(badge);
+      card.appendChild(name);
+      grid.appendChild(card);
+    });
+
+    empty.hidden = all.length !== 0;
+    count.textContent = all.length ? (page + 1) + " / " + pages : "0";
+    prevBtn.disabled = page === 0;
+    nextBtn.disabled = page >= pages - 1;
+  }
+
+  topicButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      topicButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      topic = btn.dataset.topic;
+      page = 0;
+      render();
+    });
+  });
+
+  searchInput.addEventListener("input", function () {
+    term = searchInput.value.trim().toLowerCase();
+    page = 0;
+    render();
+  });
+
+  prevBtn.addEventListener("click", function () { page -= 1; render(); });
+  nextBtn.addEventListener("click", function () { page += 1; render(); });
+
+  let resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () { computePerPage(); render(); }, 150);
+  });
+
+  computePerPage();
+  render();
+});
+</script></main>
         <!-- ============================================ -->
 <!--                   Footer                     -->
 <!-- ============================================ -->
