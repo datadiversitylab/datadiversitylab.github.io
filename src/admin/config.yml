@@ -65,6 +65,8 @@ collections:
       - { label: 'PDF Url', name: 'pdfLink', widget: 'string', required: false }
       - { label: 'Web Url', name: 'webLink', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Output type', name: 'outputType', widget: 'select', required: false, options: ['Journal article', 'Preprint', 'Review', 'Commentary', 'Popular writing'] }
+      - { label: 'Research areas (fine-grained, e.g. macroevolution)', name: 'researchAreas', widget: 'select', multiple: true, required: false, options: ['Macroevolution', 'Phylogenetics', 'Biogeography', 'Conservation biology', 'Climate change', 'Ecology', 'Biostatistics', 'Machine learning', 'Tools', 'Climate science'] }
       - label: "Topics"
         name: "topics"
         widget: "select"

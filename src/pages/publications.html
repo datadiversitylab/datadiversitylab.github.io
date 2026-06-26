@@ -66,6 +66,18 @@ eleventyNavigation:
                     </div>
                 </div>
 
+                <div class="cs-filter-output-wrapper">
+                    <h6 class="cs-title">Type</h6>
+                    <div aria-hidden="true" class="line line-full"></div>
+                    <div class="cs-filter-wrapper cs-text">
+                        <div data-filter="all" class="active filter-option">All ({{ collections.processedPublications["publications"] }})</div>
+                        {% set sortedOutputs = collections.processedPublicationsOutputTypes | dictsort %}
+                        {% for item in sortedOutputs %}
+                            <div data-filter="{{ item[0] }}" class="filter-option">{{ item[0] }} ({{ item[1] }})</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
                 <div class="cs-filter-keywords-wrapper">
                     <h6 class="cs-title">Keywords</h6>
                     <div aria-hidden="true" class="line line-full"></div>
@@ -75,6 +87,18 @@ eleventyNavigation:
                             {% if keyword != 'publications' %}
                                 <div data-filter="{{ keyword }}" class="filter-option">{{ keyword }} ({{ count }})</div>
                             {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="cs-filter-areas-wrapper">
+                    <h6 class="cs-title">Research areas</h6>
+                    <div aria-hidden="true" class="line line-full"></div>
+                    <div class="cs-filter-wrapper cs-text">
+                        <div data-filter="all" class="active filter-option">All ({{ collections.processedPublications["publications"] }})</div>
+                        {% set sortedAreas = collections.processedPublicationsResearchAreas | dictsort %}
+                        {% for item in sortedAreas %}
+                            <div data-filter="{{ item[0] }}" class="filter-option">{{ item[0] }} ({{ item[1] }})</div>
                         {% endfor %}
                     </div>
                 </div>
@@ -106,6 +130,9 @@ eleventyNavigation:
                         </picture>
                         <div class="cs-flex-group">
                             <span class="cs-publication-type">{{ publication.data.publicationType }}</span>
+                            {%- if publication.data.outputType -%}
+                                <span class="cs-output-type" data-output="{{ publication.data.outputType }}">{{ publication.data.outputType }}</span>
+                            {%- endif -%}
                             <span class="cs-name">{{ publication.data.publicationTitle | markdown | safe }}</span>
                             <span class="cs-publication-author" data-full-authors="{{ publication.data.publicationAuthor }}">
                                 {%- set authors = publication.data.publicationAuthor.split(',') -%}
@@ -136,6 +163,13 @@ eleventyNavigation:
                                     {%- endif -%}
                                 {%- endfor -%}
                             </div>
+                            {%- if publication.data.researchAreas -%}
+                                <div class="cs-item-areas">
+                                    {%- for area in publication.data.researchAreas -%}
+                                        <div class="cs-filter">{{ area }}</div>
+                                    {%- endfor -%}
+                                </div>
+                            {%- endif -%}
                             {%- if publication.data.pdfLink or publication.data.webLink or publication.data.pdfDocument -%}
                                 <div aria-hidden="true" class="line line-full"></div>
                                 <div class="cs-item-social">

@@ -175,6 +175,27 @@ module.exports = function (eleventyConfig) {
     return journalTypes;
   });
 
+  eleventyConfig.addCollection("processedPublicationsOutputTypes", function(collection) {
+    let counts = {};
+    const publications = collection.getFilteredByGlob("./src/publications/*.md");
+    publications.forEach(pub => {
+      const t = pub.data.outputType;
+      if (t) counts[t] = (counts[t] || 0) + 1;
+    });
+    return counts;
+  });
+
+  eleventyConfig.addCollection("processedPublicationsResearchAreas", function(collection) {
+    let counts = {};
+    const publications = collection.getFilteredByGlob("./src/publications/*.md");
+    publications.forEach(pub => {
+      (pub.data.researchAreas || []).forEach(area => {
+        counts[area] = (counts[area] || 0) + 1;
+      });
+    });
+    return counts;
+  });
+
   eleventyConfig.addCollection("processedTeams", function(collection) {
     let tagCounts = {};
     const team = collection.getFilteredByGlob("./src/team/*.md");
