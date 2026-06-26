@@ -4,6 +4,8 @@ const piOnlyCheckbox = document.getElementById('piOnlyCheckbox');
 // Adjust selector to specifically target keyword and journal type filters
 const keywordFilterOptions = document.querySelectorAll('.cs-filter-keywords-wrapper .filter-option');
 const journalTypeFilterOptions = document.querySelectorAll('.cs-filter-journal-type-wrapper .filter-option');
+const outputTypeFilterOptions = document.querySelectorAll('.cs-filter-output-wrapper .filter-option');
+const researchAreaFilterOptions = document.querySelectorAll('.cs-filter-areas-wrapper .filter-option');
 const filterOptions = document.querySelectorAll('.filter-option');
 const startYearInput = document.getElementById('startYear');
 const endYearInput = document.getElementById('endYear');
@@ -11,11 +13,15 @@ const cards = document.querySelectorAll('.cs-item');
 const orderByButton = document.querySelector('.order-by-button');
 let selectedKeywords = new Set();
 let selectedJournalTypes = new Set();
+let selectedOutputTypes = new Set();
+let selectedResearchAreas = new Set();
 let isAscending = false;
 
 function applyFiltersAndOrder() {
     let visibleKeywords = new Set();
     let visibleJournalTypes = new Set();
+    let visibleOutputTypes = new Set();
+    let visibleResearchAreas = new Set();
 
     const searchText = searchInput.value.toLowerCase();
     const startYear = parseInt(startYearInput.value, 10) || -Infinity;
@@ -28,25 +34,32 @@ function applyFiltersAndOrder() {
         const publicationYearElement = card.querySelector('.cs-publication-year');
         const publicationMonthElement = card.querySelector('.cs-publication-month');
         const publicationTypeElement = card.querySelector('.cs-publication-type');
+        const outputTypeElement = card.querySelector('.cs-output-type');
 
         const title = titleElement ? titleElement.textContent.toLowerCase() : '';
         const author = authorElement ? authorElement.textContent.toLowerCase() : '';
         const publicationType = publicationTypeElement ? publicationTypeElement.textContent.toLowerCase() : '';
+        const outputType = outputTypeElement ? outputTypeElement.textContent.toLowerCase() : '';
         const cardKeywords = Array.from(card.querySelectorAll('.cs-item-filters .cs-filter')).map(el => el.textContent.toLowerCase());
+        const cardAreas = Array.from(card.querySelectorAll('.cs-item-areas .cs-filter')).map(el => el.textContent.toLowerCase());
 
         const matchesSearch = title.includes(searchText) || author.includes(searchText);
         const matchesPublicationType = selectedJournalTypes.size === 0 || selectedJournalTypes.has(publicationType);
         const matchesKeywords = selectedKeywords.size === 0 || cardKeywords.some(keyword => selectedKeywords.has(keyword));
+        const matchesOutputType = selectedOutputTypes.size === 0 || selectedOutputTypes.has(outputType);
+        const matchesResearchAreas = selectedResearchAreas.size === 0 || cardAreas.some(area => selectedResearchAreas.has(area));
         const matchesAuthor = !filterByAuthor || author.includes("cristian román-palacios");
 
         const publicationYear = publicationYearElement ? parseInt(publicationYearElement.textContent, 10) : null;
         const publicationMonth = publicationMonthElement ? publicationMonthElement.textContent : "Dec"; // Treat missing month as December (latest)
         const matchesYear = publicationYear ? publicationYear >= startYear && publicationYear <= endYear : true;
 
-        if (matchesSearch && matchesYear && matchesPublicationType && matchesKeywords && matchesAuthor) {
+        if (matchesSearch && matchesYear && matchesPublicationType && matchesKeywords && matchesOutputType && matchesResearchAreas && matchesAuthor) {
             card.style.display = '';
             visibleKeywords = new Set([...visibleKeywords, ...cardKeywords]);
+            visibleResearchAreas = new Set([...visibleResearchAreas, ...cardAreas]);
             if (publicationType) visibleJournalTypes.add(publicationType);
+            if (outputType) visibleOutputTypes.add(outputType);
         } else {
             card.style.display = 'none';
         }
@@ -54,6 +67,8 @@ function applyFiltersAndOrder() {
 
     updateFilterOptionVisibility(keywordFilterOptions, visibleKeywords);
     updateFilterOptionVisibility(journalTypeFilterOptions, visibleJournalTypes);
+    updateFilterOptionVisibility(outputTypeFilterOptions, visibleOutputTypes);
+    updateFilterOptionVisibility(researchAreaFilterOptions, visibleResearchAreas);
     sortDisplayedCards();
 }
 
@@ -89,47 +104,42 @@ function sortDisplayedCards() {
     displayedCards.forEach(card => parent.appendChild(card));
 }
 
-function updateFilterSets(filter, isKeyword, optionElement) {
-    // Deselect all other options in the section if 'all' is selected
+// Maps each filter group to its wrapper selector and its selected-set
+const filterGroups = [
+    { wrapper: '.cs-filter-keywords-wrapper', set: () => selectedKeywords },
+    { wrapper: '.cs-filter-journal-type-wrapper', set: () => selectedJournalTypes },
+    { wrapper: '.cs-filter-output-wrapper', set: () => selectedOutputTypes },
+    { wrapper: '.cs-filter-areas-wrapper', set: () => selectedResearchAreas }
+];
+
+function groupForOption(optionElement) {
+    return filterGroups.find(g => optionElement.closest(g.wrapper)) || null;
+}
+
+function updateFilterSets(filter, group, optionElement) {
+    if (!group) return;
+    const set = group.set();
+    const allOption = document.querySelector(group.wrapper + ' .filter-option[data-filter="all"]');
+
     if (filter === 'all') {
-        if (isKeyword) {
-            selectedKeywords.clear();
-            document.querySelectorAll('.cs-filter-keywords-wrapper .filter-option').forEach(el => el.classList.remove('active'));
-        } else {
-            selectedJournalTypes.clear();
-            document.querySelectorAll('.cs-filter-journal-type-wrapper .filter-option').forEach(el => el.classList.remove('active'));
-        }
-        optionElement.classList.add('active'); // Ensure 'All' is marked active
+        set.clear();
+        document.querySelectorAll(group.wrapper + ' .filter-option').forEach(el => el.classList.remove('active'));
+        optionElement.classList.add('active');
     } else {
-        if (isKeyword) {
-            // Toggle the current keyword selection and ensure 'All' is inactive
-            selectedKeywords.has(filter) ? selectedKeywords.delete(filter) : selectedKeywords.add(filter);
-            document.querySelector('.cs-filter-keywords-wrapper .filter-option[data-filter="all"]').classList.remove('active');
-        } else {
-            // Toggle the current journal type selection and ensure 'All' is inactive
-            selectedJournalTypes.has(filter) ? selectedJournalTypes.delete(filter) : selectedJournalTypes.add(filter);
-            document.querySelector('.cs-filter-journal-type-wrapper .filter-option[data-filter="all"]').classList.remove('active');
-        }
+        set.has(filter) ? set.delete(filter) : set.add(filter);
+        if (allOption) allOption.classList.remove('active');
         optionElement.classList.toggle('active');
     }
     updateAllFilterActivation();
 }
 
 function updateAllFilterActivation() {
-    const allJournalTypeFilter = document.querySelector('.cs-filter-journal-type-wrapper .filter-option[data-filter="all"]');
-    const allKeywordsFilter = document.querySelector('.cs-filter-keywords-wrapper .filter-option[data-filter="all"]');
-
-    if (selectedJournalTypes.size === 0) {
-        allJournalTypeFilter.classList.add('active');
-    } else {
-        allJournalTypeFilter.classList.remove('active');
-    }
-
-    if (selectedKeywords.size === 0) {
-        allKeywordsFilter.classList.add('active');
-    } else {
-        allKeywordsFilter.classList.remove('active');
-    }
+    filterGroups.forEach(group => {
+        const allOption = document.querySelector(group.wrapper + ' .filter-option[data-filter="all"]');
+        if (allOption) {
+            allOption.classList.toggle('active', group.set().size === 0);
+        }
+    });
 }
 
 // Correctly adding the search input event listener to apply filters on input
@@ -138,10 +148,9 @@ searchInput.addEventListener('input', applyFiltersAndOrder);
 
 filterOptions.forEach(option => option.addEventListener('click', function(event) {
     const filter = event.target.getAttribute('data-filter').toLowerCase();
-    const isKeyword = event.target.closest('.cs-filter-keywords-wrapper') !== null;
-    const isJournalType = !isKeyword; // Assuming any non-keyword filter is a journal type
+    const group = groupForOption(event.target);
 
-    updateFilterSets(filter, isKeyword, event.target);
+    updateFilterSets(filter, group, event.target);
     applyFiltersAndOrder();
 }));
 
@@ -235,6 +244,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-
-
