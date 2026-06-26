@@ -39,6 +39,9 @@ collections:
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
       - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Co-advisor', name: 'coAdvisor', widget: 'string', required: false }
+      - { label: 'Co-advisor website', name: 'coAdvisorLink', widget: 'string', required: false }
+      - { label: 'Additional affiliations (markdown, links allowed)', name: 'affiliations', widget: 'markdown', required: false }
       
   - name: 'publication'
     label: 'Publications'
@@ -63,7 +66,7 @@ collections:
       - { label: 'Web Url', name: 'webLink', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
       - label: "Topics"
-        name: "tags"
+        name: "topics"
         widget: "select"
         multiple: true
         options:
@@ -95,7 +98,7 @@ collections:
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
       - label: "Topics"
-        name: "tags"
+        name: "topics"
         widget: "select"
         multiple: true
         options:
@@ -123,7 +126,7 @@ collections:
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Order', name: 'order', widget: 'number', required: false }
       - label: "Topics"
-        name: "tags"
+        name: "topics"
         widget: "select"
         multiple: true
         options:
@@ -150,7 +153,7 @@ collections:
       - { label: 'Image', name: 'image', widget: 'image', required: true }
       - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
       - label: "Topics"
-        name: "tags"
+        name: "topics"
         widget: "select"
         multiple: true
         options:
