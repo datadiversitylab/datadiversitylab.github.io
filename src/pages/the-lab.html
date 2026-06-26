@@ -74,13 +74,13 @@ navOptions:
   {%- set first = true -%}
   {%- for source in sources -%}
     {%- for item in source.items -%}
-      {%- if item.data.tags -%}
+      {%- if item.data.topics -%}
         {%- if not first -%},{%- endif -%}{%- set first = false -%}
         {
           "name": {{ (item.data[source.name] | striptags) | dump | safe }},
           "type": "{{ source.type }}",
           "link": {{ (item.data[source.link] or "") | dump | safe }},
-          "tags": {{ item.data.tags | dump | safe }}
+          "tags": {{ (item.data.topics or []) | dump | safe }}
         }
       {%- endif -%}
     {%- endfor -%}

@@ -95,6 +95,18 @@ eleventyNavigation:
                                     {%- if member.data.memberDate -%}
                                       <span class="cs-timeline"><span class="cs-start-date-year-data"><strong>Term:</strong> {{ member.data.memberDate }}</span> {%- if member.data.memberDateEnd -%} {{" - "}} <span class="cs-end-date-year-data">{{ member.data.memberDateEnd }}</span> {%- endif -%}</span>
                                     {%- endif -%}
+                                    {%- if member.data.coAdvisor -%}
+                                      <span class="cs-timeline"><strong>Co-advisor:</strong>
+                                        {%- if member.data.coAdvisorLink -%}
+                                          <a href="{{ member.data.coAdvisorLink }}" target="_blank" rel="noopener noreferrer">{{ member.data.coAdvisor }}</a>
+                                        {%- else -%}
+                                          {{ member.data.coAdvisor }}
+                                        {%- endif -%}
+                                      </span>
+                                    {%- endif -%}
+                                    {%- if member.data.affiliations -%}
+                                      <span class="cs-timeline"><strong>Also affiliated with:</strong> {{ member.data.affiliations | markdown | safe }}</span>
+                                    {%- endif -%}
                                     <span class="cs-desc">
                                         <span class="read-more-text">{{ member.data.memberBio }}</span>
                                         <span class="read-more-btn">...read more</span>
