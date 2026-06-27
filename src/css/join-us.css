@@ -158,3 +158,37 @@
     overflow: hidden;
   }
 }
+
+/*-- -------------------------- -->
+<---     Past Opportunities     -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #job-cards .cs-past-header {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--lineColor);
+  }
+  #job-cards .cs-past-header .cs-title {
+    opacity: 0.7;
+  }
+  #job-cards .cs-past-header .cs-text {
+    opacity: 0.6;
+    font-size: var(--smallFontSize, 0.85rem);
+  }
+
+  /* Quieter cards: muted, flatter, smaller type */
+  #job-cards .cs-past-group .cs-item {
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+  }
+  #job-cards .cs-past-group .cs-item:hover {
+    opacity: 1;
+  }
+  #job-cards .cs-past-group .cs-name {
+    font-size: 0.95rem;
+  }
+  #job-cards .cs-past-group .cs-job-title,
+  #job-cards .cs-past-group .cs-timeline {
+    opacity: 0.75;
+  }
+}

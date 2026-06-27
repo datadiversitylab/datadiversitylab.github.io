@@ -39,6 +39,7 @@ eleventyNavigation:
         </div>
         <div id="dropdown-cards" class="cs-card-group">
             {%- for job in collections.jobs | sort(attribute='data.order') -%}
+                {%- if job.data.status != 'Closed' -%}
                 <div class="cs-item">
                     <div class="cs-flex-group">
                         <span class="cs-name">{{ job.data.jobTitle }}</span>
@@ -62,8 +63,48 @@ eleventyNavigation:
                         </div>
                     </div>
                 </div>
+                {%- endif -%}
             {%- endfor -%}
         </div>
+
+        {%- set closedJobs = collections.jobs | selectattr('data.status', 'equalto', 'Closed') | list -%}
+        {%- if closedJobs | length > 0 -%}
+        <div class="cs-content cs-past-header">
+            <h5 class="cs-title">Past opportunities</h5>
+            <p class="cs-text">
+                Positions we have previously offered, kept here for reference. These are no longer accepting applications.
+            </p>
+        </div>
+        <div id="dropdown-cards-past" class="cs-card-group cs-past-group">
+            {%- for job in collections.jobs | sort(attribute='data.order') -%}
+                {%- if job.data.status == 'Closed' -%}
+                <div class="cs-item">
+                    <div class="cs-flex-group">
+                        <span class="cs-name">{{ job.data.jobTitle }}</span>
+                        <span class="cs-job-title">{{ job.data.jobStartDate }}</span>
+
+                        <div class="cs-dropdown-icon">
+                            <img src="../assets/icons/plus.svg">
+                        </div>
+
+                        <span class="cs-timeline"><img src="../assets/icons/time-five.svg">Closed</span>
+
+                        <div class="cs-dropdown">
+                            <span class="cs-desc">{{ job.data.jobDesc | markdown | safe }}</span>
+
+                            <div aria-hidden="true" class="line line-full"></div>
+                            <div class="cs-item-social">
+                                {%- if job.data.jobPdf -%}
+                                    <a href="{{ job.data.jobPdf }}" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                {%- endif -%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {%- endif -%}
+            {%- endfor -%}
+        </div>
+        {%- endif -%}
         <div class="cs-content">
             <h5 class="cs-title">Postdocs</h5>
             <p class="cs-text">

@@ -20,34 +20,6 @@ navOptions:
 <section id="sbsr-579" class="cs-top-section">
     <h1 class="cs-title">The lab</h1>
     <div class="cs-container">
-        <div class="cs-picture-caption le-panel">
-        <div class="le-inner">
-            <div class="le-head">
-            <h2 class="le-title">Explore our work</h2>
-            <p class="le-desc">Browse papers, software, databases, and grants by topic.</p>
-            </div>
-
-            <div class="le-topics" role="tablist" aria-label="Research topics">
-            <button class="le-topic active" data-topic="all">All</button>
-            <button class="le-topic" data-topic="Biodiversity">Biodiversity</button>
-            <button class="le-topic" data-topic="Data Science">Data Science</button>
-            <button class="le-topic" data-topic="Software">Software</button>
-            <button class="le-topic" data-topic="People">People</button>
-            </div>
-
-            <input type="text" id="le-search" class="le-search" placeholder="Search…" aria-label="Search work by name">
-
-            <div class="le-grid" id="le-grid"></div>
-            <p class="le-empty" id="le-empty" hidden>Nothing here yet.</p>
-
-            <div class="le-pager">
-            <button class="le-prev" id="le-prev" aria-label="Previous">&#8249;</button>
-            <span class="le-count" id="le-count"></span>
-            <button class="le-next" id="le-next" aria-label="Next">&#8250;</button>
-            </div>
-        </div>
-        </div>
-        
         <div class="cs-content">
             <p class="cs-text">
                 The Data Diversity Lab, established in 2023 and located in the main campus of the University of Arizona, is led by Dr. Cristian Román-Palacios, an ecologist and evolutionary biologist interested in solving long-standing questions in biology using bioinformatic and machine learning methods applied to big datasets. Some of our papers in evolutionary biology, conservation biology, ecology, biostatistics, and climate change, among other fields have been published in the journals PNAS, Proceedings B, Evolution, Journal of Biogeography, Evolution Letters, Global Ecology and Biogeography, among others.
@@ -59,25 +31,146 @@ navOptions:
                 We encourage you to get to know our team, our lab space, and reach out to us for questions and or potential collaborations!
             </p>
         </div>
+
+        <div class="lr-panel-col">
+            <div class="lr-head">
+                <h2 class="lr-title">What we work on</h2>
+                <p class="lr-lead">Five connected areas. Select any to read more.</p>
+            </div>
+            <div class="lr-accordion">
+                <article class="lr-item lr-open">
+                    <button class="lr-trigger" aria-expanded="true">
+                        <span class="lr-name">Biology</span>
+                        <span class="lr-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="lr-panel">
+                        <div class="lr-panel-inner">
+                            <p>Ongoing projects in general bioinformatics, phylogenetics, and local extinctions reveal the factors behind evolutionary relationships and explore the implications of climate change on biodiversity and its structures. We encourage students interested in biology to join us and bring their own ideas toward an official lab project.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lr-item">
+                    <button class="lr-trigger" aria-expanded="false">
+                        <span class="lr-name">Machine learning methods &amp; applications</span>
+                        <span class="lr-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="lr-panel">
+                        <div class="lr-panel-inner">
+                            <p>We develop machine learning methods for applications from biology to environmental science. You can contribute to building cutting-edge algorithms while applying them to real challenges, like predicting climate trends and their implications for biodiversity, and forecasting species extinction.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lr-item">
+                    <button class="lr-trigger" aria-expanded="false">
+                        <span class="lr-name">Data science</span>
+                        <span class="lr-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="lr-panel">
+                        <div class="lr-panel-inner">
+                            <p>Data science is the backbone of our research, whether analyzing biological data, predicting the patterns behind species extinctions, or extracting meaning from large, messy datasets. Join our data science team to help continue this work.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lr-item">
+                    <button class="lr-trigger" aria-expanded="false">
+                        <span class="lr-name">Diversity, inclusion &amp; social justice</span>
+                        <span class="lr-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="lr-panel">
+                        <div class="lr-panel-inner">
+                            <p>Diversity and inclusion are part of our lab's DNA rather than a separate initiative. We believe diverse perspectives drive the research of the future, and lab members participate in work that empowers these efforts, from supporting underserved and underrepresented students to addressing social disparities through interdisciplinary approaches.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lr-item">
+                    <button class="lr-trigger" aria-expanded="false">
+                        <span class="lr-name">Climate change</span>
+                        <span class="lr-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="lr-panel">
+                        <div class="lr-panel-inner">
+                            <p>Climate change is a critical issue that intersects all of our research aims. We work on projects exploring its impact on biodiversity and supporting environmental conservation efforts.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
 </section>
+
+<!-- ============================================ -->
+<!--             Explore Our Work                 -->
+<!-- ============================================ -->
+
+<section id="lab-explorer-full">
+    <div class="le-full-container">
+        <div class="le-head">
+            <h2 class="le-title">Explore our work</h2>
+            <p class="le-desc">Browse papers, tools, data, and grants by topic.</p>
+        </div>
+
+        <div class="le-controls">
+            <div class="le-topics" role="tablist" aria-label="Research topics">
+                <button class="le-topic active" data-topic="all">All</button>
+                <button class="le-topic" data-topic="Biodiversity">Biodiversity</button>
+                <button class="le-topic" data-topic="Data Science">Data Science</button>
+                <button class="le-topic" data-topic="Software">Software</button>
+                <button class="le-topic" data-topic="People">People</button>
+            </div>
+            <input type="text" id="le-search" class="le-search" placeholder="Search…" aria-label="Search work by name">
+        </div>
+
+        <div class="le-grid" id="le-grid"></div>
+        <p class="le-empty" id="le-empty" hidden>Nothing here yet.</p>
+
+        <div class="le-pager">
+            <button class="le-prev" id="le-prev" aria-label="Previous">&#8249;</button>
+            <span class="le-count" id="le-count"></span>
+            <button class="le-next" id="le-next" aria-label="Next">&#8250;</button>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(".lr-accordion .lr-item");
+    items.forEach(function (item) {
+        const trigger = item.querySelector(".lr-trigger");
+        trigger.addEventListener("click", function () {
+            const isOpen = item.classList.contains("lr-open");
+            items.forEach(function (other) {
+                other.classList.remove("lr-open");
+                other.querySelector(".lr-trigger").setAttribute("aria-expanded", "false");
+            });
+            if (!isOpen) {
+                item.classList.add("lr-open");
+                trigger.setAttribute("aria-expanded", "true");
+            }
+        });
+    });
+});
+</script>
 
 
 <script type="application/json" id="le-data">
 [
   {%- set sources = [
     { "items": collections.publications, "type": "Paper",    "name": "publicationTitle", "link": "webLink" },
-    { "items": collections.softwares,    "type": "Software", "name": "Name",             "link": "link" },
-    { "items": collections.databases,    "type": "Database", "name": "Name",             "link": "link" },
+    { "items": collections.tools,        "type": "Tool",     "name": "Name",             "link": "link" },
     { "items": collections.grants,       "type": "Grant",    "name": "grantName",        "link": "link" }
   ] -%}
   {%- set first = true -%}
   {%- for source in sources -%}
     {%- for item in source.items -%}
-      {%- if item.data.topics -%}
+      {%- set itemName = item.data[source.name] -%}
+      {%- if itemName -%}
         {%- if not first -%},{%- endif -%}{%- set first = false -%}
         {
-          "name": {{ (item.data[source.name] | striptags) | dump | safe }},
+          "name": {{ (itemName | striptags) | dump | safe }},
           "type": "{{ source.type }}",
           "link": {{ (item.data[source.link] or "") | dump | safe }},
           "tags": {{ (item.data.topics or []) | dump | safe }}
@@ -104,16 +197,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextBtn = document.getElementById("le-next");
   const topicButtons = document.querySelectorAll(".le-topic");
 
-  // Approx card height incl. gap, in px. Tuned to the CSS below.
-  const CARD_H = 60;
-  let perPage = 4;
+  // Page size = number of grid columns x target rows, so it adapts to the
+  // screen width (1 col mobile, 2 tablet, 3 desktop).
+  const TARGET_ROWS = 3;
+  let perPage = 9;
   let topic = "all";
   let term = "";
   let page = 0;
 
+  function gridColumns() {
+    const style = window.getComputedStyle(grid);
+    const cols = style.gridTemplateColumns.split(" ").filter(Boolean).length;
+    return Math.max(1, cols);
+  }
+
   function computePerPage() {
-    const h = grid.clientHeight;
-    if (h > 0) perPage = Math.max(2, Math.floor(h / CARD_H));
+    perPage = gridColumns() * TARGET_ROWS;
   }
 
   function filtered() {

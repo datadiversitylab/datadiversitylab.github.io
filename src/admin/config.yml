@@ -211,6 +211,7 @@ collections:
     slug: '{{jobTitle}}'
     fields:
       - { label: 'Job Title', name: 'jobTitle', widget: 'string', required: true }
+      - { label: 'Status', name: 'status', widget: 'select', required: true, default: 'Open', options: ['Open', 'Closed'] }
       - { label: 'Job Start Date', name: 'jobStartDate', widget: 'string', required: false }
       - { label: 'Job Apply By', name: 'jobApplyBy', widget: 'string', required: false }
       - { label: 'Job Description', name: 'jobDesc', widget: 'markdown', required: false }
