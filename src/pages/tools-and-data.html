@@ -1,0 +1,139 @@
+---
+layout: 'base.html'
+description: "Tools and data released by the Data Diversity Lab"
+metaTitle: 'Tools and data'
+tagTitle: 'Tools and data'
+preloadImg: ''
+preloadCSS: '/css/tools-and-data.css'
+preloadJS: '/js/tools-and-data.js'
+permalink: 'tools-and-data/'
+eleventyNavigation:
+    key: Tools and data
+    order: 600
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Tools and data</h1>
+            <p class="cs-text">
+                Software, web apps, and datasets built and released by members of the lab. Everything here is open and free to use.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                Tools & Data                  -->
+<!-- ============================================ -->
+{# Collect category (topics) and keyword (tags) values across all tools #}
+{%- set categories = [] -%}
+{%- set keywords = [] -%}
+{%- for tool in collections.tools | sort(attribute='data.order') -%}
+    {%- for topic in tool.data.topics -%}
+        {%- if topic and not categories.includes(topic | string) -%}
+            {%- set categories = categories.concat(topic | string) -%}
+        {%- endif -%}
+    {%- endfor -%}
+    {%- for tag in tool.data.tags -%}
+        {%- if tag and not keywords.includes(tag | string) and tag != "tools" -%}
+            {%- set keywords = keywords.concat(tag | string) -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endfor -%}
+
+<section id="tools-section">
+    <div class="cs-container">
+        <div class="cs-content cs-sidebar cs-filter-searchable">
+            <div class="cs-search-title-wrapper">
+                <h6 class="cs-title">Search</h6>
+                <div aria-hidden="true" class="line line-full"></div>
+                <div class="cs-search-wrapper">
+                    <input type="text" id="search" class="cs-search" placeholder="Name or description">
+                </div>
+            </div>
+            <div class="cs-filter-button-wrapper">
+                <div class="cs-add-filter-wrapper">
+                    <h6 class="cs-title">Add filters</h6>
+                    <img src="../assets/icons/plus.svg" class="plus-button" alt="filter" width="25" height="25">
+                </div>
+
+                <div class="cs-filter-category-wrapper">
+                    <h6 class="cs-title">Category</h6>
+                    <div aria-hidden="true" class="line line-full"></div>
+                    <div class="cs-filter-wrapper cs-text">
+                        <div data-filter="all" class="active filter-option">All</div>
+                        {%- for category in categories | sort(true) -%}
+                            <div data-filter="{{ category }}" class="filter-option">{{ category }}</div>
+                        {%- endfor -%}
+                    </div>
+                </div>
+
+                <div class="cs-filter-keywords-wrapper">
+                    <h6 class="cs-title">Keywords</h6>
+                    <div aria-hidden="true" class="line line-full"></div>
+                    <div class="cs-filter-wrapper cs-text">
+                        <div data-filter="all" class="active filter-option">All</div>
+                        {%- for keyword in keywords | sort(true) -%}
+                            <div data-filter="{{ keyword }}" class="filter-option">{{ keyword }}</div>
+                        {%- endfor -%}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cs-title-card-wrapper">
+            <div class="cs-card-group">
+                {%- for tool in collections.tools | sort(attribute='data.order') -%}
+                    <div class="cs-item">
+                        <picture class="cs-picture">
+                            <source media="(max-width: 600px)" srcset="{{ tool.data.image }}">
+                            <source media="(min-width: 601px)" srcset="{{ tool.data.image }}">
+                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="{{ tool.data.image }}" alt="{{ tool.data.imageAlt }}" width="522" height="370" aria-hidden="true">
+                        </picture>
+                        <div class="cs-flex-group">
+                            <span class="cs-name">{{ tool.data.Name }}</span>
+                            {%- if tool.data.authors -%}
+                                <span class="cs-publication-author">{{ tool.data.authors | join(', ') }}</span>
+                            {%- endif -%}
+                            <span class="cs-desc">
+                                <div class="read-more-text">{{ tool.data.Description | markdown | safe }}</div>
+                                <span class="read-more-btn">...read more</span>
+                            </span>
+                            <div aria-hidden="true" class="line line-full"></div>
+                            {# Category chips (hidden, used for filtering) #}
+                            <div class="cs-item-categories" style="display: none;">
+                                {%- for topic in tool.data.topics -%}
+                                    <div class="cs-filter">{{ topic }}</div>
+                                {%- endfor -%}
+                            </div>
+                            {# Keyword chips (visible) #}
+                            <div class="cs-item-filters">
+                                {%- for filter in tool.data.tags -%}
+                                    {%- if filter and filter != 'tools' -%}
+                                        <div class="cs-filter">{{ filter }}</div>
+                                    {%- endif -%}
+                                {%- endfor -%}
+                            </div>
+                            {%- if tool.data.github or tool.data.link -%}
+                                <div aria-hidden="true" class="line line-full"></div>
+                                <div class="cs-item-social">
+                                    {%- set socials = [{'platform': 'github', 'icon': 'github.svg'}, {'platform': 'link', 'icon': 'link.svg'}] -%}
+                                    {%- for social in socials -%}
+                                        {%- if tool.data[social.platform] -%}
+                                            <a href="{{ tool.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                </div>
+                            {%- endif -%}
+                        </div>
+                    </div>
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</section>
