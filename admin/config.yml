@@ -109,11 +109,11 @@ collections:
           - "Software"
           - "People"
 
-  - name: 'softwares'
-    label: 'Software'
-    folder: 'src/softwares'
-    media_folder: '/src/assets/images/softwares'
-    public_folder: '/assets/images/softwares'
+  - name: 'tools'
+    label: 'Tools & Data'
+    folder: 'src/tools'
+    media_folder: '/src/assets/images/tools'
+    public_folder: '/assets/images/tools'
     create: true
     identifier_field: Name
     slug: '{{Name}}'
@@ -121,7 +121,6 @@ collections:
       - { label: 'Name', name: 'Name', widget: 'string', required: true }
       - { label: 'Authors', name: 'authors', widget: 'list', required: true }
       - { label: 'Description', name: 'Description', widget: 'markdown', required: false }
-      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
       - { label: 'Github', name: 'github', widget: 'string', required: false }
       - { label: 'Link', name: 'link', widget: 'string', required: false }
       - { label: 'Image', name: 'image', widget: 'image', required: false }
@@ -136,33 +135,19 @@ collections:
           - "Data Science"
           - "Software"
           - "People"
-
-  - name: 'databases'
-    label: 'Databases'
-    folder: 'src/databases'
-    media_folder: '/src/assets/images/databases'
-    public_folder: '/assets/images/databases'
-    create: true
-    identifier_field: Name
-    slug: '{{Name}}'
-    fields:
-      - { label: 'Name', name: 'Name', widget: 'string', required: true }
-      - { label: 'Authors', name: 'authors', widget: 'list', required: true }
-      - { label: 'Description', name: 'Description', widget: 'markdown', required: true }
-      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
-      - { label: 'Github', name: 'github', widget: 'string', required: false }
-      - { label: 'Link', name: 'link', widget: 'string', required: true }
-      - { label: 'Image', name: 'image', widget: 'image', required: true }
-      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
-      - label: "Topics"
-        name: "topics"
-        widget: "select"
+      - label: 'Type tags'
+        name: 'tags'
+        widget: 'select'
         multiple: true
+        required: true
         options:
-          - "Biodiversity"
-          - "Data Science"
-          - "Software"
-          - "People"
+          - 'Web application'
+          - 'Website'
+          - 'R package'
+          - 'Python library'
+          - 'Command-line tool'
+          - 'Dataset'
+          - 'Supplementary data'
 
   - name: 'socials'
     label: 'Socials'
