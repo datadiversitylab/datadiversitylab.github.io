@@ -1,5 +1,6 @@
 ---
-jobTitle: Tom Lovejoy Conservation Fellow
+jobTitle: Tom Lovejoy Conservation Fellow (2026)
+status: Closed
 jobStartDate: July 1st, 2026
 jobApplyBy: January 30th, 2026
 jobDesc: >-
