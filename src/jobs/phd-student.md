@@ -1,5 +1,6 @@
 ---
-jobTitle: PhD student
+jobTitle: PhD student (2026)
+status: Closed
 jobStartDate: Fall 2025
 jobApplyBy: April 15th, 2026
 jobDesc: We’re looking for a Ph.D. student broadly interested in biological data
