@@ -11,14 +11,16 @@ memberBio: " Ian's research interests focus on the analysis and modeling of
   environmental management. Ian is co-advised by Dr. Chris Lim, Assistant
   Professor at Mel & Enid Zuckerman College of Public Health, University of
   Arizona."
+tags:
+  - Postdoc
+  - Former
 linkedin: https://www.linkedin.com/in/ian-estacio/
 email: estacioian@arizona.edu
 github: IanEstacio
 memberEducation: PhD
-tags:
-  - Postdoc
-  - Former
 image: /assets/images/our-team/ian08hs2.jpg
 order: 4
 date: 2024-07-23T16:41:00.000Z
+coAdvisor: Dr. Chris Lim
+coAdvisorLink: https://publichealth.arizona.edu/directory/chris-lim
 ---
