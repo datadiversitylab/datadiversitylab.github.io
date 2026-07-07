@@ -1,6 +1,8 @@
 ---
 memberName: Tom Olla
-memberTitle: MSc student
+memberTitle:
+  - MSc capstone student
+currentPosition: Software Quality Engineer at Raytheon
 memberDate: 2024
 memberDateEnd: ""
 memberBio: "Tom is a Tucson native with a passion for data visualization. He
