@@ -1,8 +1,8 @@
 ---
 jobTitle: Tom Lovejoy Conservation Fellow (2026)
 status: Closed
-jobStartDate: July 1st, 2026
-jobApplyBy: January 30th, 2026
+jobStartDate: ""
+jobApplyBy: ""
 jobDesc: >-
   **Job Description:** [read more
   here](https://lovejoycenter.arizona.edu/who-we-are/join-us/tom-lovejoy-conservation-fellow-job-description)
