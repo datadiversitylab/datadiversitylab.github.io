@@ -1,6 +1,9 @@
 ---
 memberName: Kyle Clements
-memberTitle: Undergraduate student / Intern
+memberTitle:
+  - Intern
+  - Undergraduate student
+currentPosition: Programmer II at PlayStation
 memberDate: 2022
 memberDateEnd: null
 memberBio: Kyle focused on collecting US census-like datasets across the globe.
