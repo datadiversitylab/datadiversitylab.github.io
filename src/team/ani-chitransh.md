@@ -1,8 +1,8 @@
 ---
 memberName: Ani Chitransh
 memberTitle:
-  - MSc student
-currentPosition: ""
+  - MSc capstone student
+currentPosition: Data Scientist at Credit One
 memberDate: 2024
 memberDateEnd: "2024"
 memberBio: "Ani is a graduate student working towards her capstone. Ani’s
