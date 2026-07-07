@@ -1,9 +1,8 @@
 ---
 memberName: Ian Estacio
 memberTitle:
-  - Postdoctoral Researcher
+  - Postdoc
 memberDate: "2024"
-memberDateEnd: "2026"
 memberBio: " Ian's research interests focus on the analysis and modeling of
   socio-ecological systems using spatial science methods such as remote sensing,
   GIS, spatial statistics, and Agent-Based Modeling. He has applied spatial
@@ -12,13 +11,14 @@ memberBio: " Ian's research interests focus on the analysis and modeling of
   environmental management. Ian is co-advised by Dr. Chris Lim, Assistant
   Professor at Mel & Enid Zuckerman College of Public Health, University of
   Arizona."
+github: IanEstacio
+memberEducation: PhD
+memberDateEnd: "2026"
 tags:
   - Postdoc
   - Former
 linkedin: https://www.linkedin.com/in/ian-estacio/
 email: estacioian@arizona.edu
-github: IanEstacio
-memberEducation: PhD
 image: /assets/images/our-team/ian08hs2.jpg
 order: 4
 date: 2024-07-23T16:41:00.000Z
