@@ -1,6 +1,8 @@
 ---
 memberName: HM Abdul Fattah
-memberTitle: MSc student
+memberTitle:
+  - MSc capstone student
+currentPosition: PhD Student in the College of Information Science
 memberDate: 2024
 memberDateEnd: ""
 memberBio: With a strong foundation in computer science, HM is passionate about
