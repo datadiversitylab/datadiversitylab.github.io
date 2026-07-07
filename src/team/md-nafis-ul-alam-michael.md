@@ -1,6 +1,7 @@
 ---
 memberName: MD Nafis Ul Alam
-memberTitle: PhD student
+memberTitle:
+  - PhD student
 memberDate: 2024-Present
 memberBio: Md has a background in statistical and computational genomics. He
   specializes in the analysis of DNA sequence data and genome assembly. His PhD
@@ -16,4 +17,6 @@ github: DeadlineWasYesterday
 image: /assets/images/our-team/michael00hs.jpg
 order: 6
 date: 2024-11-07T12:34:00.000Z
+coAdvisor: Rod Wing
+coAdvisorLink: https://www.genome.arizona.edu/person/rod-wing
 ---
