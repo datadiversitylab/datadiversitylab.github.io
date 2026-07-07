@@ -1,6 +1,8 @@
 ---
 memberName: Valentina Sarria-Rodríguez
-memberTitle: Undergraduate student
+memberTitle:
+  - Undergraduate student
+currentPosition: Profesional de Sección Entomologia, Universidad del Valle
 memberDate: "2018"
 memberDateEnd: 2020
 memberBio: Valentina was Dr. Román-Palacios’ first undergraduate advisee (2018).
