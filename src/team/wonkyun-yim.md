@@ -1,6 +1,9 @@
 ---
 memberName: Wonkyun Yim
-memberTitle: Research Data Support Specialist II
+memberTitle:
+  - MSc capstone student
+  - Staff
+currentPosition: Position within the Republic of Korea Army
 memberDate: 2022
 memberDateEnd: null
 memberBio: Wonkyun completed his MS in Data Science capstone at the Lab. He was
