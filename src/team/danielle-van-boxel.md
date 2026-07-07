@@ -17,11 +17,13 @@ tags:
 linkedin: null
 email: vanboxel@math.arizona.edu
 github: dvbuntu
+link: https://dvbuntu.github.io
 resume: null
 memberEducation: PhD
-link: https://dvbuntu.github.io
 image: /assets/images/our-team/danielle-van-boxel.png
 imageAlt: Portrait of Danielle Van Boxel
 order: 4
 date: 2024-04-17T10:43:00.000Z
+coAdvisor: Dr. Xueying Tang
+coAdvisorLink: https://sites.google.com/a/math.arizona.edu/xueyingtang/
 ---
