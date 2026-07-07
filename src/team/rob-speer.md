@@ -1,11 +1,13 @@
 ---
 memberName: Rob Speer
-memberTitle: MSc student
-memberEducation: ""
+memberTitle:
+  - MSc capstone student
+currentPosition: IT Manager for the City of Flagstaff
 memberDate: "2024"
 memberBio: Rob completed his MSc in Data Science with Dr. Roman-Palacios with a
   Capstone project analyzing past water use and future water demand in the City
   of Flagstaff, where he currently works as the GIS Manager.
+memberEducation: ""
 tags:
   - Former
   - MSc capstone student
