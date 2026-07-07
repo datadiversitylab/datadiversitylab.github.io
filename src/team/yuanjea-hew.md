@@ -1,6 +1,8 @@
 ---
 memberName: YuanJea Hew
-memberTitle: MSc student
+memberTitle:
+  - MSc capstone student
+currentPosition: Scientific Analyst II at OHAIRE at UA
 memberDate: 2023
 memberDateEnd: null
 memberBio: YuanJea joined the lab in 2023 to work on a pilot grant funded
@@ -18,4 +20,6 @@ image: /assets/images/our-team/yuanjea-hew.png
 imageAlt: Portrait of YuanJea Hew
 order: 150
 date: 2024-04-17T10:48:00.000Z
+coAdvisor: Dr. Chris Lim
+coAdvisorLink: https://publichealth.arizona.edu/directory/chris-lim
 ---
