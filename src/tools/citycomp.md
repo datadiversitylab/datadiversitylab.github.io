@@ -9,11 +9,13 @@ Description: CityComp is a Shiny app developed to support the use of the
   in the app. Users can further define a target city and estimate their
   similarity to cities across the globe. Dynamic filtering and mapping are
   implemented within the app.
-tags:
-  - Web applications
 github: https://github.com/datadiversitylab/CityComp
 link: https://datadiversitylab.github.io/citycomp/
 image: /assets/images/softwares/citycomp.png
 imageAlt: CityComp  image
 order: 30
+topics:
+  - Data Science
+tags:
+  - Web application
 ---
