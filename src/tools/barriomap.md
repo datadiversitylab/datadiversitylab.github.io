@@ -10,11 +10,13 @@ Description: Barrio Map offers fundamental functionalities like finding
   distances. Barrio Map, in conjunction with OpenStreetMaps, is written in R,
   with functionalities largely leveraged from packages such as Leaflet and
   Shiny.
-tags:
-  - Web applications
 github: https://github.com/datadiversitylab/BarrioMap
 link: https://datadiversitylab.github.io/BarrioMap/
 image: /assets/images/softwares/barriomap.png
 imageAlt: BarrioMap  image
 order: 20
+topics:
+  - Data Science
+tags:
+  - Web application
 ---
