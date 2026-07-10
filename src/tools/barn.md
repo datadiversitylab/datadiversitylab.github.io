@@ -10,11 +10,14 @@ Description: Bayesian Additive Regression Networks. We apply Bayesian Additive
   more information in [barnpy](https://github.com/dvbuntu/barmpy) and its
   associated
   [documentation](https://dvbuntu.github.io/barmpy/)[](https://dvbuntu.github.io/barmpy/)
-tags:
-  - Python libraries
 github: https://github.com/dvbuntu/barn
 link: https://dvbuntu.github.io/barmpy/
 image: /assets/images/softwares/barmpy_logo.png
 imageAlt: BARN  image
 order: 60
+topics:
+  - Data Science
+  - Software
+tags:
+  - Python library
 ---
