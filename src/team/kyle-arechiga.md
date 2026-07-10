@@ -1,6 +1,8 @@
 ---
 memberName: Kyle Arechiga
-memberTitle: MSc student
+memberTitle:
+  - MSc capstone student
+currentPosition: Position at Rincon Research Corporation
 memberDate: 2022
 memberDateEnd: null
 memberBio: Kyle developed an unsupervised learning framework to detect a stable
