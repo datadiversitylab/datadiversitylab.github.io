@@ -10,9 +10,11 @@ Description: bayclumpr is a self-contained R package that supports the use of
   facilitatation of comparisons on Bayesian and classical models. bayclumpr fits
   both frequentist and Bayesian linear regressions to calibration datasets and
   performs temperature reconstructions under both frameworks.
-tags:
-  - R packages
 github: https://github.com/Tripati-Lab/bayclumpr
 link: https://tripati-lab.github.io/bayclumpr/
 image: /assets/images/softwares/logobayclumpr.png
+topics:
+  - Data Science
+tags:
+  - R package
 ---
