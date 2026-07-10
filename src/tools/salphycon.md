@@ -9,11 +9,13 @@ Description: Salphycon is a shiny app that extends the functionalities of the
   database, (3) combine downloaded and local gene sequences, and (4) perform
   sequence alignment, phylogenetic inference, and basic tree dating tasks. Both
   phruta and salphycon are focused on species-level analyses.
-tags:
-  - Web applications
 github: https://github.com/datadiversitylab/salphycon
 link: ""
 image: /assets/images/softwares/salphycon.png
 imageAlt: Salphycon  image
 order: 10
+topics:
+  - Data Science
+tags:
+  - Web application
 ---
