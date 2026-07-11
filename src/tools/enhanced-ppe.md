@@ -9,8 +9,11 @@ Description: Enhannced PPE2 is a Human-Machine Interface (HMI) tailored for
   other applications like gengeral PPE detection including masks, goggles, vest
   and so on. This project focuses on developing the UI associated to the ML
   model detection algorithm.
-tags:
-  - Web applications
 github: https://github.com/datadiversitylab/Enhanced-PPE2
 image: /assets/images/softwares/screenshot-from-2024-06-28-13-51-03.png
+topics:
+  - People
+  - Data Science
+tags:
+  - Web application
 ---
