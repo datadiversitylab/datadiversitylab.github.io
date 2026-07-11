@@ -8,8 +8,11 @@ Description: This repo hosts a simple Firefox extension that checks on whether
   in InfoSci. However, this extension can be easily modified to enable other
   programs or subplans. It can also be adjusted in the requirements it check
   for. I did not implement an automatic submission.
-tags:
-  - Browser plugins
 github: https://github.com/datadiversitylab/ms_advising_checker
 image: /assets/images/softwares/screenshot-2026-03-18-at-9.05.43 pm.png
+topics:
+  - People
+  - Data Science
+tags:
+  - Web application
 ---
