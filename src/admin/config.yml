@@ -41,7 +41,11 @@ collections:
       - { label: 'Date', name: 'date', widget: 'datetime' }
       - { label: 'Co-advisor', name: 'coAdvisor', widget: 'string', required: false }
       - { label: 'Co-advisor website', name: 'coAdvisorLink', widget: 'string', required: false }
-      - { label: 'Additional affiliations (markdown, links allowed)', name: 'affiliations', widget: 'markdown', required: false }
+      - label: 'Additional affiliations'
+        name: 'affiliations'
+        widget: 'list'
+        required: false
+        field: { label: 'Affiliation', name: 'affiliation', widget: 'string' }
       
   - name: 'publication'
     label: 'Publications'
