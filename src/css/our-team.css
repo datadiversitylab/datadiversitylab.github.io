@@ -466,6 +466,15 @@
   padding: 0.6rem 0.8rem;
   border-radius: 6px;
   box-shadow: 0 6px 24px rgba(43,58,50,0.25);
-  pointer-events: none;
   display: none;
+}
+
+/* Tooltip links: white and underlined so they read against the dark background */
+.author-tooltip a {
+  color: #fff;
+  text-decoration: underline;
+}
+.author-tooltip a:hover {
+  color: #fff;
+  opacity: 0.8;
 }
