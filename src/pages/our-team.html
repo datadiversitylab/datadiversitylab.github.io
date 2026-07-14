@@ -103,15 +103,19 @@ eleventyNavigation:
                                         {%- endif -%}
                                       </span>
                                     {%- endif -%}
-                                    {%- if member.data.affiliations -%}
-                                      {%- if member.data.affiliations is string -%}
-                                        {%- set affList = member.data.affiliations | split('|') -%}
-                                      {%- else -%}
-                                        {%- set affList = member.data.affiliations -%}
-                                      {%- endif -%}
-                                      <span class="cs-timeline cs-affiliations" data-full-affiliations="{{ affList | join('|') }}">
-                                        <strong>Also affiliated with:</strong>
-                                        <span class="cs-affiliations-inline">{{ affList | first }}{%- if affList | length > 1 -%}<span class="cs-affiliations-more"> +{{ (affList | length) - 1 }} more</span>{%- endif -%}</span>
+                                    {%- if member.data.affiliations and member.data.affiliations | length > 0 -%}
+                                      {%- set affList = member.data.affiliations -%}
+                                      {%- set first = affList | first -%}
+                                      <span class="cs-timeline cs-affiliations" data-full-affiliations="{{ affList | dump | forceescape }}">
+                                        <strong>Also affiliated with:</strong>&nbsp;
+                                        <span class="cs-affiliations-inline">
+                                          {%- if first.url -%}
+                                            <a href="{{ first.url }}" target="_blank" rel="noopener noreferrer">{{ first.name }}</a>
+                                          {%- else -%}
+                                            {{ first.name }}
+                                          {%- endif -%}
+                                          {%- if affList | length > 1 -%}<span class="cs-affiliations-more"> +{{ (affList | length) - 1 }} more</span>{%- endif -%}
+                                        </span>
                                       </span>
                                     {%- endif -%}
                                     <span class="cs-desc">
