@@ -104,7 +104,15 @@ eleventyNavigation:
                                       </span>
                                     {%- endif -%}
                                     {%- if member.data.affiliations -%}
-                                      <span class="cs-timeline"><strong>Also affiliated with:</strong> {{ member.data.affiliations | markdown | safe }}</span>
+                                      {%- if member.data.affiliations is string -%}
+                                        {%- set affList = member.data.affiliations | split('|') -%}
+                                      {%- else -%}
+                                        {%- set affList = member.data.affiliations -%}
+                                      {%- endif -%}
+                                      <span class="cs-timeline cs-affiliations" data-full-affiliations="{{ affList | join('|') }}">
+                                        <strong>Also affiliated with:</strong>
+                                        <span class="cs-affiliations-inline">{{ affList | first }}{%- if affList | length > 1 -%}<span class="cs-affiliations-more"> +{{ (affList | length) - 1 }} more</span>{%- endif -%}</span>
+                                      </span>
                                     {%- endif -%}
                                     <span class="cs-desc">
                                         <span class="read-more-text">{{ member.data.memberBio }}</span>
