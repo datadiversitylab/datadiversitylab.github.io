@@ -443,3 +443,29 @@
   width: 100%;
   margin: 0.5rem 0;
 }
+
+/* Affiliations "+N more" and hover tooltip */
+#meet-team-547 .cs-affiliations.has-tooltip {
+  cursor: help;
+}
+#meet-team-547 .cs-affiliations-more {
+  font-weight: 600;
+  color: var(--secondaryDark);
+  opacity: 0.85;
+}
+
+.author-tooltip {
+  position: absolute;
+  z-index: 1000;
+  max-width: 20rem;
+  background: var(--headerColor, #2b3a32);
+  color: #fff;
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  box-shadow: 0 6px 24px rgba(43,58,50,0.25);
+  pointer-events: none;
+  display: none;
+}
