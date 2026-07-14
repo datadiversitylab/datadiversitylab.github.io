@@ -22,16 +22,14 @@ image: /assets/images/our-team/cristian-roman-palacios.png
 imageAlt: Portrait of Cristian Román-Palacios
 order: 1
 date: 2024-03-28T23:31:34.809Z
-affiliations: >-
-  * [UA Elected Faculty
-  Senator](https://facultygovernance.arizona.edu/dr-cristian-roman-palacios)
-
-  * Diversity, Equity, and Inclusion (DEI) Committee Member 
-
-  * Fellow at [UCLA](https://www.ioes.ucla.edu/person/cristian-roman-palacios/)
-
-  * Faculty at the [Lovejoy Center for Bridging Biodiversity, Conservation Science and Policy (BBCS)](https://lovejoycenter.arizona.edu/person/cristian-roman-palacios)
-
-    * [Applied Mathematics](https://appliedmath.arizona.edu/person/cristian-roman-palacios)
-memberEducation: PhD
+affiliations:
+  - name: UA Elected Faculty Senator
+    url: https://facultygovernance.arizona.edu/dr-cristian-roman-palacios
+  - name: Diversity, Equity, and Inclusion (DEI) Committee Member
+  - name: Fellow at UCLA
+    url: https://www.ioes.ucla.edu/person/cristian-roman-palacios/
+  - name: Faculty at the Lovejoy Center for Bridging Biodiversity, Conservation Science and Policy (BBCS)
+    url: https://lovejoycenter.arizona.edu/person/cristian-roman-palacios
+  - name: Applied Mathematics
+    url: https://appliedmath.arizona.edu/person/cristian-roman-palacios
 ---
