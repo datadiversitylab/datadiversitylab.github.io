@@ -88,38 +88,65 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Affiliations tooltip: show the full list on hover when there are several
     document.querySelectorAll('.cs-affiliations').forEach(function (el) {
-        const raw = el.getAttribute('data-full-affiliations') || '';
-        const list = raw.split('|').map(a => a.trim()).filter(Boolean);
-        if (list.length < 2) return; // nothing to expand
+        let list = [];
+        try {
+            list = JSON.parse(el.getAttribute('data-full-affiliations') || '[]');
+        } catch (e) {
+            return;
+        }
+        if (!Array.isArray(list) || list.length < 2) return; // nothing to expand
 
         el.classList.add('has-tooltip');
 
+        function buildHtml() {
+            return list.map(function (a) {
+                const name = (a && a.name) ? a.name : '';
+                if (a && a.url) {
+                    return '<a href="' + a.url + '" target="_blank" rel="noopener noreferrer">' + name + '</a>';
+                }
+                return name;
+            }).join('<br>');
+        }
+
+        function place(tooltip, event) {
+            tooltip.style.left = (event.pageX + 12) + 'px';
+            tooltip.style.top = (event.pageY + 12) + 'px';
+        }
+
+        let hideTimer;
+        function scheduleHide() {
+            hideTimer = setTimeout(function () {
+                const tooltip = document.querySelector('#affiliations-tooltip');
+                if (tooltip) tooltip.style.display = 'none';
+            }, 250);
+        }
+        function cancelHide() {
+            if (hideTimer) clearTimeout(hideTimer);
+        }
+
         el.addEventListener('mouseover', function (event) {
+            cancelHide();
             let tooltip = document.querySelector('#affiliations-tooltip');
             if (!tooltip) {
                 tooltip = document.createElement('div');
                 tooltip.id = 'affiliations-tooltip';
                 tooltip.className = 'author-tooltip';
                 document.body.appendChild(tooltip);
+                tooltip.addEventListener('mouseover', cancelHide);
+                tooltip.addEventListener('mouseout', scheduleHide);
             }
-            tooltip.innerHTML = list.join('<br>');
+            tooltip.innerHTML = buildHtml();
             tooltip.style.display = 'block';
-            tooltip.style.left = (event.pageX + 12) + 'px';
-            tooltip.style.top = (event.pageY + 12) + 'px';
+            tooltip.style.pointerEvents = 'auto';
+            place(tooltip, event);
         });
 
         el.addEventListener('mousemove', function (event) {
             const tooltip = document.querySelector('#affiliations-tooltip');
-            if (tooltip) {
-                tooltip.style.left = (event.pageX + 12) + 'px';
-                tooltip.style.top = (event.pageY + 12) + 'px';
-            }
+            if (tooltip && tooltip.style.display === 'block') place(tooltip, event);
         });
 
-        el.addEventListener('mouseout', function () {
-            const tooltip = document.querySelector('#affiliations-tooltip');
-            if (tooltip) tooltip.style.display = 'none';
-        });
+        el.addEventListener('mouseout', scheduleHide);
     });
 
 });
