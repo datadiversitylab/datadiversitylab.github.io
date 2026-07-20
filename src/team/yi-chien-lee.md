@@ -1,6 +1,8 @@
 ---
 memberName: Yi Chien Lee
-memberTitle: Research Assistant
+memberTitle:
+  - Research Assistant
+currentPosition: Software Engineer for LinkedIn
 memberDate: 2023
 memberDateEnd: null
 memberBio: Yi Chien specializes in leveraging R programming to interpret human
