@@ -1,6 +1,8 @@
 ---
 memberName: Shih-Hsuan Lo
-memberTitle: MSc student
+memberTitle:
+  - MSc student
+currentPosition: Data Science Specialist at NYU
 memberDate: 2024
 memberDateEnd: ""
 memberBio: "Shih Hsuan is a data science major with a passion for image
