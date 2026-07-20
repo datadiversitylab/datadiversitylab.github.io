@@ -1,6 +1,8 @@
 ---
 memberName: Paige Cherry
-memberTitle: Undergraduate student
+memberTitle:
+  - Undergraduate student
+currentPosition: Behavior Specialist
 memberDate: "2024"
 memberDateEnd: "2025"
 memberBio: Paige Cherry is a third-year BA student at the University of Arizona
