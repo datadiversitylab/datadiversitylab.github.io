@@ -1,6 +1,8 @@
 ---
 memberName: Jiayue He
-memberTitle: MSc student
+memberTitle:
+  - MSc student
+currentPosition: Research Assistant at the University of Arizona
 memberDate: 2024
 memberDateEnd: ""
 memberBio: Jiayue is a masters student majored in Information Science with a
