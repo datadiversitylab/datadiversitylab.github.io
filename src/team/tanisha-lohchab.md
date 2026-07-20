@@ -1,6 +1,8 @@
 ---
 memberName: Tanisha Lohchab
-memberTitle: Research Data Support Specialist
+memberTitle:
+  - Research Data Support Specialist
+currentPosition: Data Scientist at the University of Arizona
 memberDate: "2024"
 memberDateEnd: ""
 memberBio: "With a background in Data Science, Tanisha joined the Data Diversity
