@@ -1,6 +1,8 @@
 ---
 memberName: Tingting Thompson
-memberTitle: MSc student
+memberTitle:
+  - MSc student
+currentPosition: Lecturer of Data Science at the University of Arizona
 memberDate: 2022
 memberDateEnd: null
 memberBio: Tingting completed her MS in Data Science capstone in the lab. During
