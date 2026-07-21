@@ -1,6 +1,8 @@
 ---
 memberName: Laura Falk
-memberTitle: MSc student
+memberTitle:
+  - MSc student
+currentPosition: Research Informatics Programmer Analyst
 memberDate: 2022
 memberDateEnd: null
 memberBio: Laura worked on creating a model to detect particular levels of E.
