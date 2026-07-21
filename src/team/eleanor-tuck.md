@@ -2,6 +2,7 @@
 memberName: Eleanor Tuck
 memberTitle:
   - MS advising team member
+currentPosition: Office Assistant at the University of Arizona
 memberDate: "2024"
 memberDateEnd: "2025"
 memberBio: Eleanor is a student worker here at the Data Diversity Lab and a part
