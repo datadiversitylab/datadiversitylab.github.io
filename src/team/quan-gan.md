@@ -1,6 +1,8 @@
 ---
 memberName: Quan Gan
-memberTitle: MSc student
+memberTitle:
+  - MSc student
+currentPosition: Professional Software Engineer
 memberDate: 2022
 memberDateEnd: null
 memberBio: Quan's project in the lab focused on implementing code in stan to
