@@ -1,6 +1,8 @@
 ---
 memberName: Darwood Martin
-memberTitle: MSc student
+memberTitle:
+  - MSc student
+currentPosition: Information Systems Security Manager
 memberDate: 2023
 memberDateEnd: null
 memberBio: Darwood worked towards his MS in Data Science capstone in the Lab. He
