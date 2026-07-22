@@ -1,6 +1,6 @@
 ---
-publicationTitle: "# *ssarp*: An R Package for Efficiently Inferring Species-
-  and Speciation-Area Relationships"
+publicationTitle: "*ssarp*: An R Package for Efficiently Inferring Species- and
+  Speciation-Area Relationships"
 publicationAuthor: Kristen Martinet, Cristian Román-Palacios, and Luke Harmon
 publicationDate: "2026"
 publicationMonth: Jul
