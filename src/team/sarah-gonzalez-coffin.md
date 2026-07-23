@@ -3,6 +3,7 @@ memberName: Sarah Gonzalez-Coffin
 memberTitle:
   - Postdoc
 memberDate: "2026"
+memberDateEnd: Present
 memberBio: "Postdoctoral Fellow, Lovejoy Center for Bridging Biodiversity,
   Conservation Science & Policy. Sarah’s research leverages machine learning and
   GIS to inform data-driven conservation and adaptation. Trained as a
@@ -11,6 +12,7 @@ memberBio: "Postdoctoral Fellow, Lovejoy Center for Bridging Biodiversity,
   and technology adoption. "
 tags:
   - Current
+  - Postdoc
 linkedin: https://www.linkedin.com/in/sarahgonzalezcoffin/
 email: gonzalezcoffin@arizona.edu
 link: https://www.colorado.edu/lab/edji/sarah-gonzalez-coffin
