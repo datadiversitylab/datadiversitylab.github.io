@@ -17,6 +17,7 @@ linkedin: https://www.linkedin.com/in/sarahgonzalezcoffin/
 email: gonzalezcoffin@arizona.edu
 link: https://www.colorado.edu/lab/edji/sarah-gonzalez-coffin
 image: /assets/images/our-team/sgc_2026.jpeg
+order: 3
 date: 2026-07-16T11:55:00.000-05:00
 coAdvisor: Aaron Lien
 coAdvisorLink: https://snre.arizona.edu/aaron-lien
