@@ -12,6 +12,7 @@ publicationAbstract: Last month I gave a keynote at the Colombian Congress of
 images:
   - /assets/images/socials/colevol2026_1.jpg
   - /assets/images/socials/colevol2026_2.jpg
+  - /assets/images/socials/dscf1184.jpg
 tags: Conference
 webLink: https://lasalle.edu.co/es/viii-simposio-colombiano-biologia-evolutiva
 ---
