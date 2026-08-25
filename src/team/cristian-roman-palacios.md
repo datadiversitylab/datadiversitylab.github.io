@@ -23,13 +23,19 @@ imageAlt: Portrait of Cristian Román-Palacios
 order: 1
 date: 2024-03-28T23:31:34.809Z
 affiliations:
-  - name: UA Elected Faculty Senator
+  - name: University of Arizona Elected Faculty Senator for the College of
+      Information Science
     url: https://facultygovernance.arizona.edu/dr-cristian-roman-palacios
-  - name: Diversity, Equity, and Inclusion (DEI) Committee Member
-  - name: Fellow at UCLA
+  - name: University of Arizona Faculty senator representative at the Diversity,
+      Equity, and Inclusion (DEI) Committee
+  - name: Fellow at the Center for Diverse Leadership in Science at the University
+      of California, Los Angeles
     url: https://www.ioes.ucla.edu/person/cristian-roman-palacios/
-  - name: Faculty at the Lovejoy Center for Bridging Biodiversity, Conservation Science and Policy (BBCS)
+  - name: The Lovejoy Center at The University of Arizona
     url: https://lovejoycenter.arizona.edu/person/cristian-roman-palacios
-  - name: Applied Mathematics
+  - name: "Affiliated Faculty member at the Applied Mathematics GIDP "
     url: https://appliedmath.arizona.edu/person/cristian-roman-palacios
+  - url: https://cambium.arizona.edu/person/cristian-roman-palacios
+    name: Affiliated faculty at Climate change Adaptation and Mitigation through
+      Biodiversity Informatics edUcation and Mentoring (CAMBIUM)
 ---
