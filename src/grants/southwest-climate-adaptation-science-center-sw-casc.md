@@ -27,4 +27,6 @@ grantDesc: "Climate change is driving the emergence of disease as arthropod
 tags:
   - USGS
 image: /assets/images/grants/usgs-pic.png
+topics:
+  - Biodiversity
 ---
