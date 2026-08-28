@@ -27,7 +27,9 @@ affiliations:
       Information Science
     url: https://facultygovernance.arizona.edu/dr-cristian-roman-palacios
   - name: University of Arizona Faculty senator representative at the Diversity,
-      Equity, and Inclusion (DEI) Committee
+      Equity, and Inclusion (DEI) Committee (currently the University Community
+      Relations Committee)
+    url: https://facultygovernance.arizona.edu/other-committees/university-community-relations-committee
   - name: Fellow at the Center for Diverse Leadership in Science at the University
       of California, Los Angeles
     url: https://www.ioes.ucla.edu/person/cristian-roman-palacios/
