@@ -15,4 +15,7 @@ grantDesc: The WAESO grant funded a project that will allow for the
 tags:
   - NSF
 image: /assets/images/grants/waeso-pic.jpg
+topics:
+  - Biodiversity
+  - Data Science
 ---
