@@ -40,4 +40,7 @@ tags:
   - NSF
 link: https://cambium.arizona.edu/
 image: /assets/images/grants/cambium-grant-image.png
+topics:
+  - Biodiversity
+  - Data Science
 ---
