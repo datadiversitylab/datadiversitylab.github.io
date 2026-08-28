@@ -33,4 +33,7 @@ grantDesc: Our grand challenge is to solve global problems with a unified
 tags:
   - University of Arizona
 image: /assets/images/grants/bic.png
+topics:
+  - Data Science
+  - Biodiversity
 ---
