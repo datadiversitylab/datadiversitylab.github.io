@@ -12,4 +12,7 @@ grantDesc: UA’s OneHealth initiative pilot grant aimed at examining spatial an
 tags:
   - University of Arizona
 image: /assets/images/grants/uaf-edu-onehealth-graphic.png
+topics:
+  - People
+  - Data Science
 ---
