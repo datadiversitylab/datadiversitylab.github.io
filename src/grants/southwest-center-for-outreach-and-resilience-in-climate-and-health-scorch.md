@@ -15,4 +15,7 @@ tags:
   - NIH
 link: https://scorch.arizona.edu/
 image: /assets/images/grants/swcasc-pic.png
+topics:
+  - Biodiversity
+  - People
 ---
