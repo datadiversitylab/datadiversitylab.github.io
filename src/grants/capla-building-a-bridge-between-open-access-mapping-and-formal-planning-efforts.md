@@ -15,4 +15,7 @@ grantDesc: Seed grant from the College of Architecture, Planning and Landscape
 tags:
   - University of Arizona
 image: /assets/images/grants/images.jpeg
+topics:
+  - Software
+  - People
 ---
