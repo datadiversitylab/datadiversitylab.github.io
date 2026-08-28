@@ -10,4 +10,6 @@ grantDesc: A seed grant was awarded to our team as a new member of the UA's
 tags:
   - University of Arizona
 image: /assets/images/grants/research-innovation-and-impact.png
+topics:
+  - Biodiversity
 ---
