@@ -25,4 +25,7 @@ grantDesc: We will collect information on the natural history and geographic
 tags:
   - University of Arizona
 image: /assets/images/grants/screenshot-2025-09-03-at-7.46.51 pm.png
+topics:
+  - Biodiversity
+  - Data Science
 ---
