@@ -30,4 +30,7 @@ grantDesc: This project seeks to equip Colombian Biology students and
 tags:
   - NatGeo
 image: /assets/images/grants/natgeo-grant-image.jpeg
+topics:
+  - People
+  - Data Science
 ---
