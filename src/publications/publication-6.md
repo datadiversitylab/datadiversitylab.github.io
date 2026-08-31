@@ -1,8 +1,8 @@
 ---
 publicationTitle: "A new species of whip spider, Sarax sinensis sp. nov., from
   Fujian, China (Arachnida: Amblypygi: Charinidae)"
-publicationAuthor: Cristian Román-Palacios, Yherson Franchesco Molina-Henao, and
-  Michael S. Barker. 2020.
+publicationAuthor: Shi-Yang Wu, Xiao-Yu Zhu, Yi-Jiao Liu, Gustavo Silva de
+  Miranda, Cristian Román-Palacios, Zheng Li, and Zhu-Qing He
 publicationDate: 2022
 publicationType: Zootaxa
 publicationAbstract: "To date, only two whip spider species have been recorded
@@ -27,4 +27,7 @@ badgeImage: <div data-badge-type="donut" data-doi="10.11646/zootaxa.5162.4.4"
 pdfLink: ""
 webLink: null
 order: 15
+outputType: Journal article
+topics:
+  - Biodiversity
 ---
