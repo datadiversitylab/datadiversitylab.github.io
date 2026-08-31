@@ -27,4 +27,8 @@ badgeImage: <span class="__dimensions_badge_embed__"
 pdfLink: ""
 webLink: null
 order: 45
+outputType: Journal article
+topics:
+  - Biodiversity
+  - Data Science
 ---
