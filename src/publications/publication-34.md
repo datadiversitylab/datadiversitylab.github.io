@@ -31,4 +31,7 @@ badgeImage: <div data-badge-type="donut" data-doi="10.21897/rmvz.1134"
 pdfLink: ""
 webLink: null
 order: 43
+outputType: Journal article
+topics:
+  - Data Science
 ---
