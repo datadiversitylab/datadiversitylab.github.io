@@ -22,4 +22,7 @@ badgeImage: null
 pdfLink: ""
 webLink: null
 order: 12
+outputType: Journal article
+topics:
+  - Biodiversity
 ---
