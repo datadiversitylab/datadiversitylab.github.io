@@ -34,4 +34,7 @@ badgeImage: <div data-badge-type="donut" data-doi="10.17151/bccm.2016.20.2.14"
 pdfLink: ""
 webLink: null
 order: 37
+outputType: Journal article
+topics:
+  - Biodiversity
 ---
