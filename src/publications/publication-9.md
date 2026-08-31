@@ -27,4 +27,7 @@ badgeImage: <div data-badge-type="donut" data-doi="10.11646/zootaxa.5082.1.6"
 pdfLink: ""
 webLink: null
 order: 18
+outputType: Journal article
+topics:
+  - Biodiversity
 ---
