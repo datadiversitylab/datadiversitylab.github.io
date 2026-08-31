@@ -38,4 +38,7 @@ badgeImage: <span class="__dimensions_badge_embed__"
 pdfLink: ""
 webLink: null
 order: 39
+outputType: Journal article
+topics:
+  - Biodiversity
 ---
