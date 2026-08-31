@@ -30,4 +30,9 @@ badgeImage: <div data-badge-type="donut" data-doi="10.7717/peerj.12450"
 pdfLink: ""
 webLink: null
 order: 15
+outputType: Journal article
+topics:
+  - Biodiversity
+  - Software
+  - Data Science
 ---
