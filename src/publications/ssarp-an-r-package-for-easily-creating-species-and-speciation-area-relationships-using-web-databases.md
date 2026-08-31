@@ -28,4 +28,8 @@ image: /assets/images/publications/screenshot-2025-01-03-at-12.02.25-pm.png
 pdfDocument: /assets/documents/publications/ssarp.pdf
 pdfLink: ""
 webLink: https://www.biorxiv.org/content/10.1101/2024.12.31.630948v1
+outputType: Preprint
+topics:
+  - Software
+  - Biodiversity
 ---
