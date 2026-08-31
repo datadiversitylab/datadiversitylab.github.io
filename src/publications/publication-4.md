@@ -27,4 +27,9 @@ badgeImage: null
 pdfLink: ""
 webLink: https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.14147
 order: 13
+outputType: Journal article
+topics:
+  - Biodiversity
+  - Data Science
+  - Software
 ---
