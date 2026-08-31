@@ -37,4 +37,8 @@ tags:
 image: /assets/images/publications/screenshot-2024-05-09-at-8.37.17-am.png
 pdfDocument: /assets/documents/publications/ehsanietal2024.pdf
 webLink: https://www.sciencedirect.com/science/article/pii/S0034425724002177
+outputType: Journal article
+topics:
+  - Data Science
+  - Biodiversity
 ---
