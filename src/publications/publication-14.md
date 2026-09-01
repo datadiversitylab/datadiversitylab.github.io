@@ -41,4 +41,7 @@ badgeImage: <div data-badge-type="donut" data-doi="10.1111/geb.13253"
 pdfLink: ""
 webLink: null
 order: 23
+outputType: Journal article
+topics:
+  - Biodiversity
 ---
