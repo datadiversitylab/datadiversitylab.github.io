@@ -24,4 +24,8 @@ image: /assets/images/publications/machine-learning-publication.png
 pdfDocument: /assets/documents/publications/alam_etal_2025_bmc.pdf
 webLink: https://link.springer.com/article/10.1186/s12915-025-02424-3
 order: 1
+outputType: Review
+topics:
+  - Biodiversity
+  - Data Science
 ---
