@@ -29,4 +29,8 @@ badgeImage: <div data-badge-type="donut" data-doi="10.1111/jeb.13884"
 pdfLink: ""
 webLink: null
 order: 20
+outputType: Journal article
+topics:
+  - Biodiversity
+  - Data Science
 ---
