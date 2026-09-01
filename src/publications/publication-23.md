@@ -45,4 +45,7 @@ badgeImage: <div data-badge-type="donut" data-doi="10.1016/j.ympev.2018.06.012"
 pdfLink: ""
 webLink: null
 order: 32
+outputType: Journal article
+topics:
+  - Biodiversity
 ---
