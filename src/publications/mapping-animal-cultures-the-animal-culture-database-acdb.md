@@ -26,4 +26,8 @@ pdfDocument: /assets/documents/publications/basavaetal2025.pdf
 badgeImage: <div data-badge-type="donut" data-doi="10.1038/s41597-025-05315-y"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
 webLink: https://www.nature.com/articles/s41597-025-05315-y
+outputType: Journal article
+topics:
+  - Biodiversity
+  - Data Science
 ---
