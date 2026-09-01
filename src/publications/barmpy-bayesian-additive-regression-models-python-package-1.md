@@ -18,4 +18,7 @@ tags:
 image: /assets/images/publications/barmpy.jpg
 pdfDocument: /assets/documents/publications/vanboxel_2024.pdf
 webLink: https://link.springer.com/article/10.1007/s00180-024-01535-9
+outputType: Journal article
+topics:
+  - Data Science
 ---
