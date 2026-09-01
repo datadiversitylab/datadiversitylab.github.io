@@ -14,4 +14,7 @@ badgeImage: <div data-badge-type="donut" data-doi="10.1038/d41586-019-00845-z"
 pdfLink: ""
 webLink: null
 order: 27
+outputType: Commentary
+topics:
+  - People
 ---
