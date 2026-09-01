@@ -32,4 +32,7 @@ badgeImage: <span class="__dimensions_badge_embed__"
 pdfLink: ""
 webLink: null
 order: 30
+outputType: Journal article
+topics:
+  - Biodiversity
 ---
