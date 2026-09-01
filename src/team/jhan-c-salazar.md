@@ -1,7 +1,7 @@
 ---
 memberName: Jhan C. Salazar
 memberTitle:
-  - Research Data Support Specialist II
+  - Intern
 currentPosition: Postdoctoral Research Fellow and a Bioinformatician at Mayo
   Clinic FL for the Neurogenesis and Brain Tumors Laboratory
 memberDate: 2023
