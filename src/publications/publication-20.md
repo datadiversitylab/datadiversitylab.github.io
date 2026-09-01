@@ -32,4 +32,8 @@ badgeImage: <div data-badge-type="donut" data-doi="10.1111/evo.13574"
 pdfLink: ""
 webLink: null
 order: 29
+outputType: Commentary
+topics:
+  - Biodiversity
+  - Data Science
 ---
