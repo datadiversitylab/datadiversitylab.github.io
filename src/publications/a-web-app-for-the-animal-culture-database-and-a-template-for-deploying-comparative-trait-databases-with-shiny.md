@@ -16,4 +16,8 @@ image: /assets/images/publications/shinyacdb.jpg
 pdfDocument: /assets/documents/publications/basavaandroman2025.pdf
 pdfLink: https://onlinelibrary.wiley.com/doi/epdf/10.1002/ece3.71913
 webLink: https://onlinelibrary.wiley.com/doi/10.1002/ece3.71913
+outputType: Journal article
+topics:
+  - Data Science
+  - Biodiversity
 ---
