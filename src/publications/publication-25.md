@@ -38,4 +38,8 @@ badgeImage: <div data-badge-type="donut" data-doi="10.15517/rbt.v66i3.30818"
 pdfLink: ""
 webLink: null
 order: 34
+outputType: Journal article
+topics:
+  - Biodiversity
+  - Data Science
 ---
