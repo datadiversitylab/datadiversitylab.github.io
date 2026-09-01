@@ -27,4 +27,8 @@ badgeImage: null
 pdfLink: https://bmcbiol.biomedcentral.com/counter/pdf/10.1186/s12915-024-02101-x.pdf
 webLink: https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-024-02101-x
 order: 10
+outputType: Journal article
+topics:
+  - Biodiversity
+  - Data Science
 ---
