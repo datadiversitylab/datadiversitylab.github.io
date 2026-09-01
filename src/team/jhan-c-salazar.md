@@ -1,6 +1,9 @@
 ---
 memberName: Jhan C. Salazar
-memberTitle: Research Data Support Specialist II
+memberTitle:
+  - Research Data Support Specialist II
+currentPosition: Postdoctoral Research Fellow and a Bioinformatician at Mayo
+  Clinic FL for the Neurogenesis and Brain Tumors Laboratory
 memberDate: 2023
 memberDateEnd: null
 memberBio: Jhan joined the data diversity lab during Summer 2023. He wrote the
