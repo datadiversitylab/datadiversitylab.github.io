@@ -31,4 +31,7 @@ badgeImage: <div data-badge-type="donut" data-doi="10.1098/rspb.2020.0962"
 pdfLink: ""
 webLink: null
 order: 25
+outputType: Journal article
+topics:
+  - Biodiversity
 ---
