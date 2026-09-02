@@ -1,6 +1,8 @@
 ---
 memberName: Katie Stringham
-memberTitle: MSc student
+memberTitle:
+  - MSc capstone student
+currentPosition: Senior Engineer at Raytheon
 memberDate: 2023
 memberDateEnd: null
 memberBio: Katie worked with Darwood towards his MS in Data Science capstone in
