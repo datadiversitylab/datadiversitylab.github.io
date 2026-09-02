@@ -10,6 +10,7 @@ memberBio: Julia is a first-year PhD student. Her research involves using
   Brazil.
 tags:
   - Current
+  - PhD student
 image: /assets/images/our-team/julia-dias-ddl-headshot.jpg
 date: 2026-09-01T15:03:00.000-07:00
 ---
