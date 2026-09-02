@@ -1,7 +1,5 @@
 ---
 memberName: Pradnya Raut
-memberTitle: Capstone student
-memberEducation: ""
 memberDate: "2024"
 memberDateEnd: ""
 memberBio: Pradnya has a master's of computer application degree from Mumbai
@@ -9,6 +7,9 @@ memberBio: Pradnya has a master's of computer application degree from Mumbai
   learning) from the University of Arizona. She is working on analyzing and
   correlating 3D shapes of cities with the urban heat island effect using
   machine learning models in python/R for her capstone project
+memberEducation: ""
+memberTitle:
+  - Capstone student
 tags:
   - Former
   - MSc capstone student
