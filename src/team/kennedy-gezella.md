@@ -3,9 +3,9 @@ memberName: Kennedy Gezella
 memberTitle:
   - Student Lab Support
 memberDate: 2024 - Present
-memberBio: Kennedy is a third-year undergraduate student worker on the path to
-  becoming a physician assistant. Her role involves offering support within and
-  outside of the lab in a variety of ways.
+memberBio: Kennedy is a fourth-year undergraduate student worker on the path to
+  becoming a physician assistant. Her role involves offering managerial support
+  within and outside of the lab in a variety of ways.
 tags:
   - Current
   - Staff
