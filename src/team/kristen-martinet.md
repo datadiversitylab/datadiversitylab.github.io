@@ -11,8 +11,8 @@ memberBio: The goal of Kristen’s research is to develop tools that help
   allow researchers to create speciation-area relationship plots for
   island-dwelling species with occurrence records from online databases.
 tags:
-  - Postdoc
   - Former
+  - Postdoc
 email: kmartinet@arizona.edu
 github: kmartinet
 resume: /assets/documents/our-team/cv_kristen_martinet.pdf
