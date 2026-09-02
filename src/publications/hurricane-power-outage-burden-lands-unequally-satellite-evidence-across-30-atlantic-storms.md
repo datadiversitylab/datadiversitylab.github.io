@@ -1,5 +1,5 @@
 ---
-publicationTitle: "# Hurricane power outage burden lands unequally: satellite
+publicationTitle: "Hurricane power outage burden lands unequally: satellite
   evidence across 30 Atlantic storms"
 publicationAuthor: Chris C. Lim, et al.
 publicationDate: "2026"
