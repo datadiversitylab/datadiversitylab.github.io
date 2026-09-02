@@ -11,7 +11,7 @@ tags:
   - Staff
 linkedin: https://www.linkedin.com/in/kennedy-gezella-3592a7318/
 email: kennedygezella@gmail.com
-image: /assets/images/our-team/kennedy07.jpg
+image: /assets/images/our-team/kg-headshot-2025.jpg
 order: 8
 date: 2025-10-08T14:32:00.000-07:00
 ---
