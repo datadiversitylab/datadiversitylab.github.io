@@ -1,5 +1,6 @@
 ---
 memberName: Pradnya Raut
+currentPosition: Software Developer
 memberDate: "2024"
 memberDateEnd: ""
 memberBio: Pradnya has a master's of computer application degree from Mumbai
@@ -9,7 +10,7 @@ memberBio: Pradnya has a master's of computer application degree from Mumbai
   machine learning models in python/R for her capstone project
 memberEducation: ""
 memberTitle:
-  - Capstone student
+  - MSc capstone student
 tags:
   - Former
   - MSc capstone student
