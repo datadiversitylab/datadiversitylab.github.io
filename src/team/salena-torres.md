@@ -1,6 +1,7 @@
 ---
 memberName: Salena Torres
-memberTitle: PhD student
+memberTitle:
+  - PhD student
 memberDate: 2022
 memberDateEnd: null
 memberBio: Dr. Román-Palacios was Salena’s faculty advisor for the Data Science
