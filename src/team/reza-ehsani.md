@@ -1,6 +1,7 @@
 ---
 memberName: Reza Ehsani
-memberTitle: MSc student
+memberTitle:
+  - MSc student
 memberDate: 2023
 memberDateEnd: null
 memberBio: Reza finalized his capstone for his MS in Data Science at the lab
