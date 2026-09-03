@@ -26,6 +26,9 @@ image: /assets/images/publications/barn.jpg
 pdfDocument: /assets/documents/publications/2404.04425.pdf
 webLink: https://arxiv.org/abs/2404.04425
 outputType: Journal article
+researchAreas:
+  - Machine learning
+  - Tools
 topics:
   - Data Science
 ---
