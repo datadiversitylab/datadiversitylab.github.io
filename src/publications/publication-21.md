@@ -33,6 +33,9 @@ pdfLink: ""
 webLink: null
 order: 30
 outputType: Journal article
+researchAreas:
+  - Ecology
+  - Tools
 topics:
   - Biodiversity
 ---
