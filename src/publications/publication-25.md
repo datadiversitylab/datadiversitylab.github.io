@@ -39,6 +39,8 @@ pdfLink: ""
 webLink: null
 order: 34
 outputType: Journal article
+researchAreas:
+  - Conservation biology
 topics:
   - Biodiversity
   - Data Science
