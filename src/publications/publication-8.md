@@ -31,6 +31,10 @@ pdfLink: ""
 webLink: null
 order: 15
 outputType: Journal article
+researchAreas:
+  - Macroevolution
+  - Phylogenetics
+  - Tools
 topics:
   - Biodiversity
   - Software
