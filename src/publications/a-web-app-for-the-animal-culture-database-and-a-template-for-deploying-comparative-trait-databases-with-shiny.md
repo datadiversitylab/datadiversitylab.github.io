@@ -1,7 +1,7 @@
 ---
 publicationTitle: A Web App for the Animal Culture Database and a Template for
   Deploying Comparative Trait Databases With Shiny
-publicationAuthor: Kiran Basava, and Cristian Román-Palacios
+publicationAuthor: Kiran Basava and Cristian Román-Palacios
 publicationDate: "2025"
 publicationMonth: Aug
 publicationType: Ecology and Evolution
