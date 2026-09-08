@@ -1,7 +1,8 @@
 ---
 publicationTitle: "Hurricane power outage burden lands unequally: satellite
   evidence across 30 Atlantic storms"
-publicationAuthor: Chris C. Lim, et al.
+publicationAuthor: Chris C. Lim, Cristian Roman-Palacios, Ian Estacios, Paloma
+  Beamer, Arnab Ghosh, Kai Zhang, Robbie Parks, G. Anderson, & Michelle Bell
 publicationDate: "2026"
 publicationMonth: May
 publicationAbstract: "Hurricane-related outages affect millions, yet who loses
