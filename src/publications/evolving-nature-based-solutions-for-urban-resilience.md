@@ -31,6 +31,9 @@ image: /assets/images/publications/science.aea9563-f1.jpg
 pdfDocument: /assets/documents/publications/evolving-nature-based-solutions-for-urban-resilience.pdf
 pdfLink: https://www.science.org/doi/10.1126/science.aea9563
 outputType: Review
+researchAreas:
+  - Macroevolution
+  - Climate change
 topics:
   - People
   - Biodiversity
