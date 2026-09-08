@@ -1,7 +1,7 @@
 ---
 publicationTitle: "The Tortoise and the Finch: testing for island effects on
   diversification using two iconic Galápagos radiations"
-publicationAuthor: Cristian Román-Palacios, and John J. Wiens
+publicationAuthor: Cristian Román-Palacios and John J. Wiens
 publicationDate: 2018
 publicationType: Journal of Biogeography
 publicationAbstract: "Aims: Islands are widely recognized as natural
