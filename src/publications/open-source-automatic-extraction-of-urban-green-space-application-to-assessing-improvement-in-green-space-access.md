@@ -37,6 +37,8 @@ image: /assets/images/publications/screenshot-2024-06-15-at-3.35.20-pm.png
 pdfDocument: /assets/documents/publications/estacio_2024.pdf
 webLink: https://isprs-annals.copernicus.org/articles/X-2-2024/65/2024/
 outputType: Journal article
+researchAreas:
+  - Tools
 topics:
   - Data Science
   - Software
