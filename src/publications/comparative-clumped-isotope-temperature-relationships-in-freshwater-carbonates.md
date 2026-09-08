@@ -43,6 +43,10 @@ image: /assets/images/publications/dep2312-fig-0001-m.jpg
 pdfDocument: /assets/documents/publications/arnoldetal_2024.pdf
 webLink: https://onlinelibrary.wiley.com/doi/full/10.1002/dep2.312
 outputType: Journal article
+researchAreas:
+  - Climate science
+  - Tools
+  - Ecology
 topics:
   - Biodiversity
   - Data Science
