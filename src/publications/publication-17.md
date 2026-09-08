@@ -1,7 +1,7 @@
 ---
 publicationTitle: Recent responses to climate change reveal the drivers of
   species extinction and survival
-publicationAuthor: Cristian Román-Palacios, and John J. Wiens
+publicationAuthor: Cristian Román-Palacios and John J. Wiens
 publicationDate: 2020
 publicationType: PNAS
 publicationAbstract: Climate change may be a major threat to biodiversity in the
