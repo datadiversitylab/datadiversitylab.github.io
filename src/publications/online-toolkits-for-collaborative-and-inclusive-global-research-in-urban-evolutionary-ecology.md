@@ -37,6 +37,10 @@ pdfDocument: /assets/documents/publications/savageetal_2024.pdf
 pdfLink: ""
 webLink: https://onlinelibrary.wiley.com/doi/10.1002/ece3.11633
 outputType: Journal article
+researchAreas:
+  - Macroevolution
+  - Ecology
+  - Tools
 topics:
   - Biodiversity
   - Data Science
