@@ -1,7 +1,7 @@
 ---
 publicationTitle: Hábitos tróficos de dos especies sintópicas de carácidos en
   una quebrada de alta montaña en los Andes de Colombia
-publicationAuthor: Cristian Román-Palacios, and Cesar Román Valencia
+publicationAuthor: Cristian Román-Palacios and Cesar Román Valencia
 publicationDate: 2015
 publicationType: Revista Mexicana de Biodiversidad
 publicationAbstract: "To analyze the degree of trophic overlap, 2 species of
