@@ -37,6 +37,10 @@ image: /assets/images/publications/screenshot-2025-03-06-at-3.58.37 pm.png
 pdfDocument: /assets/documents/publications/alametal2025.pdf
 webLink: https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-025-02328-2
 outputType: Journal article
+researchAreas:
+  - Macroevolution
+  - Phylogenetics
+  - Tools
 topics:
   - Biodiversity
   - Data Science
