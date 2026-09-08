@@ -26,6 +26,9 @@ pdfLink: ""
 webLink: null
 order: 47
 outputType: Journal article
+researchAreas:
+  - Conservation biology
+  - Ecology
 topics:
   - Biodiversity
 ---
