@@ -28,6 +28,8 @@ pdfLink: ""
 webLink: null
 order: 45
 outputType: Journal article
+researchAreas:
+  - Ecology
 topics:
   - Biodiversity
   - Data Science
