@@ -30,6 +30,9 @@ pdfLink: ""
 webLink: null
 order: 20
 outputType: Journal article
+researchAreas:
+  - Phylogenetics
+  - Macroevolution
 topics:
   - Biodiversity
   - Data Science
