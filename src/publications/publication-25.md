@@ -1,6 +1,6 @@
 ---
 publicationTitle: On the Data Deficient amphibians from Colombia
-publicationAuthor: Cristian Román-Palacios, and Alejandro Valencia-Zuleta
+publicationAuthor: Cristian Román-Palacios and Alejandro Valencia-Zuleta
 publicationDate: 2018
 publicationType: Revista de Biologia Tropical
 publicationAbstract: "Whereas more than 10 % of global amphibian richness is
