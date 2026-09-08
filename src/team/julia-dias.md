@@ -4,10 +4,10 @@ memberTitle:
   - PhD student
 memberDate: August 2026
 memberDateEnd: ""
-memberBio: Julia is a first-year PhD student. Her research involves using
+memberBio: "Julia is a first-year PhD student. Her research involves using
   machine learning to create models capable of identifying diagnoses from
   medical images. She completed her bachelor's degree in Computer Science in
-  Brazil.
+  Brazil. "
 tags:
   - Current
   - PhD student
