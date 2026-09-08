@@ -36,6 +36,8 @@ pdfLink: ""
 webLink: null
 order: 26
 outputType: Journal article
+researchAreas:
+  - Climate change
 topics:
   - Biodiversity
 ---
