@@ -1,7 +1,7 @@
 ---
 publicationTitle: "A new Neotropical genus of Blastini (Psocodea: ’Psocoptera’:
   Psocidae: Amphigerontiinae)"
-publicationAuthor: Cristian Román-Palacios, and Alfonso N. García Aldrete
+publicationAuthor: Cristian Román-Palacios and Alfonso N. García Aldrete
 publicationDate: 2015
 publicationType: Zootaxa
 publicationAbstract: "A monotypic genus of Psocidae (Amphigerontiinae: Blastini)
