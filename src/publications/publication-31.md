@@ -31,6 +31,10 @@ pdfLink: ""
 webLink: null
 order: 40
 outputType: Journal article
+researchAreas:
+  - Macroevolution
+  - Phylogenetics
+  - Biogeography
 topics:
   - Biodiversity
 ---
