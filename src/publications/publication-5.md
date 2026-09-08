@@ -25,4 +25,10 @@ badgeImage: <div data-badge-type="donut" data-doi="10.11646/zootaxa.5188.6.3"
 pdfLink: ""
 webLink: null
 order: 14
+outputType: Journal article
+researchAreas:
+  - Macroevolution
+  - Phylogenetics
+topics:
+  - Biodiversity
 ---
