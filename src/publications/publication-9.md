@@ -28,6 +28,9 @@ pdfLink: ""
 webLink: null
 order: 18
 outputType: Journal article
+researchAreas:
+  - Phylogenetics
+  - Biogeography
 topics:
   - Biodiversity
 ---
