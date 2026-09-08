@@ -29,6 +29,10 @@ pdfDocument: /assets/documents/publications/ssarp.pdf
 pdfLink: ""
 webLink: https://www.biorxiv.org/content/10.1101/2024.12.31.630948v1
 outputType: Preprint
+researchAreas:
+  - Phylogenetics
+  - Biogeography
+  - Tools
 topics:
   - Software
   - Biodiversity
