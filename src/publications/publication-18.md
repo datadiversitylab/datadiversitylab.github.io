@@ -15,8 +15,7 @@ pdfLink: ""
 webLink: null
 order: 27
 outputType: Commentary
-researchAreas:
-  - Tools
+researchAreas: null
 topics:
   - People
 ---
