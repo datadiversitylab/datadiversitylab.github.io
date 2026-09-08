@@ -32,6 +32,8 @@ pdfLink: ""
 webLink: null
 order: 43
 outputType: Journal article
+researchAreas:
+  - Biostatistics
 topics:
   - Data Science
 ---
