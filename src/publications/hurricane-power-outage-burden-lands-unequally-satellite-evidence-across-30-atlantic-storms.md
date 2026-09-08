@@ -24,6 +24,10 @@ pdfDocument: /assets/documents/publications/hurricane-power-outage-pdf.pdf
 pdfLink: https://assets-eu.researchsquare.com/files/rs-9349878/v1_covered_38a9d3eb-d17b-4fcb-9500-89cd1e44bc91.pdf?c=1780039225
 webLink: https://www.researchsquare.com/article/rs-9349878/v1
 outputType: Preprint
+researchAreas:
+  - Climate change
+  - Climate science
+  - Tools
 topics:
   - Biodiversity
 ---
