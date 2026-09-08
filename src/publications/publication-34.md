@@ -1,7 +1,7 @@
 ---
 publicationTitle: "Information criteria on multimodel selection of parametric
   regression: Biological applications"
-publicationAuthor: Daniela Moraga Lopez, and Cristian Román-Palacios
+publicationAuthor: Daniela Moraga Lopez and Cristian Román-Palacios
 publicationDate: 2015
 publicationType: Comunicaciones en Estadistica
 publicationAbstract: When carrying out modelling analysis using experimental
