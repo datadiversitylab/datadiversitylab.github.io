@@ -3,9 +3,9 @@ memberName: Daniel McNair
 memberTitle:
   - PhD student
 memberDate: August 2026
-memberBio: "Daniel is interested in plants, their evolution and ecology, their
+memberBio: Daniel is interested in plants, their evolution and ecology, their
   survival on our changing planet, and the ways that humans continue to produce
-  and share knowledge of their many forms and uses. "
+  and share knowledge of their many forms and uses.
 tags:
   - Current
   - PhD student
