@@ -19,4 +19,9 @@ badgeImage: <span class="__dimensions_badge_embed__"
 pdfLink: ""
 webLink: null
 order: 44
+outputType: Journal article
+researchAreas:
+  - Ecology
+topics:
+  - Biodiversity
 ---
