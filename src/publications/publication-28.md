@@ -35,6 +35,8 @@ pdfLink: ""
 webLink: null
 order: 37
 outputType: Journal article
+researchAreas:
+  - Biogeography
 topics:
   - Biodiversity
 ---
