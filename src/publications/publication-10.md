@@ -24,4 +24,9 @@ badgeImage: <div data-badge-type="donut" data-doi="10.11646/zootaxa.4996.3.8"
 pdfLink: ""
 webLink: null
 order: 19
+outputType: Journal article
+researchAreas:
+  - Phylogenetics
+topics:
+  - Biodiversity
 ---
