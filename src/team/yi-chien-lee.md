@@ -5,10 +5,10 @@ memberTitle:
 currentPosition: Software Engineer for LinkedIn
 memberDate: 2023
 memberDateEnd: null
-memberBio: Yi Chien specializes in leveraging R programming to interpret human
+memberBio: "Yi Chien specializes in leveraging R programming to interpret human
   behavior and societal trends through data analysis. She currently uses python
   to relate socioeconomic indicators to academic performance indexes in SAT-like
-  exams across the globe.
+  exams across the globe. "
 tags:
   - Former
   - Intern
@@ -19,5 +19,5 @@ resume: null
 image: /assets/images/our-team/yi-chien-lee.png
 imageAlt: Portrait of Yi Chien Lee
 order: 120
-date: 2024-04-17T10:48:00.000Z
+date: 2026-09-08T16:32:00.000-07:00
 ---
