@@ -5,10 +5,10 @@ memberTitle:
 currentPosition: Profesional de Sección Entomologia, Universidad del Valle
 memberDate: "2018"
 memberDateEnd: 2020
-memberBio: Valentina was Dr. Román-Palacios’ first undergraduate advisee (2018).
-  Her project focused on reviewing the evolutionary relationships within
+memberBio: "Valentina was Dr. Román-Palacios’ first undergraduate advisee
+  (2018). Her project focused on reviewing the evolutionary relationships within
   Psocidae (Insecta) and inferring the phylogenetic position of newly collected
-  neotropical psocids using molecular phylogenetics.
+  neotropical psocids using molecular phylogenetics. "
 tags:
   - Undergraduate student
   - Former
@@ -19,5 +19,5 @@ resume: null
 image: /assets/images/our-team/valentina-sarria-rodriguez.png
 imageAlt: Portrait of Valentina Sarria-Rodriguez
 order: 290
-date: 2024-03-30T15:40:23.316Z
+date: 2026-09-08T16:37:00.000-07:00
 ---
