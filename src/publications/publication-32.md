@@ -20,6 +20,8 @@ pdfLink: ""
 webLink: null
 order: 41
 outputType: Journal article
+researchAreas:
+  - Ecology
 topics:
   - Biodiversity
 ---
