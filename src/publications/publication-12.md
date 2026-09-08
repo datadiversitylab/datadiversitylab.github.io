@@ -46,6 +46,9 @@ pdfLink: ""
 webLink: null
 order: 21
 outputType: Journal article
+researchAreas:
+  - Macroevolution
+  - Phylogenetics
 topics:
   - Biodiversity
 ---
