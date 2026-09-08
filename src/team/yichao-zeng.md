@@ -19,5 +19,5 @@ memberEducation: PhD
 link: https://yichaozeng.github.io/index.html
 image: /assets/images/our-team/img_7362.jpeg
 order: 5
-date: 2025-01-09T16:15:00.000Z
+date: 2026-09-08T16:29:00.000-07:00
 ---
