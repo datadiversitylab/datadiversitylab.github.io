@@ -35,6 +35,10 @@ image: /assets/images/publications/ssarp.png
 pdfDocument: /assets/documents/publications/ssarp_-an-r-package-for-efficiently-inferring-species‐-and-speciation‐area-relationships.pdf
 webLink: https://onlinelibrary.wiley.com/doi/10.1002/ece3.73981
 outputType: Journal article
+researchAreas:
+  - Macroevolution
+  - Biogeography
+  - Ecology
 topics:
   - Biodiversity
   - Data Science
