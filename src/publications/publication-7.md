@@ -28,6 +28,10 @@ pdfLink: ""
 webLink: null
 order: 14
 outputType: Journal article
+researchAreas:
+  - Phylogenetics
+  - Biogeography
+  - Conservation biology
 topics:
   - Biodiversity
 ---
