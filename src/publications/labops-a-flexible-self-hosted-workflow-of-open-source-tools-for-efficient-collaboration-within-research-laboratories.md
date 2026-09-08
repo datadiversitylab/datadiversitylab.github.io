@@ -55,6 +55,8 @@ badgeImage: <div data-badge-type="donut" data-doi="10.1371/journal.pcbi.1013248"
   data-hide-no-mentions="true" class="altmetric-embed"></div>
 webLink: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013248
 outputType: Journal article
+researchAreas:
+  - Tools
 topics:
   - People
 ---
