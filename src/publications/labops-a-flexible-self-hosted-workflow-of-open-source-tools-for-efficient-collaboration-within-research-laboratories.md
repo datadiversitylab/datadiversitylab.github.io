@@ -1,7 +1,7 @@
 ---
 publicationTitle: "LabOps: A flexible self-hosted workflow of open source tools
   for efficient collaboration within research laboratories"
-publicationAuthor: " Héctor D. García-Verdugo, Cristian Román-Palacios"
+publicationAuthor: " Héctor D. García-Verdugo and Cristian Román-Palacios"
 publicationDate: "2025"
 publicationMonth: Jul
 publicationType: PLoS Computational Biology
