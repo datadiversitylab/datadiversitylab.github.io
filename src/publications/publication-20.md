@@ -33,6 +33,8 @@ pdfLink: ""
 webLink: null
 order: 29
 outputType: Commentary
+researchAreas:
+  - Macroevolution
 topics:
   - Biodiversity
   - Data Science
