@@ -1,14 +1,14 @@
 ---
 memberName: Quan Gan
 memberTitle:
-  - MSc student
+  - MSc capstone student
 currentPosition: Professional Software Engineer
 memberDate: 2022
 memberDateEnd: null
-memberBio: Quan's project in the lab focused on implementing code in stan to
+memberBio: "Quan's project in the lab focused on implementing code in stan to
   perform Bayesian calibration and temperature reconstructions using clumped
   isotope datasets. After finalizing his capstone project in the lab, Quan
-  joined Robotic Software Engineer at Mujin Corp Inc.
+  joined Robotic Software Engineer at Mujin Corp Inc. "
 tags:
   - MSc capstone student
   - Former
@@ -19,5 +19,5 @@ resume: null
 image: /assets/images/our-team/quan-gan.png
 imageAlt: Portrait of Quan Gan
 order: 220
-date: 2024-04-17T10:46:00.000Z
+date: 2026-09-08T16:34:00.000-07:00
 ---
