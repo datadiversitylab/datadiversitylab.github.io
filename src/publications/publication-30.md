@@ -1,7 +1,7 @@
 ---
 publicationTitle: "Dieta y reproducción de *Bryconamericus caucanus*
   (Characiformes: Characidae) en La Venada, Río Quindío, Colombia"
-publicationAuthor: Cristian Román-Palacios, and Cesar Román Valencia
+publicationAuthor: Cristian Román-Palacios and Cesar Román Valencia
 publicationDate: 2016
 publicationType: Revista MVZ Cordoba
 publicationAbstract: "Objectives: The reproductive and trophic ecology of
