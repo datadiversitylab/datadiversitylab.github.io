@@ -15,7 +15,7 @@ github: mckinneymcnair
 link: https://www.inaturalist.org/people/danielmcnair
 resume: /assets/documents/our-team/daniel-mcnair-cv.pdf
 image: /assets/images/our-team/daniel-updated-headshot.png
-date: 2026-08-31T11:53:00.000-07:00
+date: 2026-09-08T16:30:00.000-07:00
 coAdvisor: Andrea Thomer
 coAdvisorLink: https://infosci.arizona.edu/person/andrea-thomer
 ---
