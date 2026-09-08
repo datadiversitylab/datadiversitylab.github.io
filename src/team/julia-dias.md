@@ -15,5 +15,5 @@ linkedin: https://www.linkedin.com/in/julia-de-oliveira-dias-3ab597254/
 email: juliadias@arizona.edu
 github: juliaOdias
 image: /assets/images/our-team/julia-dias-ddl-headshot.jpg
-date: 2026-09-01T15:03:00.000-07:00
+date: 2026-09-08T16:30:00.000-07:00
 ---
