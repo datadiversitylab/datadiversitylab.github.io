@@ -5,6 +5,7 @@ publicationAuthor: Chris C. Lim, Cristian Roman-Palacios, Ian Estacios, Paloma
   Beamer, Arnab Ghosh, Kai Zhang, Robbie Parks, G. Anderson, & Michelle Bell
 publicationDate: "2026"
 publicationMonth: May
+publicationType: Research Square
 publicationAbstract: "Hurricane-related outages affect millions, yet who loses
   power, how severely, and for how long remains poorly measured. Here we use
   satellite nighttime radiance to measure outage burden across 30 Atlantic
@@ -21,6 +22,7 @@ publicationAbstract: "Hurricane-related outages affect millions, yet who loses
   grid resilience investments reduce outage disparities."
 tags:
   - Biodiversity
+image: /assets/images/publications/hurricane-paper-option2.png
 pdfDocument: /assets/documents/publications/hurricane-power-outage-pdf.pdf
 pdfLink: https://assets-eu.researchsquare.com/files/rs-9349878/v1_covered_38a9d3eb-d17b-4fcb-9500-89cd1e44bc91.pdf?c=1780039225
 webLink: https://www.researchsquare.com/article/rs-9349878/v1
