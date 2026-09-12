@@ -1,7 +1,5 @@
 ---
 memberName: Erika Kirkpatrick
-memberTitle: VIP/Capstone student
-memberEducation: ""
 memberDate: "2024"
 memberDateEnd: ""
 memberBio: "Erika is a graduate student pursuing her MS in Data Science, she has
@@ -9,6 +7,10 @@ memberBio: "Erika is a graduate student pursuing her MS in Data Science, she has
   is working on the VIP project Historical Biogeographical and Extinction Risk
   Assessment of Recently Extinct Animals. Her work on the project includes using
   Python and R to collect and analyze data related to the project. "
+memberEducation: ""
+memberTitle:
+  - MSc capstone student
+  - VIP student
 tags:
   - Former
   - MSc capstone student
