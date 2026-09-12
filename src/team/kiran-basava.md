@@ -1,9 +1,9 @@
 ---
 memberName: Kiran Basava
-memberTitle: Postdoctoral Researcher
-memberEducation: PhD
+memberTitle:
+  - Postdoctoral Researcher
 memberDate: 2024
-memberDateEnd: Present
+memberDateEnd: ""
 memberBio: "Kiran’s research uses phylogenetic methods and comparative databases
   to explore cultural evolution in humans and other animals. She completed her
   PhD in Anthropology at the University of Oxford. Her work in the lab will
@@ -15,6 +15,7 @@ tags:
   - Postdoc
 email: kcb7@arizona.edu
 github: kcbasava
+memberEducation: PhD
 link: https://kiranbasava.weebly.com/
 image: /assets/images/our-team/kiran05hs.jpg
 order: 2
