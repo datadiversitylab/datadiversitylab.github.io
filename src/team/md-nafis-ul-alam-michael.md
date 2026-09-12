@@ -2,7 +2,7 @@
 memberName: MD Nafis Ul Alam
 memberTitle:
   - PhD student
-memberDate: 2024-Present
+memberDate: "2024"
 memberBio: Md has a background in statistical and computational genomics. He
   specializes in the analysis of DNA sequence data and genome assembly. His PhD
   is co-advised by Rod Wing. He is presently focused on developing phylogenomic
