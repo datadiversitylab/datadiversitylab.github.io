@@ -2,7 +2,7 @@
 memberName: Kennedy Gezella
 memberTitle:
   - Student Lab Support
-memberDate: 2024 - Present
+memberDate: "2024"
 memberBio: Kennedy is a fourth-year undergraduate student worker on the path to
   becoming a physician assistant. Her role at the Data Diversity Lab involves
   offering managerial support within and outside of the lab in a variety of
