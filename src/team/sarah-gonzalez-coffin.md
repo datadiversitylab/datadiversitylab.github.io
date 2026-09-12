@@ -3,7 +3,7 @@ memberName: Sarah Gonzalez-Coffin
 memberTitle:
   - Postdoc
 memberDate: "2026"
-memberDateEnd: Present
+memberDateEnd: ""
 memberBio: "Postdoctoral Fellow, Lovejoy Center for Bridging Biodiversity,
   Conservation Science & Policy. Sarah’s research leverages machine learning and
   GIS to inform data-driven conservation and adaptation. Trained as a
