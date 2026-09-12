@@ -2,6 +2,7 @@
 memberName: Salena Torres
 memberTitle:
   - PhD student
+currentPosition: Instructor in the College of Informational Science at the University of Arizona
 memberDate: 2022
 memberDateEnd: null
 memberBio: Dr. Román-Palacios was Salena’s faculty advisor for the Data Science
