@@ -1,7 +1,8 @@
 ---
 memberName: Reza Ehsani
 memberTitle:
-  - MSc student
+  - MSc capstone student
+currentPosition: Machine Learning Engineer
 memberDate: 2023
 memberDateEnd: null
 memberBio: Reza finalized his capstone for his MS in Data Science at the lab
