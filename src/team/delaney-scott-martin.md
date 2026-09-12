@@ -2,7 +2,7 @@
 memberName: Delaney Scott-Martin
 memberTitle:
   - Undergraduate student
-memberDate: 2024 - Present
+memberDate: "2024"
 memberBio: Delaney Scott-Martin is a junior at the University of Arizona,
   studying a double major in Ecology and Evolutionary biology and Anthropology.
   Within the lab, she has been working on the Vertically Integrated Project,
