@@ -1,0 +1,121 @@
+---
+layout: 'base.html'
+description: "salphycon: a browser-based front end for the phruta R package, retrieve, curate, and align phylogenetic sequence data."
+metaTitle: 'salphycon'
+tagTitle: 'salphycon'
+preloadImg: ''
+preloadCSS: '/css/salphycon.css'
+preloadJS: '/js/salphycon.js'
+permalink: 'salphycon/'
+eleventyNavigation:
+    key: salphycon
+    title: Phylogenetics data tool
+    parent: Tools and data
+    order: 610
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1451" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">salphycon</h1>
+            <p class="cs-text">
+                A browser-based front end for the
+                <a href="https://github.com/cromanpa94/phruta" target="_blank" rel="noopener">phruta</a>
+                R package. Retrieve, curate, and align phylogenetic sequence data, right in your browser,
+                no R installation required.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                  About                       -->
+<!-- ============================================ -->
+<section id="salphycon-about-section">
+    <div class="cs-container">
+        <div class="cs-about-card">
+            <h6 class="cs-title">What it does</h6>
+            <div aria-hidden="true" class="line line-full"></div>
+            <p class="cs-text">
+                Building a molecular dataset for a phylogenetic study usually means searching GenBank by
+                hand, downloading sequences gene by gene, cleaning up mislabeled or duplicate records, and
+                aligning everything before any real analysis can start. salphycon automates that first
+                stretch: give it a taxon list and, optionally, a list of genes; it searches GenBank,
+                retrieves matching sequences, checks their taxonomy against GBIF, removes duplicates and
+                mismatches, and produces gene-by-gene sequence alignments, ready for tree building.
+            </p>
+            <div class="cs-about-tags">
+                <span class="cs-filter">Phylogenetics</span>
+                <span class="cs-filter">Sequence curation</span>
+                <span class="cs-filter">GenBank</span>
+                <span class="cs-filter">R / Shiny</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               App Embed                      -->
+<!-- ============================================ -->
+<section id="salphycon-app-section">
+    <div class="cs-container">
+        <div class="cs-app-header">
+            <h6 class="cs-title">Launch salphycon</h6>
+            <a href="https://viz.datascience.arizona.edu/salphycon/" target="_blank" rel="noopener" class="cs-open-tab-link">
+                Open in a new tab
+                <img src="../assets/icons/link.svg" alt="" width="14" height="14" aria-hidden="true">
+            </a>
+        </div>
+        <div aria-hidden="true" class="line line-full"></div>
+
+        <div class="cs-app-frame-wrapper">
+            <iframe
+                id="salphycon-iframe"
+                src="https://viz.datascience.arizona.edu/salphycon/"
+                title="salphycon"
+                loading="lazy"
+                allow="clipboard-write">
+            </iframe>
+        </div>
+
+        <p class="cs-app-fallback" id="salphycon-fallback" hidden>
+            The embedded app didn't load. You can
+            <a href="https://viz.datascience.arizona.edu/salphycon/" target="_blank" rel="noopener">open salphycon in its own tab</a>
+            instead.
+        </p>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Cite it                     -->
+<!-- ============================================ -->
+<section id="salphycon-cite-section">
+    <div class="cs-container">
+        <div class="cs-cite-card">
+            <h6 class="cs-title">Cite salphycon</h6>
+            <div aria-hidden="true" class="line line-full"></div>
+            <p class="cs-text">
+                If salphycon or phruta was useful in your work, please cite:
+            </p>
+            <ul class="cs-cite-list">
+                <li>Roman-Palacios, C. (2021). The phruta R package: Phylogenetic Reconstruction and Time-dating.</li>
+                <li>Roman-Palacios, C. (2021). The salphycon shiny app: Phylogenetic Reconstruction and Time-dating.</li>
+            </ul>
+            <div class="cs-cite-links">
+                <a href="https://github.com/cromanpa94/phruta" target="_blank" rel="noopener">
+                    <img src="../assets/icons/github.svg" alt="phruta on GitHub" width="20" height="20" decoding="async">
+                    phruta
+                </a>
+                <a href="https://github.com/datadiversitylab/salphycon" target="_blank" rel="noopener">
+                    <img src="../assets/icons/github.svg" alt="salphycon on GitHub" width="20" height="20" decoding="async">
+                    salphycon
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
