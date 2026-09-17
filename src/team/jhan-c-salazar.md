@@ -12,8 +12,8 @@ memberBio: Jhan joined the data diversity lab during Summer 2023. He wrote the
   different recent papers in Ecology. By the same time, Jhan was completing his
   Ph.D. at the Losos Lab at Washington University St. Louis.
 tags:
-  - Former
   - Intern
+  - Honorary
 linkedin: null
 email: jhancsalazar@wustl.edu
 link: https://jhansalazar.weebly.com/
