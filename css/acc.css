@@ -1,0 +1,273 @@
+/*-- -------------------------- -->
+<---          Content           -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #content-1455 {
+    padding: var(--sectionPadding);
+  }
+  #content-1455 .cs-container {
+    width: 100%;
+    max-width: 51.25rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sectionGap);
+  }
+  #content-1455 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #content-1455 .cs-title,
+  #content-1455 .cs-text {
+    max-width: 100%;
+  }
+}
+
+/*-- -------------------------- -->
+<---           About            -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #acc-about-section {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+  }
+  #acc-about-section .cs-container {
+    width: 100%;
+    max-width: 64rem;
+    margin: auto;
+  }
+  #acc-about-section .cs-about-card {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid var(--lineColor);
+    border-radius: 6px;
+    box-shadow: var(--boxCardShadow);
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  #acc-about-section .cs-title {
+    font-size: 0.6875rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primaryDark);
+    margin: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--lineColor);
+    width: 100%;
+  }
+  #acc-about-section .cs-text {
+    font-size: 0.9375rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--bodyTextColor);
+    opacity: 0.8;
+    line-height: 1.7;
+    max-width: unset;
+    text-align: left;
+    margin: 0;
+  }
+  #acc-about-section .cs-about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+  #acc-about-section .cs-filter {
+    font-size: 0.6875rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--secondaryDark);
+    background: var(--secondary);
+    border-radius: 3px;
+    padding: 0.2rem 0.55rem;
+    line-height: 1.4;
+  }
+}
+
+/*-- -------------------------- -->
+<---        Visit the site      -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #acc-visit-section {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+  }
+  #acc-visit-section .cs-container {
+    width: 100%;
+    max-width: 64rem;
+    margin: auto;
+  }
+  #acc-visit-section .cs-visit-card {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid var(--lineColor);
+    border-radius: 6px;
+    box-shadow: var(--boxCardShadow);
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  #acc-visit-section .cs-title {
+    font-size: 0.6875rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primaryDark);
+    margin: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--lineColor);
+    width: 100%;
+  }
+  #acc-visit-section .cs-text {
+    font-size: 0.9375rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--bodyTextColor);
+    opacity: 0.8;
+    line-height: 1.7;
+    max-width: unset;
+    text-align: left;
+    margin: 0;
+  }
+  #acc-visit-section .cs-visit-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--primary);
+    border-radius: 4px;
+    padding: 0.65rem 1.25rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  #acc-visit-section .cs-visit-button:hover {
+    opacity: 0.85;
+  }
+  #acc-visit-section .cs-visit-button img {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+  #acc-visit-section .cs-visit-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+  #acc-visit-section .cs-visit-links a {
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--primaryDark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  #acc-visit-section .cs-visit-links a:hover {
+    opacity: 1;
+  }
+}
+
+/*-- -------------------------- -->
+<---          Cite it           -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #acc-cite-section {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+  }
+  #acc-cite-section .cs-container {
+    width: 100%;
+    max-width: 64rem;
+    margin: auto;
+  }
+  #acc-cite-section .cs-cite-card {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid var(--lineColor);
+    border-radius: 6px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  #acc-cite-section .cs-title {
+    font-size: 0.6875rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primaryDark);
+    margin: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--lineColor);
+    width: 100%;
+  }
+  #acc-cite-section .cs-text {
+    font-size: 0.875rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--bodyTextColor);
+    opacity: 0.75;
+    line-height: 1.6;
+    max-width: unset;
+    text-align: left;
+    margin: 0;
+  }
+  #acc-cite-section .cs-cite-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  #acc-cite-section .cs-cite-list li {
+    font-size: 0.8125rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--bodyTextColor);
+    opacity: 0.75;
+    line-height: 1.6;
+    text-align: left;
+  }
+  #acc-cite-section .cs-cite-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.25rem;
+  }
+  #acc-cite-section .cs-cite-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--primaryDark);
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  #acc-cite-section .cs-cite-links a:hover {
+    opacity: 1;
+  }
+  #acc-cite-section .cs-cite-links img {
+    opacity: 0.85;
+  }
+}

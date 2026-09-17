@@ -8,17 +8,17 @@
         <script async="async" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
         <!--Swap our for actual link-->
-        <link rel="canonical" href="https://datadiversitylab.github.io/tools/barriomap/">
+        <link rel="canonical" href="https://datadiversitylab.github.io/barriomap/">
 
-        <meta name="description" content="">
+        <meta name="description" content="BarrioMap: an open-source Shiny mapping tool bridging open access mapping and formal planning efforts, built for community and grassroots projects.">
         <meta name="keywords" content="Data Diversity Lab and Development">
         <meta name="google-site-verification" content="u82fOqFBdQHRSP52a0zYaa0TN4pXvDCaFbvtkQINz2M" />
 
         <!--Social Media Display-->
-        <meta property="og:title" content=""/>
-        <meta property="og:description" content=""/>
+        <meta property="og:title" content="BarrioMap"/>
+        <meta property="og:description" content="BarrioMap: an open-source Shiny mapping tool bridging open access mapping and formal planning efforts, built for community and grassroots projects."/>
         <meta property="og:type" content="website"/>
-        <meta property="og:url" content="https://datadiversitylab.github.io/tools/barriomap/"/>
+        <meta property="og:url" content="https://datadiversitylab.github.io/barriomap/"/>
         <meta property="og:image" content="/images/social.jpg"/>
         <meta property="og:image:secure_url" content="/images/social.jpg"/>
 
@@ -42,14 +42,14 @@
 
         <!-- Loading in page specific CSS sheets from css block -->
         <link rel="stylesheet" href="/css/critical.css"/>
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="/css/barriomap.css">
 
         <script defer src="https://umami.datadiversitylab.synology.me/script.js" data-website-id="543cffef-a100-47af-9dd9-2cf39517077b" data-domains="datadiversitylab.github.io" data-tag="labwebsite"></script>
 
         <!-- For home page, use full title, including location for SEO. Other pages should just include the page name -->
         <title>
             
-                 | Data Diversity Lab
+                BarrioMap | Data Diversity Lab
             
         </title>
     </head>
@@ -195,7 +195,114 @@
         </nav>
     </div>
 </header>
-        <main id="main"></main>
+        <main id="main"><!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1453" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">BarrioMap</h1>
+            <p class="cs-text">
+                An open-source mapping tool built to bridge open access mapping and formal planning
+                efforts, made with urban planners, architects, designers, and community organizers in mind.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                  About                       -->
+<!-- ============================================ -->
+<section id="barriomap-about-section">
+    <div class="cs-container">
+        <div class="cs-about-card">
+            <h6 class="cs-title">What it does</h6>
+            <div aria-hidden="true" class="line line-full"></div>
+            <p class="cs-text">
+                If you're searching for a simple map for a community project, this is the place. BarrioMap
+                lets you find locations by search or by selecting coordinates, then print to the scales
+                typical of planning and design work (1"=50', and others), on standard large sheet sizes
+                (24"x36", and others), exported in formats you can still edit (PDF and vector formats).
+                Maps generated with BarrioMap are formal descriptions of a site, with defined resolution,
+                scale, and explicit distance information, the kind of output a planning process actually
+                needs, not just a screenshot of an online map.
+            </p>
+            <p class="cs-text">
+                Traditional planning practice relies on licensed software to filter and interpret
+                information from open source maps, and using open tools for formal mapping is often slow
+                and complex enough that only professionals end up with the skills and software to do it.
+                BarrioMap is built to close that gap: it adds quantitative, geo-referenced data to
+                grassroots knowledge, so citizens and decision makers can work from the same kind of map.
+                Whether you're an architecture student or a community member with a grassroots project,
+                BarrioMap was made for you.
+            </p>
+            <div class="cs-about-tags">
+                <span class="cs-filter">OpenStreetMap</span>
+                <span class="cs-filter">Community planning</span>
+                <span class="cs-filter">Print-ready maps</span>
+                <span class="cs-filter">R / Shiny / Leaflet</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               App Embed                      -->
+<!-- ============================================ -->
+<section id="barriomap-app-section">
+    <div class="cs-container">
+        <div class="cs-app-header">
+            <h6 class="cs-title">Launch BarrioMap</h6>
+            <a href="https://viz.datascience.arizona.edu/barriomap/" target="_blank" rel="noopener" class="cs-open-tab-link">
+                Open in a new tab
+                <img src="../assets/icons/link.svg" alt="" width="14" height="14" aria-hidden="true">
+            </a>
+        </div>
+        <div aria-hidden="true" class="line line-full"></div>
+
+        <div class="cs-app-frame-wrapper">
+            <iframe
+                id="barriomap-iframe"
+                src="https://viz.datascience.arizona.edu/barriomap/"
+                title="BarrioMap"
+                loading="lazy"
+                allow="clipboard-write">
+            </iframe>
+        </div>
+
+        <p class="cs-app-fallback" id="barriomap-fallback" hidden>
+            The embedded app didn't load. You can
+            <a href="https://viz.datascience.arizona.edu/barriomap/" target="_blank" rel="noopener">open BarrioMap in its own tab</a>
+            instead.
+        </p>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Cite it                     -->
+<!-- ============================================ -->
+<section id="barriomap-cite-section">
+    <div class="cs-container">
+        <div class="cs-cite-card">
+            <h6 class="cs-title">BarrioMap on GitHub</h6>
+            <div aria-hidden="true" class="line line-full"></div>
+            <p class="cs-text">
+                BarrioMap is open source under the MIT license. Source code, contributing guidelines, and
+                issues live on GitHub:
+            </p>
+            <div class="cs-cite-links">
+                <a href="https://github.com/datadiversitylab/BarrioMap" target="_blank" rel="noopener">
+                    <img src="../assets/icons/github.svg" alt="BarrioMap on GitHub" width="20" height="20" decoding="async">
+                    BarrioMap
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
         <!-- ============================================ -->
 <!--                   Footer                     -->
 <!-- ============================================ -->
@@ -231,6 +338,8 @@
 
         <script defer src="/assets/js/nav.js"></script>
 
+        
+            <script defer src="/assets//js/barriomap.js"></script>
         
 
         
