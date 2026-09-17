@@ -1,0 +1,130 @@
+---
+layout: 'base.html'
+description: "The Animal Culture Database (ACDB): the first open-access, comparative database of socially transmitted behaviors and traditions in wild animal populations."
+metaTitle: 'ACDB'
+tagTitle: 'ACDB'
+preloadImg: ''
+preloadCSS: '/css/acdb.css'
+preloadJS: '/js/acdb.js'
+permalink: 'ddl_acdb/'
+eleventyNavigation:
+    key: ACDB
+    title: Animal Culture Database
+    parent: Tools and data
+    order: 330
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1454" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">ACDB</h1>
+            <p class="cs-text">
+                The Animal Culture Database: the first open-access, comparative database of socially
+                transmitted behaviors and traditions in wild animal populations.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                  About                       -->
+<!-- ============================================ -->
+<section id="acdb-about-section">
+    <div class="cs-container">
+        <div class="cs-about-card">
+            <h6 class="cs-title">What it does</h6>
+            <div aria-hidden="true" class="line line-full"></div>
+            <p class="cs-text">
+                Socially transmitted behaviors, vocal dialects, migration routes, tool-use preferences,
+                foraging traditions, are widespread across the animal kingdom, but until now there hasn't
+                been a comprehensive, comparative dataset documenting where they occur or how widely they're
+                distributed. The ACDB synthesizes data from a systematic review of the published literature
+                on animal culture and social learning, currently covering 128 behaviors across 61 species,
+                including vocal communication, migration, predator defense, foraging, habitat alteration,
+                play, and mating displays.
+            </p>
+            <p class="cs-text">
+                The database is structured relationally across four linked tables: species (taxonomic and
+                social structure data), groups (location, size, and social position within a species),
+                behaviors (descriptions, transmission mode, and effects from human activity when known), and
+                sources (the primary literature behind every entry). Taxonomic names are matched against the
+                GBIF Backbone Taxonomy for interoperability with other datasets, and each species carries its
+                IUCN Red List status as a proxy for extinction risk. The goal is to help researchers,
+                educators, and conservationists ask questions that need comparative data across taxa, how
+                widely cultural behaviors are distributed across the animal tree of life, and how behavioral
+                flexibility relates to a species' resilience to human-driven environmental change.
+            </p>
+            <div class="cs-about-tags">
+                <span class="cs-filter">Animal behavior</span>
+                <span class="cs-filter">Social learning</span>
+                <span class="cs-filter">Conservation</span>
+                <span class="cs-filter">Comparative database</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               App Embed                      -->
+<!-- ============================================ -->
+<section id="acdb-app-section">
+    <div class="cs-container">
+        <div class="cs-app-header">
+            <h6 class="cs-title">Explore the ACDB</h6>
+            <a href="https://viz.datascience.arizona.edu/ACDB/" target="_blank" rel="noopener" class="cs-open-tab-link">
+                Open in a new tab
+                <img src="../assets/icons/link.svg" alt="" width="14" height="14" aria-hidden="true">
+            </a>
+        </div>
+        <div aria-hidden="true" class="line line-full"></div>
+
+        <div class="cs-app-frame-wrapper">
+            <iframe
+                id="acdb-iframe"
+                src="https://viz.datascience.arizona.edu/ACDB/"
+                title="ACDB"
+                loading="lazy"
+                allow="clipboard-write">
+            </iframe>
+        </div>
+
+        <p class="cs-app-fallback" id="acdb-fallback" hidden>
+            The embedded app didn't load. You can
+            <a href="https://viz.datascience.arizona.edu/ACDB/" target="_blank" rel="noopener">open the ACDB in its own tab</a>
+            instead.
+        </p>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Cite it                     -->
+<!-- ============================================ -->
+<section id="acdb-cite-section">
+    <div class="cs-container">
+        <div class="cs-cite-card">
+            <h6 class="cs-title">Cite the ACDB</h6>
+            <div aria-hidden="true" class="line line-full"></div>
+            <p class="cs-text">
+                If the ACDB was useful in your work, please cite the data descriptor:
+            </p>
+            <ul class="cs-cite-list">
+                <li>Basava, K., Alam, M. N. U., Roberts, L., Martinet, K., Cherry, P., García-Verdugo, H., et al., & Román-Palacios, C. (2025). Mapping nonhuman cultures with the Animal Culture Database. Scientific Data, 12, 1019.</li>
+            </ul>
+            <div class="cs-cite-links">
+                <a href="https://doi.org/10.1038/s41597-025-05315-y" target="_blank" rel="noopener">
+                    <img src="../assets/icons/link.svg" alt="ACDB paper" width="20" height="20" decoding="async">
+                    Read the paper
+                </a>
+                <a href="https://github.com/datadiversitylab/ACDB_datarelease" target="_blank" rel="noopener">
+                    <img src="../assets/icons/github.svg" alt="ACDB data release on GitHub" width="20" height="20" decoding="async">
+                    Data & code release
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
