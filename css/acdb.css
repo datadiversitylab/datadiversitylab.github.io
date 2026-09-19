@@ -128,25 +128,50 @@
     color: var(--primaryDark);
     margin: 0;
   }
-  #acdb-app-section .cs-open-tab-link {
+  #acdb-app-section .cs-fullscreen-prompt {
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--secondary);
+    border: 1px solid var(--primaryLight);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  #acdb-app-section .cs-fullscreen-prompt .cs-text {
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.875rem;
+    color: var(--secondaryDark);
+    margin: 0;
+    max-width: unset;
+    text-align: left;
+  }
+  #acdb-app-section .cs-fullscreen-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.6rem;
     font-family: 'Figtree', sans-serif;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--secondaryDark);
-    background: var(--secondary);
-    border-radius: 4px;
-    padding: 0.4rem 0.75rem;
-    text-decoration: none;
-    transition: opacity 0.2s;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--primary);
+    border: none;
+    border-radius: 6px;
+    padding: 0.85rem 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
   }
-  #acdb-app-section .cs-open-tab-link:hover {
-    opacity: 0.75;
+  #acdb-app-section .cs-fullscreen-btn:hover {
+    background: var(--primaryDark);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
+    transform: translateY(-1px);
   }
-  #acdb-app-section .cs-open-tab-link img {
-    opacity: 0.85;
+  #acdb-app-section .cs-fullscreen-btn svg {
+    opacity: 0.95;
   }
   #acdb-app-section .line {
     width: 100%;
@@ -161,11 +186,20 @@
     box-shadow: var(--boxCardShadow);
     overflow: hidden;
     background: #fff;
+    position: relative;
+  }
+  #acdb-app-section .cs-app-frame-wrapper:fullscreen {
+    border: none;
+    border-radius: 0;
+    background: #000;
+  }
+  #acdb-app-section .cs-app-frame-wrapper:fullscreen iframe {
+    height: 100%;
   }
   #acdb-app-section iframe {
     width: 100%;
-    height: 90vh;
-    min-height: 50rem;
+    height: 60vh;
+    min-height: 26rem;
     border: none;
     display: block;
   }
@@ -187,8 +221,13 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #acdb-app-section iframe {
-    height: 95vh;
-    min-height: 56rem;
+    height: 65vh;
+    min-height: 32rem;
+  }
+  #acdb-app-section .cs-fullscreen-prompt {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 

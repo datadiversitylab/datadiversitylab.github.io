@@ -156,7 +156,7 @@
                                         <a href="/tools-and-data/" class="cs-li-link cs-drop-link">Tools and data</a>
                                     </li>
                                         <li class="cs-drop-li">
-                                            <a href="/phylogenetics_salphycon/" class="cs-li-link cs-drop-link">Phylogenetics data tool</a>
+                                            <a href="/phylogenetics_salphycon/" class="cs-li-link cs-drop-link">Phylogenetics</a>
                                         </li>
                                         <li class="cs-drop-li">
                                             <a href="/poll_chorus/" class="cs-li-link cs-drop-link">Participative polling</a>
@@ -166,12 +166,6 @@
                                         </li>
                                         <li class="cs-drop-li">
                                             <a href="/ddl_acdb/" class="cs-li-link cs-drop-link">Animal Culture Database</a>
-                                        </li>
-                                        <li class="cs-drop-li">
-                                            <a href="/acc/" class="cs-li-link cs-drop-link">Animal Chromosome Count database</a>
-                                        </li>
-                                        <li class="cs-drop-li">
-                                            <a href="/phyca/" class="cs-li-link cs-drop-link">Phylogenomics &amp; assembly QC</a>
                                         </li>
                                 </ul>
                         </li>
@@ -222,14 +216,14 @@
             <h6 class="cs-title">What it does</h6>
             <div aria-hidden="true" class="line line-full"></div>
             <p class="cs-text">
-                chorus was built for situations when you want people to participate and
-                not just watch. Chorus lets a group vote, suggest their own answers, and 
-                see results update in real time. The organizer controls the pace: post a question, 
-                add answers of their own if needed, lock
+                chorus was built for the moments when you want the room to actually participate,
+                not just watch. Instead of a show of hands or a static survey, chorus lets a group
+                vote, suggest their own answers, and see results update in real time. The organizer
+                controls the pace: post a question, add answers of their own if needed, lock
                 suggestions once discussion should move to voting, or push everyone to the next topic
                 with a single click. Guests join with a four-character token, no sign-up, no app to
                 install, and can suggest answers or vote from their own phone. Nothing is stored
-                permanently.
+                permanently, once the session ends, so does the data.
             </p>
             <div class="cs-about-tags">
                 <span class="cs-filter">Live polling</span>
@@ -248,20 +242,30 @@
     <div class="cs-container">
         <div class="cs-app-header">
             <h6 class="cs-title">Launch chorus</h6>
-            <a href="https://viz.datascience.arizona.edu/chorus/" target="_blank" rel="noopener" class="cs-open-tab-link">
-                Open in a new tab
-                <img src="../assets/icons/link.svg" alt="" width="14" height="14" aria-hidden="true">
-            </a>
         </div>
         <div aria-hidden="true" class="line line-full"></div>
 
-        <div class="cs-app-frame-wrapper">
+        <div class="cs-fullscreen-prompt">
+            <p class="cs-text">This preview is sized to fit the page. For the full chorus experience, open it in fullscreen.</p>
+            <button type="button" id="chorus-fullscreen-btn" class="cs-fullscreen-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+                Open chorus in fullscreen
+            </button>
+        </div>
+
+        <div class="cs-app-frame-wrapper" id="chorus-frame-wrapper">
             <iframe
                 id="chorus-iframe"
                 src="https://viz.datascience.arizona.edu/chorus/"
                 title="chorus"
                 loading="lazy"
-                allow="clipboard-write">
+                allow="clipboard-write; fullscreen"
+                allowfullscreen>
             </iframe>
         </div>
 

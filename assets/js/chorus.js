@@ -23,3 +23,35 @@
         }
     }, TIMEOUT_MS);
 })();
+
+// Fullscreen toggle. requestFullscreen() is called on the wrapper div
+// around the iframe rather than the iframe itself, which keeps the
+// iframe correctly resized to fill the screen via the :fullscreen CSS
+// rule below. Exiting fullscreen relies on the browser's own built-in
+// control (Escape, or the on-screen indicator most browsers show
+// automatically when entering fullscreen).
+(function () {
+    var wrapper = document.getElementById('chorus-frame-wrapper');
+    var fsBtn = document.getElementById('chorus-fullscreen-btn');
+    if (!wrapper || !fsBtn) return;
+
+    var supportsFullscreen = !!(
+        wrapper.requestFullscreen ||
+        wrapper.webkitRequestFullscreen ||
+        wrapper.mozRequestFullScreen ||
+        wrapper.msRequestFullscreen
+    );
+
+    if (!supportsFullscreen) {
+        fsBtn.hidden = true;
+        return;
+    }
+
+    fsBtn.addEventListener('click', function () {
+        var request = wrapper.requestFullscreen ||
+            wrapper.webkitRequestFullscreen ||
+            wrapper.mozRequestFullScreen ||
+            wrapper.msRequestFullscreen;
+        request.call(wrapper);
+    });
+})();
