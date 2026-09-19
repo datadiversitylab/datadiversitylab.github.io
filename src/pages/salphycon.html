@@ -8,8 +8,7 @@ preloadCSS: '/css/salphycon.css'
 preloadJS: '/js/salphycon.js'
 permalink: 'phylogenetics_salphycon/'
 eleventyNavigation:
-    key: salphycon
-    title: Phylogenetics data tool
+    key: Phylogenetics
     parent: Tools and data
     order: 200
 ---
@@ -20,7 +19,7 @@ eleventyNavigation:
 <section id="content-1451" class="cs-top-section">
     <div class="cs-container">
         <div class="cs-content">
-            <h1 class="cs-title">salphycon</h1>
+            <h1 class="cs-title">Phylogenetics with salphycon</h1>
             <p class="cs-text">
                 A browser-based front end for the
                 <a href="https://github.com/cromanpa94/phruta" target="_blank" rel="noopener">phruta</a>
@@ -66,20 +65,30 @@ eleventyNavigation:
     <div class="cs-container">
         <div class="cs-app-header">
             <h6 class="cs-title">Launch salphycon</h6>
-            <a href="https://viz.datascience.arizona.edu/salphycon/" target="_blank" rel="noopener" class="cs-open-tab-link">
-                Open in a new tab
-                <img src="../assets/icons/link.svg" alt="" width="14" height="14" aria-hidden="true">
-            </a>
         </div>
         <div aria-hidden="true" class="line line-full"></div>
 
-        <div class="cs-app-frame-wrapper">
+        <div class="cs-fullscreen-prompt">
+            <p class="cs-text">This preview is sized to fit the page. For the full salphycon experience, open it in fullscreen.</p>
+            <button type="button" id="salphycon-fullscreen-btn" class="cs-fullscreen-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <polyline points="9 21 3 21 3 15"></polyline>
+                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+                Open salphycon in fullscreen
+            </button>
+        </div>
+
+        <div class="cs-app-frame-wrapper" id="salphycon-frame-wrapper">
             <iframe
                 id="salphycon-iframe"
                 src="https://viz.datascience.arizona.edu/salphycon/"
                 title="salphycon"
                 loading="lazy"
-                allow="clipboard-write">
+                allow="clipboard-write; fullscreen"
+                allowfullscreen>
             </iframe>
         </div>
 
