@@ -1,0 +1,192 @@
+---
+layout: 'base.html'
+description: "LabOps: a flexible, self-hosted workflow of free and open source tools for research lab collaboration, communication, storage, and document editing."
+metaTitle: 'LabOps'
+tagTitle: 'LabOps'
+preloadImg: ''
+preloadCSS: '/css/labops.css'
+preloadJS: ''
+permalink: 'labops/'
+eleventyNavigation:
+    key: LabOps
+    title: Lab collaboration workflow
+    parent: Tools and data
+    order: 360
+---
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1457" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">LabOps</h1>
+            <p class="cs-text">
+                A flexible, self-hosted workflow of free and open source tools for research lab
+                collaboration, chat, file sharing, document editing, and calendars, without the costs
+                or restrictions of proprietary platforms.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<!-- ============================================ -->
+<!--                  About                       -->
+<!-- ============================================ -->
+<section id="labops-about-section">
+    <div class="cs-container">
+        <div class="cs-about-card">
+            <h6 class="cs-title">What it is</h6>
+            <div aria-hidden="true" class="line line-full"></div>
+            <p class="cs-text">
+                Is there anything beyond Slack, Microsoft Teams, Google Drive, and OneDrive? Most research
+                labs end up piecing together whatever combination of these tools their institution happens
+                to license. LabOps started from a simpler question: what happens if a
+                lab self-hosts its own infrastructure instead, using tools that are free, open source, and
+                fully under the lab's own control?
+            </p>
+            <p class="cs-text">
+                LabOps is a workflow with five categories of collaboration
+                (team communication, file storage, document editing, calendars, and reference management),
+                each filled by an open source tool that can be self-hosted on a NAS, a server, or even a
+                spare laptop. The GitHub repository associated with the paper has ready-to-deploy configuration files for the core
+                pieces, along with setup instructions for the reverse proxy and HTTPS certificates that let
+                lab members reach these tools from outside the building.
+            </p>
+            <div class="cs-about-tags">
+                <span class="cs-filter">Self-hosted</span>
+                <span class="cs-filter">Free & open source</span>
+                <span class="cs-filter">Lab collaboration</span>
+                <span class="cs-filter">Data sovereignty</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               The workflow                   -->
+<!-- ============================================ -->
+<section id="labops-workflow-section">
+    <div class="cs-container">
+        <h6 class="cs-title">The workflow</h6>
+        <div aria-hidden="true" class="line line-full"></div>
+
+
+        <div class="cs-workflow-grid">
+            <div class="cs-workflow-item">
+                <span class="cs-workflow-num">1</span>
+                <h6 class="cs-workflow-heading">Team communication</h6>
+                <p class="cs-text">Mattermost, a Slack-style chat platform with channels, threads, and boards for task tracking. No time limit on message history, unlike the free tiers of most proprietary chat tools.</p>
+            </div>
+            <div class="cs-workflow-item">
+                <span class="cs-workflow-num">2</span>
+                <h6 class="cs-workflow-heading">File storage & sharing</h6>
+                <p class="cs-text">Nextcloud, a shared drive the lab fully controls, with public links, edit permissions for outside collaborators, and no arbitrary storage caps beyond what the hardware provides.</p>
+            </div>
+            <div class="cs-workflow-item">
+                <span class="cs-workflow-num">3</span>
+                <h6 class="cs-workflow-heading">Document editing</h6>
+                <p class="cs-text">OnlyOffice, real-time collaborative editing for DOCX, XLSX, and PPTX files, with version history and a Zotero plugin for inserting citations directly while writing.</p>
+            </div>
+            <div class="cs-workflow-item">
+                <span class="cs-workflow-num">4</span>
+                <h6 class="cs-workflow-heading">Calendars</h6>
+                <p class="cs-text">Radicale (or Nextcloud Calendar), a shared calendar server for scheduling lab meetings and deadlines across every member's own calendar app.</p>
+            </div>
+            <div class="cs-workflow-item">
+                <span class="cs-workflow-num">5</span>
+                <h6 class="cs-workflow-heading">Reference management</h6>
+                <p class="cs-text">Zotero, not self-hosted here, but integrated into OnlyOffice through its plugin so citations stay linked to the lab's shared library while writing.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--              Setting it up                   -->
+<!-- ============================================ -->
+<section id="labops-setup-section">
+    <div class="cs-container">
+        <div class="cs-setup-card">
+            <h6 class="cs-title">Setting it up for your own lab</h6>
+            <div aria-hidden="true" class="line line-full"></div>
+            <p class="cs-text">
+                The repository linked below documents the full deployment used in the paper: a server/NAS running
+                Docker containers through Portainer, with a reverse proxy and wildcard HTTPS certificate so
+                lab members can reach these tools from outside the building. In general:
+            </p>
+            <ol class="cs-setup-list">
+                <li>Set up a wildcard certificate and enable HTTP/2 and HTTP compression on your NAS or server, so every subdomain (chat, files, docs) can run securely under one HTTPS certificate.</li>
+                <li>Install Docker and Portainer to manage containers through a web interface instead of the command line.</li>
+                <li>Configure a reverse proxy so each tool gets its own subdomain (e.g. chat.yourlab.org) pointing at the right container port.</li>
+                <li>Deploy each tool as a Portainer stack, using the ready-made YAML files in the repository for Mattermost, ownCloud, OnlyOffice, and Radicale.</li>
+            </ol>
+            <p class="cs-text">
+                The GitHub repository has the full step-by-step instructions, including exact folder
+                structures and the YAML configuration for each tool.
+            </p>
+            <a href="https://github.com/datadiversitylab/LabOps" target="_blank" rel="noopener" class="cs-visit-button">
+                Go to the LabOps repository
+                <img src="../assets/icons/link.svg" alt="" width="14" height="14" aria-hidden="true">
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               Does it fit your lab            -->
+<!-- ============================================ -->
+<section id="labops-fit-section">
+    <div class="cs-container">
+        <div class="cs-fit-card">
+            <h6 class="cs-title">Is this the right fit for your lab?</h6>
+            <div aria-hidden="true" class="line line-full"></div>
+            <p class="cs-text">
+                Self-hosting isn't the right call for every lab, and the paper is direct about this: LabOps
+                is presented as an alternative worth knowing about, not something every lab should feel
+                obligated to run. A few honest things worth weighing before adopting it:
+            </p>
+            <ul class="cs-fit-list">
+                <li><b>Hardware is a real upfront cost.</b> The deployment described in the paper used a Synology NAS, comfortably handling around 10 simultaneous users and roughly 1&nbsp;TB of shared data. Although that represents a one-time purchase, it's still money and a physical device someone has to own and maintain.</li>
+                <li><b>Someone has to maintain it.</b> Self-hosted tools need updates, backups, and occasional troubleshooting. There's no vendor support line, help mostly comes from community forums, GitHub issues, and documentation. Scientists shouldn't be expected to act as a full IT department, and for labs without any spare technical capacity, this can be the deciding factor either way.</li>
+                <li><b>Security is on you.</b> Exposing any service to the internet carries risk. Running behind a university network can help by leaning on existing institutional security, but universities also often restrict which ports or applications outside users can reach, which can complicate remote access.</li>
+                <li><b>It's not archival storage.</b> LabOps is built for small to medium active collaboration, not long-term data archiving. A lab with large-scale data needs will likely still need a separate archival solution alongside it.</li>
+                <li><b>Tools can go stale.</b> Most of the software here is actively maintained today, but open source projects can lose momentum or get discontinued. Reviewing the current state of each tool before committing to it is worth doing, not just following the paper's setup blindly.</li>
+            </ul>
+            <p class="cs-text">
+                A phased approach tends to work better than switching everything at once. Nothing about LabOps
+                requires going all in from day one.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Cite it                     -->
+<!-- ============================================ -->
+<section id="labops-cite-section">
+    <div class="cs-container">
+        <div class="cs-cite-card">
+            <h6 class="cs-title">Cite LabOps</h6>
+            <div aria-hidden="true" class="line line-full"></div>
+            <p class="cs-text">
+                If LabOps was useful for setting up your own lab's workflow, please cite:
+            </p>
+            <ul class="cs-cite-list">
+                <li>García-Verdugo, H. D., & Román-Palacios, C. (2025). LabOps: A flexible self-hosted workflow of open source tools for efficient collaboration within research laboratories. PLOS Computational Biology, 21(7), e1013248.</li>
+            </ul>
+            <div class="cs-cite-links">
+                <a href="https://doi.org/10.1371/journal.pcbi.1013248" target="_blank" rel="noopener">
+                    <img src="../assets/icons/link.svg" alt="LabOps paper" width="20" height="20" decoding="async">
+                    Read the paper
+                </a>
+                <a href="https://github.com/datadiversitylab/LabOps" target="_blank" rel="noopener">
+                    <img src="../assets/icons/github.svg" alt="LabOps on GitHub" width="20" height="20" decoding="async">
+                    LabOps on GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

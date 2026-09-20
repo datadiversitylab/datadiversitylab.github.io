@@ -1,0 +1,467 @@
+/*-- -------------------------- -->
+<---          Content           -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #content-1457 {
+    padding: var(--sectionPadding);
+  }
+  #content-1457 .cs-container {
+    width: 100%;
+    max-width: 51.25rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sectionGap);
+  }
+  #content-1457 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #content-1457 .cs-title,
+  #content-1457 .cs-text {
+    max-width: 100%;
+  }
+}
+
+/*-- -------------------------- -->
+<---           About            -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #labops-about-section {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+  }
+  #labops-about-section .cs-container {
+    width: 100%;
+    max-width: 64rem;
+    margin: auto;
+  }
+  #labops-about-section .cs-about-card {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid var(--lineColor);
+    border-radius: 6px;
+    box-shadow: var(--boxCardShadow);
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  #labops-about-section .cs-title {
+    font-size: 0.6875rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primaryDark);
+    margin: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--lineColor);
+    width: 100%;
+  }
+  #labops-about-section .cs-text {
+    font-size: 0.9375rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--bodyTextColor);
+    opacity: 0.8;
+    line-height: 1.7;
+    max-width: unset;
+    text-align: left;
+    margin: 0;
+  }
+  #labops-about-section .cs-about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+  #labops-about-section .cs-filter {
+    font-size: 0.6875rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--secondaryDark);
+    background: var(--secondary);
+    border-radius: 3px;
+    padding: 0.2rem 0.55rem;
+    line-height: 1.4;
+  }
+}
+
+/*-- -------------------------- -->
+<---         Workflow           -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #labops-workflow-section {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+  }
+  #labops-workflow-section .cs-container {
+    width: 100%;
+    max-width: 64rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #labops-workflow-section .cs-title {
+    font-size: 0.6875rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primaryDark);
+    margin: 0 0 0.75rem 0;
+  }
+  #labops-workflow-section > .cs-container > .line {
+    width: 100%;
+    max-width: unset;
+    margin: 0 0 1rem 0;
+    opacity: 0.6;
+  }
+  #labops-workflow-section > .cs-container > .cs-text {
+    font-size: 0.9375rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--bodyTextColor);
+    opacity: 0.8;
+    line-height: 1.7;
+    max-width: unset;
+    text-align: left;
+    margin: 0 0 1.5rem 0;
+  }
+  #labops-workflow-section .cs-figure {
+    width: 100%;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #labops-workflow-section .cs-figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--lineColor);
+    border-radius: 6px;
+    box-shadow: var(--boxCardShadow);
+  }
+  #labops-workflow-section .cs-figure figcaption {
+    font-size: 0.75rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--bodyTextColor);
+    opacity: 0.65;
+    text-align: center;
+    max-width: unset;
+  }
+  #labops-workflow-section .cs-figure figcaption a {
+    color: var(--primaryDark);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  #labops-workflow-section .cs-workflow-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  #labops-workflow-section .cs-workflow-item {
+    background: #fff;
+    border: 1px solid var(--lineColor);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+  }
+  #labops-workflow-section .cs-workflow-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: var(--secondary);
+    color: var(--secondaryDark);
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+  #labops-workflow-section .cs-workflow-heading {
+    font-size: 1rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    color: var(--headerColor);
+    margin: 0 0 0.4rem 0;
+  }
+  #labops-workflow-section .cs-workflow-item .cs-text {
+    font-size: 0.875rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--bodyTextColor);
+    opacity: 0.8;
+    line-height: 1.6;
+    max-width: unset;
+    text-align: left;
+    margin: 0;
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #labops-workflow-section .cs-workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #labops-workflow-section .cs-workflow-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*-- -------------------------- -->
+<---         Setting it up      -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #labops-setup-section {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+  }
+  #labops-setup-section .cs-container {
+    width: 100%;
+    max-width: 64rem;
+    margin: auto;
+  }
+  #labops-setup-section .cs-setup-card {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid var(--lineColor);
+    border-radius: 6px;
+    box-shadow: var(--boxCardShadow);
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+  #labops-setup-section .cs-title {
+    font-size: 0.6875rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primaryDark);
+    margin: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--lineColor);
+    width: 100%;
+  }
+  #labops-setup-section .cs-text {
+    font-size: 0.9375rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--bodyTextColor);
+    opacity: 0.8;
+    line-height: 1.7;
+    max-width: unset;
+    text-align: left;
+    margin: 0;
+  }
+  #labops-setup-section .cs-setup-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  #labops-setup-section .cs-setup-list li {
+    font-size: 0.9375rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--bodyTextColor);
+    opacity: 0.85;
+    line-height: 1.6;
+    text-align: left;
+  }
+  #labops-setup-section .cs-visit-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--primary);
+    border-radius: 4px;
+    padding: 0.65rem 1.25rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    margin-top: 0.5rem;
+  }
+  #labops-setup-section .cs-visit-button:hover {
+    opacity: 0.85;
+  }
+  #labops-setup-section .cs-visit-button img {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+}
+
+/*-- -------------------------- -->
+<---        Does it fit         -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #labops-fit-section {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+  }
+  #labops-fit-section .cs-container {
+    width: 100%;
+    max-width: 64rem;
+    margin: auto;
+  }
+  #labops-fit-section .cs-fit-card {
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--secondary);
+    border: 1px solid var(--primaryLight);
+    border-radius: 6px;
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+  #labops-fit-section .cs-title {
+    font-size: 0.6875rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primaryDark);
+    margin: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--primaryLight);
+    width: 100%;
+  }
+  #labops-fit-section .cs-text {
+    font-size: 0.9375rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--secondaryDark);
+    line-height: 1.7;
+    max-width: unset;
+    text-align: left;
+    margin: 0;
+  }
+  #labops-fit-section .cs-fit-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  #labops-fit-section .cs-fit-list li {
+    font-size: 0.9375rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--secondaryDark);
+    line-height: 1.65;
+    text-align: left;
+  }
+  #labops-fit-section .cs-fit-list li b {
+    color: var(--primaryDark);
+  }
+}
+
+/*-- -------------------------- -->
+<---          Cite it           -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #labops-cite-section {
+    padding: var(--sectionPadding);
+    padding-top: 0;
+  }
+  #labops-cite-section .cs-container {
+    width: 100%;
+    max-width: 64rem;
+    margin: auto;
+  }
+  #labops-cite-section .cs-cite-card {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid var(--lineColor);
+    border-radius: 6px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  #labops-cite-section .cs-title {
+    font-size: 0.6875rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primaryDark);
+    margin: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--lineColor);
+    width: 100%;
+  }
+  #labops-cite-section .cs-text {
+    font-size: 0.875rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--bodyTextColor);
+    opacity: 0.75;
+    line-height: 1.6;
+    max-width: unset;
+    text-align: left;
+    margin: 0;
+  }
+  #labops-cite-section .cs-cite-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  #labops-cite-section .cs-cite-list li {
+    font-size: 0.8125rem;
+    font-family: 'Figtree', sans-serif;
+    color: var(--bodyTextColor);
+    opacity: 0.75;
+    line-height: 1.6;
+    text-align: left;
+  }
+  #labops-cite-section .cs-cite-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.25rem;
+  }
+  #labops-cite-section .cs-cite-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--primaryDark);
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  #labops-cite-section .cs-cite-links a:hover {
+    opacity: 1;
+  }
+  #labops-cite-section .cs-cite-links img {
+    opacity: 0.85;
+  }
+}
