@@ -13,6 +13,7 @@ memberBio: The goal of Kristen’s research is to develop tools that help
 tags:
   - Postdoc
   - Honorary
+  - Former
 email: kmartinet@arizona.edu
 github: kmartinet
 resume: /assets/documents/our-team/cv_kristen_martinet.pdf
