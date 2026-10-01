@@ -10,7 +10,7 @@ preloadSecondJS: '/js/teaching.js'
 permalink: 'teaching/'
 eleventyNavigation:
     key: Teaching
-    parent: library
+    parent: The Lab
     order: 500
 navOptions:
     includeSelf: true
@@ -33,135 +33,132 @@ navOptions:
     <div class="cs-container">
         <div class="cs-content">
             <p class="cs-text">
-                Welcome to the teaching section at the Data Diversity Lab. Our commitment to teaching extends beyond the classroom, aiming to equip students with the tools to ask meaningful questions and navigate the complexities of scientific inquiry. In the courses that we teach, we go beyond the textbook, fostering an environment where students gain skills that transcend the boundaries of academia. We are primarily interested in implementing the following four key teaching principles in the classes that we are involved in:
+                We teach data science and machine learning to students who mostly did not start in either field. Many are working full time, most are online, and almost all of them are learning to code while learning the statistics at the same time. The courses are built around those constrains, while ensuring that students learn as much as possible.
+            </p>
+            <br>
+            <p class="cs-text">
+                For online teaching, four aspects shape how my courses run. These came out of student feedback over several years.
             </p>
         </div>
         <div class="cs-card-group">
             <div class="cs-item">
                 <div class="cs-flex-group">
                     <h4 class="cs-title">1</h4>
-                    <span class="cs-name">Relevance across careers</span>
-                    <span class="cs-desc">We believe that the training gained in coursework serves as a foundation for success in any career path. Whether you choose a research-intensive role, industry, healthcare, or beyond, the skills cultivated in our courses, such as critical thinking, problem-solving, and data analysis, are universally applicable.</span>
+                    <span class="cs-name">Homework hours</span>
+                    <span class="cs-desc">A scheduled block each week, in person or on Zoom, where you work on the assignment with us in the room. You do not have to ask a question to show up. Most of what happens is students working through problems together, which is usually faster than waiting on an email from me.</span>
                 </div>
             </div>
             <div class="cs-item">
                 <div class="cs-flex-group">
                     <h4 class="cs-title">2</h4>
-                    <span class="cs-name">Question-driven learning</span>
-                    <span class="cs-desc">Our teaching philosophy revolves around empowering students to ask relevant questions based on existing knowledge. This skill is central to scientific inquiry, encouraging curiosity and driving discovery. Through engaging coursework, we inspire students to think beyond the facts and develop a deeper understanding of the processes that shape our world.</span>
+                    <span class="cs-name">Immediate feedback on code</span>
+                    <span class="cs-desc">Assignments run against an autograder you can use on your own schedule, so you know whether an answer works before you submit it. We still read every repository and leave comments. The autograder handles what a machine can check, which generally frees the feedback for reasoning and approach.</span>
                 </div>
             </div>
             <div class="cs-item">
                 <div class="cs-flex-group">
                     <h4 class="cs-title">3</h4>
-                    <span class="cs-name">Methods matter</span>
-                    <span class="cs-desc">In our courses, emphasis is placed on choosing the most appropriate methods to address scientific questions. From experimental design to statistical analysis, students learn to navigate the toolkit of a researcher, gaining practical skills that extend far beyond the classroom.</span>
+                    <span class="cs-name">Peer review on GitHub</span>
+                    <span class="cs-desc">Ideally, you will read other students' code and they read yours, using the same review tools teams use at work. Seeing how someone else solved the same problem teaches things a solution key cannot.</span>
                 </div>
             </div>
             <div class="cs-item">
                 <div class="cs-flex-group">
                     <h4 class="cs-title">4</h4>
-                    <span class="cs-name">Real-world applications</span>
-                    <span class="cs-desc">We bridge theory and practice, showcasing how the principles learned in the classroom are applied in real-world scenarios. Through case studies, hands-on projects, and collaborative research opportunities, students see the immediate and tangible impact of their education. </span>
+                    <span class="cs-name">Conversations about your work</span>
+                    <span class="cs-desc">In some courses, part of the grade comes from a short conversation about the decisions you made in your homework. These are discussions, not exams.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="courses">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h3 class="cs-title">Courses</h3>
+            <p class="cs-text">
+                Both courses are offered through the College of Information Science and are open to students in the MS in Data Science and the MS in Information Science, among others. Both are taught in R, run over seven weeks, and assume you can get started with code, have some stat background, linear algebra and calculus experience.
+            </p>
+        </div>
+        <div class="cs-card-group">
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <span class="cs-name">INFO 521, Introduction to Machine Learning</span>
+                    <span class="cs-desc">Supervised and unsupervised methods, how they work, when they fail, and how to tell the difference. Homework is split between conceptual questions and applied ones, so you practice the reasoning and the implementation separately. The course ends with a project on a dataset you choose.</span>
+                </div>
+            </div>
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <span class="cs-name">INFO 523, Data Mining and Discovery</span>
+                    <span class="cs-desc">Finding structure in data, from cleaning and visualization through clustering, association rules, and model evaluation. Assignments use real datasets with the problems real datasets have. Git and GitHub are part of the course from the first week.</span>
                 </div>
             </div>
         </div>
         <div class="cs-content">
-            <p class="cs-text">
-                As you explore this section, we invite you to consider the broader implications of your education, recognizing that the ability to ask relevant questions and apply appropriate methods is a skill set that transcends academic disciplines and prepares you for a myriad of career paths. If you have any questions or would like to learn more about our teaching approach, feel free to reach out.
-            </p>
-        </div>
-    </div>
-</section>
-
-<div aria-hidden="true" class="line"></div>
-
-<section id="dropdown-cards" class="teaching-experience">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h3 class="cs-title">Teaching experience</h3>
-            <p class="cs-text">
-                Our goal is to demonstrate to students that the training they receive in coursework can benefit them irrespective of their chosen career. Overall, my primary focus is on instructing them in the art of asking relevant questions based on existing knowledge and employing the most appropriate methods to address these questions.
-            </p>
-        </div>
-        <div class="cs-card-group">
-            {%- for experience in collections.teachingExperience | sort(attribute='data.year') | reverse -%}
-                <div class="cs-item">
-                    <div class="cs-flex-group">
-                        <div class="cs-dropdown-show">
-                            <div>
-                                <h4 class="cs-title">Year {{ experience.data.year }}</h4>
-                                <p class="cs-text">Explore the teaching activities and accomplishments of the team in {{ experience.data.title }}.</p>
-                            </div>
-                            <div class="cs-dropdown-icon">
-                                <img src="../assets/icons/chevron-down.svg">
-                            </div>
-                        </div>
-                        <div class="cs-dropdown">
-                            <div class="cs-dropdown-content">
-                                <div class="teaching-table">
-                                    <div class="table-header">
-                                        <div class="header-item" data-label="Semester">Semester</div>
-                                        <div class="header-item" data-label="Course">Course</div>
-                                        <div class="header-item" data-label="Role">Role</div>
-                                        <div class="header-item" data-label="Students">Students</div>
-                                    </div>
-                                    {%- for row in experience.data.rows -%}
-                                        <div class="table-row">
-                                            <div class="data-item" data-label="Semester">{{ row.yearSemester }}</div>
-                                            <div class="data-item" data-label="Course">{{ row.course }}</div>
-                                            <div class="data-item" data-label="Role">{{ row.role }}</div>
-                                            <div class="data-item" data-label="Students">{{ row.studentsAmount }}</div>
-                                        </div>
-                                    {%- endfor -%}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {%- endfor -%}
-            <a class="cs-button-link">
-                <span>View all</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<div aria-hidden="true" class="line"></div>
-
-<section id="dropdown-cards" class="student-evaluations">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h3 class="cs-title">Student evaluations</h3>
-            <p class="cs-text">
-                Below are the answers to three short questions from teaching course evaluations for multiple courses that Dr. Román-Palacios taught between 2016 (the first year in the US*) and 2019. No TCEs were available during 2020 due to the COVID pandemic. Only comments concerning Dr. Román-Palacios’ performance as an instructor are available. No comments were filtered out, and students' identities are completely anonymous, even to me! We will be curating TCEs for 2021+ in future years. 
-            </p>
             <br>
             <p class="cs-text">
-                *Please note that I taught my first course in August 2016, which was also my first time speaking publicly in English. I moved to the US roughly one month before the start of the semester.
+                Both courses are demanding. If you are working full time, plan for the load before the semester starts rather than during it. We would rather tell you that now than have you find out in week four.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="teaching-tools">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h3 class="cs-title">Tools we built</h3>
+            <p class="cs-text">
+                These started as things we needed for our own courses and are open for anyone to use. If you teach a code-based class and run into the same problems, they may save you some work. Issues and pull requests are welcome.
             </p>
         </div>
         <div class="cs-card-group">
-            {%- for evaluation in collections.studentEvaluations | sort(attribute='data.order') -%}
-                <div class="cs-item">
-                    <div class="cs-flex-group">
-                        <div class="cs-dropdown-show">
-                            <div>
-                                <p class="cs-text cs-bold">{{ evaluation.data.title }}</p>
-                            </div>
-                            <div class="cs-dropdown-icon">
-                                <img src="../assets/icons/chevron-down.svg">
-                            </div>
-                        </div>
-                        <div class="cs-dropdown">
-                            <div class="cs-dropdown-content">
-                                {{ evaluation.content | safe }}
-                            </div>
-                        </div>
-                    </div>
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <span class="cs-name">autogradeR</span>
+                    <span class="cs-desc">Grades predefined assignments in R and lets students check their own progress before submitting. Instructors generate templates protected by an encrypted password. Built around RMarkdown files.</span>
+                    <a class="cs-button-link" href="https://github.com/datadiversitylab/autogradeR" target="_blank" rel="noopener">
+                        <span>View on GitHub</span>
+                    </a>
                 </div>
-            {%- endfor -%}
+            </div>
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <span class="cs-name">classR</span>
+                    <span class="cs-desc">Manages code-based homework through GitHub, built after GitHub Classroom was discontinued in summer 2026. As far as I know, no comparable alternative existed by the time I put this together.</span>
+                    <a class="cs-button-link" href="https://datadiversitylab.github.io/classR/" target="_blank" rel="noopener">
+                        <span>Documentation</span>
+                    </a>
+                </div>
+            </div>
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <span class="cs-name">plagiaRized</span>
+                    <span class="cs-desc">A Shiny dashboard for pairwise comparison of Markdown submissions. Most plagiarism tools were not designed for code, so they miss the kinds of similarity that matter in a programming course.</span>
+                    <a class="cs-button-link" href="https://github.com/datadiversitylab/plagiaRized" target="_blank" rel="noopener">
+                        <span>View on GitHub</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="advising">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h3 class="cs-title">Advising</h3>
+            <p class="cs-text">
+                I have been the faculty advisor for the MS in Data Science and the MS in Information Science at the College of Information Science since 2021. If you are enrolled in either program, or thinking about applying, you can reach me about any of the following. Course selection and sequencing, graduation forms and degree checks, capstone and internship applications, letters of recommendation, and immigration-related paperwork that goes through International Student Services. I also answer questions from people who have not applied yet and are trying to work out whether the program fits what they want.
+            </p>
+            <br>
+        </div>
+    </div>
+</section>
+
