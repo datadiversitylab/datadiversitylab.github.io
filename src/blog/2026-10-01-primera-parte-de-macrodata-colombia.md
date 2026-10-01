@@ -18,4 +18,4 @@ Este proyecto es una prpuesta, todavía pequeña, por cambiar la forma en que ha
 
 Todavía queda camino. Pero si esto fue solo el comienzo, estamos entusiasmados por lo que sigue.
 
-Si quieres conocer más del proyecto, las sedes, o cómo aplicar a futuros talleres, puedes revisar nuestra página web: [datadiversitylab.github.io/macrodata](datadiversitylab.github.io/macrodata).
+Si quieres conocer más del proyecto, las sedes, o cómo aplicar a futuros talleres, puedes revisar nuestra página web: datadiversitylab.github.io/macrodata.
