@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const startYearInput = document.getElementById('startYear');
     const endYearInput = document.getElementById('endYear');
 
-    const DEFAULT_FILTERS = ['PhD student', 'PI', 'Postdoc', 'Staff', 'Undergraduate student'];
+    const DEFAULT_FILTERS = ['PhD student', 'PI', 'Postdoc', 'Staff', 'Undergraduate student', 'Honorary'];
 
     // Initialise default active filters on page load
     filters.forEach(filter => {
