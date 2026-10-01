@@ -32,7 +32,7 @@ eleventyNavigation:
 <!--                The Team                      -->
 <!-- ============================================ -->
 
-{%- set tags = ["Current", "Former"] -%}
+{%- set tags = ["Current", "Honorary", "Former"] -%}
 {# Use the processedTeams collection #}
 
 <section id="meet-team-547">
@@ -42,7 +42,7 @@ eleventyNavigation:
             <div aria-hidden="true" class="line line-full"></div>
             <div class="cs-filter-wrapper cs-text">
                 <div data-filter="All" class="active">All ({{ collections.processedTeams["team"] }})</div>
-                {%- set filterOrder = ["PI", "Postdoc", "PhD student", "Undergraduate student", "Staff", "MSc capstone student", "VIP student", "Intern", "MS advising team"] -%}
+                {%- set filterOrder = ["PI", "Postdoc", "PhD student", "Undergraduate student", "Staff", "MSc capstone student", "VIP student", "Intern", "MS advising team", "Honorary"] -%}
                 {%- for keyword in filterOrder -%}
                     {%- if collections.processedTeams[keyword] -%}
                         <div data-filter="{{ keyword }}">{{ keyword }} ({{ collections.processedTeams[keyword] }})</div>
@@ -61,7 +61,10 @@ eleventyNavigation:
             </div>
         </div>
         <div class="cs-title-card-wrapper">
+            {%- set honoraryExists = false -%}
+            {%- for m in collections.team -%}{%- if "Honorary" in m.data.tags -%}{%- set honoraryExists = true -%}{%- endif -%}{%- endfor -%}
             {%- for tag in tags -%}
+            {%- if tag != "Honorary" or honoraryExists -%}
                 <div class="team-section-header">
                   <h2 class="cs-section-title">{{ tag }} members</h2>
                   <div aria-hidden="true" class="line line-full"></div>
@@ -73,7 +76,7 @@ eleventyNavigation:
                 {%- endif -%}
                 <div class="cs-card-group">
                     {% for member in members %}
-                        {%- if tag in member.data.tags -%}
+                        {%- if tag in member.data.tags and (tag == "Honorary" or "Honorary" not in member.data.tags) -%}
                             <div class="cs-item">
                                 <picture class="cs-picture">
                                     <!--Mobile Image-->
@@ -159,6 +162,7 @@ eleventyNavigation:
                         {%- endif -%}
                     {%- endfor -%}
                 </div>
+            {%- endif -%}
             {%- endfor -%}
         </div>
     </div>
