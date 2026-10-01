@@ -16,6 +16,7 @@ tags:
 linkedin: https://www.linkedin.com/in/sarahgonzalezcoffin/
 email: gonzalezcoffin@arizona.edu
 link: https://sarahgonzalezcoffin.com/
+resume: /assets/documents/our-team/cv_gonzalezcoffin_2026.09.25-1-.pdf
 image: /assets/images/our-team/sgc_2026.jpeg
 order: 3
 date: 2026-07-16T11:55:00.000-05:00

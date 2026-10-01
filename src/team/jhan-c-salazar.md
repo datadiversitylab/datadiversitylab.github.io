@@ -14,6 +14,7 @@ memberBio: Jhan joined the data diversity lab during Summer 2023. He wrote the
 tags:
   - Intern
   - Honorary
+  - Former
 linkedin: null
 email: jhancsalazar@wustl.edu
 link: https://jhansalazar.weebly.com/

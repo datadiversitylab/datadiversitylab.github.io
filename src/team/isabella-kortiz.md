@@ -1,5 +1,5 @@
 ---
-memberName: Isabella Kortiz
+memberName: Isabella Ortiz
 memberTitle:
   - MS advising team member
 memberDate: "2024"

@@ -1,6 +1,8 @@
 ---
 memberName: Gloria Moraa Angwenyi
-memberTitle: MSc student
+memberTitle:
+  - MSc capstone student
+currentPosition: "AI Researcher at Handshake, Ensures Data Integrity "
 memberDate: "2024"
 memberBio: Gloria conducted her MS in Data Science capstone project at the Data
   Diversity Lab. She focused on examining patterns of acceptance in admissions
