@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const startYearInput = document.getElementById('startYear');
     const endYearInput = document.getElementById('endYear');
 
-    const DEFAULT_FILTERS = ['PhD student', 'PI', 'Postdoc', 'Staff', 'Undergraduate student', 'Honorary'];
+    const DEFAULT_FILTERS = ['PhD student', 'PI', 'Postdoc', 'Staff', 'Undergraduate student'];
 
     // Initialise default active filters on page load
     filters.forEach(filter => {
@@ -70,12 +70,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Type check
+            const itemFilters = Array.from(item.querySelectorAll('.cs-item-filters div'))
+                .map(div => div.textContent.trim());
+            const isHonorary = itemFilters.includes('Honorary');
+
             let typeMatch = false;
-            if (activeFilters.includes('All')) {
+            if (isHonorary) {
+                // Honorary members always show regardless of active filters
+                typeMatch = true;
+            } else if (activeFilters.includes('All')) {
                 typeMatch = true;
             } else if (activeFilters.length > 0) {
-                const itemFilters = Array.from(item.querySelectorAll('.cs-item-filters div'))
-                    .map(div => div.textContent.trim());
                 typeMatch = activeFilters.some(filter => itemFilters.includes(filter));
             }
 
@@ -148,5 +153,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
         el.addEventListener('mouseout', scheduleHide);
     });
+
+    // Read more — cs-desc is a <span> so we force block, then measure
+    document.querySelectorAll('#meet-team-547 .cs-desc').forEach(function (desc) {
+        const btn = desc.querySelector('.read-more-btn');
+        if (!btn) return;
+
+        desc.style.display = 'block';
+
+        function checkOverflow() {
+            if (desc.classList.contains('show-more')) return;
+            desc.style.maxHeight = 'none';
+            const full = desc.scrollHeight;
+            desc.style.maxHeight = '';
+            const clamped = parseFloat(getComputedStyle(desc).maxHeight);
+            btn.style.display = (!isNaN(clamped) && full > clamped + 4) ? 'inline' : 'none';
+        }
+
+        checkOverflow();
+        window.addEventListener('load', checkOverflow);
+
+        if (window.ResizeObserver) {
+            new ResizeObserver(checkOverflow).observe(desc);
+        }
+
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            desc.classList.toggle('show-more');
+            btn.textContent = desc.classList.contains('show-more') ? ' show less' : '...read more';
+        });
+    });
+
 
 });
