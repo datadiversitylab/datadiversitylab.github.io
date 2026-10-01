@@ -207,6 +207,28 @@ collections:
           widget: "list",
           field: { label: "Image", name: "", widget: "image" }
         }
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'src/blog'
+    media_folder: '/src/assets/images/blog'
+    public_folder: '/assets/images/blog'
+    create: true
+    identifier_field: title
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog-post.html' }
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: 'Author', name: 'author', widget: 'string', required: false }
+      - { label: 'Description', name: 'description', widget: 'text', required: false, hint: 'Short summary shown on the listing card.' }
+      - { label: 'Cover Image', name: 'image', widget: 'image', required: false, media_folder: '/src/assets/images/blog', public_folder: '/assets/images/blog' }
+      - label: 'Tags'
+        name: 'tags'
+        widget: 'list'
+        default: ['blog']
+        hint: "Always keep 'blog' in the list — it's how Eleventy finds these posts."
+      - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'jobs'
     label: 'Jobs'
     folder: 'src/jobs'
