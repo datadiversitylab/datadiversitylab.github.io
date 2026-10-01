@@ -343,3 +343,113 @@
     overflow: hidden;
   }
 }
+
+/*-- -------------------------- -->
+<---  Courses / Tools / Advising -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #courses,
+  #teaching-tools,
+  #advising {
+    padding: var(--sectionPadding);
+  }
+  #courses .cs-container,
+  #teaching-tools .cs-container,
+  #advising .cs-container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sectionGap);
+  }
+  #courses .cs-content,
+  #teaching-tools .cs-content,
+  #advising .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #courses .cs-content .cs-title,
+  #teaching-tools .cs-content .cs-title,
+  #advising .cs-content .cs-title {
+    text-align: center;
+  }
+  #courses .cs-content .cs-text,
+  #teaching-tools .cs-content .cs-text,
+  #advising .cs-content .cs-text {
+    text-align: left;
+    max-width: unset;
+    width: 100%;
+  }
+
+  /* Card groups */
+  #courses .cs-card-group,
+  #teaching-tools .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+  #courses .cs-item,
+  #teaching-tools .cs-item {
+    background: #fff;
+    box-shadow: var(--boxCardShadow);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  #courses .cs-item:hover,
+  #teaching-tools .cs-item:hover {
+    box-shadow: 0 4px 24px rgba(43, 58, 50, 0.12);
+    transform: translateY(-2px);
+  }
+  #courses .cs-flex-group,
+  #teaching-tools .cs-flex-group {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #courses .cs-name,
+  #teaching-tools .cs-name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--headerColor);
+    text-align: left;
+  }
+  #courses .cs-desc,
+  #teaching-tools .cs-desc {
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: var(--bodyTextColor);
+    opacity: 0.8;
+    text-align: left;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 48rem) {
+  #courses .cs-card-group,
+  #teaching-tools .cs-card-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 64rem) {
+  #courses .cs-container,
+  #teaching-tools .cs-container,
+  #advising .cs-container {
+    max-width: 80rem;
+  }
+  #teaching-tools .cs-card-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
