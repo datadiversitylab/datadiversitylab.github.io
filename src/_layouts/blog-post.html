@@ -1,0 +1,45 @@
+---
+layout: 'base.html'
+preloadCSS: '/css/blog.css'
+---
+<section id="content-1450" class="cs-top-section">
+  <div class="cs-container">
+    <div class="cs-content">
+      <h1 class="cs-title">{{ title }}</h1>
+      <p class="cs-text">{{ description }}</p>
+    </div>
+  </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<article class="blog-post-article">
+  <div class="blog-post-meta-bar">
+    <span class="blog-date">{{ date | readableDate }}</span>
+    {%- if author -%}
+      <span class="blog-dot">·</span>
+      <span class="blog-author">{{ author }}</span>
+    {%- endif -%}
+    <div class="blog-tags">
+      {%- for tag in tags -%}
+        {%- if tag and tag != "blog" -%}
+          <span class="blog-tag">{{ tag }}</span>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+  {%- if image -%}
+    <div class="blog-post-hero">
+      <img src="{{ image }}" alt="{{ title }}" loading="eager" decoding="async">
+    </div>
+  {%- endif -%}
+
+  <div class="blog-post-body">
+    {{ content | safe }}
+  </div>
+
+  <footer class="blog-post-footer">
+    <a href="/blog/" class="blog-back-bottom">← Back to Blog</a>
+  </footer>
+</article>

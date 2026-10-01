@@ -1,0 +1,120 @@
+---
+layout: 'base.html'
+description: "Thoughts, updates, and stories from the Data Diversity Lab"
+metaTitle: 'Blog'
+tagTitle: 'Blog'
+preloadImg: ''
+preloadCSS: '/css/blog.css'
+preloadJS: 'js/blog.js'
+permalink: 'blog/'
+eleventyNavigation:
+    key: Blog
+    order: 800
+---
+
+<section id="content-1450" class="cs-top-section">
+  <div class="cs-container">
+    <div class="cs-content">
+      <h1 class="cs-title">Lab Blog</h1>
+      <p class="cs-text">
+        Updates, reflections, and stories from the Data Diversity Lab.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+{%- set blogtags = [] -%}
+{%- for post in collections.blog | sort(attribute='data.date') | reverse -%}
+  {%- for tag in post.data.tags -%}
+    {%- if tag and tag != "blog" and not blogtags.includes(tag | string) -%}
+      {%- set blogtags = blogtags.concat(tag | string) -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+<section id="blog-547">
+  <div class="cs-container">
+
+    <div class="cs-content cs-sidebar cs-filter-searchable">
+      <div class="cs-search-title-wrapper">
+        <h6 class="cs-title">Search</h6>
+        <div aria-hidden="true" class="line line-full"></div>
+        <div class="cs-search-wrapper">
+          <input type="text" id="blog-search" class="cs-search" placeholder="Title or author">
+        </div>
+      </div>
+      <div class="cs-filter-button-wrapper">
+        <div class="cs-add-filter-wrapper">
+          <h6 class="cs-title">Add filters</h6>
+          <img src="/assets/icons/plus.svg" class="plus-button" alt="filter" width="25" height="25">
+        </div>
+        <div class="cs-filter-topics-wrapper">
+          <h6 class="cs-title">Topics</h6>
+          <div aria-hidden="true" class="line line-full"></div>
+          <div class="cs-filter-wrapper cs-text">
+            <div data-filter="all" class="active filter-option">All</div>
+            {%- for tag in blogtags | sort -%}
+              <div data-filter="{{ tag }}" class="filter-option">{{ tag }}</div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-title-card-wrapper">
+      <div class="cs-card-group" id="blog-grid">
+        {%- for post in collections.blog | sort(attribute='data.date') | reverse -%}
+          <a class="cs-item" href="{{ post.url }}">
+            {%- if post.data.image -%}
+              <picture class="cs-picture">
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src="{{ post.data.image }}"
+                  alt="{{ post.data.title }}"
+                  width="800"
+                  height="450"
+                  onerror="this.onerror=null;this.src='../assets/images/placeholder-image.png';"
+                >
+              </picture>
+            {%- else -%}
+              <div class="cs-picture cs-picture-placeholder"></div>
+            {%- endif -%}
+            <div class="cs-flex-group">
+              <div class="blog-meta">
+                <span class="blog-date">{{ post.data.date | readableDate }}</span>
+                {%- if post.data.author -%}
+                  <span class="blog-dot">·</span>
+                  <span class="blog-author">{{ post.data.author }}</span>
+                {%- endif -%}
+              </div>
+              <span class="cs-name">{{ post.data.title }}</span>
+              {%- if post.data.description -%}
+                <span class="cs-desc">{{ post.data.description }}</span>
+              {%- endif -%}
+              <div class="blog-tags">
+                {%- for tag in post.data.tags -%}
+                  {%- if tag and tag != "blog" -%}
+                    <span class="blog-tag">{{ tag }}</span>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+              <div class="cs-item-filters" style="display:none;">
+                {%- for tag in post.data.tags -%}
+                  {%- if tag and tag != "blog" -%}
+                    <div class="cs-filter">{{ tag }}</div>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            </div>
+          </a>
+        {%- else -%}
+          <p class="blog-empty">No posts yet. Check back soon.</p>
+        {%- endfor -%}
+      </div>
+    </div>
+
+  </div>
+</section>

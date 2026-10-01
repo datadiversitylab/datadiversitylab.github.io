@@ -51,6 +51,17 @@ async function imageShortcode(src, alt, className, loading, sizes = '(max-width:
 }
 
 module.exports = function (eleventyConfig) {
+  
+  const { DateTime } = require("luxon");
+
+eleventyConfig.addFilter("readableDate", function(dateVal) {
+  return DateTime.fromJSDate(new Date(dateVal), { zone: "utc" }).toFormat("MMMM d, yyyy");
+});
+  
+  eleventyConfig.addCollection("blog", function(collectionApi) {
+  return collectionApi.getFilteredByGlob("./src/blog/*.md").reverse();
+});
+
   eleventyConfig.addFilter('markdown', function(value) {
     return md.render(value);
   });
@@ -249,3 +260,5 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
   };
 };
+
+
