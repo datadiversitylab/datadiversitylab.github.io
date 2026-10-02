@@ -10,6 +10,8 @@ description: >
 image: /assets/images/blog/github-classroom-v0-8w4yzvbuxavo4n8uv3zoxubyeuyknqvhgdazjd4vdj4.webp
 tags:
   - blog
+  - Tutorial
+  - Teaching
 ---
 ## Before you start
 
