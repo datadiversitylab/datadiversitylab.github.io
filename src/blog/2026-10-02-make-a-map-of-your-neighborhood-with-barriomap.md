@@ -8,6 +8,9 @@ description: >
   just need a browser and a place you care about.
 tags:
   - blog
+  - Tutorial
+  - Mapping
+  - Outreach
 ---
 BarrioMap is a free, open-source tool that turns OpenStreetMap data into a map. You can print the resulting map, can hold, annotate, and bring to a meeting. This post presents a quick tour of how to use BarrioMap.
 
