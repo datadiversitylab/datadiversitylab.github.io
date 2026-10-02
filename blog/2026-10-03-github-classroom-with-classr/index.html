@@ -8,17 +8,19 @@
         <script async="async" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
         <!--Swap our for actual link-->
-        <link rel="canonical" href="https://datadiversitylab.github.io/blog/">
+        <link rel="canonical" href="https://datadiversitylab.github.io/blog/2026-10-03-github-classroom-with-classr/">
 
-        <meta name="description" content="Thoughts, updates, and stories from the Data Diversity Lab">
+        <meta name="description" content="classR runs a course on GitHub from R. No GitHub Classroom needed. Each student gets a private repo in your organization, your starter files are pushed in, and the student is added as a collaborator.
+">
         <meta name="keywords" content="Data Diversity Lab and Development">
         <meta name="google-site-verification" content="u82fOqFBdQHRSP52a0zYaa0TN4pXvDCaFbvtkQINz2M" />
 
         <!--Social Media Display-->
-        <meta property="og:title" content="Blog"/>
-        <meta property="og:description" content="Thoughts, updates, and stories from the Data Diversity Lab"/>
+        <meta property="og:title" content=""/>
+        <meta property="og:description" content="classR runs a course on GitHub from R. No GitHub Classroom needed. Each student gets a private repo in your organization, your starter files are pushed in, and the student is added as a collaborator.
+"/>
         <meta property="og:type" content="website"/>
-        <meta property="og:url" content="https://datadiversitylab.github.io/blog/"/>
+        <meta property="og:url" content="https://datadiversitylab.github.io/blog/2026-10-03-github-classroom-with-classr/"/>
         <meta property="og:image" content="/images/social.jpg"/>
         <meta property="og:image:secure_url" content="/images/social.jpg"/>
 
@@ -49,7 +51,7 @@
         <!-- For home page, use full title, including location for SEO. Other pages should just include the page name -->
         <title>
             
-                Blog | Data Diversity Lab
+                 | Data Diversity Lab
             
         </title>
     </head>
@@ -192,7 +194,7 @@
                         
                             <li class="cs-li" tabindex="0">
 
-                                <a  class="cs-li-link cs-active"  href="/blog/">
+                                <a  class="cs-li-link"  href="/blog/">
                                     Blog
                                 </a>
                             </li>
@@ -209,154 +211,83 @@
         </nav>
     </div>
 </header>
-        <main id="main">
-<section id="content-1450" class="cs-top-section">
+        <main id="main"><section id="content-1450" class="cs-top-section">
   <div class="cs-container">
     <div class="cs-content">
-      <h1 class="cs-title">Lab Blog</h1>
-      <p class="cs-text">
-        Updates, reflections, and stories from the Data Diversity Lab.
-      </p>
+      <h1 class="cs-title">GitHub classroom with classR</h1>
+      <p class="cs-text">classR runs a course on GitHub from R. No GitHub Classroom needed. Each student gets a private repo in your organization, your starter files are pushed in, and the student is added as a collaborator.
+</p>
     </div>
   </div>
 </section>
 
-<div aria-hidden="true" class="line"></div><section id="blog-547">
-  <div class="cs-container">
+<div aria-hidden="true" class="line"></div>
 
-    <div class="cs-content cs-sidebar cs-filter-searchable">
-      <div class="cs-search-title-wrapper">
-        <h6 class="cs-title">Search</h6>
-        <div aria-hidden="true" class="line line-full"></div>
-        <div class="cs-search-wrapper">
-          <input type="text" id="blog-search" class="cs-search" placeholder="Title or author">
-        </div>
-      </div>
-      <div class="cs-filter-button-wrapper">
-        <div class="cs-add-filter-wrapper">
-          <h6 class="cs-title">Add filters</h6>
-          <img src="/assets/icons/plus.svg" class="plus-button" alt="filter" width="25" height="25">
-        </div>
-        <div class="cs-filter-topics-wrapper">
-          <h6 class="cs-title">Topics</h6>
-          <div aria-hidden="true" class="line line-full"></div>
-          <div class="cs-filter-wrapper cs-text">
-            <div data-filter="all" class="active filter-option">All</div><div data-filter="Español" class="filter-option">Español</div><div data-filter="Mapping" class="filter-option">Mapping</div><div data-filter="Outreach" class="filter-option">Outreach</div><div data-filter="Teaching" class="filter-option">Teaching</div><div data-filter="Tutorial" class="filter-option">Tutorial</div><div data-filter="Welcome" class="filter-option">Welcome</div></div>
-        </div>
-      </div>
-    </div>
+<article class="blog-post-article">
+  <div class="blog-post-meta-bar">
+    <span class="blog-date">October 3, 2026</span><span class="blog-dot">·</span>
+      <span class="blog-author">Cristian Román</span><div class="blog-tags"></div>
+  </div><div class="blog-post-hero">
+      <img src="/assets/images/blog/github-classroom-v0-8w4yzvbuxavo4n8uv3zoxubyeuyknqvhgdazjd4vdj4.webp" alt="GitHub classroom with classR" loading="eager" decoding="async">
+    </div><div class="blog-post-body">
+    <h2>Before you start</h2>
+<p>Make the organization first. The GitHub API cannot create one, so set it up once in the browser. You also need git on your system to collect submissions. You do not need to add every student to the organization prior to following this tutorial. Once the repo gets created for the student, they will have control over the files in the repo.</p>
+<p>You will need a roster, which if effectively a CSV with one column named <code>handle</code>:</p>
+<pre><code>handle
 
-    <div class="cs-title-card-wrapper">
-      <div class="cs-card-group" id="blog-grid"><a class="cs-item" href="/blog/2026-10-03-github-classroom-with-classr/"><picture class="cs-picture">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="/assets/images/blog/github-classroom-v0-8w4yzvbuxavo4n8uv3zoxubyeuyknqvhgdazjd4vdj4.webp"
-                  alt="GitHub classroom with classR"
-                  width="800"
-                  height="450"
-                  onerror="this.onerror=null;this.src='../assets/images/placeholder-image.png';"
-                >
-              </picture><div class="cs-flex-group">
-              <div class="blog-meta">
-                <span class="blog-date">October 3, 2026</span><span class="blog-dot">·</span>
-                  <span class="blog-author">Cristian Román</span></div>
-              <span class="cs-name">GitHub classroom with classR</span><span class="cs-desc">classR runs a course on GitHub from R. No GitHub Classroom needed. Each student gets a private repo in your organization, your starter files are pushed in, and the student is added as a collaborator.
-</span><div class="blog-tags"></div>
-              <div class="cs-item-filters" style="display:none;"></div>
-            </div>
-          </a><a class="cs-item" href="/blog/2026-10-02-haz-el-mapa-de-tu-barrio-con-barriomap/"><picture class="cs-picture">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="/assets/images/blog/screenshot-2026-10-01-at-10.23.25 pm.png"
-                  alt="Haz el mapa de tu barrio con BarrioMap"
-                  width="800"
-                  height="450"
-                  onerror="this.onerror=null;this.src='../assets/images/placeholder-image.png';"
-                >
-              </picture><div class="cs-flex-group">
-              <div class="blog-meta">
-                <span class="blog-date">October 2, 2026</span><span class="blog-dot">·</span>
-                  <span class="blog-author">Cristian Román</span></div>
-              <span class="cs-name">Haz el mapa de tu barrio con BarrioMap</span><span class="cs-desc">No necesitas ser cartógrafx. No tienes que instalar nada. Solo necesitas un navegador y un lugar que te interese.
-</span><div class="blog-tags"><span class="blog-tag">Español</span><span class="blog-tag">Tutorial</span></div>
-              <div class="cs-item-filters" style="display:none;"><div class="cs-filter">Español</div><div class="cs-filter">Tutorial</div></div>
-            </div>
-          </a><a class="cs-item" href="/blog/2026-10-02-make-a-map-of-your-neighborhood-with-barriomap/"><picture class="cs-picture">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="/assets/images/blog/screenshot-2026-10-01-at-10.33.51 pm.png"
-                  alt="Make a map of your neighborhood with BarrioMap"
-                  width="800"
-                  height="450"
-                  onerror="this.onerror=null;this.src='../assets/images/placeholder-image.png';"
-                >
-              </picture><div class="cs-flex-group">
-              <div class="blog-meta">
-                <span class="blog-date">October 2, 2026</span><span class="blog-dot">·</span>
-                  <span class="blog-author">Cristian Román</span></div>
-              <span class="cs-name">Make a map of your neighborhood with BarrioMap</span><span class="cs-desc">You don&#39;t need to be a cartographer. You don&#39;t need to install anything. You just need a browser and a place you care about.
-</span><div class="blog-tags"><span class="blog-tag">Tutorial</span><span class="blog-tag">Mapping</span><span class="blog-tag">Outreach</span></div>
-              <div class="cs-item-filters" style="display:none;"><div class="cs-filter">Tutorial</div><div class="cs-filter">Mapping</div><div class="cs-filter">Outreach</div></div>
-            </div>
-          </a><a class="cs-item" href="/blog/2026-10-01-macrodata-in-bogotá-and-barranquilla-colombia/"><picture class="cs-picture">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="/assets/images/blog/dscf1020.jpg_compressed.jpeg"
-                  alt="MacroData in Bogotá and Barranquilla, Colombia"
-                  width="800"
-                  height="450"
-                  onerror="this.onerror=null;this.src='../assets/images/placeholder-image.png';"
-                >
-              </picture><div class="cs-flex-group">
-              <div class="blog-meta">
-                <span class="blog-date">October 1, 2026</span><span class="blog-dot">·</span>
-                  <span class="blog-author">Cristian Román</span></div>
-              <span class="cs-name">MacroData in Bogotá and Barranquilla, Colombia</span><span class="cs-desc">Project funded by NatGeo</span><div class="blog-tags"><span class="blog-tag">Outreach</span><span class="blog-tag">Teaching</span></div>
-              <div class="cs-item-filters" style="display:none;"><div class="cs-filter">Outreach</div><div class="cs-filter">Teaching</div></div>
-            </div>
-          </a><a class="cs-item" href="/blog/2026-10-01-primera-parte-de-macrodata-colombia/"><picture class="cs-picture">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="/assets/images/blog/dscf1033.jpg_compressed.jpeg"
-                  alt="Primera parte de MacroData, Colombia"
-                  width="800"
-                  height="450"
-                  onerror="this.onerror=null;this.src='../assets/images/placeholder-image.png';"
-                >
-              </picture><div class="cs-flex-group">
-              <div class="blog-meta">
-                <span class="blog-date">October 1, 2026</span><span class="blog-dot">·</span>
-                  <span class="blog-author">Cristian Román</span></div>
-              <span class="cs-name">Primera parte de MacroData, Colombia</span><span class="cs-desc">Proyecto financiado por National Geographic Society</span><div class="blog-tags"><span class="blog-tag">Outreach</span><span class="blog-tag">Español</span><span class="blog-tag">Teaching</span></div>
-              <div class="cs-item-filters" style="display:none;"><div class="cs-filter">Outreach</div><div class="cs-filter">Español</div><div class="cs-filter">Teaching</div></div>
-            </div>
-          </a><a class="cs-item" href="/blog/2026-10-01-welcome/"><picture class="cs-picture">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="/assets/images/socials/dscf3017.jpg_compressed.jpeg"
-                  alt="Welcome to the Data Diversity Lab Blog"
-                  width="800"
-                  height="450"
-                  onerror="this.onerror=null;this.src='../assets/images/placeholder-image.png';"
-                >
-              </picture><div class="cs-flex-group">
-              <div class="blog-meta">
-                <span class="blog-date">October 1, 2026</span><span class="blog-dot">·</span>
-                  <span class="blog-author">Cristian Román</span></div>
-              <span class="cs-name">Welcome to the Data Diversity Lab Blog</span><span class="cs-desc">A space for lab updates, behind-the-scenes research, and other things.</span><div class="blog-tags"><span class="blog-tag">Welcome</span></div>
-              <div class="cs-item-filters" style="display:none;"><div class="cs-filter">Welcome</div></div>
-            </div>
-          </a></div>
-    </div>
+student1
+student2
+student3
+</code></pre>
+<h2>Install classR</h2>
+<p>The package is currently available only from GitHub. Use the following lines in R to install it:</p>
+<pre><code>install.packages(&quot;remotes&quot;)
+remotes::install_github(&quot;datadiversitylab/classR&quot;)
+</code></pre>
+<h2>One-time token setup</h2>
+<p>Please run this only once. It opens the token page with the right scopes selected, checks the token works and carries <code>repo</code> and <code>admin:org</code>, then saves it to <code>~/.Renviron</code>. If a scope is missing, it tells you which and does not save anything.</p>
+<pre><code class="language-r">library(classR)
+setup_github_token()
+</code></pre>
+<h2>Set the organization</h2>
+<p>Do this each session, with your own organization (which you should create from GitHub and should be associated with the account configured with git in your machine).</p>
+<pre><code class="language-r">set_org(&quot;ISTA421INFO521&quot;)
+</code></pre>
+<h2>Assign a homework</h2>
+<p>Put your starter files in a folder, then push them to everyone. Each repo is named <code>prefix-handle</code>, so <code>hw1-student1</code> and so on.</p>
+<pre><code class="language-r">res &lt;- assign_homework(&quot;roster.csv&quot;, &quot;hw1_files&quot;, prefix = &quot;hw1&quot;)
+table(res$status)
+</code></pre>
+<p><code>res</code> has one row per student, with a status of <code>ok</code>, <code>exists</code>, <code>create_error</code>, or <code>setup_error</code>. Existing repos are skipped. This means that you can rerun this safely. Only the errors will need your attention:</p>
+<pre><code class="language-r">res[res$status %in% c(&quot;create_error&quot;, &quot;setup_error&quot;), ]
+</code></pre>
+<p>Students get <code>push</code> access by default. Use <code>permission = &quot;admin&quot;</code> if you want them managing their own repos.</p>
+<h2>Check who is set up</h2>
+<pre><code class="language-r">status &lt;- check_homework(&quot;roster.csv&quot;, prefix = &quot;hw1&quot;)
+status[!status$exists, ]
+</code></pre>
+<h2>Update starter files (optional)</h2>
+<p>If you need to fix or add a file after assigning, push it again. Missing files are created, existing ones overwritten.</p>
+<pre><code class="language-r">update_homework(&quot;roster.csv&quot;, &quot;hw1_fixes&quot;, prefix = &quot;hw1&quot;)
+</code></pre>
+<p>This overwrites whatever is at those paths. If a student already edited a file you push, your version replaces theirs in the latest commit, though the old content stays in history as its own commit. To be safe, I would recommend you to point the folder at only the files students are not meant to touch.</p>
+<h2>Collect submissions</h2>
+<p>Pull everyone's work into a local folder. Submissions are saved to <code>dest/prefix/handle</code>. Run it again later to pull new commits.</p>
+<pre><code class="language-r">collect_homework(&quot;roster.csv&quot;, prefix = &quot;hw1&quot;, dest = &quot;submissions&quot;)
+</code></pre>
+<h2>Tips</h2>
+<ul>
+<li>Files are pushed through the GitHub contents API, one file per commit. This approach is fine for small starter folders but very slow for large or nested projects.</li>
+<li>Collecting uses git, since it moves whole repositories.</li>
+<li>Adding a collaborator sends an invitation, which students should accept from their GitHub email or notifications before they can push.</li>
+</ul>
 
   </div>
-</section>
+
+  <footer class="blog-post-footer">
+    <a href="/blog/" class="blog-back-bottom">← Back to Blog</a>
+  </footer>
+</article>
 </main>
         <!-- ============================================ -->
 <!--                   Footer                     -->
@@ -393,8 +324,6 @@
 
         <script defer src="/assets/js/nav.js"></script>
 
-        
-            <script defer src="/assets/js/blog.js"></script>
         
 
         
