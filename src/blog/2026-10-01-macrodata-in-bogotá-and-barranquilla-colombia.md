@@ -21,4 +21,4 @@ This project is tries to slightly change how we do research in Colombia about ou
 
 There's still a long way to go. But if this was just the start, we're looking forward to what's next :)
 
-If you want to know more about the project, the sites, or how to apply for future workshops, check out our website: datadiversitylab.github.io/macrodata.
+If you want to know more about the project, the sites, or how to apply for future workshops, check out our website: [datadiversitylab.github.io/macrodata](https://datadiversitylab.github.io/macrodata/).
