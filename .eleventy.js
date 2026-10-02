@@ -54,6 +54,10 @@ module.exports = function (eleventyConfig) {
   
   const { DateTime } = require("luxon");
 
+eleventyConfig.addGlobalData("eleventyComputed", {
+  tagTitle: (data) => data.tagTitle || data.title || "Data Diversity Lab"
+});
+
 eleventyConfig.addFilter("readableDate", function(dateVal) {
   return DateTime.fromJSDate(new Date(dateVal), { zone: "utc" }).toFormat("MMMM d, yyyy");
 });
