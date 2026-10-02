@@ -25,8 +25,6 @@ The map opens right away, centered on Tucson, AZ. You will see a sidebar on the 
 
 ![Landing page in BarrioMap](/assets/images/blog/screenshot-2026-10-01-at-10.15.53 pm.png "Landing page in BarrioMap")
 
-
-
 - - -
 
 ## Step 2: Name your map
@@ -36,7 +34,7 @@ it is later.
 
 You can also add a short description if you want. This is optional.
 
-![Title and description sections in BarrioMap](/assets/images/blog/screenshot-2026-10-01-at-10.17.57 pm.png "Title and description sections in BarrioMap")
+
 
 - - -
 
@@ -46,8 +44,6 @@ In the **Location** section, type a neighborhood, a street, or a city in the sea
 
 You can also type coordinates directly if you know them. And if you want the map to stay exactly where it is while you change other settings, check **Lock frame to current view**. This is useful once you have found the
 right spot.
-
-![Location search](/assets/images/blog/screenshot-2026-10-01-at-10.19.05 pm.png "Location search")
 
 
 
@@ -76,7 +72,7 @@ In **Map Layers**, check the boxes for what you want to see on your map. Roads a
 
 Under **Print Settings**, you can change the color of any layer. Click the color box next to a layer and type a hex code, or visit [g.co/colorpicker](https://g.co/colorpicker) to pick one visually.
 
-![Layers](/assets/images/blog/screenshot-2026-10-01-at-10.22.07 pm.png "Layers")
+
 
 - - -
 
@@ -95,8 +91,6 @@ Anything you add can also be printed on your PDF. Check the boxes in Print Setti
 
 ![New marker](/assets/images/blog/screenshot-2026-10-01-at-10.23.25 pm.png "New marker")
 
-
-
 - - -
 
 ## Step 7: Generate your map
@@ -106,8 +100,6 @@ When you are ready, click **Generate map**. The app starts building your PDF on 
 This takes a minute, especially the first time. That is because the app is downloading fresh data from OpenStreetMap just for your area. Once the data is cached, future exports for the same region are expected to be much faster.
 
 ![Generating map](/assets/images/blog/screenshot-2026-10-01-at-10.24.25 pm.png "Generating map")
-
-
 
 - - -
 
@@ -121,8 +113,6 @@ A popup also appears with a six-character code. This window includes your **map 
 
 ![Download from BarrioMap](/assets/images/blog/screenshot-2026-10-01-at-10.26.07 pm.png "Download from BarrioMap")
 
-
-
 - - -
 
 ## What you end up with
@@ -130,13 +120,7 @@ A popup also appears with a six-character code. This window includes your **map 
 A real map. Vector, not a screenshot. You can open it in Adobe Illustrator, Inkscape, or any PDF viewer. You can print it at any size without losing quality. You can bring it to a neighborhood meeting, tape it to a wall,
 mark it up with a pen, and photograph it to bring back into a digital workflow.
 
-It is a map that looks like it came from a planning office — because the method is the same one planners use.
-
-
-
-![Three-page PDF of the resulting map](/assets/images/blog/screenshot-2026-10-01-at-10.27.31 pm.png "Three-page PDF of the resulting map")
-
-
+It is a map that looks like it came from a planning office!
 
 - - -
 
