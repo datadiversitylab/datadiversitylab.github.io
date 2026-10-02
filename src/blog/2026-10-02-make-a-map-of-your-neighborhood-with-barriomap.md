@@ -6,6 +6,7 @@ author: Cristian Román
 description: >
   You don't need to be a cartographer. You don't need to install anything. You
   just need a browser and a place you care about.
+image: /assets/images/blog/screenshot-2026-10-01-at-10.33.51 pm.png
 tags:
   - blog
   - Tutorial
