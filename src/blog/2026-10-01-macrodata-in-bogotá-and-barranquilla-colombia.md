@@ -8,6 +8,7 @@ image: /assets/images/blog/dscf1020.jpg_compressed.jpeg
 tags:
   - blog
   - Outreach
+  - Teaching
 ---
 We completed MacroData's first two workshops in the first half of 2026, at Universidad de La Salle in Bogotá (part of the Colombian Symposium on Evolutionary Biology) and at Universidad del Atlántico. Over 40 students took part across these two dates, in two-day sessions each, many learning R from scratch and applying it directly to real examples of phylogenetic comparative methods.
 
