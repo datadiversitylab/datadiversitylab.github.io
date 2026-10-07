@@ -11,5 +11,6 @@ publicationAbstract: One of our amazing PhD students, Sarah Gonzales-Coffin,
   proud of your accomplishments!
 images:
   - /assets/images/socials/sarah-cambium-talk.jpg
+  - /assets/images/socials/sarah-cambium-background-talk.jpg
 tags: Talk
 ---
