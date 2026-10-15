@@ -43,4 +43,7 @@ affiliations:
   - url: https://cambium.arizona.edu/person/cristian-roman-palacios
     name: Affiliated faculty at Climate change Adaptation and Mitigation through
       Biodiversity Informatics edUcation and Mentoring (CAMBIUM)
+  - name: Along with the PIs, assisted in securing the Computational and
+      Mathematical Modeling of Biomedical Systems (NIH) grant for $2,156,685!
+    url: https://cmmbs.arizona.edu/
 ---
