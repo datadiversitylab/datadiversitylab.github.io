@@ -1,5 +1,5 @@
 ---
-memberName: Cristian Román
+memberName: Cristian Román-Palacios
 memberTitle:
   - Principal Investigator, Assistant Professor
 memberDate: null
@@ -43,4 +43,7 @@ affiliations:
   - url: https://cambium.arizona.edu/person/cristian-roman-palacios
     name: Affiliated faculty at Climate change Adaptation and Mitigation through
       Biodiversity Informatics edUcation and Mentoring (CAMBIUM)
+  - name: Faculty at the Computational and Mathematical Modeling of Biomedical
+      Systems program
+    url: https://cmmbs.arizona.edu/
 ---
