@@ -497,6 +497,31 @@ collections:
           - { label: 'Unit', name: 'contactUnit', widget: 'string' }
           - { label: 'Email', name: 'contactEmail', widget: 'string', required: false }
           - { label: 'Closing note', name: 'note', widget: 'text', required: false }
+      - label: 'Advising page'
+        name: 'msAdvising'
+        file: 'src/_data/msadvising.json'
+        fields:
+          - { label: 'Page title', name: 'title', widget: 'string' }
+          - { label: 'Introduction', name: 'paragraphOne', widget: 'text', hint: 'Leave a blank line between paragraphs. Web addresses and emails become links on their own.' }
+          - label: 'Numbered cards (appointments and links)'
+            name: 'numberedCards'
+            widget: 'list'
+            required: false
+            summary: '{{fields.title}}'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Text', name: 'description', widget: 'text', hint: 'Paste a full web address and it becomes a link.' }
+          - { label: 'Preparing for a meeting: heading', name: 'secondTitle', widget: 'string' }
+          - { label: 'Preparing for a meeting: introduction', name: 'paragraphThree', widget: 'text', required: false }
+          - label: 'Preparing for a meeting: cards'
+            name: 'advisingCards'
+            widget: 'list'
+            required: false
+            summary: '{{fields.title}}'
+            hint: 'Drag to reorder.'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Text', name: 'description', widget: 'text', hint: 'Leave a blank line between paragraphs. Web addresses become links on their own.' }
   - name: 'logos'
     label: 'Logos'
     folder: 'src/logos'
