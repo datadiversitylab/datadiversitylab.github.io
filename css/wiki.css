@@ -1,0 +1,533 @@
+/*-- -------------------------- -->
+<---          Content           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #content-1450 {
+    padding: var(--sectionPadding);
+    padding-top: 6.25rem;
+  }
+  #content-1450 .cs-container {
+    width: 100%;
+    max-width: 56.25rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sectionGap);
+  }
+  #content-1450 .cs-content {
+    text-align: center;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #content-1450 .cs-title,
+  #content-1450 .cs-text {
+    max-width: fit-content;
+  }
+  #content-1450 .wiki-crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 0.5rem;
+    margin: 0 0 1rem 0;
+    font-size: 0.875rem;
+    color: var(--bodyTextColor);
+  }
+  #content-1450 .wiki-crumbs a {
+    color: inherit;
+    opacity: 0.8;
+    text-decoration: none;
+  }
+  #content-1450 .wiki-crumbs a:hover {
+    text-decoration: underline;
+  }
+  #content-1450 .wiki-crumbs a + a::before {
+    content: "/";
+    margin-right: 0.5rem;
+    opacity: 0.6;
+  }
+}
+
+/*-- -------------------------- -->
+<---        Wiki layout         -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #wiki {
+    padding: var(--sectionPadding);
+  }
+  #wiki .wiki-grid {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  #wiki .wiki-side {
+    min-width: 0;
+  }
+  #wiki .wiki-article {
+    min-width: 0;
+    max-width: 50rem;
+  }
+
+  /* Menu on the left */
+  .wiki-tree {
+    padding: 1.25rem;
+    background: #fff;
+    box-shadow: var(--boxCardShadow);
+    border-radius: 6px;
+  }
+  .wiki-tree-title {
+    margin: 0 0 0.75rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--headerColor);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--headerColor);
+  }
+  .wiki-tree ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .wiki-tree > ul > li + li {
+    margin-top: 0.25rem;
+  }
+  .wiki-tree a {
+    display: block;
+    padding: 0.4375rem 0.625rem;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    color: var(--bodyTextColor);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  .wiki-tree a:hover {
+    background: #f2f2f2;
+  }
+  .wiki-tree details > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.625rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--headerColor);
+    cursor: pointer;
+    list-style: none;
+    border-radius: 4px;
+  }
+  .wiki-tree details > summary:hover {
+    background: #f2f2f2;
+  }
+  .wiki-tree details > summary::-webkit-details-marker {
+    display: none;
+  }
+  .wiki-tree details > summary::after {
+    content: "+";
+    font-size: 1.125rem;
+    font-weight: 400;
+    opacity: 0.7;
+  }
+  .wiki-tree details[open] > summary::after {
+    content: "\2212";
+  }
+  .wiki-tree details > ul {
+    margin: 0.125rem 0 0.5rem 0;
+  }
+  .wiki-tree details ul ul {
+    margin-left: 0.75rem;
+    border-left: 2px solid #ddd;
+  }
+  .wiki-tree li.is-current > a {
+    background: var(--headerColor);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* Page text. Everything the editors write in markdown ends up here. */
+  .wiki-body {
+    font-size: var(--bodyFontSize);
+    line-height: 1.7em;
+    color: var(--bodyTextColor);
+  }
+  .wiki-body > *:first-child {
+    margin-top: 0;
+  }
+  .wiki-body h2,
+  .wiki-body h3,
+  .wiki-body h4,
+  .wiki-body h5 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--headerColor);
+    margin: 2rem 0 0.75rem 0;
+  }
+  .wiki-body h2 { font-size: 1.5rem; }
+  .wiki-body h3 { font-size: 1.25rem; }
+  .wiki-body h4,
+  .wiki-body h5 { font-size: 1.0625rem; }
+  .wiki-body p {
+    margin: 0 0 1rem 0;
+  }
+  .wiki-body ul,
+  .wiki-body ol {
+    margin: 0 0 1rem 0;
+    padding-left: 1.5rem;
+  }
+  .wiki-body ul { list-style: disc; }
+  .wiki-body ol { list-style: decimal; }
+  .wiki-body li {
+    margin: 0 0 0.375rem 0;
+  }
+  .wiki-body a {
+    color: inherit;
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+  }
+  .wiki-body hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 2rem 0;
+  }
+  .wiki-body img {
+    max-width: 100%;
+    height: auto;
+  }
+  .wiki-body blockquote {
+    margin: 0 0 1rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid #ddd;
+  }
+  .wiki-body code {
+    font-size: 0.875em;
+    background: #f2f2f2;
+    padding: 0.125rem 0.375rem;
+    border-radius: 3px;
+  }
+  .wiki-body pre {
+    overflow-x: auto;
+    padding: 1rem;
+    background: #f2f2f2;
+    border-radius: 6px;
+    margin: 0 0 1rem 0;
+  }
+  .wiki-body pre code {
+    padding: 0;
+    background: none;
+  }
+  .wiki-body table,
+  .schedule-extra table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 0 0 1.5rem 0;
+    font-size: 0.9375rem;
+  }
+  .wiki-body th,
+  .wiki-body td,
+  .schedule-extra th,
+  .schedule-extra td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: top;
+  }
+  .wiki-body th,
+  .schedule-extra th {
+    background: #f2f2f2;
+    color: var(--headerColor);
+  }
+
+  /* Policy cards */
+  .wiki-cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .wiki-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100%;
+    padding: 1.25rem;
+    background: #fff;
+    box-shadow: var(--boxCardShadow);
+    border-radius: 6px;
+  }
+  .wiki-card-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    color: var(--headerColor);
+  }
+  .wiki-card-text {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--bodyTextColor);
+    opacity: 0.85;
+  }
+  .wiki-card-link {
+    margin-top: auto;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--headerColor);
+    text-decoration: underline;
+  }
+  .wiki-body:empty {
+    display: none;
+  }
+  .wiki-body + .wiki-cards {
+    margin-top: 1.5rem;
+  }
+
+  /* Lab meeting schedule */
+  .schedule-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0 0 1.5rem 0;
+  }
+  .schedule-controls label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--headerColor);
+  }
+  .schedule-controls select {
+    min-width: 9rem;
+    padding: 0.5rem 0.75rem;
+    font: inherit;
+    font-weight: 400;
+    color: var(--bodyTextColor);
+    background: #fff;
+    border: 1px solid #8B8B8B;
+    border-radius: 4px;
+  }
+  .schedule-panel[hidden] {
+    display: none;
+  }
+  .schedule-panel h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--headerColor);
+    margin: 0 0 0.25rem 0;
+  }
+  .schedule-info {
+    margin: 0 0 1rem 0;
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: var(--bodyTextColor);
+  }
+  .schedule-table {
+    width: 100%;
+    margin: 0 0 1.5rem 0;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    color: var(--bodyTextColor);
+  }
+  .schedule-table thead {
+    display: none;
+  }
+  .schedule-table tr {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .schedule-table td {
+    display: block;
+    padding: 0.125rem 0;
+  }
+  .schedule-table td::before {
+    content: attr(data-label) ": ";
+    font-weight: 600;
+    color: var(--headerColor);
+  }
+  .schedule-table a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  .schedule-table tr.is-next {
+    background: #f2f2f2;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .schedule-kind {
+    display: inline-block;
+    margin-right: 0.5rem;
+    padding: 0.0625rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid #8B8B8B;
+    border-radius: 999px;
+    color: var(--headerColor);
+  }
+  .schedule-badge {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.0625rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--headerColor);
+    border-radius: 999px;
+  }
+  .schedule-extra {
+    font-size: var(--bodyFontSize);
+    line-height: 1.7em;
+    color: var(--bodyTextColor);
+  }
+  .schedule-extra h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--headerColor);
+    margin: 1.75rem 0 0.5rem 0;
+  }
+  .schedule-extra p { margin: 0 0 1rem 0; }
+  .schedule-extra ul { list-style: disc; margin: 0 0 1rem 0; padding-left: 1.5rem; }
+  .schedule-extra ol { list-style: decimal; margin: 0 0 1rem 0; padding-left: 1.5rem; }
+  .schedule-extra a { color: inherit; text-decoration: underline; overflow-wrap: anywhere; }
+  /* Lab meetings page */
+  #lab-meetings {
+    padding: var(--sectionPadding);
+  }
+  #lab-meetings .cs-container {
+    width: 100%;
+    max-width: 56.25rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .meeting-agenda h2,
+  .schedule-heading {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--headerColor);
+    margin: 0 0 1rem 0;
+  }
+  .meeting-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    counter-reset: step;
+  }
+  .meeting-steps > li {
+    counter-increment: step;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding: 1.25rem;
+    background: #fff;
+    box-shadow: var(--boxCardShadow);
+    border-radius: 6px;
+  }
+  .meeting-steps > li::before {
+    content: counter(step);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--headerColor);
+  }
+  .meeting-step-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    color: var(--headerColor);
+  }
+  .meeting-step-time {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--bodyTextColor);
+    opacity: 0.8;
+  }
+  .meeting-steps ul {
+    list-style: disc;
+    margin: 0.25rem 0 0 0;
+    padding-left: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--bodyTextColor);
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  .wiki-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .meeting-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .schedule-table thead {
+    display: table-header-group;
+  }
+  .schedule-table th {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    background: #f2f2f2;
+    color: var(--headerColor);
+  }
+  .schedule-table tr {
+    display: table-row;
+    padding: 0;
+  }
+  .schedule-table td {
+    display: table-cell;
+    padding: 0.625rem 0.75rem;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+  }
+  .schedule-table td::before {
+    content: none;
+  }
+  .schedule-table tr.is-next {
+    padding: 0;
+  }
+  .schedule-table tr.is-next td {
+    background: #f2f2f2;
+  }
+  .schedule-table td:first-child {
+    white-space: nowrap;
+  }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #wiki .wiki-grid {
+    grid-template-columns: 16rem 1fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+  #wiki .wiki-side {
+    position: sticky;
+    top: 7rem;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+  }
+}

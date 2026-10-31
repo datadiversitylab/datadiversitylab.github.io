@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script async="async" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+        <!--Swap our for actual link-->
+        <link rel="canonical" href="https://datadiversitylab.github.io/lab-manual/nextcloud-access-review/">
+
+        <meta name="description" content="Nextcloud access review, from the Data Diversity Lab manual">
+        <meta name="keywords" content="Data Diversity Lab and Development">
+        <meta name="google-site-verification" content="u82fOqFBdQHRSP52a0zYaa0TN4pXvDCaFbvtkQINz2M" />
+
+        <!--Social Media Display-->
+        <meta property="og:title" content="Nextcloud access review"/>
+        <meta property="og:description" content="Nextcloud access review, from the Data Diversity Lab manual"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://datadiversitylab.github.io/lab-manual/nextcloud-access-review/"/>
+        <meta property="og:image" content="https://datadiversitylab.github.io/assets/favicons/android-chrome-512x512.png"/>
+        <meta property="og:image:secure_url" content="https://datadiversitylab.github.io/assets/favicons/android-chrome-512x512.png"/>
+
+        <!--Favicons-->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/assets/favicons/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Preload -->
+        <link rel="preload" as="image" href="/assets/images/logos/logo-dark.svg">
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+
+        <link rel="stylesheet" href="/css/root.css">
+        <link rel="stylesheet" href="/css/dark.css">
+
+        
+
+        <!-- Loading in page specific CSS sheets from css block -->
+        <link rel="stylesheet" href="/css/critical.css"/>
+        <link rel="stylesheet" href="/css/wiki.css">
+
+        <script defer src="https://umami.datadiversitylab.synology.me/script.js" data-website-id="543cffef-a100-47af-9dd9-2cf39517077b" data-domains="datadiversitylab.github.io" data-tag="labwebsite"></script>
+
+        <!-- For home page, use full title, including location for SEO. Other pages should just include the page name -->
+        <title>
+            
+                Nextcloud access review | Data Diversity Lab
+            
+        </title>
+    </head>
+    <body>
+
+        <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
+
+        <!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+
+<header id="cs-navigation">
+    <div aria-hidden="true" class="background-color-div">
+    </div>
+    <div class="cs-container">
+        <!--Nav Logo-->
+        <a href="/" class="cs-logo" aria-label="back to home">
+            
+                
+                    
+                        <img class="cs-dark" src="../../assets/images/logos/ddl-logo.png" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+                    
+                
+                    
+                
+            
+        </a>
+        <!--Navigation List-->
+        <nav class="cs-nav" role="navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" aria-label="mobile menu toggle">
+                <div class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1" aria-hidden="true"></span>
+                    <span class="cs-line cs-line2" aria-hidden="true"></span>
+                    <span class="cs-line cs-line3" aria-hidden="true"></span>
+                </div>
+            </button>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+            <div class="cs-ul-wrapper">
+                <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="/the-lab/">
+                                    The Lab
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="/the-lab/" class="cs-li-link cs-drop-link">The Lab</a>
+                                    </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/lab-manual/about-the-lab/" class="cs-li-link cs-drop-link">Lab manual</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/grants/" class="cs-li-link cs-drop-link">Grants</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/lab-meetings/" class="cs-li-link cs-drop-link">Lab meetings</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/space-and-tech/" class="cs-li-link cs-drop-link">Space and tech</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/join-us/" class="cs-li-link cs-drop-link">Join us</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/our-team/">
+                                    Our team
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/publications/">
+                                    Publications
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    Tools and data
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/ddl_acdb/" class="cs-li-link cs-drop-link">Animal Culture Database</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/library/" class="cs-li-link cs-drop-link">Tool and data library</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/phylogenetics_salphycon/" class="cs-li-link cs-drop-link">Phylogenetic datasets</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/poll_chorus/" class="cs-li-link cs-drop-link">Participative polling</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/barriomap/" class="cs-li-link cs-drop-link">Community mapping</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/labops/" class="cs-li-link cs-drop-link">Lab collaboration workflow</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="/news/">
+                                    News
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="/news/" class="cs-li-link cs-drop-link">News</a>
+                                    </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/social/" class="cs-li-link cs-drop-link">Photos</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/innews/" class="cs-li-link cs-drop-link">News coverage</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    Faculty
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/teaching/" class="cs-li-link cs-drop-link">Teaching</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/senate/" class="cs-li-link cs-drop-link">Senate</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/blog/">
+                                    Blog
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/contact/">
+                                    Contact
+                                </a>
+                            </li>
+                        
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+        <main id="main"><!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <nav class="wiki-crumbs" aria-label="Breadcrumb"><span>Lab manual</span></nav>
+            <h1 class="cs-title">Nextcloud access review</h1>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="wiki">
+    <div class="cs-container wiki-grid">
+
+        <!-- Menu on the left: sections from src/_data/wikiSections.json, pages from src/wiki -->
+        <aside class="wiki-side">
+            <nav class="wiki-tree" aria-label="Lab manual menu">
+                <p class="wiki-tree-title">Contents</p>
+                <ul>
+                    <li class="wiki-branch">
+                        <details open>
+                            <summary>Lab manual</summary>
+                            <ul><li class="">
+                                    <a href="/lab-manual/about-the-lab/">About the lab</a></li><li class="">
+                                    <a href="/lab-manual/code-of-conduct/">Code of conduct</a></li><li class="">
+                                    <a href="/lab-manual/how-the-lab-works/">How the lab works</a></li><li class="">
+                                    <a href="/lab-manual/mentoring-students/">Mentoring students</a></li><li class="">
+                                    <a href="/lab-manual/work-ethics/">Work ethics</a></li><li class="">
+                                    <a href="/lab-manual/authorship/">Authorship</a></li><li class="">
+                                    <a href="/lab-manual/letters-of-recommendation/">Letters of recommendation</a></li><li class="">
+                                    <a href="/lab-manual/presentations-and-conferences/">Presentations and conferences</a></li><li class="">
+                                    <a href="/lab-manual/code-documentation/">Code documentation</a></li><li class="">
+                                    <a href="/lab-manual/lab-social-events/">Lab social events</a></li><li class="">
+                                    <a href="/lab-manual/mattermost-code-of-conduct/">Mattermost code of conduct</a></li><li class="">
+                                    <a href="/lab-manual/ai-use-in-lab/">AI use in the lab</a></li><li class="is-current">
+                                    <a href="/lab-manual/nextcloud-access-review/">Nextcloud access review</a></li><li class="">
+                                    <a href="/lab-manual/policies-and-agreements/">Policies and agreements</a></li><li class="">
+                                    <a href="/lab-manual/bibliography/">Bibliography</a></li></ul>
+                        </details>
+                    </li>
+                    <li class="wiki-branch">
+                        <details >
+                            <summary>Onboarding</summary>
+                            <ul><li class="">
+                                    <a href="/onboarding/onboarding-guide/">Onboarding guide</a></li><li class="">
+                                    <a href="/onboarding/onboarding-agreement/">Onboarding agreement</a></li><li class="">
+                                    <a href="/onboarding/interview-questions/">Interview questions</a></li></ul>
+                        </details>
+                    </li>
+                    <li class="wiki-branch">
+                        <details >
+                            <summary>Offboarding</summary>
+                            <ul><li class="">
+                                    <a href="/offboarding/offboarding-guide/">Offboarding guide</a></li></ul>
+                        </details>
+                    </li>
+                    <li class="wiki-branch">
+                        <details >
+                            <summary>Resources</summary>
+                            <ul><li class="">
+                                    <a href="/resources/infographic/">Infographic</a></li><li class="">
+                                    <a href="/resources/access-to-server/">Access to server</a></li><li class="">
+                                    <a href="/resources/lab-printing/">Lab printing</a></li><li class="">
+                                    <a href="/resources/nsf-access/">NSF ACCESS</a></li><li class="">
+                                    <a href="/resources/overleaf/">Overleaf</a></li><li class="">
+                                    <a href="/resources/zotero/">Zotero</a></li><li class="">
+                                    <a href="/resources/photo-headshot-guidelines/">Photo headshot guidelines</a></li><li class="">
+                                    <a href="/resources/postdoc-resources/">Postdoc resources</a></li></ul>
+                        </details>
+                    </li></ul>
+            </nav>
+        </aside>
+
+        <article class="wiki-article">
+            <div class="wiki-body">
+                <p>Below, we provide basic information on folder access in accordance with the different membership in the lab’s NextCloud folder. Note that individually owned folders are shared only with the PI unless indicated otherwise. The other folders within a given category will be shared with all of the members in the same group (e.g. Postdocs will also have access to the postdocs folder). If you have any concerns about data privacy, please let the PI knows so relevant adjustments can be implemented.</p>
+<hr>
+<p><strong>General Tips and Tricks</strong></p>
+<p>Files can be deleted from NextCloud. However, deleted files can be generally recovered if needed either by the user or an admin. Backups happen during the first week of every month. Admin personnel can impersonate any user in NextCloud. Please do not use NextCloud to store personal files. You are allowed to create links to share your own folders and files but please do not share files that you have not created without prior (e.g., grants by the PI). When working with OnlyOffice, note that there is a version history associated with each of your files. Use a README.md to create a nice markdown header for your folder. Use any of the apps in NextCloud to enhance your experience with the service (decks for keeping yourself organized, talk for meetings, calendar to check on availability or events). Note that you can sync NextCloud calendar with your calendar app through the caldav link in the app (feel free to check with the PI on this regard).</p>
+<hr>
+<h2>Current Member</h2>
+<p>The current member status is given to those that are active members in the DDL, regardless of role.</p>
+<p><em><strong>Grouping includes access to:</strong></em></p>
+<ul>
+<li>Data Diversity Lab – Home <strong>(the hub for general DDL information)</strong></li>
+<li>Lab Collaboration (group projects)</li>
+</ul>
+<h2>Post Doctoral</h2>
+<p>This status is given to those that have a doctoral degree and are completing post doctoral roles within the lab.</p>
+<p><em><strong>Grouping includes access to:</strong></em></p>
+<ul>
+<li>Data Diversity Lab – Grants <strong>(information for grant applications including supplemental files, submission files, due dates, and budget planning)</strong></li>
+<li>Data Diversity Lab – Post Docs <strong>(information specific to post doc members including job applications)</strong></li>
+<li>Lab Collaboration <strong>(projects that are collaborative with those that are not members of the lab)</strong></li>
+<li>Individual folders</li>
+</ul>
+<h2>PhD Student</h2>
+<p>This status is given to those with a PhD education filling that status within the lab.</p>
+<p><em><strong>Grouping includes access to:</strong></em></p>
+<ul>
+<li>Individual folder</li>
+<li>Lab collaboration <strong>(projects that are collaborative with those that are not members of the lab)</strong></li>
+</ul>
+<h2>VIP Student</h2>
+<p>This status is given to those fulfilling VIP projects through their time in the lab.</p>
+<p><em><strong>Grouping includes access to:</strong></em></p>
+<ul>
+<li>VIPs</li>
+<li>Lab collaboration <strong>(projects that are collaborative with those that are not members of the lab)</strong></li>
+</ul>
+<h2>Project-Specific Group</h2>
+<p>Grouping solely for those involved in a particular grant (e.g., National Geographic grant) including external NextCloud users working with the DDL.</p>
+<p><em><strong>Grouping includes access to:</strong></em></p>
+<ul>
+<li>Folder to a particular grant</li>
+</ul>
+<h2>Alumni</h2>
+<p>The alumni status is given to those that at some point were active members in the DDL, under any specific role. However, they are no longer members. This section allows alumni to keep their previous files and have access to some core DDL information.</p>
+<p><em><strong>Grouping includes access to:</strong></em></p>
+<ul>
+<li>Individually owned folder</li>
+<li>Data Diversity Lab – Home <strong>(the hub for general DDL information)</strong></li>
+<li>Project related files</li>
+</ul>
+<h2>External</h2>
+<p>The external grouping is given to those that are not active members in the lab but may work on certain projects with members of the lab. This section is necessary so information can be shared with external people without sharing the DDLs personal files.</p>
+<p><em><strong>Grouping includes access to:</strong></em></p>
+<ul>
+<li>Individually owned files</li>
+<li>Project related files</li>
+</ul>
+<h2>MS Advising</h2>
+<p>This status is given to those that fill the MS advising role in the lab, assisting MS students in InfoSci in their degrees.</p>
+<p><em><strong>Grouping includes access to:</strong></em></p>
+<ul>
+<li>MS advising</li>
+</ul>
+
+            </div>
+        </article>
+    </div>
+</section>
+</main>
+        <!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="footer">
+    <div aria-hidden="true" class="line footer"></div>
+    <div class="container">
+        <div class="full-section">
+            <div class="credit">
+                <span>Data Diversity Lab at the</span>
+                <a href="https://infosci.arizona.edu/" target="_blank" rel="noopener">College of Information Science</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+        <script>
+            const appHeight = () => {
+                const doc = document.documentElement
+                doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+            }
+            window.addEventListener('onload', appHeight);
+
+            appHeight();
+
+            const scroll = document.documentElement.scrollTop;
+            if (scroll >= 50) {
+                document.querySelector('body').classList.add('scroll')
+            } else {
+                document.querySelector('body').classList.remove('scroll')
+            }
+        </script>
+
+        <script defer src="/assets/js/nav.js"></script>
+
+        
+            <script defer src="/assets//js/wiki.js"></script>
+        
+
+        
+    </body>
+</html>

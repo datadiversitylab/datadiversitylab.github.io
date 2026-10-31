@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script async="async" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+        <!--Swap our for actual link-->
+        <link rel="canonical" href="https://datadiversitylab.github.io/lab-manual/code-documentation/">
+
+        <meta name="description" content="Code documentation, from the Data Diversity Lab manual">
+        <meta name="keywords" content="Data Diversity Lab and Development">
+        <meta name="google-site-verification" content="u82fOqFBdQHRSP52a0zYaa0TN4pXvDCaFbvtkQINz2M" />
+
+        <!--Social Media Display-->
+        <meta property="og:title" content="Code documentation"/>
+        <meta property="og:description" content="Code documentation, from the Data Diversity Lab manual"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://datadiversitylab.github.io/lab-manual/code-documentation/"/>
+        <meta property="og:image" content="https://datadiversitylab.github.io/assets/favicons/android-chrome-512x512.png"/>
+        <meta property="og:image:secure_url" content="https://datadiversitylab.github.io/assets/favicons/android-chrome-512x512.png"/>
+
+        <!--Favicons-->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/assets/favicons/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Preload -->
+        <link rel="preload" as="image" href="/assets/images/logos/logo-dark.svg">
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+
+        <link rel="stylesheet" href="/css/root.css">
+        <link rel="stylesheet" href="/css/dark.css">
+
+        
+
+        <!-- Loading in page specific CSS sheets from css block -->
+        <link rel="stylesheet" href="/css/critical.css"/>
+        <link rel="stylesheet" href="/css/wiki.css">
+
+        <script defer src="https://umami.datadiversitylab.synology.me/script.js" data-website-id="543cffef-a100-47af-9dd9-2cf39517077b" data-domains="datadiversitylab.github.io" data-tag="labwebsite"></script>
+
+        <!-- For home page, use full title, including location for SEO. Other pages should just include the page name -->
+        <title>
+            
+                Code documentation | Data Diversity Lab
+            
+        </title>
+    </head>
+    <body>
+
+        <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
+
+        <!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+
+<header id="cs-navigation">
+    <div aria-hidden="true" class="background-color-div">
+    </div>
+    <div class="cs-container">
+        <!--Nav Logo-->
+        <a href="/" class="cs-logo" aria-label="back to home">
+            
+                
+                    
+                        <img class="cs-dark" src="../../assets/images/logos/ddl-logo.png" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+                    
+                
+                    
+                
+            
+        </a>
+        <!--Navigation List-->
+        <nav class="cs-nav" role="navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" aria-label="mobile menu toggle">
+                <div class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1" aria-hidden="true"></span>
+                    <span class="cs-line cs-line2" aria-hidden="true"></span>
+                    <span class="cs-line cs-line3" aria-hidden="true"></span>
+                </div>
+            </button>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+            <div class="cs-ul-wrapper">
+                <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="/the-lab/">
+                                    The Lab
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="/the-lab/" class="cs-li-link cs-drop-link">The Lab</a>
+                                    </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/lab-manual/about-the-lab/" class="cs-li-link cs-drop-link">Lab manual</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/grants/" class="cs-li-link cs-drop-link">Grants</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/lab-meetings/" class="cs-li-link cs-drop-link">Lab meetings</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/space-and-tech/" class="cs-li-link cs-drop-link">Space and tech</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/join-us/" class="cs-li-link cs-drop-link">Join us</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/our-team/">
+                                    Our team
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/publications/">
+                                    Publications
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    Tools and data
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/ddl_acdb/" class="cs-li-link cs-drop-link">Animal Culture Database</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/library/" class="cs-li-link cs-drop-link">Tool and data library</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/phylogenetics_salphycon/" class="cs-li-link cs-drop-link">Phylogenetic datasets</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/poll_chorus/" class="cs-li-link cs-drop-link">Participative polling</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/barriomap/" class="cs-li-link cs-drop-link">Community mapping</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/labops/" class="cs-li-link cs-drop-link">Lab collaboration workflow</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="/news/">
+                                    News
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="/news/" class="cs-li-link cs-drop-link">News</a>
+                                    </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/social/" class="cs-li-link cs-drop-link">Photos</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/innews/" class="cs-li-link cs-drop-link">News coverage</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    Faculty
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/teaching/" class="cs-li-link cs-drop-link">Teaching</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/senate/" class="cs-li-link cs-drop-link">Senate</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/blog/">
+                                    Blog
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/contact/">
+                                    Contact
+                                </a>
+                            </li>
+                        
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+        <main id="main"><!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <nav class="wiki-crumbs" aria-label="Breadcrumb"><span>Lab manual</span></nav>
+            <h1 class="cs-title">Code documentation</h1>
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="wiki">
+    <div class="cs-container wiki-grid">
+
+        <!-- Menu on the left: sections from src/_data/wikiSections.json, pages from src/wiki -->
+        <aside class="wiki-side">
+            <nav class="wiki-tree" aria-label="Lab manual menu">
+                <p class="wiki-tree-title">Contents</p>
+                <ul>
+                    <li class="wiki-branch">
+                        <details open>
+                            <summary>Lab manual</summary>
+                            <ul><li class="">
+                                    <a href="/lab-manual/about-the-lab/">About the lab</a></li><li class="">
+                                    <a href="/lab-manual/code-of-conduct/">Code of conduct</a></li><li class="">
+                                    <a href="/lab-manual/how-the-lab-works/">How the lab works</a></li><li class="">
+                                    <a href="/lab-manual/mentoring-students/">Mentoring students</a></li><li class="">
+                                    <a href="/lab-manual/work-ethics/">Work ethics</a></li><li class="">
+                                    <a href="/lab-manual/authorship/">Authorship</a></li><li class="">
+                                    <a href="/lab-manual/letters-of-recommendation/">Letters of recommendation</a></li><li class="">
+                                    <a href="/lab-manual/presentations-and-conferences/">Presentations and conferences</a></li><li class="is-current">
+                                    <a href="/lab-manual/code-documentation/">Code documentation</a></li><li class="">
+                                    <a href="/lab-manual/lab-social-events/">Lab social events</a></li><li class="">
+                                    <a href="/lab-manual/mattermost-code-of-conduct/">Mattermost code of conduct</a></li><li class="">
+                                    <a href="/lab-manual/ai-use-in-lab/">AI use in the lab</a></li><li class="">
+                                    <a href="/lab-manual/nextcloud-access-review/">Nextcloud access review</a></li><li class="">
+                                    <a href="/lab-manual/policies-and-agreements/">Policies and agreements</a></li><li class="">
+                                    <a href="/lab-manual/bibliography/">Bibliography</a></li></ul>
+                        </details>
+                    </li>
+                    <li class="wiki-branch">
+                        <details >
+                            <summary>Onboarding</summary>
+                            <ul><li class="">
+                                    <a href="/onboarding/onboarding-guide/">Onboarding guide</a></li><li class="">
+                                    <a href="/onboarding/onboarding-agreement/">Onboarding agreement</a></li><li class="">
+                                    <a href="/onboarding/interview-questions/">Interview questions</a></li></ul>
+                        </details>
+                    </li>
+                    <li class="wiki-branch">
+                        <details >
+                            <summary>Offboarding</summary>
+                            <ul><li class="">
+                                    <a href="/offboarding/offboarding-guide/">Offboarding guide</a></li></ul>
+                        </details>
+                    </li>
+                    <li class="wiki-branch">
+                        <details >
+                            <summary>Resources</summary>
+                            <ul><li class="">
+                                    <a href="/resources/infographic/">Infographic</a></li><li class="">
+                                    <a href="/resources/access-to-server/">Access to server</a></li><li class="">
+                                    <a href="/resources/lab-printing/">Lab printing</a></li><li class="">
+                                    <a href="/resources/nsf-access/">NSF ACCESS</a></li><li class="">
+                                    <a href="/resources/overleaf/">Overleaf</a></li><li class="">
+                                    <a href="/resources/zotero/">Zotero</a></li><li class="">
+                                    <a href="/resources/photo-headshot-guidelines/">Photo headshot guidelines</a></li><li class="">
+                                    <a href="/resources/postdoc-resources/">Postdoc resources</a></li></ul>
+                        </details>
+                    </li></ul>
+            </nav>
+        </aside>
+
+        <article class="wiki-article">
+            <div class="wiki-body">
+                <p><strong>1. Coding</strong></p>
+<p>Leave the code in better shape than when you started. This means adding documentation to describe your changes at a minimum. Even better, you can clean up the existing documentation. You can also clean up the existing code, although you should make sure any changes you make are non-breaking. There should always be a README file included in your GitHub repo.</p>
+<hr>
+<p><strong>2. Writing Papers</strong></p>
+<ul>
+<li>Writing a paper is an integral part of the scientific process. It may seem that writing a paper is something one does after finishing the data acquisition or analysis. In fact, however, writing a paper helps to develop the argument, and writing a manuscript often prompts more measurements and further analysis.</li>
+<li>I have heard it said before that a good paper is like an onion. There are many layers to an onion, but each layer contains the full essence of the onion. In the context of a paper, this means no matter how one reads the paper (e.g., title alone, figures alone, introduction and conclusion alone, the whole thing, etc.) one should come away with the main message of the paper.</li>
+<li>Write your papers in latex using overleaf. Once the primary author has finished a draft, we typically take turns reading the paper and making or suggesting edits. The process of having coauthors read the paper and make edits is time consuming. It is the first author’s responsibility to make sure this process keeps going and runs smoothly.</li>
+</ul>
+<hr>
+<p><strong>3. Correcting Errors</strong></p>
+<p>Errors can be corrected relatively easily during the peer-review process. However, once this process finishes and the paper advances to production or is published, it is difficult to correct any errors. Thus, do your best to find and correct any errors before this. This is part of the reason we have the double check rule, discussed above. Nevertheless, mistakes will happen. If you discover something, let me know as soon as possible, and we will take appropriate action.</p>
+
+            </div>
+        </article>
+    </div>
+</section>
+</main>
+        <!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="footer">
+    <div aria-hidden="true" class="line footer"></div>
+    <div class="container">
+        <div class="full-section">
+            <div class="credit">
+                <span>Data Diversity Lab at the</span>
+                <a href="https://infosci.arizona.edu/" target="_blank" rel="noopener">College of Information Science</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+        <script>
+            const appHeight = () => {
+                const doc = document.documentElement
+                doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+            }
+            window.addEventListener('onload', appHeight);
+
+            appHeight();
+
+            const scroll = document.documentElement.scrollTop;
+            if (scroll >= 50) {
+                document.querySelector('body').classList.add('scroll')
+            } else {
+                document.querySelector('body').classList.remove('scroll')
+            }
+        </script>
+
+        <script defer src="/assets/js/nav.js"></script>
+
+        
+            <script defer src="/assets//js/wiki.js"></script>
+        
+
+        
+    </body>
+</html>
