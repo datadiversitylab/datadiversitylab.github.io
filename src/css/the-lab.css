@@ -426,3 +426,106 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+
+/* Append to /css/the-lab.css */
+
+/* Our work page: centered title and text */
+#lab-work-hero .cs-container,
+#lab-work-hero .cs-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#lab-work-hero .cs-title,
+#lab-work-hero .cs-text {
+    width: 100%;
+    max-width: 43.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Our work page: counts under the title */
+#lab-work-hero .lw-stats {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#lab-work-hero .lw-stats li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 7rem;
+    padding: 1rem 1.5rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+#lab-work-hero .lw-stat-number {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--headerColor);
+}
+
+#lab-work-hero .lw-stat-label {
+    font-size: 0.875rem;
+    color: var(--bodyTextColor);
+}
+
+/* Overview page: link to the explorer */
+#lab-work-cta {
+    padding: 0 1rem 4rem;
+}
+
+#lab-work-cta .lw-cta-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background: var(--headerColor);
+    border-radius: 0.75rem;
+}
+
+#lab-work-cta .lw-cta-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+#lab-work-cta .lw-cta-desc {
+    margin: 0;
+    color: #fff;
+    opacity: 0.85;
+}
+
+#lab-work-cta .lw-cta-button {
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--headerColor);
+    background: #fff;
+    border-radius: 0.25rem;
+}
+
+@media only screen and (min-width: 48rem) {
+    #lab-work-cta .lw-cta-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
