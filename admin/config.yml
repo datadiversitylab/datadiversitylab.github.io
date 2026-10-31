@@ -522,6 +522,127 @@ collections:
             fields:
               - { label: 'Title', name: 'title', widget: 'string' }
               - { label: 'Text', name: 'description', widget: 'text', hint: 'Leave a blank line between paragraphs. Web addresses become links on their own.' }
+  - name: 'macrodata'
+    label: 'MacroData pages'
+    folder: 'src/macrodata'
+    media_folder: '/src/assets/images/macrodata'
+    public_folder: '/assets/images/macrodata'
+    create: true
+    extension: 'md'
+    format: 'frontmatter'
+    identifier_field: title
+    slug: '{{slug}}'
+    summary: '{{title}}'
+    sortable_fields: ['title', 'order']
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Subtitle', name: 'subtitle', widget: 'string', required: false }
+      - { label: 'Name in the menu (optional)', name: 'menuLabel', widget: 'string', required: false, hint: 'Leave empty to use the title.' }
+      - { label: 'Menu group', name: 'group', widget: 'select', required: false, options: ['El proyecto', 'El curso', 'Comunidad'], hint: 'Where the page appears in the menu. Leave empty only for the home page.' }
+      - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Lower numbers come first inside a group.' }
+      - { label: 'Introduction', name: 'intro', widget: 'text', required: false, hint: 'Optional. Plain text shown above the page. Leave a blank line between paragraphs.' }
+      - { label: 'Banner image', name: 'image', widget: 'image', required: false }
+      - { label: 'Topics (small labels at the end)', name: 'topics', widget: 'list', required: false }
+      - label: 'Buttons (at the end)'
+        name: 'buttons'
+        widget: 'list'
+        required: false
+        summary: '{{fields.label}}'
+        fields:
+          - { label: 'Text', name: 'label', widget: 'string' }
+          - { label: 'Link', name: 'link', widget: 'string' }
+      - { label: 'Text', name: 'body', widget: 'markdown', required: false, hint: 'The Dates, Gallery, Team and News pages show their list automatically. Their text goes here.' }
+  - name: 'macrodataNews'
+    label: 'MacroData news'
+    folder: 'src/macrodataNews'
+    media_folder: '/src/assets/images/macrodata'
+    public_folder: '/assets/images/macrodata'
+    create: true
+    extension: 'md'
+    format: 'frontmatter'
+    identifier_field: title
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{date}} {{title}}'
+    sortable_fields: ['date', 'title']
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Image description', name: 'imageAlt', widget: 'string', required: false }
+      - { label: 'Text', name: 'body', widget: 'markdown' }
+  - name: 'macrodataSettings'
+    label: 'MacroData settings'
+    media_folder: '/src/assets/images/macrodata'
+    public_folder: '/assets/images/macrodata'
+    files:
+      - label: 'Home page blocks (numbers, map text, spotlight)'
+        name: 'macrodataHome'
+        file: 'src/_data/macrodataHome.json'
+        fields:
+          - { label: 'Numbers: heading', name: 'statsTitle', widget: 'string' }
+          - label: 'Numbers'
+            name: 'stats'
+            widget: 'list'
+            required: false
+            summary: '{{fields.number}} {{fields.label}}'
+            fields:
+              - { label: 'Number (for example 40+)', name: 'number', widget: 'string' }
+              - { label: 'Label', name: 'label', widget: 'string' }
+          - { label: 'Map: heading', name: 'mapTitle', widget: 'string' }
+          - { label: 'Map: text', name: 'mapText', widget: 'string', required: false }
+          - { label: 'Spotlight: small heading', name: 'spotlightTitle', widget: 'string' }
+          - { label: 'Spotlight: title', name: 'spotlightSubtitle', widget: 'string' }
+          - { label: 'Spotlight: text', name: 'spotlightText', widget: 'text' }
+          - { label: 'Spotlight: topics', name: 'spotlightTags', widget: 'list', required: false }
+          - { label: 'Spotlight: button text', name: 'spotlightButtonText', widget: 'string', required: false }
+          - { label: 'Spotlight: button link', name: 'spotlightButtonLink', widget: 'string', required: false }
+          - { label: 'News: heading', name: 'newsTitle', widget: 'string' }
+      - label: 'Workshops (dates, map and photos)'
+        name: 'macrodataEvents'
+        file: 'src/_data/macrodataEvents.json'
+        fields:
+          - label: 'Workshops'
+            name: 'events'
+            widget: 'list'
+            summary: '{{fields.name}}, {{fields.city}}'
+            hint: 'Drag to reorder. The Dates page, the map and the Gallery use this list.'
+            fields:
+              - { label: 'University', name: 'name', widget: 'string' }
+              - { label: 'City', name: 'city', widget: 'string' }
+              - { label: 'Workshop dates', name: 'dates', widget: 'string', hint: 'For example: Julio 21–22, 2026' }
+              - { label: 'Application deadline', name: 'deadline', widget: 'string', required: false }
+              - { label: 'Selection published on', name: 'selection', widget: 'string', required: false }
+              - { label: 'Status', name: 'status', widget: 'select', options: [{ label: 'Upcoming', value: 'proximo' }, { label: 'In progress', value: 'activo' }, { label: 'Completed', value: 'completado' }], default: 'proximo' }
+              - { label: 'Latitude', name: 'lat', widget: 'number', value_type: 'float', hint: 'For the map. Right click the place in Google Maps to copy it.' }
+              - { label: 'Longitude', name: 'lng', widget: 'number', value_type: 'float' }
+              - { label: 'Group photo', name: 'photo', widget: 'image', required: false }
+              - { label: 'Who is in the photo', name: 'participants', widget: 'list', required: false, field: { label: 'Line', name: 'line', widget: 'text' }, hint: 'One line per row or group of people.' }
+              - label: 'More photos'
+                name: 'gallery'
+                widget: 'list'
+                required: false
+                summary: '{{fields.image}}'
+                fields:
+                  - { label: 'Photo', name: 'image', widget: 'image' }
+      - label: 'Team'
+        name: 'macrodataTeam'
+        file: 'src/_data/macrodataTeam.json'
+        fields:
+          - label: 'People'
+            name: 'people'
+            widget: 'list'
+            summary: '{{fields.name}}'
+            hint: 'Drag to reorder.'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Role', name: 'role', widget: 'string' }
+              - { label: 'Photo', name: 'photo', widget: 'image', required: false }
+              - { label: 'Photo description', name: 'photoAlt', widget: 'string', required: false }
+              - { label: 'Website', name: 'website', widget: 'string', required: false }
+              - { label: 'BlueSky', name: 'bluesky', widget: 'string', required: false }
+              - { label: 'LinkedIn', name: 'linkedin', widget: 'string', required: false }
+              - { label: 'Bio', name: 'bio', widget: 'text' }
+              - { label: 'Interests (without #)', name: 'interests', widget: 'list', required: false }
   - name: 'logos'
     label: 'Logos'
     folder: 'src/logos'

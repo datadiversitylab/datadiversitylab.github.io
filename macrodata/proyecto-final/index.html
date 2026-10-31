@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script async="async" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+        <!--Swap our for actual link-->
+        <link rel="canonical" href="https://datadiversitylab.github.io/macrodata/proyecto-final/">
+
+        <meta name="description" content="¿La altitud predice la masa corporal en los colibríes?">
+        <meta name="keywords" content="Data Diversity Lab and Development">
+        <meta name="google-site-verification" content="u82fOqFBdQHRSP52a0zYaa0TN4pXvDCaFbvtkQINz2M" />
+
+        <!--Social Media Display-->
+        <meta property="og:title" content="Proyecto final | MacroData"/>
+        <meta property="og:description" content="¿La altitud predice la masa corporal en los colibríes?"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://datadiversitylab.github.io/macrodata/proyecto-final/"/>
+        <meta property="og:image" content="https://datadiversitylab.github.io/assets/favicons/android-chrome-512x512.png"/>
+        <meta property="og:image:secure_url" content="https://datadiversitylab.github.io/assets/favicons/android-chrome-512x512.png"/>
+
+        <!--Favicons-->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/assets/favicons/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Preload -->
+        <link rel="preload" as="image" href="/assets/images/logos/logo-dark.svg">
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+
+        <link rel="stylesheet" href="/css/root.css">
+        <link rel="stylesheet" href="/css/dark.css">
+
+        
+
+        <!-- Loading in page specific CSS sheets from css block -->
+        <link rel="stylesheet" href="/css/critical.css"/>
+        <link rel="stylesheet" href="/css/macrodata.css">
+
+        <script defer src="https://umami.datadiversitylab.synology.me/script.js" data-website-id="543cffef-a100-47af-9dd9-2cf39517077b" data-domains="datadiversitylab.github.io" data-tag="labwebsite"></script>
+
+        <!-- For home page, use full title, including location for SEO. Other pages should just include the page name -->
+        <title>
+            
+                Proyecto final | Data Diversity Lab
+            
+        </title>
+    </head>
+    <body>
+
+        <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
+
+        <!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+
+<header id="cs-navigation">
+    <div aria-hidden="true" class="background-color-div">
+    </div>
+    <div class="cs-container">
+        <!--Nav Logo-->
+        <a href="/" class="cs-logo" aria-label="back to home">
+            
+                
+                    
+                        <img class="cs-dark" src="../../assets/images/logos/ddl-logo.png" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+                    
+                
+                    
+                
+            
+        </a>
+        <!--Navigation List-->
+        <nav class="cs-nav" role="navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" aria-label="mobile menu toggle">
+                <div class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1" aria-hidden="true"></span>
+                    <span class="cs-line cs-line2" aria-hidden="true"></span>
+                    <span class="cs-line cs-line3" aria-hidden="true"></span>
+                </div>
+            </button>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+            <div class="cs-ul-wrapper">
+                <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/our-team/">
+                                    Our team
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    The Lab
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/overview/" class="cs-li-link cs-drop-link">Overview</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/our-work/" class="cs-li-link cs-drop-link">Our work</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/lab-meetings/" class="cs-li-link cs-drop-link">Lab meetings</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/lab-manual/about-the-lab/" class="cs-li-link cs-drop-link">Lab manual</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/grants/" class="cs-li-link cs-drop-link">Grants</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/space-and-tech/" class="cs-li-link cs-drop-link">Space and tech</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/join-us/" class="cs-li-link cs-drop-link">Join us</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/publications/">
+                                    Publications
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    Tools and data
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/ddl_acdb/" class="cs-li-link cs-drop-link">Animal Culture Database</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/library/" class="cs-li-link cs-drop-link">Tool and data library</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/phylogenetics_salphycon/" class="cs-li-link cs-drop-link">Phylogenetic datasets</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/poll_chorus/" class="cs-li-link cs-drop-link">Participative polling</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/barriomap/" class="cs-li-link cs-drop-link">Community mapping</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/labops/" class="cs-li-link cs-drop-link">Lab collaboration workflow</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="/news/">
+                                    News
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                    <li class="cs-drop-li">
+                                        <a href="/news/" class="cs-li-link cs-drop-link">News</a>
+                                    </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/social/" class="cs-li-link cs-drop-link">Photos</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/innews/" class="cs-li-link cs-drop-link">News coverage</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    Faculty
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/teaching/" class="cs-li-link cs-drop-link">Teaching</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/senate/" class="cs-li-link cs-drop-link">Senate</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/advising/" class="cs-li-link cs-drop-link">Advising</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/blog/">
+                                    Blog
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    Outreach
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/macrodata/" class="cs-li-link cs-drop-link">MacroData</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/contact/">
+                                    Contact
+                                </a>
+                            </li>
+                        
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+        <main id="main"><!-- ============================================ -->
+<!--       MacroData (Outreach > MacroData)       -->
+<!-- ============================================ -->
+<!-- Pages: src/macrodata. Numbers, map text and spotlight: MacroData > Home page blocks.
+     Workshops: MacroData > Workshops. Team: MacroData > Team. News: MacroData > News. -->
+
+<section id="md-hero" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <nav class="md-crumbs" aria-label="Breadcrumb"><a href="/macrodata/">MacroData</a></nav>
+            <h1 class="cs-title">Proyecto final</h1>
+            <p class="cs-text">¿La altitud predice la masa corporal en los colibríes?</p>
+        </div>
+        <img class="md-banner" src="/assets/images/macrodata/arbol-angiospermas.jpg" alt="" decoding="async">
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="md">
+    <div class="cs-container md-grid">
+
+        <!-- Menu: pages come from src/macrodata, grouped by the "Group" field -->
+        <aside class="md-side">
+            <nav class="md-menu" aria-label="Menú de MacroData">
+                <p class="md-menu-title">MacroData</p>
+                <ul>
+                    <li class=""><a href="/macrodata/">Inicio</a></li>
+                    <li class="md-group">
+                        <span class="md-group-title">El proyecto</span>
+                        <ul>
+                            <li class=""><a href="/macrodata/el-proyecto/">El proyecto</a></li></ul>
+                    </li>
+                    <li class="md-group">
+                        <span class="md-group-title">El curso</span>
+                        <ul>
+                            <li class=""><a href="/macrodata/fechas/">Fechas</a></li>
+                            <li class=""><a href="/macrodata/objetivos/">Objetivos</a></li>
+                            <li class="is-current"><a href="/macrodata/proyecto-final/">Proyecto final</a></li>
+                            <li class=""><a href="/macrodata/contenidos/">Contenidos</a></li>
+                            <li class=""><a href="/macrodata/politicas/">Políticas</a></li>
+                            <li class=""><a href="/macrodata/aplicaciones/">Aplicaciones</a></li></ul>
+                    </li>
+                    <li class="md-group">
+                        <span class="md-group-title">Comunidad</span>
+                        <ul>
+                            <li class=""><a href="/macrodata/galeria/">Galería</a></li>
+                            <li class=""><a href="/macrodata/noticias/">Noticias</a></li>
+                            <li class=""><a href="/macrodata/recursos/">Recursos y comunidad</a></li>
+                            <li class=""><a href="/macrodata/equipo/">Quiénes somos</a></li></ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <article class="md-article">
+            <div class="md-intro"><p class="md-lead">Mismos datos, distintos análisis. Cada equipo toma sus propias decisiones analíticas y el conjunto de resultados es el estudio. Tu análisis no es un ejercicio: es un dato.</p></div>
+            <div class="md-body">
+                <h2>Lo que estamos midiendo no es la respuesta</h2>
+<p>Cada equipo decide cómo analizar los datos: qué árbol filogenético usar, qué hacer con las especies sin información completa, cómo resumir un rango de altitud en un solo número, qué modelo ajustar. Todas esas decisiones son defendibles y todas pueden cambiar el resultado. Lo que vamos a revisar es cuánto se mueve la conclusión según esas decisiones.</p>
+<p>Esto ya se hizo en psicología y en ecología. Gould et al. (2025) reunió 174 equipos para responder dos preguntas con los mismos datos y encontraron resultados muy distintos entre ellos. Lo más incómodo de ese trabajo fue que los análisis más alejados del promedio no recibieron peores evaluaciones de los revisores. No hay una señal fácil que separe el análisis bueno del malo. En métodos comparativos filogenéticos nadie lo ha hecho todavía, y aquí los grados de libertad son mayores.</p>
+<blockquote>
+<p>Si le preguntas a un monitor si usar lambda o browniano, te va a devolver la pregunta. No es que no sepa. Es que tu decisión es el objeto del estudio. Tu trabajo es tomar decisiones que puedas defender y escribir por qué las tomaste, mientras las tomas, no al final.</p>
+</blockquote>
+<hr>
+<h2>Lo que entregas</h2>
+<ol>
+<li><strong><code>analisis.R</code></strong><br>
+Tu análisis completo. Debe correr de principio a fin en una sesión limpia, en otro computador.</li>
+<li><strong><code>decisiones.csv</code></strong><br>
+Una fila por decisión: qué decidiste, qué alternativas consideraste, por qué, y si lo decidiste antes o después de ver el resultado.</li>
+<li><strong><code>resultados.csv</code></strong><br>
+Una fila con el estimado, su error, el intervalo, el valor p, el tamaño de muestra y el modelo.</li>
+<li><strong><code>README.md</code></strong><br>
+Quiénes son, de dónde vienen, qué hicieron en tres frases y qué les quedó pendiente.</li>
+</ol>
+<hr>
+<h2>La autoría</h2>
+<blockquote>
+<p><strong>Eres autor si cumples las tres condiciones</strong></p>
+<ul>
+<li>Entregas tu análisis completo con su formulario de decisiones.</li>
+<li>Revisas y apruebas el borrador final del manuscrito.</li>
+<li>Respondes dentro del plazo cuando te pidamos la aprobación.</li>
+</ul>
+</blockquote>
+<p>Quien cumpla algunas pero no todas queda en los agradecimientos. El orden es alfabético después de los primeros nombres, con una nota explicando el criterio. No tienes que participar en el manuscrito aun si estás en el taller.</p>
+<hr>
+<h2>Publicaciones</h2>
+<p>Esta sección se actualizará a medida que el manuscrito avance. El estudio de referencia para el diseño del proyecto es:</p>
+<p>Gould, E., et al. (2025). Same data, different analysts: variation in effect sizes due to analytical decisions in ecology and evolutionary biology. <em>BMC Biology</em>, 23(1), 35.</p>
+
+            </div>
+            <ul class="md-pills md-pills-page"><li>Colibríes</li><li>Altitud · masa corporal</li><li>Métodos comparativos</li><li>Multiverse analysis</li><li>Decisiones analíticas</li><li>Ciencia abierta</li><li>R</li>
+            </ul>
+            <div class="md-cta">
+                <a class="md-button" href="/macrodata/aplicaciones/">Aplicar al taller</a>
+                <a class="md-button is-secondary" href="/macrodata/contenidos/">Ver los contenidos</a>
+            </div>
+        </article>
+    </div>
+</section>
+</main>
+        <!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="footer">
+    <div aria-hidden="true" class="line footer"></div>
+    <div class="container">
+        <div class="full-section">
+            <div class="credit">
+                <span>Data Diversity Lab at the</span>
+                <a href="https://infosci.arizona.edu/" target="_blank" rel="noopener">College of Information Science</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+        <script>
+            const appHeight = () => {
+                const doc = document.documentElement
+                doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+            }
+            window.addEventListener('onload', appHeight);
+
+            appHeight();
+
+            const scroll = document.documentElement.scrollTop;
+            if (scroll >= 50) {
+                document.querySelector('body').classList.add('scroll')
+            } else {
+                document.querySelector('body').classList.remove('scroll')
+            }
+        </script>
+
+        <script defer src="/assets/js/nav.js"></script>
+
+        
+            <script defer src="/assets//js/macrodata.js"></script>
+        
+
+        
+    </body>
+</html>
