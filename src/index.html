@@ -12,64 +12,137 @@ eleventyNavigation:
   key: Home
   order: 100
 ---
-<section id="hero">
+<link rel="stylesheet" href="/css/home.css">
+{%- set ll = homeFeatured.labLife -%}
+{%- set llOn = ll and ll.show != false -%}
+<section id="hero"{% if llOn %} class="hero-tree-on"{% endif %}>
+{%- if llOn %}
+    <!-- Circular tree of photos from Socials and MacroData. Settings: Netlify > Home page > ... > Lab life -->
+    <div class="hero-visual">
+        <div class="hero-tree" id="hero-tree" role="group" aria-label="Photos from lab life" data-count="{{ ll.count or 6 }}">
+            <div class="ht-rings" aria-hidden="true"></div>
+            <div class="ht-spin" id="ht-spin">
+                <svg class="ht-lines" id="ht-lines" aria-hidden="true" focusable="false"></svg>
+                <div class="ht-photos" id="ht-photos"></div>
+            </div>
+            <div class="ht-caption" id="hero-note" aria-live="polite">
+                <span class="hn-kicker" id="hn-kicker"></span>
+                <span class="hn-title" id="hn-title"></span>
+                <span class="hn-desc" id="hn-desc"></span>
+                <a class="hn-link" id="hn-link" href="#" hidden>See more &rarr;</a>
+            </div>
+        </div>
+    </div>
+    <!-- The pool of photos, read by home.js and never shown. Research: papers. Community: Socials and MacroData. -->
+    <ul id="ht-pool" hidden>
+        {%- for pub in homeData.papers %}
+        {%- if pub.image %}
+        <li data-group="research" data-sub="papers" data-src="{{ pub.image }}"
+            data-kicker="Paper{% if pub.venue %}, {{ pub.venue }}{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}"
+            data-title="{{ pub.title }}"
+            data-desc="{{ pub.abstract | truncate(150) }}"
+            data-link="{{ pub.link }}"></li>
+        {%- endif %}
+        {%- endfor %}
+        {%- for social in collections.socials %}
+        {%- set yr = social.data.publicationDate %}
+        {%- if yr and not (yr is string) %}{% set yr = yr | first %}{% endif %}
+        {%- for img in social.data.images %}
+        {%- if img %}
+        <li data-group="community" data-sub="socials" data-src="{{ img }}"
+            data-kicker="{{ social.data.Location }}{% if social.data.Location and yr %}, {% endif %}{{ yr }}"
+            data-title="{{ social.data.publicationTitle }}"
+            data-desc="{{ social.data.publicationAbstract }}"
+            data-link="{{ social.data.webLink or '/social/' }}"></li>
+        {%- endif %}
+        {%- endfor %}
+        {%- endfor %}
+        {%- for e in macrodataEvents.events %}
+        {%- set mdImages = [] %}
+        {%- if e.photo %}{% set _ = mdImages.push(e.photo) %}{% endif %}
+        {%- for g in e.gallery %}{% if g.image %}{% set _ = mdImages.push(g.image) %}{% endif %}{% endfor %}
+        {%- for img in mdImages %}
+        <li data-group="community" data-sub="macrodata" data-src="{{ img }}"
+            data-kicker="MacroData, {{ e.city }}"
+            data-title="{{ e.name }}"
+            data-desc="Workshop in {{ e.city }}, {{ e.dates }}"
+            data-link="/macrodata/galeria/"></li>
+        {%- endfor %}
+        {%- endfor %}
+    </ul>
+{%- endif %}
+
     <div class="hero-content">
         <div class="heroText">
-            <div class="button-container hero-animate hero-animate-1">
-                {%- for button in home.buttons -%}
-                    {%- if button.title != "Subscribe" -%}
-                        <a class="button-solid" href="{{ button.link }}" rel="noopener">
-                            {{ button.title }}
-                        </a>
-                    {%- endif -%}
-                {% endfor %}
-            </div>
+            {%- set openJob = homeData.openJobs[0] %}
+            {%- if homeFeatured.announcement.show and homeFeatured.announcement.text %}
+            <a class="hero-announce hero-animate hero-animate-1" href="{{ homeFeatured.announcement.link or '#' }}">
+                <span class="hero-announce-dot" aria-hidden="true"></span>
+                <span class="hero-announce-text">{{ homeFeatured.announcement.text }}</span>
+                {%- if homeFeatured.announcement.linkLabel %}<span class="hero-announce-link">{{ homeFeatured.announcement.linkLabel }} &rarr;</span>{% endif %}
+            </a>
+            {%- elif openJob %}
+            <!-- Shows by itself while a position under Join us is not marked Closed -->
+            <a class="hero-announce hero-animate hero-animate-1" href="/join-us/">
+                <span class="hero-announce-dot" aria-hidden="true"></span>
+                <span class="hero-announce-text">We're recruiting: {{ openJob.title }}</span>
+                <span class="hero-announce-link">See the position &rarr;</span>
+            </a>
+            {%- endif %}
+            {%- if homeFeatured.byline.name or homeFeatured.byline.affiliation %}
+            <p class="hero-byline hero-animate hero-animate-1">
+                {%- if homeFeatured.byline.name %}<span>{% if homeFeatured.byline.role %}{{ homeFeatured.byline.role }} {% endif %}{{ homeFeatured.byline.name }}</span>{% endif %}
+                {%- if homeFeatured.byline.affiliation %}{% if homeFeatured.byline.link %}<a href="{{ homeFeatured.byline.link }}" target="_blank" rel="noopener">{{ homeFeatured.byline.affiliation }}</a>{% else %}<span>{{ homeFeatured.byline.affiliation }}</span>{% endif %}{% endif %}
+            </p>
+            {%- endif %}
             <div class="hero-animate hero-animate-2">
                 <h1 id="home-h" class="cs-title">{{ home.title }}</h1>
             </div>
-            <p class="hero-description hero-animate hero-animate-3">
-                {{ home.description }}
-            </p>
-            <div class="subscribe-row hero-animate hero-animate-4">
-                {%- for button in home.buttons -%}
-                    {%- if button.title == "Subscribe" -%}
-                        <a class="button-subscribe" href="{{ button.link }}" rel="noopener" target="_blank">
-                            <span class="subscribe-icon">✦</span>
-                            {{ button.title }} to our newsletter
-                        </a>
-                    {%- endif -%}
-                {% endfor %}
+            <p class="hero-description hero-statement hero-animate hero-animate-3">{{ homeFeatured.statement or home.description }}</p>
+            {%- if homeData.themes | length %}
+            <ul class="hero-tags hero-animate hero-animate-3" aria-label="Research themes">
+                {%- for theme in homeData.themes %}
+                <li><a href="/our-work/?q={{ theme | urlencode }}">{{ theme }}</a></li>
+                {%- endfor %}
+            </ul>
+            {%- endif %}
+            {%- if homeFeatured.doors | length %}
+            <!-- Main buttons: edited in Netlify > Home page > ... > Main buttons -->
+            <div class="hero-doors hero-animate hero-animate-4">
+                {%- for door in homeFeatured.doors %}
+                <a class="hero-door{{ ' is-primary' if loop.first }}" href="{{ door.link }}">{{ door.label }}</a>
+                {%- endfor %}
             </div>
+            {%- endif %}
             <div class="hero-stats hero-animate hero-animate-4">
-                <div class="hero-stat">
-                    {%- set activeRoles = ["PI", "Postdoc", "PhD student", "Undergraduate student", "Staff"] -%}
-                    {%- set memberCount = 0 -%}
-                    {%- for member in collections.team -%}
-                        {%- if "Current" in member.data.tags -%}
-                            {%- for role in activeRoles -%}
-                                {%- if role in member.data.tags -%}
-                                    {%- set memberCount = memberCount + 1 -%}
-                                {%- endif -%}
-                            {%- endfor -%}
-                        {%- endif -%}
-                    {%- endfor -%}
-                    <span class="hero-stat-number" data-target="{{ memberCount }}">0</span>
-                    <span class="hero-stat-label">Lab Members</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number" data-target="{{ collections.publications | length }}">0</span>
+                {%- set activeRoles = ["PI", "Postdoc", "PhD student", "Undergraduate student", "Staff"] -%}
+                {%- set memberCount = 0 -%}
+                {%- for member in collections.team -%}
+                    {%- if "Current" in member.data.tags -%}
+                        {%- for role in activeRoles -%}
+                            {%- if role in member.data.tags -%}
+                                {%- set memberCount = memberCount + 1 -%}
+                            {%- endif -%}
+                        {%- endfor -%}
+                    {%- endif -%}
+                {%- endfor -%}
+                <a class="hero-stat" href="/our-work/?type=Paper">
+                    <span class="hero-stat-number" data-target="{{ collections.publications | length }}">{{ collections.publications | length }}</span>
                     <span class="hero-stat-label">Publications</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number" data-target="2023">0</span>
-                    <span class="hero-stat-label">Founded</span>
-                </div>
+                </a>
+                <a class="hero-stat" href="/our-work/?type=Tool">
+                    <span class="hero-stat-number" data-target="{{ collections.tools | length }}">{{ collections.tools | length }}</span>
+                    <span class="hero-stat-label">Tools &amp; data</span>
+                </a>
+                <a class="hero-stat" href="/our-team/">
+                    <span class="hero-stat-number" data-target="{{ memberCount }}">{{ memberCount }}</span>
+                    <span class="hero-stat-label">Lab members</span>
+                </a>
             </div>
         </div>
     </div>
 
+{%- if not llOn %}
         <div class="cs-picture-caption timer-slider">
         <div class="cs-picture-caption timer-slider">
           {% set sliderImages = [] %}
@@ -109,38 +182,41 @@ eleventyNavigation:
             {% endfor %}
             
         </div>
+{%- endif %}
     </div>
 </section>
 
 <!-- ============================================ -->
-<!--                service cards                 -->
+<!--                    Latest                    -->
 <!-- ============================================ -->
-
-<section id="service-cards">
-    <div class="cs-container">
-        <div class="cs-card-group">
-            {%- for card in home.cards -%}
-                <a class="cs-item" href="{{ card.link or '#' }}">
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)" srcset="{{ card.image }}">
-                        <source media="(min-width: 601px)" srcset="{{ card.image }}">
-                        <img loading="lazy" decoding="async" src="{{ card.image }}" alt="{{ card.title }}" width="522" height="370">
-                    </picture>
-                    <div class="cs-card-overlay"></div>
-                    <div class="cs-flex-group">
-                        <span class="cs-card-index">0{{ loop.index }}</span>
-                        <span class="cs-name">{{ card.title }}</span>
-                        <span class="cs-desc">{{ card.description }}</span>
-                        <span class="cs-card-cta">
-                            Explore
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </span>
-                    </div>
-                </a>
-            {% endfor %}
+<!-- Built automatically from publications, Socials, press and team (see src/_data/homeData.js) -->
+{%- if homeData.latest | length %}
+<section id="latest" aria-labelledby="lt-heading">
+    <div class="lt-inner">
+        <div class="lt-head">
+            <h2 id="lt-heading" class="lt-title">Latest</h2>
+            <p class="lt-intro"><a href="/our-work/">See everything &rarr;</a></p>
         </div>
+        <ul class="lt-list">
+            {%- for i in homeData.latest %}
+            <li class="{{ 'is-paper' if i.kind == 'Paper' }}">
+                <a class="lt-item" href="{{ i.link }}"{% if '://' in i.link %} target="_blank" rel="noopener"{% endif %}>
+                    {%- if i.image %}
+                    <img class="lt-thumb" src="{{ i.image }}" alt="" loading="lazy" decoding="async" width="56" height="56">
+                    {%- else %}
+                    <span class="lt-thumb is-empty" aria-hidden="true">{{ i.kind | first }}</span>
+                    {%- endif %}
+                    <span class="lt-text">
+                        <span class="lt-kind">{{ i.kind }}<span class="lt-when"> &middot; {{ i.when }}</span></span>
+                        <span class="lt-name">{{ i.title }}</span>
+                    </span>
+                </a>
+            </li>
+            {%- endfor %}
+        </ul>
     </div>
 </section>
+{%- endif %}
 
 <div aria-hidden="true" class="line"></div>
 
@@ -317,153 +393,6 @@ p.hero-description {
 })();
 </script>
 
-<style>
-/* ---- Service Cards Redesign ---- */
-#service-cards {
-    padding: clamp(3rem, 6vw, 5rem) 1.5rem;
-    background: #eef3f0;
-}
-#service-cards .cs-container {
-    width: 100%;
-    max-width: 72rem;
-    margin: auto;
-    padding: 0;
-}
-#service-cards .cs-card-group {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-#service-cards .cs-item {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    text-decoration: none;
-    border-radius: 6px;
-    background: #fff;
-    box-shadow: 0 2px 16px rgba(43,58,50,0.07);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-#service-cards .cs-item:hover {
-    box-shadow: 0 8px 32px rgba(43,58,50,0.13);
-    transform: translateY(-3px);
-}
-#service-cards .cs-picture {
-    width: 100%;
-    aspect-ratio: 16/9;
-    display: block;
-    overflow: hidden;
-    margin: 0;
-}
-#service-cards .cs-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.6s ease;
-    filter: saturate(0.85);
-}
-#service-cards .cs-item:hover .cs-picture img {
-    transform: scale(1.04);
-}
-/* sage accent line at top */
-#service-cards .cs-item::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--primary);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-}
-#service-cards .cs-item:hover::before {
-    opacity: 1;
-}
-/* overlay div no longer needed — hide it */
-#service-cards .cs-card-overlay { display: none; }
-
-#service-cards .cs-flex-group {
-    padding: 1.25rem 1.5rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-#service-cards .cs-card-index {
-    display: none;
-}
-#service-cards .cs-name {
-    font-family: "Fraunces", Georgia, serif;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--headerColor);
-    line-height: 1.25;
-    display: block;
-}
-#service-cards .cs-desc {
-    font-family: "Figtree", sans-serif;
-    font-size: 0.875rem;
-    color: var(--bodyTextColor);
-    opacity: 0.75;
-    line-height: 1.6;
-    display: block;
-    max-height: unset;
-    overflow: visible;
-    opacity: 0.75;
-    transform: none;
-    transition: none;
-    margin: 0;
-}
-#service-cards .cs-card-cta {
-    display: none;
-}
-@media only screen and (min-width: 64rem) {
-    #service-cards .cs-card-group {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.5rem;
-    }
-    #service-cards .cs-picture {
-        aspect-ratio: 3/2;
-    }
-}
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        function animateCounter(el) {
-            const target = parseInt(el.getAttribute('data-target'), 10);
-            const duration = 1600;
-            const start = performance.now();
-            const from = target > 100 ? target - 3 : 0;
-            function step(now) {
-                const elapsed = now - start;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = 1 - Math.pow(2, -10 * progress);
-                el.textContent = Math.floor(from + (target - from) * eased);
-                if (progress < 1) requestAnimationFrame(step);
-                else el.textContent = target;
-            }
-            requestAnimationFrame(step);
-        }
-        const statsEl = document.querySelector('.hero-stats');
-        if (statsEl) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.querySelectorAll('.hero-stat-number').forEach(animateCounter);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.3 });
-            observer.observe(statsEl);
-        }
-    });
-</script>
-
 <script defer>
     const newsWidth = () => {
         const doc = document.documentElement
@@ -486,3 +415,5 @@ p.hero-description {
 
     newsHolderLeft();
 </script>
+
+<script src="/assets/js/home.js" defer></script>

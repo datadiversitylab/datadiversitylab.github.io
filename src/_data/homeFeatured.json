@@ -1,0 +1,28 @@
+{
+  "announcement": {
+    "show": false,
+    "text": "",
+    "linkLabel": "",
+    "link": ""
+  },
+  "byline": {
+    "name": "Cristian Román-Palacios",
+    "affiliation": "College of Information Science, University of Arizona",
+    "link": "https://infosci.arizona.edu"
+  },
+  "statement": "We analyze how biodiversity evolves and responds to change. We also build the datasets, software and methods behind that work, and we train the students who carry it forward.",
+  "doors": [
+    {
+      "label": "Explore our work",
+      "link": "/our-work/"
+    },
+    {
+      "label": "Join the lab",
+      "link": "/join-us/"
+    }
+  ],
+  "labLife": {
+    "show": true,
+    "count": 6
+  }
+}

@@ -84,6 +84,7 @@ eleventyNavigation:
     "link2": (alt if alt and alt != main else ''),
     "link2Label": "PDF",
     "topics": item.data.topics or [],
+    "areas": item.data.researchAreas or [],
     "year": item.data.publicationDate,
     "month": item.data.publicationMonth,
     "who": item.data.publicationAuthor,
@@ -169,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
         d.sortYear = m ? parseInt(m[0], 10) : 0;
         d.sortMonth = d.month ? MONTHS.indexOf(d.month) + 1 : 0;
         d.shownYear = d.type === "Grant" ? clean(d.years) : (m ? m[0] : "");
-        d.hay = [d.title, d.who, d.where, d.funder, (d.pills || []).join(" "), (d.topics || []).join(" "), d.detail]
+        d.hay = [d.title, d.who, d.where, d.funder, (d.pills || []).join(" "), (d.topics || []).join(" "), (d.areas || []).join(" "), d.detail]
             .join(" ").toLowerCase();
     });
 

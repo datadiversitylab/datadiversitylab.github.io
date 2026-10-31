@@ -1,0 +1,36 @@
+/* Site-wide look: one palette, no patterned background, white navigation bar.
+   Loaded last in the layout, so it wins over the page stylesheets.
+   To go back to the old look, remove its <link> line from src/_layouts/base.html. */
+
+:root {
+    --boxCardShadow: 0 2px 16px rgba(43, 58, 50, 0.08);
+}
+
+/* Background: cream to mint over the first screen, then plain mint, so long pages never stretch the gradient */
+body:not(.dark-mode) {
+    background-color: #e1eee6;
+    background-image: linear-gradient(135deg, #fbf7ec 0%, #f5f5ea 30%, #e9f2ec 65%, #e1eee6 100%);
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+}
+main { background-color: transparent; }
+#footer {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid var(--lineColor);
+}
+
+/* Navigation: the white bar is always there, with dark logo and links (desktop) */
+@media only screen and (min-width: 64rem) {
+    body:not(.no-theme) #cs-navigation .background-color-div {
+        height: 100%;
+        box-shadow: 0 4px 24px rgba(43, 58, 50, 0.1);
+    }
+    body:not(.no-theme) #cs-navigation .cs-logo .cs-light { display: none; }
+    body:not(.no-theme) #cs-navigation .cs-logo .cs-dark { display: block; }
+    body:not(.no-theme) #cs-navigation ul li a,
+    body:not(.no-theme) #cs-navigation ul li > span,
+    body:not(.no-theme) #cs-navigation .cs-li-link { color: var(--bodyTextColor); }
+    body:not(.no-theme) #cs-navigation img.cs-drop-icon {
+        filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(346deg) brightness(102%) contrast(104%);
+    }
+}
