@@ -210,137 +210,30 @@
     </div>
 </header>
         <main id="main"><!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
-
-<section id="content-1452" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">chorus</h1>
-            <p class="cs-text">
-                Real-time, participatory polling for talks, workshops, and events. People in the room vote,
-                suggests answers, and sees results live. There is no accounts needed to use Chorus and nothing gets stored permanently.
-            </p>
-        </div>
-    </div>
-</section>
-
-<div aria-hidden="true" class="line"></div>
-
-<!-- ============================================ -->
-<!--                  About                       -->
-<!-- ============================================ -->
-<section id="chorus-about-section">
-    <div class="cs-container">
-        <div class="cs-about-card">
-            <h6 class="cs-title">What it does</h6>
-            <div aria-hidden="true" class="line line-full"></div>
-            <p class="cs-text">
-                chorus lets a group of people vote, suggest their own answers, and see results update in real time. 
-                The organizer controls the pace, posts questions, add answers of their own if needed, lock
-                suggestions once discussion should move to voting, or push everyone to the next topic
-                with a single click. Guests can join existing rooms using a token that is provided by the organizer.
-            </p>
-            <div class="cs-about-tags">
-                <span class="cs-filter">Live polling</span>
-                <span class="cs-filter">Audience participation</span>
-                <span class="cs-filter">Events & workshops</span>
-                <span class="cs-filter">Real-time results</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================ -->
 <!--               App Embed                      -->
 <!-- ============================================ -->
 <section id="chorus-app-section">
-    <div class="cs-container">
-        <div class="cs-app-header">
-            <h6 class="cs-title">Launch chorus</h6>
-        </div>
-        <div aria-hidden="true" class="line line-full"></div>
-
-        <div class="cs-fullscreen-prompt">
-            <p class="cs-text">This preview is sized to fit the page. For the full chorus experience, open it in fullscreen.</p>
-            <button type="button" id="chorus-fullscreen-btn" class="cs-fullscreen-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <polyline points="9 21 3 21 3 15"></polyline>
-                    <line x1="21" y1="3" x2="14" y2="10"></line>
-                    <line x1="3" y1="21" x2="10" y2="14"></line>
-                </svg>
-                Open chorus in fullscreen
-            </button>
-        </div>
-
-        <div class="cs-app-frame-wrapper" id="chorus-frame-wrapper">
-            <iframe
-                id="chorus-iframe"
-                src="https://viz.datascience.arizona.edu/chorus/"
-                title="chorus"
-                loading="lazy"
-                allow="clipboard-write; fullscreen"
-                allowfullscreen>
-            </iframe>
-        </div>
-
+    <h1 class="cs-sr-only">chorus</h1>
+    <!-- Fixed below the site header. The page itself does not scroll, so the app never hands the scroll to the page -->
+    <div class="cs-app-frame-wrapper" id="chorus-frame-wrapper">
+        <iframe
+            id="chorus-iframe"
+            src="https://viz.datascience.arizona.edu/chorus/"
+            title="chorus"
+            allow="clipboard-write; fullscreen"
+            allowfullscreen>
+        </iframe>
+        <noscript>
+            <p class="cs-app-fallback">
+                chorus needs JavaScript here. You can
+                <a href="https://viz.datascience.arizona.edu/chorus/" target="_blank" rel="noopener">open it in its own tab</a>.
+            </p>
+        </noscript>
         <p class="cs-app-fallback" id="chorus-fallback" hidden>
             The embedded app didn't load. You can
             <a href="https://viz.datascience.arizona.edu/chorus/" target="_blank" rel="noopener">open chorus in its own tab</a>
             instead.
         </p>
-    </div>
-</section>
-
-<!-- ============================================ -->
-<!--              How to join                     -->
-<!-- ============================================ -->
-<section id="chorus-join-section">
-    <div class="cs-container">
-        <div class="cs-join-card">
-            <h6 class="cs-title">Running a session</h6>
-            <div aria-hidden="true" class="line line-full"></div>
-            <div class="cs-join-steps">
-                <div class="cs-join-step">
-                    <span class="cs-join-step-num">1</span>
-                    <p class="cs-text">Organizer starts a session and shares the four-character join token with the room.</p>
-                </div>
-                <div class="cs-join-step">
-                    <span class="cs-join-step-num">2</span>
-                    <p class="cs-text">Guests join from their own phone, laptop, or tablet with the token, no account or app install needed.</p>
-                </div>
-                <div class="cs-join-step">
-                    <span class="cs-join-step-num">3</span>
-                    <p class="cs-text">The organizer posts a question. Guests vote or suggest their own answers.</p>
-                </div>
-                <div class="cs-join-step">
-                    <span class="cs-join-step-num">4</span>
-                    <p class="cs-text">Results update live.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================ -->
-<!--                  Cite it                     -->
-<!-- ============================================ -->
-<section id="chorus-cite-section">
-    <div class="cs-container">
-        <div class="cs-cite-card">
-            <h6 class="cs-title">chorus on GitHub</h6>
-            <div aria-hidden="true" class="line line-full"></div>
-            <p class="cs-text">
-                chorus is open source. Source code, issues, and setup instructions live on GitHub:
-            </p>
-            <div class="cs-cite-links">
-                <a href="https://github.com/datadiversitylab/chorus" target="_blank" rel="noopener">
-                    <img src="../assets/icons/github.svg" alt="chorus on GitHub" width="20" height="20" decoding="async">
-                    chorus
-                </a>
-            </div>
-        </div>
     </div>
 </section>
 </main>
