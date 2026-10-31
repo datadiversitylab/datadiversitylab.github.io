@@ -10,6 +10,7 @@ memberBio: A biologist specializing in ecology, biogeography, and evolution, she
   administrative tasks related to research activities.
 tags:
   - Current
+  - Staff
 email: nataliaramirezb@arizona.edu
 link: https://datadiversitylab.github.io/macrodata/quienes/#
 image: /assets/images/our-team/natalia.jpg

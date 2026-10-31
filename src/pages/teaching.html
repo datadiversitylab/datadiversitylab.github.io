@@ -10,19 +10,30 @@ preloadSecondJS: '/js/teaching.js'
 permalink: 'teaching/'
 eleventyNavigation:
     key: Teaching
-    parent: The Lab
-    order: 500
+    parent: Teaching and service
+    order: 100
 navOptions:
     includeSelf: true
 ---
+{%- macro paras(text) -%}
+    {%- if text -%}
+        {%- for p in text.split('\n\n') -%}
+            {%- if p | trim -%}
+<p class="cs-text">{{ p | trim }}</p>
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+{%- endmacro -%}
+{%- set t = teachingPage -%}
 <!-- ============================================ -->
 <!--                  Content                     -->
 <!-- ============================================ -->
+<!-- Text on this page is edited in the CMS (Teaching and service > Teaching page). -->
 
 <section id="content-1450" class="cs-top-section">
     <div class="cs-container">
         <div class="cs-content">
-            <h1 class="cs-title">Teaching</h1>
+            <h1 class="cs-title">{{ t.title }}</h1>
         </div>
     </div>
 </section>
@@ -32,43 +43,22 @@ navOptions:
 <section id="list-of-cards">
     <div class="cs-container">
         <div class="cs-content">
-            <p class="cs-text">
-                We teach data science and machine learning to students who mostly did not start in either field. Many are working full time, most are online, and almost all of them are learning to code while learning the statistics at the same time. The courses are built around those constrains, while ensuring that students learn as much as possible.
-            </p>
+            {{ paras(t.intro) }}
+            {%- if t.principlesIntro %}
             <br>
-            <p class="cs-text">
-                For online teaching, four aspects shape how my courses run. These came out of student feedback over several years.
-            </p>
+            {{ paras(t.principlesIntro) }}
+            {%- endif %}
         </div>
         <div class="cs-card-group">
+            {%- for item in t.principles %}
             <div class="cs-item">
                 <div class="cs-flex-group">
-                    <h4 class="cs-title">1</h4>
-                    <span class="cs-name">Homework hours</span>
-                    <span class="cs-desc">A scheduled block each week, in person or on Zoom, where you work on the assignment with us in the room. You do not have to ask a question to show up. Most of what happens is students working through problems together, which is usually faster than waiting on an email from me.</span>
+                    <h4 class="cs-title">{{ loop.index }}</h4>
+                    <span class="cs-name">{{ item.title }}</span>
+                    <span class="cs-desc">{{ item.text }}</span>
                 </div>
             </div>
-            <div class="cs-item">
-                <div class="cs-flex-group">
-                    <h4 class="cs-title">2</h4>
-                    <span class="cs-name">Immediate feedback on code</span>
-                    <span class="cs-desc">Assignments run against an autograder you can use on your own schedule, so you know whether an answer works before you submit it. We still read every repository and leave comments. The autograder handles what a machine can check, which generally frees the feedback for reasoning and approach.</span>
-                </div>
-            </div>
-            <div class="cs-item">
-                <div class="cs-flex-group">
-                    <h4 class="cs-title">3</h4>
-                    <span class="cs-name">Peer review on GitHub</span>
-                    <span class="cs-desc">Ideally, you will read other students' code and they read yours, using the same review tools teams use at work. Seeing how someone else solved the same problem teaches things a solution key cannot.</span>
-                </div>
-            </div>
-            <div class="cs-item">
-                <div class="cs-flex-group">
-                    <h4 class="cs-title">4</h4>
-                    <span class="cs-name">Conversations about your work</span>
-                    <span class="cs-desc">In some courses, part of the grade comes from a short conversation about the decisions you made in your homework. These are discussions, not exams.</span>
-                </div>
-            </div>
+            {%- endfor %}
         </div>
     </div>
 </section>
@@ -78,31 +68,25 @@ navOptions:
 <section id="courses">
     <div class="cs-container">
         <div class="cs-content">
-            <h3 class="cs-title">Courses</h3>
-            <p class="cs-text">
-                Both courses are offered through the College of Information Science and are open to students in the MS in Data Science and the MS in Information Science, among others. Both are taught in R, run over seven weeks, and assume you can get started with code, have some stat background, linear algebra and calculus experience.
-            </p>
+            <h3 class="cs-title">{{ t.coursesTitle }}</h3>
+            {{ paras(t.coursesIntro) }}
         </div>
         <div class="cs-card-group">
+            {%- for course in t.courses %}
             <div class="cs-item">
                 <div class="cs-flex-group">
-                    <span class="cs-name">INFO 521, Introduction to Machine Learning</span>
-                    <span class="cs-desc">Supervised and unsupervised methods, how they work, when they fail, and how to tell the difference. Homework is split between conceptual questions and applied ones, so you practice the reasoning and the implementation separately. The course ends with a project on a dataset you choose.</span>
+                    <span class="cs-name">{{ course.name }}</span>
+                    <span class="cs-desc">{{ course.text }}</span>
                 </div>
             </div>
-            <div class="cs-item">
-                <div class="cs-flex-group">
-                    <span class="cs-name">INFO 523, Data Mining and Discovery</span>
-                    <span class="cs-desc">Finding structure in data, from cleaning and visualization through clustering, association rules, and model evaluation. Assignments use real datasets with the problems real datasets have. Git and GitHub are part of the course from the first week.</span>
-                </div>
-            </div>
+            {%- endfor %}
         </div>
+        {%- if t.coursesOutro %}
         <div class="cs-content">
             <br>
-            <p class="cs-text">
-                Both courses are demanding. If you are working full time, plan for the load before the semester starts rather than during it. We would rather tell you that now than have you find out in week four.
-            </p>
+            {{ paras(t.coursesOutro) }}
         </div>
+        {%- endif %}
     </div>
 </section>
 
@@ -111,39 +95,23 @@ navOptions:
 <section id="teaching-tools">
     <div class="cs-container">
         <div class="cs-content">
-            <h3 class="cs-title">Tools we built</h3>
-            <p class="cs-text">
-                These started as things we needed for our own courses and are open for anyone to use. If you teach a code-based class and run into the same problems, they may save you some work. Issues and pull requests are welcome.
-            </p>
+            <h3 class="cs-title">{{ t.toolsTitle }}</h3>
+            {{ paras(t.toolsIntro) }}
         </div>
         <div class="cs-card-group">
+            {%- for tool in t.tools %}
             <div class="cs-item">
                 <div class="cs-flex-group">
-                    <span class="cs-name">autogradeR</span>
-                    <span class="cs-desc">Grades predefined assignments in R and lets students check their own progress before submitting. Instructors generate templates protected by an encrypted password. Built around RMarkdown files.</span>
-                    <a class="cs-button-link" href="https://github.com/datadiversitylab/autogradeR" target="_blank" rel="noopener">
-                        <span>View on GitHub</span>
+                    <span class="cs-name">{{ tool.name }}</span>
+                    <span class="cs-desc">{{ tool.text }}</span>
+                    {%- if tool.link %}
+                    <a class="cs-button-link" href="{{ tool.link }}" target="_blank" rel="noopener">
+                        <span>{{ tool.linkLabel or 'Learn more' }}</span>
                     </a>
+                    {%- endif %}
                 </div>
             </div>
-            <div class="cs-item">
-                <div class="cs-flex-group">
-                    <span class="cs-name">classR</span>
-                    <span class="cs-desc">Manages code-based homework through GitHub, built after GitHub Classroom was discontinued in summer 2026. As far as I know, no comparable alternative existed by the time I put this together.</span>
-                    <a class="cs-button-link" href="https://datadiversitylab.github.io/classR/" target="_blank" rel="noopener">
-                        <span>Documentation</span>
-                    </a>
-                </div>
-            </div>
-            <div class="cs-item">
-                <div class="cs-flex-group">
-                    <span class="cs-name">plagiaRized</span>
-                    <span class="cs-desc">A Shiny dashboard for pairwise comparison of Markdown submissions. Most plagiarism tools were not designed for code, so they miss the kinds of similarity that matter in a programming course.</span>
-                    <a class="cs-button-link" href="https://github.com/datadiversitylab/plagiaRized" target="_blank" rel="noopener">
-                        <span>View on GitHub</span>
-                    </a>
-                </div>
-            </div>
+            {%- endfor %}
         </div>
     </div>
 </section>
@@ -153,12 +121,9 @@ navOptions:
 <section id="advising">
     <div class="cs-container">
         <div class="cs-content">
-            <h3 class="cs-title">Advising</h3>
-            <p class="cs-text">
-                I have been the faculty advisor for the MS in Data Science and the MS in Information Science at the College of Information Science since 2021. If you are enrolled in either program, or thinking about applying, you can reach me about any of the following. Course selection and sequencing, graduation forms and degree checks, capstone and internship applications, letters of recommendation, and immigration-related paperwork that goes through International Student Services. I also answer questions from people who have not applied yet and are trying to work out whether the program fits what they want.
-            </p>
+            <h3 class="cs-title">{{ t.advisingTitle }}</h3>
+            {{ paras(t.advisingText) }}
             <br>
         </div>
     </div>
 </section>
-

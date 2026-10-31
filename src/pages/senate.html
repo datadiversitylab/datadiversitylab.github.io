@@ -1,0 +1,102 @@
+---
+layout: 'base.html'
+description: "A short primer on the University of Arizona Faculty Senate, what it does, and what you can do yourself"
+metaTitle: 'Faculty Senate'
+tagTitle: 'Faculty Senate'
+preloadImg: ''
+preloadCSS: '/css/teaching.css'
+preloadJS: '/js/dropdownCards.js'
+preloadSecondJS: '/js/teaching.js'
+permalink: 'senate/'
+eleventyNavigation:
+    key: Senate
+    parent: Teaching and service
+    order: 200
+navOptions:
+    includeSelf: true
+---
+{%- macro paras(text) -%}
+    {%- if text -%}
+        {%- for p in text.split('\n\n') -%}
+            {%- if p | trim -%}
+<p class="cs-text">{{ p | trim }}</p>
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+{%- endmacro -%}
+{%- set s = senatePage -%}
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+<!-- Text on this page is edited in the CMS (Teaching and service > Senate page). -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">{{ s.title }}</h1>
+            {{ paras(s.intro) }}
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+{%- if s.takeaways | length %}
+<section id="senate-takeaways">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h3 class="cs-title">{{ s.takeawaysTitle }}</h3>
+        </div>
+        <div class="cs-card-group">
+            {%- for item in s.takeaways %}
+            <div class="cs-item">
+                <div class="cs-flex-group">
+                    <span class="cs-num">{{ loop.index }}</span>
+                    <span class="cs-desc">{{ item }}</span>
+                </div>
+            </div>
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+{%- endif %}
+
+{%- for sec in s.sections %}
+<section class="senate-block">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h3 class="cs-title">{{ sec.heading }}</h3>
+            {{ paras(sec.body) }}
+            {%- if sec.bullets | length %}
+            <ul class="senate-list">
+                {%- for b in sec.bullets %}
+                <li>{{ b }}</li>
+                {%- endfor %}
+            </ul>
+            {%- endif %}
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+{%- endfor %}
+
+<section class="senate-block" id="senate-contact">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="cs-text senate-contact">
+                <strong>{{ s.contactName }}</strong><br>
+                {{ s.contactUnit }}<br>
+                {%- if s.contactEmail %}
+                <a href="mailto:{{ s.contactEmail }}">{{ s.contactEmail }}</a>
+                {%- endif %}
+            </p>
+            {%- if s.note %}
+            <p class="cs-text senate-note">{{ s.note }}</p>
+            {%- endif %}
+            <br>
+        </div>
+    </div>
+</section>

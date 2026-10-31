@@ -1,0 +1,60 @@
+{
+  "title": "Teaching",
+  "intro": "We teach data science and machine learning to students who mostly did not start in either field. Many are working full time, most are online, and almost all of them are learning to code while learning the statistics at the same time. The courses are built around those constraints, while ensuring that students learn as much as possible.",
+  "principlesIntro": "For online teaching, four aspects shape how my courses run. These came out of student feedback over several years.",
+  "principles": [
+    {
+      "title": "Homework hours",
+      "text": "A scheduled block each week, in person or on Zoom, where you work on the assignment with us in the room. You do not have to ask a question to show up. Most of what happens is students working through problems together, which is usually faster than waiting on an email from me."
+    },
+    {
+      "title": "Immediate feedback on code",
+      "text": "Assignments run against an autograder you can use on your own schedule, so you know whether an answer works before you submit it. We still read every repository and leave comments. The autograder handles what a machine can check, which generally frees the feedback for reasoning and approach."
+    },
+    {
+      "title": "Peer review on GitHub",
+      "text": "Ideally, you will read other students' code and they read yours, using the same review tools teams use at work. Seeing how someone else solved the same problem teaches things a solution key cannot."
+    },
+    {
+      "title": "Conversations about your work",
+      "text": "In some courses, part of the grade comes from a short conversation about the decisions you made in your homework. These are discussions, not exams."
+    }
+  ],
+  "coursesTitle": "Courses",
+  "coursesIntro": "Both courses are offered through the College of Information Science and are open to students in the MS in Data Science and the MS in Information Science, among others. Both are taught in R, run over seven weeks, and assume you can get started with code, have some stat background, linear algebra and calculus experience.",
+  "courses": [
+    {
+      "name": "INFO 521, Introduction to Machine Learning",
+      "text": "Supervised and unsupervised methods, how they work, when they fail, and how to tell the difference. Homework is split between conceptual questions and applied ones, so you practice the reasoning and the implementation separately. The course ends with a project on a dataset you choose."
+    },
+    {
+      "name": "INFO 523, Data Mining and Discovery",
+      "text": "Finding structure in data, from cleaning and visualization through clustering, association rules, and model evaluation. Assignments use real datasets with the problems real datasets have. Git and GitHub are part of the course from the first week."
+    }
+  ],
+  "coursesOutro": "Both courses are demanding. If you are working full time, plan for the load before the semester starts rather than during it. We would rather tell you that now than have you find out in week four.",
+  "toolsTitle": "Tools we built",
+  "toolsIntro": "These started as things we needed for our own courses and are open for anyone to use. If you teach a code-based class and run into the same problems, they may save you some work. Issues and pull requests are welcome.",
+  "tools": [
+    {
+      "name": "autogradeR",
+      "text": "Grades predefined assignments in R and lets students check their own progress before submitting. Instructors generate templates protected by an encrypted password. Built around RMarkdown files.",
+      "linkLabel": "View on GitHub",
+      "link": "https://github.com/datadiversitylab/autogradeR"
+    },
+    {
+      "name": "classR",
+      "text": "Manages code-based homework through GitHub, built after GitHub Classroom was discontinued in summer 2026. As far as I know, no comparable alternative existed by the time I put this together.",
+      "linkLabel": "Documentation",
+      "link": "https://datadiversitylab.github.io/classR/"
+    },
+    {
+      "name": "plagiaRized",
+      "text": "A Shiny dashboard for pairwise comparison of Markdown submissions. Most plagiarism tools were not designed for code, so they miss the kinds of similarity that matter in a programming course.",
+      "linkLabel": "View on GitHub",
+      "link": "https://github.com/datadiversitylab/plagiaRized"
+    }
+  ],
+  "advisingTitle": "Advising",
+  "advisingText": "I have been the faculty advisor for the MS in Data Science and the MS in Information Science at the College of Information Science since 2021. If you are enrolled in either program, or thinking about applying, you can reach me about any of the following. Course selection and sequencing, graduation forms and degree checks, capstone and internship applications, letters of recommendation, and immigration-related paperwork that goes through International Student Services. I also answer questions from people who have not applied yet and are trying to work out whether the program fits what they want."
+}

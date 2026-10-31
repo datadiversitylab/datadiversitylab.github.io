@@ -10,6 +10,7 @@ memberBio: A biologist with experience in research and fieldwork, specializing
   using R.
 tags:
   - Current
+  - Staff
 email: perezcastillok@arizona.edu
 link: https://datadiversitylab.github.io/macrodata/quienes/
 image: /assets/images/our-team/perfil-kathe.jpeg

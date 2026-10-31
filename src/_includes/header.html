@@ -50,9 +50,11 @@
                                     {% endif %}
                                 </span>
                                 <ul class="cs-drop-ul">
+                                    {%- if entry.url %}
                                     <li class="cs-drop-li">
                                         <a href="{{ entry.url }}" class="cs-li-link cs-drop-link">{{ entry.title }}</a>
                                     </li>
+                                    {%- endif %}
                                     {%- for child in entry.children %}
                                         <li class="cs-drop-li">
                                             <a href="{{ child.url }}" class="cs-li-link cs-drop-link">{{ child.title }}</a>

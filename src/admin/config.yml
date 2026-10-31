@@ -24,12 +24,12 @@ collections:
     slug: '{{memberName}}'
     fields:
       - { label: 'Member Name', name: 'memberName', widget: 'string', required: true }
-      - { label: 'Member title in the lab (current and former members)', name: 'memberTitle', widget: 'select', required: true, options: ['Intern', 'MS advising team', 'MSc capstone student', 'PhD student', 'PI', 'Postdoc', Staff, 'Undergraduate student', 'VIP student'], multiple: true }
       - { label: 'Alumni current position (former member)', name: 'currentPosition', widget: 'string', required: false }
       - { label: 'Member Date Start', name: 'memberDate', widget: 'string', required: false }
       - { label: 'Member Date End', name: 'memberDateEnd', widget: 'string', required: false }
       - { label: 'Member Bio', name: 'memberBio', widget: 'string', required: true }
-      - { label: 'Role in the lab (tags)', name: 'tags', widget: 'select', default: ['Current'], required: true, options: ['Current', 'Former', 'Honorary', 'Intern', 'MS advising team', 'MSc capstone student', 'PhD student', 'PI', 'Postdoc', Staff, 'Undergraduate student', 'VIP student'], multiple: true}
+      - { label: 'Education (degree shown after the name)', name: 'memberEducation', widget: 'select', required: false, options: ['BSc', 'MSc', 'PhD'] }
+      - { label: 'Role and status (pick Current or Former, plus the role)', name: 'tags', widget: 'select', default: ['Current'], required: true, options: ['Current', 'Former', 'Honorary', 'Intern', 'MS advising team', 'MSc capstone student', 'PhD student', 'PI', 'Postdoc', Staff, 'Undergraduate student', 'VIP student'], multiple: true }
       - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false }
       - { label: 'Email', name: 'email', widget: 'string', required: false }
       - { label: 'Github handle (not full link)', name: 'github', widget: 'string', required: false }
@@ -359,6 +359,66 @@ collections:
               - { label: Image, name: image, widget: image }
               - { label: 'Title', name: 'title', widget: 'string' }
               - { label: 'Description', name: 'description', widget: 'markdown' }
+  - name: 'teachingService'
+    label: 'Teaching and service'
+    files:
+      - label: 'Teaching page'
+        name: 'teachingPage'
+        file: 'src/_data/teachingPage.json'
+        fields:
+          - { label: 'Page title', name: 'title', widget: 'string' }
+          - { label: 'Introduction', name: 'intro', widget: 'text', hint: 'Leave a blank line between paragraphs.' }
+          - { label: 'Introduction to the four aspects', name: 'principlesIntro', widget: 'text', required: false }
+          - label: 'The four aspects'
+            name: 'principles'
+            widget: 'list'
+            summary: '{{fields.title}}'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Text', name: 'text', widget: 'text' }
+          - { label: 'Courses heading', name: 'coursesTitle', widget: 'string' }
+          - { label: 'Courses introduction', name: 'coursesIntro', widget: 'text' }
+          - label: 'Courses'
+            name: 'courses'
+            widget: 'list'
+            summary: '{{fields.name}}'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Text', name: 'text', widget: 'text' }
+          - { label: 'Courses closing note', name: 'coursesOutro', widget: 'text', required: false }
+          - { label: 'Tools heading', name: 'toolsTitle', widget: 'string' }
+          - { label: 'Tools introduction', name: 'toolsIntro', widget: 'text' }
+          - label: 'Tools'
+            name: 'tools'
+            widget: 'list'
+            summary: '{{fields.name}}'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Text', name: 'text', widget: 'text' }
+              - { label: 'Button text', name: 'linkLabel', widget: 'string', required: false }
+              - { label: 'Link', name: 'link', widget: 'string', required: false }
+          - { label: 'Advising heading', name: 'advisingTitle', widget: 'string' }
+          - { label: 'Advising text', name: 'advisingText', widget: 'text' }
+      - label: 'Senate page'
+        name: 'senatePage'
+        file: 'src/_data/senatePage.json'
+        fields:
+          - { label: 'Page title', name: 'title', widget: 'string' }
+          - { label: 'Introduction', name: 'intro', widget: 'text', hint: 'Leave a blank line between paragraphs.' }
+          - { label: 'Key take homes heading', name: 'takeawaysTitle', widget: 'string' }
+          - { label: 'Key take homes', name: 'takeaways', widget: 'list', field: { label: 'Take home', name: 'takeaway', widget: 'text' } }
+          - label: 'Sections'
+            name: 'sections'
+            widget: 'list'
+            summary: '{{fields.heading}}'
+            fields:
+              - { label: 'Heading', name: 'heading', widget: 'string' }
+              - { label: 'Text', name: 'body', widget: 'text', required: false, hint: 'Leave a blank line between paragraphs. Shown above the bullets.' }
+              - { label: 'Bullets', name: 'bullets', widget: 'list', required: false, field: { label: 'Bullet', name: 'bullet', widget: 'text' } }
+          - { label: 'Name', name: 'contactName', widget: 'string' }
+          - { label: 'Unit', name: 'contactUnit', widget: 'string' }
+          - { label: 'Email', name: 'contactEmail', widget: 'string', required: false }
+          - { label: 'Closing note', name: 'note', widget: 'text', required: false }
   - name: 'logos'
     label: 'Logos'
     folder: 'src/logos'

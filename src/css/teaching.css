@@ -453,3 +453,137 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/*-- -------------------------- -->
+<---   Paragraph spacing        -->
+<--- -------------------------- -*/
+#list-of-cards .cs-text + .cs-text,
+#courses .cs-text + .cs-text,
+#teaching-tools .cs-text + .cs-text,
+#advising .cs-text + .cs-text {
+  margin-top: 1rem;
+}
+
+/*-- -------------------------- -->
+<---       Senate page          -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #senate-takeaways,
+  .senate-block {
+    padding: var(--sectionPadding);
+  }
+  #senate-takeaways .cs-container,
+  .senate-block .cs-container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sectionGap);
+  }
+  .senate-block .cs-container {
+    max-width: 56.25rem;
+  }
+  #senate-takeaways .cs-content,
+  .senate-block .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #senate-takeaways .cs-content .cs-title,
+  .senate-block .cs-content .cs-title {
+    text-align: center;
+  }
+  .senate-block .cs-content .cs-text {
+    text-align: left;
+    max-width: unset;
+    width: 100%;
+  }
+  .senate-block .cs-text + .cs-text,
+  .senate-block .cs-text + .senate-list {
+    margin-top: 1rem;
+  }
+
+  /* Bulleted lists */
+  .senate-list {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 0 1.25rem;
+    list-style: disc;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: left;
+    font-size: var(--bodyFontSize);
+    line-height: 1.6em;
+    color: var(--bodyTextColor);
+  }
+
+  /* Contact block */
+  .senate-contact {
+    line-height: 1.6em;
+  }
+  .senate-note {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+
+  /* Key take homes */
+  #senate-takeaways .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+  #senate-takeaways .cs-item {
+    background: #fff;
+    box-shadow: var(--boxCardShadow);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  #senate-takeaways .cs-item:hover {
+    box-shadow: 0 4px 24px rgba(43, 58, 50, 0.12);
+    transform: translateY(-2px);
+  }
+  #senate-takeaways .cs-flex-group {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #senate-takeaways .cs-num {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--headerColor);
+    text-align: left;
+  }
+  #senate-takeaways .cs-desc {
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: var(--bodyTextColor);
+    opacity: 0.8;
+    text-align: left;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #senate-takeaways .cs-card-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #senate-takeaways .cs-container {
+    max-width: 80rem;
+  }
+  #senate-takeaways .cs-card-group {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
