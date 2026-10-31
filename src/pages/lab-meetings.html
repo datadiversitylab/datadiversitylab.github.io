@@ -10,9 +10,7 @@ permalink: 'lab-meetings/'
 eleventyNavigation:
     key: Lab meetings
     parent: The Lab
-    order: 300
-navOptions:
-    includeSelf: true
+    order: 200
 ---
 {%- set m = meetingsPage -%}
 {%- set schedules = (collections.meetingSchedules or []) | sort(attribute='data.scheduleKey') | reverse | list -%}

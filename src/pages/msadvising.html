@@ -1,0 +1,71 @@
+---
+layout: 'base.html'
+description: "MSDS and MSIS advising with Dr. Román-Palacios"
+metaTitle: 'Advising'
+tagTitle: 'Advising'
+preloadImg: ''
+preloadCSS: '/css/advising.css'
+permalink: 'advising/'
+eleventyNavigation:
+    key: Advising
+    parent: Faculty
+    order: 300
+navOptions:
+    includeSelf: true
+---
+{%- macro paras(text) -%}
+    {%- if text -%}
+        {%- for p in text.split('\n\n') -%}
+            {%- if p | trim -%}
+<p class="cs-text">{{ p | trim | urlize | safe }}</p>
+            {%- endif -%}
+        {%- endfor -%}
+    {%- endif -%}
+{%- endmacro -%}
+{%- set a = msadvising -%}
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+<!-- Text on this page is edited in the CMS (Teaching and service > Advising page). -->
+
+<section id="advising-intro">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">{{ a.title }}</h1>
+            {{ paras(a.paragraphOne) }}
+        </div>
+
+        {%- if a.numberedCards | length %}
+        <ol class="advising-steps">
+            {%- for card in a.numberedCards %}
+            <li class="advising-step">
+                <h2 class="advising-step-title">{{ card.title }}</h2>
+                {{ paras(card.description) }}
+            </li>
+            {%- endfor %}
+        </ol>
+        {%- endif %}
+    </div>
+</section>
+
+{%- if a.advisingCards | length %}
+<div aria-hidden="true" class="line"></div>
+
+<section id="advising-prepare">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">{{ a.secondTitle }}</h2>
+            {{ paras(a.paragraphThree) }}
+        </div>
+
+        <div class="advising-cards">
+            {%- for card in a.advisingCards %}
+            <article class="advising-card">
+                <h3 class="advising-card-title">{{ card.title }}</h3>
+                {{ paras(card.description) }}
+            </article>
+            {%- endfor %}
+        </div>
+    </div>
+</section>
+{%- endif %}

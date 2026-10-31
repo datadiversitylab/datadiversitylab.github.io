@@ -21,174 +21,368 @@ eleventyNavigation:
         <div class="cs-content">
             <h1 class="cs-title">Our work</h1>
             <p class="cs-text">
-                Everything the lab has done so far. Publications and tools from our lab members. Grants the lab has helped secure or where we're PI/Co-PI (please check the grants tab for more details).
+                Everything the lab has done so far, in one place. Pick a type or a topic, search by title, author, or funder, and open any item to read more.
             </p>
         </div>
-        <ul class="lw-stats">
-            <li><span class="lw-stat-number">{{ collections.publications | length }}</span><span class="lw-stat-label">Papers</span></li>
-            <li><span class="lw-stat-number">{{ collections.tools | length }}</span><span class="lw-stat-label">Tools</span></li>
-            <li><span class="lw-stat-number">{{ collections.grants | length }}</span><span class="lw-stat-label">Grants</span></li>
-        </ul>
     </div>
 </section>
 
 <section id="lab-explorer-full">
     <div class="le-full-container">
 
-        <div class="le-controls">
-            <div class="le-topics" role="tablist" aria-label="Research topics">
-                <button class="le-topic active" data-topic="all">All</button>
-                <button class="le-topic" data-topic="Biodiversity">Biodiversity</button>
-                <button class="le-topic" data-topic="Data Science">Data Science</button>
-                <button class="le-topic" data-topic="Software">Software</button>
-                <button class="le-topic" data-topic="People">People</button>
-            </div>
-            <input type="text" id="le-search" class="le-search" placeholder="Search…" aria-label="Search work by name">
+        <!-- Search and sort -->
+        <div class="le-toolbar">
+            <input type="search" id="le-search" class="le-search" placeholder="Search titles, authors, journals, funders…" aria-label="Search our work">
+            <label class="le-sort">
+                <span>Sort by</span>
+                <select id="le-sort">
+                    <option value="new">Newest first</option>
+                    <option value="old">Oldest first</option>
+                    <option value="az">Title, A to Z</option>
+                </select>
+            </label>
         </div>
 
-        <div class="le-grid" id="le-grid"></div>
-        <p class="le-empty" id="le-empty" hidden>Nothing here yet.</p>
+        <!-- Type tabs (counts are filled in by the script) -->
+        <div class="le-types" role="group" aria-label="Type of work">
+            <button type="button" class="le-type active" data-type="all">All <span class="le-n"></span></button>
+            <button type="button" class="le-type" data-type="Paper">Papers <span class="le-n"></span></button>
+            <button type="button" class="le-type" data-type="Tool">Tools and data <span class="le-n"></span></button>
+            <button type="button" class="le-type" data-type="Grant">Grants <span class="le-n"></span></button>
+        </div>
 
-        <div class="le-pager">
-            <button class="le-prev" id="le-prev" aria-label="Previous">&#8249;</button>
-            <span class="le-count" id="le-count"></span>
-            <button class="le-next" id="le-next" aria-label="Next">&#8250;</button>
+        <!-- Topic chips (built by the script; topics with nothing in them are hidden) -->
+        <div class="le-topics" id="le-topics" role="group" aria-label="Topic"></div>
+
+        <div class="le-status">
+            <p class="le-summary" id="le-summary" aria-live="polite"></p>
+            <button type="button" class="le-clear" id="le-clear" hidden>Clear filters</button>
+        </div>
+
+        <ul class="le-list" id="le-list"></ul>
+        <p class="le-empty" id="le-empty" hidden>Nothing matches these filters.</p>
+
+        <div class="le-more-wrap">
+            <button type="button" class="le-more" id="le-more" hidden>Show more</button>
         </div>
     </div>
 </section>
 
+<!-- Data for the explorer. Each item ends with a comma and the list ends with null, which the script drops. -->
 <script type="application/json" id="le-data">
 [
-  {%- set sources = [
-    { "items": collections.publications, "type": "Paper",    "name": "publicationTitle", "link": "webLink" },
-    { "items": collections.tools,        "type": "Tool",     "name": "Name",             "link": "link" },
-    { "items": collections.grants,       "type": "Grant",    "name": "grantName",        "link": "link" }
-  ] -%}
-  {%- set first = true -%}
-  {%- for source in sources -%}
-    {%- for item in source.items -%}
-      {%- set itemName = item.data[source.name] -%}
-      {%- if itemName -%}
-        {%- if not first -%},{%- endif -%}{%- set first = false -%}
-        {
-          "name": {{ (itemName | striptags) | dump | safe }},
-          "type": "{{ source.type }}",
-          "link": {{ (item.data[source.link] or "") | dump | safe }},
-          "tags": {{ (item.data.topics or []) | dump | safe }}
-        }
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endfor -%}
+{%- for item in collections.publications %}
+  {%- if item.data.publicationTitle %}
+  {%- set t = item.data.publicationTitle | striptags | trim %}
+  {%- set abs = (item.data.publicationAbstract or '') | striptags | trim | truncate(420) %}
+  {%- set main = item.data.webLink or item.data.pdfLink or item.data.pdfDocument or '' %}
+  {%- set alt = item.data.pdfLink or item.data.pdfDocument or '' %}
+  {{ {
+    "type": "Paper",
+    "title": t,
+    "link": main,
+    "link2": (alt if alt and alt != main else ''),
+    "link2Label": "PDF",
+    "topics": item.data.topics or [],
+    "year": item.data.publicationDate,
+    "month": item.data.publicationMonth,
+    "who": item.data.publicationAuthor,
+    "where": item.data.publicationType,
+    "pills": ([item.data.outputType] if item.data.outputType else []),
+    "detail": abs
+  } | dump | safe }},
+  {%- endif %}
+{%- endfor %}
+{%- for item in collections.tools %}
+  {%- if item.data.Name %}
+  {%- set desc = (item.data.Description or '') | striptags | trim | truncate(420) %}
+  {%- set main = item.data.link or item.data.github or '' %}
+  {%- set alt = item.data.github or '' %}
+  {{ {
+    "type": "Tool",
+    "title": item.data.Name | striptags | trim,
+    "link": main,
+    "link2": (alt if alt and alt != main else ''),
+    "link2Label": "GitHub",
+    "topics": item.data.topics or [],
+    "who": (item.data.authors or []) | join(", "),
+    "pills": item.data.tags or [],
+    "detail": desc
+  } | dump | safe }},
+  {%- endif %}
+{%- endfor %}
+{%- for item in collections.grants %}
+  {%- if item.data.grantName %}
+  {%- set main = item.data.link or item.data.document or '' %}
+  {{ {
+    "type": "Grant",
+    "title": item.data.grantName | striptags | trim,
+    "link": main,
+    "topics": item.data.topics or [],
+    "years": item.data.grantYears,
+    "who": item.data.pi,
+    "funder": (item.data.tags or []) | join(", "),
+    "amount": item.data.grantAmount,
+    "pills": [],
+    "detail": (item.data.grantDesc or '') | striptags | trim | truncate(420)
+  } | dump | safe }},
+  {%- endif %}
+{%- endfor %}
+  null
 ]
 </script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const root = document.getElementById("le-data");
-  if (!root) return;
+    var root = document.getElementById("le-data");
+    if (!root) return;
 
-  let data = [];
-  try { data = JSON.parse(root.textContent); } catch (e) { return; }
+    var data = [];
+    try { data = JSON.parse(root.textContent).filter(Boolean); } catch (e) { return; }
 
-  const grid = document.getElementById("le-grid");
-  const empty = document.getElementById("le-empty");
-  const count = document.getElementById("le-count");
-  const searchInput = document.getElementById("le-search");
-  const prevBtn = document.getElementById("le-prev");
-  const nextBtn = document.getElementById("le-next");
-  const topicButtons = document.querySelectorAll(".le-topic");
+    var TOPICS = ["Biodiversity", "Data Science", "Software", "People"];
+    var STEP = 25;
+    var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  // Page size = number of grid columns x target rows, so it adapts to the
-  // screen width (1 col mobile, 2 tablet, 3 desktop).
-  const TARGET_ROWS = 3;
-  let perPage = 9;
-  let topic = "all";
-  let term = "";
-  let page = 0;
+    var els = {
+        search: document.getElementById("le-search"),
+        sort: document.getElementById("le-sort"),
+        topics: document.getElementById("le-topics"),
+        summary: document.getElementById("le-summary"),
+        clear: document.getElementById("le-clear"),
+        list: document.getElementById("le-list"),
+        empty: document.getElementById("le-empty"),
+        more: document.getElementById("le-more")
+    };
+    var typeButtons = document.querySelectorAll(".le-type");
 
-  function gridColumns() {
-    const style = window.getComputedStyle(grid);
-    const cols = style.gridTemplateColumns.split(" ").filter(Boolean).length;
-    return Math.max(1, cols);
-  }
+    var state = { type: "all", topic: "all", term: "", sort: "new", shown: STEP };
 
-  function computePerPage() {
-    perPage = gridColumns() * TARGET_ROWS;
-  }
+    // Prepare each item once: clean text, year for sorting, text to search in
+    function clean(s) { return String(s == null ? "" : s).replace(/[*`]/g, "").replace(/\s+/g, " ").trim(); }
 
-  function filtered() {
-    return data.filter(function (item) {
-      const topicOk = topic === "all" || item.tags.some(function (tag) {
-        return String(tag).toLowerCase() === topic.toLowerCase();
-      });
-      const termOk = term === "" || item.name.toLowerCase().indexOf(term) !== -1;
-      return topicOk && termOk;
-    });
-  }
-
-  function render() {
-    const all = filtered();
-    const pages = Math.max(1, Math.ceil(all.length / perPage));
-    if (page > pages - 1) page = pages - 1;
-    if (page < 0) page = 0;
-
-    const slice = all.slice(page * perPage, page * perPage + perPage);
-
-    grid.innerHTML = "";
-    slice.forEach(function (item) {
-      const card = document.createElement(item.link ? "a" : "div");
-      card.className = "le-card";
-      if (item.link) {
-        card.href = item.link;
-        card.target = "_blank";
-        card.rel = "noopener";
-      }
-
-      const badge = document.createElement("span");
-      badge.className = "le-badge le-badge-" + item.type.toLowerCase();
-      badge.textContent = item.type;
-
-      const name = document.createElement("span");
-      name.className = "le-name";
-      name.textContent = item.name;
-
-      card.appendChild(badge);
-      card.appendChild(name);
-      grid.appendChild(card);
+    data.forEach(function (d) {
+        d.title = clean(d.title);
+        d.detail = clean(d.detail);
+        var raw = d.type === "Grant" ? d.years : d.year;
+        var m = String(raw || "").match(/\d{4}/);
+        d.sortYear = m ? parseInt(m[0], 10) : 0;
+        d.sortMonth = d.month ? MONTHS.indexOf(d.month) + 1 : 0;
+        d.shownYear = d.type === "Grant" ? clean(d.years) : (m ? m[0] : "");
+        d.hay = [d.title, d.who, d.where, d.funder, (d.pills || []).join(" "), (d.topics || []).join(" "), d.detail]
+            .join(" ").toLowerCase();
     });
 
-    empty.hidden = all.length !== 0;
-    count.textContent = all.length ? (page + 1) + " / " + pages : "0";
-    prevBtn.disabled = page === 0;
-    nextBtn.disabled = page >= pages - 1;
-  }
-
-  topicButtons.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      topicButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      topic = btn.dataset.topic;
-      page = 0;
-      render();
+    // Topics that have at least one item (so an empty topic never shows up)
+    var usedTopics = TOPICS.filter(function (t) {
+        return data.some(function (d) { return (d.topics || []).indexOf(t) !== -1; });
     });
-  });
 
-  searchInput.addEventListener("input", function () {
-    term = searchInput.value.trim().toLowerCase();
-    page = 0;
+    function matches(d, skip) {
+        if (skip !== "type" && state.type !== "all" && d.type !== state.type) return false;
+        if (skip !== "topic" && state.topic !== "all" && (d.topics || []).indexOf(state.topic) === -1) return false;
+        if (state.term) {
+            var words = state.term.split(" ");
+            for (var i = 0; i < words.length; i++) if (d.hay.indexOf(words[i]) === -1) return false;
+        }
+        return true;
+    }
+
+    function compare(a, b) {
+        if (state.sort === "az") return a.title.localeCompare(b.title);
+        // Items without a year go last in both directions
+        if (!a.sortYear && !b.sortYear) return a.title.localeCompare(b.title);
+        if (!a.sortYear) return 1;
+        if (!b.sortYear) return -1;
+        var diff = (a.sortYear * 13 + a.sortMonth) - (b.sortYear * 13 + b.sortMonth);
+        if (diff === 0) return a.title.localeCompare(b.title);
+        return state.sort === "old" ? diff : -diff;
+    }
+
+    function el(tag, cls, text) {
+        var n = document.createElement(tag);
+        if (cls) n.className = cls;
+        if (text) n.textContent = text;
+        return n;
+    }
+
+    function link(url, label, cls) {
+        var a = el("a", cls, label);
+        a.href = url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        return a;
+    }
+
+    function metaLine(d) {
+        var parts = [];
+        if (d.type === "Paper") { parts.push(d.who, d.where); }
+        else if (d.type === "Tool") { parts.push(d.who); }
+        else {
+            if (d.funder) parts.push(d.funder);
+            if (d.who) parts.push("PI: " + d.who);
+            if (d.amount) parts.push(d.amount);
+        }
+        return parts.filter(function (p) { return p && String(p).trim(); }).join(" · ");
+    }
+
+    function row(d) {
+        var li = el("li", "le-row");
+
+        li.appendChild(el("span", "le-badge le-badge-" + d.type.toLowerCase(), d.type));
+
+        var main = el("div", "le-main");
+        main.appendChild(d.link ? link(d.link, d.title, "le-title") : el("span", "le-title", d.title));
+
+        var meta = metaLine(d);
+        if (meta) main.appendChild(el("p", "le-meta", meta));
+
+        if ((d.pills || []).length) {
+            var pills = el("div", "le-pills");
+            d.pills.forEach(function (p) { pills.appendChild(el("span", "le-pill", p)); });
+            main.appendChild(pills);
+        }
+
+        var actions = el("div", "le-actions");
+        if (d.link2) actions.appendChild(link(d.link2, d.link2Label || "Link", "le-action"));
+        if (d.detail) {
+            var detail = el("p", "le-detail", d.detail);
+            detail.hidden = true;
+            var btn = el("button", "le-action le-toggle", "Details");
+            btn.type = "button";
+            btn.setAttribute("aria-expanded", "false");
+            btn.addEventListener("click", function () {
+                var open = detail.hidden;
+                detail.hidden = !open;
+                btn.setAttribute("aria-expanded", String(open));
+                btn.textContent = open ? "Hide details" : "Details";
+            });
+            actions.appendChild(btn);
+            main.appendChild(actions);
+            main.appendChild(detail);
+        } else if (actions.children.length) {
+            main.appendChild(actions);
+        }
+        li.appendChild(main);
+
+        li.appendChild(el("span", "le-year", d.shownYear));
+        return li;
+    }
+
+    function setCount(btn, n) { btn.querySelector(".le-n").textContent = n; }
+
+    function buildTopics() {
+        els.topics.innerHTML = "";
+        if (!usedTopics.length) return;
+        els.topics.appendChild(el("span", "le-topics-label", "Topic"));
+        ["all"].concat(usedTopics).forEach(function (t) {
+            var b = el("button", "le-topic", t === "all" ? "Any" : t);
+            b.type = "button";
+            b.dataset.topic = t;
+            b.appendChild(el("span", "le-n"));
+            b.addEventListener("click", function () {
+                state.topic = state.topic === t ? "all" : t;
+                state.shown = STEP;
+                render();
+            });
+            els.topics.appendChild(b);
+        });
+    }
+
+    function syncUrl() {
+        var p = new URLSearchParams();
+        if (state.type !== "all") p.set("type", state.type);
+        if (state.topic !== "all") p.set("topic", state.topic);
+        if (state.term) p.set("q", state.term);
+        if (state.sort !== "new") p.set("sort", state.sort);
+        var qs = p.toString();
+        try { history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "")); } catch (e) {}
+    }
+
+    function render() {
+        // Counts: each group counts what you would get if you picked it, given the other filters
+        typeButtons.forEach(function (b) {
+            var t = b.dataset.type;
+            var n = data.filter(function (d) { return matches(d, "type") && (t === "all" || d.type === t); }).length;
+            setCount(b, n);
+            b.classList.toggle("active", state.type === t);
+            b.setAttribute("aria-pressed", String(state.type === t));
+        });
+        els.topics.querySelectorAll(".le-topic").forEach(function (b) {
+            var t = b.dataset.topic;
+            var n = data.filter(function (d) {
+                return matches(d, "topic") && (t === "all" || (d.topics || []).indexOf(t) !== -1);
+            }).length;
+            setCount(b, n);
+            var on = state.topic === t || (t === "all" && state.topic === "all");
+            b.classList.toggle("active", on);
+            b.setAttribute("aria-pressed", String(on));
+        });
+
+        var all = data.filter(function (d) { return matches(d); }).sort(compare);
+        var slice = all.slice(0, state.shown);
+
+        els.list.innerHTML = "";
+        slice.forEach(function (d) { els.list.appendChild(row(d)); });
+
+        els.empty.hidden = all.length !== 0;
+        els.more.hidden = all.length <= slice.length;
+        els.more.textContent = "Show " + Math.min(STEP, all.length - slice.length) + " more";
+
+        var filtered = state.type !== "all" || state.topic !== "all" || state.term !== "";
+        els.clear.hidden = !filtered;
+        els.summary.textContent = all.length === 0 ? "" :
+            "Showing " + slice.length + " of " + all.length + (all.length === 1 ? " item" : " items");
+
+        syncUrl();
+    }
+
+    typeButtons.forEach(function (b) {
+        b.addEventListener("click", function () {
+            state.type = b.dataset.type;
+            state.shown = STEP;
+            render();
+        });
+    });
+
+    var timer;
+    els.search.addEventListener("input", function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            state.term = els.search.value.trim().toLowerCase().replace(/\s+/g, " ");
+            state.shown = STEP;
+            render();
+        }, 120);
+    });
+
+    els.sort.addEventListener("change", function () {
+        state.sort = els.sort.value;
+        state.shown = STEP;
+        render();
+    });
+
+    els.more.addEventListener("click", function () {
+        state.shown += STEP;
+        render();
+    });
+
+    els.clear.addEventListener("click", function () {
+        state.type = "all";
+        state.topic = "all";
+        state.term = "";
+        els.search.value = "";
+        state.shown = STEP;
+        render();
+    });
+
+    // Start from the address, so a filtered view can be shared
+    var q = new URLSearchParams(location.search);
+    if (["Paper", "Tool", "Grant"].indexOf(q.get("type")) !== -1) state.type = q.get("type");
+    if (usedTopics.indexOf(q.get("topic")) !== -1) state.topic = q.get("topic");
+    if (q.get("q")) { state.term = q.get("q").toLowerCase(); els.search.value = q.get("q"); }
+    if (["new", "old", "az"].indexOf(q.get("sort")) !== -1) { state.sort = q.get("sort"); els.sort.value = state.sort; }
+
+    buildTopics();
     render();
-  });
-
-  prevBtn.addEventListener("click", function () { page -= 1; render(); });
-  nextBtn.addEventListener("click", function () { page += 1; render(); });
-
-  let resizeTimer;
-  window.addEventListener("resize", function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () { computePerPage(); render(); }, 150);
-  });
-
-  computePerPage();
-  render();
 });
 </script>
