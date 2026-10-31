@@ -1,392 +1,60 @@
 /*-- -------------------------- -->
-<---          Content           -->
-<--- -------------------------- -*/
-@media only screen and (min-width: 0rem) {
-  #content-1452 {
-    padding: var(--sectionPadding);
-  }
-  #content-1452 .cs-container {
-    width: 100%;
-    max-width: 51.25rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--sectionGap);
-  }
-  #content-1452 .cs-content {
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #content-1452 .cs-title,
-  #content-1452 .cs-text {
-    max-width: 100%;
-  }
-}
-
-/*-- -------------------------- -->
-<---           About            -->
-<--- -------------------------- -*/
-@media only screen and (min-width: 0rem) {
-  #chorus-about-section {
-    padding: var(--sectionPadding);
-    padding-top: 0;
-  }
-  #chorus-about-section .cs-container {
-    width: 100%;
-    max-width: 64rem;
-    margin: auto;
-  }
-  #chorus-about-section .cs-about-card {
-    width: 100%;
-    box-sizing: border-box;
-    background: #fff;
-    border: 1px solid var(--lineColor);
-    border-radius: 6px;
-    box-shadow: var(--boxCardShadow);
-    padding: 1.75rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-  #chorus-about-section .cs-title {
-    font-size: 0.6875rem;
-    font-family: 'Figtree', sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--primaryDark);
-    margin: 0;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--lineColor);
-    width: 100%;
-  }
-  #chorus-about-section .cs-text {
-    font-size: 0.9375rem;
-    font-family: 'Figtree', sans-serif;
-    color: var(--bodyTextColor);
-    opacity: 0.8;
-    line-height: 1.7;
-    max-width: unset;
-    text-align: left;
-    margin: 0;
-  }
-  #chorus-about-section .cs-about-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.25rem;
-  }
-  #chorus-about-section .cs-filter {
-    font-size: 0.6875rem;
-    font-family: 'Figtree', sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--secondaryDark);
-    background: var(--secondary);
-    border-radius: 3px;
-    padding: 0.2rem 0.55rem;
-    line-height: 1.4;
-  }
-}
-
-/*-- -------------------------- -->
 <---          App Embed         -->
 <--- -------------------------- -*/
+/* The app fills the window below the site header. The page does not scroll, so the app never hands the scroll over to the page */
 @media only screen and (min-width: 0rem) {
-  #chorus-app-section {
-    padding: var(--sectionPadding);
-    padding-top: 0;
+  html.chorus-lock,
+  html.chorus-lock body {
+    overflow: hidden;
+    height: 100%;
   }
-  #chorus-app-section .cs-container {
-    width: 100%;
-    max-width: 80rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  #chorus-app-section .cs-app-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  #chorus-app-section .cs-title {
-    font-size: 0.6875rem;
-    font-family: 'Figtree', sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--primaryDark);
-    margin: 0;
-  }
-  #chorus-app-section .cs-fullscreen-prompt {
-    width: 100%;
-    box-sizing: border-box;
-    background: var(--secondary);
-    border: 1px solid var(--primaryLight);
-    border-radius: 6px;
-    padding: 1rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-  }
-  #chorus-app-section .cs-fullscreen-prompt .cs-text {
-    font-family: 'Figtree', sans-serif;
-    font-size: 0.875rem;
-    color: var(--secondaryDark);
-    margin: 0;
-    max-width: unset;
-    text-align: left;
-  }
-  #chorus-app-section .cs-fullscreen-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-family: 'Figtree', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #fff;
-    background: var(--primary);
-    border: none;
-    border-radius: 6px;
-    padding: 0.85rem 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
-  }
-  #chorus-app-section .cs-fullscreen-btn:hover {
-    background: var(--primaryDark);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
-    transform: translateY(-1px);
-  }
-  #chorus-app-section .cs-fullscreen-btn svg {
-    opacity: 0.95;
-  }
-  #chorus-app-section .line {
-    width: 100%;
-    max-width: unset;
-    margin: 0;
-    opacity: 0.6;
+  #chorus-app-section .cs-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   #chorus-app-section .cs-app-frame-wrapper {
-    width: 100%;
-    border: 1px solid var(--lineColor);
-    border-radius: 6px;
-    box-shadow: var(--boxCardShadow);
-    overflow: hidden;
+    position: fixed;
+    top: var(--chorus-offset, 5rem);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 900;
     background: #fff;
-    position: relative;
-  }
-  #chorus-app-section .cs-app-frame-wrapper:fullscreen {
-    border: none;
-    border-radius: 0;
-    background: #000;
-  }
-  #chorus-app-section .cs-app-frame-wrapper:fullscreen iframe {
-    height: 100%;
   }
   #chorus-app-section iframe {
     width: 100%;
-    height: 60vh;
-    min-height: 26rem;
+    height: 100%;
     border: none;
     display: block;
   }
   #chorus-app-section .cs-app-fallback {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    margin: 0 auto;
+    max-width: 28rem;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid var(--lineColor);
+    border-radius: 6px;
+    box-shadow: var(--boxCardShadow);
     font-family: 'Figtree', sans-serif;
     font-size: 0.8125rem;
     color: var(--bodyTextColor);
-    opacity: 0.75;
     text-align: center;
-    margin: 0;
   }
   #chorus-app-section .cs-app-fallback a {
     color: var(--primaryDark);
     text-decoration: underline;
     text-underline-offset: 2px;
-  }
-}
-
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #chorus-app-section iframe {
-    height: 65vh;
-    min-height: 32rem;
-  }
-  #chorus-app-section .cs-fullscreen-prompt {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-/*-- -------------------------- -->
-<---        Running steps       -->
-<--- -------------------------- -*/
-@media only screen and (min-width: 0rem) {
-  #chorus-join-section {
-    padding: var(--sectionPadding);
-    padding-top: 0;
-  }
-  #chorus-join-section .cs-container {
-    width: 100%;
-    max-width: 64rem;
-    margin: auto;
-  }
-  #chorus-join-section .cs-join-card {
-    width: 100%;
-    box-sizing: border-box;
-    background: #fff;
-    border: 1px solid var(--lineColor);
-    border-radius: 6px;
-    box-shadow: var(--boxCardShadow);
-    padding: 1.75rem 2rem;
-  }
-  #chorus-join-section .cs-title {
-    font-size: 0.6875rem;
-    font-family: 'Figtree', sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--primaryDark);
-    margin: 0;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--lineColor);
-    width: 100%;
-  }
-  #chorus-join-section .cs-join-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    margin-top: 1.25rem;
-  }
-  #chorus-join-section .cs-join-step {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  #chorus-join-section .cs-join-step-num {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.75rem;
-    height: 1.75rem;
-    border-radius: 50%;
-    background: var(--secondary);
-    color: var(--secondaryDark);
-    font-family: 'Figtree', sans-serif;
-    font-size: 0.8125rem;
-    font-weight: 700;
-  }
-  #chorus-join-section .cs-text {
-    font-size: 0.9375rem;
-    font-family: 'Figtree', sans-serif;
-    color: var(--bodyTextColor);
-    opacity: 0.8;
-    line-height: 1.6;
-    max-width: unset;
-    text-align: left;
-    margin: 0;
-    padding-top: 0.15rem;
-  }
-}
-
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #chorus-join-section .cs-join-steps {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  #chorus-join-section .cs-join-step {
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1 1 calc(50% - 0.75rem);
-    min-width: 12rem;
-  }
-}
-
-/*-- -------------------------- -->
-<---          Cite it           -->
-<--- -------------------------- -*/
-@media only screen and (min-width: 0rem) {
-  #chorus-cite-section {
-    padding: var(--sectionPadding);
-    padding-top: 0;
-  }
-  #chorus-cite-section .cs-container {
-    width: 100%;
-    max-width: 64rem;
-    margin: auto;
-  }
-  #chorus-cite-section .cs-cite-card {
-    width: 100%;
-    box-sizing: border-box;
-    background: #fff;
-    border: 1px solid var(--lineColor);
-    border-radius: 6px;
-    padding: 1.5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-  #chorus-cite-section .cs-title {
-    font-size: 0.6875rem;
-    font-family: 'Figtree', sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--primaryDark);
-    margin: 0;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--lineColor);
-    width: 100%;
-  }
-  #chorus-cite-section .cs-text {
-    font-size: 0.875rem;
-    font-family: 'Figtree', sans-serif;
-    color: var(--bodyTextColor);
-    opacity: 0.75;
-    line-height: 1.6;
-    max-width: unset;
-    text-align: left;
-    margin: 0;
-  }
-  #chorus-cite-section .cs-cite-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 0.25rem;
-  }
-  #chorus-cite-section .cs-cite-links a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: 'Figtree', sans-serif;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--primaryDark);
-    text-decoration: none;
-    opacity: 0.85;
-    transition: opacity 0.2s;
-  }
-  #chorus-cite-section .cs-cite-links a:hover {
-    opacity: 1;
-  }
-  #chorus-cite-section .cs-cite-links img {
-    opacity: 0.85;
   }
 }
