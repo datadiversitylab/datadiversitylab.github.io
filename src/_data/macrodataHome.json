@@ -1,0 +1,40 @@
+{
+  "statsTitle": "MacroData en números",
+  "stats": [
+    {
+      "number": "4",
+      "label": "Talleres"
+    },
+    {
+      "number": "4",
+      "label": "Universidades"
+    },
+    {
+      "number": "40+",
+      "label": "Estudiantes"
+    },
+    {
+      "number": "4",
+      "label": "Ciudades"
+    },
+    {
+      "number": "3+",
+      "label": "Instructores"
+    }
+  ],
+  "mapTitle": "Presencia en Colombia",
+  "mapText": "Cada punto marca una sede. Los talleres llegan a distintas regiones del país.",
+  "spotlightTitle": "Proyecto final",
+  "spotlightSubtitle": "Una publicación científica colectiva",
+  "spotlightText": "Cada taller termina con algo concreto: lxs participantes reconstruyen filogenias calibradas en el tiempo de grupos biológicos poco estudiados, contribuyen a la escritura del manuscrito, y figuran como coautorxs de la publicación. No es un ejercicio de cierre. Es ciencia real, producida en comunidad.",
+  "spotlightTags": [
+    "Filogenias calibradas",
+    "Coautoría",
+    "Ciencia abierta",
+    "Grupos poco estudiados",
+    "phruta · ape · phytools"
+  ],
+  "spotlightButtonText": "Ver los contenidos del taller",
+  "spotlightButtonLink": "/macrodata/contenidos/",
+  "newsTitle": "Noticias recientes"
+}

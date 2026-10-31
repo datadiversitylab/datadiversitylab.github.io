@@ -1,0 +1,52 @@
+{
+  "people": [
+    {
+      "name": "Cristian Román",
+      "role": "Coordinación general",
+      "photo": "/assets/images/macrodata/cristian-roman.jpg",
+      "photoAlt": "Cristian Román Palacios",
+      "website": "https://datadiversitylab.github.io",
+      "bluesky": "https://bsky.app/profile/cromanpa.bsky.social",
+      "linkedin": "",
+      "bio": "Ecólogo y biólogo evolutivo, actualmente Profesor Asistente en la Universidad de Arizona. Su trabajo combina investigación en biología evolutiva, conservación y ciencia de datos, con un interés particular en desarrollar herramientas bioinformáticas para entender mejor la diversidad biológica.",
+      "interests": [
+        "R",
+        "filogenia",
+        "cienciaabierta",
+        "macroevolución"
+      ]
+    },
+    {
+      "name": "Katherine Pérez",
+      "role": "Logística",
+      "photo": "/assets/images/macrodata/katherine-perez.jpg",
+      "photoAlt": "Katherine Pérez Castillo",
+      "website": "",
+      "bluesky": "",
+      "linkedin": "",
+      "bio": "Bióloga con experiencia en investigación y trabajo de campo, con énfasis en análisis de biodiversidad particularmente en aves y ecología animal, asi como en trabajo comunitario y educación ambiental. Katherine ha estado involucrada en iniciativas de conservación y tiene habilidades técnicas en análisis de datos ecológicos usando R.",
+      "interests": [
+        "educación",
+        "diversidad",
+        "redesregionales",
+        "gestióncientífica"
+      ]
+    },
+    {
+      "name": "Natalia Ramírez",
+      "role": "Acompañamiento técnico",
+      "photo": "/assets/images/macrodata/natalia-ramirez.jpg",
+      "photoAlt": "Natalia Ramírez",
+      "website": "",
+      "bluesky": "",
+      "linkedin": "",
+      "bio": "Bióloga con enfoque en ecología, biogeografía y evolución. Actualmente investiga el efecto de características ecológicas y biogeográficas de los páramos sobre la riqueza de aves en Colombia, utilizando herramientas SIG, R, y otras herramientas de análisis de datos. Natalia ha colaborado en tareas administrativas relacionadas con actividades investigativas.",
+      "interests": [
+        "programación",
+        "Rstats",
+        "recursosabiertos",
+        "pedagogía"
+      ]
+    }
+  ]
+}
