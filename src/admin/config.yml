@@ -643,6 +643,37 @@ collections:
               - { label: 'LinkedIn', name: 'linkedin', widget: 'string', required: false }
               - { label: 'Bio', name: 'bio', widget: 'text' }
               - { label: 'Interests (without #)', name: 'interests', widget: 'list', required: false }
+  - name: 'outreach'
+    label: 'Outreach items'
+    folder: 'src/outreach'
+    create: true
+    extension: 'md'
+    format: 'frontmatter'
+    identifier_field: title
+    slug: '{{slug}}'
+    summary: '{{title}}'
+    sortable_fields: ['title', 'order']
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Subtitle', name: 'subtitle', widget: 'string', required: false }
+      - { label: 'When', name: 'when', widget: 'string', required: false, hint: 'For example: December 11, 2024' }
+      - { label: 'Where or event', name: 'where', widget: 'string', required: false, hint: 'For example: AGU24' }
+      - { label: 'Name in the menu (optional)', name: 'menuLabel', widget: 'string', required: false, hint: 'Leave empty to use the title. It must not repeat another menu item.' }
+      - { label: 'Order in the menu', name: 'order', widget: 'number', required: false, hint: 'Lower numbers come first. Empty means 500.' }
+      - { label: 'Draft (hide from the site and the menu)', name: 'draft', widget: 'boolean', default: false, required: false }
+      - { label: 'Banner image', name: 'image', widget: 'image', required: false, media_folder: '/src/assets/images/outreach', public_folder: '/assets/images/outreach' }
+      - { label: 'Banner image description', name: 'imageAlt', widget: 'string', required: false }
+      - { label: 'Poster (PDF or image)', name: 'poster', widget: 'file', required: false, media_folder: '/src/assets/documents/outreach', public_folder: '/assets/documents/outreach', hint: 'A PDF shows a preview on desktop and a button on phones. An image is shown on the page.' }
+      - label: 'Links (buttons at the end)'
+        name: 'links'
+        widget: 'list'
+        required: false
+        summary: '{{fields.label}}'
+        fields:
+          - { label: 'Text', name: 'label', widget: 'string' }
+          - { label: 'Link', name: 'link', widget: 'string' }
+      - { label: 'Topics (small labels)', name: 'topics', widget: 'list', required: false }
+      - { label: 'Text', name: 'body', widget: 'markdown', required: false, media_folder: '/src/assets/images/outreach', public_folder: '/assets/images/outreach' }
   - name: 'logos'
     label: 'Logos'
     folder: 'src/logos'

@@ -1,0 +1,65 @@
+---
+layout: 'base.html'
+---
+<!-- ============================================ -->
+<!--        Outreach item (src/outreach)          -->
+<!-- ============================================ -->
+<!-- Everything on this page is edited in Netlify under Outreach items. -->
+
+<section id="ou-hero" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <p class="ou-kicker">Outreach</p>
+            <h1 class="cs-title">{{ title }}</h1>
+            {%- if subtitle %}
+            <p class="cs-text">{{ subtitle }}</p>
+            {%- endif %}
+            {%- if when or where %}
+            <p class="ou-meta">{{ when }}{% if when and where %} · {% endif %}{{ where }}</p>
+            {%- endif %}
+        </div>
+        {%- if image %}
+        <img class="ou-banner" src="{{ image }}" alt="{{ imageAlt or '' }}" decoding="async">
+        {%- endif %}
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="ou-body">
+    <div class="cs-container">
+        <article class="ou-article">
+            {%- if content | trim %}
+            <div class="ou-text">
+                {{ content | safe }}
+            </div>
+            {%- endif %}
+
+            {%- if poster %}
+            <div class="ou-poster">
+                <h2 class="ou-poster-title">Poster</h2>
+                {%- if '.pdf' in (poster | lower) %}
+                <object class="ou-poster-view" data="{{ poster }}#view=FitH" type="application/pdf" aria-label="Poster"></object>
+                {%- else %}
+                <a href="{{ poster }}" target="_blank" rel="noopener"><img src="{{ poster }}" alt="Poster" loading="lazy"></a>
+                {%- endif %}
+                <a class="ou-button" href="{{ poster }}" target="_blank" rel="noopener">Open the poster</a>
+            </div>
+            {%- endif %}
+
+            {%- if links | length %}
+            <div class="ou-links">
+                {%- for l in links %}
+                <a class="ou-button{{ ' is-secondary' if not loop.first or poster }}" href="{{ l.link }}" target="_blank" rel="noopener">{{ l.label }}</a>
+                {%- endfor %}
+            </div>
+            {%- endif %}
+
+            {%- if topics | length %}
+            <ul class="ou-pills">
+                {%- for t in topics %}<li>{{ t }}</li>{%- endfor %}
+            </ul>
+            {%- endif %}
+        </article>
+    </div>
+</section>
