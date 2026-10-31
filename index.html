@@ -45,6 +45,7 @@
         <!-- Loading in page specific CSS sheets from css block -->
         <link rel="stylesheet" href="/css/critical.css"/>
         <link rel="stylesheet" href="/css/local.css">
+        <link rel="stylesheet" href="/css/theme.css">
 
         <script defer src="https://umami.datadiversitylab.synology.me/script.js" data-website-id="543cffef-a100-47af-9dd9-2cf39517077b" data-domains="datadiversitylab.github.io" data-tag="labwebsite"></script>
 
@@ -249,761 +250,1118 @@
         </nav>
     </div>
 </header>
-        <main id="main"><section id="hero">
-    <div class="hero-content">
-        <div class="heroText">
-            <div class="button-container hero-animate hero-animate-1"><a class="button-solid" href="/our-team" rel="noopener">
-                            Lab Members
-                        </a><a class="button-solid" href="/publications" rel="noopener">
-                            Publications
-                        </a><a class="button-solid" href="/social" rel="noopener">
-                            Labscape
-                        </a><a class="button-solid" href="/join-us" rel="noopener">
-                            Join Us
-                        </a>
+        <main id="main"><link rel="stylesheet" href="/css/home.css"><section id="hero" class="hero-tree-on">
+    <!-- Circular tree of photos from Socials and MacroData. Settings: Netlify > Home page > ... > Lab life -->
+    <div class="hero-visual">
+        <div class="hero-tree" id="hero-tree" role="group" aria-label="Photos from lab life" data-count="6">
+            <div class="ht-rings" aria-hidden="true"></div>
+            <div class="ht-spin" id="ht-spin">
+                <svg class="ht-lines" id="ht-lines" aria-hidden="true" focusable="false"></svg>
+                <div class="ht-photos" id="ht-photos"></div>
             </div>
-            <div class="hero-animate hero-animate-2">
-                <h1 id="home-h" class="cs-title">The Data Diversity Lab</h1>
-            </div>
-            <p class="hero-description hero-animate hero-animate-3">
-                Biodiversity · Data Science · Software · People
-            </p>
-            <div class="subscribe-row hero-animate hero-animate-4">
-            </div>
-            <div class="hero-stats hero-animate hero-animate-4">
-                <div class="hero-stat"><span class="hero-stat-number" data-target="10">0</span>
-                    <span class="hero-stat-label">Lab Members</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number" data-target="57">0</span>
-                    <span class="hero-stat-label">Publications</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat">
-                    <span class="hero-stat-number" data-target="2023">0</span>
-                    <span class="hero-stat-label">Founded</span>
-                </div>
+            <div class="ht-caption" id="hero-note" aria-live="polite">
+                <span class="hn-kicker" id="hn-kicker"></span>
+                <span class="hn-title" id="hn-title"></span>
+                <span class="hn-desc" id="hn-desc"></span>
+                <a class="hn-link" id="hn-link" href="#" hidden>See more &rarr;</a>
             </div>
         </div>
     </div>
+    <!-- The pool of photos, read by home.js and never shown. Research: papers. Community: Socials and MacroData. -->
+    <ul id="ht-pool" hidden>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/macroevolution-yichao-paper-image.png"
+            data-kicker="Paper, Systematic Biology, 2026"
+            data-title="Macroevolutionary Rates of Species Interactions: Approximate Bayesian Inference from Cophylogenies"
+            data-desc="Understanding the macroevolutionary dynamics of species interactions such as parasitisms, commensalisms, and mutualisms is an important goal in..."
+            data-link="https://academic.oup.com/sysbio/advance-article/doi/10.1093/sysbio/syag070/8789437"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/ssarp.png"
+            data-kicker="Paper, Ecology and Evolution, 2026"
+            data-title="ssarp: An R Package for Efficiently Inferring Species- and Speciation-Area Relationships"
+            data-desc="A universal method of examining patterns of biodiversity on islands is the species-area relationship (SAR). SARs quantify the relationship between..."
+            data-link="https://onlinelibrary.wiley.com/doi/10.1002/ece3.73981"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/science.aea9563-f1.jpg"
+            data-kicker="Paper, Science, 2026"
+            data-title="Evolving nature-based solutions for urban resilience"
+            data-desc="Despite growing investments in nature-based solutions for urban resilience, their design often overlooks a fundamental biological process: evolution...."
+            data-link="https://www.science.org/doi/10.1126/science.aea9563"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/hurricane-paper-option2.png"
+            data-kicker="Paper, Research Square, 2026"
+            data-title="Hurricane power outage burden lands unequally: satellite evidence across 30 Atlantic storms"
+            data-desc="Hurricane-related outages affect millions, yet who loses power, how severely, and for how long remains poorly measured. Here we use satellite..."
+            data-link="https://www.researchsquare.com/article/rs-9349878/v1"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/machine-learning-publication.png"
+            data-kicker="Paper, BMC Biology, 2025"
+            data-title="Machine learning in biological research: key algorithms, applications, and future directions"
+            data-desc="Machine learning is a robust framework to analyze questions using complex data in a variety of fields. We present definitions and recent applications..."
+            data-link="https://link.springer.com/article/10.1186/s12915-025-02424-3"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/shinyacdb.jpg"
+            data-kicker="Paper, Ecology and Evolution, 2025"
+            data-title="A Web App for the Animal Culture Database and a Template for Deploying Comparative Trait Databases With Shiny"
+            data-desc="There is a large and growing number of trait databases in ecology and evolution. Structured and open-access data repositories are important resources..."
+            data-link="https://onlinelibrary.wiley.com/doi/10.1002/ece3.71913"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/journal.pcbi.1013248.g001.png"
+            data-kicker="Paper, PLoS Computational Biology, 2025"
+            data-title="LabOps: A flexible self-hosted workflow of open source tools for efficient collaboration within research laboratories"
+            data-desc="Effective collaboration, essential for success in academic environments, often requires efficient team communication and access to a team-oriented..."
+            data-link="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013248"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/screenshot-2025-03-06-at-3.58.37 pm.png"
+            data-kicker="Paper, BMC Biology, 2025"
+            data-title="Universal orthologs infer deep phylogenies and improve genome quality assessments"
+            data-desc="Universal single-copy orthologs are the most conserved components of genomes. Although they are routinely used for studying evolutionary histories and..."
+            data-link="https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-025-02328-2"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/acdb.jpg"
+            data-kicker="Paper, Scientific Data, 2025"
+            data-title="Mapping nonhuman cultures with the Animal Culture Database"
+            data-desc="Socially transmitted behaviors are widespread across the animal kingdom, yet there is a lack of comprehensive datasets documenting their distribution..."
+            data-link="https://www.nature.com/articles/s41597-025-05315-y"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/screenshot-2025-06-13-at-8.03.38 pm.png"
+            data-kicker="Paper, bioRxiv, 2025"
+            data-title="Macroevolutionary Rates of Species Interactions: Approximate Bayesian Inference from Cophylogenies"
+            data-desc="Understanding the macroevolutionary dynamics of species interactions such as parasitisms, commensalisms, and mutualisms is an important goal in..."
+            data-link="https://doi.org/10.1101/2025.05.15.653894"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/samedatadifferentanalyst.jpg"
+            data-kicker="Paper, BMC Biology, 2025"
+            data-title="Same data, different analysts: variation in effect sizes due to analytical decisions in ecology and evolutionary biology"
+            data-desc="Although variation in effect sizes and predicted values among studies of similar phenomena is inevitable, such variation far exceeds what might be..."
+            data-link="https://bmcbiol.biomedcentral.com/articles/10.1186/s12915-024-02101-x"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/screenshot-2025-01-23-at-8.54.36-am.png"
+            data-kicker="Paper, ESS Open Archive, 2025"
+            data-title="Clumped isotope thermometry in foraminifera as a tool in paleoceanography: New planktic and benthic data and constraints on non-thermal effects"
+            data-desc="The carbonate ”clumped” isotope thermometer (Δ47) in foraminifera is increasingly being used to reconstruct ocean temperature. Here we address several..."
+            data-link="https://essopenarchive.org/users/529500/articles/1262022-clumped-isotope-thermometry-in-foraminifera-as-a-tool-in-paleoceanography-new-planktic-and-benthic-data-and-constraints-on-non-thermal-effects"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/esa.png"
+            data-kicker="Paper, Ecological Society of America, 2024"
+            data-title="COP16 Dispatch: Week 2 Open Source and LLMs, Reflections from the Back Row of COP16"
+            data-desc="&quot;Large academic conferences have not strongly attracted me for years. That, combined with the limited direct overlap between my research and public..."
+            data-link="https://esa.org/esablog/2024/11/19/cop16-dispatch-week-2-open-source-and-llms-reflections-from-the-back-row-of-cop16/"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/dep2312-fig-0001-m.jpg"
+            data-kicker="Paper, The Depositional Record, 2024"
+            data-title="Comparative clumped isotope temperature relationships in freshwater carbonates"
+            data-desc="Lacustrine, riverine and spring carbonates represent archives of terrestrial climates and their geochemistry has been used to study..."
+            data-link="https://onlinelibrary.wiley.com/doi/full/10.1002/dep2.312"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/barmpy.jpg"
+            data-kicker="Paper, Computational Statistics, 2024"
+            data-title="BARMPy: Bayesian additive regression models Python package"
+            data-desc="We make Bayesian additive regression networks (BARN) available as a Python package, barmpy, with documentation at for general machine learning..."
+            data-link="https://link.springer.com/article/10.1007/s00180-024-01535-9"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/onlinetoolkits.png"
+            data-kicker="Paper, Ecology and Evolution, 2024"
+            data-title="Online toolkits for collaborative and inclusive global research in urban evolutionary ecology"
+            data-desc="Urban evolutionary ecology is inherently interdisciplinary. Moreover, it is a field with global significance. However, bringing researchers and..."
+            data-link="https://onlinelibrary.wiley.com/doi/10.1002/ece3.11633"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/screenshot-2024-06-15-at-3.35.20-pm.png"
+            data-kicker="Paper, ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, 2024"
+            data-title="Open-source automatic extraction of Urban Green Space: Application to assessing improvement in green space access"
+            data-desc="Urban Green Space (UGS) is vital for improving the public health and sustainability of cities. Vector data on UGS such as open data from governments..."
+            data-link="https://isprs-annals.copernicus.org/articles/X-2-2024/65/2024/"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/screenshot-2024-05-09-at-8.37.17-am.png"
+            data-kicker="Paper, Remote Sensing of Environment, 2024"
+            data-title="Using CloudSat to advance the global precipitation climatology project (GPCP) over Antarctica"
+            data-desc="Remote sensing-based precipitation products face several challenges in high latitudes and specifically over frozen surfaces (i.e., snow and ice)...."
+            data-link="https://www.sciencedirect.com/science/article/pii/S0034425724002177"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/large.jpg"
+            data-kicker="Paper, Insect Systematics and Evolution, 2024"
+            data-title="Holarctic Lineages Cannot Inform Diversity and Evolution in the Neotropics – the barklice family Psocidae as a case study"
+            data-desc="Despite tropical species comprising nearly 60% of Psocidae species, previous studies examining the Psocidae phylogeny have undersampled tropical..."
+            data-link="https://brill.com/view/journals/ise/aop/article-10.1163-1876312X-bja10055/article-10.1163-1876312X-bja10055.xml"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/barn.jpg"
+            data-kicker="Paper, arXiv, 2024"
+            data-title="Bayesian Additive Regression Networks"
+            data-desc="We apply Bayesian Additive Regression Tree (BART) principles to training an ensemble of small neural networks for regression tasks. Using Markov Chain..."
+            data-link="https://arxiv.org/abs/2404.04425"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/physiologicalresponses.jpg"
+            data-kicker="Paper, Frontiers, 2023"
+            data-title="Physiological cold tolerance evolves faster than climatic niches in plants"
+            data-desc="Understanding how plants respond to thermal stress is central to predicting plant responses and community dynamics in natural ecosystems under..."
+            data-link="/assets/documents/publications/2023_Physiological cold tolerance evolves faster _Wen_etAl.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/digestunveilingevolution.svg"
+            data-kicker="Paper, Evolution, 2023"
+            data-title="Digest: Unveiling the role of chemical communication in lizard diversification"
+            data-desc="Although many studies looking at the role that sexual selection plays in macroevolution have focused on the involvement of visual and acoustic..."
+            data-link="/assets/documents/publications/2023_Digest_unveiling the role_Roman_palacios.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/thephrutarpackage.jpg"
+            data-kicker="Paper, Methods in Ecology and Evolution, 2023"
+            data-title="The phruta R package: increasing access, reproducibility, and transparency in phylogenetic analyses"
+            data-desc="Current practices for assembling phylogenetic trees often recur to sequence data stored in GenBank. However, the molecular and taxonomic make-up of..."
+            data-link="https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.14147"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/goniurosauruswangshu.jpg"
+            data-kicker="Paper, Zootaxa, 2022"
+            data-title="Goniurosaurus wangshu sp. nov., a new species of Tiger Gecko from Guangdong, China (Squamata: Eublepharidae)"
+            data-desc="A new species of Tiger Gecko in the genus Goniurosaurus is described from Guangdong, China. This new species, Goniurosaurus wangshu sp. nov. is the..."
+            data-link="/assets/documents/publications/ZhuEtAl_Gwangshu.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/anewspeciesofwhipspidersaraxsinesis.jpg"
+            data-kicker="Paper, Zootaxa, 2022"
+            data-title="A new species of whip spider, Sarax sinensis sp. nov., from Fujian, China (Arachnida: Amblypygi: Charinidae)"
+            data-desc="To date, only two whip spider species have been recorded in China. We describe a new species, Sarax sinensis sp. nov., from Fujian, China. This..."
+            data-link="/assets/documents/publications/2022_A new species of whip spider, Sarax sinensis_WuEtAl_SS.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/theoriginsofglobalbiodiversity.jpg"
+            data-kicker="Paper, Ecology letters, 2022"
+            data-title="The origins of global biodiversity on land, sea, and freshwater"
+            data-desc="Many biodiversity studies focus on explaining high tropical species richness, but an equally dramatic yet understudied pattern involves the divergent..."
+            data-link="/assets/documents/publications/2022_Roman-Palacios_et_al._EL_.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/screenshot-2026-09-16-at-6.50.10 pm.png"
+            data-kicker="Paper, ESS Open Archive, 2021"
+            data-title="BayClump: Bayesian Calibration and Temperature Reconstructions for Clumped Isotope Thermometry"
+            data-desc="Carbonate clumped isotope thermometry (Δ47) is a temperature proxy that is becoming more widely used in the geosciences. Most calibration studies have..."
+            data-link="https://essopenarchive.org/doi/full/10.1002/essoar.10507995.1"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/goniurosauruschengzheng.jpg"
+            data-kicker="Paper, Zootaxa, 2021"
+            data-title="Goniurosaurus chengzheng sp. nov., a new species of Leopard Gecko from Guangxi, China (Squamata: Eublepharidae)"
+            data-desc="Six species of geckos in the genus Goniurosaurus have been recorded from Guangxi, China. Here we describe a new species, Goniurosaurus chengzheng sp...."
+            data-link="/assets/documents/publications/2021ZhuEtAl.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/animalchromosomecounts.jpeg"
+            data-kicker="Paper, Journal of Evolutionary Biology, 2021"
+            data-title="Animal chromosome counts reveal similar range of chromosome numbers but with less polyploidy in animals compared to flowering plants"
+            data-desc="Understanding the mechanisms that underlie chromosome evolution could provide insights into the processes underpinning the origin, persistence and..."
+            data-link="/assets/documents/publications/RomanPalaciosetal2021.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/patternsofelementincorporation.jpg"
+            data-kicker="Paper, Frontiers in Earth Science, 2021"
+            data-title="Patterns of element incorporation in calcium carbonate biominerals recapitulate phylogeny for a diverse range of marine calcifiers"
+            data-desc="Elemental ratios in biogenic marine calcium carbonates are widely used in geobiology, environmental science, and paleoenvironmental reconstructions...."
+            data-link="/assets/documents/publications/UlrichEtAl2021.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/specieationacrossthetreeoflife.jpg"
+            data-kicker="Paper, Biological Reviews, 2021"
+            data-title="Speciation across the Tree of Life"
+            data-desc="Much of what we know about speciation comes from detailed studies of well-known model systems. Although there have been several important syntheses on..."
+            data-link="/assets/documents/publications/2021_HernandezHernandezEtAl.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/evolutionarytimebestexplains.jpg"
+            data-kicker="Paper, Global Ecology and Biogeography, 2021"
+            data-title="Evolutionary time best explains the latitudinal diversity gradient of living freshwater fish diversity"
+            data-desc="Aim: The evolutionary causes of the latitudinal diversity gradient are debated. Hypotheses have ultimately invoked either faster rates of..."
+            data-link="/assets/documents/publications/2021_MillerRoman_freshwater.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/treedata.tablerwrappperfordatatable.jpg"
+            data-kicker="Paper, PeerJ, 2021"
+            data-title="treedata.table: a wrapper for data.table that enables fast manipulation of large phylogenetic trees matched to data"
+            data-desc="The number of terminals in phylogenetic trees has significantly increased over the last decade. This trend reflects recent advances in next-generation..."
+            data-link="/assets/documents/publications/2021_Roman-Palacios_treedata.table.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/anewspeciesofwhipspiderweygoldtiahainanensis.jpg"
+            data-kicker="Paper, Zootaxa, 2021"
+            data-title="A new species of whip spider, Weygoldtia hainanensis sp. nov., from Hainan, China (Arachnida: Amblypygi: Charinidae)"
+            data-desc="To date, only one species of whip spider has been recorded in China. Here, we describe a new species, Weygoldtia hainanensis sp. nov., from Hainan,..."
+            data-link="/assets/documents/publications/2021_Zhu_Weygoldtia.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/goniurosaurusgezhi.jpg"
+            data-kicker="Paper, Zootaxa, 2020"
+            data-title="Goniurosaurus gezhi, a new gecko species from Guangxi, China (Squamata: Sauria: Eublepharidae)"
+            data-desc="Five species of geckos in the genus Goniurosaurus had been recorded from Guangxi, China. Here we describe a new species, Goniurosaurus gezhi sp. nov...."
+            data-link="/assets/documents/publications/ZhuEtAl2020.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/polyploidyincreasesoverall.jpg"
+            data-kicker="Paper, Proceedings of the Royal Society B, 2020"
+            data-title="Polyploidy increases overall diversity despite higher turnover than diploids in the Brassicaceae"
+            data-desc="Although polyploidy is widespread across the plant Tree of Life, its long-term evolutionary significance is still poorly understood. Here, we examine..."
+            data-link="/assets/documents/publications/2020_Roman-Palaciosetal_Brassicaceae_.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/recentresponsestoclimatechange.jpeg"
+            data-kicker="Paper, PNAS, 2020"
+            data-title="Recent responses to climate change reveal the drivers of species extinction and survival"
+            data-desc="Climate change may be a major threat to biodiversity in the next 100 years. Although there has been important work on mechanisms of decline in some..."
+            data-link="/assets/documents/publications/2020_Roman-Palacios_Wiens_PNAS.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/fivetipsfornailingyourusbased.jpg"
+            data-kicker="Paper, Nature, 2019"
+            data-title="Five tips for nailing your US-based graduate-school applications"
+            data-desc="Cristian Román-Palacios discusses how to deal with the bureaucracy and make a great case for yourself."
+            data-link="/assets/documents/publications/2019_Nature_.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/evolutionofdiet.jpeg"
+            data-kicker="Paper, Evolution letters, 2019"
+            data-title="Evolution of diet across the Animal Tree of Life"
+            data-desc="What an animal eats is a fundamental aspect of its biology, but the evolution of diet has not been studied across animal phylogeny. Here, we performed..."
+            data-link="/assets/documents/publications/2019_Evolution of diet across the Animal Tree of Life_Roman-Palacios_et_al_EvoLett_2019.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/bammgivesmisleading.jpg"
+            data-kicker="Paper, Evolution, 2018"
+            data-title="BAMM gives misleading results in simulated and empirical datasets"
+            data-desc="In a previous paper, we used simulations and empirical data to show that BAMM (Bayesian Analysis of Macroevolutionary Mixtures) can give misleading..."
+            data-link="/assets/documents/publications/2018_BAMM gives misleading results _Meyer_et_al_Evol_2018_BAMM.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/checklistofpsocopterapsocodea.jpg"
+            data-kicker="Paper, Dugesiana, 2018"
+            data-title="Checklist of ‘Psocoptera’(Psocodea) of Colombia and identification key to families"
+            data-desc="We present a list of 720 species of ‘Psocoptera’ recorded in Colombia, based on the examination of specimens deposited in the collections of the..."
+            data-link="/assets/documents/publications/2018_Checklist of ‘Psocoptera’(Psocodea)_Garcia-Aldrete et al 2018_Psocoptera_Colombia.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/thetortoiseandthefinch.jpg"
+            data-kicker="Paper, Journal of Biogeography, 2018"
+            data-title="The Tortoise and the Finch: testing for island effects on diversification using two iconic Galápagos radiations"
+            data-desc="Aims: Islands are widely recognized as natural laboratories for evolutionary studies, but many questions about evolution on islands remain unresolved...."
+            data-link="/assets/documents/publications/2018_The Tortoise and the Finch _Roman_Palacios_Wiens_JBI_2018.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/whendidanolislizardsdiverge.jpg"
+            data-kicker="Paper, Molecular Phylogenetics and Evolution, 2018"
+            data-title="When did Anolis lizards diverge? A comparison of multiple dating strategies"
+            data-desc="Whereas most of the studies that discuss the evolutionary divergence of Anolis lizards have dated the clade’s crown group in between 31 and 64Ma, a..."
+            data-link="/assets/documents/publications/2018_roman-palacios_et_al_anolis.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/molecularseaskaters.jpg"
+            data-kicker="Paper, Insect Systematics and Evolution, 2018"
+            data-title="Molecular phylogeny of sea skaters and their freshwater relatives (Hemiptera: Heteroptera: Gerridae: Halobatinae)"
+            data-desc="We investigated the phylogenetic relationships among seven of the ten Halobatinae genera (Heteroptera: Gerridae) based on COI+II, 16S rRNA, and 28S..."
+            data-link="/assets/documents/publications/2018_Molecular phylogeny of sea skaters_Roman-Palacios_et_al._Halobatinae.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/onthedatadeficientamphibians.jpg"
+            data-kicker="Paper, Revista de Biologia Tropical, 2018"
+            data-title="On the Data Deficient amphibians from Colombia"
+            data-desc="Whereas more than 10 % of global amphibian richness is known to occur in Colombia, almost 16 % of these species are currently classified as Data..."
+            data-link="/assets/documents/publications/2018_On the Data Deficient amphibians _Roman-Palacios_&amp;_Valencia-Zuleta 2018_Colombian_DD.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/onthedivergenceofpsocidae.png"
+            data-kicker="Paper, Boletin del Museo de Entomologia de la Universidad del Valle, 2017"
+            data-title="On the divergence of Psocidae (Psocodea, Psocomorpha): Fossils or biogeography"
+            data-desc="With more than 900 valid species, Psocidae is the most diverse family of psocodeans. Even though the availability of molecular has allowed..."
+            data-link="/assets/documents/publications/2017_On the divergence of Psocidae_Roman-Palacios et al. 2017_Psocidae_Divergence.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/listaanotada.png"
+            data-kicker="Paper, Biota Colombiana, 2017"
+            data-title="Lista anotada de la herpetofauna del departamento del Quindío, Colombia"
+            data-desc="The increasing uncertainty about the conservation status of the different biological groups emphasizes the importance of concentrating efforts on..."
+            data-link="/assets/documents/publications/2017_Lista anotada de la herpetofauna_Roman-Palacios et al. 2017_Quindio_Herps.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/usodemicrohabitat.jpg"
+            data-kicker="Paper, Boletin Cientifico Centro de Museos Museo de Historia Natural de la Universidad de Caldas, 2017"
+            data-title="Uso de microhábitat por anuros en un fragmento de bosque seco intervenido del Magdalena medio, Guarinocito, Colombia"
+            data-desc="The anuran assemblages in three habitats (forest, lake and quarry) with different degrees of human disturbance present in a dry forest fragment in the..."
+            data-link="/assets/documents/publications/2016_Uso de microhábitat por anuros _Roman-Palacios et al_2016_Guarinocito.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/dietayreproduccion.jpg"
+            data-kicker="Paper, Revista MVZ Cordoba, 2016"
+            data-title="Dieta y reproducción de Bryconamericus caucanus (Characiformes: Characidae) en La Venada, Río Quindío, Colombia"
+            data-desc="Objectives: The reproductive and trophic ecology of Bryconamericus caucanus was analyzed in la Venada creek, Quindío river, Alto Cauca, Colombia...."
+            data-link="/assets/documents/publications/2016_Dieta y reproducción de Bryconamericus_Roman-Palacios et al_2016_caucanus.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/historicalbiogeographyofpsocids.jpg"
+            data-kicker="Paper, European Journal of Taxonomy, 2016"
+            data-title="Historical biogeography of Thyrsophorini psocids and description of a new Neotropical species of Thyrsopsocopsis (Psocodea: Psocomorpha: Psocidae)"
+            data-desc="When based on phylogenetic proposals, biogeographic historic narratives have a great interest for hypothesizing paths of origin of the current..."
+            data-link="/assets/documents/publications/2016_Historical biogeography of Thyrsophorini _Roman-Palacios et al 2016_Thyrso.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/uncoveringthediversity.png"
+            data-kicker="Paper, Zootaxa, 2016"
+            data-title="Uncovering the diversity of the neotropical genus Elaphopsocus (‘Psocoptera’: Psocidae: Amphigerontiinae): from one to ten species"
+            data-desc="For 75 years, the genus Elaphopsocus was considered a monotypic lineage of neotropical psocids. As a result of recent work in South America, this..."
+            data-link="/assets/documents/publications/2015_Uncovering the diversity of the neotropical genus Elaphopsocus _Roman-Palacios_et_al_2015_Elaphosocus.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/anewneotropicalgenusofblastini.jpg"
+            data-kicker="Paper, Zootaxa, 2015"
+            data-title="A new Neotropical genus of Blastini (Psocodea: ’Psocoptera’: Psocidae: Amphigerontiinae)"
+            data-desc="A monotypic genus of Psocidae (Amphigerontiinae: Blastini) from Santiago de Cali, Colombia, is here described and illustrated. It differs from..."
+            data-link="/assets/documents/publications/2015_A new Neotropical genus of Blastini_Garcia-Aldrete_Roman-Palacios_2015_Blastini.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/informationcriteria.jpg"
+            data-kicker="Paper, Comunicaciones en Estadistica, 2015"
+            data-title="Information criteria on multimodel selection of parametric regression: Biological applications"
+            data-desc="When carrying out modelling analysis using experimental data is important to obtain a measure of the relative fit of the each model as a primary..."
+            data-link="/assets/documents/publications/2015_Information criteria on multimodel selection_Moraga_Lopez_Roman-Palacios_2015_Multimodel.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/thegenuselaphopsocusroesler.jpg"
+            data-kicker="Paper, Zootaxa, 2015"
+            data-title="The genus Elaphopsocus Roesler (Psocodea:’Psocoptera’: Psocidae) with six new species from Brazil and Colombia"
+            data-desc="Six new species of Elaphopsocus Roesler from Brazil and Colombia are described and illustrated. Revised generic diagnoses are provided for..."
+            data-link="/assets/documents/publications/2015_The genus Elaphopsocus Roesler_The_genus_Elaphopsocus.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/habitostroficosdedosespecies.jpg"
+            data-kicker="Paper, Revista Mexicana de Biodiversidad, 2015"
+            data-title="Hábitos tróficos de dos especies sintópicas de carácidos en una quebrada de alta montaña en los Andes de Colombia"
+            data-desc="To analyze the degree of trophic overlap, 2 species of Neotropical characins were considered: Hemibrycon brevispini and Bryconamericus caucanus. Both..."
+            data-link="/assets/documents/publications/2015_Hábitos tróficos de dos especies sintópicas_Roman-Palacios_&amp;_Roman-Valencia_2015_Two_freshwater.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/elaphopsicoides.png"
+            data-kicker="Paper, Zootaxa, 2014"
+            data-title="Elaphopsocoides, a new genus of Psocidae (Psocodea: ’Psocoptera’) from Valle del Cauca, Colombia"
+            data-desc="Two new species of Elaphopsocoides n. gen. from Valle del Cauca, Colombia, are here described and illustrated. The new genus is related to..."
+            data-link="/assets/documents/publications/2014_Elaphopsocoides, a new genus of Psocidae _Roman-P_et_al_2014_Elaphopsocus.pdf"></li>
+        <li data-group="research" data-sub="papers" data-src="/assets/images/publications/trophicandreproductiveecology.jpg"
+            data-kicker="Paper, Caldasia, 2014"
+            data-title="Trophic and reproductive ecology of a neotropical characid fish Hemibrycon brevispini (Teleostei: Characiformes)"
+            data-desc="Hemibrycon brevispini is a Neotropical characid fish endemic in La Venada Creek, a headwater tributary of the Quindío River of Colombia (Cauca River..."
+            data-link="/assets/documents/publications/2015_Trophic and reproductive ecology _Roman-Palacios_et_al_2015_Brevi.pdf"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/screenshot-2026-02-25-at-11.07.15 pm.png"
+            data-kicker="Tucson, 2023"
+            data-title="2023 Faculty Research Blitz"
+            data-desc="Cristian presented a talk at the University of Arizona College of Information Science&#39;s Faculty Research Blitz. His talk covered models and packages within the lab including BARN, Clustering Cities, and Synthetic Populations vs. Climate Change. Watch the talk with the link below!"
+            data-link="https://youtu.be/yNuA6WKjnm8?si=6LucQoNsc5BmiunQ&amp;t=4395"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/2025-infosci-halloween.png"
+            data-kicker="Tucson, 2025"
+            data-title="2025 College of InfoSci Halloween Party"
+            data-desc="One of our lovely lab postdocs, Kristen Martinet spent the morning celebrating with fellow InfoSci members at the 2025 InfoSci halloween party. We love Kristen&#39;s costume and hope the other attendees had a blast! "
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/pc-grad-2.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="2025 Graduates, Paige Cherry and Eleanor Tuck"
+            data-desc="Lab members, Paige Cherry and Eleanor Tuck graduated this past week with their bachelor degrees. This is a huge accomplishment and we are so proud of our team members, congratulations!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/img_6676-2.png"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="2025 Graduates, Paige Cherry and Eleanor Tuck"
+            data-desc="Lab members, Paige Cherry and Eleanor Tuck graduated this past week with their bachelor degrees. This is a huge accomplishment and we are so proud of our team members, congratulations!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/pc-grad-1.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="2025 Graduates, Paige Cherry and Eleanor Tuck"
+            data-desc="Lab members, Paige Cherry and Eleanor Tuck graduated this past week with their bachelor degrees. This is a huge accomplishment and we are so proud of our team members, congratulations!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/img_6686-2.png"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="2025 Graduates, Paige Cherry and Eleanor Tuck"
+            data-desc="Lab members, Paige Cherry and Eleanor Tuck graduated this past week with their bachelor degrees. This is a huge accomplishment and we are so proud of our team members, congratulations!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/rn_image_picker_lib_temp_d7cb154e-d2b3-4395-8c98-bffc705062fa.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="2026 Faculty Research Blitz"
+            data-desc="The Faculty Research Blitz is an annual event held by the College of Information Science. Cristian presented at this year&#39;s event covering the recent work of the Data Diversity Lab. View his talk using the link below!"
+            data-link="https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fyoutu.be%2FJWUMMYGdjWk%3Ft%3D3396&amp;data=05%7C02%7Ckennedygezella%40arizona.edu%7C557f2a36b5174290d5c008de89c62311%7C5ee35505eb8e4929937d645df5013288%7C1%7C0%7C639099681261071658%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=DN6gT2YpHzDLeC8LNgfhhp1OoxJj%2BllLTCvTKzvWRAk%3D&amp;reserved=0"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/screenshot-2026-04-02-at-3.04.13 pm.png"
+            data-kicker="Tucson, 2026"
+            data-title="2026 Faculty Research Blitz"
+            data-desc="The Faculty Research Blitz is an annual event held by the College of Information Science. Cristian presented at this year&#39;s event covering the recent work of the Data Diversity Lab. View his talk using the link below!"
+            data-link="https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fyoutu.be%2FJWUMMYGdjWk%3Ft%3D3396&amp;data=05%7C02%7Ckennedygezella%40arizona.edu%7C557f2a36b5174290d5c008de89c62311%7C5ee35505eb8e4929937d645df5013288%7C1%7C0%7C639099681261071658%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=DN6gT2YpHzDLeC8LNgfhhp1OoxJj%2BllLTCvTKzvWRAk%3D&amp;reserved=0"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/img_2845.jpg_compressed.jpeg"
+            data-kicker="Tucson, 2026"
+            data-title="2026 Group Photo Session"
+            data-desc="Data Diversity Lab members met to take updated group photos!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/dscf3017.jpg_compressed.jpeg"
+            data-kicker="Tucson, 2026"
+            data-title="2026 Group Photo Session"
+            data-desc="Data Diversity Lab members met to take updated group photos!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/dscf2019_3.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="2026 UA President Garimella Visit"
+            data-desc="The Data Diversity Lab recently had the privilege of welcoming President Garimella into our lab space to share our past, present, and future work. A variety of lab members were able to highlight their amazing work and it led to great conversations with President Garimella! Thank you for this opportunity! To read or see more about what was discussed, see photos above and the website linked below."
+            data-link="https://datadiversitylab.github.io/overview_site/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/dscf1990.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="2026 UA President Garimella Visit"
+            data-desc="The Data Diversity Lab recently had the privilege of welcoming President Garimella into our lab space to share our past, present, and future work. A variety of lab members were able to highlight their amazing work and it led to great conversations with President Garimella! Thank you for this opportunity! To read or see more about what was discussed, see photos above and the website linked below."
+            data-link="https://datadiversitylab.github.io/overview_site/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/dscf1956.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="2026 UA President Garimella Visit"
+            data-desc="The Data Diversity Lab recently had the privilege of welcoming President Garimella into our lab space to share our past, present, and future work. A variety of lab members were able to highlight their amazing work and it led to great conversations with President Garimella! Thank you for this opportunity! To read or see more about what was discussed, see photos above and the website linked below."
+            data-link="https://datadiversitylab.github.io/overview_site/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/dscf1934.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="2026 UA President Garimella Visit"
+            data-desc="The Data Diversity Lab recently had the privilege of welcoming President Garimella into our lab space to share our past, present, and future work. A variety of lab members were able to highlight their amazing work and it led to great conversations with President Garimella! Thank you for this opportunity! To read or see more about what was discussed, see photos above and the website linked below."
+            data-link="https://datadiversitylab.github.io/overview_site/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/4bd90d62-381f-4457-9ecf-94eabb5c2978.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="2026 UA President Garimella Visit"
+            data-desc="The Data Diversity Lab recently had the privilege of welcoming President Garimella into our lab space to share our past, present, and future work. A variety of lab members were able to highlight their amazing work and it led to great conversations with President Garimella! Thank you for this opportunity! To read or see more about what was discussed, see photos above and the website linked below."
+            data-link="https://datadiversitylab.github.io/overview_site/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/afrocolombian-of-the-year.png"
+            data-kicker="Bogotá, Colombia, 2022"
+            data-title="AfroColombian of the Year"
+            data-desc="Dr. Román-Palacios was named &#39;Afro-Colombian&#39; of the Year by the oldest newspaper in Colombia and Fundacion Color de Colombia. Dr. Román-Palacios gave a brief speech, in Spanish. You can check out the whole event in the link below."
+            data-link="https://www.youtube.com/watch?v=YVjypFlp9mM&amp;t=1658s "></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/arizona-women-s-symposium-in-mathematics-awsim-.png"
+            data-kicker="Flagstaff, Arizona, 2023"
+            data-title="Arizona Women&#39;s Symposium in Mathematics (AWSiM)"
+            data-desc="Danielle Van Boxel (pictured in the very back left-hand corner) attended the Arizona Women&#39;s Symposium in Mathematics in Flagstaff, AZ. Danielle was a featured speaker in the conference and was also a research poster presenter. The AWSiM provides a forum for women to share information about their projects with each other and with community members."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/bic-5-wide-team.jpg-ezgif.com-webp-to-jpg-converter2.jpeg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="Big Idea Challenge Grant Funded!"
+            data-desc="The DDL was part of a grant project to secure funds for an ecological and biological representation of a unified landscape for terraformation and habitability. This grant was recently funded. We are so excited to be a part of this project and want to extend congratulations to not only our involved lab members, but everyone else involved! "
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/exterior-b2-8x10-300dpi-1-.png"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="Big Idea Challenge Grant Funded!"
+            data-desc="The DDL was part of a grant project to secure funds for an ecological and biological representation of a unified landscape for terraformation and habitability. This grant was recently funded. We are so excited to be a part of this project and want to extend congratulations to not only our involved lab members, but everyone else involved! "
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/social/churrasco.jpg"
+            data-kicker="Tucson, Arizona, 2023"
+            data-title="Churrasco do Brasil Lab Dinner"
+            data-desc="A lab dinner was organized in Fall 2023 at Churrasco de Brasil, Tucson, AZ. In attendance are lab members from left to right: Daniela Valladolid, Cristian Román, Danielle Van Boxel, Yi Chien Lee, and Hector Garcia."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/6633fdd2-4d40-4b98-8ea1-9332a733c35d.jpg"
+            data-kicker="Galapagos Islands, Ecuador , 2025"
+            data-title="Cristian Román-Palacios - Talk at the Charles Darwin Foundation"
+            data-desc="Our PI, Cristian Román-Palacios was asked to give a talk at the incredible Charles Darwin Foundation regarding macroevolution. "
+            data-link="https://www.darwinfoundation.org/en/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cd-1.jpg"
+            data-kicker="Galapagos Islands, Ecuador , 2025"
+            data-title="Cristian Román-Palacios - Talk at the Charles Darwin Foundation"
+            data-desc="Our PI, Cristian Román-Palacios was asked to give a talk at the incredible Charles Darwin Foundation regarding macroevolution. "
+            data-link="https://www.darwinfoundation.org/en/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cd-2.jpg"
+            data-kicker="Galapagos Islands, Ecuador , 2025"
+            data-title="Cristian Román-Palacios - Talk at the Charles Darwin Foundation"
+            data-desc="Our PI, Cristian Román-Palacios was asked to give a talk at the incredible Charles Darwin Foundation regarding macroevolution. "
+            data-link="https://www.darwinfoundation.org/en/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cd-3.jpg"
+            data-kicker="Galapagos Islands, Ecuador , 2025"
+            data-title="Cristian Román-Palacios - Talk at the Charles Darwin Foundation"
+            data-desc="Our PI, Cristian Román-Palacios was asked to give a talk at the incredible Charles Darwin Foundation regarding macroevolution. "
+            data-link="https://www.darwinfoundation.org/en/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cd-4.jpg"
+            data-kicker="Galapagos Islands, Ecuador , 2025"
+            data-title="Cristian Román-Palacios - Talk at the Charles Darwin Foundation"
+            data-desc="Our PI, Cristian Román-Palacios was asked to give a talk at the incredible Charles Darwin Foundation regarding macroevolution. "
+            data-link="https://www.darwinfoundation.org/en/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/screenshot-2025-03-12-at-6.04.07-am.png"
+            data-kicker="University of Bern Zoom Call, 2025"
+            data-title="Cristian Román-Palacios Presented at University of Bern"
+            data-desc="Our PI, Cristian was invited to present by Dr. Ole Seehausen for a lecture series on Aquatic Ecology and Evolution. Congrats Cristian!"
+            data-link="https://www.aqua.iee.unibe.ch/studies/teaching/spring_semester_2025/index_eng.html"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/screenshot-2025-04-21-at-3.19.06 pm.png"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="Cristian Román-Palacios Selected for UA Faculty Research Excellence Award"
+            data-desc="Cristian received a much deserving recognition award for his research work at the University of Arizona!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cristian_esa2025.jpg"
+            data-kicker="Baltimore, Maryland, 2025"
+            data-title="Cristian&#39;s talk at the Ecological Society of America Conference (ESA 2025)"
+            data-desc="On August 11th, our lab&#39;s PI, Cristian Román-Palacios, presented at ESA 2025 in Baltimore, Maryland, on the panel, &quot;Breaking Barriers to Incorporating Phylogenetics in Ecology&quot;, with Jeremy Beaulieu and Laura Russo. Read more about the session panel with the link below!"
+            data-link="https://anytko.github.io/breaking_barriers_phylogenetic_ecology/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cristian-utk.jpg"
+            data-kicker="Knoxville, TN, 2026"
+            data-title="Cristian&#39;s Visit to the Biology Department at University of Tennessee-Knoxville"
+            data-desc="The photo above is Cristian with the members of O’Meara Lab during his visit to University of Tennessee-Knoxville this past weekend (read more about the O&#39;Meara Lab using the link below). The other photo included is Cristian’s talk regarding the lab and its recent work at UTK’s biology department. Read more: This past weekend Cristian, our PI got the chance to travel to the University of Tennessee-Knoxville (UTK) for a seminar event. Cristian would like to thank PhD candidate, Alivia Nytko, and Dr. Brian O’Meara for hosting his travel to the Biology Department at UTK. It was an amazing visit overall with numerous positive conversations including those with Dr. Xingli Giam and Dr. Joe Bailey’s class, and with Dr. Mike Gilchrist surrounding applied math and large language models (LLMs)."
+            data-link="https://brianomeara.info/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/screenshot-2026-03-06-at-6.32.48 pm.png"
+            data-kicker="Knoxville, TN, 2026"
+            data-title="Cristian&#39;s Visit to the Biology Department at University of Tennessee-Knoxville"
+            data-desc="The photo above is Cristian with the members of O’Meara Lab during his visit to University of Tennessee-Knoxville this past weekend (read more about the O&#39;Meara Lab using the link below). The other photo included is Cristian’s talk regarding the lab and its recent work at UTK’s biology department. Read more: This past weekend Cristian, our PI got the chance to travel to the University of Tennessee-Knoxville (UTK) for a seminar event. Cristian would like to thank PhD candidate, Alivia Nytko, and Dr. Brian O’Meara for hosting his travel to the Biology Department at UTK. It was an amazing visit overall with numerous positive conversations including those with Dr. Xingli Giam and Dr. Joe Bailey’s class, and with Dr. Mike Gilchrist surrounding applied math and large language models (LLMs)."
+            data-link="https://brianomeara.info/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/dscf1038.jpg"
+            data-kicker="Bogotá, Colombia, 2026"
+            data-title="Cristian&#39;s Workshop in Bogotá"
+            data-desc="While in Bogotá, Colombia, for the Colombian Congress of Evolutionary Biology (ColEvol), our PI, Cristian also hosted a workshop. Above are photos from this workshop, congratulations Cristian!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/dscf1033.jpg"
+            data-kicker="Bogotá, Colombia, 2026"
+            data-title="Cristian&#39;s Workshop in Bogotá"
+            data-desc="While in Bogotá, Colombia, for the Colombian Congress of Evolutionary Biology (ColEvol), our PI, Cristian also hosted a workshop. Above are photos from this workshop, congratulations Cristian!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ddl_mug.jpg"
+            data-kicker="2026"
+            data-title="Data Diversity Lab Mugs"
+            data-desc="As a lab, we had mugs designed and made to give to members who exit the lab for other opportunities. We love them and we are so excited to give them to our much appreciated members!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/img_20240322_141750243.jpg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="Game evening, Data Diversity Lab"
+            data-desc="A small game evening in the lab! Pizza, cinnamon dessert, games and fun was had!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ddl-mt.-lemmon-6.jpg"
+            data-kicker="Mt. Lemmon, Arizona, 2025"
+            data-title="DDL Lab Mt. Lemmon Adventure"
+            data-desc="This past weekend a small group of DDL lab members (Cristian, Kristen, Kiran, Delaney, and Kennedy) went up to Mount Lemmon to the scenic areas of Windy Point and Rose Canyon Lake. The group enjoyed a great morning together and had plenty of great conversations and laughs while enjoying Arizona&#39;s beautiful scenery. "
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ddl-mt.-lemmon-5.jpg"
+            data-kicker="Mt. Lemmon, Arizona, 2025"
+            data-title="DDL Lab Mt. Lemmon Adventure"
+            data-desc="This past weekend a small group of DDL lab members (Cristian, Kristen, Kiran, Delaney, and Kennedy) went up to Mount Lemmon to the scenic areas of Windy Point and Rose Canyon Lake. The group enjoyed a great morning together and had plenty of great conversations and laughs while enjoying Arizona&#39;s beautiful scenery. "
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ddl-mt.-lemmon-2.jpg"
+            data-kicker="Mt. Lemmon, Arizona, 2025"
+            data-title="DDL Lab Mt. Lemmon Adventure"
+            data-desc="This past weekend a small group of DDL lab members (Cristian, Kristen, Kiran, Delaney, and Kennedy) went up to Mount Lemmon to the scenic areas of Windy Point and Rose Canyon Lake. The group enjoyed a great morning together and had plenty of great conversations and laughs while enjoying Arizona&#39;s beautiful scenery. "
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ddl-mt.-lemmon-3.jpg"
+            data-kicker="Mt. Lemmon, Arizona, 2025"
+            data-title="DDL Lab Mt. Lemmon Adventure"
+            data-desc="This past weekend a small group of DDL lab members (Cristian, Kristen, Kiran, Delaney, and Kennedy) went up to Mount Lemmon to the scenic areas of Windy Point and Rose Canyon Lake. The group enjoyed a great morning together and had plenty of great conversations and laughs while enjoying Arizona&#39;s beautiful scenery. "
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ddl-mt.-lemmon-4.jpg"
+            data-kicker="Mt. Lemmon, Arizona, 2025"
+            data-title="DDL Lab Mt. Lemmon Adventure"
+            data-desc="This past weekend a small group of DDL lab members (Cristian, Kristen, Kiran, Delaney, and Kennedy) went up to Mount Lemmon to the scenic areas of Windy Point and Rose Canyon Lake. The group enjoyed a great morning together and had plenty of great conversations and laughs while enjoying Arizona&#39;s beautiful scenery. "
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ddl-mt.-lemmon-7.jpg"
+            data-kicker="Mt. Lemmon, Arizona, 2025"
+            data-title="DDL Lab Mt. Lemmon Adventure"
+            data-desc="This past weekend a small group of DDL lab members (Cristian, Kristen, Kiran, Delaney, and Kennedy) went up to Mount Lemmon to the scenic areas of Windy Point and Rose Canyon Lake. The group enjoyed a great morning together and had plenty of great conversations and laughs while enjoying Arizona&#39;s beautiful scenery. "
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ddl-mt.-lemmon.jpg"
+            data-kicker="Mt. Lemmon, Arizona, 2025"
+            data-title="DDL Lab Mt. Lemmon Adventure"
+            data-desc="This past weekend a small group of DDL lab members (Cristian, Kristen, Kiran, Delaney, and Kennedy) went up to Mount Lemmon to the scenic areas of Windy Point and Rose Canyon Lake. The group enjoyed a great morning together and had plenty of great conversations and laughs while enjoying Arizona&#39;s beautiful scenery. "
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/hike1.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="DDL Member Hike"
+            data-desc="Members, Cristian, Delaney, Kiran, and Kristen joined in on a hike this past Saturday evening!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/hike2.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="DDL Member Hike"
+            data-desc="Members, Cristian, Delaney, Kiran, and Kristen joined in on a hike this past Saturday evening!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/lunch-on-6-22.jpg"
+            data-kicker="Athens, Georgia, 2025"
+            data-title="DDL Member Lunch"
+            data-desc="While attending the Evolution conference in Athens, Georgia, lab members including Kristen (2nd from left), Delaney (3rd from left), and Cristian (3rd from right), went for a bonding team lunch within their busy conference schedule. "
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/raijin-ramen.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="DDL Members go for Lunch at Rajin Ramen"
+            data-desc="Lab members Kiran, Cristian, Kristen, and Eleanor went for lunch during the work day for a little team bonding!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/image1.jpg"
+            data-kicker="Athens, Georgia, 2025"
+            data-title="DDL Members Present at the 2025 Evolution Conference"
+            data-desc="The Data Diversity Lab had the honor to have selected members present talks at the 2025 Evolution Conference Conference. Kiran Basava presented her talk &quot;Mapping animal cultures with the Animal Culture Database (ACDB)&quot;, Kristen Martinet presented her talk, &quot;Adaptive radiations share similar species- and speciation-area relationships within island systems”, Delaney Scott-Martin presented her talk, &quot;Comparative sister taxa approaches to understanding climate-related animal extinctions”, and last but not least, Cristian Román-Palacios presented his talk, &quot;Lab Operations (LabOps) for computational research group in Ecology and Evolution”. Congratulations to all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/kiran-talk-on-6-21-.jpg"
+            data-kicker="Athens, Georgia, 2025"
+            data-title="DDL Members Present at the 2025 Evolution Conference"
+            data-desc="The Data Diversity Lab had the honor to have selected members present talks at the 2025 Evolution Conference Conference. Kiran Basava presented her talk &quot;Mapping animal cultures with the Animal Culture Database (ACDB)&quot;, Kristen Martinet presented her talk, &quot;Adaptive radiations share similar species- and speciation-area relationships within island systems”, Delaney Scott-Martin presented her talk, &quot;Comparative sister taxa approaches to understanding climate-related animal extinctions”, and last but not least, Cristian Román-Palacios presented his talk, &quot;Lab Operations (LabOps) for computational research group in Ecology and Evolution”. Congratulations to all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/kristen-talk-6-21-.jpg"
+            data-kicker="Athens, Georgia, 2025"
+            data-title="DDL Members Present at the 2025 Evolution Conference"
+            data-desc="The Data Diversity Lab had the honor to have selected members present talks at the 2025 Evolution Conference Conference. Kiran Basava presented her talk &quot;Mapping animal cultures with the Animal Culture Database (ACDB)&quot;, Kristen Martinet presented her talk, &quot;Adaptive radiations share similar species- and speciation-area relationships within island systems”, Delaney Scott-Martin presented her talk, &quot;Comparative sister taxa approaches to understanding climate-related animal extinctions”, and last but not least, Cristian Román-Palacios presented his talk, &quot;Lab Operations (LabOps) for computational research group in Ecology and Evolution”. Congratulations to all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/delaney-talk-on-6-21.jpg"
+            data-kicker="Athens, Georgia, 2025"
+            data-title="DDL Members Present at the 2025 Evolution Conference"
+            data-desc="The Data Diversity Lab had the honor to have selected members present talks at the 2025 Evolution Conference Conference. Kiran Basava presented her talk &quot;Mapping animal cultures with the Animal Culture Database (ACDB)&quot;, Kristen Martinet presented her talk, &quot;Adaptive radiations share similar species- and speciation-area relationships within island systems”, Delaney Scott-Martin presented her talk, &quot;Comparative sister taxa approaches to understanding climate-related animal extinctions”, and last but not least, Cristian Román-Palacios presented his talk, &quot;Lab Operations (LabOps) for computational research group in Ecology and Evolution”. Congratulations to all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/whatsapp-image-2025-06-25-at-16.35.53-1-.jpeg"
+            data-kicker="Athens, Georgia, 2025"
+            data-title="DDL Members Present at the 2025 Evolution Conference"
+            data-desc="The Data Diversity Lab had the honor to have selected members present talks at the 2025 Evolution Conference Conference. Kiran Basava presented her talk &quot;Mapping animal cultures with the Animal Culture Database (ACDB)&quot;, Kristen Martinet presented her talk, &quot;Adaptive radiations share similar species- and speciation-area relationships within island systems”, Delaney Scott-Martin presented her talk, &quot;Comparative sister taxa approaches to understanding climate-related animal extinctions”, and last but not least, Cristian Román-Palacios presented his talk, &quot;Lab Operations (LabOps) for computational research group in Ecology and Evolution”. Congratulations to all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/whatsapp-image-2025-06-25-at-16.35.53.jpeg"
+            data-kicker="Athens, Georgia, 2025"
+            data-title="DDL Members Present at the 2025 Evolution Conference"
+            data-desc="The Data Diversity Lab had the honor to have selected members present talks at the 2025 Evolution Conference Conference. Kiran Basava presented her talk &quot;Mapping animal cultures with the Animal Culture Database (ACDB)&quot;, Kristen Martinet presented her talk, &quot;Adaptive radiations share similar species- and speciation-area relationships within island systems”, Delaney Scott-Martin presented her talk, &quot;Comparative sister taxa approaches to understanding climate-related animal extinctions”, and last but not least, Cristian Román-Palacios presented his talk, &quot;Lab Operations (LabOps) for computational research group in Ecology and Evolution”. Congratulations to all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/whatsapp-image-2025-06-25-at-16.35.54.jpeg"
+            data-kicker="Athens, Georgia, 2025"
+            data-title="DDL Members Present at the 2025 Evolution Conference"
+            data-desc="The Data Diversity Lab had the honor to have selected members present talks at the 2025 Evolution Conference Conference. Kiran Basava presented her talk &quot;Mapping animal cultures with the Animal Culture Database (ACDB)&quot;, Kristen Martinet presented her talk, &quot;Adaptive radiations share similar species- and speciation-area relationships within island systems”, Delaney Scott-Martin presented her talk, &quot;Comparative sister taxa approaches to understanding climate-related animal extinctions”, and last but not least, Cristian Román-Palacios presented his talk, &quot;Lab Operations (LabOps) for computational research group in Ecology and Evolution”. Congratulations to all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/colombianfolksevolution2025.jpeg"
+            data-kicker="Athens, Georgia, 2025"
+            data-title="DDL Members Present at the 2025 Evolution Conference"
+            data-desc="The Data Diversity Lab had the honor to have selected members present talks at the 2025 Evolution Conference Conference. Kiran Basava presented her talk &quot;Mapping animal cultures with the Animal Culture Database (ACDB)&quot;, Kristen Martinet presented her talk, &quot;Adaptive radiations share similar species- and speciation-area relationships within island systems”, Delaney Scott-Martin presented her talk, &quot;Comparative sister taxa approaches to understanding climate-related animal extinctions”, and last but not least, Cristian Román-Palacios presented his talk, &quot;Lab Operations (LabOps) for computational research group in Ecology and Evolution”. Congratulations to all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/37225726-0879-452d-a968-c984981a4073.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="DDL Open House"
+            data-desc="We recently invited friends and associates of the Data Diversity Lab to come hangout and talk about anything and everything! Thank you to everyone who came, we had so much fun!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ddl-fall-2025-open-house-option-2.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="DDL Open House"
+            data-desc="We recently invited friends and associates of the Data Diversity Lab to come hangout and talk about anything and everything! Thank you to everyone who came, we had so much fun!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/devolver-con-ciencia-–-que-hace-un-biologo.png"
+            data-kicker="Online Presentation, 2021"
+            data-title="Devolver con Ciencia – que hace un Biologo"
+            data-desc="Dr. Román-Palacios have a brief talk to high schoolers on his career path, research etc. In Spanish. Available to view below. "
+            data-link="https://www.youtube.com/watch?v=zBIVzv_jciI"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/2c3a7e5c-f6b6-4316-9a96-54d18ee52887.jpg"
+            data-kicker="Tucson, 2025"
+            data-title="Door Design"
+            data-desc="As a lab, we we decorated our door to show a little more about our members and what the lab is about. Each member chose their favorite Arizona species and cut out their footprints, these were then placed on the door to show that the animals were walking in and out of the door. This was a great way to bond as a lab and intersected well with our foundations in biology and ecology."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/07dfd7be-ee1d-47bd-8c01-8df14a015fb6.jpg"
+            data-kicker="Tucson, 2025"
+            data-title="Door Design"
+            data-desc="As a lab, we we decorated our door to show a little more about our members and what the lab is about. Each member chose their favorite Arizona species and cut out their footprints, these were then placed on the door to show that the animals were walking in and out of the door. This was a great way to bond as a lab and intersected well with our foundations in biology and ecology."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/6f00ed2e-cccc-41b1-bac8-b3f9886491b8.jpg"
+            data-kicker="Tucson, 2025"
+            data-title="Door Design"
+            data-desc="As a lab, we we decorated our door to show a little more about our members and what the lab is about. Each member chose their favorite Arizona species and cut out their footprints, these were then placed on the door to show that the animals were walking in and out of the door. This was a great way to bond as a lab and intersected well with our foundations in biology and ecology."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/dr.-basava-and-dr.-martinet-at-the-6th-annual-arizona-postdoctoral-research-conference-.png"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="Dr. Basava and Dr. Martinet at the 6th annual Arizona Postdoctoral Research Conference"
+            data-desc="Dr. Kristen Martinet and Dr. Kiran Basava (postdocs at the lab) presented their research at the 6th annual Arizona Postdoctoral Research Conference. Dr. Martinet was selected as one of two Best Poster Presentation awardees. Congrats to both Kristen and Kiran for presenting!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/d45f9e7f-1a57-4c5a-8c8e-5cdc8df5b730.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="EBB 50th Anniversary Symposium and Celebration"
+            data-desc="This past week our lovely lab member Delaney Scott-Martin presented her recent work at the 50th anniversary celebration of the Ecology and Evolutionary Biology Department. Congratulations Delaney, you did great!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/1547b0fc-36c3-4e4c-8484-ef90a8c5aba1.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="EBB 50th Anniversary Symposium and Celebration"
+            data-desc="This past week our lovely lab member Delaney Scott-Martin presented her recent work at the 50th anniversary celebration of the Ecology and Evolutionary Biology Department. Congratulations Delaney, you did great!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/5fd139ae-2b9e-4bab-b86b-a8148d454990.jpg"
+            data-kicker="Tucson, 2025"
+            data-title="Ellie&#39;s Farewell"
+            data-desc="Our lovely lab member, Eleanor Tuck or Ellie is leaving the lab to pursue new opportunities and we are so excited for her and her future! To celebrate her time in the lab, a few members were able to join together for an ice cream trip!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/a73278c0-2e2f-4bd4-9045-ac818e7992f4.jpg"
+            data-kicker="Tucson, 2025"
+            data-title="Ellie&#39;s Farewell"
+            data-desc="Our lovely lab member, Eleanor Tuck or Ellie is leaving the lab to pursue new opportunities and we are so excited for her and her future! To celebrate her time in the lab, a few members were able to join together for an ice cream trip!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ellie_oct30.jpeg"
+            data-kicker="Tucson, 2025"
+            data-title="Ellie&#39;s Farewell"
+            data-desc="Our lovely lab member, Eleanor Tuck or Ellie is leaving the lab to pursue new opportunities and we are so excited for her and her future! To celebrate her time in the lab, a few members were able to join together for an ice cream trip!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/image002.jpg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="Erika Kirkpatrick received the 2024 InfoSci&#39;s Teaching Award!"
+            data-desc="Erika Kirkpatrick (front row, first on the left), MS in Data Science (capstone/VIP student in our lab), was awarded the Fall 2024 Graduate Teaching Award in the College of Information Science (UArizona). Congrats Erika!!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/faculty-research-blitz.png"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="Faculty Research Blitz"
+            data-desc="Dr. Román-Palacios attended and presented in the iSchool&#39;s Spring 2024 Faculty Research Blitz. The Blitz is a fast-paced series of presentations on the latest information-related research, apps publications and more."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/gm_1.jpeg"
+            data-kicker="Tucson, 2026"
+            data-title="Game Night!"
+            data-desc="Our PI, Cristian, hosted a lovely game night at his house inviting both current and former DDL members. The night was full of food, friends, and fun!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/gm_2.jpeg"
+            data-kicker="Tucson, 2026"
+            data-title="Game Night!"
+            data-desc="Our PI, Cristian, hosted a lovely game night at his house inviting both current and former DDL members. The night was full of food, friends, and fun!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/grace-hopper-celebration-of-women-in-computing.png"
+            data-kicker="Orlando, Florida, 2023"
+            data-title="Grace Hopper Celebration of Women in Computing"
+            data-desc="Yi Chien Lee (pictured) was in attendance of the Grace Hopper Celebration for Women in Computing in Orlando, Florida. GHC aims to bring the research and career interests of women in computing to the forefront. Career fairs, sessions and poster presentations were all main parts of the event."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/honorary-member-jhan-c.-salazar-presents-at-sicb-conference-.jpg"
+            data-kicker="Atlanta, Georgia, 2025"
+            data-title="Honorary Member, Jhan C. Salazar Presents at SICB Conference"
+            data-desc="Jhan proudly presented his first-ever poster at a conference during SICB 2025 (the Society for Integrative and Comparative Biology), showcasing his research on physiological specialization in Anolis lizards across elevations in the Andes. The poster highlighted how thermal limits drive adaptive radiation and endemism in these Andean tropical lizards. He had the opportunity to engage with attendees, answer questions, and discuss the broader implications of his work. Jhan is grateful for the insightful conversations and the chance to share his passion for understanding evolutionary patterns in these fascinating reptiles."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ian-cambium-talk-1.jpg"
+            data-kicker="Tucson, 2025"
+            data-title="Ian Estacio Presents at CAMBIUM Meeting"
+            data-desc="Ian Estacio, a postdoc in the lab, presented his talk, &quot;Predicting the emergent effects of human-environment interactions: Agent-based modeling for informing planning and management&quot; at the CAMBIUM meeting on November 19th. Congratulations Ian!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ian-cambium-talk.jpg"
+            data-kicker="Tucson, 2025"
+            data-title="Ian Estacio Presents at CAMBIUM Meeting"
+            data-desc="Ian Estacio, a postdoc in the lab, presented his talk, &quot;Predicting the emergent effects of human-environment interactions: Agent-based modeling for informing planning and management&quot; at the CAMBIUM meeting on November 19th. Congratulations Ian!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ian-going-away-lunch.png"
+            data-kicker="Tucson, 2026"
+            data-title="Ian&#39;s Going Away Lunch"
+            data-desc="One of our amazing postdocs, Ian, will soon be leaving to pursue another role in Tokyo! We are so excited for Ian and wanted to celebrate him and his accomplishments as a team so we did so with a very delicious lunch. Congratulations Ian, we are so proud and excited for you!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/inecol.png"
+            data-kicker="Xalapa, Mexico, 2023"
+            data-title="INECOL"
+            data-desc="Dr. Román-Palacios was the keynote speaker at the 2023 Simposio Estudiantil at INECOL (Xalapa, Mexico) for the Climate Change component of the event. In the photo, organizers and two speakers."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/infosci-and-the-arizona-board-of-regents.jpg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="InfoSci and the Arizona Board of Regents"
+            data-desc="Paige Cherry, an undergraduate student in the lab, represented the college of Information Science at a special meeting hosted by the Arizona Board of Regents. In her poster, Paige discussed a her perspectives a personal pipeline and representation in the information science world. She also got to highlight the progress of her assistance to Dr. Kiran Basava. Congrats Paige!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/info-sci-halloween-party.jpg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="InfoSci Halloween Party"
+            data-desc="Kristen Martinet (front row, left), Postdoc in our lab celebrated the Halloween holiday by dressing up and getting together with other UA InfoSci members for the College of Information Science Halloween party."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/mixer.jpeg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="InfoSci Mixer"
+            data-desc="A few of our lab members were able to attend a College of Information Science mixer full of great conversation and company."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ishowcase-.jpg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="iShowcase"
+            data-desc="Ani Chitransh (pictured) presented her MSc capstone research project at the iSchool&#39;s iShowcase event at the Marriot in the UA campus."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ishowcase-man.jpg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="iShowcase"
+            data-desc="HM Abdul (pictured) presented his MSc capstone research project at the iSchool&#39;s iShowcase event at the Marriot in the UA campus."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ishowcase.png"
+            data-kicker="Tucson, Arizona, 2023"
+            data-title="iShowcase"
+            data-desc="Danielle Van Boxel (pictured) presenting her research at the iSchool&#39;s iShowcase event at the Marriot in the UA campus (Tucson, AZ). The iShowcase focuses on presenting interactive research and creative projects by iSchool&#39;s students."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/colevol2026_1.jpg"
+            data-kicker="Colombia, 2026"
+            data-title="Keynote at the 2026 Colombian Congress of Evolutionary Biology (ColEvol)"
+            data-desc="Last month I gave a keynote at the Colombian Congress of Evolutionary Biology (ColEvol 2026), pulling together work from across the lab on phylogenetics, island speciation, extinction, and what evolution means for nature-based solutions. Thanks to the organizers for the invitation, and to the students, postdocs, and collaborators who did the work."
+            data-link="https://lasalle.edu.co/es/viii-simposio-colombiano-biologia-evolutiva"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/colevol2026_2.jpg"
+            data-kicker="Colombia, 2026"
+            data-title="Keynote at the 2026 Colombian Congress of Evolutionary Biology (ColEvol)"
+            data-desc="Last month I gave a keynote at the Colombian Congress of Evolutionary Biology (ColEvol 2026), pulling together work from across the lab on phylogenetics, island speciation, extinction, and what evolution means for nature-based solutions. Thanks to the organizers for the invitation, and to the students, postdocs, and collaborators who did the work."
+            data-link="https://lasalle.edu.co/es/viii-simposio-colombiano-biologia-evolutiva"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/dscf1184.jpg"
+            data-kicker="Colombia, 2026"
+            data-title="Keynote at the 2026 Colombian Congress of Evolutionary Biology (ColEvol)"
+            data-desc="Last month I gave a keynote at the Colombian Congress of Evolutionary Biology (ColEvol 2026), pulling together work from across the lab on phylogenetics, island speciation, extinction, and what evolution means for nature-based solutions. Thanks to the organizers for the invitation, and to the students, postdocs, and collaborators who did the work."
+            data-link="https://lasalle.edu.co/es/viii-simposio-colombiano-biologia-evolutiva"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/social/la-indita.jpg"
+            data-kicker="Tucson, Arizona, 2022"
+            data-title="La Indita Lab Dinner"
+            data-desc="Attendees at the lab dinner organized in Fall 2022 at La Indita, Tucson, AZ. You will be able to recognize a handful of lab members (Danielle Van Boxel [from the left, second], Salena Torres [third], Cristian Román [fifth], Kyle Arechiga [seventh], Kyle Clemments [eight]), some of us with our significant others!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/jojos_aug20.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="Lab Get Together at Jojos and Game Night"
+            data-desc="The Data Diversity Lab had many reasons to celebrate and decided to get together at Jojos to do so! These reasons included our plethora of new members - Julia Dias, Sarah Gonzalez-Coffin, and Daniel McNair - as well as one of our own celebrating a new position elsewhere, congratulations Kristen! Prior to dinner, the lab members also joined together to partake in some fun games. We are so excited to welcome our new members and are so excited to see where Kristen&#39;s new position takes her!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/jojos_aug20_2.jpeg"
+            data-kicker="Tucson, 2026"
+            data-title="Lab Get Together at Jojos and Game Night"
+            data-desc="The Data Diversity Lab had many reasons to celebrate and decided to get together at Jojos to do so! These reasons included our plethora of new members - Julia Dias, Sarah Gonzalez-Coffin, and Daniel McNair - as well as one of our own celebrating a new position elsewhere, congratulations Kristen! Prior to dinner, the lab members also joined together to partake in some fun games. We are so excited to welcome our new members and are so excited to see where Kristen&#39;s new position takes her!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/games_ddl.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="Lab Get Together at Jojos and Game Night"
+            data-desc="The Data Diversity Lab had many reasons to celebrate and decided to get together at Jojos to do so! These reasons included our plethora of new members - Julia Dias, Sarah Gonzalez-Coffin, and Daniel McNair - as well as one of our own celebrating a new position elsewhere, congratulations Kristen! Prior to dinner, the lab members also joined together to partake in some fun games. We are so excited to welcome our new members and are so excited to see where Kristen&#39;s new position takes her!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/25_0488_vip-cure_springpostersession-51.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="Lab member, Delaney Scott-Martin presented at the VIP-CURE poster session"
+            data-desc="Her poster surrounded the historical biogeography of recently extinct animals. Congrats Delaney!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/group-hike.jpg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="Lab Member Hike"
+            data-desc="A few of our members were able to get together for some team bonding with a hike amongst the incredible environment of Tumamoc Hill located right in Tucson. From left to right, Kristen Martinet, Kiran Basava, Cristian Roman, Michael Nafis, Hector Garcia."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/lunchbreak-social.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="Lab Member Lunch Break"
+            data-desc="A few members of our lab joined together to take their lunch break for fun and conversation. From left to right, Kiran Basava, Kristen Martinet, Cristian Roman, and Yichao Zeng."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/lab_warming.jpeg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="Lab warming, Data Diversity Lab"
+            data-desc="The iSchool organized a lab warming party get together at the end of the spring 2024 semester. Collaborators, iSchool staff, lab members friends and family all attended the event. We are thankful for everyone&#39;s efforts and warm welcome of the Data Diversity Lab ! :)"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/lab-dinner.jpeg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="Locale Lab Dinner"
+            data-desc="Available lab members joined in an Italian cuisine dinner at Locale Italiano, it was a great time with even better food (and desserts!). From left to right, Kiran Basava, Kristen Martinet, Paige Cherry, Kennedy Gezella, Cristian Roman, Ian Estacio, Yichao Zeng."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/lovejoy_2026.png"
+            data-kicker="Snyder Wildlife Refuge &amp; Field School, 2026"
+            data-title="Lovejoy Center Retreat"
+            data-desc="Two of our lab members, Sarah Gonzalez-Coffin and Cristian Román-Palacios attended the Lovejoy Center Retreat at the Synder Wildlife Refuge and Field School. Sarah is a postdoc part of the Tom Lovejoy Conservation Fellowship and we are so excited to see the things she will do!"
+            data-link="https://lovejoycenter.arizona.edu/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/marine-biology-short-podcast.png"
+            data-kicker="Online Podcast, 2020"
+            data-title="Cristian Román-Palacios on Marine Biology Podcast"
+            data-desc="Dr. Román-Palacios was interviewed very briefly by Dr. Katrina Mangin. In this podcast, he speaks about some of his research and touch upon some general and personal advice on science and academia."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cambium6.webp"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="DDL at CAMBIUM Meeting"
+            data-desc="Cristian Román-Palacios, our lab&#39;s PI, and lab members, Kiran Basava, Kristen Martinet, Yichao Zeng, and Ian Estacio, shared current research on the Animal culture database and conservation implications, consistency in breakpoints for species/area relationships, modeling speciation in co-phylogenies, and a NAS-based Collaboratory at the weekly CAMBIUM meeting."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cambium1.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="DDL at CAMBIUM Meeting"
+            data-desc="Cristian Román-Palacios, our lab&#39;s PI, and lab members, Kiran Basava, Kristen Martinet, Yichao Zeng, and Ian Estacio, shared current research on the Animal culture database and conservation implications, consistency in breakpoints for species/area relationships, modeling speciation in co-phylogenies, and a NAS-based Collaboratory at the weekly CAMBIUM meeting."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cambium2.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="DDL at CAMBIUM Meeting"
+            data-desc="Cristian Román-Palacios, our lab&#39;s PI, and lab members, Kiran Basava, Kristen Martinet, Yichao Zeng, and Ian Estacio, shared current research on the Animal culture database and conservation implications, consistency in breakpoints for species/area relationships, modeling speciation in co-phylogenies, and a NAS-based Collaboratory at the weekly CAMBIUM meeting."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cambium3.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="DDL at CAMBIUM Meeting"
+            data-desc="Cristian Román-Palacios, our lab&#39;s PI, and lab members, Kiran Basava, Kristen Martinet, Yichao Zeng, and Ian Estacio, shared current research on the Animal culture database and conservation implications, consistency in breakpoints for species/area relationships, modeling speciation in co-phylogenies, and a NAS-based Collaboratory at the weekly CAMBIUM meeting."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cambium4.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="DDL at CAMBIUM Meeting"
+            data-desc="Cristian Román-Palacios, our lab&#39;s PI, and lab members, Kiran Basava, Kristen Martinet, Yichao Zeng, and Ian Estacio, shared current research on the Animal culture database and conservation implications, consistency in breakpoints for species/area relationships, modeling speciation in co-phylogenies, and a NAS-based Collaboratory at the weekly CAMBIUM meeting."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cambium5.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="DDL at CAMBIUM Meeting"
+            data-desc="Cristian Román-Palacios, our lab&#39;s PI, and lab members, Kiran Basava, Kristen Martinet, Yichao Zeng, and Ian Estacio, shared current research on the Animal culture database and conservation implications, consistency in breakpoints for species/area relationships, modeling speciation in co-phylogenies, and a NAS-based Collaboratory at the weekly CAMBIUM meeting."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/medal-for-citrl-program.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="Medal for CIRTL Program Completion "
+            data-desc="Our amazing postdocs, Kristen and Kiran recently completed the CIRTL Postdoc Pathways Teaching Program. Following its completion, they each received these awesome medals! Congratulations to you both, we are so proud of you!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/members-cristian-kiran-and-kristen-attended-and-presented-to-the-wise-bio-diversity-project-.jpg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="Members, Cristian, Kiran, and Kristen Attended and Presented to the WISE Bio/Diversity Project"
+            data-desc="WISE, the Women in Science and Engineering program granted an opportunity for Cristian, our PI, and Kiran and Kristen, our Postdocs, to speak to UA undergrads. The program hosts one hour weekly meetings for development opportunities, one in which took place November 21, 2024, which was attended by mentioned members of the lab. In the above image, Kristen Martinet is sharing her expertise in the biodiversity and data science subject!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/cake-in-lab.jpeg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="NatGeo Grant Celebration "
+            data-desc="In order to properly celebrate being awarded our National Geographic Grant, our lab members indulged in a NatGeo themed cake. From left to right, Kristen Martinet, Eleanor Tuck, Cristian Roman."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/nick-eeb.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="Nick Dabagia Talk at Ecology and Evolutionary Biology (EEB) Seminar"
+            data-desc="Nick Dabagia an EEB student at the University of Arizona has been working with our PI, Cristian, on a rotation within his education. Nick recently presented their work on &quot;climPortal: a user-friendly r package for accessing crucial, biologically relevant climatic data&quot; at an EEB seminar, congrats to you both!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/nsf-rcn-on-urban-ecoevo.jpg"
+            data-kicker="Seattle, Washington, 2024"
+            data-title="NSF RCN on Urban EcoEvo"
+            data-desc="Dr. Román-Palacios attended the Urban Eco-Evol and Nature-based solution workshop hosted by Dr. Marina Alberti at the University of Washington."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/rn_image_picker_lib_temp_ce2a7f69-447f-4e16-ac1d-84d9acb8bc59.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="2025 iShowcase"
+            data-desc="Sara Cielaszyk, Hubert Kasprzycki, Eleanor Tuck and Paige Cherry focused their capstone project on the macroevolution of Galápagos Testudinids. They created a website and performed basic macroevolutionary analyses on recently published time-calibrated phylogenies! Swetha Kolloju also presented her capstone project (advised by Cristian Román and Sarah Bratt) on describing the structure of software use in phylogenetics. Congratulations to all, we love to recognize your hard work!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ishowcase-3.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="2025 iShowcase"
+            data-desc="Sara Cielaszyk, Hubert Kasprzycki, Eleanor Tuck and Paige Cherry focused their capstone project on the macroevolution of Galápagos Testudinids. They created a website and performed basic macroevolutionary analyses on recently published time-calibrated phylogenies! Swetha Kolloju also presented her capstone project (advised by Cristian Román and Sarah Bratt) on describing the structure of software use in phylogenetics. Congratulations to all, we love to recognize your hard work!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ishowcase-1.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="2025 iShowcase"
+            data-desc="Sara Cielaszyk, Hubert Kasprzycki, Eleanor Tuck and Paige Cherry focused their capstone project on the macroevolution of Galápagos Testudinids. They created a website and performed basic macroevolutionary analyses on recently published time-calibrated phylogenies! Swetha Kolloju also presented her capstone project (advised by Cristian Román and Sarah Bratt) on describing the structure of software use in phylogenetics. Congratulations to all, we love to recognize your hard work!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ishowcase-2.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="2025 iShowcase"
+            data-desc="Sara Cielaszyk, Hubert Kasprzycki, Eleanor Tuck and Paige Cherry focused their capstone project on the macroevolution of Galápagos Testudinids. They created a website and performed basic macroevolutionary analyses on recently published time-calibrated phylogenies! Swetha Kolloju also presented her capstone project (advised by Cristian Román and Sarah Bratt) on describing the structure of software use in phylogenetics. Congratulations to all, we love to recognize your hard work!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/paige-cherry-undergraduate-research-poster-.png"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="Paige Cherry Undergraduate Research Poster"
+            data-desc="Paige is assisting on a comparative database of animal culture and behavior. Her poster consisted of a highlight of two selected papers on animal culture, focusing on their findings about animal behavior, social learning, and culturally significant actions. While presenting, Paige explains the authors&#39; methods and how their work connects to the broader project. The ultimate goal is to create an open-access resource that combines data on animal cultures with existing ecological databases to enhance research and accessibility."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/polyploidy-webinar.png"
+            data-kicker="Online Webinar, 2020"
+            data-title="Cristian Román-Palacios Presents at a Polyploidy Webinar"
+            data-desc="Dr. Román-Palacios presented his research on polyploidy at the Polyploidy webinar organized by Michael S. Barker. View this using the link below."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/postdoc-kristen-martinet-presents-at-society-for-integrative-comparative-biology-conference-.jpg"
+            data-kicker="Atlanta, Georgia, 2025"
+            data-title="Postdoc Kristen Martinet Presents at Society for Integrative &amp; Comparative Biology Conference"
+            data-desc="Kristen gave a talk covering the functionality of her R package SSARP (Species-/Speciation-Area Relationship Projector) at the SICB (Society for Integrative &amp; Comparative Biology) conference in January 2025."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/pre-icfes-pa’l-barrio.png"
+            data-kicker="Online Presentation Slides, 2021"
+            data-title="PRE-ICFES pa’l Barrio"
+            data-desc="Dr. Román-Palacios help put together a fraction of the slides and discussion + recording on Biology, particularly focused on how to understand phylogenetic trees. In Spanish. You can view this using the link below."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/daniellerainbowgrad.jpg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="University of Arizona Rainbow Graduation Ceremony"
+            data-desc="Attending the rainbow graduation at UA, Dr. Román hoods Dr. Van Boxel. The rainbow graduation celebrates and provides personal recognition for the achievements of LGBTQ+ students at the University of Arizona. "
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/labmeetingimage1.png"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="Recent Lab Meetings"
+            data-desc="Each week our team members partake in a collaborative lab meeting on various topics. Here are some recent images from the meetings!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/labmeetingimage2.png"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="Recent Lab Meetings"
+            data-desc="Each week our team members partake in a collaborative lab meeting on various topics. Here are some recent images from the meetings!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/rep-conference.png"
+            data-kicker="Washington, DC, 2023"
+            data-title="Rep Conference"
+            data-desc="Dr. Román-Palacios presented BarrioMap along with Mackenzie Waller (Assistant Professor, University of Arizona) and Ariana Cantu (Assistant Professor, University of Washington)"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/sarah-cambium-talk.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="Sarah&#39;s Talk at CAMBIUM Meeting"
+            data-desc="One of our amazing PhD students, Sarah Gonzales-Coffin, presented at a CAMBIUM talk today on developing the United State&#39;s Adaptation Hotspot Atlas. Depending on availability, our lab members each attended this talk rather than lab meeting this week. It was a great talk and we are very proud of your accomplishments!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/sarah-cambium-background-talk.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="Sarah&#39;s Talk at CAMBIUM Meeting"
+            data-desc="One of our amazing PhD students, Sarah Gonzales-Coffin, presented at a CAMBIUM talk today on developing the United State&#39;s Adaptation Hotspot Atlas. Depending on availability, our lab members each attended this talk rather than lab meeting this week. It was a great talk and we are very proud of your accomplishments!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/society-for-mining-metallurgy-exploration-sme-conference.jpg"
+            data-kicker="Phoenix, Arizona, 2024"
+            data-title="Society for Mining, Metallurgy &amp; Exploration (SME) conference"
+            data-desc="Jiayue He (pictured 3rd from the left) attended the 2024 Society for Mining, Metallurgy &amp; Exploration conference. The SME Annual Conference &amp; Expo is widely recognized as the most distinguished forum for the publication of multidisciplinary mining research."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/img_1717.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="Tanque Verde Hike"
+            data-desc="A few of our members were able to get together for some team bonding with a hike amongst the slightly treacherous environment of Tanque Verde. They also enjoyed a great lunch afterwards! From left to right, Kristen Martinet, Kiran Basava, Delaney Scott-Martin, Kennedy Gezella, Ian Estacio, and Cristian Roman-Palacios behind the camera!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/hike-5.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="Tanque Verde Hike"
+            data-desc="A few of our members were able to get together for some team bonding with a hike amongst the slightly treacherous environment of Tanque Verde. They also enjoyed a great lunch afterwards! From left to right, Kristen Martinet, Kiran Basava, Delaney Scott-Martin, Kennedy Gezella, Ian Estacio, and Cristian Roman-Palacios behind the camera!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/img_1721.jpg"
+            data-kicker="Tucson, 2026"
+            data-title="Tanque Verde Hike"
+            data-desc="A few of our members were able to get together for some team bonding with a hike amongst the slightly treacherous environment of Tanque Verde. They also enjoyed a great lunch afterwards! From left to right, Kristen Martinet, Kiran Basava, Delaney Scott-Martin, Kennedy Gezella, Ian Estacio, and Cristian Roman-Palacios behind the camera!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/edited_dscf8821-cropped.jpg"
+            data-kicker="Tucson, Arizona, 2024"
+            data-title="Team photo session evening, UA"
+            data-desc="One of our lab members (Shih-Hsuan Lo) took professional level headshots and group photos for the Data Diversity Lab team of Spring 2024! Left to right. Front row: Tanisha Lochab, Ani Chitransh, Jiayue He, HM Abdul Fattah. Top row: Cristian Roman, Danielle Van Boxel, Hector Garcial, Shih-Hsuan Lo."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/the-climate-pod.png"
+            data-kicker="Online Podcast, 2020"
+            data-title="The Climate Pod"
+            data-desc="Dr. Wiens and Dr. Román-Palacios discuss our climate change paper with folks at the Climate Pod. &#39;...Then, we are joined by the University of Arizona&#39;s Dr. John J. Wiens and Cristian Román-Palacios, who recently published a study that made headlines for its analysis on the potential extinction crisis looming if warming temperatures continue. They explain the major drivers behind extinction patterns and where plant and animal most likely to occur. View this podcast below."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/the-national-summer-undergraduate-research-project-nsurp-.jpg"
+            data-kicker="Online Meetings, 2024"
+            data-title="The National Summer Undergraduate Research Project (NSURP)"
+            data-desc="Dr. Roman was a featured speaker for the 2024 NSURP cohort. The NSURP is a community-driven initiative that creates rewarding, remote summer research experiences for underrepresented minoritized undergraduate students in Microbiology, Immunology, Cancer Biology, and Biomedical Engineering."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/ucla-s-geocheminar-seminar-.png"
+            data-kicker="Los Angeles, California, 2025"
+            data-title="UCLA&#39;s Geocheminar Seminar"
+            data-desc="Dr. Román-Palacios presented at UCLA&#39;s Geocheminar seminar on Thursday Jan 23, 2025. His talk, “Integrating Bayesian, machine learning, and collaborative computing methods for geochemistry and other applications”, focused on discussing Hector Garcia&#39;s contributions to LabOPS, Dr. Van Boxel (BARN), Ani Chitransh (Bayesian regressions in python), as well as his own work related on clumped isotope datasets."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/united-nations-biodiversity-conference.jpg"
+            data-kicker="Cali, Columbia, 2024"
+            data-title="United Nations Biodiversity Conference"
+            data-desc="Our PI, Cristian attended the UN-COP16 in Colombia along with Dr. Rachel Gallery and Dr. Jessie Golding from the University of Arizona."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/universidad-del-quindío-armenia-colombia.png"
+            data-kicker="Quindío, Colombia, 2019"
+            data-title="Universidad del Quindío, Armenia, Colombia"
+            data-desc="Dr. Román-Palacios gave a talk on his PhD research at Universidad del Quindío, Colombia."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/universidad-del-valle-cali-colombia.png"
+            data-kicker="Cali, Colombia, 2019"
+            data-title="Universidad del Valle, Cali, Colombia"
+            data-desc="Dr. Román-Palacios gave a talk on his PhD research at Universidad del Valle, Colombia."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/universidad-nacional-de-colombia-bogotá.png"
+            data-kicker="Bogotá, Colombia, 2019"
+            data-title="Universidad Nacional de Colombia, Bogotá"
+            data-desc="Dr. Román-Palacios gave a talk on his PhD research at Universidad Nacional de Colombia, Colombia."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/wids_2025_ddlme.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="Various DDL Members and Former Lab Members Presented at the Women in Data Science 2025 Conference"
+            data-desc="Multiple lab members were able to present at the Women in Data Science Conference about a variety of projects and ideas. Congratulations all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/0d5c442d-74cf-43a8-9ff8-a23c673f0085.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="Various DDL Members and Former Lab Members Presented at the Women in Data Science 2025 Conference"
+            data-desc="Multiple lab members were able to present at the Women in Data Science Conference about a variety of projects and ideas. Congratulations all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/9f95e763-3db6-4624-a177-3fe87da95cab.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="Various DDL Members and Former Lab Members Presented at the Women in Data Science 2025 Conference"
+            data-desc="Multiple lab members were able to present at the Women in Data Science Conference about a variety of projects and ideas. Congratulations all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/96a0b754-b571-4814-b3d4-4c2e74183c51.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="Various DDL Members and Former Lab Members Presented at the Women in Data Science 2025 Conference"
+            data-desc="Multiple lab members were able to present at the Women in Data Science Conference about a variety of projects and ideas. Congratulations all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/821f512f-855d-4663-9e22-efd9f6b7ff93.jpg"
+            data-kicker="Tucson, Arizona, 2025"
+            data-title="Various DDL Members and Former Lab Members Presented at the Women in Data Science 2025 Conference"
+            data-desc="Multiple lab members were able to present at the Women in Data Science Conference about a variety of projects and ideas. Congratulations all!"
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="socials" data-src="/assets/images/socials/world-climate-research-programme-open-science.png"
+            data-kicker="Kigali, Rwanda, 2023"
+            data-title="World Climate Research Program Open Science"
+            data-desc="Dr. Román-Palacios presented along with members of Esperanza Community Housing on &#39;GIS and community health&#39;."
+            data-link="/social/"></li>
+        <li data-group="community" data-sub="macrodata" data-src="/assets/images/macrodata/grupo-lasalle.jpg"
+            data-kicker="MacroData, Bogotá"
+            data-title="Universidad de la Salle"
+            data-desc="Workshop in Bogotá, Julio 21–22, 2026"
+            data-link="/macrodata/galeria/"></li>
+        <li data-group="community" data-sub="macrodata" data-src="/assets/images/macrodata/lasalle-1.jpg"
+            data-kicker="MacroData, Bogotá"
+            data-title="Universidad de la Salle"
+            data-desc="Workshop in Bogotá, Julio 21–22, 2026"
+            data-link="/macrodata/galeria/"></li>
+        <li data-group="community" data-sub="macrodata" data-src="/assets/images/macrodata/lasalle-2.jpg"
+            data-kicker="MacroData, Bogotá"
+            data-title="Universidad de la Salle"
+            data-desc="Workshop in Bogotá, Julio 21–22, 2026"
+            data-link="/macrodata/galeria/"></li>
+        <li data-group="community" data-sub="macrodata" data-src="/assets/images/macrodata/grupo-atlantico.jpg"
+            data-kicker="MacroData, Barranquilla"
+            data-title="Universidad del Atlántico"
+            data-desc="Workshop in Barranquilla, Agosto 1–2, 2026"
+            data-link="/macrodata/galeria/"></li>
+        <li data-group="community" data-sub="macrodata" data-src="/assets/images/macrodata/atlantico-1.jpg"
+            data-kicker="MacroData, Barranquilla"
+            data-title="Universidad del Atlántico"
+            data-desc="Workshop in Barranquilla, Agosto 1–2, 2026"
+            data-link="/macrodata/galeria/"></li>
+        <li data-group="community" data-sub="macrodata" data-src="/assets/images/macrodata/atlantico-2.jpg"
+            data-kicker="MacroData, Barranquilla"
+            data-title="Universidad del Atlántico"
+            data-desc="Workshop in Barranquilla, Agosto 1–2, 2026"
+            data-link="/macrodata/galeria/"></li>
+    </ul>
 
-        <div class="cs-picture-caption timer-slider">
-        <div class="cs-picture-caption timer-slider">
-          
-          
-            
-          
-        
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-            
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-          
-            
-              
-                
-              
-            
-          
-        
-          
-            <picture class="cs-picture">
-              <source media="(max-width: 600px)" srcset="/assets/images/ddl-jan2026-group-photo.jpeg">
-              <source media="(min-width: 601px)" srcset="/assets/images/ddl-jan2026-group-photo.jpeg">
-              <img
-                aria-hidden="true"
-                decoding="async"
-                src="/assets/images/ddl-jan2026-group-photo.jpeg"
-                alt="Event image"
-              >
-            </picture>
-        
-        
+    <div class="hero-content">
+        <div class="heroText">
+            <p class="hero-byline hero-animate hero-animate-1"><span>Cristian Román-Palacios</span><a href="https://infosci.arizona.edu" target="_blank" rel="noopener">College of Information Science, University of Arizona</a>
+            </p>
+            <div class="hero-animate hero-animate-2">
+                <h1 id="home-h" class="cs-title">The Data Diversity Lab</h1>
             </div>
-          
+            <p class="hero-description hero-statement hero-animate hero-animate-3">We analyze how biodiversity evolves and responds to change. We also build the datasets, software and methods behind that work, and we train the students who carry it forward.</p>
+            <ul class="hero-tags hero-animate hero-animate-3" aria-label="Research themes">
+                <li><a href="/our-work/?q=Phylogenetics">Phylogenetics</a></li>
+                <li><a href="/our-work/?q=Macroevolution">Macroevolution</a></li>
+                <li><a href="/our-work/?q=Ecology">Ecology</a></li>
+                <li><a href="/our-work/?q=Biogeography">Biogeography</a></li>
+                <li><a href="/our-work/?q=Conservation%20biology">Conservation biology</a></li>
+            </ul>
+            <!-- Main buttons: edited in Netlify > Home page > ... > Main buttons -->
+            <div class="hero-doors hero-animate hero-animate-4">
+                <a class="hero-door is-primary" href="/our-work/">Explore our work</a>
+                <a class="hero-door" href="/join-us/">Join the lab</a>
+            </div>
+            <div class="hero-stats hero-animate hero-animate-4"><a class="hero-stat" href="/our-work/?type=Paper">
+                    <span class="hero-stat-number" data-target="57">57</span>
+                    <span class="hero-stat-label">Publications</span>
+                </a>
+                <a class="hero-stat" href="/our-work/?type=Tool">
+                    <span class="hero-stat-number" data-target="24">24</span>
+                    <span class="hero-stat-label">Tools &amp; data</span>
+                </a>
+                <a class="hero-stat" href="/our-team/">
+                    <span class="hero-stat-number" data-target="10">10</span>
+                    <span class="hero-stat-label">Lab members</span>
+                </a>
+            </div>
         </div>
-
-        <div class="cs-caption-slider-wrapper"><p class="cs-text-caption" data-srcset="/assets/images/ddl-jan2026-group-photo.jpeg">
-                </p>
-            <p class="cs-text-caption" data-srcset="/assets/images/img_0954.jpg">
-                </p>
-            <p class="cs-text-caption" data-srcset="/assets/images/dec5_dinner_2.jpeg">
-                </p>
-            <p class="cs-text-caption" data-srcset="/assets/images/b9bd20c8-54eb-4e03-a987-a6a42a9e8027.jpg">
-                </p>
-            <p class="cs-text-caption" data-srcset="/assets/images/lab_dec1_2022.jpg">
-                </p>
-            <p class="cs-text-caption" data-srcset="/assets/images/conference-room-2.jpg">
-                </p>
-            
-            
-        </div>
+    </div>
     </div>
 </section>
 
 <!-- ============================================ -->
-<!--                service cards                 -->
+<!--                    Latest                    -->
 <!-- ============================================ -->
-
-<section id="service-cards">
-    <div class="cs-container">
-        <div class="cs-card-group"><a class="cs-item" href="#">
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)" srcset="/assets/images/cristian_esa2025.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/cristian_esa2025.jpg">
-                        <img loading="lazy" decoding="async" src="/assets/images/cristian_esa2025.jpg" alt="Research" width="522" height="370">
-                    </picture>
-                    <div class="cs-card-overlay"></div>
-                    <div class="cs-flex-group">
-                        <span class="cs-card-index">01</span>
-                        <span class="cs-name">Research</span>
-                        <span class="cs-desc">We use data science to solve questions in evolutionary biology, ecology, climate change, and related fields. We invite collaboration with students and researchers passionate about leveraging large datasets to answer questions in biology and beyond.</span>
-                        <span class="cs-card-cta">
-                            Explore
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </span>
-                    </div>
-                </a>
-            <a class="cs-item" href="#">
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)" srcset="/assets/images/img_3403.jpeg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/img_3403.jpeg">
-                        <img loading="lazy" decoding="async" src="/assets/images/img_3403.jpeg" alt="Teaching" width="522" height="370">
-                    </picture>
-                    <div class="cs-card-overlay"></div>
-                    <div class="cs-flex-group">
-                        <span class="cs-card-index">02</span>
-                        <span class="cs-name">Teaching</span>
-                        <span class="cs-desc">We focus on instructing general skills—critical thinking, problem-solving, and data analysis—applicable to diverse careers. With key principles like question-driven learning and real-world applications, we encourage students to ask questions and apply methods that transcend academia.</span>
-                        <span class="cs-card-cta">
-                            Explore
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </span>
-                    </div>
-                </a>
-            <a class="cs-item" href="#">
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)" srcset="/assets/images/edited_dscf8821-cropped2.jpg">
-                        <source media="(min-width: 601px)" srcset="/assets/images/edited_dscf8821-cropped2.jpg">
-                        <img loading="lazy" decoding="async" src="/assets/images/edited_dscf8821-cropped2.jpg" alt="Our Values" width="522" height="370">
-                    </picture>
-                    <div class="cs-card-overlay"></div>
-                    <div class="cs-flex-group">
-                        <span class="cs-card-index">03</span>
-                        <span class="cs-name">Our Values</span>
-                        <span class="cs-desc">At the heart of our lab is the concept of data diversity, symbolizing our commitment to using information from diverse origins. We embrace inclusivity and support diversity initiatives within academia, fostering an environment where varied perspectives drive novel contributions.</span>
-                        <span class="cs-card-cta">
-                            Explore
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </span>
-                    </div>
-                </a>
-            <a class="cs-item" href="#">
-                    <picture class="cs-picture">
-                        <source media="(max-width: 600px)" srcset="/assets/images/leadership-card-updated.png">
-                        <source media="(min-width: 601px)" srcset="/assets/images/leadership-card-updated.png">
-                        <img loading="lazy" decoding="async" src="/assets/images/leadership-card-updated.png" alt="Leadership" width="522" height="370">
-                    </picture>
-                    <div class="cs-card-overlay"></div>
-                    <div class="cs-flex-group">
-                        <span class="cs-card-index">04</span>
-                        <span class="cs-name">Leadership</span>
-                        <span class="cs-desc">The Data Diversity lab is led by Dr. Cristian Román, assistant professor at the school of information at the University of Arizona. His research interests often relate to phylogenetics, systematics, conservation biology, and the effects of climate change on biodiversity at different scales.</span>
-                        <span class="cs-card-cta">
-                            Explore
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </span>
-                    </div>
-                </a>
-            
+<!-- Built automatically from publications, Socials, press and team (see src/_data/homeData.js) -->
+<section id="latest" aria-labelledby="lt-heading">
+    <div class="lt-inner">
+        <div class="lt-head">
+            <h2 id="lt-heading" class="lt-title">Latest</h2>
+            <p class="lt-intro"><a href="/our-work/">See everything &rarr;</a></p>
         </div>
+        <ul class="lt-list">
+            <li class="">
+                <a class="lt-item" href="/social/">
+                    <img class="lt-thumb" src="/assets/images/socials/sarah-cambium-talk.jpg" alt="" loading="lazy" decoding="async" width="56" height="56">
+                    <span class="lt-text">
+                        <span class="lt-kind">Event<span class="lt-when"> &middot; Oct 2026</span></span>
+                        <span class="lt-name">Sarah&#39;s Talk at CAMBIUM Meeting</span>
+                    </span>
+                </a>
+            </li>
+            <li class="is-paper">
+                <a class="lt-item" href="https://academic.oup.com/sysbio/advance-article/doi/10.1093/sysbio/syag070/8789437" target="_blank" rel="noopener">
+                    <img class="lt-thumb" src="/assets/images/publications/macroevolution-yichao-paper-image.png" alt="" loading="lazy" decoding="async" width="56" height="56">
+                    <span class="lt-text">
+                        <span class="lt-kind">Paper<span class="lt-when"> &middot; Sep 2026</span></span>
+                        <span class="lt-name">Macroevolutionary Rates of Species Interactions: Approximate Bayesian Inference from Cophylogenies</span>
+                    </span>
+                </a>
+            </li>
+            <li class="">
+                <a class="lt-item" href="https://infosci.arizona.edu/news/from-early-earth-to-mars-big-idea-challenge-project" target="_blank" rel="noopener">
+                    <img class="lt-thumb" src="/assets/images/uploads/from-early-earth-to-mars.png" alt="" loading="lazy" decoding="async" width="56" height="56">
+                    <span class="lt-text">
+                        <span class="lt-kind">Press<span class="lt-when"> &middot; Fall 2026</span></span>
+                        <span class="lt-name">&#39;From Early Earth to Mars&#39; Biosphere 2 Digital Twinning Project Awarded Big Idea Challenge Grant</span>
+                    </span>
+                </a>
+            </li>
+            <li class="">
+                <a class="lt-item" href="/social/">
+                    <img class="lt-thumb" src="/assets/images/socials/jojos_aug20.jpg" alt="" loading="lazy" decoding="async" width="56" height="56">
+                    <span class="lt-text">
+                        <span class="lt-kind">Event<span class="lt-when"> &middot; Aug 2026</span></span>
+                        <span class="lt-name">Lab Get Together at Jojos and Game Night</span>
+                    </span>
+                </a>
+            </li>
+        </ul>
     </div>
 </section>
 
@@ -1289,153 +1647,6 @@ p.hero-description {
 })();
 </script>
 
-<style>
-/* ---- Service Cards Redesign ---- */
-#service-cards {
-    padding: clamp(3rem, 6vw, 5rem) 1.5rem;
-    background: #eef3f0;
-}
-#service-cards .cs-container {
-    width: 100%;
-    max-width: 72rem;
-    margin: auto;
-    padding: 0;
-}
-#service-cards .cs-card-group {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-#service-cards .cs-item {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    text-decoration: none;
-    border-radius: 6px;
-    background: #fff;
-    box-shadow: 0 2px 16px rgba(43,58,50,0.07);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-#service-cards .cs-item:hover {
-    box-shadow: 0 8px 32px rgba(43,58,50,0.13);
-    transform: translateY(-3px);
-}
-#service-cards .cs-picture {
-    width: 100%;
-    aspect-ratio: 16/9;
-    display: block;
-    overflow: hidden;
-    margin: 0;
-}
-#service-cards .cs-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.6s ease;
-    filter: saturate(0.85);
-}
-#service-cards .cs-item:hover .cs-picture img {
-    transform: scale(1.04);
-}
-/* sage accent line at top */
-#service-cards .cs-item::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--primary);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-}
-#service-cards .cs-item:hover::before {
-    opacity: 1;
-}
-/* overlay div no longer needed — hide it */
-#service-cards .cs-card-overlay { display: none; }
-
-#service-cards .cs-flex-group {
-    padding: 1.25rem 1.5rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-#service-cards .cs-card-index {
-    display: none;
-}
-#service-cards .cs-name {
-    font-family: "Fraunces", Georgia, serif;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--headerColor);
-    line-height: 1.25;
-    display: block;
-}
-#service-cards .cs-desc {
-    font-family: "Figtree", sans-serif;
-    font-size: 0.875rem;
-    color: var(--bodyTextColor);
-    opacity: 0.75;
-    line-height: 1.6;
-    display: block;
-    max-height: unset;
-    overflow: visible;
-    opacity: 0.75;
-    transform: none;
-    transition: none;
-    margin: 0;
-}
-#service-cards .cs-card-cta {
-    display: none;
-}
-@media only screen and (min-width: 64rem) {
-    #service-cards .cs-card-group {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.5rem;
-    }
-    #service-cards .cs-picture {
-        aspect-ratio: 3/2;
-    }
-}
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        function animateCounter(el) {
-            const target = parseInt(el.getAttribute('data-target'), 10);
-            const duration = 1600;
-            const start = performance.now();
-            const from = target > 100 ? target - 3 : 0;
-            function step(now) {
-                const elapsed = now - start;
-                const progress = Math.min(elapsed / duration, 1);
-                const eased = 1 - Math.pow(2, -10 * progress);
-                el.textContent = Math.floor(from + (target - from) * eased);
-                if (progress < 1) requestAnimationFrame(step);
-                else el.textContent = target;
-            }
-            requestAnimationFrame(step);
-        }
-        const statsEl = document.querySelector('.hero-stats');
-        if (statsEl) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.querySelectorAll('.hero-stat-number').forEach(animateCounter);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.3 });
-            observer.observe(statsEl);
-        }
-    });
-</script>
-
 <script defer>
     const newsWidth = () => {
         const doc = document.documentElement
@@ -1457,7 +1668,10 @@ p.hero-description {
     window.addEventListener('onload', newsHolderLeft);
 
     newsHolderLeft();
-</script></main>
+</script>
+
+<script src="/assets/js/home.js" defer></script>
+</main>
         <!-- ============================================ -->
 <!--                   Footer                     -->
 <!-- ============================================ -->

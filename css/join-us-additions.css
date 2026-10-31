@@ -1,0 +1,84 @@
+/* Append to /css/join-us.css */
+
+/* "Nothing is open" line */
+#job-cards .jp-none {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+}
+
+/* Past opportunities: one row per position, closed until clicked */
+#job-cards .jp-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#job-cards .jp-item {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 8px rgba(43, 58, 50, 0.08);
+}
+#job-cards .jp-item > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  padding: 1rem 3rem 1rem 1.25rem;
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+}
+#job-cards .jp-item > summary::-webkit-details-marker {
+  display: none;
+}
+#job-cards .jp-item > summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--headerColor);
+}
+#job-cards .jp-item[open] > summary::after {
+  content: "\2212";
+}
+#job-cards .jp-title {
+  font-weight: 700;
+  color: var(--headerColor);
+}
+#job-cards .jp-date {
+  font-size: 0.9rem;
+  color: var(--bodyTextColor);
+}
+#job-cards .jp-status {
+  padding: 0.15rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--bodyTextColor);
+  background: #eef3f0;
+  border-radius: 999px;
+}
+#job-cards .jp-body {
+  padding: 0 1.25rem 1.25rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--bodyTextColor);
+}
+#job-cards .jp-body p {
+  margin: 0 0 0.75rem;
+}
+#job-cards .jp-body ul,
+#job-cards .jp-body ol {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+#job-cards .jp-body a {
+  color: var(--headerColor);
+  font-weight: 600;
+  text-decoration: underline;
+}
