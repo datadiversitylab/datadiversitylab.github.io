@@ -1,52 +1,16 @@
 ---
-layout: 'base.html' 
-description: "Lab Policies of the Data Diversity Lab"
-metaTitle: 'Lab Documents'
-tagTitle: 'Lab Documents'
-preloadImg: ''
-preloadCSS: '/css/lab-policies.css'
 permalink: 'lab-documents/'
-eleventyNavigation:
-    key: Lab documents
-    parent: The Lab
-    order: 200
+eleventyExcludeFromCollections: true
 ---
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
-
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">Lab documents</h1>
-            <p class="cs-text">
-                Welcome to the lab documents section, a repository of essentials that guide our operations and ensure a cohesive and productive environment within the data diversity lab. Here, you'll find a collection of key policies and guidelines that shape our conduct, workflows, and collaborations. These documents are instrumental in maintaining a harmonious and effective research culture. To enhance accessibility and minimize page loading times, we have organized this section as links to policy archives:
-            </p>
-        </div>
-    </div>
-</section>
-
-<div aria-hidden="true" class="line"></div>
-
-<section id="information-cards">
-    <div class="cs-container">
-        <div class="cs-card-group">
-            {%- for policy in collections.labPolicies | sort(attribute='data.order') -%}
-                <div class="cs-item">
-                    <div class="cs-flex-group">
-                        <span class="cs-name">{{ policy.data.title }}</span>
-                        <span class="cs-desc">{{ policy.content | safe }}</span>
-                        <a class="cs-button-link" target="_blank" href="{{ policy.data.link }}">
-                            {%- if policy.data.link -%}
-                                <span>View here</span>
-                            {%- else -%}
-                                <span>TBD</span>
-                            {%- endif -%}
-                            <img src="../assets/icons/right-arrow.svg" class="filter-green">
-                        </a>
-                    </div>
-                </div>
-            {%- endfor -%}
-        </div>
-    </div>
-</section>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Lab manual</title>
+    <meta http-equiv="refresh" content="0; url=/lab-manual/about-the-lab/">
+    <link rel="canonical" href="/lab-manual/about-the-lab/">
+</head>
+<body>
+    <p><a href="/lab-manual/about-the-lab/">Go to the lab manual</a></p>
+</body>
+</html>

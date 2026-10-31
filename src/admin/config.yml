@@ -285,6 +285,84 @@ collections:
         ]
       }
       - { label: 'Year', name: 'year', widget: 'number', required: true }
+  - name: 'wiki'
+    label: 'Lab manual'
+    folder: 'src/wiki'
+    media_folder: '/src/assets/images/wiki'
+    public_folder: '/assets/images/wiki'
+    create: true
+    extension: 'md'
+    format: 'frontmatter'
+    nested:
+      depth: 3
+      summary: '{{title}}'
+    meta:
+      path:
+        widget: 'string'
+        label: 'Path'
+        index_file: 'index'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Short description', name: 'summary', widget: 'text', required: false, hint: 'Optional. Shown under the title and used for search engines.' }
+      - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Lower numbers come first within a section. Pages without a number go last, in alphabetical order.' }
+      - { label: 'Show the policy cards below the text', name: 'showPolicies', widget: 'boolean', default: false, required: false, hint: 'Only for the Policies and agreements page.' }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+  - name: 'meetingSchedules'
+    label: 'Lab meeting schedules'
+    folder: 'src/meetingSchedules'
+    create: true
+    slug: '{{scheduleYear}}-{{semester}}'
+    identifier_field: 'semester'
+    summary: '{{scheduleYear}} {{semester}}'
+    sortable_fields: ['scheduleYear', 'semester']
+    fields:
+      - { label: 'Year', name: 'scheduleYear', widget: 'number', value_type: 'int', min: 2023, required: true }
+      - { label: 'Semester', name: 'semester', widget: 'select', options: ['Spring', 'Summer', 'Fall'], required: true }
+      - { label: 'When and where', name: 'meetingInfo', widget: 'string', required: false, hint: 'For example: Wednesday at 2:00pm, In-person & Zoom' }
+      - label: 'Meetings'
+        name: 'meetings'
+        widget: 'list'
+        required: false
+        summary: '{{fields.date}} | {{fields.activity}}'
+        fields:
+          - { label: 'Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+          - { label: 'Led by', name: 'ledBy', widget: 'string', required: false }
+          - { label: 'Activity', name: 'activity', widget: 'string' }
+          - { label: 'Type (for example Journal Club)', name: 'kind', widget: 'string', required: false }
+          - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Other activities', name: 'body', widget: 'markdown', required: false, hint: 'Journal club, professional development, retreats, notes. Tables and lists work here.' }
+  - name: 'labManualSettings'
+    label: 'Lab manual and meetings settings'
+    files:
+      - label: 'Manual sections (menu on the left)'
+        name: 'wikiSections'
+        file: 'src/_data/wikiSections.json'
+        fields:
+          - label: 'Sections'
+            name: 'sections'
+            widget: 'list'
+            summary: '{{fields.title}}'
+            hint: 'Drag to reorder. The folder name must match the slug, for example src/wiki/lab-manual.'
+            fields:
+              - { label: 'Name shown in the menu', name: 'title', widget: 'string' }
+              - { label: 'Folder name (slug)', name: 'slug', widget: 'string', hint: 'Lowercase, with dashes. Pages in this section live in the folder with this name.' }
+      - label: 'Lab meetings page'
+        name: 'meetingsPage'
+        file: 'src/_data/meetingsPage.json'
+        fields:
+          - { label: 'Page title', name: 'title', widget: 'string' }
+          - { label: 'Introduction', name: 'intro', widget: 'text', required: false }
+          - { label: 'How meetings run: heading', name: 'agendaTitle', widget: 'string' }
+          - label: 'How meetings run: steps'
+            name: 'agenda'
+            widget: 'list'
+            required: false
+            summary: '{{fields.title}}'
+            fields:
+              - { label: 'Step', name: 'title', widget: 'string' }
+              - { label: 'Time', name: 'time', widget: 'string', required: false }
+              - { label: 'Bullets', name: 'bullets', widget: 'list', required: false, field: { label: 'Bullet', name: 'bullet', widget: 'text' } }
+          - { label: 'Schedule heading', name: 'scheduleTitle', widget: 'string' }
   - name: 'labPolicies'
     label: 'Lab Policies'
     folder: 'src/labPolicies'

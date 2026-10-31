@@ -1,0 +1,104 @@
+---
+layout: 'base.html'
+description: "Lab meeting schedule of the Data Diversity Lab"
+metaTitle: 'Lab meetings'
+tagTitle: 'Lab meetings'
+preloadImg: ''
+preloadCSS: '/css/wiki.css'
+preloadJS: '/js/wiki.js'
+permalink: 'lab-meetings/'
+eleventyNavigation:
+    key: Lab meetings
+    parent: The Lab
+    order: 300
+navOptions:
+    includeSelf: true
+---
+{%- set m = meetingsPage -%}
+{%- set schedules = (collections.meetingSchedules or []) | sort(attribute='data.scheduleKey') | reverse | list -%}
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+<!-- Text on this page is edited in the CMS (Lab meetings page). Schedules are in Lab meeting schedules. -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Lab meetings</h1>
+            <p class="cs-text">
+                Lab meeting schedule.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="lab-meetings">
+    <div class="cs-container">
+
+        {%- if m.agenda | length %}
+        <div class="meeting-agenda">
+            <h2>{{ m.agendaTitle }}</h2>
+            <ol class="meeting-steps">
+                {%- for step in m.agenda %}
+                <li>
+                    <span class="meeting-step-title">{{ step.title }}</span>
+                    {%- if step.time %}<span class="meeting-step-time">{{ step.time }}</span>{% endif %}
+                    {%- if step.bullets | length %}
+                    <ul>
+                        {%- for b in step.bullets %}
+                        <li>{{ b }}</li>
+                        {%- endfor %}
+                    </ul>
+                    {%- endif %}
+                </li>
+                {%- endfor %}
+            </ol>
+        </div>
+        {%- endif %}
+
+        <!-- Schedule: the year and semester picker is in /js/wiki.js -->
+        <div class="wiki-schedule" data-schedule>
+            {%- if schedules | length %}
+            <h2 class="schedule-heading">{{ m.scheduleTitle or 'Schedule' }}</h2>
+            <div class="schedule-controls">
+                <label>Year
+                    <select data-year-select></select>
+                </label>
+                <label>Semester
+                    <select data-semester-select></select>
+                </label>
+            </div>
+            {%- for s in schedules %}
+            <section class="schedule-panel" id="{{ s.data.scheduleYear }}-{{ s.data.semester | lower }}" data-year="{{ s.data.scheduleYear }}" data-semester="{{ s.data.semester }}" data-key="{{ s.data.scheduleKey }}">
+                <h3>{{ s.data.semester }} {{ s.data.scheduleYear }}</h3>
+                {%- if s.data.meetingInfo %}
+                <p class="schedule-info">{{ s.data.meetingInfo }}</p>
+                {%- endif %}
+                {%- if s.data.rows | length %}
+                <table class="schedule-table">
+                    <thead>
+                        <tr><th>Date</th><th>Led by</th><th>Activity</th></tr>
+                    </thead>
+                    <tbody>
+                        {%- for row in s.data.rows %}
+                        <tr data-date="{{ row.date }}">
+                            <td data-label="Date"><time datetime="{{ row.date }}">{{ row.date }}</time></td>
+                            <td data-label="Led by">{{ row.ledBy }}</td>
+                            <td data-label="Activity">
+                                {%- if row.kind %}<span class="schedule-kind">{{ row.kind }}</span>{% endif -%}
+                                {%- if row.link %}<a href="{{ row.link }}" target="_blank" rel="noopener">{{ row.activity }}</a>{% else %}{{ row.activity }}{% endif -%}
+                            </td>
+                        </tr>
+                        {%- endfor %}
+                    </tbody>
+                </table>
+                {%- endif %}
+                <div class="schedule-extra">{{ s.content | safe }}</div>
+            </section>
+            {%- endfor %}
+            {%- else %}
+            <p class="cs-text">No schedules have been added yet.</p>
+            {%- endif %}
+        </div>
+    </div>
+</section>

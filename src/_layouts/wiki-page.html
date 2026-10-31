@@ -1,0 +1,100 @@
+---
+layout: 'base.html'
+---
+{%- set pages = collections.wiki | sort(attribute='data.wikiOrder') -%}
+<!-- ============================================ -->
+<!--                  Content                     -->
+<!-- ============================================ -->
+
+<section id="content-1450" class="cs-top-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <nav class="wiki-crumbs" aria-label="Breadcrumb">
+                {%- for sec in wikiSections.sections -%}
+                    {%- if sec.slug == wikiGroup -%}
+                        <span>{{ sec.title }}</span>
+                    {%- endif -%}
+                {%- endfor -%}
+                {%- if wikiDepth > 1 -%}
+                    {%- for p in pages -%}
+                        {%- if p.data.wikiPath == wikiTrail[1] -%}
+                            <a href="{{ p.url }}">{{ p.data.title }}</a>
+                        {%- endif -%}
+                    {%- endfor -%}
+                {%- endif -%}
+            </nav>
+            <h1 class="cs-title">{{ title }}</h1>
+            {%- if summary %}
+            <p class="cs-text">{{ summary }}</p>
+            {%- endif %}
+        </div>
+    </div>
+</section>
+
+<div aria-hidden="true" class="line"></div>
+
+<section id="wiki">
+    <div class="cs-container wiki-grid">
+
+        <!-- Menu on the left: sections from src/_data/wikiSections.json, pages from src/wiki -->
+        <aside class="wiki-side">
+            <nav class="wiki-tree" aria-label="Lab manual menu">
+                <p class="wiki-tree-title">Contents</p>
+                <ul>
+                {%- for sec in wikiSections.sections -%}
+                    {%- set kids -%}
+                        {%- for c in pages -%}
+                            {%- if c.data.wikiGroup == sec.slug and c.data.wikiDepth == 1 -%}
+                                {%- set grand -%}
+                                    {%- for g in pages -%}
+                                        {%- if g.data.wikiParent == c.data.wikiPath -%}
+                                            <li class="{{ 'is-current' if g.url == page.url }}"><a href="{{ g.url }}">{{ g.data.title }}</a></li>
+                                        {%- endif -%}
+                                    {%- endfor -%}
+                                {%- endset -%}
+                                <li class="{{ 'is-current' if c.url == page.url }}">
+                                    <a href="{{ c.url }}">{{ c.data.title }}</a>
+                                    {%- if grand | trim %}<ul>{{ grand | safe }}</ul>{% endif -%}
+                                </li>
+                            {%- endif -%}
+                        {%- endfor -%}
+                    {%- endset -%}
+                    {%- if kids | trim %}
+                    <li class="wiki-branch">
+                        <details {{ 'open' if sec.slug == wikiGroup }}>
+                            <summary>{{ sec.title }}</summary>
+                            <ul>{{ kids | safe }}</ul>
+                        </details>
+                    </li>
+                    {%- endif %}
+                {%- endfor -%}
+                </ul>
+            </nav>
+        </aside>
+
+        <article class="wiki-article">
+            <div class="wiki-body">
+                {{ content | safe }}
+            </div>
+
+            {%- if showPolicies %}
+            <!-- Policy cards: edited in the CMS under Lab Policies -->
+            <ul class="wiki-cards">
+                {%- for policy in (collections.labPolicies or []) | sort(attribute='data.order') %}
+                <li>
+                    <div class="wiki-card">
+                        <span class="wiki-card-title">{{ policy.data.title }}</span>
+                        <span class="wiki-card-text">{{ policy.content | safe }}</span>
+                        {%- if policy.data.link %}
+                        <a class="wiki-card-link" href="{{ policy.data.link }}" target="_blank" rel="noopener">View here</a>
+                        {%- else %}
+                        <span class="wiki-card-link">TBD</span>
+                        {%- endif %}
+                    </div>
+                </li>
+                {%- endfor %}
+            </ul>
+            {%- endif %}
+        </article>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+---
+scheduleYear: 2026
+semester: Summer
+meetingInfo: "Wednesday at 1:00pm, Zoom"
+meetings:
+  - date: "2026-05-27"
+    ledBy: "N/A"
+    activity: "No meeting this week!"
+  - date: "2026-06-03"
+    ledBy: "TBD"
+    activity: "TBD"
+  - date: "2026-06-10"
+    ledBy: "Coworking"
+    activity: "Coextinction project"
+  - date: "2026-06-17"
+    ledBy: "Kristen"
+    activity: "Practice talk"
+  - date: "2026-06-24"
+    ledBy: "Cristian"
+    activity: "TBD"
+  - date: "2026-07-01"
+    ledBy: "Miles"
+    activity: "Presenting a talk"
+  - date: "2026-07-08"
+    ledBy: "Michael"
+    activity: "Presenting a talk"
+  - date: "2026-07-15"
+    ledBy: "Daniel"
+    activity: "TBD"
+---

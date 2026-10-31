@@ -1,0 +1,8 @@
+{
+  "sections": [
+    { "slug": "lab-manual", "title": "Lab manual" },
+    { "slug": "onboarding", "title": "Onboarding" },
+    { "slug": "offboarding", "title": "Offboarding" },
+    { "slug": "resources", "title": "Resources" }
+  ]
+}
