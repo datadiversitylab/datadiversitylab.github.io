@@ -8,11 +8,8 @@ jobDesc: >-
   here](https://lovejoycenter.arizona.edu/who-we-are/join-us/tom-lovejoy-conservation-fellow-job-description)
 
 
-  * Work under the supervision of a primary 
+  * Work under the supervision of a primary [Lovejoy BBCS Faculty Member](https://lovejoycenter.arizona.edu/bbcs), at least one faculty from another discipline, and/or a non-academic community partner.
 
-    [Lovejoy BBCS Faculty Member](https://lovejoycenter.arizona.edu/bbcs)
-
-    , at least one faculty from another discipline, and/or a non-academic community partner.
   * Collaborate with post-doctoral fellows and faculty on additional interdisciplinary projects and group synthesis papers.
 
   * Develop proposals for external funding in line with the Lovejoy BBCS mission to bridge disciplines.
