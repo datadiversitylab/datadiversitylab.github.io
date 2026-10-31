@@ -154,24 +154,52 @@ document.addEventListener('DOMContentLoaded', function () {
         el.addEventListener('mouseout', scheduleHide);
     });
 
-    // Read more — cs-desc is a <span> so we force block, then measure
+    // Read more. The button only shows when the bio is cut off by the card.
+    // We measure the bio text alone, so the button itself can't change the result.
+    const bios = [];
+
     document.querySelectorAll('#meet-team-547 .cs-desc').forEach(function (desc) {
         const btn = desc.querySelector('.read-more-btn');
+        const text = desc.querySelector('.read-more-text') || desc;
         if (!btn) return;
 
         desc.style.display = 'block';
 
-        function checkOverflow() {
-            if (desc.classList.contains('show-more')) return;
-            desc.style.maxHeight = 'none';
-            const full = desc.scrollHeight;
-            desc.style.maxHeight = '';
-            const clamped = parseFloat(getComputedStyle(desc).maxHeight);
-            btn.style.display = (!isNaN(clamped) && full > clamped + 4) ? 'inline' : 'none';
+        // The button sits just below the bio, outside the clipped area, so it is always visible.
+        desc.insertAdjacentElement('afterend', btn);
+        btn.style.position = 'static';
+        btn.style.alignSelf = 'flex-start';
+        btn.style.margin = '0.25rem 0 0';
+        btn.style.cursor = 'pointer';
+
+        // Collapsed: use the CSS max-height if there is one, otherwise three lines.
+        // Expanded: inline styles win over the stylesheet, so the card always opens.
+        function collapse() {
+            desc.style.removeProperty('max-height');
+            desc.style.overflow = 'hidden';
+            if (!isFinite(parseFloat(getComputedStyle(desc).maxHeight))) {
+                const lineHeight = parseFloat(getComputedStyle(text).lineHeight) ||
+                    parseFloat(getComputedStyle(text).fontSize) * 1.5;
+                desc.style.maxHeight = (lineHeight * 3) + 'px';
+            }
         }
 
+        function expand() {
+            desc.style.setProperty('max-height', 'none', 'important');
+            desc.style.setProperty('overflow', 'visible', 'important');
+        }
+
+        function checkOverflow() {
+            if (desc.classList.contains('show-more')) return;
+            // Cards hidden by a filter have no size yet. We measure them when they appear.
+            if (desc.getClientRects().length === 0) return;
+            collapse();
+            const needed = text.getBoundingClientRect().height;
+            btn.style.display = needed > desc.clientHeight + 2 ? 'inline-block' : 'none';
+        }
+
+        bios.push(checkOverflow);
         checkOverflow();
-        window.addEventListener('load', checkOverflow);
 
         if (window.ResizeObserver) {
             new ResizeObserver(checkOverflow).observe(desc);
@@ -179,10 +207,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
         btn.addEventListener('click', function (e) {
             e.stopPropagation();
-            desc.classList.toggle('show-more');
-            btn.textContent = desc.classList.contains('show-more') ? ' show less' : '...read more';
+            const open = desc.classList.toggle('show-more');
+            btn.textContent = open ? ' show less' : '...read more';
+            if (open) {
+                expand();
+            } else {
+                checkOverflow();
+            }
         });
     });
 
+    function checkAllBios() {
+        bios.forEach(function (check) { check(); });
+    }
+
+    // Fonts and images can change the text height after the first check
+    window.addEventListener('load', checkAllBios);
+    window.addEventListener('resize', checkAllBios);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(checkAllBios);
+    document.querySelectorAll('.cs-filter-wrapper div').forEach(function (f) {
+        f.addEventListener('click', function () { setTimeout(checkAllBios, 0); });
+    });
+    startYearInput.addEventListener('input', checkAllBios);
+    endYearInput.addEventListener('input', checkAllBios);
 
 });
