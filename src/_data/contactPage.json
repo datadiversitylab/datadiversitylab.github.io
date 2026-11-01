@@ -1,0 +1,62 @@
+{
+  "intro": "We read every message. Write to us about research, collaboration, press or a visit.",
+  "email": "cromanpa@arizona.edu",
+  "topics": [
+    {
+      "title": "General questions",
+      "text": "Want to know more about our research? Ask us anything.",
+      "subject": "Question about the lab",
+      "action": "Ask a question",
+      "pageLink": "",
+      "pageLabel": ""
+    },
+    {
+      "title": "Collaboration",
+      "text": "Interested in working with the lab? Tell us about your idea.",
+      "subject": "Collaboration",
+      "action": "Propose a project",
+      "pageLink": "",
+      "pageLabel": ""
+    },
+    {
+      "title": "Media and press",
+      "text": "Journalists can write to us for information or an interview.",
+      "subject": "Media inquiry",
+      "action": "Request an interview",
+      "pageLink": "/innews/",
+      "pageLabel": "See us in the news"
+    },
+    {
+      "title": "Join the lab",
+      "text": "Students and researchers who would like to join us.",
+      "subject": "Joining the lab",
+      "action": "Ask about joining",
+      "pageLink": "/join-us/",
+      "pageLabel": "How to join"
+    }
+  ],
+  "people": [
+    {
+      "person": "Cristian Román-Palacios",
+      "label": "Principal investigator",
+      "phone": "(+1) 520-621-5219"
+    },
+    {
+      "person": "Kennedy Gezella",
+      "label": "Student lab support",
+      "phone": ""
+    }
+  ],
+  "visit": {
+    "title": "Visit us",
+    "note": "We are in the Richard A. Harvill Building, room 320. If you would like to visit, please email us first so someone can meet you.",
+    "address": [
+      "Richard A. Harvill Building",
+      "Room 320",
+      "1103 E. 2nd St.",
+      "Tucson, AZ 85721"
+    ],
+    "lat": 32.23443,
+    "lng": -110.95458
+  }
+}

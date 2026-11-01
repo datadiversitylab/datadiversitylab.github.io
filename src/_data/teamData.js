@@ -193,7 +193,7 @@ module.exports = function () {
     // ---- Lookups used by other pages ----
     const byKey = {};
     const byName = {};
-    const cardOf = (p) => ({ name: p.name, url: p.url, image: p.image, imageAlt: p.imageAlt });
+    const cardOf = (p) => ({ name: p.name, url: p.url, image: p.image, imageAlt: p.imageAlt, title: p.title });
     people.forEach((p) => {
         const card = cardOf(p);
         byName[p.name] = card;
@@ -270,6 +270,16 @@ module.exports = function () {
         p.grants.sort((a, b) => (ORDER.indexOf(a.role) - ORDER.indexOf(b.role)) || (b.end - a.end));
     });
 
+    // Everything the Contact page needs about a person, found by the name chosen in Netlify
+    const personByName = {};
+    people.forEach((p) => {
+        const link = (kind) => { const l = p.links.find((x) => x.kind === kind); return l ? l.url : ''; };
+        personByName[p.name] = {
+            name: p.name, url: p.url, image: p.image, imageAlt: p.imageAlt, title: p.title,
+            email: link('email').replace(/^mailto:/, ''), bluesky: link('bluesky')
+        };
+    });
+
     // ---- Order inside each group ----
     const late = (n) => (n === null ? 1e6 : n);
     const current = (a, b) => (late(a.order) - late(b.order)) || ((a.start || 9999) - (b.start || 9999)) || a.name.localeCompare(b.name);
@@ -318,6 +328,7 @@ module.exports = function () {
         faces,
         postFaces,
         macroSlugs,
+        personByName,
         counts: {
             all: people.length,
             current: people.filter((p) => p.status === 'current').length,

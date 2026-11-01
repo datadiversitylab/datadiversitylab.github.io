@@ -1,0 +1,70 @@
+/* Contact page. Colors come from root.css and theme.css. */
+
+.ct {
+    --ct-ink: var(--headerColor, #2b3a32);
+    --ct-body: var(--bodyTextColor, #3d4d44);
+    --ct-line: var(--lineColor, #c2d6cc);
+    --ct-green: var(--secondaryDark, #4a7c65);
+    --ct-mute: #5a6d62;
+    --ct-mint: #e7f1ec;
+    --ct-shadow: 0 2px 16px rgba(43, 58, 50, 0.08);
+    padding: clamp(7rem, 12vw, 9rem) 0 4rem;
+    color: var(--ct-body);
+}
+.ct-wrap { width: 100%; max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; box-sizing: border-box; }
+.ct a { text-decoration: none; }
+.ct img { display: block; }
+
+/* Header, centered like the rest of the site */
+.ct-head { text-align: center; }
+.ct-h1 { margin: 0 0 0.8rem; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.15; color: var(--ct-ink); }
+.ct-sub { margin: 0 auto 1.4rem; max-width: 36rem; font-size: 1.05rem; line-height: 1.6; }
+.ct-btn { display: inline-block; padding: 0.8rem 1.8rem; font-size: 1rem; font-weight: 700; color: #fff; background: var(--ct-ink); border-radius: 999px; }
+.ct-btn:hover { background: var(--ct-green); }
+
+.ct-h2 { margin: 3rem 0 0.3rem; text-align: center; font-size: 1.9rem; color: var(--ct-ink); }
+.ct-hint { margin: 0 auto 1.3rem; max-width: 40rem; text-align: center; font-size: 0.97rem; color: var(--ct-mute); }
+
+/* Topics */
+.ct-topics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.1rem; }
+.ct-topic { display: flex; flex-direction: column; padding: 1.2rem 1.3rem; background: #fff; border-top: 4px solid #e0a82e; border-radius: 14px; box-shadow: var(--ct-shadow); }
+.ct-name { margin: 0 0 0.4rem; font-size: 1.25rem; color: var(--ct-ink); }
+.ct-text { margin: 0 0 0.9rem; max-width: none; font-size: 0.95rem; line-height: 1.5; }
+.ct-links { display: flex; flex-direction: column; gap: 0.3rem; margin: auto 0 0; max-width: none; font-size: 0.95rem; font-weight: 700; }
+.ct-links a, .ct-address a { color: var(--ct-green); }
+.ct-links a:hover, .ct-address a:hover { text-decoration: underline; }
+.ct-soft { font-weight: 700; }
+.ct-links .ct-soft { color: var(--ct-mute); }
+
+/* People */
+.ct-people { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
+.ct-person { display: flex; align-items: center; gap: 1.2rem; padding: 1rem 1.2rem; background: #fff; border-radius: 16px; box-shadow: var(--ct-shadow); }
+.ct-photo { flex: none; width: 6.5rem; height: 6.5rem; overflow: hidden; background: var(--ct-mint); border-radius: 50%; }
+.ct-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.ct-info { min-width: 0; }
+.ct-person .ct-name { margin: 0; font-size: 1.25rem; }
+.ct-person .ct-name a { color: inherit; }
+.ct-person .ct-name a:hover { color: var(--ct-green); }
+.ct-role { margin: 0.1rem 0 0.5rem; max-width: none; font-size: 0.95rem; font-weight: 700; color: var(--ct-green); }
+.ct-lines { display: flex; flex-direction: column; gap: 0.15rem; margin: 0; max-width: none; font-size: 0.93rem; }
+.ct-lines a { color: var(--ct-body); overflow-wrap: anywhere; }
+.ct-lines a:hover { color: var(--ct-green); text-decoration: underline; }
+
+/* Visit */
+.ct-visit { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 1.2rem; align-items: stretch; }
+.ct-address { display: flex; flex-direction: column; justify-content: center; gap: 0.8rem; padding: 1.4rem 1.6rem; background: #fff; border-left: 4px solid #e0a82e; border-radius: 14px; box-shadow: var(--ct-shadow); }
+.ct-address p { margin: 0; max-width: none; font-size: 1.05rem; line-height: 1.6; color: var(--ct-ink); }
+.ct-map { overflow: hidden; min-height: 17rem; background: var(--ct-mint); border-radius: 14px; box-shadow: var(--ct-shadow); }
+.ct-map iframe { display: block; width: 100%; height: 100%; min-height: 17rem; border: 0; }
+
+@media only screen and (max-width: 64rem) {
+    .ct-topics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media only screen and (max-width: 48rem) {
+    .ct-people, .ct-visit { grid-template-columns: 1fr; }
+}
+@media only screen and (max-width: 32rem) {
+    .ct-topics { grid-template-columns: 1fr; }
+    .ct-person { flex-direction: column; text-align: center; }
+}
+.ct-h2 + .ct-people { margin-top: 1.2rem; }

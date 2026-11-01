@@ -1,46 +1,71 @@
 ---
 layout: 'base.html'
-preloadCSS: '/css/blog.css'
+preloadCSS: '/css/blog-page.css'
+preloadJS: 'js/blog-page.js'
 ---
-<section id="content-1450" class="cs-top-section">
-  <div class="cs-container">
-    <div class="cs-content">
-      <h1 class="cs-title">{{ title }}</h1>
-      <p class="cs-text">{{ description }}</p>
+{#- The post text comes from src/blog. Reading time, newer and older posts and related posts come from src/_data/blogData.js. -#}
+{% set post = blogData.byKey[page.filePathStem] %}
+{% set writers = teamData.postFaces[author] %}
+
+<article class="bp">
+    <div class="bp-wrap">
+
+        <nav class="bp-crumb" aria-label="Breadcrumb">
+            <a href="/blog/">Blog</a>
+        </nav>
+
+        <header class="bp-head">
+            <p class="bp-meta">{% if post %}{{ post.dateLong }}{% else %}{{ date | readableDate }}{% endif %}{% if post %} &middot; {{ post.minutes }} min read{% endif %}</p>
+            <h1 class="bp-title">{{ title }}</h1>
+            {%- if description %}<p class="bp-desc">{{ description }}</p>{% endif %}
+            {%- if author %}
+            <p class="bp-by">
+                <span class="bp-faces">{%- for w in writers %}<a href="{{ w.url }}" title="{{ w.name }}"><img src="{{ w.image }}" alt="{{ w.name }}" loading="lazy"></a>{% endfor -%}</span>
+                {{ author }}
+            </p>
+            {%- endif %}
+        </header>
+
+        {%- if image %}
+        <figure class="bp-cover"><img src="{{ image }}" alt="" loading="eager" decoding="async"></figure>
+        {%- endif %}
+
+        <div class="bp-body">
+            {{ content | safe }}
+        </div>
+
+        <div class="bp-foot">
+            {%- if post and post.tags | length %}
+            <p class="bp-tags">{% for t in post.tags %}<a href="/blog/?topic={{ t | urlencode }}">{{ t }}</a>{% endfor %}</p>
+            {%- endif %}
+            <button type="button" class="bp-btn" data-copy-link>Copy link</button>
+        </div>
+
+        {%- if writers | length %}
+        <div class="bp-people">
+            {%- for w in writers %}
+            <a class="bp-person" href="{{ w.url }}">
+                <img src="{{ w.image }}" alt="{{ w.name }}" loading="lazy">
+                <span><b>{{ w.name }}</b>{% if w.title %}<i>{{ w.title }}</i>{% endif %}<em>View profile</em></span>
+            </a>
+            {%- endfor %}
+        </div>
+        {%- endif %}
+
+        {%- if post and (post.newer or post.older) %}
+        <nav class="bp-step" aria-label="More posts">
+            {%- if post.older %}<a class="bp-prev" href="{{ post.older.url }}"><i>Older</i><b>{{ post.older.title }}</b></a>{% else %}<span></span>{% endif %}
+            {%- if post.newer %}<a class="bp-next" href="{{ post.newer.url }}"><i>Newer</i><b>{{ post.newer.title }}</b></a>{% endif %}
+        </nav>
+        {%- endif %}
+
+        {%- if post and post.related | length %}
+        <h2 class="bp-h2">More on the same topic</h2>
+        <ul class="bp-related">
+            {%- for r in post.related %}
+            <li><a href="{{ r.url }}"><b>{{ r.title }}</b><span>{{ r.dateLabel }}</span></a></li>
+            {%- endfor %}
+        </ul>
+        {%- endif %}
     </div>
-  </div>
-</section>
-
-<div aria-hidden="true" class="line"></div>
-
-<article class="blog-post-article">
-  <div class="blog-post-meta-bar">
-    <span class="blog-date">{{ date | readableDate }}</span>
-    {%- if author -%}
-      <span class="blog-dot">·</span>
-      <span class="blog-faces">{%- for w in teamData.postFaces[author] %}<a href="{{ w.url }}" title="{{ w.name }}"><img src="{{ w.image }}" alt="{{ w.name }}" loading="lazy"></a>{% endfor -%}</span>
-      <span class="blog-author">{{ author }}</span>
-    {%- endif -%}
-    <div class="blog-tags">
-      {%- for tag in tags -%}
-        {%- if tag and tag != "blog" -%}
-          <span class="blog-tag">{{ tag }}</span>
-        {%- endif -%}
-      {%- endfor -%}
-    </div>
-  </div>
-
-  {%- if image -%}
-    <div class="blog-post-hero">
-      <img src="{{ image }}" alt="{{ title }}" loading="eager" decoding="async">
-    </div>
-  {%- endif -%}
-
-  <div class="blog-post-body">
-    {{ content | safe }}
-  </div>
-
-  <footer class="blog-post-footer">
-    <a href="/blog/" class="blog-back-bottom">← Back to Blog</a>
-  </footer>
 </article>
