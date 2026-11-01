@@ -5,8 +5,8 @@ image: /assets/images/macrodata/arbol-angiospermas.jpg
 order: 0
 eleventyNavigation:
   key: MacroData
-  parent: Outreach
-  order: 900
+  parent: News and outreach
+  order: 500
 navOptions:
   includeSelf: true
 ---

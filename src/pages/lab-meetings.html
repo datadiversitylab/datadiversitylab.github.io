@@ -9,8 +9,8 @@ preloadJS: '/js/wiki.js'
 permalink: 'lab-meetings/'
 eleventyNavigation:
     key: Lab meetings
-    parent: The Lab
-    order: 200
+    parent: About
+    order: 400
 ---
 {%- set m = meetingsPage -%}
 {%- set schedules = (collections.meetingSchedules or []) | sort(attribute='data.scheduleKey') | reverse | list -%}
