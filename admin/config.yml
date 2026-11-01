@@ -710,6 +710,7 @@ collections:
             summary: '{{fields.name}}'
             fields:
               - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'When it is offered', name: 'term', widget: 'string', required: false, hint: 'For example: Spring and Fall. Leave empty to show nothing.' }
               - { label: 'Text', name: 'text', widget: 'text' }
           - { label: 'Courses closing note', name: 'coursesOutro', widget: 'text', required: false }
           - { label: 'Tools heading', name: 'toolsTitle', widget: 'string' }
