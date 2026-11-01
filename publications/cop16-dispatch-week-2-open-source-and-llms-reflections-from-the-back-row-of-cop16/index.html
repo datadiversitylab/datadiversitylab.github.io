@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script async="async" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+        <!--Swap our for actual link-->
+        <link rel="canonical" href="https://datadiversitylab.github.io/publications/cop16-dispatch-week-2-open-source-and-llms-reflections-from-the-back-row-of-cop16/">
+
+        <meta name="description" content="&quot;Large academic conferences have not strongly attracted me for years.">
+        <meta name="keywords" content="Data Diversity Lab and Development">
+        <meta name="google-site-verification" content="u82fOqFBdQHRSP52a0zYaa0TN4pXvDCaFbvtkQINz2M" />
+
+        <!--Social Media Display-->
+        <meta property="og:title" content="COP16 Dispatch: Week 2 Open Source and LLMs, Reflections from the Back Row of COP16"/>
+        <meta property="og:description" content="&quot;Large academic conferences have not strongly attracted me for years."/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://datadiversitylab.github.io/publications/cop16-dispatch-week-2-open-source-and-llms-reflections-from-the-back-row-of-cop16/"/>
+        <meta property="og:image" content="https://datadiversitylab.github.io/assets/favicons/android-chrome-512x512.png"/>
+        <meta property="og:image:secure_url" content="https://datadiversitylab.github.io/assets/favicons/android-chrome-512x512.png"/>
+
+        <!--Favicons-->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/assets/favicons/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Preload -->
+        <link rel="preload" as="image" href="/assets/images/logos/logo-dark.svg">
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
+        <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
+
+        <link rel="stylesheet" href="/css/root.css">
+        <link rel="stylesheet" href="/css/dark.css">
+
+        
+
+        <!-- Loading in page specific CSS sheets from css block -->
+        <link rel="stylesheet" href="/css/critical.css"/>
+        <link rel="stylesheet" href="/css/publications-page.css">
+        <link rel="stylesheet" href="/css/theme.css">
+
+        <script defer src="https://umami.datadiversitylab.synology.me/script.js" data-website-id="543cffef-a100-47af-9dd9-2cf39517077b" data-domains="datadiversitylab.github.io" data-tag="labwebsite"></script>
+
+        <!-- For home page, use full title, including location for SEO. Other pages should just include the page name -->
+        <title>
+            
+                COP16 Dispatch: Week 2 Open Source and LLMs, Reflections from the Back Row of COP16 | Data Diversity Lab
+            
+        </title>
+    </head>
+    <body>
+
+        <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
+
+        <!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+
+<header id="cs-navigation">
+    <div aria-hidden="true" class="background-color-div">
+    </div>
+    <div class="cs-container">
+        <!--Nav Logo-->
+        <a href="/" class="cs-logo" aria-label="back to home">
+            
+                
+                    
+                        <img class="cs-dark" src="../../assets/images/logos/ddl-logo.png" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+                    
+                
+                    
+                
+            
+        </a>
+        <!--Navigation List-->
+        <nav class="cs-nav" role="navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" aria-label="mobile menu toggle">
+                <div class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1" aria-hidden="true"></span>
+                    <span class="cs-line cs-line2" aria-hidden="true"></span>
+                    <span class="cs-line cs-line3" aria-hidden="true"></span>
+                </div>
+            </button>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+            <div class="cs-ul-wrapper">
+                <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    The Lab
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/overview/" class="cs-li-link cs-drop-link">Overview</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/our-work/" class="cs-li-link cs-drop-link">Our work</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/lab-meetings/" class="cs-li-link cs-drop-link">Lab meetings</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/lab-manual/about-the-lab/" class="cs-li-link cs-drop-link">Lab manual</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/grants/" class="cs-li-link cs-drop-link">Grants</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/space-and-tech/" class="cs-li-link cs-drop-link">Space and tech</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/join-us/" class="cs-li-link cs-drop-link">Join us</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/our-team/">
+                                    Our team
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/publications/">
+                                    Publications
+                                </a>
+                            </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    Tools and data
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/ddl_acdb/" class="cs-li-link cs-drop-link">Animal Culture Database</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/library/" class="cs-li-link cs-drop-link">Tool and data library</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/phylogenetics_salphycon/" class="cs-li-link cs-drop-link">Phylogenetic datasets</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/poll_chorus/" class="cs-li-link cs-drop-link">Participative polling</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/barriomap/" class="cs-li-link cs-drop-link">Community mapping</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/labops/" class="cs-li-link cs-drop-link">Lab collaboration workflow</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    Faculty
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/teaching/" class="cs-li-link cs-drop-link">Teaching</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/senate/" class="cs-li-link cs-drop-link">Senate</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/advising/" class="cs-li-link cs-drop-link">Advising</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    Outreach
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/blog/" class="cs-li-link cs-drop-link">Blog</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/outreach/gis-for-community-health/" class="cs-li-link cs-drop-link">GIS for community health</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/macrodata/" class="cs-li-link cs-drop-link">MacroData</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li cs-dropdown" tabindex="0">
+                                <span  class="cs-li-link"  href="false">
+                                    News
+                                    
+                                        <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
+                                    
+                                </span>
+                                <ul class="cs-drop-ul">
+                                        <li class="cs-drop-li">
+                                            <a href="/social/" class="cs-li-link cs-drop-link">Photos</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/labnews/" class="cs-li-link cs-drop-link">Lab news</a>
+                                        </li>
+                                        <li class="cs-drop-li">
+                                            <a href="/innews/" class="cs-li-link cs-drop-link">News coverage</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        
+                            <li class="cs-li" tabindex="0">
+
+                                <a  class="cs-li-link"  href="/contact/">
+                                    Contact
+                                </a>
+                            </li>
+                        
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+        <main id="main"><section class="pp">
+    <div class="pp-wrap">
+
+        <nav class="pp-crumb" aria-label="Breadcrumb">
+            <a href="/publications/">Publications</a>
+            <span aria-hidden="true">&rsaquo;</span>
+            <span>2024</span>
+        </nav>
+
+        <div class="pp-meta"><span class="pp-pill">Commentary</span><span class="pp-pill">Ecological Society of America</span><span class="pp-pill">Nov 2024</span>
+        </div>
+
+        <h1 class="pp-title">COP16 Dispatch: Week 2 Open Source and LLMs, Reflections from the Back Row of COP16</h1>
+        <p class="pp-authors"><strong>Cristian Román-Palacios</strong></p>
+
+        <div class="pp-actions"><a class="pp-btn pp-btn-dark" href="https://esa.org/esablog/2024/11/19/cop16-dispatch-week-2-open-source-and-llms-reflections-from-the-back-row-of-cop16/" target="_blank" rel="noopener">Read the paper</a><a class="pp-btn" href="/assets/documents/publications/cop16-dispatch_-week-2-open-source-and-llms-reflections-from-the-back-row-of-cop16-–-ecotone-_-news-and-views-on-ecological-science.pdf" target="_blank" rel="noopener">PDF</a>
+            <button class="pp-btn" type="button" data-copy="Cristian Román-Palacios (2024). COP16 Dispatch: Week 2 Open Source and LLMs, Reflections from the Back Row of COP16. Ecological Society of America.">Cite</button>
+            <button class="pp-btn" type="button" data-share>Share</button>
+        </div>
+
+        <div class="pp-cols">
+            <div class="pp-main">
+                <figure class="pp-fig">
+                    <img src="/assets/images/publications/esa.png" alt="" decoding="async">
+                </figure>
+                <h2 class="pp-h2">Abstract</h2>
+                <div class="pp-abstract"><p>&quot;Large academic conferences have not strongly attracted me for years. That, combined with the limited direct overlap between my research and public environmental policies, as well as lack of financial support, has kept me away from attending COP or similar events. Even though my research is mostly question-driven with a primary focus on ecology and evolution, analytical methods have always been an excuse for me to learn from other domains of knowledge.</p>
+<p>A multidisciplinary event featuring plenary sessions, talks, discussions, and forums across various disciplines has been on my radar for a while now. Therefore, this time, I decided to join the <a href="https://lovejoycenter.arizona.edu/">Lovejoy Center</a> at the University of Arizona and the Ecological Society of America (ESA) delegation to attend COP16 in Cali, Colombia.</p>
+<p>I have three takeaways from attending roughly a week of negotiations, talks, and other events. As I have not attended every single session at COP16 (which is not humanly possible)—my thoughts are based on selected sessions with topics summarized by the following keywords: 'biodiversity,' 'collaboration,' 'commitments,' 'tools,' and 'indicators.'&quot;</p>
+</div>
+                <h2 class="pp-h2">Topics</h2>
+                <div class="pp-meta"><a class="pp-pill pp-pill-link" href="/publications/?topic=People">People</a><a class="pp-pill pp-pill-soft" href="/publications/?topic=Tools">Tools</a>
+                </div>
+            </div>
+
+            <aside class="pp-side">
+                <div class="pp-box">
+                    <h2 class="pp-h4">Cite this paper</h2>
+                    <p class="pp-cite">Cristian Román-Palacios (2024). COP16 Dispatch: Week 2 Open Source and LLMs, Reflections from the Back Row of COP16. Ecological Society of America.</p>
+                    <div class="pp-meta">
+                        <button class="pp-btn pp-btn-small" type="button" data-copy="Cristian Román-Palacios (2024). COP16 Dispatch: Week 2 Open Source and LLMs, Reflections from the Back Row of COP16. Ecological Society of America.">Copy citation</button>
+                        <button class="pp-btn pp-btn-small" type="button" data-copy="@article{romanpalacios2024dispatch,
+  title = {COP16 Dispatch: Week 2 Open Source and LLMs, Reflections from the Back Row of COP16},
+  author = {Cristian Román-Palacios},
+  journal = {Ecological Society of America},
+  year = {2024},
+  url = {https://esa.org/esablog/2024/11/19/cop16-dispatch-week-2-open-source-and-llms-reflections-from-the-back-row-of-cop16/},
+}">Copy BibTeX</button>
+                    </div>
+                </div>
+
+                <div class="pp-box">
+                    <h2 class="pp-h4">At a glance</h2>
+                    <dl class="pp-glance"><div><dt>Published</dt><dd>Nov 2024</dd></div><div><dt>Journal</dt><dd>Ecological Society of America</dd></div><div><dt>Type</dt><dd>Commentary</dd></div><div><dt>Authors</dt><dd>1</dd></div>
+                    </dl>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","name":"COP16 Dispatch: Week 2 Open Source and LLMs, Reflections from the Back Row of COP16","headline":"COP16 Dispatch: Week 2 Open Source and LLMs, Reflections from the Back Row of COP16","author":[{"@type":"Person","name":"Cristian Román-Palacios"}],"datePublished":"2024","isPartOf":{"@type":"Periodical","name":"Ecological Society of America"},"abstract":"\"Large academic conferences have not strongly attracted me for years. That, combined with the limited direct overlap between my research and public environmental policies, as well as lack of financial support, has kept me away from attending COP or similar events. Even though my research is mostly question-driven with a primary focus on ecology and evolution, analytical methods have always been an excuse for me to learn from other domains of knowledge. A multidisciplinary event featuring plenary sessions, talks, discussions, and forums across various disciplines has been on my radar for a while now. Therefore, this time, I decided to join the Lovejoy Center at the University of Arizona and the Ecological Society of America (ESA) delegation to attend COP16 in Cali, Colombia. I have three takeaways from attending roughly a week of negotiations, talks, and other events. As I have not attended every single session at COP16 (which is not humanly possible)—my thoughts are based on selected sessions with topics summarized by the following keywords: 'biodiversity,' 'collaboration,' 'commitments,' 'tools,' and 'indicators.'\"","url":"https://esa.org/esablog/2024/11/19/cop16-dispatch-week-2-open-source-and-llms-reflections-from-the-back-row-of-cop16/"}</script>
+</main>
+        <!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="footer">
+    <div aria-hidden="true" class="line footer"></div>
+    <div class="container">
+        <div class="full-section">
+            <div class="credit">
+                <span>Data Diversity Lab at the</span>
+                <a href="https://infosci.arizona.edu/" target="_blank" rel="noopener">College of Information Science</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+        <script>
+            const appHeight = () => {
+                const doc = document.documentElement
+                doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+            }
+            window.addEventListener('onload', appHeight);
+
+            appHeight();
+
+            const scroll = document.documentElement.scrollTop;
+            if (scroll >= 50) {
+                document.querySelector('body').classList.add('scroll')
+            } else {
+                document.querySelector('body').classList.remove('scroll')
+            }
+        </script>
+
+        <script defer src="/assets/js/nav.js"></script>
+
+        
+            <script defer src="/assets/js/publications-page.js"></script>
+        
+
+        
+    </body>
+</html>
