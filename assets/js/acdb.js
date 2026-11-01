@@ -6,11 +6,26 @@
     var iframe = document.getElementById('acdb-iframe');
     var wrapper = document.getElementById('acdb-frame-wrapper');
     var fallback = document.getElementById('acdb-fallback');
+    var openLink = document.getElementById('acdb-open');
+    var loading = document.getElementById('acdb-loading');
+    var loadingText = document.getElementById('acdb-loading-text');
+    var loadingLink = document.getElementById('acdb-loading-link');
     if (!iframe || !wrapper) return;
 
     var APP = iframe.getAttribute('data-src');
     var ORIGIN = new URL(APP, window.location.href).origin;
     var loaded = false;
+
+    // The loading screen stays until the app says it is ready. If the app never says so, it goes a few seconds after the page loads
+    var hidden = false;
+    function hideLoading() {
+        if (hidden || !loading) return;
+        hidden = true;
+        loading.classList.add('is-done');
+        window.setTimeout(function () { loading.hidden = true; }, 400);
+    }
+    window.setTimeout(function () { if (!hidden && loadingText) loadingText.textContent = 'Still waiting for the server. This can take a moment.'; }, 10000);
+    window.setTimeout(function () { if (!hidden && loadingLink) loadingLink.hidden = false; }, 25000);
 
     // Start the app. A shared link can open a tab or a species
     var fromHash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
@@ -19,6 +34,7 @@
         if (fromHash.get(key)) query.set(key, fromHash.get(key));
     });
     iframe.src = APP + '?' + query.toString();
+    if (openLink) { query.delete('embed'); openLink.href = APP + (query.toString() ? '?' + query.toString() : ''); query.set('embed', '1'); }
     if (fromHash.get('tab') || fromHash.get('species')) wrapper.scrollIntoView({ block: 'start' });
 
     // Events to the analytics. Umami is used when it is on the page
@@ -40,6 +56,7 @@
         if (species) p.set('species', species);
         var text = p.toString();
         history.replaceState(null, '', window.location.pathname + window.location.search + (text ? '#' + text : ''));
+        if (openLink) openLink.href = APP + (text ? '?' + text : '');
     }
 
     // Tell the app where it lives, so that copied links point here
@@ -51,12 +68,12 @@
     window.addEventListener('message', function (ev) {
         if (ev.source !== iframe.contentWindow || ev.origin !== ORIGIN || !ev.data) return;
         var m = ev.data;
-        if (m.type === 'acdb:ready') { loaded = true; hello(); }
+        if (m.type === 'acdb:ready') { loaded = true; hello(); hideLoading(); }
         else if (m.type === 'acdb:state') setHash(m.tab, m.species);
         else if (m.type === 'acdb:event') report(m.name, m.data);
     });
 
-    iframe.addEventListener('load', function () { loaded = true; hello(); });
+    iframe.addEventListener('load', function () { loaded = true; hello(); window.setTimeout(hideLoading, 6000); });
 
     // If the app never loads, offer the link to its own tab. The page cannot see why from here
     window.setTimeout(function () {
