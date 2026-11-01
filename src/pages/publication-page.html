@@ -1,0 +1,122 @@
+---
+layout: 'base.html'
+preloadCSS: '/css/publications-page.css'
+preloadJS: 'js/publications-page.js'
+preloadImg: ''
+pagination:
+    data: publicationsData.papers
+    size: 1
+    alias: paper
+permalink: "publications/{{ paper.path }}/"
+eleventyComputed:
+    title: "{{ paper.title | safe }}"
+    metaTitle: "{{ paper.title | safe }}"
+    description: "{{ paper.summary | safe }}"
+---
+{#- One page for each paper in src/publications. Nothing here is edited by hand. -#}
+<section class="pp">
+    <div class="pp-wrap">
+
+        <nav class="pp-crumb" aria-label="Breadcrumb">
+            <a href="/publications/">Publications</a>
+            {%- if paper.area %}
+            <span aria-hidden="true">&rsaquo;</span>
+            <a href="/publications/?topic={{ paper.area | urlencode }}">{{ paper.area }}</a>
+            {%- endif %}
+            {%- if paper.year %}
+            <span aria-hidden="true">&rsaquo;</span>
+            <span>{{ paper.year }}</span>
+            {%- endif %}
+        </nav>
+
+        <div class="pp-meta">
+            {%- if paper.outputType %}<span class="pp-pill">{{ paper.outputType }}</span>{% endif %}
+            {%- if paper.venue %}<span class="pp-pill">{{ paper.venue }}</span>{% endif %}
+            {%- if paper.year %}<span class="pp-pill">{% if paper.month %}{{ paper.month }} {% endif %}{{ paper.year }}</span>{% endif %}
+            {%- if paper.studentLed %}<span class="pp-badge">Student-led</span>{% endif %}
+        </div>
+
+        <h1 class="pp-title">{{ paper.titleHtml | safe }}</h1>
+
+        {%- if paper.authorList | length %}
+        <p class="pp-authors">
+            {%- for a in paper.authorList -%}
+                {%- if a.lab %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif -%}
+                {%- if not loop.last %}{% if loop.revindex == 2 and loop.length == 2 %} and {% elif loop.revindex == 2 %}, and {% else %}, {% endif %}{% endif -%}
+            {%- endfor -%}
+        </p>
+        {%- endif %}
+
+        <div class="pp-actions">
+            {%- if paper.link %}<a class="pp-btn pp-btn-dark" href="{{ paper.link }}" target="_blank" rel="noopener">Read the paper</a>{% endif %}
+            {%- if paper.pdf and paper.pdf != paper.link %}<a class="pp-btn" href="{{ paper.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+            <button class="pp-btn" type="button" data-copy="{{ paper.citation }}">Cite</button>
+            <button class="pp-btn" type="button" data-share>Share</button>
+        </div>
+
+        <div class="pp-cols">
+            <div class="pp-main">
+                {%- if paper.image %}
+                <figure class="pp-fig">
+                    <img src="{{ paper.image }}" alt="" decoding="async">
+                </figure>
+                {%- endif %}
+
+                {%- if paper.abstractHtml %}
+                <h2 class="pp-h2">Abstract</h2>
+                <div class="pp-abstract">{{ paper.abstractHtml | safe }}</div>
+                {%- endif %}
+
+                {%- if paper.topics | length or paper.areas | length %}
+                <h2 class="pp-h2">Topics</h2>
+                <div class="pp-meta">
+                    {%- for topic in paper.topics %}<a class="pp-pill pp-pill-link" href="/publications/?topic={{ topic | urlencode }}">{{ topic }}</a>{% endfor %}
+                    {%- for area in paper.areas %}<a class="pp-pill pp-pill-soft" href="/publications/?topic={{ area | urlencode }}">{{ area }}</a>{% endfor %}
+                </div>
+                {%- endif %}
+            </div>
+
+            <aside class="pp-side">
+                <div class="pp-box">
+                    <h2 class="pp-h4">Cite this paper</h2>
+                    <p class="pp-cite">{{ paper.citation }}</p>
+                    <div class="pp-meta">
+                        <button class="pp-btn pp-btn-small" type="button" data-copy="{{ paper.citation }}">Copy citation</button>
+                        <button class="pp-btn pp-btn-small" type="button" data-copy="{{ paper.bibtex }}">Copy BibTeX</button>
+                    </div>
+                </div>
+
+                <div class="pp-box">
+                    <h2 class="pp-h4">At a glance</h2>
+                    <dl class="pp-glance">
+                        {%- if paper.year %}<div><dt>Published</dt><dd>{% if paper.month %}{{ paper.month }} {% endif %}{{ paper.year }}</dd></div>{% endif %}
+                        {%- if paper.venue %}<div><dt>Journal</dt><dd>{{ paper.venue }}</dd></div>{% endif %}
+                        {%- if paper.volume %}<div><dt>Volume</dt><dd>{{ paper.volume }}{% if paper.issue %} ({{ paper.issue }}){% endif %}</dd></div>{% endif %}
+                        {%- if paper.pages %}<div><dt>Pages</dt><dd>{{ paper.pages }}</dd></div>{% endif %}
+                        {%- if paper.doi %}<div><dt>DOI</dt><dd><a href="{{ paper.doiUrl }}" target="_blank" rel="noopener">{{ paper.doi }}</a></dd></div>{% endif %}
+                        {%- if paper.outputType %}<div><dt>Type</dt><dd>{{ paper.outputType }}</dd></div>{% endif %}
+                        {%- if paper.authors | length %}<div><dt>Authors</dt><dd>{{ paper.authors | length }}</dd></div>{% endif %}
+                    </dl>
+                </div>
+
+                {%- if paper.related | length %}
+                <div class="pp-box">
+                    <h2 class="pp-h4">More on {{ paper.area | lower }}</h2>
+                    <ul class="pp-related">
+                        {%- for r in paper.related %}
+                        <li>
+                            <a href="{{ r.url }}">
+                                <span class="pp-r-title">{{ r.titleHtml | safe }}</span>
+                                <span class="pp-r-meta">{% if r.venue %}{{ r.venue }}{% endif %}{% if r.venue and r.year %}, {% endif %}{{ r.year }}</span>
+                            </a>
+                        </li>
+                        {%- endfor %}
+                    </ul>
+                </div>
+                {%- endif %}
+            </aside>
+        </div>
+    </div>
+</section>
+
+<script type="application/ld+json">{{ paper.ld | safe }}</script>

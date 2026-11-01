@@ -1,0 +1,8 @@
+{
+  "title": "Featured publications",
+  "picks": [
+    { "paper": "macroevolutionary-rates-of-species-interactions-approximate-bayesian-inference-from-cophylogenies", "note": "" },
+    { "paper": "ssarp-an-r-package-for-efficiently-inferring-species-and-speciation-area-relationships", "note": "" },
+    { "paper": "evolving-nature-based-solutions-for-urban-resilience", "note": "" }
+  ]
+}

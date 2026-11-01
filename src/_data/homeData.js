@@ -33,6 +33,9 @@ function read(folder) {
 
 module.exports = function () {
     // ---- Publications ----
+    // Each paper opens its own page. The address comes from publicationsData.js, so both always agree.
+    let pages = {};
+    try { pages = require('./publicationsData.js')().bySlug; } catch (e) { pages = {}; }
     const papers = read('publications')
         .filter((p) => p.data.publicationTitle)
         .map((p) => {
@@ -47,16 +50,13 @@ module.exports = function () {
                 image: d.image || '',
                 abstract: plain(d.publicationAbstract),
                 outputType: d.outputType || '',
-                // Every paper gets a link. Without a web or PDF link, it opens in Our work.
-                link: d.webLink || d.pdfLink || d.pdfDocument || '/our-work/?q=' + encodeURIComponent(title),
+                // Every paper opens its own page. If that page is missing, the journal or PDF link is used.
+                link: pages[p.slug] ? pages[p.slug].url : d.webLink || d.pdfLink || d.pdfDocument || '/publications/',
                 areas: list(d.researchAreas),
                 rank: rank(year(d.publicationDate), MONTHS[d.publicationMonth]),
             };
         })
         .sort(newestFirst);
-
-    // The most recent research paper that has an image
-    const paper = papers.find((p) => p.image && !['Popular writing', 'Commentary'].includes(p.outputType)) || null;
 
     // The five most common research areas. "Tools" describes an output, not a theme.
     const areaCounts = {};
@@ -78,8 +78,6 @@ module.exports = function () {
             rank: rank(year(n.data.tags), SEASONS[n.data.newsDate]),
         }))
         .sort(newestFirst);
-    const outlets = [];
-    press.forEach((n) => { if (n.outlet && !outlets.includes(n.outlet)) outlets.push(n.outlet); });
 
     // ---- Events from Socials ----
     const events = read('socials')
@@ -118,39 +116,10 @@ module.exports = function () {
         .filter((i) => (seen[i.kind] = (seen[i.kind] || 0) + 1) <= 2)
         .slice(0, 4);
 
-    // ---- Funders, from the Funder field of each grant ----
-    const funderCounts = {};
-    read('grants').forEach((g) => list(g.data.tags).forEach((f) => { funderCounts[f] = (funderCounts[f] || 0) + 1; }));
-    const funders = Object.keys(funderCounts).sort((a, b) => funderCounts[b] - funderCounts[a] || a.localeCompare(b));
-
-    // ---- Alumni and where they went (positions only, no names) ----
-    const groups = { msc: [], phd: [] };
-    let alumniCount = 0;
-    team.forEach((m) => {
-        const tags = list(m.data.tags);
-        if (!tags.includes('Former')) return;
-        alumniCount += 1;
-        const role = tags.concat(list(m.data.memberTitle)).join(' ').toLowerCase();
-        const group = /phd|postdoc/.test(role) ? 'phd' : /msc|master/.test(role) ? 'msc' : null;
-        const position = String(m.data.currentPosition || '').replace(/\s+/g, ' ').trim();
-        // Short, concrete positions read well. Vague or very long ones do not.
-        if (!group || !position || position.length > 60 || /^position\b/i.test(position) || groups[group].includes(position)) return;
-        groups[group].push(position.charAt(0).toUpperCase() + position.slice(1));
-    });
-
     // ---- Open positions, for the recruiting note ----
     const openJobs = read('jobs')
         .filter((j) => j.data.status && j.data.status !== 'Closed')
         .map((j) => ({ title: j.data.jobTitle || 'Open position' }));
 
-    return {
-        paper,
-        papers,
-        themes,
-        latest,
-        press: outlets.slice(0, 5),
-        funders,
-        alumni: { count: alumniCount, msc: groups.msc, phd: groups.phd },
-        openJobs,
-    };
+    return { papers, themes, latest, openJobs };
 };

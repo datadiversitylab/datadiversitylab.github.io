@@ -1,202 +1,186 @@
 ---
 layout: 'base.html'
-description: "Publications of the Data Diversity Lab"
+description: "Publications of the Data Diversity Lab. Search, browse by topic, or start with a few papers we picked."
 metaTitle: 'Publications'
 tagTitle: 'Publications'
 preloadImg: ''
-preloadCSS: '/css/publications.css'
-preloadJS: '/js/publications.js'
+preloadCSS: '/css/publications-page.css'
+preloadJS: 'js/publications-page.js'
 permalink: 'publications/'
 eleventyNavigation:
     key: Publications
     parent:
     order: 400
 ---
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
+{#- Everything below comes from src/_data/publicationsData.js. Papers, topics, images and counts update by themselves. -#}
+{% set pd = publicationsData %}
 
+<section class="pl" id="pl">
+    <div class="pl-wrap">
 
+        <header class="pl-head">
+            <h1 class="pl-h1">Publications</h1>
+            {%- if pd.counts.all %}
+            <p class="pl-sub">{{ pd.counts.all }} papers since {{ pd.firstYear }}. Start with a topic, or search for something specific.</p>
+            {%- endif %}
+        </header>
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">Publications</h1>
-            <p class="cs-text">
-                Browse through our lab's publications and stay informed about our latest findings.
-            </p>
-        </div>
-    </div>
-</section>
-
-
-<!-- ============================================ -->
-<!--                Publications                      -->
-<!-- ============================================ -->
-
-{# Use the processedPublications collection #}
-{# Use the processedPublicationsJournalTypes collection #}
-
-<section id="publications-section">
-    <div class="cs-container">
-        <div class="cs-content cs-sidebar cs-filter-searchable">
-            <div class="cs-search-title-wrapper">
-                <h6 class="cs-title">Search</h6>
-                <div aria-hidden="true" class="line line-full"></div>
-                <div class="cs-search-wrapper">
-                    <input type="text" id="search" class="cs-search" placeholder="Title or Author">
-                    <img src="../assets/icons/order-desc.svg" class="order-by-button" alt="order by" width="25" height="25">
-                </div>
-                <div class="cs-pi-only-checkbox">
-                    <input id="piOnlyCheckbox" type="checkbox"><label for="piOnlyCheckbox">PI author</label>
-                </div>
+        <div class="pl-bar" role="search">
+            <label class="pl-search">
+                <span class="pl-visually-hidden">Search publications</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <input type="search" id="pl-q" placeholder="Search titles, authors, keywords" autocomplete="off">
+            </label>
+            <label class="pl-select">
+                <span class="pl-visually-hidden">Sort</span>
+                <select id="pl-sort">
+                    <option value="new">Newest first</option>
+                    <option value="old">Oldest first</option>
+                    <option value="title">Title, A to Z</option>
+                </select>
+            </label>
+            <div class="pl-seg" role="group" aria-label="View">
+                <button type="button" class="is-on" data-view="cards" aria-pressed="true">Cards</button>
+                <button type="button" data-view="list" aria-pressed="false">List</button>
             </div>
-            <div class="cs-filter-button-wrapper">
-                <div class="cs-add-filter-wrapper">
-                    <h6 class="cs-title">Add filters</h6>
-                    <img src="../assets/icons/plus.svg" class="plus-button" alt="filter" width="25" height="25">
-                </div>
+            <button type="button" class="pl-btn pl-btn-dark" id="pl-surprise">Surprise me</button>
+        </div>
 
-                <div class="cs-filter-year-wrapper">
-                    <h6 class="cs-title">Year</h6>
-                    <div aria-hidden="true" class="line line-full"></div>
-                    <div class="cs-start-end-wrapper">
-                        <input type="text" id="startYear" placeholder="Start Year">
-                        <input type="text" id="endYear" placeholder="End Year">
-                    </div>
-                </div>
+        {%- if pd.topics | length %}
+        <h2 class="pl-label">Browse by topic</h2>
+        <div class="pl-tiles">
+            {%- for t in pd.topics %}
+            <button type="button" class="pl-tile" data-topic="{{ t.name }}" aria-pressed="false">
+                <span class="pl-tile-img{% if not t.image %} is-empty{% endif %}">
+                    {%- if t.image %}<img src="{{ t.image }}" alt="" loading="lazy" decoding="async">{% endif %}
+                </span>
+                <span class="pl-tile-name">{{ t.name }}</span>
+                <span class="pl-tile-n">{{ t.count }} {% if t.count == 1 %}paper{% else %}papers{% endif %}</span>
+            </button>
+            {%- endfor %}
+        </div>
+        {%- endif %}
 
-                <div class="cs-filter-output-wrapper">
-                    <h6 class="cs-title">Type</h6>
-                    <div aria-hidden="true" class="line line-full"></div>
-                    <div class="cs-filter-wrapper cs-text">
-                        <div data-filter="all" class="active filter-option">All ({{ collections.processedPublications["publications"] }})</div>
-                        {% set sortedOutputs = collections.processedPublicationsOutputTypes | dictsort %}
-                        {% for item in sortedOutputs %}
-                            <div data-filter="{{ item[0] }}" class="filter-option">{{ item[0] }} ({{ item[1] }})</div>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div class="cs-filter-keywords-wrapper">
-                    <h6 class="cs-title">Keywords</h6>
-                    <div aria-hidden="true" class="line line-full"></div>
-                    <div class="cs-filter-wrapper cs-text">
-                        <div data-filter="all" class="active filter-option">All ({{ collections.processedPublications["publications"] }})</div>
-                        {% for keyword, count in collections.processedPublications %}
-                            {% if keyword != 'publications' %}
-                                <div data-filter="{{ keyword }}" class="filter-option">{{ keyword }} ({{ count }})</div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div class="cs-filter-areas-wrapper">
-                    <h6 class="cs-title">Research areas</h6>
-                    <div aria-hidden="true" class="line line-full"></div>
-                    <div class="cs-filter-wrapper cs-text">
-                        <div data-filter="all" class="active filter-option">All ({{ collections.processedPublications["publications"] }})</div>
-                        {% set sortedAreas = collections.processedPublicationsResearchAreas | dictsort %}
-                        {% for item in sortedAreas %}
-                            <div data-filter="{{ item[0] }}" class="filter-option">{{ item[0] }} ({{ item[1] }})</div>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div class="cs-filter-journal-type-wrapper">
-                    <h6 class="cs-title">Journals</h6>
-                    <div aria-hidden="true" class="line line-full"></div>
-                    <div class="cs-filter-wrapper cs-text">
-                        <div data-filter="all" class="active filter-option">All ({{ collections.processedPublications["publications"] }})</div>
-                        {% set sortedPublications = collections.processedPublicationsJournalTypes | dictsort %}
-                        {% for item in sortedPublications %}
-                            <div data-filter="{{ item[0] }}" class="filter-option">{{ item[0] }} ({{ item[1] }})</div>
-                        {% endfor %}
-                    </div>
-                </div>
+        {%- if pd.featured | length %}
+        <div id="pl-featured">
+            <h2 class="pl-label">{{ pd.featuredTitle }}</h2>
+            <div class="pl-feats">
+                {%- for f in pd.featured %}
+                <a class="pl-feat" href="{{ f.url }}">
+                    <img src="{{ f.image }}" alt="" loading="lazy" decoding="async">
+                    <span class="pl-feat-body">
+                        {%- if f.note %}<span class="pl-feat-note">{{ f.note }}</span>{% endif %}
+                        <span class="pl-feat-title">{{ f.title }}</span>
+                        <span class="pl-feat-meta">{{ f.venue }}{% if f.venue and f.year %}, {% endif %}{{ f.year }}</span>
+                    </span>
+                </a>
+                {%- endfor %}
             </div>
         </div>
-        <div class="cs-title-card-wrapper">
-            <div class="cs-card-group">
-                {%- for publication in collections.publications | sort(attribute='data.order') -%}
-                    <div class="cs-item">
-                        {%- if publication.data.badgeImage -%}
-                            <div class="cs-badge">{{ publication.data.badgeImage | safe }}</div>
-                        {%- endif -%}
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="{{ publication.data.image }}">
-                            <source media="(min-width: 601px)" srcset="{{ publication.data.image }}">
-                            <img loading="lazy" decoding="async" src="{{ publication.data.image }}" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-publication-type">{{ publication.data.publicationType }}</span>
-                            {%- if publication.data.outputType -%}
-                                <span class="cs-output-type" data-output="{{ publication.data.outputType }}">{{ publication.data.outputType }}</span>
-                            {%- endif -%}
-                            <span class="cs-name">{{ publication.data.publicationTitle | markdown | safe }}</span>
-                            <span class="cs-publication-author" data-full-authors="{{ publication.data.publicationAuthor }}">
-                                {%- set authors = publication.data.publicationAuthor.split(',') -%}
-                                {%- if authors | length > 3 -%}
-                                    {{ authors[0] | highlightAuthors(collections.team) }} et al.
-                                {%- else -%}
-                                    {{ publication.data.publicationAuthor }}
-                                {%- endif %}
-                            </span>
+        {%- endif %}
 
-                            <span>
-                                {%- if publication.data.publicationMonth -%}
-                                    <span class="cs-publication-month">{{ publication.data.publicationMonth }}</span>
-                                    <span> </span>
-                                {%- endif -%}
-                                <span class="cs-publication-year">{{ publication.data.publicationDate }}</span>
-                            </span>
-                            </span>
-                            <span class="cs-desc">
-                                <div class="read-more-text">{{ publication.data.publicationAbstract | markdown | safe }}</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            <div class="cs-item-filters">
-                                {%- for filter in publication.data.tags -%}
-                                    {%- if filter != 'publications' -%}
-                                        <div class="cs-filter">{{ filter }}</div>
-                                    {%- endif -%}
-                                {%- endfor -%}
-                            </div>
-                            {%- if publication.data.researchAreas -%}
-                                <div class="cs-item-areas">
-                                    {%- for area in publication.data.researchAreas -%}
-                                        <div class="cs-filter">{{ area }}</div>
-                                    {%- endfor -%}
-                                </div>
-                            {%- endif -%}
-                            {%- if publication.data.pdfLink or publication.data.webLink or publication.data.pdfDocument -%}
-                                <div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social">
-                                    {%- set socials = [ {'platform': 'pdfLink', 'icon': 'pdf.svg'}, {'platform': 'pdfDocument', 'icon': 'pdf.svg'}, {'platform': 'webLink', 'icon': 'link.svg'}] -%}
-                                    {%- for social in socials -%}
-                                        {%- if publication.data[social.platform] -%}
-                                            <a href="{{ publication.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
-                                        {%- endif -%}
-                                    {%- endfor -%}
-                                </div>
-                            {%- endif -%}
+        <h2 class="pl-label">What kind of read?</h2>
+        <div class="pl-chips" role="group" aria-label="Kind of paper">
+            <button type="button" class="pl-chip is-on" data-kind="all" aria-pressed="true">All<em>{{ pd.counts.all }}</em></button>
+            {%- for k in pd.kinds %}
+            <button type="button" class="pl-chip" data-kind="{{ k.id }}" aria-pressed="false">{{ k.label }}<em>{{ k.count }}</em></button>
+            {%- endfor %}
+            {%- if pd.counts.tools %}
+            <button type="button" class="pl-chip" data-kind="tools" aria-pressed="false">Tools and data<em>{{ pd.counts.tools }}</em></button>
+            {%- endif %}
+            {%- if pd.counts.studentLed %}
+            <button type="button" class="pl-chip" data-kind="student" aria-pressed="false">Student-led<em>{{ pd.counts.studentLed }}</em></button>
+            {%- endif %}
+        </div>
+
+        <details class="pl-more">
+            <summary>More filters</summary>
+            <div class="pl-more-grid">
+                {%- if pd.firstYear %}
+                <label>From
+                    <select id="pl-from">
+                        <option value="">Any year</option>
+                        {%- for y in range(pd.lastYear, pd.firstYear - 1, -1) %}<option value="{{ y }}">{{ y }}</option>{% endfor %}
+                    </select>
+                </label>
+                <label>To
+                    <select id="pl-to">
+                        <option value="">Any year</option>
+                        {%- for y in range(pd.lastYear, pd.firstYear - 1, -1) %}<option value="{{ y }}">{{ y }}</option>{% endfor %}
+                    </select>
+                </label>
+                {%- endif %}
+                <label>Journal
+                    <select id="pl-venue">
+                        <option value="">Any journal</option>
+                        {%- for v in pd.venues %}<option value="{{ v.name }}">{{ v.name }} ({{ v.count }})</option>{% endfor %}
+                    </select>
+                </label>
+                <label>Research area
+                    <select id="pl-area">
+                        <option value="">Any area</option>
+                        {%- for w in pd.areaList %}<option value="{{ w.name }}">{{ w.name }} ({{ w.count }})</option>{% endfor %}
+                    </select>
+                </label>
+            </div>
+        </details>
+
+        <div class="pl-status" aria-live="polite">
+            <span id="pl-count">{{ pd.counts.all }} papers</span>
+            <button type="button" class="pl-clear" id="pl-clear" hidden>Clear filters</button>
+        </div>
+
+        <div class="pl-grid" id="pl-grid">
+            {%- for p in pd.papers %}
+            <article class="pl-card"
+                data-url="{{ p.url }}"
+                data-year="{{ p.year }}"
+                data-rank="{{ p.rank }}"
+                data-title="{{ p.title | lower }}"
+                data-kind="{{ p.kind }}"
+                data-areas="{{ p.areas | join('|') }}"
+                data-topics="{{ p.topics | join('|') }}"
+                data-student="{% if p.studentLed %}1{% endif %}"
+                data-venue="{{ p.venue }}"
+                data-keywords="{{ p.keywords | join('|') }}"
+                data-hay="{{ p.title }} {{ p.authorText }} {{ p.venue }} {{ p.areas | join(' ') }} {{ p.keywords | join(' ') }} {{ p.abstractText }}">
+                {%- if p.image %}
+                <a class="pl-card-img" href="{{ p.url }}" tabindex="-1" aria-hidden="true"><img src="{{ p.image }}" alt="" loading="lazy" decoding="async"></a>
+                {%- endif %}
+                <div class="pl-card-body">
+                    <div class="pl-card-top">
+                        <span class="pl-venue">{{ p.venue }}</span>
+                        <span class="pl-date">{% if p.month %}{{ p.month }} {% endif %}{{ p.year }}</span>
+                    </div>
+                    <h3 class="pl-card-title"><a href="{{ p.url }}">{{ p.titleHtml | safe }}</a></h3>
+                    <p class="pl-authors">{{ p.authorShort }}</p>
+                    {%- if p.summary %}<p class="pl-summary">{{ p.summary }}</p>{% endif %}
+                    <div class="pl-card-foot">
+                        <div class="pl-tags">
+                            {%- if p.studentLed %}<span class="pl-badge">Student-led</span>{% endif %}
+                            {%- for a in p.topAreas %}<span class="pl-pill">{{ a }}</span>{% endfor %}
+                        </div>
+                        <div class="pl-acts">
+                            <a href="{{ p.url }}">Read</a>
+                            <button type="button" data-copy="{{ p.citation }}">Cite</button>
+                            {%- if p.pdf %}<a href="{{ p.pdf }}" target="_blank" rel="noopener">PDF</a>{% elif p.link %}<a href="{{ p.link }}" target="_blank" rel="noopener">Journal</a>{% endif %}
                         </div>
                     </div>
-                {%- endfor -%}
-            </div>
+                </div>
+            </article>
+            {%- endfor %}
         </div>
 
+        <div class="pl-empty" id="pl-empty" hidden>
+            <p>No papers match those filters.</p>
+            <button type="button" class="pl-btn" data-reset>Clear filters</button>
+        </div>
     </div>
 </section>
 
-<section id="copyright-notice">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h5 class="cs-title">Statement: Copyright Notice</h5>
-            <p class="cs-text">
-                These documents are protected by various copyright laws. However, I may distribute copies to individuals for personal, research use. Your click on any of the PDF links above constitutes your request for a personal copy of the linked article and my delivery of a personal copy. Any other use or distribution is prohibited. These are provided as a means to ensure timely dissemination of scholarly and technical work on a noncommercial basis.
-            </p>
-        </div>
+<section class="pl-note">
+    <div class="pl-wrap">
+        <h2 class="pl-note-title">Copyright notice</h2>
+        <p>These documents are protected by various copyright laws. However, I may distribute copies to individuals for personal, research use. Your click on any of the PDF links above constitutes your request for a personal copy of the linked article and my delivery of a personal copy. Any other use or distribution is prohibited. These are provided as a means to ensure timely dissemination of scholarly and technical work on a noncommercial basis.</p>
     </div>
 </section>
