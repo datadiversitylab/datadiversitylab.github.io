@@ -1,8 +1,8 @@
 ---
 layout: 'base.html'
 description: "The Animal Culture Database (ACDB): the first open-access, comparative database of socially transmitted behaviors and traditions in wild animal populations."
-metaTitle: 'ACDB'
-tagTitle: 'ACDB'
+metaTitle: 'Animal Culture Database (ACDB)'
+tagTitle: 'Animal Culture Database (ACDB)'
 preloadImg: ''
 preloadCSS: '/css/acdb.css'
 preloadJS: '/js/acdb.js'
@@ -18,6 +18,41 @@ eleventyNavigation:
 <!-- ============================================ -->
 <!--               App Embed                      -->
 <!-- ============================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "The Animal Culture Database (ACDB)",
+  "description": "An open-access, comparative database of socially transmitted behaviors and traditions in wild animal populations, with an interactive web app to explore it.",
+  "url": "https://datadiversitylab.github.io/ddl_acdb/",
+  "sameAs": [
+    "https://doi.org/10.1038/s41597-025-05315-y",
+    "https://figshare.com/articles/dataset/The_Animal_Culture_Database_ACDB_v1_0_0_data_and_code/28850996",
+    "https://github.com/datadiversitylab/ACDB"
+  ],
+  "creator": [
+    {
+      "@type": "Person",
+      "name": "Cristian Román-Palacios"
+    },
+    {
+      "@type": "Person",
+      "name": "Kiran Basava"
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data Diversity Lab, University of Arizona"
+  },
+  "isAccessibleForFree": true,
+  "keywords": [
+    "animal culture",
+    "social learning",
+    "animal behavior",
+    "comparative database"
+  ]
+}
+</script>
 <section id="acdb-app-section">
     <h1 class="cs-sr-only">Animal Culture Database</h1>
     <!-- Fixed below the site header. The page itself does not scroll, so the app never hands the scroll to the page -->
@@ -33,7 +68,7 @@ eleventyNavigation:
         <iframe
             id="acdb-iframe"
             data-src="https://viz.datascience.arizona.edu/ACDB/"
-            title=""
+            title="Animal Culture Database (ACDB), an interactive app"
             allow="clipboard-write; fullscreen"
             allowfullscreen>
         </iframe>
