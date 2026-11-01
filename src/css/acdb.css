@@ -58,3 +58,110 @@
     text-underline-offset: 2px;
   }
 }
+
+/* Phones: a slim bar with a link to the app in its own tab, and the app fills the rest of the screen */
+@media only screen and (max-width: 47.9375rem) {
+  #acdb-app-section .cs-app-frame-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  #acdb-app-section .cs-app-open {
+    flex: none;
+    padding: 0.6rem 1rem;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.8125rem;
+    text-align: center;
+    color: var(--primaryDark);
+    background: #fff;
+    border-bottom: 1px solid var(--lineColor);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  #acdb-app-section iframe {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  #acdb-app-section .cs-app-open {
+    display: none;
+  }
+}
+
+/* Loading screen, over the app until it is ready */
+@media only screen and (min-width: 0rem) {
+  #acdb-app-section .cs-app-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+    background: #FAF7F2;
+    transition: opacity 0.4s ease;
+  }
+  #acdb-app-section .cs-app-loading[hidden] {
+    display: none;
+  }
+  #acdb-app-section .cs-app-loading.is-done {
+    opacity: 0;
+    pointer-events: none;
+  }
+  #acdb-app-section .cs-app-loading-logo {
+    width: 54px;
+    height: 54px;
+    box-sizing: content-box;
+    padding: 12px 18px;
+    object-fit: contain;
+    background: #12343B;
+    border-radius: 16px;
+  }
+  #acdb-app-section .cs-app-loading-title {
+    margin: 1.25rem 0 0.35rem;
+    font-size: clamp(1.5rem, 5vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #12343B;
+  }
+  #acdb-app-section .cs-app-loading-text {
+    margin: 0 0 1.4rem;
+    color: #6B7A80;
+  }
+  #acdb-app-section .cs-app-loading-track {
+    width: min(16rem, 70vw);
+    height: 6px;
+    overflow: hidden;
+    background: #e6dfd2;
+    border-radius: 999px;
+  }
+  #acdb-app-section .cs-app-loading-bar {
+    width: 40%;
+    height: 100%;
+    background: #F2A93B;
+    border-radius: 999px;
+    animation: acdb-load 1.4s ease-in-out infinite;
+  }
+  #acdb-app-section .cs-app-loading-link {
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1B7F79;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  @keyframes acdb-load {
+    0% { margin-left: -40%; }
+    100% { margin-left: 100%; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #acdb-app-section .cs-app-loading-bar {
+    animation: none;
+    width: 100%;
+    opacity: 0.6;
+  }
+}
