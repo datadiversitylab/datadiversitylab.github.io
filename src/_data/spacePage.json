@@ -1,0 +1,9 @@
+{
+  "intro": "Where we work and what we use, at the University of Arizona.",
+  "address": "Richard A. Harvill building, room 320",
+  "tiles": [
+    { "value": "192 GB", "label": "RAM on the lab server" },
+    { "value": "4 x A100", "label": "NVIDIA GPUs" },
+    { "value": "4 TB", "label": "NVMe storage" }
+  ]
+}

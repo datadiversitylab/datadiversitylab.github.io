@@ -157,6 +157,48 @@ collections:
           - "Software"
           - "People"
 
+  - name: 'spaceTech'
+    label: 'Space and tech'
+    folder: 'src/space-tech'
+    media_folder: '/src/assets/images/space'
+    public_folder: '/assets/images/space'
+    create: true
+    extension: 'md'
+    format: 'frontmatter'
+    identifier_field: title
+    slug: '{{title}}'
+    summary: '{{title}} ({{type}})'
+    sortable_fields: ['order', 'title']
+    fields:
+      - { label: 'Name', name: 'title', widget: 'string', required: true }
+      - { label: 'Type', name: 'type', widget: 'select', options: ['Space', 'Computing'], default: 'Space', hint: 'Spaces show as photo cards. Computing shows as a card with a list of specs.' }
+      - { label: 'Short description', name: 'description', widget: 'text', required: false }
+      - { label: 'Details', name: 'details', widget: 'list', required: false, hint: 'One short line each. Spaces show them as small tags. Computing shows them as a spec list.' }
+      - { label: 'Photos (the first is the cover)', name: 'images', widget: 'list', required: false, field: { label: 'Photo', name: 'image', widget: 'image' } }
+      - { label: 'Big label (used when there is no photo)', name: 'highlight', widget: 'string', required: false, hint: 'For example: 4 x A100' }
+      - { label: 'Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Link label', name: 'linkLabel', widget: 'string', required: false, hint: 'For example: UA HPC website' }
+      - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Smaller numbers come first within each group.' }
+
+  - name: 'spacePage'
+    label: 'Space and tech page'
+    files:
+      - label: 'Top of the page'
+        name: 'spacePage'
+        file: 'src/_data/spacePage.json'
+        fields:
+          - { label: 'Subtitle', name: 'intro', widget: 'string', required: false }
+          - { label: 'Address', name: 'address', widget: 'string', required: false }
+          - label: 'Number tiles'
+            name: 'tiles'
+            widget: 'list'
+            max: 4
+            summary: '{{fields.value}} {{fields.label}}'
+            hint: 'Up to four. For example: 192 GB, RAM on the lab server.'
+            fields:
+              - { label: 'Number', name: 'value', widget: 'string' }
+              - { label: 'Label', name: 'label', widget: 'string' }
+
   - name: 'tools'
     label: 'Tools & Data'
     folder: 'src/tools'
