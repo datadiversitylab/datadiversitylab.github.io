@@ -84,3 +84,24 @@
     car.classList.add('is-ready');
     show(0);
 })();
+
+// Menu on the left of Our work: marks the section you are reading.
+(function () {
+    'use strict';
+    var menu = document.getElementById('ow-side');
+    if (!menu || !('IntersectionObserver' in window)) { return; }
+    var links = [].slice.call(menu.querySelectorAll('a[data-spy]'));
+    var targets = links.map(function (a) { return document.getElementById(a.getAttribute('data-spy')); });
+    var seen = {};
+
+    function mark() {
+        var current = null;
+        targets.forEach(function (el, i) { if (el && seen[el.id]) { current = i; } });
+        links.forEach(function (a, i) { a.classList.toggle('is-on', i === current); });
+    }
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { seen[e.target.id] = e.isIntersecting; });
+        mark();
+    }, { rootMargin: '-15% 0px -70% 0px' });
+    targets.forEach(function (el) { if (el) { io.observe(el); } });
+})();

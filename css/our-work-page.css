@@ -74,11 +74,10 @@
     .ow-sort { margin-left: auto; }
 }
 
-/* The whole row opens the page. Links and buttons inside stay clickable. */
-.ow-row { position: relative; transition: box-shadow 0.2s; }
-.ow-row:hover { box-shadow: 0 6px 24px rgba(43, 58, 50, 0.16); }
-.ow-title::after { content: ''; position: absolute; inset: 0; z-index: 1; }
-.ow-actions, .ow-detail, .ow-faces { position: relative; z-index: 2; }
-.ow-faces { display: flex; margin: 0.5rem 0 0; }
-.ow-faces a { margin-right: -0.35rem; }
-.ow-faces img { display: block; width: 1.75rem; height: 1.75rem; object-fit: cover; object-position: 50% 20%; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px #c2d6cc; }
+/* Lab members on a paper, tool or grant */
+.ow-faces { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.5rem 0 0; padding: 0; list-style: none; }
+.ow-faces li { margin: 0; }
+.ow-faces a { display: block; line-height: 0; border-radius: 50%; }
+.ow-faces img { width: 1.9rem; height: 1.9rem; object-fit: cover; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(43, 58, 50, 0.2); transition: transform 0.15s ease; }
+.ow-faces a:hover img, .ow-faces a:focus-visible img { transform: scale(1.12); }
+.ow-faces-more { margin-left: 0.2rem; font-size: 0.8rem; font-weight: 700; color: var(--ow-mute); }

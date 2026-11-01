@@ -95,3 +95,66 @@ body:not(.no-theme) #cs-navigation img.cs-drop-icon[src*="chevron-down-white"] {
     .cs-drop-head { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5d6b63; }
     .cs-drop-sub { margin: 0; padding: 0; list-style: none; }
 }
+
+
+/* Navigation: apps get a tile, a name and a short description */
+@media only screen and (min-width: 64em) {
+  #cs-navigation .cs-drop-label {
+    list-style: none;
+    padding: .5rem .85rem .2rem;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #5d6b63;
+  }
+  #cs-navigation .cs-drop-app .cs-app-link {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .5rem 1rem;
+    width: 100%;
+  }
+  #cs-navigation .cs-drop-rule {
+    list-style: none;
+    height: 1px;
+    margin: .4rem 1rem;
+    background: #e5ede8;
+  }
+}
+#cs-navigation .cs-app-tile {
+  flex: 0 0 auto;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 8px;
+  background: #e4efe8;
+  color: #1a5c3a;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#cs-navigation .cs-app-tile img { width: 100%; height: 100%; object-fit: contain; border-radius: inherit; display: block; }
+#cs-navigation .cs-app-tile:has(img) { background: #fff; border: 1px solid #dbe8e0; overflow: hidden; }
+#cs-navigation .cs-app-text { display: flex; flex-direction: column; line-height: 1.25; text-align: left; }
+#cs-navigation .cs-app-name { font-weight: 500; }
+#cs-navigation .cs-app-desc { font-size: .8rem; font-weight: 400; color: #6b836f; }
+#cs-navigation .cs-drop-app .cs-app-link:hover .cs-app-tile { background: #cfe6d8; }
+@media only screen and (max-width: 63.9375em) {
+  #cs-navigation .cs-drop-label { list-style: none; padding: .6rem 0 .2rem; font-size: .75rem; font-weight: 700; color: #6b836f; }
+  #cs-navigation .cs-drop-app .cs-app-link { display: flex; align-items: center; gap: .7rem; padding: .4rem 0; }
+  #cs-navigation .cs-drop-rule { display: none; }
+}
+
+/* Navigation: tighter spacing on laptop widths, so eight items fit on one row */
+@media only screen and (min-width: 64rem) and (max-width: 90rem) {
+    #cs-navigation .cs-ul { gap: 0; }
+    #cs-navigation .cs-li-link { padding: 0.4rem 0.55rem; font-size: 0.9rem; }
+    #cs-navigation img.cs-drop-icon { width: 1.2rem; height: 1.2rem; }
+}
+@media only screen and (min-width: 64rem) and (max-width: 75rem) {
+    #cs-navigation .cs-logo img { width: 150px; height: auto; }
+    #cs-navigation .cs-li-link { padding: 0.3rem 0.35rem; font-size: 0.85rem; }
+    #cs-navigation img.cs-drop-icon { width: 1rem; height: 1rem; margin-left: 0; }
+}

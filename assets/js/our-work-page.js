@@ -73,22 +73,29 @@
         var meta = [i.who, i.where].filter(Boolean).join(' · ');
         if (meta) { main.appendChild(el('p', 'ow-meta', meta)); }
 
-        if ((i.faces || []).length) {
-            var faces = el('div', 'ow-faces');
-            i.faces.forEach(function (w) {
+        // Small photos of the lab members on the paper, tool or grant. Each links to the person.
+        var faces = (i.faces || []).filter(function (f) { return f && f.image; });
+        if (faces.length) {
+            var fl = el('ul', 'ow-faces');
+            fl.setAttribute('aria-label', 'Lab members');
+            faces.slice(0, 6).forEach(function (f) {
+                var item = el('li');
                 var a = el('a');
-                a.href = w.url;
-                a.title = w.name;
+                a.href = f.url || '/our-team/';
+                a.title = f.name;
                 var img = el('img');
-                img.src = w.image;
-                img.alt = w.name;
-                img.width = 28;
-                img.height = 28;
+                img.src = f.image;
+                img.alt = f.name;
+                img.width = 30;
+                img.height = 30;
                 img.loading = 'lazy';
+                img.decoding = 'async';
                 a.appendChild(img);
-                faces.appendChild(a);
+                item.appendChild(a);
+                fl.appendChild(item);
             });
-            main.appendChild(faces);
+            if (faces.length > 6) { fl.appendChild(el('li', 'ow-faces-more', '+' + (faces.length - 6))); }
+            main.appendChild(fl);
         }
 
         var actions = el('div', 'ow-actions');
