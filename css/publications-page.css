@@ -455,3 +455,14 @@
     .pl-select select { width: 100%; }
     .pl-btn-dark { flex: 1 1 100%; }
 }
+
+/* Lab members in the author line link to their profile */
+.pp-person { display: inline-flex; align-items: center; gap: 0.3rem; color: inherit; text-decoration: none; }
+.pp-person:hover strong { text-decoration: underline; }
+.pp-person img { width: 1.5rem; height: 1.5rem; object-fit: cover; object-position: 50% 20%; border-radius: 50%; }
+
+/* Lab members on a paper card */
+.pl-faces { display: flex; margin: 0.4rem 0 0; }
+.pl-faces:empty { display: none; }
+.pl-faces a { margin-right: -0.35rem; }
+.pl-faces img { display: block; width: 1.7rem; height: 1.7rem; object-fit: cover; object-position: 50% 20%; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px var(--pp-line, #c2d6cc); }

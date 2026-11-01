@@ -500,3 +500,9 @@
   }
   .blog-back-bottom:hover { opacity: 0.7; }
 }
+
+/* Lab members who wrote a post */
+.blog-faces { display: inline-flex; align-items: center; }
+.blog-faces:empty { display: none; }
+.blog-faces a { display: inline-flex; }
+.blog-faces img { width: 1.4rem; height: 1.4rem; object-fit: cover; object-position: 50% 20%; border-radius: 50%; margin-right: 0.15rem; opacity: 1; }

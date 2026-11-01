@@ -131,3 +131,9 @@
     .tl-grid { grid-template-columns: 1fr; }
     .tl-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Authors with their photo when they are lab members */
+.tl-authors { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; }
+.tl-person { display: inline-flex; align-items: center; gap: 0.35rem; color: inherit; text-decoration: none; }
+a.tl-person:hover { text-decoration: underline; }
+.tl-person img { width: 1.5rem; height: 1.5rem; object-fit: cover; object-position: 50% 20%; border-radius: 50%; }
