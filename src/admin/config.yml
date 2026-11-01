@@ -211,11 +211,11 @@ collections:
   - name: 'labPhotos'
     label: 'Lab photos'
     files:
-      - label: 'Photos for Overview and Join us'
+      - label: 'Photos for Our work and Join us'
         name: 'labPhotos'
         file: 'src/_data/labPhotos.json'
         fields:
-          - label: 'Overview carousel (up to 8 events)'
+          - label: 'Our work carousel (up to 8 events)'
             name: 'overview'
             widget: 'list'
             max: 8
@@ -369,7 +369,7 @@ collections:
       - { label: 'Year', name: 'publicationDate', widget: 'list', required: true, hint: 'Type the year and press Enter. For example: 2025' }
       - { label: 'Month', name: 'publicationMonth', widget: 'select', options: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], required: true }
       - { label: 'Description', name: 'publicationAbstract', widget: 'string', required: false }
-      - { label: 'Photos', name: 'images', widget: 'list', required: false, hint: 'The first photo is the cover. It is also the one used on Overview and Join us.', field: { label: 'Photo', name: 'image', widget: 'image' } }
+      - { label: 'Photos', name: 'images', widget: 'list', required: false, hint: 'The first photo is the cover. It is also the one used on Our work and Join us.', field: { label: 'Photo', name: 'image', widget: 'image' } }
       - { label: 'Type of event', name: 'tags', widget: 'select', required: true, options: ['Award', 'Conference', 'Graduation', 'Interview', 'Meeting', 'Outreach', 'Retreat', 'Social', 'Talk'], hint: 'Pick the closest one.' }
       - { label: 'Link', name: 'webLink', widget: 'string', required: false, hint: 'For example a video or the event page. Full link.' }
       - { label: 'PDF link', name: 'pdfDocument', widget: 'string', required: false, hint: 'Only if there is a PDF online, for example slides. Leave empty if unsure.' }
@@ -740,10 +740,10 @@ collections:
         name: 'eleventyNavigation'
         widget: 'object'
         collapsed: false
-        hint: 'How the item appears in the main menu, under News and outreach.'
+        hint: 'How the item appears in the main menu, under Outreach.'
         fields:
           - { label: 'Name in the menu', name: 'key', widget: 'string', hint: 'Usually the same as the title. It must not repeat another menu item.' }
-          - { label: 'Parent menu', name: 'parent', widget: 'hidden', default: 'News and outreach' }
+          - { label: 'Parent menu', name: 'parent', widget: 'hidden', default: 'Outreach' }
           - { label: 'Order', name: 'order', widget: 'number', value_type: 'int', default: 500, hint: 'Lower numbers come first.' }
       - { label: 'Banner image', name: 'image', widget: 'image', required: false, media_folder: '/src/assets/images/outreach', public_folder: '/assets/images/outreach' }
       - { label: 'Banner image description', name: 'imageAlt', widget: 'string', required: false }
@@ -758,6 +758,19 @@ collections:
           - { label: 'Link', name: 'link', widget: 'string' }
       - { label: 'Topics (small labels)', name: 'topics', widget: 'list', required: false }
       - { label: 'Text', name: 'body', widget: 'markdown', required: false, media_folder: '/src/assets/images/outreach', public_folder: '/assets/images/outreach' }
+  - name: 'navApps'
+    label: 'Menu logos for the apps'
+    media_folder: '/src/assets/images/apps'
+    public_folder: '/assets/images/apps'
+    files:
+      - label: 'Logos in the Tools and data menu'
+        name: 'navApps'
+        file: 'src/_data/navApps.json'
+        fields:
+          - { label: 'ACDB', name: 'acdb', widget: 'image', required: false, hint: 'A square image works best. Leave empty to show a letter.' }
+          - { label: 'BarrioMap', name: 'barriomap', widget: 'image', required: false }
+          - { label: 'Chorus', name: 'chorus', widget: 'image', required: false }
+          - { label: 'salphycon', name: 'salphycon', widget: 'image', required: false }
   - name: 'logos'
     label: 'Logos'
     folder: 'src/logos'

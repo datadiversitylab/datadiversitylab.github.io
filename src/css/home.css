@@ -336,7 +336,8 @@
 /* Desktop: text on the left, tree on the right */
 @media (min-width: 48rem) {
     #hero.hero-tree-on { display: block; }
-    #hero.hero-tree-on .hero-content { position: absolute; inset: 0; padding-bottom: 3rem; }
+    /* In the page flow, so a taller text block makes the hero taller instead of running off the top */
+    #hero.hero-tree-on .hero-content { position: relative; min-height: var(--app-height, 100vh); padding-bottom: 3rem; }
     #hero .cs-title { white-space: nowrap; }
     #hero .hero-visual {
         --ht-size: min(50vw, calc(var(--app-height, 100vh) - 21.5rem));
@@ -418,4 +419,35 @@
     font-weight: 600;
     line-height: 1.4;
     color: var(--headerColor);
+}
+
+/* ===== Hero: the team row and the note about Our work and About ===== */
+#hero .hero-faces { display: flex; flex-direction: column; gap: 0.55rem; margin: 0.4rem 0 0; }
+#hero p.hero-faces-head { flex: none; width: auto; max-width: none; opacity: 1; display: flex; align-items: baseline; gap: 0.8rem; margin: 0; font-family: 'Figtree', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #5f7167; }
+#hero p.hero-faces-head a { font-size: 0.85rem; letter-spacing: 0; text-transform: none; color: var(--secondaryDark); text-decoration: none; }
+#hero p.hero-faces-head a:hover { text-decoration: underline; }
+#hero .hero-faces-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 0; padding: 0; list-style: none; }
+#hero .hero-face { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; width: 3.6rem; font-family: 'Figtree', sans-serif; font-size: 0.72rem; color: var(--headerColor); text-decoration: none; }
+#hero .hero-face img { width: 3.4rem; height: 3.4rem; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); transition: transform 0.2s ease; }
+#hero .hero-face:hover img { transform: scale(1.08); }
+#hero .hero-face span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#hero p.hero-more { flex: none; width: auto; max-width: 34rem; opacity: 1; text-align: left; margin: 0.2rem 0 0; font-family: 'Figtree', sans-serif; font-size: 0.85rem; line-height: 1.5; color: #5f7167; }
+#hero p.hero-more a { color: var(--secondaryDark); font-weight: 700; text-decoration: none; }
+#hero p.hero-more a:hover { text-decoration: underline; }
+@media (max-width: 600px) {
+    #hero .hero-faces-row { gap: 0.5rem; }
+    #hero .hero-face { width: 3rem; }
+    #hero .hero-face img { width: 2.8rem; height: 2.8rem; }
+}
+
+/* Shorter desktop screens: tighter spacing so the whole text block fits above the fold */
+@media (min-width: 48rem) and (max-height: 860px) {
+    #hero.hero-tree-on .hero-content { padding-top: 6rem; padding-bottom: 1.5rem; }
+    #hero.hero-tree-on .heroText { gap: 0.55rem; }
+    #hero .hero-announce { margin-bottom: 0.2rem; }
+    #hero .hero-faces { margin-top: 0.1rem; gap: 0.35rem; }
+    #hero .hero-faces-row { gap: 0.5rem; }
+    #hero .hero-face { width: 3rem; font-size: 0.68rem; }
+    #hero .hero-face img { width: 2.7rem; height: 2.7rem; }
+    #hero p.hero-more { font-size: 0.8rem; }
 }

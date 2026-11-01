@@ -1,25 +1,113 @@
 ---
 layout: 'base.html'
-description: "Papers, tools, and grants from the Data Diversity Lab"
+description: "What the Data Diversity Lab studies, and the papers, tools and grants that came out of it."
 metaTitle: 'Our work'
 tagTitle: 'Our work'
 preloadImg: ''
 preloadCSS: '/css/our-work-page.css'
 preloadJS: 'js/our-work-page.js'
+preloadSecondJS: 'js/overview-page.js'
 permalink: 'our-work/'
 eleventyNavigation:
     key: Our work
-    parent: About
-    order: 200
+    order: 300
 ---
+<link rel="stylesheet" href="/css/overview-page.css">
+{#- The photos come from Netlify > Lab photos, through src/_data/labData.js. -#}
+{%- set areas = [
+    { 'name': 'Biology', 'short': 'Ongoing projects in bioinformatics, phylogenetics, and local extinctions reveal what shapes evolutionary relationships.', 'full': 'Ongoing projects in general bioinformatics, phylogenetics, and local extinctions reveal the factors behind evolutionary relationships and explore the implications of climate change on biodiversity and its structures. We encourage students interested in biology to join us and bring their own ideas toward an official lab project.' },
+    { 'name': 'Machine learning', 'short': 'We build machine learning methods for biology and environmental science, from climate trends to extinction forecasts.', 'full': 'We develop machine learning methods for applications from biology to environmental science. You can contribute to building new algorithms while applying them to real challenges, like predicting climate trends and their implications for biodiversity, and forecasting species extinction.' },
+    { 'name': 'Data science', 'short': 'Data science is the backbone of our work, from biological data to large and messy datasets.', 'full': 'Data science is the backbone of our research, whether analyzing biological data, predicting the patterns behind species extinctions, or extracting meaning from large, messy datasets. Join our data science team to help continue this work.' },
+    { 'name': 'Diversity, inclusion and social justice', 'short': 'These are part of how we work, from supporting underrepresented students to addressing social disparities.', 'full': 'Diversity and inclusion are part of our lab\'s DNA rather than a separate initiative. We believe diverse perspectives drive the research of the future, and lab members participate in work that empowers these efforts, from supporting underserved and underrepresented students to addressing social disparities through interdisciplinary approaches.' },
+    { 'name': 'Climate change', 'short': 'It runs through all our aims, from biodiversity impacts to conservation efforts.', 'full': 'Climate change is a critical issue that intersects all of our research aims. We work on projects exploring its impact on biodiversity and supporting environmental conservation efforts.' }
+] -%}
+
+<div class="ow-shell">
+<aside class="ow-side" aria-label="On this page">
+    <p class="ow-side-title">On this page</p>
+    <ul class="ow-side-list" id="ow-side">
+        <li><a href="#ov" data-spy="ov">Our work</a></li>
+        <li><a href="#areas" data-spy="lab">What we work on</a>
+            <ul>
+                {%- for a in areas %}
+                <li><a href="#area-{{ loop.index }}" data-spy="area-{{ loop.index }}">{{ a.name }}</a></li>
+                {%- endfor %}
+            </ul>
+        </li>
+        <li><a href="#ow" data-spy="ow">Everything we've made</a></li>
+        <li><a href="#more" data-spy="more">More about the lab</a></li>
+    </ul>
+</aside>
+<div class="ow-main">
+<section class="ov" id="ov">
+    <div class="ov-wrap">
+
+        <div class="ov-top">
+        <header class="ov-head">
+            <h1 class="ov-h1">Our work</h1>
+            <p class="ov-sub">The Data Diversity Lab started in 2023 at the University of Arizona. It is led by Dr. Cristian Román-Palacios, an ecologist and evolutionary biologist who uses bioinformatics and machine learning on big datasets to answer long-standing questions in biology.</p>
+            <p class="ov-sub">Our papers on evolution, conservation, ecology, biostatistics, and climate change have appeared in PNAS, Proceedings B, Evolution, Journal of Biogeography, Evolution Letters, and Global Ecology and Biogeography.</p>
+            <div class="ov-buttons">
+                <a class="ov-btn ov-btn-dark" href="/our-team/">Meet the team</a>
+                <a class="ov-btn" href="/space-and-tech/">Our space and tech</a>
+            </div>
+        </header>
+        <div class="ov-photos">
+        {%- if labData.overview | length %}
+            <div class="ov-car" id="ov-car" tabindex="0" aria-roledescription="carousel" aria-label="Photos of the lab">
+                <div class="ov-stage">
+                    {%- for p in labData.overview %}
+                    <figure class="ov-slide" data-title="{{ p.title }}{% if p.year %}, {{ p.year }}{% endif %}" data-caption="{{ p.caption }}">
+                        <img src="{{ p.image }}" alt="{{ p.title }}" decoding="async"{% if not loop.first %} loading="lazy"{% endif %}>
+                    </figure>
+                    {%- endfor %}
+                </div>
+                {%- if labData.overview | length > 1 %}
+                <button type="button" class="ov-arrow ov-prev" aria-label="Previous photo">&#8249;</button>
+                <button type="button" class="ov-arrow ov-next" aria-label="Next photo">&#8250;</button>
+                {%- endif %}
+            </div>
+            <div class="ov-cap" id="ov-cap" aria-live="polite">
+                <b id="ov-cap-title">{{ labData.overview[0].title }}{% if labData.overview[0].year %}, {{ labData.overview[0].year }}{% endif %}</b>
+                <span id="ov-cap-text">{{ labData.overview[0].caption }}</span>
+            </div>
+            <div class="ov-dots" id="ov-dots"></div>
+            {%- endif %}
+        </div>
+        </div>
+    </div>
+</section>
+
+{#- Photos and the five areas. The photos come from Netlify > Lab photos, through src/_data/labData.js. -#}
+<section class="ov ov-rest" id="lab">
+    <div class="ov-wrap">
+
+
+        <h2 class="ov-h2" id="areas">What we work on</h2>
+        <p class="ov-hint">Five connected areas.</p>
+        <div class="ov-areas">
+            {%- for a in areas %}
+            <article class="ov-card" id="area-{{ loop.index }}">
+                <h3 class="ov-name">{{ a.name }}</h3>
+                <p class="ov-short">{{ a.short }}</p>
+                <p class="ov-full" hidden>{{ a.full }}</p>
+                <button type="button" class="ov-more" aria-expanded="false">Read more</button>
+            </article>
+            {%- endfor %}
+        </div>
+        <p class="ov-bridge"><a class="ov-btn ov-btn-dark" href="#ow">Browse everything we've made</a></p>
+    </div>
+</section>
+
+{#- The first section is the old Overview page. The photos come from Netlify > Lab photos, through src/_data/labData.js. -#}
 {#- Everything below comes from src/_data/ourWorkData.js. Papers, tools and grants update by themselves, and each opens its own page. -#}
 {% set ourWork = ourWorkData %}
-<section class="ow" id="ow">
+<section class="ow ow-after" id="ow">
     <div class="ow-wrap">
 
         <header class="ow-head">
-            <h1 class="ow-h1">Our work</h1>
-            <p class="ow-sub">Everything the lab has done so far, in one place. Pick a type or a topic, search by title, author, or funder, and open any item to read more.</p>
+            <h2 class="ow-h1">Everything we've made</h2>
+            <p class="ow-sub">{{ ourWork.counts.Paper }} papers, {{ ourWork.counts.Tool }} tools and datasets and {{ ourWork.counts.Grant }} grants, in one place. Search them, or filter by type or topic.</p>
             <label class="ow-search">
                 <span class="ow-sr">Search our work</span>
                 <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -60,3 +148,19 @@ eleventyNavigation:
 </section>
 
 <script type="application/json" id="ow-data">{{ ourWork.json | safe }}</script>
+
+<section class="ov-more-about" id="more" aria-label="More about the lab">
+    <div class="ov-wrap">
+        <h2 class="ov-h2">More about the lab</h2>
+        <p class="ov-hint">Funding, resources and how we work are under About in the menu.</p>
+        <ul class="ov-links">
+            <li><a href="/grants/">Grants and funding</a></li>
+            <li><a href="/space-and-tech/">Space and tech</a></li>
+            <li><a href="/lab-manual/about-the-lab/">Lab manual</a></li>
+            <li><a href="/labops/">LabOps</a></li>
+            <li><a href="/join-us/">Join us</a></li>
+        </ul>
+    </div>
+</section>
+</div>
+</div>

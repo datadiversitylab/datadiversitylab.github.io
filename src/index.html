@@ -114,6 +114,17 @@ eleventyNavigation:
                 {%- endfor %}
             </div>
             {%- endif %}
+            {%- if homeData.faces | length %}
+            <!-- The team, current members. Built from src/team (see homeData.js) -->
+            <div class="hero-faces hero-animate hero-animate-4">
+                <p class="hero-faces-head">The team <a href="/our-team/">Meet everyone &rarr;</a></p>
+                <ul class="hero-faces-row">
+                    {%- for f in homeData.faces %}
+                    <li><a class="hero-face" href="/our-team/"><img src="{{ f.image }}" alt="" width="54" height="54" loading="lazy" decoding="async"><span>{{ f.name }}</span></a></li>
+                    {%- endfor %}
+                </ul>
+            </div>
+            {%- endif %}
             <div class="hero-stats hero-animate hero-animate-4">
                 {%- set activeRoles = ["PI", "Postdoc", "PhD student", "Undergraduate student", "Staff"] -%}
                 {%- set memberCount = 0 -%}
@@ -139,6 +150,7 @@ eleventyNavigation:
                     <span class="hero-stat-label">Lab members</span>
                 </a>
             </div>
+            <p class="hero-more hero-animate hero-animate-4">Want the details? Start with <a href="/our-work/">Our work</a>. <a href="/grants/">Grants and funding</a>, <a href="/space-and-tech/">space and tech</a> and the <a href="/lab-manual/about-the-lab/">lab manual</a> are under About in the menu.</p>
         </div>
     </div>
 

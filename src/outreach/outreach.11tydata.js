@@ -16,7 +16,7 @@ module.exports = {
         ? undefined
         : {
             key: data.menuLabel || data.title,
-            parent: 'News and outreach',
+            parent: 'Outreach',
             // After Lab news, News coverage, Blog, Photos and MacroData (100 to 500). The order set in Netlify still sorts these items.
             order: 600 + (typeof data.order === 'number' ? data.order : 500) / 100,
           },

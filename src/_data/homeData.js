@@ -104,6 +104,17 @@ module.exports = function () {
         }))
         .sort(newestFirst);
 
+    // ---- Faces for the landing page: the PI first, then current members by their order in the team page ----
+    const ROLES = ['PI', 'Postdoc', 'PhD student', 'Undergraduate student', 'Staff'];
+    const faces = team
+        .filter((m) => m.data.memberName && m.data.image && list(m.data.tags).includes('Current') && ROLES.some((r) => list(m.data.tags).includes(r)))
+        .sort((a, b) => (list(a.data.tags).includes('PI') ? 0 : 1) - (list(b.data.tags).includes('PI') ? 0 : 1) || (Number(a.data.order) || 999) - (Number(b.data.order) || 999))
+        .slice(0, 8)
+        .map((m) => {
+            const parts = String(m.data.memberName).trim().split(/\s+/);
+            return { name: parts[0].length <= 2 && parts[1] ? parts[0] + ' ' + parts[1] : parts[0], image: m.data.image };
+        });
+
     // ---- Latest: the four most recent things the lab did, no more than two of a kind ----
     const items = []
         .concat(papers.map((p) => ({ kind: 'Paper', order: 0, rank: p.rank, title: p.title, meta: p.venue, when: [p.month, p.year].filter(Boolean).join(' '), image: p.image, link: p.link })))
@@ -121,5 +132,5 @@ module.exports = function () {
         .filter((j) => j.data.status && j.data.status !== 'Closed')
         .map((j) => ({ title: j.data.jobTitle || 'Open position' }));
 
-    return { papers, themes, latest, openJobs };
+    return { papers, themes, latest, faces, openJobs };
 };
