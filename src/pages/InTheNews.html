@@ -4,191 +4,125 @@ description: "The Data Diversity Lab in the News"
 metaTitle: 'In the News'
 tagTitle: 'In the news'
 preloadImg: ''
-preloadCSS: '/css/innews.css'
-preloadJS: '/js/scrollTo.js'
+preloadCSS: '/css/press-page.css'
+preloadJS: 'js/press-page.js'
 permalink: 'innews/'
 eleventyNavigation:
     key: News coverage
     parent: News
     order: 800
 ---
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
+{#- Everything below comes from src/_data/pressData.js, which reads src/inthenews. -#}
+{% set pd = pressData %}
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">The Data Diversity Lab in the News</h1>
-            <p class="cs-text">
-                Below, you can find news outlets where our work has been featured in.
-            </p>
-        </div>
-    </div>
-</section>
+<section class="pn" id="pn">
+    <div class="pn-wrap">
 
-<div aria-hidden="true" class="line"></div>
+        <header class="pn-head">
+            <h1 class="pn-h1">In the news</h1>
+            <p class="pn-sub">Our research has reached readers around the world. These are the outlets that covered it.</p>
+            {%- if pd.stats %}
+            <div class="pn-stats">
+                <div><b>{{ pd.stats.stories }}</b><span>{% if pd.stats.stories == 1 %}story{% else %}stories{% endif %}</span></div>
+                <div><b>{{ pd.stats.outlets }}</b><span>{% if pd.stats.outlets == 1 %}outlet{% else %}outlets{% endif %}</span></div>
+                <div><b>{{ pd.stats.since }}</b><span>first coverage</span></div>
+            </div>
+            {%- endif %}
+        </header>
 
-<!-- ============================================ -->
-<!--                Social                      -->
-<!-- ============================================ -->
-{%- set years = [] -%}
-{%- for newsItem in collections.inthenews | sort(attribute='data.order') -%}
-    {%- for tag in newsItem.data.tags -%}
-        {%- if not years.includes(tag | string) and tag != "inthenews" -%}
-            {%- set years = years.concat(tag | string) -%}
-        {%- endif -%}
-    {%- endfor -%}
-{%- endfor -%}
+        {%- if pd.wall | length %}
+        <h2 class="pn-label">As featured in</h2>
+        <p class="pn-wall">
+            {%- for o in pd.wall %}<span class="pn-outlet{% if o.big %} is-big{% endif %}">{{ o.name }}</span>{% endfor %}
+            {%- if pd.moreOutlets %}<span class="pn-outlet is-more">+{{ pd.moreOutlets }} more</span>{% endif %}
+        </p>
+        {%- endif %}
 
+        {%- if pd.lead %}
+        <article class="pn-lead">
+            <div class="pn-lead-img"><img src="{{ pd.lead.image }}" alt="{{ pd.lead.imageAlt }}" decoding="async"></div>
+            <div class="pn-lead-text">
+                <span class="pn-kicker">Latest, {{ pd.lead.when }}</span>
+                {%- if pd.lead.outlet %}<span class="pn-lead-outlet">{{ pd.lead.outlet }}</span>{% endif %}
+                <h2 class="pn-lead-title">{{ pd.lead.title }}</h2>
+                {%- if pd.lead.descLead %}<p>{{ pd.lead.descLead }}</p>{% endif %}
+                {%- if pd.lead.open %}<a class="pn-btn pn-btn-dark" href="{{ pd.lead.open }}" target="_blank" rel="noopener">{{ pd.lead.openLabel }}</a>{% endif %}
+            </div>
+        </article>
+        {%- endif %}
 
-<section id="social-547">
-    <div class="cs-container">
-        <div class="cs-content cs-sidebar">
-            <h6 class="cs-title">Years</h6>
-            <div class="cs-filter-wrapper cs-text">
-                {%- for year in years | sort(true) -%}
-                    <a href="#section{{ year }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ year }}</a>
-                {%- endfor -%}
+        {%- if pd.most %}
+        <div class="pn-most">
+            <div class="pn-most-num"><b>{{ pd.most.count }}</b><span>outlets</span></div>
+            <div class="pn-most-text">
+                <span class="pn-kicker">Most covered story</span>
+                <h2 class="pn-most-title">{{ pd.most.title }}</h2>
+                <div class="pn-most-outlets">
+                    {%- for o in pd.most.outlets %}
+                    {%- if o.link %}<a class="pn-chip" href="{{ o.link }}" target="_blank" rel="noopener">{{ o.name }}</a>{% else %}<span class="pn-chip">{{ o.name }}</span>{% endif %}
+                    {%- endfor %}
+                </div>
             </div>
         </div>
-        <div class="cs-title-card-wrapper">
-            {%- for year in years | sort(true) -%}
-              <h3 class="cs-title">{{ year }}</h3>
-              <div id="section{{ year }}" class="cs-card-group">
-                  {%- for newsItem in collections.inthenews | sort(attribute='data.order') -%}
-                      {%- if newsItem.data.tags.includes(year) -%}
-                          <div class="cs-item">
-                              <div class="cs-gallery">
-                                  {%- for image in newsItem.data.images -%}
-                                      <picture class="cs-slide">
-                                          <img loading="lazy" decoding="async" src="{{ image }}" alt="{{ newsItem.data.imageAlt }}" width="522" height="370" class="enlargeable-image">
-                                      </picture>
-                                  {%- endfor -%}
-                                  <button class="prev-btn">❮</button>
-                                  <button class="next-btn">❯</button>
-                              </div>
-                              <div class="cs-flex-group">
-                                  <div aria-hidden="true" class="line line-full card-image-line"></div>
-                                  <span class="cs-name">{{ newsItem.data.newsTitle }}</span>
-                                  <span class="cs-timeline">{{ newsItem.data.newsDate }}</span>
-                                  <span class="cs-timeline">{{ newsItem.data.Outlet }}</span>
-                                  <span class="cs-desc">
-                                      <span class="read-more-text">{{ newsItem.data.newsDesc }}</span>
-                                      <span class="read-more-btn">...read more</span>
-                                  </span>
-          
-                                  {%- if newsItem.data.link or newsItem.data.document -%}
-                                      <div aria-hidden="true" class="line line-full"></div>
-                                      <div class="cs-item-social">
-                                          {%- set socials = [{'platform': 'link', 'icon': 'link.svg'}, {'platform': 'document', 'icon': 'pdf.svg'}] -%}
-                                          {%- for item in socials -%}
-                                              {%- if newsItem.data[item.platform] -%}
-                                                  <a href="{{ newsItem.data[item.platform] }}" target="_blank">
-                                                      <img src="../assets/icons/{{ item.icon }}" alt="{{ item.platform }}" width="30" height="30" decoding="async" aria-hidden="true">
-                                                  </a>
-                                              {%- endif -%}
-                                          {%- endfor -%}
-                                      </div>
-                                  {%- endif -%}
-                              </div>
-                          </div>
-                      {%- endif -%}
-                  {%- endfor -%}
-              </div>
-          {%- endfor -%}
+        {%- endif %}
 
+        <div class="pn-search-row">
+            <label class="pn-search">
+                <span class="pn-visually-hidden">Search the coverage</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <input type="search" id="pn-q" placeholder="Search by outlet or headline" autocomplete="off">
+            </label>
         </div>
 
+        <div class="pn-pills" role="group" aria-label="Year">
+            {%- for y in pd.years %}
+            <button type="button" class="pn-pill{% if loop.first %} is-on{% endif %}" data-year="{{ y.year }}" aria-pressed="{% if loop.first %}true{% else %}false{% endif %}">{{ y.year }}</button>
+            {%- endfor %}
+            <button type="button" class="pn-pill" data-year="all" aria-pressed="false">All years</button>
+        </div>
+        <p class="pn-count" id="pn-count" aria-live="polite">{{ pd.years[0].year }}: {{ pd.years[0].count }} {% if pd.years[0].count == 1 %}story{% else %}stories{% endif %}</p>
+
+        <div class="pn-body" id="pn-body">
+            {%- for y in pd.years %}
+            <section class="pn-year" data-year="{{ y.year }}"{% if not loop.first %} hidden{% endif %}>
+                <h2 class="pn-year-title">{{ y.year }}<span>{{ y.count }} {% if y.count == 1 %}story{% else %}stories{% endif %}</span></h2>
+                <div class="pn-grid">
+                    {%- for s in pd.stories %}{% if s.year == y.year %}
+                    <article class="pn-card" data-hay="{{ s.hay }}">
+                        {%- if s.images | length %}
+                        <div class="pn-gallery">
+                            {%- for img in s.images %}<picture class="pn-slide"><img src="{{ img }}" alt="{{ s.imageAlt }}" loading="lazy" decoding="async"></picture>{% endfor %}
+                            {%- if s.images | length > 1 %}<button type="button" class="pn-prev" aria-label="Previous image">&lsaquo;</button><button type="button" class="pn-next" aria-label="Next image">&rsaquo;</button>{% endif %}
+                        </div>
+                        {%- endif %}
+                        <div class="pn-card-body">
+                            {%- if s.outlet %}<span class="pn-outlet-name">{{ s.outlet }}</span>{% endif %}
+                            <h3 class="pn-card-title">{% if s.open %}<a href="{{ s.open }}" target="_blank" rel="noopener">{{ s.title }}</a>{% else %}{{ s.title }}{% endif %}</h3>
+                            <span class="pn-date">{{ s.when }}</span>
+                            {%- if s.descShort %}<p class="pn-desc">{{ s.desc }}</p>{% endif %}
+                            {%- if s.open %}<a class="pn-btn pn-btn-dark pn-read" href="{{ s.open }}" target="_blank" rel="noopener">{{ s.openLabel }}</a>{% endif %}
+                        </div>
+                    </article>
+                    {%- endif %}{% endfor %}
+                </div>
+            </section>
+            {%- endfor %}
+        </div>
+
+        <div class="pn-empty" id="pn-empty" hidden>
+            <p>No stories match that search.</p>
+            <button type="button" class="pn-btn" id="pn-reset">Clear search</button>
+        </div>
+
+        <div class="pn-press">
+            <h2 class="pn-press-title">Writing about our work?</h2>
+            <p>We are glad to talk with reporters and share figures, data and background.</p>
+            <a class="pn-btn pn-btn-dark" href="/contact/">Get in touch</a>
+        </div>
     </div>
 </section>
 
-<!-- Image modal: hidden by default -->
-<div id="image-modal">
-  <button class="modal-close" id="modal-close" aria-label="Close" style="position:absolute;top:1.25rem;right:1.5rem;color:rgba(255,255,255,0.6);font-size:1.5rem;cursor:pointer;background:none;border:none;line-height:1;">&times;</button>
-  <img class="modal-content" id="modal-img" alt="">
-  <div class="modal-caption" id="modal-caption"></div>
+<div id="pn-modal" hidden>
+    <button type="button" class="pn-modal-close" id="pn-modal-close" aria-label="Close">&times;</button>
+    <img id="pn-modal-img" alt="">
 </div>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  /* ── Gallery carousel ── */
-  document.querySelectorAll(".cs-gallery").forEach(function (gallery) {
-    const pictures = gallery.querySelectorAll(".cs-slide");
-    let index = 0;
-    function showSlide(i) {
-      pictures.forEach(function (pic, idx) {
-        pic.style.display = idx === i ? "block" : "none";
-      });
-    }
-    showSlide(0);
-    const prev = gallery.querySelector(".prev-btn");
-    const next = gallery.querySelector(".next-btn");
-    if (prev) prev.addEventListener("click", function (e) {
-      e.stopPropagation();
-      index = index === 0 ? pictures.length - 1 : index - 1;
-      showSlide(index);
-    });
-    if (next) next.addEventListener("click", function (e) {
-      e.stopPropagation();
-      index = index === pictures.length - 1 ? 0 : index + 1;
-      showSlide(index);
-    });
-  });
-
-  /* ── Read more toggle ── */
-  document.querySelectorAll(".cs-desc").forEach(function (desc) {
-    const btn = desc.querySelector(".read-more-btn");
-    if (!btn) return;
-
-    // cs-desc is a <span> (inline) — measure via scrollHeight after forcing block
-    desc.style.display = "block";
-
-    function checkOverflow() {
-      if (desc.classList.contains("show-more")) return;
-      // Temporarily remove max-height to measure true height
-      desc.style.maxHeight = "none";
-      const full = desc.scrollHeight;
-      desc.style.maxHeight = "";
-      // Compute the clamped height from CSS (4.5em)
-      const clamped = parseFloat(getComputedStyle(desc).maxHeight);
-      btn.style.display = (isNaN(clamped) || full > clamped + 4) ? "inline" : "none";
-    }
-
-    checkOverflow();
-    window.addEventListener("load", checkOverflow);
-
-    btn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      desc.classList.toggle("show-more");
-      btn.textContent = desc.classList.contains("show-more") ? " show less" : "...read more";
-    });
-  });
-
-  /* ── Lightbox ── */
-  const modal    = document.getElementById("image-modal");
-  const modalImg = document.getElementById("modal-img");
-  const modalCap = document.getElementById("modal-caption");
-  const closeBtn = document.getElementById("modal-close");
-
-  function openModal(src, alt) {
-    modalImg.src = src;
-    if (modalCap) modalCap.textContent = alt || "";
-    modal.style.display = "flex";
-    document.body.style.overflow = "hidden";
-  }
-  function closeModal() {
-    modal.style.display = "none";
-    document.body.style.overflow = "";
-  }
-  document.addEventListener("click", function (e) {
-    if (e.target.classList.contains("enlargeable-image")) openModal(e.target.src, e.target.alt);
-  });
-  if (closeBtn) closeBtn.addEventListener("click", closeModal);
-  modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
-
-});
-</script>
