@@ -272,6 +272,45 @@ collections:
               - { label: 'Heading (plural)', name: 'plural', widget: 'string', hint: 'For example: Postdoctoral researchers' }
               - { label: 'Label for one person', name: 'singular', widget: 'string', hint: 'For example: Postdoctoral researcher' }
 
+  - name: 'contactPage'
+    label: 'Contact page'
+    files:
+      - label: 'Contact details'
+        name: 'contactPage'
+        file: 'src/_data/contactPage.json'
+        fields:
+          - { label: 'Intro', name: 'intro', widget: 'string', required: false }
+          - { label: 'Main email', name: 'email', widget: 'string' }
+          - label: 'Topics (one card each)'
+            name: 'topics'
+            widget: 'list'
+            summary: '{{fields.title}}'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Text', name: 'text', widget: 'text' }
+              - { label: 'Email subject', name: 'subject', widget: 'string', hint: 'Filled in when someone opens the email link.' }
+              - { label: 'Link text', name: 'action', widget: 'string', required: false, hint: 'What the email link says, for example: Ask a question. Use a different text on each card.' }
+              - { label: 'Page link', name: 'pageLink', widget: 'string', required: false, hint: 'For example /join-us/. Leave empty if not needed.' }
+              - { label: 'Page link label', name: 'pageLabel', widget: 'string', required: false }
+          - label: 'People (who you will hear from)'
+            name: 'people'
+            widget: 'list'
+            summary: '{{fields.person}}'
+            hint: 'Photo, email and Bluesky come from their Team profile. The email shows for current members only.'
+            fields:
+              - { label: 'Person', name: 'person', widget: 'relation', collection: 'team', search_fields: ['memberName'], value_field: 'memberName', display_fields: ['memberName'] }
+              - { label: 'Label', name: 'label', widget: 'string', required: false, hint: 'For example: Student lab support. Leave empty to use their title.' }
+              - { label: 'Phone', name: 'phone', widget: 'string', required: false }
+          - label: 'Visit'
+            name: 'visit'
+            widget: 'object'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string', required: false }
+              - { label: 'Note', name: 'note', widget: 'text', required: false }
+              - { label: 'Address, one line each', name: 'address', widget: 'list' }
+              - { label: 'Latitude', name: 'lat', widget: 'number', value_type: 'float', required: false }
+              - { label: 'Longitude', name: 'lng', widget: 'number', value_type: 'float', required: false }
+
   - name: 'tools'
     label: 'Tools & Data'
     folder: 'src/tools'
@@ -379,11 +418,21 @@ collections:
       - { label: 'Author', name: 'author', widget: 'string', required: false }
       - { label: 'Description', name: 'description', widget: 'text', required: false, hint: 'Short summary shown on the listing card.' }
       - { label: 'Cover Image', name: 'image', widget: 'image', required: false, media_folder: '/src/assets/images/blog', public_folder: '/assets/images/blog' }
-      - label: 'Tags'
+      - label: 'Topics'
         name: 'tags'
-        widget: 'list'
-        default: ['blog']
-        hint: "Always keep 'blog' in the list — it's how Eleventy finds these posts."
+        widget: 'select'
+        multiple: true
+        required: false
+        hint: 'Pick from the list so topics stay the same on every post. To add a topic, add it to the options of this field in config.yml.'
+        options:
+          - 'Lab life'
+          - 'Research'
+          - 'Teaching'
+          - 'Tutorial'
+          - 'Outreach'
+          - 'Mapping'
+          - 'Welcome'
+          - 'Español'
       - { label: 'Order', name: 'order', widget: 'number', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'jobs'

@@ -44,7 +44,7 @@
 
         <!-- Loading in page specific CSS sheets from css block -->
         <link rel="stylesheet" href="/css/critical.css"/>
-        <link rel="stylesheet" href="/css/blog.css">
+        <link rel="stylesheet" href="/css/blog-page.css">
         <link rel="stylesheet" href="/css/theme.css">
 
         <script defer src="https://umami.datadiversitylab.synology.me/script.js" data-website-id="543cffef-a100-47af-9dd9-2cf39517077b" data-domains="datadiversitylab.github.io" data-tag="labwebsite"></script>
@@ -248,27 +248,29 @@
         </nav>
     </div>
 </header>
-        <main id="main"><section id="content-1450" class="cs-top-section">
-  <div class="cs-container">
-    <div class="cs-content">
-      <h1 class="cs-title">GitHub classroom with classR</h1>
-      <p class="cs-text">classR runs a course on GitHub from R. No GitHub Classroom needed. Each student gets a private repo in your organization, your starter files are pushed in, and the student is added as a collaborator.
+        <main id="main">
+
+
+<article class="bp">
+    <div class="bp-wrap">
+
+        <nav class="bp-crumb" aria-label="Breadcrumb">
+            <a href="/blog/">Blog</a>
+        </nav>
+
+        <header class="bp-head">
+            <p class="bp-meta">October 3, 2026</p>
+            <h1 class="bp-title">GitHub classroom with classR</h1><p class="bp-desc">classR runs a course on GitHub from R. No GitHub Classroom needed. Each student gets a private repo in your organization, your starter files are pushed in, and the student is added as a collaborator.
 </p>
-    </div>
-  </div>
-</section>
+            <p class="bp-by">
+                <span class="bp-faces"><a href="/our-team/cristian-roman-palacios/" title="Cristian Román-Palacios"><img src="/assets/images/our-team/cristian-roman-palacios.png" alt="Cristian Román-Palacios" loading="lazy"></a></span>
+                Cristian Román
+            </p>
+        </header>
+        <figure class="bp-cover"><img src="/assets/images/blog/github-classroom-v0-8w4yzvbuxavo4n8uv3zoxubyeuyknqvhgdazjd4vdj4.webp" alt="" loading="eager" decoding="async"></figure>
 
-<div aria-hidden="true" class="line"></div>
-
-<article class="blog-post-article">
-  <div class="blog-post-meta-bar">
-    <span class="blog-date">October 3, 2026</span><span class="blog-dot">·</span>
-      <span class="blog-faces"><a href="/our-team/cristian-roman-palacios/" title="Cristian Román-Palacios"><img src="/assets/images/our-team/cristian-roman-palacios.png" alt="Cristian Román-Palacios" loading="lazy"></a></span>
-      <span class="blog-author">Cristian Román</span><div class="blog-tags"><span class="blog-tag">Tutorial</span><span class="blog-tag">Teaching</span></div>
-  </div><div class="blog-post-hero">
-      <img src="/assets/images/blog/github-classroom-v0-8w4yzvbuxavo4n8uv3zoxubyeuyknqvhgdazjd4vdj4.webp" alt="GitHub classroom with classR" loading="eager" decoding="async">
-    </div><div class="blog-post-body">
-    <h2>Before you start</h2>
+        <div class="bp-body">
+            <h2>Before you start</h2>
 <p>Make the organization first. The GitHub API cannot create one, so set it up once in the browser. You also need git on your system to collect submissions. You do not need to add every student to the organization prior to following this tutorial. Once the repo gets created for the student, they will have control over the files in the repo.</p>
 <p>You will need a roster, which if effectively a CSV with one column named <code>handle</code>:</p>
 <pre><code>handle
@@ -320,11 +322,18 @@ status[!status$exists, ]
 <li>Adding a collaborator sends an invitation, which students should accept from their GitHub email or notifications before they can push.</li>
 </ul>
 
-  </div>
+        </div>
 
-  <footer class="blog-post-footer">
-    <a href="/blog/" class="blog-back-bottom">← Back to Blog</a>
-  </footer>
+        <div class="bp-foot">
+            <button type="button" class="bp-btn" data-copy-link>Copy link</button>
+        </div>
+        <div class="bp-people">
+            <a class="bp-person" href="/our-team/cristian-roman-palacios/">
+                <img src="/assets/images/our-team/cristian-roman-palacios.png" alt="Cristian Román-Palacios" loading="lazy">
+                <span><b>Cristian Román-Palacios</b><i>Principal Investigator, Assistant Professor</i><em>View profile</em></span>
+            </a>
+        </div>
+    </div>
 </article>
 </main>
         <!-- ============================================ -->
@@ -362,6 +371,8 @@ status[!status$exists, ]
 
         <script defer src="/assets/js/nav.js"></script>
 
+        
+            <script defer src="/assets/js/blog-page.js"></script>
         
 
         
