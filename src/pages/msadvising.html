@@ -4,7 +4,7 @@ description: "MSDS and MSIS advising with Dr. Román-Palacios"
 metaTitle: 'Advising'
 tagTitle: 'Advising'
 preloadImg: ''
-preloadCSS: '/css/advising.css'
+preloadCSS: '/css/faculty-page.css'
 permalink: 'advising/'
 eleventyNavigation:
     key: Advising
@@ -13,59 +13,71 @@ eleventyNavigation:
 navOptions:
     includeSelf: true
 ---
-{%- macro paras(text) -%}
+{%- macro paras(text, cls) -%}
     {%- if text -%}
         {%- for p in text.split('\n\n') -%}
             {%- if p | trim -%}
-<p class="cs-text">{{ p | trim | urlize | safe }}</p>
+<p class="{{ cls }}">{{ p | trim | urlize(40) | safe }}</p>
             {%- endif -%}
         {%- endfor -%}
     {%- endif -%}
 {%- endmacro -%}
 {%- set a = msadvising -%}
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
-<!-- Text on this page is edited in the CMS (Teaching and service > Advising page). -->
+{%- set team = teamData.byTag['ms advising team'] -%}
+{#- Text on this page is edited in Netlify > Teaching and service > Advising page. The advising team comes from Team (role MS advising team). -#}
 
-<section id="advising-intro">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">{{ a.title }}</h1>
-            {{ paras(a.paragraphOne) }}
-        </div>
+<section class="fc" id="fc">
+    <div class="fc-wrap">
+
+        <nav class="fc-nav" aria-label="Faculty pages">
+            <a href="/teaching/">Teaching</a>
+            <a href="/senate/">Senate</a>
+            <a href="/advising/" class="is-on" aria-current="page">Advising</a>
+        </nav>
+
+        <header class="fc-head">
+            <h1 class="fc-h1">{{ a.title }}</h1>
+            {{ paras(a.paragraphOne, 'fc-sub') }}
+        </header>
 
         {%- if a.numberedCards | length %}
-        <ol class="advising-steps">
+        <ol class="fa-steps">
             {%- for card in a.numberedCards %}
-            <li class="advising-step">
-                <h2 class="advising-step-title">{{ card.title }}</h2>
-                {{ paras(card.description) }}
+            <li class="fa-step">
+                <span class="fc-num">{{ loop.index }}</span>
+                <div>
+                    <h2 class="fc-name">{{ card.title }}</h2>
+                    {{ paras(card.description, 'fc-text') }}
+                </div>
             </li>
             {%- endfor %}
         </ol>
         {%- endif %}
-    </div>
-</section>
 
-{%- if a.advisingCards | length %}
-<div aria-hidden="true" class="line"></div>
-
-<section id="advising-prepare">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h2 class="cs-title">{{ a.secondTitle }}</h2>
-            {{ paras(a.paragraphThree) }}
-        </div>
-
-        <div class="advising-cards">
+        {%- if a.advisingCards | length %}
+        <h2 class="fc-h2">{{ a.secondTitle }}</h2>
+        {{ paras(a.paragraphThree, 'fc-hint') }}
+        <div class="fc-cards fc-cards-2">
             {%- for card in a.advisingCards %}
-            <article class="advising-card">
-                <h3 class="advising-card-title">{{ card.title }}</h3>
-                {{ paras(card.description) }}
+            <article class="fc-card">
+                <h3 class="fc-name">{{ card.title }}</h3>
+                {{ paras(card.description, 'fc-text') }}
             </article>
             {%- endfor %}
         </div>
+        {%- endif %}
+
+        {%- if team | length %}
+        <h2 class="fc-h2">The advising team</h2>
+        <p class="fc-hint">Members of the lab who support advising.</p>
+        <div class="fa-team">
+            {%- for w in team %}
+            <a class="fa-person" href="{{ w.url }}">
+                <img src="{{ w.image }}" alt="{{ w.imageAlt }}" loading="lazy" decoding="async" width="72" height="72">
+                <span><b>{{ w.name }}</b><i>{{ w.title }}</i></span>
+            </a>
+            {%- endfor %}
+        </div>
+        {%- endif %}
     </div>
 </section>
-{%- endif %}

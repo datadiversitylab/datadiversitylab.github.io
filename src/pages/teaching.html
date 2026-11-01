@@ -4,9 +4,7 @@ description: "Teaching at the Data Diversity Lab"
 metaTitle: 'Teaching'
 tagTitle: 'Teaching'
 preloadImg: ''
-preloadCSS: '/css/teaching.css'
-preloadJS: '/js/dropdownCards.js'
-preloadSecondJS: '/js/teaching.js'
+preloadCSS: '/css/faculty-page.css'
 permalink: 'teaching/'
 eleventyNavigation:
     key: Teaching
@@ -15,115 +13,83 @@ eleventyNavigation:
 navOptions:
     includeSelf: true
 ---
-{%- macro paras(text) -%}
+{%- macro paras(text, cls) -%}
     {%- if text -%}
         {%- for p in text.split('\n\n') -%}
             {%- if p | trim -%}
-<p class="cs-text">{{ p | trim }}</p>
+<p class="{{ cls }}">{{ p | trim | urlize(40) | safe }}</p>
             {%- endif -%}
         {%- endfor -%}
     {%- endif -%}
 {%- endmacro -%}
 {%- set t = teachingPage -%}
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
-<!-- Text on this page is edited in the CMS (Teaching and service > Teaching page). -->
+{#- Text on this page is edited in Netlify > Teaching and service > Teaching page. Tool images come from the Tools and data library. -#}
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">{{ t.title }}</h1>
-        </div>
-    </div>
-</section>
+<section class="fc" id="fc">
+    <div class="fc-wrap">
 
-<div aria-hidden="true" class="line"></div>
+        <nav class="fc-nav" aria-label="Faculty pages">
+            <a href="/teaching/" class="is-on" aria-current="page">Teaching</a>
+            <a href="/senate/">Senate</a>
+            <a href="/advising/">Advising</a>
+        </nav>
 
-<section id="list-of-cards">
-    <div class="cs-container">
-        <div class="cs-content">
-            {{ paras(t.intro) }}
-            {%- if t.principlesIntro %}
-            <br>
-            {{ paras(t.principlesIntro) }}
-            {%- endif %}
-        </div>
-        <div class="cs-card-group">
+        <header class="fc-head">
+            <h1 class="fc-h1">{{ t.title }}</h1>
+            {{ paras(t.intro, 'fc-sub') }}
+        </header>
+
+        {%- if t.principles | length %}
+        {%- if t.principlesIntro %}<div class="fc-lead">{{ paras(t.principlesIntro, 'fc-hint') }}</div>{% endif %}
+        <div class="fc-tiles">
             {%- for item in t.principles %}
-            <div class="cs-item">
-                <div class="cs-flex-group">
-                    <h4 class="cs-title">{{ loop.index }}</h4>
-                    <span class="cs-name">{{ item.title }}</span>
-                    <span class="cs-desc">{{ item.text }}</span>
-                </div>
-            </div>
+            <article class="fc-tile">
+                <span class="fc-num">{{ loop.index }}</span>
+                <h3 class="fc-name">{{ item.title }}</h3>
+                <p class="fc-text">{{ item.text }}</p>
+            </article>
             {%- endfor %}
-        </div>
-    </div>
-</section>
-
-<div aria-hidden="true" class="line"></div>
-
-<section id="courses">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h3 class="cs-title">{{ t.coursesTitle }}</h3>
-            {{ paras(t.coursesIntro) }}
-        </div>
-        <div class="cs-card-group">
-            {%- for course in t.courses %}
-            <div class="cs-item">
-                <div class="cs-flex-group">
-                    <span class="cs-name">{{ course.name }}</span>
-                    <span class="cs-desc">{{ course.text }}</span>
-                </div>
-            </div>
-            {%- endfor %}
-        </div>
-        {%- if t.coursesOutro %}
-        <div class="cs-content">
-            <br>
-            {{ paras(t.coursesOutro) }}
         </div>
         {%- endif %}
-    </div>
-</section>
 
-<div aria-hidden="true" class="line"></div>
-
-<section id="teaching-tools">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h3 class="cs-title">{{ t.toolsTitle }}</h3>
-            {{ paras(t.toolsIntro) }}
-        </div>
-        <div class="cs-card-group">
-            {%- for tool in t.tools %}
-            <div class="cs-item">
-                <div class="cs-flex-group">
-                    <span class="cs-name">{{ tool.name }}</span>
-                    <span class="cs-desc">{{ tool.text }}</span>
-                    {%- if tool.link %}
-                    <a class="cs-button-link" href="{{ tool.link }}" target="_blank" rel="noopener">
-                        <span>{{ tool.linkLabel or 'Learn more' }}</span>
-                    </a>
-                    {%- endif %}
-                </div>
-            </div>
+        {%- if t.courses | length %}
+        <h2 class="fc-h2">{{ t.coursesTitle }}</h2>
+        {{ paras(t.coursesIntro, 'fc-hint') }}
+        <div class="fc-cards fc-cards-2">
+            {%- for course in t.courses %}
+            <article class="fc-card">
+                {%- if course.term %}<p class="fc-kicker">{{ course.term }}</p>{% endif %}
+                <h3 class="fc-name">{{ course.name }}</h3>
+                <p class="fc-text">{{ course.text }}</p>
+            </article>
             {%- endfor %}
         </div>
-    </div>
-</section>
+        {%- if t.coursesOutro %}<div class="fc-note">{{ paras(t.coursesOutro, 'fc-note-text') }}</div>{% endif %}
+        {%- endif %}
 
-<div aria-hidden="true" class="line"></div>
-
-<section id="advising">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h3 class="cs-title">{{ t.advisingTitle }}</h3>
-            {{ paras(t.advisingText) }}
-            <br>
+        {%- if t.tools | length %}
+        <h2 class="fc-h2">{{ t.toolsTitle }}</h2>
+        {{ paras(t.toolsIntro, 'fc-hint') }}
+        <div class="fc-cards fc-cards-3">
+            {%- for tool in t.tools %}
+            {%- set lib = facultyData.toolsByName[tool.name | lower] %}
+            <article class="fc-card fc-tool">
+                {%- if lib and lib.image %}<div class="fc-img"><img src="{{ lib.image }}" alt="{{ lib.imageAlt }}" loading="lazy" decoding="async"></div>{% endif %}
+                {%- if lib and lib.types %}<p class="fc-kicker">{{ lib.types }}</p>{% endif %}
+                <h3 class="fc-name">{{ tool.name }}</h3>
+                <p class="fc-text">{{ tool.text }}</p>
+                {%- if tool.link %}<a class="fc-link" href="{{ tool.link }}" target="_blank" rel="noopener">{{ tool.linkLabel or 'Learn more' }} &rarr;</a>{% endif %}
+            </article>
+            {%- endfor %}
         </div>
+        {%- endif %}
+
+        {%- if t.advisingText %}
+        <div class="fc-band">
+            <h2 class="fc-band-title">{{ t.advisingTitle }}</h2>
+            {{ paras(t.advisingText, 'fc-band-text') }}
+            <a class="fc-btn" href="/advising/">MS advising page</a>
+        </div>
+        {%- endif %}
     </div>
 </section>

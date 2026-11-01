@@ -1,0 +1,122 @@
+/* Teaching, Senate and Advising pages. Colors come from root.css and theme.css. */
+
+.fc {
+    --fc-ink: var(--headerColor, #2b3a32);
+    --fc-body: var(--bodyTextColor, #3d4d44);
+    --fc-line: var(--lineColor, #c2d6cc);
+    --fc-green: var(--secondaryDark, #4a7c65);
+    --fc-mute: #5a6d62;
+    --fc-mint: #e7f1ec;
+    --fc-shadow: 0 2px 16px rgba(43, 58, 50, 0.08);
+    padding: clamp(7rem, 12vw, 9rem) 0 4rem;
+    color: var(--fc-body);
+}
+.fc-wrap { width: 100%; max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; box-sizing: border-box; }
+.fc a { text-decoration: none; }
+.fc img { display: block; }
+
+/* The three pages link to each other */
+.fc-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 1.8rem; }
+.fc-nav a { padding: 0.45rem 1.2rem; font-size: 0.95rem; font-weight: 700; color: var(--fc-ink); background: #fff; border: 1px solid var(--fc-line); border-radius: 999px; }
+.fc-nav a:hover { border-color: var(--fc-green); }
+.fc-nav a.is-on { color: #fff; background: var(--fc-ink); border-color: var(--fc-ink); }
+
+/* Header, centered like the rest of the site */
+.fc-head { text-align: center; }
+.fc-h1 { margin: 0 0 0.9rem; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.15; color: var(--fc-ink); }
+.fc-sub { margin: 0 auto 0.8rem; max-width: 42rem; font-size: 1.05rem; line-height: 1.6; }
+.fc-fine { margin: 0.6rem auto 0; max-width: 42rem; font-size: 0.88rem; line-height: 1.5; color: var(--fc-mute); }
+.fc a:not(.fc-btn):not(.fc-link):not(.fc-nav a) { color: var(--fc-green); }
+
+.fc-h2 { margin: 3rem 0 0.4rem; text-align: center; font-size: 1.9rem; color: var(--fc-ink); }
+.fc-hint { margin: 0 auto 1.3rem; max-width: 42rem; text-align: center; font-size: 0.97rem; line-height: 1.55; color: var(--fc-mute); }
+.fc-lead { margin-top: 2rem; }
+
+.fc-num { display: inline-flex; flex: none; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; font-size: 1.1rem; font-weight: 700; color: #fff; background: var(--fc-ink); border-radius: 50%; }
+.fc-name { margin: 0 0 0.4rem; font-size: 1.25rem; line-height: 1.3; color: var(--fc-ink); }
+.fc-text { margin: 0; max-width: none; font-size: 0.97rem; line-height: 1.55; overflow-wrap: anywhere; }
+.fc-kicker { margin: 0 0 0.4rem; max-width: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--fc-green); }
+
+/* Tiles and cards */
+.fc-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.1rem; }
+.fc-tile { padding: 1.2rem 1.3rem; text-align: center; background: #fff; border-radius: 14px; box-shadow: var(--fc-shadow); }
+.fc-tile .fc-num { margin-bottom: 0.7rem; }
+.fc-cards { display: grid; gap: 1.1rem; }
+.fc-cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.fc-cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.fc-card { display: flex; flex-direction: column; padding: 1.3rem 1.4rem; background: #fff; border-top: 4px solid #e0a82e; border-radius: 14px; box-shadow: var(--fc-shadow); }
+.fc-card .fc-text { margin-bottom: 0.9rem; }
+.fc-card .fc-text:last-child { margin-bottom: 0; }
+.fc-tool { padding: 0; overflow: hidden; }
+.fc-tool > :not(.fc-img) { margin-left: 1.4rem; margin-right: 1.4rem; }
+.fc-tool .fc-kicker { margin-top: 1.1rem; }
+.fc-tool .fc-text { margin-bottom: 1rem; }
+.fc-tool .fc-link { margin-top: auto; margin-bottom: 1.3rem; }
+.fc-img { height: 9rem; padding: 0.5rem; box-sizing: border-box; background: #fff; border-bottom: 1px solid #e6eee9; }
+.fc-img img { width: 100%; height: 100%; object-fit: contain; }
+.fc-link { font-size: 0.95rem; font-weight: 700; color: var(--fc-green); }
+.fc-link:hover { text-decoration: underline; }
+
+.fc-note { margin: 1.2rem auto 0; max-width: 46rem; padding: 0.9rem 1.2rem; background: var(--fc-mint); border-radius: 12px; }
+.fc-note-text { margin: 0; max-width: none; font-size: 0.95rem; line-height: 1.55; }
+.fc-note-text + .fc-note-text { margin-top: 0.6rem; }
+
+.fc-band { margin-top: 3rem; padding: 2rem 1.5rem; text-align: center; background: var(--fc-mint); border-radius: 18px; }
+.fc-band-title { margin: 0 0 0.6rem; font-size: 1.6rem; color: var(--fc-ink); }
+.fc-band-text { margin: 0 auto 0.8rem; max-width: 40rem; font-size: 0.97rem; line-height: 1.55; }
+.fc-btn { display: inline-block; margin-top: 0.4rem; padding: 0.7rem 1.5rem; font-size: 0.95rem; font-weight: 700; color: #fff; background: var(--fc-ink); border-radius: 999px; overflow-wrap: anywhere; }
+.fc-btn:hover { background: var(--fc-green); }
+
+/* Senate: contents on the side, text beside it */
+.fs-cols { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; align-items: start; margin-top: 2.4rem; }
+.fs-toc { position: sticky; top: 6.5rem; }
+.fs-toc-title { margin: 0 0 0.6rem; max-width: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fc-mute); }
+.fs-toc-list { margin: 0; padding: 0; list-style: none; border-left: 2px solid var(--fc-line); }
+.fs-toc-list a { display: block; margin-left: -2px; padding: 0.4rem 0.9rem; font-size: 0.93rem; line-height: 1.35; color: var(--fc-body); border-left: 2px solid transparent; }
+.fs-toc-list a:hover { color: var(--fc-green); }
+.fs-toc-list a.is-on { font-weight: 700; color: var(--fc-ink); border-left-color: var(--fc-ink); }
+.fs-block { scroll-margin-top: 6rem; margin-bottom: 2.6rem; }
+.fs-h2 { margin: 0 0 0.8rem; font-size: 1.7rem; line-height: 1.25; color: var(--fc-ink); }
+.fs-text { margin: 0 0 1rem; max-width: 44rem; font-size: 1.04rem; line-height: 1.7; overflow-wrap: anywhere; }
+.fs-list { margin: 0 0 1rem; padding-left: 1.3rem; max-width: 44rem; font-size: 1.02rem; line-height: 1.65; }
+.fs-list li { margin-bottom: 0.45rem; padding-left: 0.2rem; }
+.fs-list li::marker { color: #e0a82e; }
+.fs-take { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.fs-takeitem { display: flex; align-items: flex-start; gap: 0.9rem; padding: 1rem 1.1rem; background: #fff; border-radius: 14px; box-shadow: var(--fc-shadow); }
+.fs-takeitem p { margin: 0; max-width: none; font-size: 0.97rem; line-height: 1.5; }
+.fs-contact { display: flex; align-items: center; gap: 1.4rem; padding: 1.4rem; background: #fff; border-left: 4px solid #e0a82e; border-radius: 14px; box-shadow: var(--fc-shadow); }
+.fs-photo { flex: none; width: 6.5rem; height: 6.5rem; overflow: hidden; background: var(--fc-mint); border-radius: 50%; }
+.fs-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.fs-cname { margin: 0; max-width: none; font-size: 1.25rem; font-weight: 700; color: var(--fc-ink); }
+.fs-cunit { margin: 0.1rem 0 0.6rem; max-width: none; font-size: 0.95rem; color: var(--fc-mute); }
+
+/* Advising: steps and team */
+.fa-steps { display: grid; gap: 1rem; max-width: 46rem; margin: 2.2rem auto 0; padding: 0; list-style: none; }
+.fa-step { position: relative; display: flex; gap: 1.1rem; padding: 1.2rem 1.4rem; background: #fff; border-radius: 14px; box-shadow: var(--fc-shadow); }
+.fa-step:not(:last-child)::after { content: ''; position: absolute; left: 2.65rem; top: 100%; width: 2px; height: 1rem; background: var(--fc-line); }
+.fa-step .fc-name { margin-bottom: 0.3rem; }
+.fa-step .fc-text a { font-weight: 700; }
+.fa-team { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+.fa-person { display: flex; align-items: center; gap: 0.9rem; padding: 0.8rem 1.2rem 0.8rem 0.8rem; color: inherit; background: #fff; border-radius: 999px; box-shadow: var(--fc-shadow); }
+.fa-person img { width: 4.5rem; height: 4.5rem; object-fit: cover; object-position: 50% 20%; border-radius: 50%; }
+.fa-person span { display: flex; flex-direction: column; }
+.fa-person b { color: var(--fc-ink); }
+.fa-person i { font-size: 0.88rem; font-style: normal; font-weight: 700; color: var(--fc-green); }
+.fa-person:hover b { color: var(--fc-green); }
+
+@media only screen and (max-width: 64rem) {
+    .fc-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .fc-cards-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media only screen and (max-width: 48rem) {
+    .fc-cards-2, .fc-cards-3, .fs-take { grid-template-columns: 1fr; }
+    .fs-cols { grid-template-columns: minmax(0, 1fr); gap: 1.4rem; }
+    .fs-toc { position: static; }
+    .fs-toc-list { display: flex; gap: 0.4rem; padding-bottom: 0.3rem; overflow-x: auto; border-left: 0; }
+    .fs-toc-list a { margin: 0; padding: 0.35rem 0.9rem; font-size: 0.85rem; white-space: nowrap; background: #fff; border: 1px solid var(--fc-line); border-radius: 999px; }
+    .fs-toc-list a.is-on { border-color: var(--fc-ink); }
+    .fs-contact { flex-direction: column; text-align: center; }
+}
+@media only screen and (max-width: 32rem) {
+    .fc-tiles { grid-template-columns: 1fr; }
+}

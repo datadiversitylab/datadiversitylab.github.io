@@ -4,9 +4,8 @@ description: "A short primer on the University of Arizona Faculty Senate, what i
 metaTitle: 'Faculty Senate'
 tagTitle: 'Faculty Senate'
 preloadImg: ''
-preloadCSS: '/css/teaching.css'
-preloadJS: '/js/dropdownCards.js'
-preloadSecondJS: '/js/teaching.js'
+preloadCSS: '/css/faculty-page.css'
+preloadJS: 'js/faculty-page.js'
 permalink: 'senate/'
 eleventyNavigation:
     key: Senate
@@ -15,88 +14,81 @@ eleventyNavigation:
 navOptions:
     includeSelf: true
 ---
-{%- macro paras(text) -%}
+{%- macro paras(text, cls) -%}
     {%- if text -%}
         {%- for p in text.split('\n\n') -%}
             {%- if p | trim -%}
-<p class="cs-text">{{ p | trim }}</p>
+<p class="{{ cls }}">{{ p | trim | urlize(40) | safe }}</p>
             {%- endif -%}
         {%- endfor -%}
     {%- endif -%}
 {%- endmacro -%}
 {%- set s = senatePage -%}
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
-<!-- Text on this page is edited in the CMS (Teaching and service > Senate page). -->
+{%- set who = teamData.personByName[s.contactName] -%}
+{#- Text on this page is edited in Netlify > Teaching and service > Senate page. -#}
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">{{ s.title }}</h1>
-            {{ paras(s.intro) }}
-        </div>
-    </div>
-</section>
+<section class="fc" id="fc">
+    <div class="fc-wrap">
 
-<div aria-hidden="true" class="line"></div>
+        <nav class="fc-nav" aria-label="Faculty pages">
+            <a href="/teaching/">Teaching</a>
+            <a href="/senate/" class="is-on" aria-current="page">Senate</a>
+            <a href="/advising/">Advising</a>
+        </nav>
 
-{%- if s.takeaways | length %}
-<section id="senate-takeaways">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h3 class="cs-title">{{ s.takeawaysTitle }}</h3>
-        </div>
-        <div class="cs-card-group">
-            {%- for item in s.takeaways %}
-            <div class="cs-item">
-                <div class="cs-flex-group">
-                    <span class="cs-num">{{ loop.index }}</span>
-                    <span class="cs-desc">{{ item }}</span>
-                </div>
-            </div>
-            {%- endfor %}
-        </div>
-    </div>
-</section>
+        <header class="fc-head">
+            <h1 class="fc-h1">{{ s.title }}</h1>
+            {{ paras(s.intro, 'fc-sub') }}
+            {%- if s.note %}<p class="fc-fine">{{ s.note }}</p>{% endif %}
+        </header>
 
-<div aria-hidden="true" class="line"></div>
-{%- endif %}
+        <div class="fs-cols">
+            <aside class="fs-toc" aria-label="On this page">
+                <p class="fs-toc-title">On this page</p>
+                <ol class="fs-toc-list" id="fs-toc">
+                    {%- if s.takeaways | length %}<li><a href="#fs-take">{{ s.takeawaysTitle or 'Key take homes' }}</a></li>{% endif %}
+                    {%- for sec in s.sections %}
+                    <li><a href="#fs-{{ loop.index }}">{{ sec.heading }}</a></li>
+                    {%- endfor %}
+                    <li><a href="#fs-contact">Contact</a></li>
+                </ol>
+            </aside>
 
-{%- for sec in s.sections %}
-<section class="senate-block">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h3 class="cs-title">{{ sec.heading }}</h3>
-            {{ paras(sec.body) }}
-            {%- if sec.bullets | length %}
-            <ul class="senate-list">
-                {%- for b in sec.bullets %}
-                <li>{{ b }}</li>
-                {%- endfor %}
-            </ul>
-            {%- endif %}
-        </div>
-    </div>
-</section>
-
-<div aria-hidden="true" class="line"></div>
-{%- endfor %}
-
-<section class="senate-block" id="senate-contact">
-    <div class="cs-container">
-        <div class="cs-content">
-            <p class="cs-text senate-contact">
-                <strong>{{ s.contactName }}</strong><br>
-                {{ s.contactUnit }}<br>
-                {%- if s.contactEmail %}
-                <a href="mailto:{{ s.contactEmail }}">{{ s.contactEmail }}</a>
+            <div class="fs-main">
+                {%- if s.takeaways | length %}
+                <section class="fs-block" id="fs-take">
+                    <h2 class="fs-h2">{{ s.takeawaysTitle or 'Key take homes' }}</h2>
+                    <div class="fs-take">
+                        {%- for item in s.takeaways %}
+                        <div class="fs-takeitem"><span class="fc-num">{{ loop.index }}</span><p>{{ item }}</p></div>
+                        {%- endfor %}
+                    </div>
+                </section>
                 {%- endif %}
-            </p>
-            {%- if s.note %}
-            <p class="cs-text senate-note">{{ s.note }}</p>
-            {%- endif %}
-            <br>
+
+                {%- for sec in s.sections %}
+                <section class="fs-block" id="fs-{{ loop.index }}">
+                    <h2 class="fs-h2">{{ sec.heading }}</h2>
+                    {{ paras(sec.body, 'fs-text') }}
+                    {%- if sec.bullets | length %}
+                    <ul class="fs-list">
+                        {%- for b in sec.bullets %}<li>{{ b }}</li>{% endfor %}
+                    </ul>
+                    {%- endif %}
+                </section>
+                {%- endfor %}
+
+                <section class="fs-block" id="fs-contact">
+                    <div class="fs-contact">
+                        {%- if who %}<a class="fs-photo" href="{{ who.url }}"><img src="{{ who.image }}" alt="{{ who.imageAlt }}" loading="lazy" decoding="async"></a>{% endif %}
+                        <div>
+                            <p class="fs-cname">{{ s.contactName }}</p>
+                            <p class="fs-cunit">{{ s.contactUnit }}</p>
+                            {%- if s.contactEmail %}<a class="fc-btn" href="mailto:{{ s.contactEmail }}?subject=Faculty%20Senate">Email {{ s.contactEmail }}</a>{% endif %}
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 </section>

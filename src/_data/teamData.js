@@ -185,6 +185,7 @@ module.exports = function () {
             keys,
             blurb: blurb(clean(d.memberBio), 150),
             hay: fold([name, variants.join(' '), titles.join(' '), roles.join(' '), afterText].join(' ')),
+            tagsLower: lower,
             macrodata: null,
             papers: [], tools: [], grants: []
         };
@@ -270,6 +271,12 @@ module.exports = function () {
         p.grants.sort((a, b) => (ORDER.indexOf(a.role) - ORDER.indexOf(b.role)) || (b.end - a.end));
     });
 
+    // Current people by role, for pages that show a team, for example people.byTag['ms advising team']
+    const byTag = {};
+    people.filter((p) => p.status === 'current').forEach((p) => {
+        p.tagsLower.forEach((t) => { (byTag[t] = byTag[t] || []).push(cardOf(p)); });
+    });
+
     // Everything the Contact page needs about a person, found by the name chosen in Netlify
     const personByName = {};
     people.forEach((p) => {
@@ -329,6 +336,7 @@ module.exports = function () {
         postFaces,
         macroSlugs,
         personByName,
+        byTag,
         counts: {
             all: people.length,
             current: people.filter((p) => p.status === 'current').length,
