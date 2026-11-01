@@ -4,9 +4,8 @@ description: "News of the Data Diversity Lab"
 metaTitle: 'Lab news'
 tagTitle: 'Lab news'
 preloadImg: ''
-preloadCSS: '/css/news.css'
-preloadJS: '/js/scrollTo.js'
-preloadSecondJS: '/js/dropdownCards.js'
+preloadCSS: '/css/news-page.css'
+preloadJS: 'js/news-page.js'
 permalink: 'labnews/'
 eleventyNavigation:
     key: Lab news
@@ -15,74 +14,62 @@ eleventyNavigation:
 navOptions:
   includeSelf: true
 ---
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
+{#- Everything below comes from src/_data/newsData.js, which reads src/news. -#}
+{% set nd = newsData %}
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">Lab news</h1>
-            <p class="cs-text">
-                Stay informed and connected with the latest developments, achievements, and exciting happenings at the data diversity lab. Our news section is a space where we share insights, breakthroughs, and stories that reflect the work of our research community. Explore the stories that shape our journey and connect with the dynamic spirit of innovation at the lab. If you have news to share or inquiries about our latest updates, feel free to reach out—we'd love to hear from you.
-            </p>
+<section class="nw" id="nw">
+    <div class="nw-wrap">
+
+        <header class="nw-head">
+            <h1 class="nw-h1">Lab news</h1>
+            <p class="nw-sub">Awards, talks, new members and papers from the Data Diversity Lab. If you have news to share, feel free to reach out.</p>
+            <label class="nw-search">
+                <span class="nw-visually-hidden">Search the news</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <input type="search" id="nw-q" placeholder="Search all years" autocomplete="off">
+            </label>
+        </header>
+
+        {%- if nd.years | length %}
+        <div class="nw-pills" role="group" aria-label="Year">
+            {%- for y in nd.years %}
+            <button type="button" class="nw-pill{% if loop.first %} is-on{% endif %}" data-year="{{ y.year }}" aria-pressed="{% if loop.first %}true{% else %}false{% endif %}">{{ y.year }}</button>
+            {%- endfor %}
+            <button type="button" class="nw-pill" data-year="all" aria-pressed="false">All years</button>
         </div>
-    </div>
-</section>
 
-<div aria-hidden="true" class="line"></div>
+        <p class="nw-count" id="nw-count" aria-live="polite">{{ nd.years[0].year }}: {{ nd.years[0].count }} updates</p>
 
-<!-- ============================================ -->
-<!--                News                          -->
-<!-- ============================================ -->
-{%- set tags = [] -%}
-{%- for new in collections.news | sort(attribute='data.order') -%}
-    {%- for tag in new.data.tags -%}
-        {%- if not tags.includes(tag) and tag != "news" -%}
-            {%- set tags = tags.concat(tag) -%}
-        {%- endif -%}
-    {%- endfor -%}
-{%- endfor -%}
-
-<section id="new-547">
-    <div class="cs-container">
-        <div class="cs-content cs-sidebar">
-            <h6 class="cs-title">Years</h6>
-            <div class="cs-filter-wrapper cs-text">
-                {%- for tag in tags | sort(true) -%}
-                    <a href="#section{{ tag }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ tag }}</a>
-                {%- endfor -%}
-            </div>
-        </div>
-        <div id="dropdown-cards" class="cs-title-card-wrapper">
-            {%- for tag in tags | sort(true) -%}
-                <h3 class="cs-title">{{ tag }}</h3>
-                <div id="section{{ tag }}" class="cs-card-group {{ 'first-news' if loop.index == 1 else '' }}">
-                    {%- for new in collections.news | sort(attribute='data.order') -%}
-                        {%- if new.data.tags.includes(tag) -%}
-                            <div class="cs-item {{ new.data.Name | lower }}">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">{{ new.data.Name }}</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/{{ 'chevron-up' if loop.index == 1 else 'chevron-down' }}.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            {{ new.content | safe }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
+        <div class="nw-body" id="nw-body">
+            {%- for y in nd.years %}
+            <section class="nw-year" data-year="{{ y.year }}"{% if not loop.first %} hidden{% endif %}>
+                <h2 class="nw-year-title">{{ y.year }}<span>{{ y.count }} {% if y.count == 1 %}update{% else %}updates{% endif %}</span></h2>
+                <div class="nw-grid">
+                    {%- for s in y.seasons %}
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">{{ s.name }}<span class="nw-visually-hidden"> {{ y.year }}</span></h3>
+                            <span class="nw-n">{{ s.count }}</span>
+                        </div>
+                        <ul class="nw-list">
+                            {%- for item in s.updates %}
+                            <li class="nw-item{% if loop.index > 5 %} is-extra{% endif %}" tabindex="0" aria-expanded="false" data-text="{{ item.text }}"><div class="nw-text">{{ item.html | safe }}</div></li>
+                            {%- endfor %}
+                        </ul>
+                        {%- if s.count > 5 %}<button type="button" class="nw-more" data-more="{{ s.count - 5 }}">Show {{ s.count - 5 }} more</button>{% endif %}
+                    </div>
+                    {%- endfor %}
                 </div>
-            {%- endfor -%}
-            </div>
+            </section>
+            {%- endfor %}
         </div>
+
+        <div class="nw-empty" id="nw-empty" hidden>
+            <p>No updates match that search.</p>
+            <button type="button" class="nw-btn" id="nw-reset">Clear search</button>
+        </div>
+        {%- else %}
+        <p class="nw-count">No news yet.</p>
+        {%- endif %}
     </div>
 </section>
-

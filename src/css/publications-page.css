@@ -90,7 +90,8 @@
     line-height: 1.15;
     color: var(--pp-ink);
 }
-.pl-sub { margin: 0 0 1.6rem; font-size: 1.05rem; line-height: 1.5; }
+.pl-head { text-align: center; }
+.pl-sub { margin: 0 auto 1.6rem; max-width: 40rem; font-size: 1.05rem; line-height: 1.5; }
 
 .pl-bar {
     display: flex;
