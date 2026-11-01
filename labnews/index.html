@@ -42,7 +42,7 @@
 
         <!-- Loading in page specific CSS sheets from css block -->
         <link rel="stylesheet" href="/css/critical.css"/>
-        <link rel="stylesheet" href="/css/news.css">
+        <link rel="stylesheet" href="/css/news-page.css">
         <link rel="stylesheet" href="/css/theme.css">
 
         <script defer src="https://umami.datadiversitylab.synology.me/script.js" data-website-id="543cffef-a100-47af-9dd9-2cf39517077b" data-domains="datadiversitylab.github.io" data-tag="labwebsite"></script>
@@ -246,221 +246,149 @@
         </nav>
     </div>
 </header>
-        <main id="main"><!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
+        <main id="main">
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">Lab news</h1>
-            <p class="cs-text">
-                Stay informed and connected with the latest developments, achievements, and exciting happenings at the data diversity lab. Our news section is a space where we share insights, breakthroughs, and stories that reflect the work of our research community. Explore the stories that shape our journey and connect with the dynamic spirit of innovation at the lab. If you have news to share or inquiries about our latest updates, feel free to reach out—we'd love to hear from you.
-            </p>
+<section class="nw" id="nw">
+    <div class="nw-wrap">
+
+        <header class="nw-head">
+            <h1 class="nw-h1">Lab news</h1>
+            <p class="nw-sub">Awards, talks, new members and papers from the Data Diversity Lab. If you have news to share, feel free to reach out.</p>
+            <label class="nw-search">
+                <span class="nw-visually-hidden">Search the news</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <input type="search" id="nw-q" placeholder="Search all years" autocomplete="off">
+            </label>
+        </header>
+        <div class="nw-pills" role="group" aria-label="Year">
+            <button type="button" class="nw-pill is-on" data-year="2026" aria-pressed="true">2026</button>
+            <button type="button" class="nw-pill" data-year="2025" aria-pressed="false">2025</button>
+            <button type="button" class="nw-pill" data-year="2024" aria-pressed="false">2024</button>
+            <button type="button" class="nw-pill" data-year="2023" aria-pressed="false">2023</button>
+            <button type="button" class="nw-pill" data-year="2022" aria-pressed="false">2022</button>
+            <button type="button" class="nw-pill" data-year="2021" aria-pressed="false">2021</button>
+            <button type="button" class="nw-pill" data-year="all" aria-pressed="false">All years</button>
         </div>
-    </div>
-</section>
 
-<div aria-hidden="true" class="line"></div>
+        <p class="nw-count" id="nw-count" aria-live="polite">2026: 11 updates</p>
 
-<!-- ============================================ -->
-<!--                News                          -->
-<!-- ============================================ --><section id="new-547">
-    <div class="cs-container">
-        <div class="cs-content cs-sidebar">
-            <h6 class="cs-title">Years</h6>
-            <div class="cs-filter-wrapper cs-text"><a href="#section2026" class="active">2026</a><a href="#section2025" class="">2025</a><a href="#section2024" class="">2024</a><a href="#section2023" class="">2023</a><a href="#section2022" class="">2022</a><a href="#section2021" class="">2021</a></div>
-        </div>
-        <div id="dropdown-cards" class="cs-title-card-wrapper"><h3 class="cs-title">2026</h3>
-                <div id="section2026" class="cs-card-group first-news"><div class="cs-item fall">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Fall</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>We have had many new members join us throughout this summer for this fall semester (and on) including Sarah Gonzalez-Coffin, a postdoctoral researcher, Daniel McNair, a PhD student, and Julia Dias, a PhD student. We are so excited to welcome you all to the lab! Read more about our new members on the &quot;<a href="https://datadiversitylab.github.io/our-team/">Our Team</a>&quot; page.</li>
-<li>One of our PhD students, Julia, is working to find her major advisor and determining her area of research for the year! We are so excited to see what you do!</li>
-<li>One of our postdocs, Sarah, will be presenting at two research symposium talks at conferences this fall! Stay tuned for more information on these. Congratulations Sarah, we are so proud of your hard work and dedication!</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="cs-item spring">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Spring</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>At the end of the Spring 2026 semester, two of our amazing postdocs, Kristen Martinet and Kiran Basava both completed their semester co-teaching within the <a href="https://ucatt.arizona.edu/teaching/CIRTLArizona/cirtl-postdoc-pathways-program">CIRTL postdoc program</a>. Great work to you both, we are so proud of you!</li>
-<li>This past week we had the amazing privilege of welcoming President Garimella (University of Arizona president) into our lab to speak about all that the lab has to offer including past, present, and future research. To read more about what we discussed, <a href="https://datadiversitylab.github.io/overview_site/">see this website</a>. Thank you President Garimella!</li>
-<li>This past weekend Cristian, our PI got the chance to travel to the University of Tennessee-Knoxville (UTK) for a seminar event. Cristian would like to thank PhD candidate, Alivia Nytko, and Dr. Brian O’Meara for hosting his travel to the Biology Department at UTK. It was an amazing visit overall with numerous positive conversations including those with Dr. Xingli Giam and Dr. Joe Bailey’s class, and with Dr. Mike Gilchrist surrounding applied math and large language models (LLMs).</li>
-<li>Ian Estacio, one of our postdocs, recently submitted his paper, &quot;Effect of urban greening on walking frequencies across socioeconomic groups: Exploratory insights from agent-based modeling&quot;. <strong>About</strong>: Urban greening may enhance the walkability of cities, ultimately reflecting a wide range of health, social, and economic benefits for residents. Yet, there is still a lack of studies showing how urban greening improves walking frequencies across socioeconomic groups. In this study, we developed TrecSim (Tree Effect on walking Comfort Simulator), an agent-based model for simulating the effect of tree planting on the walking frequencies of commuters across socioeconomic groups. Congratulations Ian!</li>
-<li>One of our postdocs, Kiran Basava, and our PI, Cristian Román-Palacios were both mentioned in a Discover Magazine article by Richard Pallardy, for the 2026 Year of Science Addition. This article was related to animal culture and the animal culture database, see a short blurb on this LinkedIn post: <a href="https://www.linkedin.com/posts/rpallardy_yearinscience-biology-zoology-activity-7403964403739639808--U_T?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAFB9MzUBAk1IHVoi-OEmEeBTbJYXBlZBapk">Discover Article Feature</a> - Congratulations to you both!</li>
-<li>Two of our postdocs, Kristen Martinet and Kiran Basava, both started a teaching role this semester alongside current University of Arizona professors. We know you will both do great, congratulations!</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="cs-item summer">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Summer</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>Lab member's Kristen Martinet and Cristian Román-Palacios paper recently was published in Ecology and Evolution. Congratulations, we are so proud of you! Read more here: <a href="https://onlinelibrary.wiley.com/doi/10.1002/ece3.73981"><em>ssarp</em>: An R Package for Efficiently Inferring Species- and Speciation-Area Relationships</a></li>
-<li>One of our newest lab members, Sarah Gonzalez-Coffin recently had her paper, &quot;Naturalness catalyzes public support for carbon dioxide removal and low-carbon energy technologies&quot; published in Communications, Earth, &amp; Environment. Congratulations Sarah, we are so excited you are joining us! Read her paper <a href="https://www.nature.com/articles/s43247-026-03829-w">here</a></li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><h3 class="cs-title">2025</h3>
-                <div id="section2025" class="cs-card-group "><div class="cs-item fall">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Fall</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>Ian Estacio, a postdoc in the lab, presented his talk, &quot;Predicting the emergent effects of human-environment interactions: Agent-based modeling for informing planning and management&quot; at the CAMBIUM meeting on November 19th. Congratulations Ian!</li>
-<li>Ian Estacio, a postdoc in the lab, recently submitted his paper, &quot;<em>Optimizing Local Climate Zone parametrization for urban temperature modeling: A multi-city assessment of the InVEST Urban Cooling Model&quot;</em> to the journal, Sustainable Cities and Society. Congrats Ian! Read the preprint here: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5623543">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5623543</a></li>
-<li>Kristen Martinet, a postdoc in the lab, recently submitted her completed paper for review on her software, SSARP. Congrats Kristen!</li>
-<li>One of our postdocs, Ian Estacio was recently interviewed by Univision for a project he is currently leading on Wildfire Prediction. Congratulations Ian! Watch the interview here (dubbed in Spanish): <a href="https://www.youtube.com/watch?v=evNrvNFeImM">https://www.youtube.com/watch?v=evNrvNFeImM</a></li>
-<li>Two of our amazing postdocs, Kristen Martinet and Kiran Basava were recently accepted into the CIRTL Postdoc Pathways Program! This year-long program will allow the two of them along with 21 others to in the fall, learn strategies for creating an inclusive and engaging classroom environment. In the spring, they will each work collaboritively with a faculty member to create lessons for a course that will be taught at the University of Arizona. Congratulations to both Kristen and Kiran for this amazing opportunity!</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="cs-item summer">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Summer</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>Cristian Román-Palacios presented on a panel with both Jeremy Beaulieu and Laura Russo. This panel surrounded the idea of &quot;Breaking Barriers to Incorporating Phylogenetics in Ecology&quot;. Congratulations for this opportunity!</li>
-<li>Lab member, Kiran Basava's work regarding her Animal Culture Database (ACDB), was recently published to University of Arizona news. Congratulations Kiran! Read more here: <a href="https://news.arizona.edu/news/creature-culture-what-animal-behavior-can-teach-us-about-saving-nature">https://news.arizona.edu/news/creature-culture-what-animal-behavior-can-teach-us-about-saving-nature</a></li>
-<li>Lab members, Cristian, Kiran, Kristen, and Delaney presented talks at the 2025 Evolution conference in Athens, Georgia. Congratulations for your success and this opportunity!</li>
-<li>The Data Diversity Lab was a part of creating a grant application for the University of Arizona's Big Idea Challenge. Their grant surrounding solving biological issues with a unified biological landscape terraformation was recently funded! Congratulations to all that were involved and we are looking forward to being a part of this project!</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="cs-item spring">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Spring</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>Lab members, Paige Cherry and Eleanor Tuck graduated with their bachelors degree! Congratulations Paige and Eleanor!</li>
-<li>Cristian Román-Palacios, our labs PI, and lab members, Kiran Basava, Kristen Martinet, Yichao Zeng, and Ian Estacio, shared current research on the Animal culture database and conservation implications, consistency in breakpoints for species/area relationships, modeling speciation in co-phylogenies, and a NAS-based Collaboratory at the weekly CAMBIUM meeting.</li>
-<li>Lab members Paige Cherry and Eleanor Tuck presented their capstone project along with their group. Congratulations Paige and Eleanor, your hard work is recognized!</li>
-<li>Big Idea Challenge grant proposal by DDL members, Ian Estacio and Cristian Román-Palacios has been selected to be presented at a pitch session in Mid May. Congrats Ian and Cristian!</li>
-<li>Our PI, Cristian, was selected to receive the 2025 Faculty Excellence award for research. This is a huge accomplishment that is well deserved, congratulations Cristian!</li>
-<li>Yichao Zeng, one of our lab members, has been selected as one of four Junior Research Chair holders at Université PSL (Paris Sciences et Lettres University). This experimental recruitment campaign aims to attract postdoctoral researchers of the highest international caliber. The four funded projects span the natural sciences, engineering, humanities, and social sciences. Developed in collaboration with Dr. Hélène Morlon and previously awarded a Seal of Excellence in a Marie Curie fellowship call, Zeng’s project focuses on the micro-macroevolution and resilience of species interaction networks. Zeng will carry out the research in Dr. Morlon’s group at École Normale Supérieure (ENS), a member of Université PSL. Congratulations Yichao!</li>
-<li>Members of the DDL were a part of submitting a project to the NSF CAIG grant.</li>
-<li>Senior Clinical Data Scientist, Heidi Steiner, will be attending and speaking at an upcoming professional development meeting. Thank you Heidi! Read more about Heidi here: <a href="https://heidiesteiner.netlify.app/">Heidi Steiner</a></li>
-<li>Bioinformatics scientist, Daniel Portik will be attending an upcoming professional development meeting to discuss finding academic career opportunities. Thank you Daniel! Read more about Daniel here: <a href="https://scholar.google.com/citations?user=xZFaH9oAAAAJ&amp;hl=en">Daniel Portik</a></li>
-<li>Researcher, Leandro Aristide was able to speak at one of our lab's professional development meetings. Thank you Leandro! Read more about Leandro's research here: <a href="https://scholar.google.com/citations?user=6t56KMIAAAAJ&amp;hl=es">Leandro Aristide</a></li>
-<li>One of our lab members, Kiran Basava, submitted a paper regarding a web application for the Animal Culture Database. Congrats Kiran!</li>
-<li>Kristen Martinet, another one of our lab members, also submitted her paper, &quot;<em>SSARP</em>: An R Package for Easily Creating Species- and Speciation- Area Relationships Using Web Databases&quot;. Congrats Kristen! Read more here: <a href="https://www.biorxiv.org/content/10.1101/2024.12.31.630948v1">Kristen's SSARP Paper </a><a href="https://www.biorxiv.org/content/10.1101/2024.12.31.630948v1"></a></li>
-<li>Our labs PI, Cristian Román-Palacios, recently gave a seminar at the University of Bern in Switzerland, congrats Cristian!</li>
-<li>CAMBIUM <strong>(Climate change Adaptation and Mitigation through Biodiversity Informatics edUcation and Mentoring)</strong>, an NSF grant has officially been launched! Read more here: <a href="https://cambium.arizona.edu/">CAMBIUM Info</a></li>
-<li>One of our lab members, Yichao Zeng's paper on coevolutionary diversification has recently been published in the Journal of Evolutionary Biology as part of a special issue on linking microevolution and macroevolution. Read more here: <a href="https://academic.oup.com/jeb/issue/37/12">Yichao's Paper</a></li>
-<li>The Data Diversity Lab has created a gallery for our members to place photos they wish to share! This gallery is available to view here: <a href="https://nextcloud.datadiversitylab.synology.me/apps/memories/s/jCtTKgq96fb37d2">DDL Gallery</a><a href="https://nextcloud.datadiversitylab.synology.me/apps/memories/s/jCtTKgq96fb37d2"></a></li>
-<li>One of our postdocs, Kristen Martinet's <em>SSARP</em> paper is now up on bioRxiv. Congratulations Kristen!</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><h3 class="cs-title">2024</h3>
-                <div id="section2024" class="cs-card-group "><div class="cs-item fall">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Fall</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>
-<p>In October, NSF RCN on Urban EcoEvo: Dr. Román-Palacios attended the Urban Eco-Evol and Nature-based solution workshop hosted by Dr. Marina Alberti at the University of Washington</p>
-</li>
-<li>
-<p>United Nations Biodiversity Conference, COP16: Dr. Roman-Palacios attended the The United Nations Biodiversity Conference (COP16) in Cali, Colombia along with UA colleagues Dr. Rachel Gallery (Professor) and Dr. Jessie Golding (Postdoctoral Associate), affiliated to the Lovejoy Center at the University of Arizona</p>
+        <div class="nw-body" id="nw-body">
+            <section class="nw-year" data-year="2026">
+                <h2 class="nw-year-title">2026<span>11 updates</span></h2>
+                <div class="nw-grid">
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Fall<span class="nw-visually-hidden"> 2026</span></h3>
+                            <span class="nw-n">3</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="We have had many new members join us throughout this summer for this fall semester (and on) including Sarah Gonzalez-Coffin, a postdoctoral researcher, Daniel McNair, a PhD student, and Julia Dias, a PhD student. We are so excited to welcome you all to the lab! Read more about our new members on the &quot; Our Team &quot; page."><div class="nw-text">We have had many new members join us throughout this summer for this fall semester (and on) including Sarah Gonzalez-Coffin, a postdoctoral researcher, Daniel McNair, a PhD student, and Julia Dias, a PhD student. We are so excited to welcome you all to the lab! Read more about our new members on the &quot;<a href="https://datadiversitylab.github.io/our-team/">Our Team</a>&quot; page.</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="One of our PhD students, Julia, is working to find her major advisor and determining her area of research for the year! We are so excited to see what you do!"><div class="nw-text">One of our PhD students, Julia, is working to find her major advisor and determining her area of research for the year! We are so excited to see what you do!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="One of our postdocs, Sarah, will be presenting at two research symposium talks at conferences this fall! Stay tuned for more information on these. Congratulations Sarah, we are so proud of your hard work and dedication!"><div class="nw-text">One of our postdocs, Sarah, will be presenting at two research symposium talks at conferences this fall! Stay tuned for more information on these. Congratulations Sarah, we are so proud of your hard work and dedication!</div></li>
+                        </ul>
+                    </div>
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Summer<span class="nw-visually-hidden"> 2026</span></h3>
+                            <span class="nw-n">2</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Lab member&#39;s Kristen Martinet and Cristian Román-Palacios paper recently was published in Ecology and Evolution. Congratulations, we are so proud of you! Read more here: ssarp : An R Package for Efficiently Inferring Species- and Speciation-Area Relationships"><div class="nw-text">Lab member's Kristen Martinet and Cristian Román-Palacios paper recently was published in Ecology and Evolution. Congratulations, we are so proud of you! Read more here: <a href="https://onlinelibrary.wiley.com/doi/10.1002/ece3.73981"><em>ssarp</em>: An R Package for Efficiently Inferring Species- and Speciation-Area Relationships</a></div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="One of our newest lab members, Sarah Gonzalez-Coffin recently had her paper, &quot;Naturalness catalyzes public support for carbon dioxide removal and low-carbon energy technologies&quot; published in Communications, Earth, &amp; Environment. Congratulations Sarah, we are so excited you are joining us! Read her paper here"><div class="nw-text">One of our newest lab members, Sarah Gonzalez-Coffin recently had her paper, &quot;Naturalness catalyzes public support for carbon dioxide removal and low-carbon energy technologies&quot; published in Communications, Earth, &amp; Environment. Congratulations Sarah, we are so excited you are joining us! Read her paper <a href="https://www.nature.com/articles/s43247-026-03829-w">here</a></div></li>
+                        </ul>
+                    </div>
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Spring<span class="nw-visually-hidden"> 2026</span></h3>
+                            <span class="nw-n">6</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="At the end of the Spring 2026 semester, two of our amazing postdocs, Kristen Martinet and Kiran Basava both completed their semester co-teaching within the CIRTL postdoc program . Great work to you both, we are so proud of you!"><div class="nw-text">At the end of the Spring 2026 semester, two of our amazing postdocs, Kristen Martinet and Kiran Basava both completed their semester co-teaching within the <a href="https://ucatt.arizona.edu/teaching/CIRTLArizona/cirtl-postdoc-pathways-program">CIRTL postdoc program</a>. Great work to you both, we are so proud of you!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="This past week we had the amazing privilege of welcoming President Garimella (University of Arizona president) into our lab to speak about all that the lab has to offer including past, present, and future research. To read more about what we discussed, see this website . Thank you President Garimella!"><div class="nw-text">This past week we had the amazing privilege of welcoming President Garimella (University of Arizona president) into our lab to speak about all that the lab has to offer including past, present, and future research. To read more about what we discussed, <a href="https://datadiversitylab.github.io/overview_site/">see this website</a>. Thank you President Garimella!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="This past weekend Cristian, our PI got the chance to travel to the University of Tennessee-Knoxville (UTK) for a seminar event. Cristian would like to thank PhD candidate, Alivia Nytko, and Dr. Brian O’Meara for hosting his travel to the Biology Department at UTK. It was an amazing visit overall with numerous positive conversations including those with Dr. Xingli Giam and Dr. Joe Bailey’s class, and with Dr. Mike Gilchrist surrounding applied math and large language models (LLMs)."><div class="nw-text">This past weekend Cristian, our PI got the chance to travel to the University of Tennessee-Knoxville (UTK) for a seminar event. Cristian would like to thank PhD candidate, Alivia Nytko, and Dr. Brian O’Meara for hosting his travel to the Biology Department at UTK. It was an amazing visit overall with numerous positive conversations including those with Dr. Xingli Giam and Dr. Joe Bailey’s class, and with Dr. Mike Gilchrist surrounding applied math and large language models (LLMs).</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Ian Estacio, one of our postdocs, recently submitted his paper, &quot;Effect of urban greening on walking frequencies across socioeconomic groups: Exploratory insights from agent-based modeling&quot;. About : Urban greening may enhance the walkability of cities, ultimately reflecting a wide range of health, social, and economic benefits for residents. Yet, there is still a lack of studies showing how urban greening improves walking frequencies across socioeconomic groups. In this study, we developed TrecSim (Tree Effect on walking Comfort Simulator), an agent-based model for simulating the effect of tree planting on the walking frequencies of commuters across socioeconomic groups. Congratulations Ian!"><div class="nw-text">Ian Estacio, one of our postdocs, recently submitted his paper, &quot;Effect of urban greening on walking frequencies across socioeconomic groups: Exploratory insights from agent-based modeling&quot;. <strong>About</strong>: Urban greening may enhance the walkability of cities, ultimately reflecting a wide range of health, social, and economic benefits for residents. Yet, there is still a lack of studies showing how urban greening improves walking frequencies across socioeconomic groups. In this study, we developed TrecSim (Tree Effect on walking Comfort Simulator), an agent-based model for simulating the effect of tree planting on the walking frequencies of commuters across socioeconomic groups. Congratulations Ian!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="One of our postdocs, Kiran Basava, and our PI, Cristian Román-Palacios were both mentioned in a Discover Magazine article by Richard Pallardy, for the 2026 Year of Science Addition. This article was related to animal culture and the animal culture database, see a short blurb on this LinkedIn post: Discover Article Feature - Congratulations to you both!"><div class="nw-text">One of our postdocs, Kiran Basava, and our PI, Cristian Román-Palacios were both mentioned in a Discover Magazine article by Richard Pallardy, for the 2026 Year of Science Addition. This article was related to animal culture and the animal culture database, see a short blurb on this LinkedIn post: <a href="https://www.linkedin.com/posts/rpallardy_yearinscience-biology-zoology-activity-7403964403739639808--U_T?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAFB9MzUBAk1IHVoi-OEmEeBTbJYXBlZBapk">Discover Article Feature</a> - Congratulations to you both!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Two of our postdocs, Kristen Martinet and Kiran Basava, both started a teaching role this semester alongside current University of Arizona professors. We know you will both do great, congratulations!"><div class="nw-text">Two of our postdocs, Kristen Martinet and Kiran Basava, both started a teaching role this semester alongside current University of Arizona professors. We know you will both do great, congratulations!</div></li>
+                        </ul><button type="button" class="nw-more" data-more="1">Show 1 more</button>
+                    </div>
+                </div>
+            </section>
+            <section class="nw-year" data-year="2025" hidden>
+                <h2 class="nw-year-title">2025<span>26 updates</span></h2>
+                <div class="nw-grid">
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Fall<span class="nw-visually-hidden"> 2025</span></h3>
+                            <span class="nw-n">5</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Ian Estacio, a postdoc in the lab, presented his talk, &quot;Predicting the emergent effects of human-environment interactions: Agent-based modeling for informing planning and management&quot; at the CAMBIUM meeting on November 19th. Congratulations Ian!"><div class="nw-text">Ian Estacio, a postdoc in the lab, presented his talk, &quot;Predicting the emergent effects of human-environment interactions: Agent-based modeling for informing planning and management&quot; at the CAMBIUM meeting on November 19th. Congratulations Ian!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Ian Estacio, a postdoc in the lab, recently submitted his paper, &quot; Optimizing Local Climate Zone parametrization for urban temperature modeling: A multi-city assessment of the InVEST Urban Cooling Model&quot; to the journal, Sustainable Cities and Society. Congrats Ian! Read the preprint here: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5623543"><div class="nw-text">Ian Estacio, a postdoc in the lab, recently submitted his paper, &quot;<em>Optimizing Local Climate Zone parametrization for urban temperature modeling: A multi-city assessment of the InVEST Urban Cooling Model&quot;</em> to the journal, Sustainable Cities and Society. Congrats Ian! Read the preprint here: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5623543">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5623543</a></div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Kristen Martinet, a postdoc in the lab, recently submitted her completed paper for review on her software, SSARP. Congrats Kristen!"><div class="nw-text">Kristen Martinet, a postdoc in the lab, recently submitted her completed paper for review on her software, SSARP. Congrats Kristen!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="One of our postdocs, Ian Estacio was recently interviewed by Univision for a project he is currently leading on Wildfire Prediction. Congratulations Ian! Watch the interview here (dubbed in Spanish): https://www.youtube.com/watch?v=evNrvNFeImM"><div class="nw-text">One of our postdocs, Ian Estacio was recently interviewed by Univision for a project he is currently leading on Wildfire Prediction. Congratulations Ian! Watch the interview here (dubbed in Spanish): <a href="https://www.youtube.com/watch?v=evNrvNFeImM">https://www.youtube.com/watch?v=evNrvNFeImM</a></div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Two of our amazing postdocs, Kristen Martinet and Kiran Basava were recently accepted into the CIRTL Postdoc Pathways Program! This year-long program will allow the two of them along with 21 others to in the fall, learn strategies for creating an inclusive and engaging classroom environment. In the spring, they will each work collaboritively with a faculty member to create lessons for a course that will be taught at the University of Arizona. Congratulations to both Kristen and Kiran for this amazing opportunity!"><div class="nw-text">Two of our amazing postdocs, Kristen Martinet and Kiran Basava were recently accepted into the CIRTL Postdoc Pathways Program! This year-long program will allow the two of them along with 21 others to in the fall, learn strategies for creating an inclusive and engaging classroom environment. In the spring, they will each work collaboritively with a faculty member to create lessons for a course that will be taught at the University of Arizona. Congratulations to both Kristen and Kiran for this amazing opportunity!</div></li>
+                        </ul>
+                    </div>
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Summer<span class="nw-visually-hidden"> 2025</span></h3>
+                            <span class="nw-n">4</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Cristian Román-Palacios presented on a panel with both Jeremy Beaulieu and Laura Russo. This panel surrounded the idea of &quot;Breaking Barriers to Incorporating Phylogenetics in Ecology&quot;. Congratulations for this opportunity!"><div class="nw-text">Cristian Román-Palacios presented on a panel with both Jeremy Beaulieu and Laura Russo. This panel surrounded the idea of &quot;Breaking Barriers to Incorporating Phylogenetics in Ecology&quot;. Congratulations for this opportunity!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Lab member, Kiran Basava&#39;s work regarding her Animal Culture Database (ACDB), was recently published to University of Arizona news. Congratulations Kiran! Read more here: https://news.arizona.edu/news/creature-culture-what-animal-behavior-can-teach-us-about-saving-nature"><div class="nw-text">Lab member, Kiran Basava's work regarding her Animal Culture Database (ACDB), was recently published to University of Arizona news. Congratulations Kiran! Read more here: <a href="https://news.arizona.edu/news/creature-culture-what-animal-behavior-can-teach-us-about-saving-nature">https://news.arizona.edu/news/creature-culture-what-animal-behavior-can-teach-us-about-saving-nature</a></div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Lab members, Cristian, Kiran, Kristen, and Delaney presented talks at the 2025 Evolution conference in Athens, Georgia. Congratulations for your success and this opportunity!"><div class="nw-text">Lab members, Cristian, Kiran, Kristen, and Delaney presented talks at the 2025 Evolution conference in Athens, Georgia. Congratulations for your success and this opportunity!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="The Data Diversity Lab was a part of creating a grant application for the University of Arizona&#39;s Big Idea Challenge. Their grant surrounding solving biological issues with a unified biological landscape terraformation was recently funded! Congratulations to all that were involved and we are looking forward to being a part of this project!"><div class="nw-text">The Data Diversity Lab was a part of creating a grant application for the University of Arizona's Big Idea Challenge. Their grant surrounding solving biological issues with a unified biological landscape terraformation was recently funded! Congratulations to all that were involved and we are looking forward to being a part of this project!</div></li>
+                        </ul>
+                    </div>
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Spring<span class="nw-visually-hidden"> 2025</span></h3>
+                            <span class="nw-n">17</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Lab members, Paige Cherry and Eleanor Tuck graduated with their bachelors degree! Congratulations Paige and Eleanor!"><div class="nw-text">Lab members, Paige Cherry and Eleanor Tuck graduated with their bachelors degree! Congratulations Paige and Eleanor!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Cristian Román-Palacios, our labs PI, and lab members, Kiran Basava, Kristen Martinet, Yichao Zeng, and Ian Estacio, shared current research on the Animal culture database and conservation implications, consistency in breakpoints for species/area relationships, modeling speciation in co-phylogenies, and a NAS-based Collaboratory at the weekly CAMBIUM meeting."><div class="nw-text">Cristian Román-Palacios, our labs PI, and lab members, Kiran Basava, Kristen Martinet, Yichao Zeng, and Ian Estacio, shared current research on the Animal culture database and conservation implications, consistency in breakpoints for species/area relationships, modeling speciation in co-phylogenies, and a NAS-based Collaboratory at the weekly CAMBIUM meeting.</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Lab members Paige Cherry and Eleanor Tuck presented their capstone project along with their group. Congratulations Paige and Eleanor, your hard work is recognized!"><div class="nw-text">Lab members Paige Cherry and Eleanor Tuck presented their capstone project along with their group. Congratulations Paige and Eleanor, your hard work is recognized!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Big Idea Challenge grant proposal by DDL members, Ian Estacio and Cristian Román-Palacios has been selected to be presented at a pitch session in Mid May. Congrats Ian and Cristian!"><div class="nw-text">Big Idea Challenge grant proposal by DDL members, Ian Estacio and Cristian Román-Palacios has been selected to be presented at a pitch session in Mid May. Congrats Ian and Cristian!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Our PI, Cristian, was selected to receive the 2025 Faculty Excellence award for research. This is a huge accomplishment that is well deserved, congratulations Cristian!"><div class="nw-text">Our PI, Cristian, was selected to receive the 2025 Faculty Excellence award for research. This is a huge accomplishment that is well deserved, congratulations Cristian!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Yichao Zeng, one of our lab members, has been selected as one of four Junior Research Chair holders at Université PSL (Paris Sciences et Lettres University). This experimental recruitment campaign aims to attract postdoctoral researchers of the highest international caliber. The four funded projects span the natural sciences, engineering, humanities, and social sciences. Developed in collaboration with Dr. Hélène Morlon and previously awarded a Seal of Excellence in a Marie Curie fellowship call, Zeng’s project focuses on the micro-macroevolution and resilience of species interaction networks. Zeng will carry out the research in Dr. Morlon’s group at École Normale Supérieure (ENS), a member of Université PSL. Congratulations Yichao!"><div class="nw-text">Yichao Zeng, one of our lab members, has been selected as one of four Junior Research Chair holders at Université PSL (Paris Sciences et Lettres University). This experimental recruitment campaign aims to attract postdoctoral researchers of the highest international caliber. The four funded projects span the natural sciences, engineering, humanities, and social sciences. Developed in collaboration with Dr. Hélène Morlon and previously awarded a Seal of Excellence in a Marie Curie fellowship call, Zeng’s project focuses on the micro-macroevolution and resilience of species interaction networks. Zeng will carry out the research in Dr. Morlon’s group at École Normale Supérieure (ENS), a member of Université PSL. Congratulations Yichao!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Members of the DDL were a part of submitting a project to the NSF CAIG grant."><div class="nw-text">Members of the DDL were a part of submitting a project to the NSF CAIG grant.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Senior Clinical Data Scientist, Heidi Steiner, will be attending and speaking at an upcoming professional development meeting. Thank you Heidi! Read more about Heidi here: Heidi Steiner"><div class="nw-text">Senior Clinical Data Scientist, Heidi Steiner, will be attending and speaking at an upcoming professional development meeting. Thank you Heidi! Read more about Heidi here: <a href="https://heidiesteiner.netlify.app/">Heidi Steiner</a></div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Bioinformatics scientist, Daniel Portik will be attending an upcoming professional development meeting to discuss finding academic career opportunities. Thank you Daniel! Read more about Daniel here: Daniel Portik"><div class="nw-text">Bioinformatics scientist, Daniel Portik will be attending an upcoming professional development meeting to discuss finding academic career opportunities. Thank you Daniel! Read more about Daniel here: <a href="https://scholar.google.com/citations?user=xZFaH9oAAAAJ&amp;hl=en">Daniel Portik</a></div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Researcher, Leandro Aristide was able to speak at one of our lab&#39;s professional development meetings. Thank you Leandro! Read more about Leandro&#39;s research here: Leandro Aristide"><div class="nw-text">Researcher, Leandro Aristide was able to speak at one of our lab's professional development meetings. Thank you Leandro! Read more about Leandro's research here: <a href="https://scholar.google.com/citations?user=6t56KMIAAAAJ&amp;hl=es">Leandro Aristide</a></div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="One of our lab members, Kiran Basava, submitted a paper regarding a web application for the Animal Culture Database. Congrats Kiran!"><div class="nw-text">One of our lab members, Kiran Basava, submitted a paper regarding a web application for the Animal Culture Database. Congrats Kiran!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Kristen Martinet, another one of our lab members, also submitted her paper, &quot; SSARP : An R Package for Easily Creating Species- and Speciation- Area Relationships Using Web Databases&quot;. Congrats Kristen! Read more here: Kristen&#39;s SSARP Paper"><div class="nw-text">Kristen Martinet, another one of our lab members, also submitted her paper, &quot;<em>SSARP</em>: An R Package for Easily Creating Species- and Speciation- Area Relationships Using Web Databases&quot;. Congrats Kristen! Read more here: <a href="https://www.biorxiv.org/content/10.1101/2024.12.31.630948v1">Kristen's SSARP Paper </a><a href="https://www.biorxiv.org/content/10.1101/2024.12.31.630948v1"></a></div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Our labs PI, Cristian Román-Palacios, recently gave a seminar at the University of Bern in Switzerland, congrats Cristian!"><div class="nw-text">Our labs PI, Cristian Román-Palacios, recently gave a seminar at the University of Bern in Switzerland, congrats Cristian!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="CAMBIUM (Climate change Adaptation and Mitigation through Biodiversity Informatics edUcation and Mentoring) , an NSF grant has officially been launched! Read more here: CAMBIUM Info"><div class="nw-text">CAMBIUM <strong>(Climate change Adaptation and Mitigation through Biodiversity Informatics edUcation and Mentoring)</strong>, an NSF grant has officially been launched! Read more here: <a href="https://cambium.arizona.edu/">CAMBIUM Info</a></div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="One of our lab members, Yichao Zeng&#39;s paper on coevolutionary diversification has recently been published in the Journal of Evolutionary Biology as part of a special issue on linking microevolution and macroevolution. Read more here: Yichao&#39;s Paper"><div class="nw-text">One of our lab members, Yichao Zeng's paper on coevolutionary diversification has recently been published in the Journal of Evolutionary Biology as part of a special issue on linking microevolution and macroevolution. Read more here: <a href="https://academic.oup.com/jeb/issue/37/12">Yichao's Paper</a></div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="The Data Diversity Lab has created a gallery for our members to place photos they wish to share! This gallery is available to view here: DDL Gallery"><div class="nw-text">The Data Diversity Lab has created a gallery for our members to place photos they wish to share! This gallery is available to view here: <a href="https://nextcloud.datadiversitylab.synology.me/apps/memories/s/jCtTKgq96fb37d2">DDL Gallery</a><a href="https://nextcloud.datadiversitylab.synology.me/apps/memories/s/jCtTKgq96fb37d2"></a></div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="One of our postdocs, Kristen Martinet&#39;s SSARP paper is now up on bioRxiv. Congratulations Kristen!"><div class="nw-text">One of our postdocs, Kristen Martinet's <em>SSARP</em> paper is now up on bioRxiv. Congratulations Kristen!</div></li>
+                        </ul><button type="button" class="nw-more" data-more="12">Show 12 more</button>
+                    </div>
+                </div>
+            </section>
+            <section class="nw-year" data-year="2024" hidden>
+                <h2 class="nw-year-title">2024<span>42 updates</span></h2>
+                <div class="nw-grid">
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Fall<span class="nw-visually-hidden"> 2024</span></h3>
+                            <span class="nw-n">19</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="In October, NSF RCN on Urban EcoEvo: Dr. Román-Palacios attended the Urban Eco-Evol and Nature-based solution workshop hosted by Dr. Marina Alberti at the University of Washington"><div class="nw-text">In October, NSF RCN on Urban EcoEvo: Dr. Román-Palacios attended the Urban Eco-Evol and Nature-based solution workshop hosted by Dr. Marina Alberti at the University of Washington</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="United Nations Biodiversity Conference, COP16: Dr. Roman-Palacios attended the The United Nations Biodiversity Conference (COP16) in Cali, Colombia along with UA colleagues Dr. Rachel Gallery (Professor) and Dr. Jessie Golding (Postdoctoral Associate), affiliated to the Lovejoy Center at the University of Arizona See more here"><div class="nw-text"><p>United Nations Biodiversity Conference, COP16: Dr. Roman-Palacios attended the The United Nations Biodiversity Conference (COP16) in Cali, Colombia along with UA colleagues Dr. Rachel Gallery (Professor) and Dr. Jessie Golding (Postdoctoral Associate), affiliated to the Lovejoy Center at the University of Arizona</p>
 <ul>
 <li>See more <a href="https://datadiversitylab.github.io/social/">here</a></li>
-</ul>
-</li>
-<li>
-<p>Our lab’s PI, Cristian Román-Palacios, had the opportunity to speak on NPR discussing a recently published Science paper about accelerating extinction due to climate change. Cristian provided a powerful insight into the dangers of climate change on our environmental health. Read more on his interview here: <a href="https://www.npr.org/2024/12/05/nx-s1-5214555/if-global-warming-ramps-up-1-in-3-species-could-be-in-serious-danger-by-centurys-end">https://www.npr.org/2024/12/05/nx-s1-5214555/if-global-warming-ramps-up-1-in-3-species-could-be-in-serious-danger-by-centurys-end</a></p>
-</li>
-<li>
-<p>Our PI, Cristian Román-Palacios, wrote a blog relating to COP16 for the Ecological Society of America (ESA) that you can read below</p>
-</li>
-<li>
-<p><a href="https://www.esa.org/esablog/2024/11/19/cop16-dispatch-week-2-open-source-and-llms-reflections-from-the-back-row-of-cop16/">https://www.esa.org/esablog/2024/11/19/cop16-dispatch-week-2-open-source-and-llms-reflections-from-the-back-row-of-cop16/ </a></p>
-</li>
-<li>
-<p>Our MSc capstone student, Erika Kirkpatrick, was nominated and chosen to receive the University of Arizona College of Information Science's Graduate Teaching Award. Congratulations Erika!</p>
-</li>
-<li>
-<p>We secured Faculty Seed Grant that allows for further support one postdoctoral researcher ($15,000)</p>
-</li>
-<li>
-<p>The lab helped secure a $3 Million grant for an NSF NRT program CAMBIUM: Climate change Adaptation and Mitigation through Biodiversity Informatics edUcation and Mentoring</p>
-</li>
-<li>
-<p>We are happy to welcome our various new lab members!</p>
+</ul></div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Our lab’s PI, Cristian Román-Palacios, had the opportunity to speak on NPR discussing a recently published Science paper about accelerating extinction due to climate change. Cristian provided a powerful insight into the dangers of climate change on our environmental health. Read more on his interview here: https://www.npr.org/2024/12/05/nx-s1-5214555/if-global-warming-ramps-up-1-in-3-species-could-be-in-serious-danger-by-centurys-end"><div class="nw-text">Our lab’s PI, Cristian Román-Palacios, had the opportunity to speak on NPR discussing a recently published Science paper about accelerating extinction due to climate change. Cristian provided a powerful insight into the dangers of climate change on our environmental health. Read more on his interview here: <a href="https://www.npr.org/2024/12/05/nx-s1-5214555/if-global-warming-ramps-up-1-in-3-species-could-be-in-serious-danger-by-centurys-end">https://www.npr.org/2024/12/05/nx-s1-5214555/if-global-warming-ramps-up-1-in-3-species-could-be-in-serious-danger-by-centurys-end</a></div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Our PI, Cristian Román-Palacios, wrote a blog relating to COP16 for the Ecological Society of America (ESA) that you can read below"><div class="nw-text">Our PI, Cristian Román-Palacios, wrote a blog relating to COP16 for the Ecological Society of America (ESA) that you can read below</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="https://www.esa.org/esablog/2024/11/19/cop16-dispatch-week-2-open-source-and-llms-reflections-from-the-back-row-of-cop16/"><div class="nw-text"><a href="https://www.esa.org/esablog/2024/11/19/cop16-dispatch-week-2-open-source-and-llms-reflections-from-the-back-row-of-cop16/">https://www.esa.org/esablog/2024/11/19/cop16-dispatch-week-2-open-source-and-llms-reflections-from-the-back-row-of-cop16/ </a></div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Our MSc capstone student, Erika Kirkpatrick, was nominated and chosen to receive the University of Arizona College of Information Science&#39;s Graduate Teaching Award. Congratulations Erika!"><div class="nw-text">Our MSc capstone student, Erika Kirkpatrick, was nominated and chosen to receive the University of Arizona College of Information Science's Graduate Teaching Award. Congratulations Erika!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="We secured Faculty Seed Grant that allows for further support one postdoctoral researcher ($15,000)"><div class="nw-text">We secured Faculty Seed Grant that allows for further support one postdoctoral researcher ($15,000)</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="The lab helped secure a $3 Million grant for an NSF NRT program CAMBIUM: Climate change Adaptation and Mitigation through Biodiversity Informatics edUcation and Mentoring"><div class="nw-text">The lab helped secure a $3 Million grant for an NSF NRT program CAMBIUM: Climate change Adaptation and Mitigation through Biodiversity Informatics edUcation and Mentoring</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="We are happy to welcome our various new lab members! Pradnya Raut → MS student working on a capstone project Isabella Kortiz → student worker in the InfoSci MS advising team Delaney Scott-Martin → undergrad student working on our current VIP project Erika Kirkpatrick → MS student working on our current VIP project Eleanor Tuck → student worker in the InfoSci MS advising team Kennedy Gezella → undergrad student worker supporting the lab on the managing side"><div class="nw-text"><p>We are happy to welcome our various new lab members!</p>
 <ul>
 <li>Pradnya Raut → MS student working on a capstone project</li>
 <li>Isabella Kortiz → student worker in the InfoSci MS advising team</li>
@@ -468,313 +396,188 @@
 <li>Erika Kirkpatrick → MS student working on our current VIP project</li>
 <li>Eleanor Tuck → student worker in the InfoSci MS advising team</li>
 <li>Kennedy Gezella → undergrad student worker supporting the lab on the managing side</li>
-</ul>
-</li>
-<li>
-<p>We secured a ~$100k Level II grant from National Geographic. This grant will enable us to create a Data Science-related teaching program that will be deployed in Colombia during 2025. We will also teach an intro to phylogenetics using phruta using this funding.</p>
-</li>
-<li>
-<p>We secured funding for our students through NSF’s WAESO ($3000) and the VIP seed grant ($3000).</p>
-</li>
-<li>
-<p>Dr. Van Boxel, first Ph.D. student in the lab, published her paper &quot;BARMPy: Bayesian additive regression models Python package&quot; in the journal Computational Statistics</p>
-</li>
-<li>
-<p>A paper led by Dr. Alex Arnold at UCLA was published earlier this semester (Comparative clumped isotope temperature relationships in freshwater carbonates) in the The Depositional Record. Congrats Alex!</p>
-</li>
-<li>
-<p>Dr. Román attended the Urban Eco Evo RCN meeting held in UWashington and hosted by Dr. Marina Alberti in October, 2024.</p>
-</li>
-<li>
-<p>Along with the Lovejoy Foundation (i.e. Rachel Gallery and Jessie Golding) at the University of Arizona, Dr. Román attended the UN COP16 in Cali, Colombia</p>
-</li>
-<li>
-<p>We are sad to say goodbye to one of our amazing lab members…Hector Garcia, our former research laboratory manager. We thank Hector for all his help and dedication to supporting the Data Diversity Lab.</p>
-</li>
-<li>
-<p>The College of Information Science assigned Harvill 320D to our MS Faculty Team members. We will be using this office to support our students with drop-in meetings and to have the members of our team in a dedicated space.</p>
-</li>
-<li>
-<p>Concerning, our lab is located in the second floor of Harvill. Recent informal communications have suggested that the only elevator to the entire building will be out for maintenance for at least one semester in Spring 2025. Classes are expected to be scheduled in other buildings across campus. We will potentially experience accessibility-related limitations as part of these alterations...</p>
-</li>
-<li>
-<p>Dr. Kristen Martinet, one of our postdoctoral researchers, was selected as one of only two presenters to win the Best Poster Presentation award! This was for her poster presented at the Arizona Postdoctoral Research Conference this September. Congratulations to Kristen!</p>
+</ul></div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="We secured a ~$100k Level II grant from National Geographic. This grant will enable us to create a Data Science-related teaching program that will be deployed in Colombia during 2025. We will also teach an intro to phylogenetics using phruta using this funding."><div class="nw-text">We secured a ~$100k Level II grant from National Geographic. This grant will enable us to create a Data Science-related teaching program that will be deployed in Colombia during 2025. We will also teach an intro to phylogenetics using phruta using this funding.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="We secured funding for our students through NSF’s WAESO ($3000) and the VIP seed grant ($3000)."><div class="nw-text">We secured funding for our students through NSF’s WAESO ($3000) and the VIP seed grant ($3000).</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Dr. Van Boxel, first Ph.D. student in the lab, published her paper &quot;BARMPy: Bayesian additive regression models Python package&quot; in the journal Computational Statistics"><div class="nw-text">Dr. Van Boxel, first Ph.D. student in the lab, published her paper &quot;BARMPy: Bayesian additive regression models Python package&quot; in the journal Computational Statistics</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="A paper led by Dr. Alex Arnold at UCLA was published earlier this semester (Comparative clumped isotope temperature relationships in freshwater carbonates) in the The Depositional Record. Congrats Alex!"><div class="nw-text">A paper led by Dr. Alex Arnold at UCLA was published earlier this semester (Comparative clumped isotope temperature relationships in freshwater carbonates) in the The Depositional Record. Congrats Alex!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Dr. Román attended the Urban Eco Evo RCN meeting held in UWashington and hosted by Dr. Marina Alberti in October, 2024."><div class="nw-text">Dr. Román attended the Urban Eco Evo RCN meeting held in UWashington and hosted by Dr. Marina Alberti in October, 2024.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Along with the Lovejoy Foundation (i.e. Rachel Gallery and Jessie Golding) at the University of Arizona, Dr. Román attended the UN COP16 in Cali, Colombia"><div class="nw-text">Along with the Lovejoy Foundation (i.e. Rachel Gallery and Jessie Golding) at the University of Arizona, Dr. Román attended the UN COP16 in Cali, Colombia</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="We are sad to say goodbye to one of our amazing lab members…Hector Garcia, our former research laboratory manager. We thank Hector for all his help and dedication to supporting the Data Diversity Lab."><div class="nw-text">We are sad to say goodbye to one of our amazing lab members…Hector Garcia, our former research laboratory manager. We thank Hector for all his help and dedication to supporting the Data Diversity Lab.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="The College of Information Science assigned Harvill 320D to our MS Faculty Team members. We will be using this office to support our students with drop-in meetings and to have the members of our team in a dedicated space."><div class="nw-text">The College of Information Science assigned Harvill 320D to our MS Faculty Team members. We will be using this office to support our students with drop-in meetings and to have the members of our team in a dedicated space.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Concerning, our lab is located in the second floor of Harvill. Recent informal communications have suggested that the only elevator to the entire building will be out for maintenance for at least one semester in Spring 2025. Classes are expected to be scheduled in other buildings across campus. We will potentially experience accessibility-related limitations as part of these alterations..."><div class="nw-text">Concerning, our lab is located in the second floor of Harvill. Recent informal communications have suggested that the only elevator to the entire building will be out for maintenance for at least one semester in Spring 2025. Classes are expected to be scheduled in other buildings across campus. We will potentially experience accessibility-related limitations as part of these alterations...</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Dr. Kristen Martinet, one of our postdoctoral researchers, was selected as one of only two presenters to win the Best Poster Presentation award! This was for her poster presented at the Arizona Postdoctoral Research Conference this September. Congratulations to Kristen! Linked here is further information about her award: https://uapostdocs.weebly.com/spotlight/archives/11-2024"><div class="nw-text"><p>Dr. Kristen Martinet, one of our postdoctoral researchers, was selected as one of only two presenters to win the Best Poster Presentation award! This was for her poster presented at the Arizona Postdoctoral Research Conference this September. Congratulations to Kristen!</p>
 <ul>
 <li>Linked here is further information about her award: <a href="https://uapostdocs.weebly.com/spotlight/archives/11-2024">https://uapostdocs.weebly.com/spotlight/archives/11-2024</a></li>
-</ul>
-</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="cs-item summer">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Summer</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>A new postdoc joins the lab! We welcome Kristen Martinet!</li>
-<li>Former PhD student in the lab, now Dr. Van Boxel had a paper published in Springer's Computational Statistics journal!</li>
-<li>An NSF-NRT (Research Traineeship) grant in which Dr. Román-Palacios will collaborate as personnel has been approved for funding!</li>
-<li>A new undergrad has joined the lab. We welcome Paige Cherry!</li>
-<li>Postdoc Ian Estacio has joined the lab. Welcome Ian!</li>
-<li>Two new papers where Dr. Roman collaborated in have been published in Ecology and Evolution and the ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences journals!</li>
-<li>Our postdoc Kiran started leading team collaboration data collection efforts for a project based on cultural behavior in animals</li>
-<li>Dr. Roman gave a talk to the 2024 student cohort of The National Summer Undergraduate Research Project!</li>
-<li>MD Nafis Ul Alam (Michael) just joined the lab as a co-advised (w/ Rod Wing) PhD student</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="cs-item spring">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Spring</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>
-<p>We congratulate our graduating lab members: Danielle Van Boxel, Ani Chitransh, Shih-Hsuan Lo, Jiayue He, Tom Olla, Rob Speer &amp; Gloria Moraa Angwenyi! We will miss you. Keep in touch!</p>
-</li>
-<li>
-<p>All of our lab members got together to collaborate on potentially publishable materials during our organized lab retreat/workshop! Research, lunch and fun!</p>
-</li>
-<li>
-<p>HM Abdul and Ani Chitransh represented the Data Diversity Lab by presenting their capstone research in this semester's iShowcase event!</p>
-</li>
-<li>
-<p>PhD candidate Jhan C.Salazar flies from St. Louis to visit the lab for a week of collaboration! We welcome you back Jhan!</p>
-</li>
-<li>
-<p>Our first postdoc has joined the lab, we welcome Kiran Basava!</p>
-</li>
-<li>
-<p>Danielle defended her PhD dissertation and passed with flying colors! Congratulations Danielle!</p>
-</li>
-<li>
-<p>Our application to the Vertically Integrated Projects program was accepted and funded with a $3500 seed grant!</p>
-</li>
-<li>
-<p>We have a new lab website!!!</p>
-</li>
-<li>
-<p>Shih-Hsuan took professional headshot photos for the whole lab this semester. Thank you Shih-Hsuan.</p>
-</li>
-<li>
-<p>A research paper from the lab has been shortlisted for the 2023 Robert May Prize. The prize is awarded each year for the best paper in the journal Methods in Ecology and Evolution. Blog post: <a href="https://methodsblog.com/2024/03/20/early-career-research-increasing-access-reproducibility-and-transparency-in-phylogenetic-analyses-with-cristian-roman-palacioshttps-besjournals-onlinelibrary-wiley-com-doi-full-10-1111-2041-210x-1/">https://methodsblog.com/2024/03/20/early-career-research-increasing-access-reproducibility-and-transparency-in-phylogenetic-analyses-with-cristian-roman-palacioshttps-besjournals-onlinelibrary-wiley-com-doi-full-10-1111-2041-210x-1/</a>.</p>
-</li>
-<li>
-<p>The lab has applied to the Vertically Integrated Projects (VIP) initiative and will aim to form a team of undergrads to introduce to research  in Fall 2024</p>
-</li>
-<li>
-<p>Our lab space has become fully functional, we welcome all our lab members on campus to use our facilities as much as possible.</p>
-</li>
-<li>
-<p>A lab retreat is planned during the semester, will be discussing research and future work plans.</p>
-</li>
-<li>
-<p>We welcome our new lab members for the spring semester:</p>
+</ul></div></li>
+                        </ul><button type="button" class="nw-more" data-more="14">Show 14 more</button>
+                    </div>
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Summer<span class="nw-visually-hidden"> 2024</span></h3>
+                            <span class="nw-n">9</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="A new postdoc joins the lab! We welcome Kristen Martinet!"><div class="nw-text">A new postdoc joins the lab! We welcome Kristen Martinet!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Former PhD student in the lab, now Dr. Van Boxel had a paper published in Springer&#39;s Computational Statistics journal!"><div class="nw-text">Former PhD student in the lab, now Dr. Van Boxel had a paper published in Springer's Computational Statistics journal!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="An NSF-NRT (Research Traineeship) grant in which Dr. Román-Palacios will collaborate as personnel has been approved for funding!"><div class="nw-text">An NSF-NRT (Research Traineeship) grant in which Dr. Román-Palacios will collaborate as personnel has been approved for funding!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="A new undergrad has joined the lab. We welcome Paige Cherry!"><div class="nw-text">A new undergrad has joined the lab. We welcome Paige Cherry!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Postdoc Ian Estacio has joined the lab. Welcome Ian!"><div class="nw-text">Postdoc Ian Estacio has joined the lab. Welcome Ian!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Two new papers where Dr. Roman collaborated in have been published in Ecology and Evolution and the ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences journals!"><div class="nw-text">Two new papers where Dr. Roman collaborated in have been published in Ecology and Evolution and the ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences journals!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Our postdoc Kiran started leading team collaboration data collection efforts for a project based on cultural behavior in animals"><div class="nw-text">Our postdoc Kiran started leading team collaboration data collection efforts for a project based on cultural behavior in animals</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Dr. Roman gave a talk to the 2024 student cohort of The National Summer Undergraduate Research Project!"><div class="nw-text">Dr. Roman gave a talk to the 2024 student cohort of The National Summer Undergraduate Research Project!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="MD Nafis Ul Alam (Michael) just joined the lab as a co-advised (w/ Rod Wing) PhD student"><div class="nw-text">MD Nafis Ul Alam (Michael) just joined the lab as a co-advised (w/ Rod Wing) PhD student</div></li>
+                        </ul><button type="button" class="nw-more" data-more="4">Show 4 more</button>
+                    </div>
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Spring<span class="nw-visually-hidden"> 2024</span></h3>
+                            <span class="nw-n">14</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="We congratulate our graduating lab members: Danielle Van Boxel, Ani Chitransh, Shih-Hsuan Lo, Jiayue He, Tom Olla, Rob Speer &amp; Gloria Moraa Angwenyi! We will miss you. Keep in touch!"><div class="nw-text">We congratulate our graduating lab members: Danielle Van Boxel, Ani Chitransh, Shih-Hsuan Lo, Jiayue He, Tom Olla, Rob Speer &amp; Gloria Moraa Angwenyi! We will miss you. Keep in touch!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="All of our lab members got together to collaborate on potentially publishable materials during our organized lab retreat/workshop! Research, lunch and fun!"><div class="nw-text">All of our lab members got together to collaborate on potentially publishable materials during our organized lab retreat/workshop! Research, lunch and fun!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="HM Abdul and Ani Chitransh represented the Data Diversity Lab by presenting their capstone research in this semester&#39;s iShowcase event!"><div class="nw-text">HM Abdul and Ani Chitransh represented the Data Diversity Lab by presenting their capstone research in this semester's iShowcase event!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="PhD candidate Jhan C.Salazar flies from St. Louis to visit the lab for a week of collaboration! We welcome you back Jhan!"><div class="nw-text">PhD candidate Jhan C.Salazar flies from St. Louis to visit the lab for a week of collaboration! We welcome you back Jhan!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Our first postdoc has joined the lab, we welcome Kiran Basava!"><div class="nw-text">Our first postdoc has joined the lab, we welcome Kiran Basava!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Danielle defended her PhD dissertation and passed with flying colors! Congratulations Danielle!"><div class="nw-text">Danielle defended her PhD dissertation and passed with flying colors! Congratulations Danielle!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Our application to the Vertically Integrated Projects program was accepted and funded with a $3500 seed grant!"><div class="nw-text">Our application to the Vertically Integrated Projects program was accepted and funded with a $3500 seed grant!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="We have a new lab website!!!"><div class="nw-text">We have a new lab website!!!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Shih-Hsuan took professional headshot photos for the whole lab this semester. Thank you Shih-Hsuan."><div class="nw-text">Shih-Hsuan took professional headshot photos for the whole lab this semester. Thank you Shih-Hsuan.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="A research paper from the lab has been shortlisted for the 2023 Robert May Prize. The prize is awarded each year for the best paper in the journal Methods in Ecology and Evolution. Blog post: https://methodsblog.com/2024/03/20/early-career-research-increasing-access-reproducibility-and-transparency-in-phylogenetic-analyses-with-cristian-roman-palacioshttps-besjournals-onlinelibrary-wiley-com-doi-full-10-1111-2041-210x-1/ ."><div class="nw-text">A research paper from the lab has been shortlisted for the 2023 Robert May Prize. The prize is awarded each year for the best paper in the journal Methods in Ecology and Evolution. Blog post: <a href="https://methodsblog.com/2024/03/20/early-career-research-increasing-access-reproducibility-and-transparency-in-phylogenetic-analyses-with-cristian-roman-palacioshttps-besjournals-onlinelibrary-wiley-com-doi-full-10-1111-2041-210x-1/">https://methodsblog.com/2024/03/20/early-career-research-increasing-access-reproducibility-and-transparency-in-phylogenetic-analyses-with-cristian-roman-palacioshttps-besjournals-onlinelibrary-wiley-com-doi-full-10-1111-2041-210x-1/</a>.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="The lab has applied to the Vertically Integrated Projects (VIP) initiative and will aim to form a team of undergrads to introduce to research in Fall 2024"><div class="nw-text">The lab has applied to the Vertically Integrated Projects (VIP) initiative and will aim to form a team of undergrads to introduce to research  in Fall 2024</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Our lab space has become fully functional, we welcome all our lab members on campus to use our facilities as much as possible."><div class="nw-text">Our lab space has become fully functional, we welcome all our lab members on campus to use our facilities as much as possible.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="A lab retreat is planned during the semester, will be discussing research and future work plans."><div class="nw-text">A lab retreat is planned during the semester, will be discussing research and future work plans.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="We welcome our new lab members for the spring semester: Graduate students: Abdul HM Fattah, Shih-Hsuan Lo, Jiayue He, Ani Chitransh &amp; Tom Olla . Research Data Support Specialist: Tanisha Lohchab."><div class="nw-text"><p>We welcome our new lab members for the spring semester:</p>
 <ul>
 <li>Graduate students: Abdul HM Fattah, Shih-Hsuan Lo, Jiayue He, Ani Chitransh &amp; Tom Olla .</li>
 <li>Research Data Support Specialist: Tanisha Lohchab.</li>
-</ul>
-</li>
-</ul>
+</ul></div></li>
+                        </ul><button type="button" class="nw-more" data-more="9">Show 9 more</button>
+                    </div>
+                </div>
+            </section>
+            <section class="nw-year" data-year="2023" hidden>
+                <h2 class="nw-year-title">2023<span>26 updates</span></h2>
+                <div class="nw-grid">
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Fall<span class="nw-visually-hidden"> 2023</span></h3>
+                            <span class="nw-n">15</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Our lab members Ethan Davis and Yi Chien successfully graduated from UA. We wish you the best of luck in your future endeavors and don’t forget to keep in touch!"><div class="nw-text">Our lab members Ethan Davis and Yi Chien successfully graduated from UA. We wish you the best of luck in your future endeavors and don’t forget to keep in touch!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Daniela submitted her application to the NSF PRFB grant! Crossing fingers for you Daniela!"><div class="nw-text">Daniela submitted her application to the NSF PRFB grant! Crossing fingers for you Daniela!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="The lab met at Churrasco de Brasil in Tucson for a semester dinner!"><div class="nw-text">The lab met at Churrasco de Brasil in Tucson for a semester dinner!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="The Data Diversity Lab will be represented by Danielle Van Boxel at this year&#39;s iSchool’s iShowcase presentation conference!"><div class="nw-text">The Data Diversity Lab will be represented by Danielle Van Boxel at this year's iSchool’s iShowcase presentation conference!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Cristian attended the World Climate Research Programme Open Science conference in Rwanda, Africa!"><div class="nw-text">Cristian attended the World Climate Research Programme Open Science conference in Rwanda, Africa!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Yi Chien attended the Grace Hopper Celebration 2023 conference."><div class="nw-text">Yi Chien attended the Grace Hopper Celebration 2023 conference.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Professional headshot photos for lab members are planned!"><div class="nw-text">Professional headshot photos for lab members are planned!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="A job ad has been placed for a GitHub Pages website developer!"><div class="nw-text">A job ad has been placed for a GitHub Pages website developer!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Cristian attended INECOL conference in Mexico."><div class="nw-text">Cristian attended INECOL conference in Mexico.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Provost Investment Fund grant application was submitted for potential funding."><div class="nw-text">Provost Investment Fund grant application was submitted for potential funding.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Daniela successfully defended her PhD thesis! Congrats Daniela!"><div class="nw-text">Daniela successfully defended her PhD thesis! Congrats Daniela!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Daniela Valladolid-Garnica has been hired as a research data support specialist II!"><div class="nw-text">Daniela Valladolid-Garnica has been hired as a research data support specialist II!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Yi Chien Lee has been hired as a Graduate Research Assistant!"><div class="nw-text">Yi Chien Lee has been hired as a Graduate Research Assistant!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="We have a lab space now! Complete remodeling and furnishing will be finished by the end of year!"><div class="nw-text">We have a lab space now! Complete remodeling and furnishing will be finished by the end of year!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Hector Garcia-Verdugo has been hired as the lab’s manager!"><div class="nw-text">Hector Garcia-Verdugo has been hired as the lab’s manager!</div></li>
+                        </ul><button type="button" class="nw-more" data-more="10">Show 10 more</button>
+                    </div>
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Summer<span class="nw-visually-hidden"> 2023</span></h3>
+                            <span class="nw-n">3</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="A ML/Biology booklet was created for use in machine learning"><div class="nw-text">A ML/Biology booklet was created for use in machine learning</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Jhan C. Salazar has been hired as a research data support specialist II!"><div class="nw-text">Jhan C. Salazar has been hired as a research data support specialist II!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Darwood Martin and Katie Stringham joined the lab to work on a machine learning project relating local extinctions to climate change."><div class="nw-text">Darwood Martin and Katie Stringham joined the lab to work on a machine learning project relating local extinctions to climate change.</div></li>
+                        </ul>
+                    </div>
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Spring<span class="nw-visually-hidden"> 2023</span></h3>
+                            <span class="nw-n">8</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Cristian accepted a Tenure Track faculty position at the School of Information!"><div class="nw-text">Cristian accepted a Tenure Track faculty position at the School of Information!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Seed grant funded: Mackenzie Waller and I received ~20k from CAPLA (College of Architecture, Planning and Landscape Architecture) at UA towards working on open access software for formal planning. The app is still under development and can be foung here."><div class="nw-text">Seed grant funded: Mackenzie Waller and I received ~20k from CAPLA (College of Architecture, Planning and Landscape Architecture) at UA towards working on open access software for formal planning. The app is still under development and can be foung here.</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Seed grant funded: Chris Lim and Cristian received ~50k for conducting research on the impacts of power outages on human health in the US."><div class="nw-text">Seed grant funded: Chris Lim and Cristian received ~50k for conducting research on the impacts of power outages on human health in the US.</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="We’re hiring our first staff member for Fall 2023/Spring 2024!"><div class="nw-text">We’re hiring our first staff member for Fall 2023/Spring 2024!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Danielle van Boxel, PhD candidate at the Applied Math department and who I co-advice, passed her COMPS and is moving forward with BARN/BARM!"><div class="nw-text">Danielle van Boxel, PhD candidate at the Applied Math department and who I co-advice, passed her COMPS and is moving forward with BARN/BARM!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Lia Ossana, PhD at the School of Natural Resources, passed her COMPS!"><div class="nw-text">Lia Ossana, PhD at the School of Natural Resources, passed her COMPS!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Reza Ehsani defended at the end of the semester, obtained his Ms in Data Science at the iSchool, and moved to San Francisco to start a Data Science position at Zipline."><div class="nw-text">Reza Ehsani defended at the end of the semester, obtained his Ms in Data Science at the iSchool, and moved to San Francisco to start a Data Science position at Zipline.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Laura Falk (got married yay!! and changed her last name) completed her MsC in Data Science at the iSchool and presented at the Santa Cruz River Research Days."><div class="nw-text">Laura Falk (got married yay!! and changed her last name) completed her MsC in Data Science at the iSchool and presented at the Santa Cruz River Research Days.</div></li>
+                        </ul><button type="button" class="nw-more" data-more="3">Show 3 more</button>
+                    </div>
+                </div>
+            </section>
+            <section class="nw-year" data-year="2022" hidden>
+                <h2 class="nw-year-title">2022<span>12 updates</span></h2>
+                <div class="nw-grid">
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Fall<span class="nw-visually-hidden"> 2022</span></h3>
+                            <span class="nw-n">8</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Kyle Clements joined the lab to collect data on census track-related datasets across the globe."><div class="nw-text">Kyle Clements joined the lab to collect data on census track-related datasets across the globe.</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Salena Ashton has been working as a Data Science fellow at the Data Science institute – generating strategies to increase access to workshops and other DS-related events at the University."><div class="nw-text">Salena Ashton has been working as a Data Science fellow at the Data Science institute – generating strategies to increase access to workshops and other DS-related events at the University.</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Laura Palacios has been working in my lab, also co-advised by Maliaca G Oxnam at the Data Science institute (UArizona) on a project implementing machine learning models to understand E. coli levels in the Santa Cruz river."><div class="nw-text">Laura Palacios has been working in my lab, also co-advised by Maliaca G Oxnam at the Data Science institute (UArizona) on a project implementing machine learning models to understand E. coli levels in the Santa Cruz river.</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Eastern Kang Sim completed their capstone project on a reproducible pipeline for conducting social sciences research (co-adviced by Dr. Javier Osorio at the School of Government and Public Policy)."><div class="nw-text">Eastern Kang Sim completed their capstone project on a reproducible pipeline for conducting social sciences research (co-adviced by Dr. Javier Osorio at the School of Government and Public Policy).</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Kyle Arechiga has joined the lab to work on unsupervised learning tasks."><div class="nw-text">Kyle Arechiga has joined the lab to work on unsupervised learning tasks.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Danielle Van Boxel officially joined the lab to work on BARN."><div class="nw-text">Danielle Van Boxel officially joined the lab to work on BARN.</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Wonkyun Yim was hired as staff researcher in my lab!"><div class="nw-text">Wonkyun Yim was hired as staff researcher in my lab!</div></li>
+                            <li class="nw-item is-extra" tabindex="0" aria-expanded="false" data-text="Our paper with Quan Gan was submitted to G-cubed!"><div class="nw-text">Our paper with Quan Gan was submitted to G-cubed!</div></li>
+                        </ul><button type="button" class="nw-more" data-more="3">Show 3 more</button>
+                    </div>
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Summer<span class="nw-visually-hidden"> 2022</span></h3>
+                            <span class="nw-n">2</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Expressed interest for the Build and Broaden program at NSF: https://beta.nsf.gov/events/build-broaden-program-office-hours"><div class="nw-text">Expressed interest for the Build and Broaden program at NSF: <a href="https://beta.nsf.gov/events/build-broaden-program-office-hours">https://beta.nsf.gov/events/build-broaden-program-office-hours</a></div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Cristian taught a python intro workshop along with the Youth Education and Empowerment in STEM group at UCLA."><div class="nw-text">Cristian taught a python intro workshop along with the Youth Education and Empowerment in STEM group at UCLA.</div></li>
+                        </ul>
+                    </div>
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Spring<span class="nw-visually-hidden"> 2022</span></h3>
+                            <span class="nw-n">2</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Wonkyun Yim will start his internship in my lab!"><div class="nw-text">Wonkyun Yim will start his internship in my lab!</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="Quan Gan will start his internship in my lab!"><div class="nw-text">Quan Gan will start his internship in my lab!</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="nw-year" data-year="2021" hidden>
+                <h2 class="nw-year-title">2021<span>4 updates</span></h2>
+                <div class="nw-grid">
+                    <div class="nw-card">
+                        <div class="nw-card-head">
+                            <h3 class="nw-season">Fall<span class="nw-visually-hidden"> 2021</span></h3>
+                            <span class="nw-n">4</span>
+                        </div>
+                        <ul class="nw-list">
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="I will give a lecture at San Carlos Apache College"><div class="nw-text">I will give a lecture at San Carlos Apache College</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="I will be leading Spanish sessions in GIS for community Health (UCLA; CDLS)"><div class="nw-text">I will be leading Spanish sessions in GIS for community Health (UCLA; CDLS)</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="I will give a lecture at Dr. Mike Barker’s Bioinformatics course"><div class="nw-text">I will give a lecture at Dr. Mike Barker’s Bioinformatics course</div></li>
+                            <li class="nw-item" tabindex="0" aria-expanded="false" data-text="I will be teaching Machine Learning and Data Mining at The University of Arizona (iSchool)."><div class="nw-text">I will be teaching Machine Learning and Data Mining at The University of Arizona (iSchool).</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><h3 class="cs-title">2023</h3>
-                <div id="section2023" class="cs-card-group "><div class="cs-item fall">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Fall</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>Our lab members Ethan Davis and Yi Chien successfully graduated from UA. We wish you the best of luck in your future endeavors and don’t forget to keep in touch!</li>
-<li>Daniela submitted her application to the NSF PRFB grant! Crossing fingers for you Daniela!</li>
-<li>The lab met at Churrasco de Brasil in Tucson for a semester dinner!</li>
-<li>The Data Diversity Lab will be represented by Danielle Van Boxel at this year's iSchool’s iShowcase presentation conference!</li>
-<li>Cristian attended the World Climate Research Programme Open Science conference in Rwanda, Africa!</li>
-<li>Yi Chien attended the Grace Hopper Celebration 2023 conference.</li>
-<li>Professional headshot photos for lab members are planned!</li>
-<li>A job ad has been placed for a GitHub Pages website developer!</li>
-<li>Cristian attended INECOL conference in Mexico.</li>
-<li>Provost Investment Fund grant application was submitted for potential funding.</li>
-<li>Daniela successfully defended her PhD thesis! Congrats Daniela!</li>
-<li>Daniela Valladolid-Garnica has been hired as a research data support specialist II!</li>
-<li>Yi Chien Lee has been hired as a Graduate Research Assistant!</li>
-<li>We have a lab space now! Complete remodeling and furnishing will be finished by the end of year!</li>
-<li>Hector Garcia-Verdugo has been hired as the lab’s manager!</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="cs-item summer">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Summer</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>A ML/Biology booklet was created for use in machine learning</li>
-<li>Jhan C. Salazar has been hired as a research data support specialist II!</li>
-<li>Darwood Martin and Katie Stringham joined the lab to work on a machine learning project relating local extinctions to climate change.</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="cs-item spring">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Spring</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>Cristian accepted a Tenure Track faculty position at the School of Information!</li>
-<li>Seed grant funded: Mackenzie Waller and I received ~20k from CAPLA (College of Architecture, Planning and Landscape Architecture) at UA towards working on open access software for formal planning. The app is still under development and can be foung here.</li>
-<li>Seed grant funded: Chris Lim and Cristian received ~50k for conducting research on the impacts of power outages on human health in the US.</li>
-<li>We’re hiring our first staff member for Fall 2023/Spring 2024!</li>
-<li>Danielle van Boxel, PhD candidate at the Applied Math department and who I co-advice, passed her COMPS and is moving forward with BARN/BARM!</li>
-<li>Lia Ossana, PhD at the School of Natural Resources, passed her COMPS!</li>
-<li>Reza Ehsani defended at the end of the semester, obtained his Ms in Data Science at the iSchool, and moved to San Francisco to start a Data Science position at Zipline.</li>
-<li>Laura Falk (got married yay!! and changed her last name) completed her MsC in Data Science at the iSchool and presented at the Santa Cruz River Research Days.</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><h3 class="cs-title">2022</h3>
-                <div id="section2022" class="cs-card-group "><div class="cs-item fall">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Fall</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>Kyle Clements joined the lab to collect data on census track-related datasets across the globe.</li>
-<li>Salena Ashton has been working as a Data Science fellow at the Data Science institute – generating strategies to increase access to workshops and other DS-related events at the University.</li>
-<li>Laura Palacios has been working in my lab, also co-advised by Maliaca G Oxnam at the Data Science institute (UArizona) on a project implementing machine learning models to understand E. coli levels in the Santa Cruz river.</li>
-<li>Eastern Kang Sim completed their capstone project on a reproducible pipeline for conducting social sciences research (co-adviced by Dr. Javier Osorio at the School of Government and Public Policy).</li>
-<li>Kyle Arechiga has joined the lab to work on unsupervised learning tasks.</li>
-<li>Danielle Van Boxel officially joined the lab to work on BARN.</li>
-<li>Wonkyun Yim was hired as staff researcher in my lab!</li>
-<li>Our paper with Quan Gan was submitted to G-cubed!</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="cs-item summer">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Summer</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>Expressed interest for the Build and Broaden program at NSF: https://beta.nsf.gov/events/build-broaden-program-office-hours</li>
-<li>Cristian taught a python intro workshop along with the Youth Education and Empowerment in STEM group at UCLA.</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><div class="cs-item spring">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Spring</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-down.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>Wonkyun Yim will start his internship in my lab!</li>
-<li>Quan Gan will start his internship in my lab!</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div><h3 class="cs-title">2021</h3>
-                <div id="section2021" class="cs-card-group "><div class="cs-item fall">
-                                <div class="cs-flex-group">
-                                    <div class="cs-dropdown-show">
-                                        <div>
-                                            <h4 class="cs-title">Fall</h4>
-                                        </div>
-                                        <div class="cs-dropdown-icon">
-                                            <img src="../assets/icons/chevron-up.svg">
-                                        </div>
-                                    </div>
-                                    <div class="cs-dropdown">
-                                        <div class="cs-dropdown-content">
-                                            <ul>
-<li>I will give a lecture at San Carlos Apache College</li>
-<li>I will be leading Spanish sessions in GIS for community Health (UCLA; CDLS)</li>
-<li>I will give a lecture at Dr. Mike Barker’s Bioinformatics course</li>
-<li>I will be teaching Machine Learning and Data Mining at The University of Arizona (iSchool).</li>
-</ul>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div></div></div>
+        <div class="nw-empty" id="nw-empty" hidden>
+            <p>No updates match that search.</p>
+            <button type="button" class="nw-btn" id="nw-reset">Clear search</button>
         </div>
     </div>
 </section>
-
 </main>
         <!-- ============================================ -->
 <!--                   Footer                     -->
@@ -812,11 +615,9 @@
         <script defer src="/assets/js/nav.js"></script>
 
         
-            <script defer src="/assets//js/scrollTo.js"></script>
+            <script defer src="/assets/js/news-page.js"></script>
         
 
-        
-            <script defer src="/assets//js/dropdownCards.js"></script>
         
     </body>
 </html>
