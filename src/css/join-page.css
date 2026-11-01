@@ -1,0 +1,75 @@
+/* Join us page. Colors come from root.css and theme.css. */
+
+.jn {
+    --jn-ink: var(--headerColor, #2b3a32);
+    --jn-body: var(--bodyTextColor, #3d4d44);
+    --jn-line: var(--lineColor, #c2d6cc);
+    --jn-green: var(--secondaryDark, #4a7c65);
+    --jn-mute: #5a6d62;
+    --jn-shadow: 0 2px 16px rgba(43, 58, 50, 0.08);
+    padding: clamp(7rem, 12vw, 9rem) 0 4rem;
+    color: var(--jn-body);
+}
+.jn-wrap { width: 100%; max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; box-sizing: border-box; }
+
+/* Header, centered like the rest of the site */
+.jn-head { text-align: center; }
+.jn-h1 { margin: 0 0 0.8rem; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.15; color: var(--jn-ink); }
+.jn-sub { margin: 0 auto; max-width: 40rem; font-size: 1.05rem; line-height: 1.6; }
+
+/* Photos */
+.jn-photos { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 0.9rem; align-items: center; margin-top: 2rem; }
+.jn-photo { margin: 0; }
+.jn-photo img { display: block; width: 100%; height: clamp(9rem, 20vw, 15rem); object-fit: cover; border-radius: 16px; }
+.jn-photo:nth-child(2) img { height: clamp(11rem, 27vw, 20rem); }
+.jn-n1 { grid-template-columns: minmax(0, 40rem); justify-content: center; }
+.jn-n2 { grid-template-columns: 1fr 1fr; }
+.jn-n2 .jn-photo:nth-child(2) img { height: clamp(9rem, 20vw, 15rem); }
+
+.jn-h2 { margin: 3rem 0 0.3rem; text-align: center; font-size: 1.9rem; color: var(--jn-ink); }
+.jn-hint { margin: 0 0 1.3rem; text-align: center; font-size: 0.95rem; color: var(--jn-mute); }
+
+/* Paths */
+.jn-paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
+.jn-card { padding: 1.2rem 1.4rem; background: #fff; border-top: 4px solid #e0a82e; border-radius: 14px; box-shadow: var(--jn-shadow); }
+.jn-name { margin: 0 0 0.4rem; font-size: 1.3rem; color: var(--jn-ink); }
+.jn-text { margin: 0 0 0.8rem; max-width: none; font-size: 0.97rem; line-height: 1.5; }
+.jn-chips { margin-bottom: 0.4rem; }
+.jn-chips i { display: inline-block; margin: 0 0.4rem 0.4rem 0; padding: 0.2rem 0.7rem; font-size: 0.8rem; font-style: normal; font-weight: 700; color: #2f6b4d; background: #e0f1e8; border-radius: 999px; }
+.jn-link { font-size: 0.95rem; font-weight: 700; color: var(--jn-green); text-decoration: none; }
+.jn-link:hover { text-decoration: underline; }
+
+/* Opportunities */
+.jn-jobs { display: grid; gap: 1rem; margin-top: 1.2rem; }
+.jn-job { padding: 1.2rem 1.4rem; background: #fff; border-left: 4px solid #e0a82e; border-radius: 14px; box-shadow: var(--jn-shadow); }
+.jn-meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; margin: 0 0 0.6rem; max-width: none; font-size: 0.9rem; color: var(--jn-mute); }
+.jn-by { font-weight: 700; color: #2f6b4d; }
+.jn-details summary, .jn-item summary { cursor: pointer; font-weight: 700; color: var(--jn-green); }
+.jn-body { padding-top: 0.6rem; font-size: 0.95rem; line-height: 1.55; }
+.jn-body p { max-width: 46rem; }
+.jn-body a { color: var(--jn-green); font-weight: 700; }
+.jn-none { margin-top: 1.2rem; padding: 1.6rem 1rem; text-align: center; background: #e7f1ec; border-radius: 16px; }
+.jn-none p { margin: 0 0 1rem; max-width: none; font-size: 1.05rem; }
+.jn-btn { display: inline-block; padding: 0.7rem 1.5rem; font-size: 0.95rem; font-weight: 700; color: #fff; text-decoration: none; background: var(--jn-ink); border-radius: 999px; }
+.jn-btn:hover { background: var(--jn-green); }
+
+.jn-past { margin-top: 1.2rem; }
+.jn-item { padding: 0.85rem 0.25rem; border-top: 1px solid #dde7e1; }
+.jn-item summary { display: flex; justify-content: space-between; gap: 1rem; list-style: none; }
+.jn-item summary::-webkit-details-marker { display: none; }
+.jn-title { color: var(--jn-ink); }
+.jn-status { font-size: 0.8rem; color: var(--jn-mute); }
+
+/* Steps */
+.jn-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; margin: 0; padding: 0; list-style: none; text-align: center; }
+.jn-num { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; font-size: 1.1rem; font-weight: 700; color: #fff; background: var(--jn-ink); border-radius: 50%; }
+.jn-steps p { margin: 0.6rem auto 0; max-width: 18rem; font-size: 0.97rem; line-height: 1.5; }
+
+@media only screen and (max-width: 48rem) {
+    .jn-paths { grid-template-columns: 1fr; }
+    .jn-steps { grid-template-columns: 1fr; }
+}
+@media only screen and (max-width: 36rem) {
+    .jn-photos { grid-template-columns: 1fr 1fr; }
+    .jn-photo:nth-child(2) { grid-column: 1 / -1; grid-row: 1; }
+}

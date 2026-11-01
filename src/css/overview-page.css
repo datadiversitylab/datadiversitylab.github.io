@@ -1,0 +1,101 @@
+/* Overview page. Colors come from root.css and theme.css. */
+
+.ov {
+    --ov-ink: var(--headerColor, #2b3a32);
+    --ov-body: var(--bodyTextColor, #3d4d44);
+    --ov-line: var(--lineColor, #c2d6cc);
+    --ov-green: var(--secondaryDark, #4a7c65);
+    --ov-mute: #5a6d62;
+    --ov-shadow: 0 2px 16px rgba(43, 58, 50, 0.08);
+    padding: clamp(7rem, 12vw, 9rem) 0 4rem;
+    color: var(--ov-body);
+}
+.ov-wrap { width: 100%; max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; box-sizing: border-box; }
+
+/* Header, centered like the rest of the site */
+.ov-head { text-align: center; }
+.ov-h1 { margin: 0 0 0.8rem; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.15; color: var(--ov-ink); }
+.ov-sub { margin: 0 auto 1rem; max-width: 42rem; font-size: 1.05rem; line-height: 1.6; }
+.ov-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; margin-top: 1.4rem; }
+.ov-btn { display: inline-block; padding: 0.65rem 1.4rem; font-size: 0.95rem; font-weight: 700; color: var(--ov-ink); text-decoration: none; background: #fff; border: 1px solid var(--ov-line); border-radius: 999px; }
+.ov-btn:hover { border-color: var(--ov-green); }
+.ov-btn-dark { color: #fff; background: var(--ov-ink); border-color: var(--ov-ink); }
+
+/* Carousel */
+.ov-car { position: relative; height: clamp(15rem, 38vw, 26rem); margin-top: 2rem; overflow: hidden; }
+.ov-car:focus-visible { outline: 2px solid var(--ov-green); outline-offset: 2px; }
+.ov-stage { position: absolute; inset: 0; }
+.ov-slide {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    width: 46%;
+    height: 86%;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) scale(0.8);
+    transition: opacity 0.45s ease, transform 0.45s ease, left 0.45s ease, width 0.45s ease, height 0.45s ease, top 0.45s ease;
+}
+.ov-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* The first photo shows even before the script runs */
+.ov-car:not(.is-ready) .ov-slide:first-child,
+.ov-slide.is-active { top: 0; width: 56%; height: 100%; opacity: 1; z-index: 2; transform: translateX(-50%); box-shadow: 0 10px 34px rgba(43, 58, 50, 0.25); }
+.ov-slide.is-prev { left: 0; opacity: 0.55; z-index: 1; cursor: pointer; pointer-events: auto; transform: translateX(-6%) scale(1); }
+.ov-slide.is-next { left: 100%; opacity: 0.55; z-index: 1; cursor: pointer; pointer-events: auto; transform: translateX(-94%) scale(1); }
+
+.ov-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-top: -1.4rem;
+    padding: 0 0 0.25rem;
+    font-size: 1.9rem;
+    line-height: 1;
+    color: var(--ov-ink);
+    background: #fff;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 2px 12px rgba(43, 58, 50, 0.25);
+    cursor: pointer;
+}
+.ov-arrow:hover { background: #eef5f0; }
+.ov-prev { left: calc(22% - 1.4rem); }
+.ov-next { right: calc(22% - 1.4rem); }
+
+.ov-cap { margin-top: 1rem; text-align: center; }
+.ov-cap b { display: block; font-size: 1.05rem; color: var(--ov-ink); }
+.ov-cap span { display: block; max-width: 38rem; margin: 0.25rem auto 0; font-size: 0.95rem; line-height: 1.5; color: var(--ov-mute); }
+.ov-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.9rem; }
+.ov-dots button { width: 9px; height: 9px; padding: 0; background: var(--ov-line); border: 0; border-radius: 50%; cursor: pointer; transition: width 0.3s ease; }
+.ov-dots button.is-on { width: 24px; background: var(--ov-ink); border-radius: 999px; }
+
+/* Areas */
+.ov-h2 { margin: 3rem 0 0.3rem; text-align: center; font-size: 1.9rem; color: var(--ov-ink); }
+.ov-hint { margin: 0 0 1.3rem; text-align: center; font-size: 0.95rem; color: var(--ov-mute); }
+.ov-areas { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; align-items: flex-start; }
+.ov-card { flex: 0 1 calc(33.333% - 0.7rem); box-sizing: border-box; padding: 1.1rem 1.3rem; background: #fff; border-radius: 14px; box-shadow: var(--ov-shadow); }
+.ov-name { margin: 0 0 0.4rem; font-size: 1.2rem; color: var(--ov-ink); }
+.ov-card p { margin: 0 0 0.5rem; max-width: none; font-size: 0.95rem; line-height: 1.5; }
+.ov-more { font: inherit; font-size: 0.9rem; font-weight: 700; color: var(--ov-green); background: none; border: 0; padding: 0; cursor: pointer; }
+.ov-more:hover { text-decoration: underline; }
+
+@media only screen and (max-width: 56rem) {
+    .ov-card { flex-basis: calc(50% - 0.5rem); }
+}
+@media only screen and (max-width: 36rem) {
+    .ov-card { flex-basis: 100%; }
+    .ov-car:not(.is-ready) .ov-slide:first-child, .ov-slide.is-active { width: 84%; }
+    .ov-slide.is-prev { transform: translateX(-62%) scale(1); }
+    .ov-slide.is-next { transform: translateX(-38%) scale(1); }
+    .ov-prev { left: 0.4rem; }
+    .ov-next { right: 0.4rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ov-slide, .ov-dots button { transition: none; }
+}

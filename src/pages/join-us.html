@@ -1,132 +1,114 @@
 ---
-layout: 'base.html' 
+layout: 'base.html'
 description: "Join the Data Diversity Lab"
 metaTitle: 'Join Us'
 tagTitle: 'Join Us'
 preloadImg: ''
-preloadCSS: '/css/join-us.css'
-preloadJS: '/js/dropdownCardsAlternate.js'
+preloadCSS: '/css/join-page.css'
 permalink: 'join-us/'
 eleventyNavigation:
     key: Join us
     parent: The Lab
     order: 600
 ---
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
+{#- Text comes from Netlify > Join us page (src/_data/joinPage.json). Photos come from Netlify > Lab photos. Jobs come from Netlify > Jobs. -#}
+{%- set openJobs = [] -%}
+{%- set pastJobs = [] -%}
+{%- for job in collections.jobs | sort(attribute='data.order') -%}
+    {%- if job.data.status == 'Closed' -%}
+        {%- set _ = pastJobs.push(job) -%}
+    {%- else -%}
+        {%- set _ = openJobs.push(job) -%}
+    {%- endif -%}
+{%- endfor -%}
+{%- set mail = 'mailto:' + joinPage.email -%}
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">Join our team</h1>
-            <p class="cs-text">
-                Welcome to the data diversity lab’s join us section! We invite you to be a part of our research team, where we're striving to and are making significant contributions to various fields while fostering a culture of diversity and inclusion.
-            </p>
+<section class="jn" id="jn">
+    <div class="jn-wrap">
+
+        <header class="jn-head">
+            <h1 class="jn-h1">Join our team</h1>
+            {%- if joinPage.intro %}<p class="jn-sub">{{ joinPage.intro }}</p>{% endif %}
+        </header>
+
+        {%- if labData.join | length %}
+        <div class="jn-photos jn-n{{ labData.join | length }}">
+            {%- for p in labData.join %}
+            <figure class="jn-photo"><img src="{{ p.image }}" alt="{{ p.title }}" decoding="async"{% if not loop.first %} loading="lazy"{% endif %}></figure>
+            {%- endfor %}
         </div>
-    </div>
-</section>
-
-<div aria-hidden="true" class="line"></div>
-
-<section id="job-cards">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h3 class="cs-title">Current opportunities</h3>
-            <p class="cs-text">
-                We’re always looking for active and enthusiastic students to fill positions in the lab as research assistants (MSc or PhD), postdoctoral researchers, or interns. Please reach out to us if you have any interest in joining the lab.
-            </p>
-        </div>
-        {%- set openJobs = [] -%}
-        {%- set pastJobs = [] -%}
-        {%- for job in collections.jobs | sort(attribute='data.order') -%}
-            {%- if job.data.status == 'Closed' -%}
-                {%- set _ = pastJobs.push(job) -%}
-            {%- else -%}
-                {%- set _ = openJobs.push(job) -%}
-            {%- endif -%}
-        {%- endfor -%}
-
-        {%- if openJobs | length > 0 %}
-        <div id="dropdown-cards" class="cs-card-group">
-            {%- for job in openJobs -%}
-                <div class="cs-item">
-                    <div class="cs-flex-group">
-                        <span class="cs-name">{{ job.data.jobTitle }}</span>
-                        <span class="cs-job-title">{{ job.data.jobStartDate }}</span>
-
-                        <div class="cs-dropdown-icon">
-                            <img src="../assets/icons/plus.svg">
-                        </div>
-
-                        <span class="cs-timeline"><img src="../assets/icons/time-five.svg">Apply By: {{ job.data.jobApplyBy }}</span>
-
-                        <div class="cs-dropdown">
-                            <span class="cs-desc">{{ job.data.jobDesc | markdown | safe }}</span>
-
-                            <div aria-hidden="true" class="line line-full"></div>
-                            <div class="cs-item-social">
-                                {%- if job.data.jobPdf -%}
-                                    <a href="{{ job.data.jobPdf }}" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a>
-                                {%- endif -%}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {%- endfor -%}
-        </div>
-        {%- else %}
-        <p class="cs-text jp-none">Nothing is open right now. You can still reach out, and the openings we have offered before are listed below.</p>
         {%- endif %}
 
-        {%- if pastJobs | length > 0 %}
-        <div class="cs-content cs-past-header">
-            <h5 class="cs-title">Past opportunities</h5>
-            <p class="cs-text">
-                Positions we have previously offered, kept here for reference. These are no longer accepting applications.
-            </p>
+        {%- if joinPage.paths | length %}
+        <h2 class="jn-h2" id="paths">Where do you fit?</h2>
+        <p class="jn-hint">Pick the path that sounds like you.</p>
+        <div class="jn-paths">
+            {%- for p in joinPage.paths %}
+            {%- set link = p.buttonLink or mail %}
+            <article class="jn-card">
+                <h3 class="jn-name">{{ p.title }}</h3>
+                <p class="jn-text">{{ p.text }}</p>
+                {%- if p.chips | length %}
+                <div class="jn-chips">{% for c in p.chips %}<i>{{ c }}</i>{% endfor %}</div>
+                {%- endif %}
+                {%- if p.buttonLabel %}<a class="jn-link" href="{{ link }}"{% if link.startsWith('http') %} target="_blank" rel="noopener"{% endif %}>{{ p.buttonLabel }} &rarr;</a>{% endif %}
+            </article>
+            {%- endfor %}
         </div>
-        <div class="jp-list">
+        {%- endif %}
+
+        <h2 class="jn-h2" id="openings">Current opportunities</h2>
+        {%- if openJobs | length %}
+        <div class="jn-jobs">
+            {%- for job in openJobs %}
+            <article class="jn-job">
+                <h3 class="jn-name">{{ job.data.jobTitle }}</h3>
+                <p class="jn-meta">
+                    {%- if job.data.jobStartDate %}<span>Start: {{ job.data.jobStartDate }}</span>{% endif %}
+                    {%- if job.data.jobApplyBy %}<span class="jn-by">Apply by: {{ job.data.jobApplyBy }}</span>{% endif %}
+                </p>
+                <details class="jn-details">
+                    <summary>Read the description</summary>
+                    <div class="jn-body">
+                        {{ job.data.jobDesc | markdown | safe }}
+                        {%- if job.data.jobPdf %}<p><a href="{{ job.data.jobPdf }}" target="_blank" rel="noopener">Read the full description (PDF)</a></p>{% endif %}
+                    </div>
+                </details>
+            </article>
+            {%- endfor %}
+        </div>
+        {%- else %}
+        <div class="jn-none">
+            <p>Nothing is open right now. You can still write to us.</p>
+            <a class="jn-btn" href="{{ mail }}">Email {{ joinPage.email }}</a>
+        </div>
+        {%- endif %}
+
+        {%- if pastJobs | length %}
+        <div class="jn-past">
             {%- for job in pastJobs %}
-            <details class="jp-item">
+            <details class="jn-item">
                 <summary>
-                    <span class="jp-title">{{ job.data.jobTitle }}</span>
-                    {%- if job.data.jobStartDate %}<span class="jp-date">{{ job.data.jobStartDate }}</span>{% endif %}
-                    <span class="jp-status">Closed</span>
+                    <span class="jn-title">{{ job.data.jobTitle }}</span>
+                    <span class="jn-status">Closed</span>
                 </summary>
-                <div class="jp-body">
+                <div class="jn-body">
                     {{ job.data.jobDesc | markdown | safe }}
-                    {%- if job.data.jobPdf %}
-                    <p><a href="{{ job.data.jobPdf }}" target="_blank" rel="noopener">Read the full description (PDF)</a></p>
-                    {%- endif %}
+                    {%- if job.data.jobPdf %}<p><a href="{{ job.data.jobPdf }}" target="_blank" rel="noopener">Read the full description (PDF)</a></p>{% endif %}
                 </div>
             </details>
             {%- endfor %}
         </div>
         {%- endif %}
-                <div class="cs-content">
-            <h5 class="cs-title">Postdocs</h5>
-            <p class="cs-text">
-                There are two paths to postdoc opportunities in my lab. First, I have some funding to directly support a postdoc in my lab. Second, I can help you develop proposals for external fellowship support, such as the NSF postdoctoral research fellowships in biology (PRFB) which offers a $60,000/year stipend and $20,000/year research and training funds. I would be very excited to discuss research ideas with you for these opportunities.
-            </p>
-        </div>
-        <div class="cs-content">
-            <h5 class="cs-title">Graduate students (admitted) </h5>
-            <p class="cs-text">
-                Opportunities for graduate students (MSc candidates or PhD candidates) to take payed positions in the lab in the form of Graduate Research Assistants or TAships (Teaching Assistant) can occasionally arise. These positions can run from 10-20Hrs a week and can cover partial tuition. Funding for these positions varies, but if interested we can always initiate a conversation in regards to applying for external funding and other opportunities together. For example, US students are eligible to apply for the NSF graduate research fellowship program (GRFP) which offers 5 years of support with an annual stipend of $37,000. I strongly encourage you to apply (if you're eligible) and I can help you develop proposals! 
-            </p>
-        </div>
-           <div class="cs-content">
-            <h5 class="cs-title">Aspiring PhD students</h5>
-            <p class="cs-text">
-                Interested in starting and completing a PhD with us? The iSchool offers opportunities to fund PhD students in the form of a multi-year stipend for living expenses and full tuition costs. Once admitted, projects will be defined with the PI. For additional details please contact the Data Diversity Lab leadership or visit: https://ischool.arizona.edu/phd-information/admissions-funding to get started. 
-            </p>
-        </div>
-                <div class="cs-content">
-            <h5 class="cs-title">Undergraduate students</h5>
-            <p class="cs-text">
-                Opportunities for undergraduate students to join the lab as undergraduate research assistants ocassionally arise. These positions usually are 10Hrs a week and payed at rates of 14.50-16/hr (2024-2025 rates) depending on experience, or remunerated in the form of research credit units. Students have previously gotten a position in the lab by going through UArizona's VIP (Vertically Integrated Projects) initiative: https://uavip.arizona.edu/ . Additionally, student's who are eligible for Federal Work Study (FWS) and who are interested in our lab are encouraged to get in contact with the Data Diversity Lab's leaders for more information regarding potential opportunities.
-            </p>
-        </div>
+
+        {%- if joinPage.steps | length %}
+        <h2 class="jn-h2">How to reach out</h2>
+        <p class="jn-hint">It does not need to be long.</p>
+        <ol class="jn-steps">
+            {%- for s in joinPage.steps %}
+            <li><span class="jn-num">{{ loop.index }}</span><p>{{ s }}</p></li>
+            {%- endfor %}
+        </ol>
+        {%- endif %}
     </div>
 </section>
