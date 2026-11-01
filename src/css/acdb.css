@@ -58,3 +58,33 @@
     text-underline-offset: 2px;
   }
 }
+
+/* Phones: a slim bar with a link to the app in its own tab, and the app fills the rest of the screen */
+@media only screen and (max-width: 47.9375rem) {
+  #acdb-app-section .cs-app-frame-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  #acdb-app-section .cs-app-open {
+    flex: none;
+    padding: 0.6rem 1rem;
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.8125rem;
+    text-align: center;
+    color: var(--primaryDark);
+    background: #fff;
+    border-bottom: 1px solid var(--lineColor);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  #acdb-app-section iframe {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  #acdb-app-section .cs-app-open {
+    display: none;
+  }
+}
