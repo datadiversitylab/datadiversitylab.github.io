@@ -524,7 +524,10 @@ collections:
     fields:
       - { label: 'Year', name: 'scheduleYear', widget: 'number', value_type: 'int', min: 2023, required: true }
       - { label: 'Semester', name: 'semester', widget: 'select', options: ['Spring', 'Summer', 'Fall'], required: true }
-      - { label: 'When and where', name: 'meetingInfo', widget: 'string', required: false, hint: 'For example: Wednesday at 2:00pm, In-person & Zoom' }
+      - { label: 'Meeting day', name: 'meetingDay', widget: 'select', options: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], required: false, hint: 'Set each semester. It shows at the top of the page.' }
+      - { label: 'Meeting time', name: 'meetingTime', widget: 'string', required: false, hint: 'For example: 2:00 pm' }
+      - { label: 'Room or link', name: 'meetingPlace', widget: 'string', required: false, hint: 'For example: Harvill 320 and Zoom' }
+      - { label: 'Extra note', name: 'meetingInfo', widget: 'string', required: false, hint: 'Optional. In older semesters this holds the whole line, for example: Wednesday at 2:00pm, In-person & Zoom' }
       - label: 'Meetings'
         name: 'meetings'
         widget: 'list'
@@ -532,9 +535,9 @@ collections:
         summary: '{{fields.date}} | {{fields.activity}}'
         fields:
           - { label: 'Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
-          - { label: 'Led by', name: 'ledBy', widget: 'string', required: false }
+          - { label: 'Led by', name: 'ledBy', widget: 'string', required: false, hint: 'Use the name as on Team (first name is enough) to show the photo and link to the profile. Write All or TBD when it applies. For a week without a meeting, write No meeting.' }
           - { label: 'Activity', name: 'activity', widget: 'string' }
-          - { label: 'Type (for example Journal Club)', name: 'kind', widget: 'string', required: false }
+          - { label: 'Type', name: 'kind', widget: 'select', options: ['Lab meeting', 'Research talk', 'Journal club', 'Paper discussion', 'Introduction to the lab', 'Collaboration', 'Talk', 'Other'], required: false }
           - { label: 'Link', name: 'link', widget: 'string', required: false }
       - { label: 'Other activities', name: 'body', widget: 'markdown', required: false, hint: 'Journal club, professional development, retreats, notes. Tables and lists work here.' }
   - name: 'labManualSettings'

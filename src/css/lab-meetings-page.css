@@ -1,0 +1,106 @@
+/* Lab meetings page. Colors come from root.css and theme.css. */
+
+.lm {
+    --lm-ink: var(--headerColor, #2b3a32);
+    --lm-body: var(--bodyTextColor, #3d4d44);
+    --lm-line: var(--lineColor, #c2d6cc);
+    --lm-green: var(--secondaryDark, #4a7c65);
+    --lm-mute: #5a6d62;
+    --lm-mint: #e7f1ec;
+    --lm-amber: #e0a82e;
+    --lm-shadow: 0 2px 16px rgba(43, 58, 50, 0.08);
+    padding: clamp(7rem, 12vw, 9rem) 0 4rem;
+    color: var(--lm-body);
+}
+.lm-wrap { width: 100%; max-width: 62rem; margin: 0 auto; padding: 0 1.25rem; box-sizing: border-box; }
+.lm a { text-decoration: none; }
+.lm img { display: block; }
+.lm-sr { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.lm-head { text-align: center; }
+.lm-h1 { margin: 0 0 0.9rem; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.15; color: var(--lm-ink); }
+.lm-sub { margin: 0 auto; max-width: 40rem; font-size: 1.05rem; line-height: 1.6; }
+.lm-h2 { margin: 3rem 0 1.2rem; text-align: center; font-size: 1.9rem; color: var(--lm-ink); }
+
+/* The next meeting */
+.lm-next { margin: 2.2rem auto 0; max-width: 44rem; padding: 1.6rem 1.8rem; text-align: center; background: #fff; border-top: 4px solid var(--lm-amber); border-radius: 16px; box-shadow: var(--lm-shadow); }
+.lm-next[hidden], .lm-none[hidden], .lm-panel[hidden] { display: none; }
+.lm-next-kicker { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 0 0 0.5rem; max-width: none; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--lm-green); }
+.lm-next-when { padding: 0 0.6rem; color: #fff; background: var(--lm-ink); border-radius: 999px; }
+.lm-next-when:empty { display: none; }
+.lm-next-title { margin: 0 0 0.4rem; font-size: 1.7rem; line-height: 1.25; color: var(--lm-ink); }
+.lm-next-date { margin: 0 0 1rem; max-width: none; font-size: 1.02rem; }
+.lm-next-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.8rem 1.4rem; font-size: 0.95rem; }
+.lm-next-person a, .lm-next-person > span { display: inline-flex; align-items: center; gap: 0.6rem; font-weight: 700; color: var(--lm-ink); }
+.lm-next-person img { width: 2.5rem; height: 2.5rem; object-fit: cover; object-position: 50% 20%; border-radius: 50%; }
+.lm-next-where { color: var(--lm-mute); }
+.lm-next-link { font-weight: 700; color: var(--lm-green); }
+.lm-next-link:hover { text-decoration: underline; }
+.lm-none { margin: 2rem auto 0; text-align: center; color: var(--lm-mute); }
+
+/* How meetings run */
+.lm-agenda { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; margin: 0; padding: 0; list-style: none; }
+.lm-step { padding: 1.3rem 1.4rem; background: #fff; border-radius: 14px; box-shadow: var(--lm-shadow); }
+.lm-num { display: inline-flex; align-items: center; justify-content: center; width: 2.2rem; height: 2.2rem; margin-bottom: 0.6rem; font-weight: 700; color: #fff; background: var(--lm-ink); border-radius: 50%; }
+.lm-step-title { margin: 0 0 0.2rem; font-size: 1.2rem; color: var(--lm-ink); }
+.lm-step-time { margin: 0 0 0.7rem; max-width: none; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--lm-green); }
+.lm-step-list { margin: 0; padding-left: 1.1rem; font-size: 0.93rem; line-height: 1.5; }
+.lm-step-list li { margin-bottom: 0.4rem; }
+.lm-step-list li::marker { color: var(--lm-amber); }
+
+/* Semesters */
+.lm-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 2rem; }
+.lm-pill { padding: 0.45rem 1.1rem; font-size: 0.93rem; font-weight: 700; color: var(--lm-ink); background: #fff; border: 1px solid var(--lm-line); border-radius: 999px; }
+.lm-pill:hover { border-color: var(--lm-green); }
+.lm-pill.is-on { color: #fff; background: var(--lm-ink); border-color: var(--lm-ink); }
+.lm-panel { margin-bottom: 3rem; scroll-margin-top: 6rem; }
+.lm-panel-head { text-align: center; margin-bottom: 1.4rem; }
+.lm-h3 { margin: 0 0 0.6rem; font-size: 1.6rem; color: var(--lm-ink); }
+.lm-where { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 0; max-width: none; }
+.lm-chip { padding: 0.3rem 0.9rem; font-size: 0.92rem; font-weight: 700; color: var(--lm-ink); background: var(--lm-mint); border-radius: 999px; }
+.lm-note { width: 100%; font-size: 0.9rem; color: var(--lm-mute); }
+
+/* One row per week */
+.lm-list { display: grid; gap: 0.7rem; margin: 0; padding: 0; list-style: none; }
+.lm-row { display: grid; grid-template-columns: 4.2rem minmax(0, 1fr) minmax(0, 15.5rem); align-items: center; gap: 1.2rem; padding: 0.9rem 1.2rem; background: #fff; border-left: 4px solid transparent; border-radius: 14px; box-shadow: var(--lm-shadow); }
+.lm-row.is-past { opacity: 0.62; box-shadow: none; background: rgba(255, 255, 255, 0.6); }
+.lm-row.is-today, .lm-row.is-next { border-left-color: var(--lm-amber); }
+.lm-row.is-next, .lm-row.is-today { opacity: 1; }
+.lm-row.is-off { background: transparent; box-shadow: none; border: 1px dashed var(--lm-line); }
+.lm-date { display: flex; flex-direction: column; align-items: center; line-height: 1.1; }
+.lm-mon { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--lm-green); }
+.lm-day { font-size: 1.9rem; font-weight: 700; color: var(--lm-ink); }
+.lm-wk { font-size: 0.8rem; color: var(--lm-mute); }
+.lm-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.25rem; max-width: none; }
+.lm-meta:not(:has(.lm-kind)) { display: none; }
+.lm-kind { padding: 0.1rem 0.65rem; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #4a5750; background: #e9ece9; border-radius: 999px; }
+.lm-kind[data-kind="research-talk"] { color: #2f6b50; background: #dcefe4; }
+.lm-kind[data-kind="journal-club"] { color: #8a5d00; background: #faebc4; }
+.lm-kind[data-kind="paper-discussion"] { color: #2d5a80; background: #deeaf4; }
+.lm-kind[data-kind="introduction-to-the-lab"] { color: #5b3f80; background: #ebe2f4; }
+.lm-kind[data-kind="collaboration"] { color: #8a3b2f; background: #f6e0dc; }
+.lm-kind.is-off { color: var(--lm-mute); background: transparent; border: 1px solid var(--lm-line); }
+.lm-act { margin: 0; max-width: none; font-size: 1.04rem; font-weight: 700; line-height: 1.4; color: var(--lm-ink); overflow-wrap: anywhere; }
+.lm-row.is-off .lm-act { font-weight: 400; color: var(--lm-mute); }
+.lm-link { display: inline-block; margin-top: 0.3rem; font-size: 0.9rem; font-weight: 700; color: var(--lm-green); }
+.lm-link:hover { text-decoration: underline; }
+.lm-who { justify-self: end; }
+.lm-person { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.95rem; font-weight: 700; color: var(--lm-ink); text-align: left; }
+a.lm-person:hover { color: var(--lm-green); }
+.lm-person img { flex: none; width: 2.5rem; height: 2.5rem; object-fit: cover; object-position: 50% 20%; border-radius: 50%; }
+.lm-who.is-group .lm-person, .lm-who.is-unknown .lm-person, .lm-who.is-text .lm-person { font-weight: 400; color: var(--lm-mute); }
+.lm-empty { text-align: center; color: var(--lm-mute); }
+
+.lm-extra { margin-top: 1.6rem; padding: 1.2rem 1.4rem; background: var(--lm-mint); border-radius: 14px; font-size: 0.97rem; line-height: 1.6; }
+.lm-extra-title { margin: 0 0 0.5rem; font-size: 1.1rem; color: var(--lm-ink); }
+.lm-extra table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.lm-extra th, .lm-extra td { padding: 0.4rem 0.5rem; text-align: left; border-bottom: 1px solid var(--lm-line); }
+.lm-extra > :last-child { margin-bottom: 0; }
+
+@media only screen and (max-width: 48rem) {
+    .lm-agenda { grid-template-columns: minmax(0, 1fr); }
+    .lm-row { grid-template-columns: 3.4rem minmax(0, 1fr); gap: 0.4rem 1rem; padding: 0.8rem 1rem; }
+    .lm-who { grid-column: 2; justify-self: start; }
+    .lm-who:empty { display: none; }
+    .lm-day { font-size: 1.6rem; }
+}

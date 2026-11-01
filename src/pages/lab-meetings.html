@@ -4,8 +4,8 @@ description: "Lab meeting schedule of the Data Diversity Lab"
 metaTitle: 'Lab meetings'
 tagTitle: 'Lab meetings'
 preloadImg: ''
-preloadCSS: '/css/wiki.css'
-preloadJS: '/js/wiki.js'
+preloadCSS: '/css/lab-meetings-page.css'
+preloadJS: 'js/lab-meetings-page.js'
 permalink: 'lab-meetings/'
 eleventyNavigation:
     key: Lab meetings
@@ -14,35 +14,40 @@ eleventyNavigation:
 ---
 {%- set m = meetingsPage -%}
 {%- set schedules = (collections.meetingSchedules or []) | sort(attribute='data.scheduleKey') | reverse | list -%}
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
-<!-- Text on this page is edited in the CMS (Lab meetings page). Schedules are in Lab meeting schedules. -->
+<!-- Text on this page is edited in the CMS (Lab meetings page). Schedules, with day, time and room, are in Lab meeting schedules. -->
+<!-- The next meeting, the current semester and past or upcoming rows are worked out in /js/lab-meetings-page.js. -->
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">Lab meetings</h1>
-            <p class="cs-text">
-                Lab meeting schedule.
-            </p>
-        </div>
-    </div>
-</section>
+<div class="lm">
+    <div class="lm-wrap">
+        <header class="lm-head">
+            <h1 class="lm-h1">{{ m.title or 'Lab meetings' }}</h1>
+            <p class="lm-sub">{{ m.intro or 'The lab meets every week during the semester. The day, time and room change each semester, so check the current one below.' }}</p>
+        </header>
 
-<section id="lab-meetings">
-    <div class="cs-container">
+        <!-- Filled by the script. Stays hidden without it. -->
+        <section class="lm-next" id="lm-next" aria-live="polite" hidden>
+            <p class="lm-next-kicker"><span id="lmn-label">Next meeting</span><span id="lmn-when" class="lm-next-when"></span></p>
+            <h2 class="lm-next-title" id="lmn-title"></h2>
+            <p class="lm-next-date" id="lmn-date"></p>
+            <div class="lm-next-meta">
+                <span class="lm-next-person" id="lmn-person" hidden></span>
+                <span class="lm-next-where" id="lmn-where"></span>
+                <a class="lm-next-link" id="lmn-link" href="#" target="_blank" rel="noopener" hidden></a>
+            </div>
+        </section>
+        <p class="lm-none" id="lm-none" hidden>No upcoming meetings are scheduled yet.</p>
 
         {%- if m.agenda | length %}
-        <div class="meeting-agenda">
-            <h2>{{ m.agendaTitle }}</h2>
-            <ol class="meeting-steps">
+        <section class="lm-agenda-wrap" aria-labelledby="lm-agenda-h">
+            <h2 class="lm-h2" id="lm-agenda-h">{{ m.agendaTitle or 'How our meetings run' }}</h2>
+            <ol class="lm-agenda">
                 {%- for step in m.agenda %}
-                <li>
-                    <span class="meeting-step-title">{{ step.title }}</span>
-                    {%- if step.time %}<span class="meeting-step-time">{{ step.time }}</span>{% endif %}
+                <li class="lm-step">
+                    <span class="lm-num">{{ loop.index }}</span>
+                    <h3 class="lm-step-title">{{ step.title }}</h3>
+                    {%- if step.time %}<p class="lm-step-time">{{ step.time }}</p>{% endif %}
                     {%- if step.bullets | length %}
-                    <ul>
+                    <ul class="lm-step-list">
                         {%- for b in step.bullets %}
                         <li>{{ b }}</li>
                         {%- endfor %}
@@ -51,52 +56,84 @@ eleventyNavigation:
                 </li>
                 {%- endfor %}
             </ol>
-        </div>
+        </section>
         {%- endif %}
 
-        <!-- Schedule: the year and semester picker is in /js/wiki.js -->
-        <div class="wiki-schedule" data-schedule>
+        <section class="lm-schedule" aria-labelledby="lm-sched-h">
+            <h2 class="lm-h2" id="lm-sched-h">{{ m.scheduleTitle or 'Schedule' }}</h2>
             {%- if schedules | length %}
-            <h2 class="schedule-heading">{{ m.scheduleTitle or 'Schedule' }}</h2>
-            <div class="schedule-controls">
-                <label>Year
-                    <select data-year-select></select>
-                </label>
-                <label>Semester
-                    <select data-semester-select></select>
-                </label>
-            </div>
+            <!-- Without the script these are plain links to each semester -->
+            <nav class="lm-pills" aria-label="Semesters">
+                {%- for s in schedules %}
+                <a class="lm-pill" href="#{{ s.data.slug }}" data-sem="{{ s.data.slug }}">{{ s.data.label }}</a>
+                {%- endfor %}
+            </nav>
+
             {%- for s in schedules %}
-            <section class="schedule-panel" id="{{ s.data.scheduleYear }}-{{ s.data.semester | lower }}" data-year="{{ s.data.scheduleYear }}" data-semester="{{ s.data.semester }}" data-key="{{ s.data.scheduleKey }}">
-                <h3>{{ s.data.semester }} {{ s.data.scheduleYear }}</h3>
-                {%- if s.data.meetingInfo %}
-                <p class="schedule-info">{{ s.data.meetingInfo }}</p>
-                {%- endif %}
+            {%- set info = s.data.info %}
+            <section class="lm-panel" id="{{ s.data.slug }}" data-sem="{{ s.data.slug }}" data-first="{{ s.data.first }}" data-last="{{ s.data.last }}" data-when="{{ info.when }}" data-place="{{ info.place }}">
+                <div class="lm-panel-head">
+                    <h3 class="lm-h3">{{ s.data.label }}</h3>
+                    {%- if info.when or info.place or info.note %}
+                    <p class="lm-where">
+                        {%- if info.when %}<span class="lm-chip">{{ info.when }}</span>{% endif %}
+                        {%- if info.place %}<span class="lm-chip">{{ info.place }}</span>{% endif %}
+                        {%- if info.note %}<span class="lm-note">{{ info.note }}</span>{% endif %}
+                    </p>
+                    {%- endif %}
+                </div>
+
                 {%- if s.data.rows | length %}
-                <table class="schedule-table">
-                    <thead>
-                        <tr><th>Date</th><th>Led by</th><th>Activity</th></tr>
-                    </thead>
-                    <tbody>
-                        {%- for row in s.data.rows %}
-                        <tr data-date="{{ row.date }}">
-                            <td data-label="Date"><time datetime="{{ row.date }}">{{ row.date }}</time></td>
-                            <td data-label="Led by">{{ row.ledBy }}</td>
-                            <td data-label="Activity">
-                                {%- if row.kind %}<span class="schedule-kind">{{ row.kind }}</span>{% endif -%}
-                                {%- if row.link %}<a href="{{ row.link }}" target="_blank" rel="noopener">{{ row.activity }}</a>{% else %}{{ row.activity }}{% endif -%}
-                            </td>
-                        </tr>
-                        {%- endfor %}
-                    </tbody>
-                </table>
+                <ul class="lm-list">
+                    {%- for r in s.data.rows %}
+                    <li class="lm-row{{ ' is-off' if r.off }}" data-date="{{ r.iso }}" data-off="{{ '1' if r.off }}"
+                        data-title="{{ r.activity }}" data-long="{{ r.long }}" data-who="{{ r.who.text }}"
+                        data-img="{{ r.person.image if r.person }}" data-url="{{ r.person.url if r.person }}"
+                        data-link="{{ r.link }}" data-linklabel="{{ r.linkLabel }}">
+                        <div class="lm-date" aria-hidden="true">
+                            <span class="lm-mon">{{ r.month }}</span>
+                            <span class="lm-day">{{ r.dayNum }}</span>
+                            <span class="lm-wk">{{ r.weekday }}</span>
+                        </div>
+                        <div class="lm-main">
+                            <p class="lm-meta">
+                                <time datetime="{{ r.iso }}" class="lm-sr">{{ r.long }}</time>
+                                {%- if r.off %}<span class="lm-kind is-off">No meeting</span>{% endif %}
+                                {%- if r.kind and not r.off %}<span class="lm-kind" data-kind="{{ r.kindSlug }}">{{ r.kind }}</span>{% endif %}
+                            </p>
+                            <p class="lm-act">{{ r.activity }}</p>
+                            {%- if r.link %}
+                            <a class="lm-link" href="{{ r.link }}" target="_blank" rel="noopener">{{ r.linkLabel }} &rarr;</a>
+                            {%- endif %}
+                        </div>
+                        <div class="lm-who{{ ' is-' + r.who.type if r.who.type != 'none' }}">
+                            {%- if r.who.type == 'person' %}
+                            <a class="lm-person" href="{{ r.person.url }}">
+                                {%- if r.person.image %}<img src="{{ r.person.image }}" alt="" width="40" height="40" loading="lazy" decoding="async">{% endif %}
+                                <span>{{ r.person.name }}</span>
+                            </a>
+                            {%- elif r.who.type != 'none' %}
+                            <span class="lm-person"><span>{{ r.who.text }}</span></span>
+                            {%- endif %}
+                        </div>
+                    </li>
+                    {%- endfor %}
+                </ul>
+                {%- else %}
+                <p class="lm-empty">No meetings have been added to this semester yet.</p>
                 {%- endif %}
-                <div class="schedule-extra">{{ s.content | safe }}</div>
+
+                {%- if s.content | trim %}
+                <div class="lm-extra">
+                    <h4 class="lm-extra-title">Other activities</h4>
+                    {{ s.content | safe }}
+                </div>
+                {%- endif %}
             </section>
             {%- endfor %}
             {%- else %}
-            <p class="cs-text">No schedules have been added yet.</p>
+            <p class="lm-empty">No schedules have been added yet.</p>
             {%- endif %}
-        </div>
+        </section>
     </div>
-</section>
+</div>
