@@ -6,6 +6,7 @@
     var iframe = document.getElementById('acdb-iframe');
     var wrapper = document.getElementById('acdb-frame-wrapper');
     var fallback = document.getElementById('acdb-fallback');
+    var openLink = document.getElementById('acdb-open');
     if (!iframe || !wrapper) return;
 
     var APP = iframe.getAttribute('data-src');
@@ -19,6 +20,7 @@
         if (fromHash.get(key)) query.set(key, fromHash.get(key));
     });
     iframe.src = APP + '?' + query.toString();
+    if (openLink) { query.delete('embed'); openLink.href = APP + (query.toString() ? '?' + query.toString() : ''); query.set('embed', '1'); }
     if (fromHash.get('tab') || fromHash.get('species')) wrapper.scrollIntoView({ block: 'start' });
 
     // Events to the analytics. Umami is used when it is on the page
@@ -40,6 +42,7 @@
         if (species) p.set('species', species);
         var text = p.toString();
         history.replaceState(null, '', window.location.pathname + window.location.search + (text ? '#' + text : ''));
+        if (openLink) openLink.href = APP + (text ? '?' + text : '');
     }
 
     // Tell the app where it lives, so that copied links point here
