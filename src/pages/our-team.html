@@ -1,169 +1,101 @@
 ---
 layout: 'base.html'
-description: "Our Team at the Data Diversity Lab"
-metaTitle: 'Our Team'
-tagTitle: 'Our Team'
+description: "The people of the Data Diversity Lab, current members, alumni and honorary members."
+metaTitle: 'Our team'
+tagTitle: 'Our team'
 preloadImg: ''
-preloadCSS: '/css/our-team.css'
-preloadJS: '/js/our-team.js'
+preloadCSS: '/css/team-page.css'
+preloadJS: 'js/team-page.js'
 permalink: 'our-team/'
 eleventyNavigation:
     key: Our team
     order: 300
 ---
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
+{#- Everything below comes from src/_data/teamData.js, which reads src/team. The intro and the order of the categories come from Netlify > Team page. -#}
+{% set td = teamData %}
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">Our team</h1>
-            <p class="cs-text">
-                Below is a list of the current members affiliated to the lab. Feel free to visit their personal or academic websites for additional details on their research. Everyone is also available in case you’re interested in reaching out to them by email. 
-            </p>
-        </div>
-    </div>
-</section>
+<section class="tm" id="tm">
+    <div class="tm-wrap">
 
-<div aria-hidden="true" class="line"></div>
+        <header class="tm-head">
+            <h1 class="tm-h1">Our team</h1>
+            <p class="tm-sub">{{ td.intro or 'The people behind our papers, tools and data. Select anyone to see their work.' }}</p>
+        </header>
 
-<!-- ============================================ -->
-<!--                The Team                      -->
-<!-- ============================================ -->
-
-{%- set tags = ["Current", "Honorary", "Former"] -%}
-{# Use the processedTeams collection #}
-
-<section id="meet-team-547">
-    <div class="cs-container">
-        <div class="cs-content cs-sidebar">
-            <h6 class="cs-title">Member types</h6>
-            <div aria-hidden="true" class="line line-full"></div>
-            <div class="cs-filter-wrapper cs-text">
-                <div data-filter="All" class="active">All ({{ collections.processedTeams["team"] }})</div>
-                {%- set filterOrder = ["PI", "Postdoc", "PhD student", "Undergraduate student", "Staff", "MSc capstone student", "VIP student", "Intern", "MS advising team", "Honorary"] -%}
-                {%- for keyword in filterOrder -%}
-                    {%- if collections.processedTeams[keyword] -%}
-                        <div data-filter="{{ keyword }}">{{ keyword }} ({{ collections.processedTeams[keyword] }})</div>
-                    {%- endif -%}
-                {%- endfor -%}
+        <div class="tm-bar">
+            <div class="tm-pills" id="tm-pills" role="group" aria-label="Show">
+                <button type="button" class="tm-pill is-on" data-show="" aria-pressed="true">Everyone ({{ td.counts.all }})</button>
+                {%- if td.counts.current %}<button type="button" class="tm-pill" data-show="current" aria-pressed="false">Current ({{ td.counts.current }})</button>{% endif %}
+                {%- if td.counts.honorary %}<button type="button" class="tm-pill" data-show="honorary" aria-pressed="false">Honorary ({{ td.counts.honorary }})</button>{% endif %}
+                {%- if td.counts.alumni %}<button type="button" class="tm-pill" data-show="alumni" aria-pressed="false">Alumni ({{ td.counts.alumni }})</button>{% endif %}
             </div>
-            <div class="cs-filter-button-wrapper">
-                <div class="cs-filter-year-wrapper">
-                    <h6 class="cs-title">Year</h6>
-                    <div aria-hidden="true" class="line line-full"></div>
-                    <div class="cs-start-end-wrapper">
-                        <input type="text" id="startYear" placeholder="Start Year">
-                        <input type="text" id="endYear" placeholder="End Year">
-                    </div>
-                </div>
-            </div>
+            <label class="tm-search">
+                <span class="tm-visually">Search by name</span>
+                <input type="search" id="tm-q" placeholder="Search by name" autocomplete="off">
+            </label>
         </div>
-        <div class="cs-title-card-wrapper">
-            {%- set honoraryExists = false -%}
-            {%- for m in collections.team -%}{%- if "Honorary" in m.data.tags -%}{%- set honoraryExists = true -%}{%- endif -%}{%- endfor -%}
-            {%- for tag in tags -%}
-            {%- if tag != "Honorary" or honoraryExists -%}
-                <div class="team-section-header">
-                  <h2 class="cs-section-title">{{ tag }} members</h2>
-                  <div aria-hidden="true" class="line line-full"></div>
+
+        {%- for s in td.sections %}
+        <section class="tm-block" data-block="{{ s.id }}">
+            <div class="tm-sec">
+                <h2 class="tm-h2">{{ s.title }}</h2>
+                {%- if s.id == 'alumni' %}<p class="tm-note">{{ s.count }} people who worked with us, and where they went next.</p>{% endif %}
+            </div>
+
+            {%- for g in s.groups %}
+            <div class="tm-group">
+                {%- if g.name %}
+                <div class="tm-gh"><h3>{{ g.name }}</h3><span data-n>{{ g.people | length }}</span></div>
+                {%- endif %}
+
+                {%- if g.featured %}
+                {%- for p in g.people %}
+                <a class="tm-feat tm-item" href="{{ p.url }}" data-status="{{ p.status }}" data-hay="{{ p.hay }}">
+                    <span class="tm-feat-photo"><img src="{{ p.image }}" alt="{{ p.imageAlt }}" decoding="async"></span>
+                    <span class="tm-feat-body">
+                        <span class="tm-name">{{ p.name }}</span>
+                        <span class="tm-role">{{ p.title }}</span>
+                        <span class="tm-bio">{{ p.bio | truncate(260) }}</span>
+                        <span class="tm-go">View profile &rarr;</span>
+                    </span>
+                </a>
+                {%- endfor %}
+
+                {%- elif s.id == 'alumni' %}
+                <div class="tm-alumni">
+                    {%- for p in g.people %}
+                    <a class="tm-al tm-item" href="{{ p.url }}" data-status="{{ p.status }}" data-hay="{{ p.hay }}">
+                        <span class="tm-round"><img src="{{ p.image }}" alt="{{ p.imageAlt }}" loading="lazy" decoding="async"></span>
+                        <span class="tm-name">{{ p.name }}</span>
+                        <span class="tm-role">{{ p.title }}</span>
+                        {%- if p.after.text %}<span class="tm-after"><i>{% if p.status == 'honorary' %}Now at{% else %}After the lab{% endif %}</i>{{ p.after.text }}</span>{% endif %}
+                        {%- if p.term %}<span class="tm-term">{{ p.term }}</span>{% endif %}
+                        {%- if p.blurb %}<span class="tm-desc">{{ p.blurb }}</span>{% endif %}
+                    </a>
+                    {%- endfor %}
                 </div>
-                {%- if tag == "Current" -%}
-                    {%- set members = collections.team | sortMulti('order', false, 'memberDate', true) -%}
-                {%- else -%}
-                    {%- set members = collections.team | sortMulti('order', false, 'memberDate', true) -%}
-                {%- endif -%}
-                <div class="cs-card-group">
-                    {% for member in members %}
-                        {%- if tag in member.data.tags and (tag == "Honorary" or "Honorary" not in member.data.tags) -%}
-                            <div class="cs-item">
-                                <picture class="cs-picture">
-                                    <!--Mobile Image-->
-                                    <source media="(max-width: 600px)" srcset="{{ member.data.image }}">
-                                    <!--Tablet and up Image-->
-                                    <source media="(min-width: 601px)" srcset="{{ member.data.image }}">
-                                    <img loading="lazy" decoding="async" src="{{ member.data.image }}" alt="{{ member.data.imageAlt }}" width="522" height="370" aria-hidden="true">
-                                </picture>
-                                <div class="cs-flex-group">
-                                    <span class="cs-name">{{ member.data.memberName }}
-                                        {%- if member.data.memberEducation -%}
-                                            <span class="cs-education">, {{ member.data.memberEducation }}</span>
-                                        {%- endif -%}
-                                    </span>
-                                    {%- if "Former" in member.data.tags and member.data.currentPosition -%}
-                                      <span class="cs-timeline"><strong>After the lab:</strong> {{ member.data.currentPosition }}</span>
-                                    {%- endif -%}
-                                    {%- if member.data.memberDate -%}
-                                      <span class="cs-timeline"><span class="cs-start-date-year-data"><strong>Term:</strong> {{ member.data.memberDate }}</span> {%- if member.data.memberDateEnd -%} {{" - "}} <span class="cs-end-date-year-data">{{ member.data.memberDateEnd }}</span> {%- endif -%}</span>
-                                    {%- endif -%}
-                                    {%- if member.data.coAdvisor -%}
-                                      <span class="cs-timeline"><strong>Co-advisor:</strong>&nbsp;
-                                        {%- if member.data.coAdvisorLink -%}
-                                          <a href="{{ member.data.coAdvisorLink }}" target="_blank" rel="noopener noreferrer">{{ member.data.coAdvisor }}</a>
-                                        {%- else -%}
-                                          {{ member.data.coAdvisor }}
-                                        {%- endif -%}
-                                      </span>
-                                    {%- endif -%}
-                                    {%- if member.data.affiliations and member.data.affiliations | length > 0 -%}
-                                      {%- set affList = member.data.affiliations -%}
-                                      {%- set first = affList | first -%}
-                                      <span class="cs-timeline cs-affiliations" data-full-affiliations="{{ affList | dump | forceescape }}">
-                                        <strong>Also affiliated with:</strong>&nbsp;
-                                        <span class="cs-affiliations-inline">
-                                          {%- if first.url -%}
-                                            <a href="{{ first.url }}" target="_blank" rel="noopener noreferrer">{{ first.name }}</a>
-                                          {%- else -%}
-                                            {{ first.name }}
-                                          {%- endif -%}
-                                          {%- if affList | length > 1 -%}<span class="cs-affiliations-more"> +{{ (affList | length) - 1 }} more</span>{%- endif -%}
-                                        </span>
-                                      </span>
-                                    {%- endif -%}
-                                    <span class="cs-desc">
-                                        <span class="read-more-text">{{ member.data.memberBio }}</span>
-                                        <span class="read-more-btn">...read more</span>
-                                    </span>
-                                    <div aria-hidden="true" class="line line-full"></div>
-                                    <div class="cs-item-filters">
-                                        {%- for filter in member.data.tags -%}
-                                            {%- if filter != 'team' and filter != 'Current' and filter != 'Former' and filter != '' -%}
-                                                <div class="cs-filter">{{ filter }}</div>
-                                            {%- endif -%}
-                                        {%- endfor -%}
-                                    </div>
-                                    {%- if member.data.linkedin or member.data.email or member.data.link or member.data.resume or member.data.github -%}
-                                        <div aria-hidden="true" class="line line-full"></div>
-                                        <div class="cs-item-social">
-                                            {%- set socials = [{'platform': 'linkedin', 'icon': 'linkedin.svg'}, {'platform': 'email', 'icon': 'mail.svg'}, {'platform': 'link', 'icon': 'link.svg'}, {'platform': 'resume', 'icon': 'demography.svg'}, {'platform': 'github', 'icon': 'github.svg'}] -%}
-                                            {%- for social in socials -%}
-                                                {%- if member.data[social.platform] -%}
-                                                    {%- if social.platform == 'email' -%}
-                                                        {%- if ',' in member.data[social.platform] -%}
-                                                            {%- set emails = member.data[social.platform] | split(',') -%}
-                                                            {%- for email in emails -%}
-                                                                <a href="mailto:{{ email }}"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
-                                                            {%- endfor -%}
-                                                        {%- else -%}
-                                                            <a href="mailto:{{ member.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
-                                                        {%- endif -%}
-                                                    {%- elif social.platform == 'github' -%}
-                                                        <a href="https://github.com/{{ member.data[social.platform] }}" target="_blank" rel="noopener noreferrer"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
-                                                    {%- else -%}
-                                                        <a href="{{ member.data[social.platform] }}" target="_blank" rel="noopener noreferrer"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
-                                                    {%- endif -%}
-                                                {%- endif -%}
-                                            {%- endfor -%}
-                                        </div>
-                                    {%- endif -%}
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
+
+                {%- else %}
+                <div class="tm-cards">
+                    {%- for p in g.people %}
+                    <a class="tm-card tm-item" href="{{ p.url }}" data-status="{{ p.status }}" data-hay="{{ p.hay }}">
+                        <span class="tm-photo"><img src="{{ p.image }}" alt="{{ p.imageAlt }}" loading="lazy" decoding="async"></span>
+                        <span class="tm-name">{{ p.name }}</span>
+                        <span class="tm-role">{{ p.title }}</span>
+                        {%- if p.term %}<span class="tm-term">{{ p.term }}</span>{% endif %}
+                        {%- if p.blurb %}<span class="tm-desc">{{ p.blurb }}</span>{% endif %}
+                    </a>
+                    {%- endfor %}
                 </div>
-            {%- endif -%}
-            {%- endfor -%}
+                {%- endif %}
+            </div>
+            {%- endfor %}
+        </section>
+        {%- endfor %}
+
+        <div class="tm-empty" id="tm-empty" hidden>
+            <p>Nobody matches that search.</p>
+            <button type="button" class="tm-btn" id="tm-clear">Show everyone</button>
         </div>
     </div>
 </section>

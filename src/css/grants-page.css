@@ -112,3 +112,11 @@
     .gp-sum { grid-column: 1 / -1; grid-row: 3; text-align: left; }
     .gp-detail { padding-left: 0.25rem; }
 }
+
+/* Project staff on a grant */
+.gp-team { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.7rem; margin: 0 0 0.6rem; max-width: none; font-size: 0.9rem; }
+.gp-team span { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #5a6d62; }
+.gp-team a { display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 700; color: var(--gp-ink, #2b3a32); text-decoration: none; }
+.gp-team a:hover { text-decoration: underline; }
+.gp-team img { width: 1.5rem; height: 1.5rem; object-fit: cover; object-position: 50% 20%; border-radius: 50%; }
+.gp-team em { font-style: normal; }

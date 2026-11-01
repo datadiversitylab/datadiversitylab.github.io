@@ -1,0 +1,50 @@
+{
+  "intro": "The people behind our papers, tools and data. Select anyone to see their work.",
+  "categories": [
+    {
+      "tag": "PI",
+      "singular": "Principal investigator",
+      "plural": "Principal investigator"
+    },
+    {
+      "tag": "Postdoc",
+      "singular": "Postdoctoral researcher",
+      "plural": "Postdoctoral researchers"
+    },
+    {
+      "tag": "PhD student",
+      "singular": "PhD student",
+      "plural": "PhD students"
+    },
+    {
+      "tag": "MSc capstone student",
+      "singular": "MSc student",
+      "plural": "MSc students"
+    },
+    {
+      "tag": "Undergraduate student",
+      "singular": "Undergraduate student",
+      "plural": "Undergraduate students"
+    },
+    {
+      "tag": "VIP student",
+      "singular": "VIP student",
+      "plural": "VIP students"
+    },
+    {
+      "tag": "Staff",
+      "singular": "Staff",
+      "plural": "Staff"
+    },
+    {
+      "tag": "MS advising team",
+      "singular": "MS advising team member",
+      "plural": "MS advising team"
+    },
+    {
+      "tag": "Intern",
+      "singular": "Intern",
+      "plural": "Interns"
+    }
+  ]
+}

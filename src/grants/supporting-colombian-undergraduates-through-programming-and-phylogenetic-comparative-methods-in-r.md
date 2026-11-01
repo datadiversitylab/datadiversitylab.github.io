@@ -27,6 +27,10 @@ grantDesc: This project seeks to equip Colombian Biology students and
   unique opportunity to enhance the research in biology while fostering a
   generation of well- equipped scientists in the Global South who can navigate
   and shape the future of our field.
+team:
+  - Katherine Pérez
+  - Natalia Ramírez
+link: /macrodata/
 tags:
   - NatGeo
 image: /assets/images/grants/natgeo-grant-image.jpeg

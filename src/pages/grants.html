@@ -51,7 +51,7 @@ navOptions:
             <h2 class="gp-h2">Active <span class="gp-n" data-n>{{ gd.active | length }} {% if gd.active | length == 1 %}grant{% else %}grants{% endif %} running in {{ gd.year }}</span></h2>
             <div class="gp-cards">
                 {%- for g in gd.active %}
-                <article class="gp-card" data-role="{{ g.role }}" data-funder="{{ g.funder }}">
+                <article class="gp-card" id="{{ g.slug }}" data-role="{{ g.role }}" data-funder="{{ g.funder }}">
                     <div class="gp-media">
                         {%- if g.image %}<img src="{{ g.image }}" alt="{{ g.imageAlt }}" loading="lazy" decoding="async">{% endif %}
                         <span class="gp-role gp-role-{{ g.role | lower | replace('-', '') }}">{{ g.role }}</span>
@@ -61,10 +61,18 @@ navOptions:
                         <h3 class="gp-name">{{ g.name }}</h3>
                         {%- if g.amount %}<p class="gp-amount">{{ g.amount }}{% if g.subaward %} <em>(subaward {{ g.subaward }})</em>{% endif %}</p>{% endif %}
                         {%- if g.pi %}<p class="gp-people">PI {{ g.pi }}{% if g.copi | length %} &middot; Co-PI {{ g.copi | join(', ') }}{% endif %}</p>{% endif %}
+                        {%- if g.team | length %}
+                        <p class="gp-team">
+                            <span>Project staff</span>
+                            {%- for n in g.team %}{% set who = teamData.byName[n] %}
+                            {%- if who %}<a href="{{ who.url }}"><img src="{{ who.image }}" alt="" loading="lazy">{{ n }}</a>{% else %}<em>{{ n }}</em>{% endif %}
+                            {%- endfor %}
+                        </p>
+                        {%- endif %}
                         {%- if g.desc %}<p class="gp-desc">{{ g.desc }}</p>{% endif %}
                         <div class="gp-foot">
                             <span class="gp-live">Active through {{ g.end }}</span>
-                            {%- if g.link %}<a class="gp-link" href="{{ g.link }}" target="_blank" rel="noopener">Project page</a>{% endif %}
+                            {%- if g.link %}<a class="gp-link" href="{{ g.link }}"{% if g.link[0] != '/' %} target="_blank" rel="noopener"{% endif %}>Project page</a>{% endif %}
                             {%- if g.document %}<a class="gp-link" href="{{ g.document }}" target="_blank" rel="noopener">Document</a>{% endif %}
                             {%- if g.desc %}<button type="button" class="gp-more" aria-expanded="false">Read more</button>{% endif %}
                         </div>
@@ -80,7 +88,7 @@ navOptions:
             <h2 class="gp-h2">Past grants <span class="gp-n" data-n>{{ gd.past | length }} completed</span></h2>
             <div class="gp-rows">
                 {%- for g in gd.past %}
-                <article class="gp-row" data-role="{{ g.role }}" data-funder="{{ g.funder }}">
+                <article class="gp-row" id="{{ g.slug }}" data-role="{{ g.role }}" data-funder="{{ g.funder }}">
                     <div class="gp-line">
                         <span class="gp-year">{{ g.period }}</span>
                         <span class="gp-title">{{ g.name }}<i>{{ g.funder }}</i></span>
@@ -90,8 +98,9 @@ navOptions:
                     {%- if g.desc or g.link or g.document %}
                     <div class="gp-detail" hidden>
                         {%- if g.pi %}<p class="gp-people">PI {{ g.pi }}{% if g.copi | length %} &middot; Co-PI {{ g.copi | join(', ') }}{% endif %}</p>{% endif %}
+                        {%- if g.team | length %}<p class="gp-people">Project staff {{ g.team | join(', ') }}</p>{% endif %}
                         {%- if g.desc %}<p>{{ g.desc }}</p>{% endif %}
-                        {%- if g.link %}<a class="gp-link" href="{{ g.link }}" target="_blank" rel="noopener">Project page</a>{% endif %}
+                        {%- if g.link %}<a class="gp-link" href="{{ g.link }}"{% if g.link[0] != '/' %} target="_blank" rel="noopener"{% endif %}>Project page</a>{% endif %}
                         {%- if g.document %}<a class="gp-link" href="{{ g.document }}" target="_blank" rel="noopener">Document</a>{% endif %}
                     </div>
                     <button type="button" class="gp-toggle" aria-expanded="false" aria-label="Show details for {{ g.name }}"></button>

@@ -13,6 +13,7 @@ const ROLES = ['PI', 'Co-PI', 'Collaborator'];
 const list = (v) => [].concat(v || []);
 const text = (v) => (typeof v === 'string' ? v : v == null ? '' : String(v));
 const fold = (s) => text(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const urlSlug = (s) => fold(s).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 70).replace(/-+$/, '');
 const mine = (s) => fold(s).indexOf(OWNER) > -1;
 
 function readGrants() {
@@ -57,6 +58,7 @@ module.exports = function () {
         const funder = list(d.tags).map(text).filter(Boolean)[0] || '';
         return {
             name: text(d.grantName).trim(),
+            slug: urlSlug(d.grantName),
             funder,
             start: y.start,
             end: y.end,
@@ -67,6 +69,7 @@ module.exports = function () {
             subaward: text(d.subawardAmount).trim(),
             pi: text(d.pi).trim(),
             copi: list(d.copi).map((s) => text(s).trim()).filter(Boolean),
+            team: list(d.team).map((s) => text(s).trim()).filter(Boolean),
             desc: text(d.grantDesc).trim(),
             image: text(d.image).trim(),
             imageAlt: text(d.imageAlt).trim(),
@@ -82,6 +85,7 @@ module.exports = function () {
         year: now,
         active: grants.filter((g) => g.active),
         past: grants.filter((g) => !g.active),
+        all: grants,
         total: grants.length,
         roles: ROLES.map((r) => ({ name: r, count: grants.filter((g) => g.role === r).length })),
         funders: Object.keys(funders)

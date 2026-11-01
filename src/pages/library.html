@@ -32,7 +32,13 @@ eleventyNavigation:
         </div>
         <h3 class="tl-name">{{ t.name }}</h3>
         {%- if t.summary %}<p class="tl-summary">{{ t.summary }}</p>{% endif %}
-        {%- if t.authors | length %}<p class="tl-authors">{{ t.authors | join(', ') }}</p>{% endif %}
+        {%- if t.authors | length %}
+        <p class="tl-authors">
+            {%- for n in t.authors %}{% set w = teamData.faces[n] %}
+            {%- if w %}<a class="tl-person" href="{{ w.url }}"><img src="{{ w.image }}" alt="" loading="lazy">{{ n }}</a>{% else %}<span class="tl-person">{{ n }}</span>{% endif %}
+            {%- endfor %}
+        </p>
+        {%- endif %}
         {%- if t.install %}
         <div class="tl-install">
             <code>{{ t.install }}</code>

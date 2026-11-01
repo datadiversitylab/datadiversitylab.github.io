@@ -88,6 +88,7 @@ eleventyNavigation:
                 <span class="blog-date">{{ post.data.date | readableDate }}</span>
                 {%- if post.data.author -%}
                   <span class="blog-dot">·</span>
+                  <span class="blog-faces">{%- for w in teamData.postFaces[post.data.author] %}<img src="{{ w.image }}" alt="" loading="lazy">{% endfor -%}</span>
                   <span class="blog-author">{{ post.data.author }}</span>
                 {%- endif -%}
               </div>

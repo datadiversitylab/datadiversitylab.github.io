@@ -18,6 +18,7 @@ preloadCSS: '/css/blog.css'
     <span class="blog-date">{{ date | readableDate }}</span>
     {%- if author -%}
       <span class="blog-dot">·</span>
+      <span class="blog-faces">{%- for w in teamData.postFaces[author] %}<a href="{{ w.url }}" title="{{ w.name }}"><img src="{{ w.image }}" alt="{{ w.name }}" loading="lazy"></a>{% endfor -%}</span>
       <span class="blog-author">{{ author }}</span>
     {%- endif -%}
     <div class="blog-tags">

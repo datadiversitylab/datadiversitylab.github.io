@@ -101,14 +101,22 @@ module.exports = function () {
         const isPI = /\bPI\b/.test(roles);
         // A person who was also a postdoc or staff member is left out, because the paper could be from either time
         const isStudent = /student/i.test(roles) && !/postdoc|\bPI\b|\bstaff\b/i.test(roles);
-        [norm(name), shortKey(name)].forEach((k) => {
+        // Other spellings of the name, from "Also published as", count as the same person
+        const names = [name].concat(list(m.data.alsoPublishedAs).map(text));
+        names.reduce((all, n) => all.concat([norm(n), shortKey(n)]), []).forEach((k) => {
             if (!k) return;
             memberKeys.add(k);
             if (isPI) piKeys.add(k);
             if (isStudent) studentKeys.add(k);
         });
     });
-    const matches = (set, author) => set.has(norm(author)) || set.has(shortKey(author));
+    // Names match when they are equal or one sits inside the other, so "Reza Ehsani" matches "Mohammad Reza Ehsani"
+    const inside = (a, b) => (' ' + b + ' ').indexOf(' ' + a + ' ') > -1 && a.indexOf(' ') > -1;
+    const matches = (set, author) => {
+        const n = norm(author);
+        if (set.has(n) || set.has(shortKey(author))) return true;
+        return Array.from(set).some((k) => inside(n, k) || inside(k, n));
+    };
 
     // ---- Papers, newest first ----
     const papers = read('publications')
@@ -173,7 +181,7 @@ module.exports = function () {
                 abstractHtml: blockHtml(d.publicationAbstract),
                 abstractText: plain(d.publicationAbstract),
                 authorShort: authors.length > 3 ? authors[0] + ' et al.' : authors.join(', '),
-                authorList: authors.map((a) => ({ name: a, lab: matches(memberKeys, a) })),
+                authorList: authors.map((a) => ({ name: a, lab: matches(memberKeys, a), norm: norm(a), short: shortKey(a) })),
                 authors,
                 authorText,
                 venue,

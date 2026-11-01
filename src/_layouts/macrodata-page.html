@@ -193,7 +193,7 @@ layout: 'base.html'
             <!-- Team: edited in MacroData > Team -->
             <ul class="md-people">
                 {%- for p in macrodataTeam.people %}
-                <li class="md-person">
+                <li class="md-person" id="{{ teamData.macroSlugs[p.name] }}">
                     {%- if p.photo %}<img src="{{ p.photo }}" alt="{{ p.photoAlt or p.name }}" loading="lazy">{% endif %}
                     <h3>{{ p.name }}</h3>
                     <p class="md-person-role">{{ p.role }}</p>
@@ -204,6 +204,8 @@ layout: 'base.html'
                         {%- if p.linkedin %}<a href="{{ p.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
                     </p>
                     {%- endif %}
+                    {%- set w = teamData.faces[p.name] %}
+                    {%- if w %}<p class="md-person-links"><a href="{{ w.url }}">Perfil en el Data Diversity Lab</a></p>{% endif %}
                     <p class="md-person-bio">{{ p.bio }}</p>
                     {%- if p.interests | length %}
                     <p class="md-person-tags">
@@ -250,6 +252,12 @@ layout: 'base.html'
                 {%- endfor %}
             </div>
             {%- endif %}
+            {%- endif %}
+
+            {%- if mdSlug == 'index' or mdSlug == 'el-proyecto' %}
+            {%- for g in grantsData.all %}{% if g.link == '/macrodata/' %}
+            <p class="md-fund">Este proyecto cuenta con el apoyo de <strong>{{ g.funder }}</strong>. <a href="/grants/#{{ g.slug }}">Ver la subvención</a></p>
+            {%- endif %}{% endfor %}
             {%- endif %}
         </article>
     </div>

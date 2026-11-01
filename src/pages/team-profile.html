@@ -1,0 +1,130 @@
+---
+layout: 'base.html'
+preloadCSS: '/css/team-page.css'
+preloadJS: 'js/team-page.js'
+preloadImg: ''
+pagination:
+    data: teamData.people
+    size: 1
+    alias: person
+permalink: "our-team/{{ person.slug }}/"
+eleventyComputed:
+    title: "{{ person.name }}"
+    metaTitle: "{{ person.name }}"
+    description: "{{ person.name }}{% if person.title %}, {{ person.title }}{% endif %}, at the Data Diversity Lab."
+---
+{#- One page for each person in src/team. Nothing here is edited by hand. -#}
+<section class="tp" id="tp">
+    <div class="tp-wrap">
+
+        <nav class="tp-crumb" aria-label="Breadcrumb">
+            <a href="/our-team/">Our team</a>
+            <span aria-hidden="true">&rsaquo;</span>
+            <a href="/our-team/?show={{ person.status }}">{% if person.status == 'current' %}Current members{% elif person.status == 'honorary' %}Honorary members{% else %}Alumni{% endif %}</a>
+            {%- if person.group != 'Members' %}
+            <span aria-hidden="true">&rsaquo;</span>
+            <span>{{ person.group }}</span>
+            {%- endif %}
+        </nav>
+
+        <div class="tp-cols">
+            <aside class="tp-side">
+                <div class="tp-photo"><img src="{{ person.image }}" alt="{{ person.imageAlt }}" decoding="async"></div>
+                {%- if person.links | length %}
+                <div class="tp-links">
+                    {%- for l in person.links %}
+                    <a class="tp-link{% if l.kind == 'cv' %} tp-link-cv{% endif %}" href="{{ l.url }}"{% if l.kind != 'email' %} target="_blank" rel="noopener"{% endif %}>
+                        <i>{% if l.icon %}{{ l.icon | safe }}{% elif l.kind == 'cv' %}CV{% elif l.kind == 'linkedin' %}in{% elif l.kind == 'github' %}gh{% elif l.kind == 'scholar' %}GS{% elif l.kind == 'orcid' %}iD{% elif l.kind == 'bluesky' %}bs{% endif %}</i>{{ l.label }}
+                    </a>
+                    {%- endfor %}
+                </div>
+                {%- endif %}
+            </aside>
+
+            <div class="tp-main">
+                <h1 class="tp-name">{{ person.name }}</h1>
+                {%- if person.title %}<p class="tp-title">{{ person.title }}</p>{% endif %}
+                <div class="tp-tags">
+                    {%- for r in person.roles %}<span>{{ r }}</span>{% endfor %}
+                    <span class="tp-status tp-status-{{ person.status }}">{% if person.status == 'current' %}Current member{% elif person.status == 'honorary' %}Honorary member{% else %}Alumni{% endif %}</span>
+                </div>
+
+                {%- if person.bio %}<p class="tp-bio">{{ person.bio }}</p>{% endif %}
+
+                {%- set hasGlance = person.term or person.education or person.coAdvisor or person.after.text or person.macrodata %}
+                {%- if hasGlance %}
+                <dl class="tp-glance">
+                    {%- if person.term %}<div><dt>In the lab</dt><dd>{{ person.term }}</dd></div>{% endif %}
+                    {%- if person.education %}<div><dt>Education</dt><dd>{{ person.education }}</dd></div>{% endif %}
+                    {%- if person.coAdvisor %}<div><dt>Co-advisor</dt><dd>{% if person.coAdvisorLink %}<a href="{{ person.coAdvisorLink }}" target="_blank" rel="noopener">{{ person.coAdvisor }}</a>{% else %}{{ person.coAdvisor }}{% endif %}</dd></div>{% endif %}
+                    {%- if person.macrodata %}<div><dt>MacroData</dt><dd><a href="{{ person.macrodata.url }}">{{ person.macrodata.role or 'Team' }}</a></dd></div>{% endif %}
+                    {%- if person.after.text %}<div><dt>{% if person.status == 'honorary' %}Now at{% else %}After the lab{% endif %}</dt><dd>{% if person.after.link %}<a href="{{ person.after.link }}" target="_blank" rel="noopener">{{ person.after.text }}</a>{% else %}{{ person.after.text }}{% endif %}</dd></div>{% endif %}
+                </dl>
+                {%- endif %}
+
+                {%- if person.variants | length %}<p class="tp-also">Also published as {{ person.variants | join('; ') }}</p>{% endif %}
+
+                {%- if person.affiliations | length %}
+                <h2 class="tp-h2">Affiliations <small>{{ person.affiliations | length }}</small></h2>
+                <ul class="tp-aff">
+                    {%- for a in person.affiliations %}
+                    <li>{% if a.url %}<a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}</li>
+                    {%- endfor %}
+                </ul>
+                {%- endif %}
+
+                {%- if person.papers | length %}
+                <h2 class="tp-h2">Papers <small>{% if person.paperCount > 5 %}5 most recent of {{ person.paperCount }}{% else %}{{ person.paperCount }}{% endif %}</small></h2>
+                <div class="tp-list">
+                    {%- for p in person.papers %}
+                    <a class="tp-paper" href="{{ p.url }}">
+                        <span class="tp-thumb">{% if p.image %}<img src="{{ p.image }}" alt="" loading="lazy" decoding="async">{% endif %}</span>
+                        <span class="tp-info">
+                            <b>{{ p.titleHtml | safe }}</b>
+                            <span>{% if p.venue %}{{ p.venue }}{% endif %}{% if p.venue and p.year %} &middot; {% endif %}{{ p.year }}{% if p.studentLed %} <i class="tp-badge">Student-led</i>{% endif %}</span>
+                            <span class="tp-faces">
+                                {%- for m in p.lab %}{% if loop.index <= 10 %}<img src="{{ m.image }}" alt="" title="{{ m.name }}" loading="lazy">{% endif %}{% endfor %}
+                                <em>{{ p.count }} author{% if p.count != 1 %}s{% endif %}</em>
+                            </span>
+                        </span>
+                    </a>
+                    {%- endfor %}
+                </div>
+                {%- endif %}
+
+                {%- if person.tools | length %}
+                <h2 class="tp-h2">Tools and data <small>{{ person.tools | length }}</small></h2>
+                <div class="tp-list" data-fold="3">
+                    {%- for t in person.tools %}
+                    {%- set tag = 'a' if t.open else 'div' %}
+                    <{{ tag }} class="tp-tool{% if loop.index > 3 %} is-extra{% endif %}"{% if t.open %} href="{{ t.open }}"{% if t.external %} target="_blank" rel="noopener"{% endif %}{% endif %}{% if loop.index > 3 %} hidden{% endif %}>
+                        <span class="tp-thumb tp-thumb-sm">{% if t.image %}<img src="{{ t.image }}" alt="" loading="lazy" decoding="async">{% endif %}</span>
+                        <span class="tp-info">
+                            <b>{{ t.name }}</b>
+                            {%- if t.typeLabel %}<span>{{ t.typeLabel }}</span>{% endif %}
+                            {%- if t.summary %}<span>{{ t.summary }}</span>{% endif %}
+                        </span>
+                    </{{ tag }}>
+                    {%- endfor %}
+                </div>
+                {%- if person.tools | length > 3 %}<button type="button" class="tp-more" data-label="tools and data">Show all {{ person.tools | length }} tools and data</button>{% endif %}
+                {%- endif %}
+
+                {%- if person.grants | length %}
+                <h2 class="tp-h2">Grants <small>{{ person.grants | length }}</small></h2>
+                <div class="tp-list">
+                    {%- for g in person.grants %}
+                    <a class="tp-grant" href="/grants/">
+                        <span class="tp-info">
+                            <b>{{ g.name }}</b>
+                            <span>{{ g.funder }}{% if g.period %} &middot; {{ g.period }}{% endif %}{% if g.active %} &middot; Active{% endif %}</span>
+                        </span>
+                        <span class="tp-role tp-role-{{ g.role | lower | replace(' ', '') | replace('-', '') }}">{{ g.role }}</span>
+                    </a>
+                    {%- endfor %}
+                </div>
+                {%- endif %}
+            </div>
+        </div>
+    </div>
+</section>

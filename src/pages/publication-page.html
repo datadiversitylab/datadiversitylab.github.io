@@ -41,7 +41,8 @@ eleventyComputed:
         {%- if paper.authorList | length %}
         <p class="pp-authors">
             {%- for a in paper.authorList -%}
-                {%- if a.lab %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif -%}
+                {%- set who = teamData.faces[a.name] -%}
+                {%- if who %}<a class="pp-person" href="{{ who.url }}"><img src="{{ who.image }}" alt="" loading="lazy"><strong>{{ a.name }}</strong></a>{% elif a.lab %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif -%}
                 {%- if not loop.last %}{% if loop.revindex == 2 and loop.length == 2 %} and {% elif loop.revindex == 2 %}, and {% else %}, {% endif %}{% endif -%}
             {%- endfor -%}
         </p>

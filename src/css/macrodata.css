@@ -708,3 +708,22 @@
 .md-news-all + .md-body {
   margin-top: 2rem;
 }
+
+/* Funding note and the highlighted team member after a link from a profile */
+.md-fund {
+  margin: 2rem 0 0;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: var(--boxCardShadow);
+}
+.md-fund a {
+  font-weight: 700;
+  color: var(--headerColor);
+}
+.md-person:target {
+  outline: 2px solid var(--headerColor);
+  outline-offset: 2px;
+}
