@@ -199,6 +199,53 @@ collections:
               - { label: 'Number', name: 'value', widget: 'string' }
               - { label: 'Label', name: 'label', widget: 'string' }
 
+  - name: 'labPhotos'
+    label: 'Lab photos'
+    files:
+      - label: 'Photos for Overview and Join us'
+        name: 'labPhotos'
+        file: 'src/_data/labPhotos.json'
+        fields:
+          - label: 'Overview carousel (up to 8 events)'
+            name: 'overview'
+            widget: 'list'
+            max: 8
+            summary: '{{fields.event}}'
+            hint: 'Pick events from Socials. The first photo of each event is used. The caption is optional, for example the names of the people. Without a caption, the event name and year show.'
+            fields:
+              - { label: 'Event', name: 'event', widget: 'relation', collection: 'socials', search_fields: ['publicationTitle'], value_field: '{{slug}}', display_fields: ['publicationTitle'] }
+              - { label: 'Caption', name: 'caption', widget: 'string', required: false }
+          - label: 'Join us photos (exactly 3 events)'
+            name: 'join'
+            widget: 'list'
+            min: 3
+            max: 3
+            summary: '{{fields.event}}'
+            hint: 'Pick three events from Socials. The first photo of each event is used.'
+            fields:
+              - { label: 'Event', name: 'event', widget: 'relation', collection: 'socials', search_fields: ['publicationTitle'], value_field: '{{slug}}', display_fields: ['publicationTitle'] }
+
+  - name: 'joinPage'
+    label: 'Join us page'
+    files:
+      - label: 'Text of the page'
+        name: 'joinPage'
+        file: 'src/_data/joinPage.json'
+        fields:
+          - { label: 'Intro', name: 'intro', widget: 'string', required: false }
+          - { label: 'Email', name: 'email', widget: 'string' }
+          - label: 'Paths (one card each)'
+            name: 'paths'
+            widget: 'list'
+            summary: '{{fields.title}}'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Text', name: 'text', widget: 'text' }
+              - { label: 'Key facts', name: 'chips', widget: 'list', required: false, hint: 'Short items, for example: 10 hrs a week' }
+              - { label: 'Button label', name: 'buttonLabel', widget: 'string', required: false }
+              - { label: 'Button link', name: 'buttonLink', widget: 'string', required: false, hint: 'Leave empty to send an email to the address above.' }
+          - { label: 'Steps (how to reach out)', name: 'steps', widget: 'list', required: false }
+
   - name: 'tools'
     label: 'Tools & Data'
     folder: 'src/tools'
