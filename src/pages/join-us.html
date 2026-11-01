@@ -31,10 +31,17 @@ eleventyNavigation:
         </header>
 
         {%- if labData.join | length %}
-        <div class="jn-photos jn-n{{ labData.join | length }}">
-            {%- for p in labData.join %}
-            <figure class="jn-photo"><img src="{{ p.image }}" alt="{{ p.title }}" decoding="async"{% if not loop.first %} loading="lazy"{% endif %}></figure>
-            {%- endfor %}
+        <!-- Photos come from Socials: Netlify > Lab photos > Join us photos. With none picked, the newest social events are used. -->
+        <div class="jn-welcome">
+            <div class="jn-photos jn-n{{ labData.join | length }}">
+                {%- for p in labData.join %}
+                <figure class="jn-photo">
+                    <img src="{{ p.image }}" alt="{{ p.caption or p.title }}" decoding="async"{% if not loop.first %} loading="lazy"{% endif %}>
+                    <figcaption>{{ p.caption or p.title }}{% if p.year %} &middot; {{ p.year }}{% endif %}</figcaption>
+                </figure>
+                {%- endfor %}
+            </div>
+            <p class="jn-welcome-line">{{ joinPage.photosLine or 'Lab dinners, hikes and group photos. This is the team you would be joining.' }}<a href="/social/">More photos &rarr;</a></p>
         </div>
         {%- endif %}
 
@@ -61,18 +68,25 @@ eleventyNavigation:
         <div class="jn-jobs">
             {%- for job in openJobs %}
             <article class="jn-job">
-                <h3 class="jn-name">{{ job.data.jobTitle }}</h3>
-                <p class="jn-meta">
-                    {%- if job.data.jobStartDate %}<span>Start: {{ job.data.jobStartDate }}</span>{% endif %}
-                    {%- if job.data.jobApplyBy %}<span class="jn-by">Apply by: {{ job.data.jobApplyBy }}</span>{% endif %}
-                </p>
-                <details class="jn-details">
-                    <summary>Read the description</summary>
-                    <div class="jn-body">
-                        {{ job.data.jobDesc | markdown | safe }}
-                        {%- if job.data.jobPdf %}<p><a href="{{ job.data.jobPdf }}" target="_blank" rel="noopener">Read the full description (PDF)</a></p>{% endif %}
-                    </div>
-                </details>
+                <div class="jn-job-top">
+                    <h3 class="jn-name">{{ job.data.jobTitle }}</h3>
+                    <span class="jn-open">Open</span>
+                </div>
+                <div class="jn-job-body">
+                    {%- if job.data.jobStartDate or job.data.jobApplyBy %}
+                    <p class="jn-meta">
+                        {%- if job.data.jobStartDate %}<span>Start: {{ job.data.jobStartDate }}</span>{% endif %}
+                        {%- if job.data.jobApplyBy %}<span class="jn-by">Apply by: {{ job.data.jobApplyBy }}</span>{% endif %}
+                    </p>
+                    {%- endif %}
+                    <details class="jn-details">
+                        <summary>Read the description</summary>
+                        <div class="jn-body">
+                            {{ job.data.jobDesc | markdown | safe }}
+                            {%- if job.data.jobPdf %}<p><a href="{{ job.data.jobPdf }}" target="_blank" rel="noopener">Read the full description (PDF)</a></p>{% endif %}
+                        </div>
+                    </details>
+                </div>
             </article>
             {%- endfor %}
         </div>
@@ -85,6 +99,7 @@ eleventyNavigation:
 
         {%- if pastJobs | length %}
         <div class="jn-past">
+            <p class="jn-past-title">Past positions</p>
             {%- for job in pastJobs %}
             <details class="jn-item">
                 <summary>

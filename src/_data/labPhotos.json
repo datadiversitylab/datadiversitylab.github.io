@@ -25,5 +25,26 @@
       "caption": ""
     }
   ],
-  "join": []
+  "join": [
+    {
+      "event": "lab-warming",
+      "caption": ""
+    },
+    {
+      "event": "lovejoy-center-retreat",
+      "caption": ""
+    },
+    {
+      "event": "la-indita",
+      "caption": ""
+    },
+    {
+      "event": "2026-group-photo-session",
+      "caption": ""
+    },
+    {
+      "event": "lab-get-together-at-jojos-and-game-night",
+      "caption": ""
+    }
+  ]
 }

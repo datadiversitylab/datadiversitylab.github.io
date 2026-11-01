@@ -1,6 +1,6 @@
 // Photos for the Overview carousel and the top of Join us, available as `labData`.
 // The photos are picked in Netlify (Lab photos) from the events in src/socials.
-// Nothing is chosen automatically. A missing event is skipped, and an empty list hides the section.
+// A missing event is skipped. If no Join us photos are picked, the newest social events with a photo are used.
 
 const fs = require('fs');
 const path = require('path');
@@ -22,27 +22,31 @@ function readPicks() {
 const norm = (s) => text(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\.md$/, '').replace(/[^a-z0-9]/g, '');
 
 function readEvents() {
+    const events = { byFile: {}, byTitle: {}, all: [] };
     const dir = path.join(process.cwd(), 'src', 'socials');
-    const byFile = {};
-    const byTitle = {};
+    const byFile = events.byFile;
+    const byTitle = events.byTitle;
     let files = [];
-    try { files = fs.readdirSync(dir).filter((f) => f.endsWith('.md')); } catch (e) { return { byFile, byTitle }; }
+    try { files = fs.readdirSync(dir).filter((f) => f.endsWith('.md')); } catch (e) { return events; }
     files.forEach((file) => {
         try {
             const d = matter(fs.readFileSync(path.join(dir, file), 'utf8')).data;
             const image = list(d.images).map(text).map((x) => x.trim()).filter(Boolean)[0];
             if (!image) { return; }
+            const tags = list(d.tags).map((x) => text(x).toLowerCase());
             const event = {
                 image,
                 // Titles often start with the year, which is shown next to the title anyway
                 title: text(d.publicationTitle).trim().replace(/^\d{4}\s+/, ''),
-                year: text(list(d.publicationDate)[0]).trim()
+                year: text(list(d.publicationDate)[0]).trim(),
+                social: tags.indexOf('social') > -1 && !/screenshot|mug|flyer|poster/i.test(image + ' ' + file)
             };
+            events.all.push(event);
             byFile[norm(file)] = event;
             if (!byTitle[norm(d.publicationTitle)]) { byTitle[norm(d.publicationTitle)] = event; }
         } catch (e) { /* skip */ }
     });
-    return { byFile, byTitle };
+    return events;
 }
 
 function build(picks, max, events) {
@@ -62,11 +66,21 @@ function build(picks, max, events) {
     }).filter(Boolean);
 }
 
+// Newest social events first, one photo each
+function newestSocial(events, max) {
+    return events.all
+        .filter((e) => e.social)
+        .sort((a, b) => text(b.year).localeCompare(text(a.year)))
+        .slice(0, max)
+        .map((e) => ({ image: e.image, title: e.title, year: e.year, caption: '' }));
+}
+
 module.exports = function () {
     const picks = readPicks();
     const events = readEvents();
+    const join = build(picks.join, 5, events);
     return {
         overview: build(picks.overview, 8, events),
-        join: build(picks.join, 3, events)
+        join: join.length ? join : newestSocial(events, 5)
     };
 };

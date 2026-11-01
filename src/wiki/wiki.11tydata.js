@@ -31,6 +31,6 @@ module.exports = {
     tagTitle: (data) => data.title,
     description: (data) => data.summary || `${data.title}, from the Data Diversity Lab manual`,
     eleventyNavigation: (data) =>
-      wikiPath(data) === MANUAL_START ? { key: 'Lab manual', parent: 'The Lab', order: 200 } : undefined,
+      wikiPath(data) === MANUAL_START ? { key: 'Lab manual', parent: 'About', order: 450 } : undefined,
   },
 };
