@@ -10,13 +10,13 @@
         <!--Swap our for actual link-->
         <link rel="canonical" href="https://datadiversitylab.github.io/library/">
 
-        <meta name="description" content="Tools and data released by the Data Diversity Lab">
+        <meta name="description" content="Tools and data released by the Data Diversity Lab. Try the apps, install the packages, or read the code.">
         <meta name="keywords" content="Data Diversity Lab and Development">
         <meta name="google-site-verification" content="u82fOqFBdQHRSP52a0zYaa0TN4pXvDCaFbvtkQINz2M" />
 
         <!--Social Media Display-->
         <meta property="og:title" content="Library"/>
-        <meta property="og:description" content="Tools and data released by the Data Diversity Lab"/>
+        <meta property="og:description" content="Tools and data released by the Data Diversity Lab. Try the apps, install the packages, or read the code."/>
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="https://datadiversitylab.github.io/library/"/>
         <meta property="og:image" content="https://datadiversitylab.github.io/assets/favicons/android-chrome-512x512.png"/>
@@ -42,7 +42,7 @@
 
         <!-- Loading in page specific CSS sheets from css block -->
         <link rel="stylesheet" href="/css/critical.css"/>
-        <link rel="stylesheet" href="/css/tools-and-data.css">
+        <link rel="stylesheet" href="/css/tools-page.css">
         <link rel="stylesheet" href="/css/theme.css">
 
         <script defer src="https://umami.datadiversitylab.synology.me/script.js" data-website-id="543cffef-a100-47af-9dd9-2cf39517077b" data-domains="datadiversitylab.github.io" data-tag="labwebsite"></script>
@@ -246,506 +246,596 @@
         </nav>
     </div>
 </header>
-        <main id="main"><!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
+        <main id="main">
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">Tools and data library</h1>
-            <p class="cs-text">
-                Software, web apps, and datasets built and released by members of the lab. Everything here is open and free to use.
-            </p>
+
+
+<section class="tl" id="tl">
+    <div class="tl-wrap">
+
+        <header class="tl-head">
+            <h1 class="tl-h1">Tools and data</h1>
+            <p class="tl-sub">24 tools and datasets built by the lab. Try them in the browser, install them, or read the code. Everything is open and free to use.</p>
+            <label class="tl-search">
+                <span class="tl-visually-hidden">Search tools and data</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <input type="search" id="tl-q" placeholder="Search tools and data" autocomplete="off">
+            </label>
+        </header>
+        <h2 class="tl-label">Browse by type</h2>
+        <div class="tl-tiles">
+            <button type="button" class="tl-tile" data-type="Web application" aria-pressed="false">
+                <span class="tl-tile-img"><img src="/assets/images/softwares/salphycon.png" alt="" loading="lazy" decoding="async">
+                </span>
+                <span class="tl-tile-name">Web application</span>
+                <span class="tl-tile-n">11 tools</span>
+            </button>
+            <button type="button" class="tl-tile" data-type="R package" aria-pressed="false">
+                <span class="tl-tile-img"><img src="/assets/images/softwares/phruta.png" alt="" loading="lazy" decoding="async">
+                </span>
+                <span class="tl-tile-name">R package</span>
+                <span class="tl-tile-n">8 tools</span>
+            </button>
+            <button type="button" class="tl-tile" data-type="Website" aria-pressed="false">
+                <span class="tl-tile-img"><img src="/assets/images/databases/screenshot-2025-02-13-at-9.58.39 pm.png" alt="" loading="lazy" decoding="async">
+                </span>
+                <span class="tl-tile-name">Website</span>
+                <span class="tl-tile-n">4 tools</span>
+            </button>
+            <button type="button" class="tl-tile" data-type="Dataset" aria-pressed="false">
+                <span class="tl-tile-img"><img src="/assets/images/softwares/universal-ortholog.png" alt="" loading="lazy" decoding="async">
+                </span>
+                <span class="tl-tile-name">Dataset</span>
+                <span class="tl-tile-n">1 tool</span>
+            </button>
+            <button type="button" class="tl-tile" data-type="Python library" aria-pressed="false">
+                <span class="tl-tile-img"><img src="/assets/images/softwares/barmpy_logo.png" alt="" loading="lazy" decoding="async">
+                </span>
+                <span class="tl-tile-name">Python library</span>
+                <span class="tl-tile-n">1 tool</span>
+            </button>
+        </div>
+        <div id="tl-featured">
+            <h2 class="tl-label">Featured tools and data</h2>
+            <div class="tl-grid">
+<article class="tl-card is-featured"
+    data-name="salphycon"
+    data-types="Web application"
+    data-topics="Data Science"
+    data-live="1"
+    data-hay="Salphycon Cristian Román-Palacios Salphycon is a shiny app that extends the functionalities of the (phruta) R package. Salphycon is able to (1) find potentially (phylogenetically) relevant gene regions for a given set of taxa on GenBank, (2) retrieve gene sequences and curate taxonomic information from the same database, (3) combine downloaded and local gene sequences, and (4) perform sequence alignment, phylogenetic inference, and basic tree dating tasks. Both phruta and salphycon are focused on species-level analyses. Web application Data Science">
+    <div class="tl-img"><img src="/assets/images/softwares/salphycon.png" alt="Salphycon  image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Web application</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">Salphycon</h3><p class="tl-summary">Salphycon is a shiny app that extends the functionalities of the (phruta) R package.</p><p class="tl-authors">Cristian Román-Palacios</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="/phylogenetics_salphycon/">Open</a><a class="tl-btn" href="https://github.com/datadiversitylab/salphycon" target="_blank" rel="noopener">Code</a>
         </div>
     </div>
-</section>
+</article>
 
-<div aria-hidden="true" class="line"></div>
+<article class="tl-card is-featured"
+    data-name="the acdb: the animal culture database"
+    data-types="Website"
+    data-topics="Biodiversity|Data Science"
+    data-live="1"
+    data-hay="The ACDB: The Animal Culture Database Cristian Román-Palacios &amp; Kiran Basava The Animal Culture Database (ACDB) is a database of cultural behaviors across nonhuman animal species. It synthesizes current literature on intra-species behavioral variation in contexts such as communication, foraging, and migration, along with data on effects of human disturbances to the environment, to facilitate comparative research on interactions between animal social learning and climate change. Website Biodiversity Data Science">
+    <div class="tl-img"><img src="/assets/images/databases/screenshot-2025-02-19-at-1.52.00 pm.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Website</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">The ACDB: The Animal Culture Database</h3><p class="tl-summary">The Animal Culture Database (ACDB) is a database of cultural behaviors across nonhuman animal species.</p><p class="tl-authors">Cristian Román-Palacios &amp; Kiran Basava</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="/ddl_acdb/">Open</a>
+        </div>
+    </div>
+</article>
 
-<!-- ============================================ -->
-<!--                Tools & Data                  -->
-<!-- ============================================ -->
-<section id="tools-section">
-    <div class="cs-container">
-        <div class="cs-content cs-sidebar cs-filter-searchable">
-            <div class="cs-search-title-wrapper">
-                <h6 class="cs-title">Search</h6>
-                <div aria-hidden="true" class="line line-full"></div>
-                <div class="cs-search-wrapper">
-                    <input type="text" id="search" class="cs-search" placeholder="Name or description">
-                </div>
-            </div>
-            <div class="cs-filter-button-wrapper">
-                <div class="cs-add-filter-wrapper">
-                    <h6 class="cs-title">Add filters</h6>
-                    <img src="../assets/icons/plus.svg" class="plus-button" alt="filter" width="25" height="25">
-                </div>
+<article class="tl-card is-featured"
+    data-name="barriomap"
+    data-types="Web application"
+    data-topics="Data Science"
+    data-live="1"
+    data-hay="BarrioMap Cristian Román-Palacios &amp; Sarthak Halder Barrio Map offers fundamental functionalities like finding locations by conducting searches or selecting coordinates. Users can select from predefined scales and export the scaled maps to particular page sizes. Maps generated using Barrio Map are formal descriptions of particular sites with defined values of resolution, scales, and explicit information on distances. Barrio Map, in conjunction with OpenStreetMaps, is written in R, with functionalities largely leveraged from packages such as Leaflet and Shiny. Web application Data Science">
+    <div class="tl-img"><img src="/assets/images/softwares/barriomap.png" alt="BarrioMap  image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Web application</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">BarrioMap</h3><p class="tl-summary">Barrio Map offers fundamental functionalities like finding locations by conducting searches or selecting coordinates.</p><p class="tl-authors">Cristian Román-Palacios &amp; Sarthak Halder</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="/barriomap/">Open</a><a class="tl-btn" href="https://github.com/datadiversitylab/BarrioMap" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
 
-                <div class="cs-filter-category-wrapper">
-                    <h6 class="cs-title">Category</h6>
-                    <div aria-hidden="true" class="line line-full"></div>
-                    <div class="cs-filter-wrapper cs-text">
-                        <div data-filter="all" class="active filter-option">All</div><div data-filter="Software" class="filter-option">Software</div><div data-filter="People" class="filter-option">People</div><div data-filter="Data Science" class="filter-option">Data Science</div><div data-filter="Biodiversity" class="filter-option">Biodiversity</div></div>
-                </div>
-
-                <div class="cs-filter-keywords-wrapper">
-                    <h6 class="cs-title">Keywords</h6>
-                    <div aria-hidden="true" class="line line-full"></div>
-                    <div class="cs-filter-wrapper cs-text">
-                        <div data-filter="all" class="active filter-option">All</div><div data-filter="Website" class="filter-option">Website</div><div data-filter="Web application" class="filter-option">Web application</div><div data-filter="R package" class="filter-option">R package</div><div data-filter="Python library" class="filter-option">Python library</div><div data-filter="Dataset" class="filter-option">Dataset</div></div>
-                </div>
             </div>
         </div>
-        <div class="cs-title-card-wrapper">
-            <div class="cs-card-group"><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/logo.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/logo.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/logo.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">autogradeR</span><span class="cs-publication-author">Cristian Roman</span><span class="cs-desc">
-                                <div class="read-more-text"><p>autogradeR is expected to help instructors grade pre-defined assignments using a particular and relatively simple set of functions. Authograder generates basic templates that can only be accessed by instructors using a pre-defined encrypted password. The current release is based on RMarkdown files.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">People</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">R package</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/datadiversitylab/autogradeR" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://datadiversitylab.github.io/autogradeR/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/barriomap.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/barriomap.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/barriomap.png" alt="BarrioMap  image" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">BarrioMap</span><span class="cs-publication-author">Cristian Román-Palacios &amp; Sarthak Halder</span><span class="cs-desc">
-                                <div class="read-more-text"><p>Barrio Map offers fundamental functionalities like finding locations by conducting searches or selecting coordinates. Users can select from predefined scales and export the scaled maps to particular page sizes. Maps generated using Barrio Map are formal descriptions of particular sites with defined values of resolution, scales, and explicit information on distances. Barrio Map, in conjunction with OpenStreetMaps, is written in R, with functionalities largely leveraged from packages such as Leaflet and Shiny.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Web application</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/datadiversitylab/BarrioMap" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://datadiversitylab.github.io/BarrioMap/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/citycomp.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/citycomp.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/citycomp.png" alt="CityComp  image" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">CityComp</span><span class="cs-publication-author">Cristian Román-Palacios</span><span class="cs-desc">
-                                <div class="read-more-text"><p>CityComp is a Shiny app developed to support the use of the comparative framework developed in Arechiga et al. (2023). In the app, users can directly visualize the results presented in the same paper. Specifically, a graphical and interactive version of Fig. 6 in the same paper is presented in the app. Users can further define a target city and estimate their similarity to cities across the globe. Dynamic filtering and mapping are implemented within the app.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Web application</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/datadiversitylab/CityComp" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://datadiversitylab.github.io/citycomp/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/barmpy_logo.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/barmpy_logo.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/barmpy_logo.png" alt="BARN  image" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">BARN</span><span class="cs-publication-author">Danielle Van Boxel</span><span class="cs-desc">
-                                <div class="read-more-text"><p>Bayesian Additive Regression Networks. We apply Bayesian Additive Regression Tree (BART) principles to training an ensemble of small neural networks for regression tasks. Using Markov Chain Monte Carlo, Bayesian Additive Regression Net- works (BARN) samples from the space of single hidden layer neural networks that are conditioned on their fit to data. You can find more information in <a href="https://github.com/dvbuntu/barmpy">barnpy</a> and its associated <a href="https://dvbuntu.github.io/barmpy/">documentation</a><a href="https://dvbuntu.github.io/barmpy/"></a></p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Data Science</div><div class="cs-filter">Software</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Python library</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/dvbuntu/barn" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://dvbuntu.github.io/barmpy/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/figure-8.jpg">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/figure-8.jpg">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/figure-8.jpg" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">BayClump</span><span class="cs-publication-author">Cristian Román-Palacios &amp; Hannah Carroll</span><span class="cs-desc">
-                                <div class="read-more-text"><p>BayClump is a Shiny Dashboard application that is associated with the bayclumpr R package. All the functions implemented in BayClump are sourced from bayclumpr. We eveloped BayClump to allow users with less coding experience to be able to access standarized resources to calibrate and derive reconstructions using clumped isotope datasets.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Web application</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/Tripati-Lab/BayClump" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://bayclump.tripatilab.epss.ucla.edu/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/logobayclumpr.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/logobayclumpr.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/logobayclumpr.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">bayclumpr</span><span class="cs-publication-author">Cristian Román-Palacios, Hannah M. Carroll, &amp; Aradhna Tripati</span><span class="cs-desc">
-                                <div class="read-more-text"><p>bayclumpr is a self-contained R package that supports the use of Bayesian models and the analytical framework developed in Román-Palacios et al. (2022) for clumped isotope calibration, temperature reconstructions, and facilitatation of comparisons on Bayesian and classical models. bayclumpr fits both frequentist and Bayesian linear regressions to calibration datasets and performs temperature reconstructions under both frameworks.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">R package</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/Tripati-Lab/bayclumpr" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://tripati-lab.github.io/bayclumpr/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/tools/screenshot-2026-08-28-at-1.40.11 pm.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/tools/screenshot-2026-08-28-at-1.40.11 pm.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/tools/screenshot-2026-08-28-at-1.40.11 pm.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">classR</span><span class="cs-publication-author">Cristian Román-Palacios</span><span class="cs-desc">
-                                <div class="read-more-text"><p>A minimal GitHub Classroom replacement in R. Run a course on GitHub without GitHub Classroom: each student gets a private repo in a given organization, starter files get pushed in, and the student is added as a collaborator.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">People</div><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">R package</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://datadiversitylab.github.io/classR/" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/tools/tools-and-data.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/tools/tools-and-data.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/tools/tools-and-data.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">cophy_ABC</span><span class="cs-publication-author">Yichao Zeng</span><span class="cs-desc">
-                                <div class="read-more-text"><p>This project presents an Approximate Bayesian Computation (ABC) approach to estimating speciation and extinction rates from cophylogenetic systems. The rates of four types of speciation and two types of extinction can be inferred: host speciation (λH), symbiont speciation without host switching (λS), cospeciation (λC), symbiont speciation with host switching (λW), host extinction (μH), and symbiont extinction (μS). The speciation and extinction rates follow:</p>
-<p>μH=ϵH(λH+λC)</p>
-<p>μS=ϵS(λS+λC+λW)</p>
-<p>where ϵH and ϵS range between 0 and 1.</p>
-<p>We define the net diversification rate of the cophylogeny as</p>
-<p>r=2∗rhost∗rsymbiontrhost+rsymbiont</p>
-<p>where host=λH+λC−μH and symbiont=λS+λC+λW−μS are the net diversification rates of the host and symbiont clades, respectively.</p>
-<p>For the user's information, some parameters are assigned a different name in the code: λW - <code>exp_H</code>, ϵH - <code>mu_H_frac</code>, and ϵS - <code>mu_S_frac</code>.</p>
-<p>The tutorial provided here is the full procedure to estimate macroevolutionary rates from a given cophylogeny, using the BLenD-a / BLenD-b curves and tree sizes as summary statistics. This procedure is illustrated with a re-analysis of the cophylogenetic dataset from Van Dam et al. (2024)</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Biodiversity</div><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">R package</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/yichaozeng/cophy_ABC" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://academic.oup.com/sysbio/advance-article/doi/10.1093/sysbio/syag070/8789437" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/screenshot-from-2024-06-28-13-51-03.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/screenshot-from-2024-06-28-13-51-03.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/screenshot-from-2024-06-28-13-51-03.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">Enhanced Personal Protective Equipment Detection (UI)</span><span class="cs-publication-author">Jiayue He</span><span class="cs-desc">
-                                <div class="read-more-text"><p>Enhannced PPE2 is a Human-Machine Interface (HMI) tailored for real-time object detection, with a specific focus on hard hat compliance monitoring in industrial settings. Although this project is tailored for hard hat compliance monitoring, the modular architecture allows easy adaptation for other applications like gengeral PPE detection including masks, goggles, vest and so on. This project focuses on developing the UI associated to the ML model detection algorithm.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">People</div><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Web application</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/datadiversitylab/Enhanced-PPE2" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/screenshot-2026-03-18-at-9.05.43 pm.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/screenshot-2026-03-18-at-9.05.43 pm.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/screenshot-2026-03-18-at-9.05.43 pm.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">GradPath Extension</span><span class="cs-publication-author">Cristian Román-Palacios</span><span class="cs-desc">
-                                <div class="read-more-text"><p>This repo hosts a simple Firefox extension that checks on whether the requierements for a given program (or subplan) are being met by the student. This version focuses on Data Science and Information Science programs in InfoSci. However, this extension can be easily modified to enable other programs or subplans. It can also be adjusted in the requirements it check for. I did not implement an automatic submission.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">People</div><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Web application</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/datadiversitylab/ms_advising_checker" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/screenshot-from-2024-06-28-13-36-03.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/screenshot-from-2024-06-28-13-36-03.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/screenshot-from-2024-06-28-13-36-03.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">Facade Detection from Google Street View Images</span><span class="cs-publication-author">Shih-Hsuan Lo</span><span class="cs-desc">
-                                <div class="read-more-text"><p>This Neural Network-based tool facilitates extraction of building facade color patterns from Google Street View Images.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Data Science</div><div class="cs-filter">People</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Web application</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/datadiversitylab/NN_FACADE" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/salphycon.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/salphycon.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/salphycon.png" alt="Salphycon  image" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">Salphycon</span><span class="cs-publication-author">Cristian Román-Palacios</span><span class="cs-desc">
-                                <div class="read-more-text"><p>Salphycon is a shiny app that extends the functionalities of the (phruta) R package. Salphycon is able to (1) find potentially (phylogenetically) relevant gene regions for a given set of taxa on GenBank, (2) retrieve gene sequences and curate taxonomic information from the same database, (3) combine downloaded and local gene sequences, and (4) perform sequence alignment, phylogenetic inference, and basic tree dating tasks. Both phruta and salphycon are focused on species-level analyses.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Web application</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/datadiversitylab/salphycon" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/phruta.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/phruta.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/phruta.png" alt="Phruta  image" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">phruta</span><span class="cs-publication-author">Cristian Román-Palacios, Maëlle Salmon, &amp; Heidi Steiner</span><span class="cs-desc">
-                                <div class="read-more-text"><p>The phruta R package is designed to simplify the basic phylogenetic pipeline. All the code is run within the same program and data from intermediate steps are saved in independent folders (optional). phruta retrieves gene sequences, combines newly downloaded to local gene sequences, performs sequence alignments, and basic phylogenetic inference.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">R package</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/ropensci/phruta/" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://ropensci.github.io/phruta/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/screenshot-2024-06-27-at-8.51.02-am.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/screenshot-2024-06-27-at-8.51.02-am.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/screenshot-2024-06-27-at-8.51.02-am.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">plagiaRized</span><span class="cs-publication-author">Cristian Román-Palacios</span><span class="cs-desc">
-                                <div class="read-more-text"><p>This is a basic shiny dashboard to perform pairwise comparison of different file submissions. The app is intended to help identify instances of potential plagiarism in coding-based assignments.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">People</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Web application</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/datadiversitylab/plagiaRized" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://viz.datascience.arizona.edu/plagiarized/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/screenshot-2026-03-06-at-7.11.10 pm.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/screenshot-2026-03-06-at-7.11.10 pm.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/screenshot-2026-03-06-at-7.11.10 pm.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">Chorus</span><span class="cs-publication-author">Cristian Román-Palacios</span><span class="cs-desc">
-                                <div class="read-more-text"><p>Chorus is a live polling platform designed for conferences, events, workshops, meetings, and similar events. Admins can create unique rooms, design questions, and enable access for attendees via unique tokens. Attendees can suggest answers and vote in real-time. Admins can manage questions, voting settings, and get summary statistics.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">People</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Web application</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/datadiversitylab/chorus" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://viz.datascience.arizona.edu/chorus/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/tools/screenshot-2026-09-16-at-6.43.26 pm.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/tools/screenshot-2026-09-16-at-6.43.26 pm.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/tools/screenshot-2026-09-16-at-6.43.26 pm.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">salphycon</span><span class="cs-publication-author">Cristian Román-Palacios</span><span class="cs-desc">
-                                <div class="read-more-text"><p>salphycon is a front end for the phruta R package. It's meant to introduce the early steps of a phylogenetics pipeline (taxon and gene selection, sequence retrieval, curation, and alignment) in a classroom setting, while staying flexible enough for a quick real research workflow, before moving to heavier computational steps like tree inference.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Biodiversity</div><div class="cs-filter">Software</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">R package</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/datadiversitylab/salphycon" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://datadiversitylab.github.io/phylogenetics_salphycon/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/santa_cruz_river_arizona_map.jpg">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/santa_cruz_river_arizona_map.jpg">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/santa_cruz_river_arizona_map.jpg" alt="Map of the Santa Cruz River" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">Santa Cruz E. coli Predictions</span><span class="cs-publication-author">Cristian Román-Palacios &amp; Laura Palacios-Falk</span><span class="cs-desc">
-                                <div class="read-more-text"><p>This tool predicts <em>Escherichia coli (E. coli</em>) levels in the Upper Santa Cruz River using a model trained on public data from 2009-2022. It is intended as a warning of possible high bacterial loads; water quality must still be verified using coliform testing procedures to ensure public safety.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Web application</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/LauraFalk/SantaCruz_Ecoli_ShinyApp" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://laurafalk.github.io/SantaCruzPredictions.html" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/screenshot-2025-10-02-at-9.09.11 am.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/screenshot-2025-10-02-at-9.09.11 am.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/screenshot-2025-10-02-at-9.09.11 am.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">ssarp</span><span class="cs-publication-author">Kristen Martinet, Cristian Román-Palacios, Luke Harmon</span><span class="cs-desc">
-                                <div class="read-more-text"><p><code>ssarp</code> (Species-/Speciation-Area Relationship Projector) is an R package that provides a suite of functions to help users <strong>create speciation- and species- area relationships for island-dwelling taxa</strong> using occurrence data from GBIF (Global Biodiversity Information Facility) or the user’s own occurrence data.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Software</div><div class="cs-filter">Biodiversity</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">R package</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/ropensci/ssarp" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://docs.ropensci.org/ssarp/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/databases/screenshot-2025-02-13-at-9.58.39 pm.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/databases/screenshot-2025-02-13-at-9.58.39 pm.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/databases/screenshot-2025-02-13-at-9.58.39 pm.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">The ACC: The Animal Chromosome Count Database</span><span class="cs-publication-author">Cristian Román-Palacios</span><span class="cs-desc">
-                                <div class="read-more-text"><p>The <strong>ACC</strong> is the largest database of animal chromosomal counts. We have curated chromosome numbers across the animal Tree of Life to make data accessible for people interested in understanding the potential links between biological processes and patterns to broad chromosomal changes in animals.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Biodiversity</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Website</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://cromanpa94.github.io/ACC/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/databases/screenshot-2025-02-19-at-1.52.00 pm.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/databases/screenshot-2025-02-19-at-1.52.00 pm.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/databases/screenshot-2025-02-19-at-1.52.00 pm.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">The ACDB: The Animal Culture Database</span><span class="cs-publication-author">Cristian Román-Palacios &amp; Kiran Basava</span><span class="cs-desc">
-                                <div class="read-more-text"><p>The Animal Culture Database (ACDB) is a database of cultural behaviors across nonhuman animal species. It synthesizes current literature on intra-species behavioral variation in contexts such as communication, foraging, and migration, along with data on effects of human disturbances to the environment, to facilitate comparative research on interactions between animal social learning and climate change.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Biodiversity</div><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Website</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://viz.datascience.arizona.edu/ACDB/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/treedata-table.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/treedata-table.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/treedata-table.png" alt="treedata.table  image" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">treedata.table</span><span class="cs-publication-author">Cristian Román-Palacios, Josef Uyeda, April Wright, &amp; Luke Harmon</span><span class="cs-desc">
-                                <div class="read-more-text"><p>The <a href="https://github.com/Rdatatable/data.table">data.table package</a> enables high-performance extended functionality for data tables in R. treedata.table is a wrapper for data.table for phylogenetic analyses that matches a phylogeny to the data.table, and preserves matching during data.table operations.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Biodiversity</div><div class="cs-filter">Software</div><div class="cs-filter">Data Science</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">R package</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/ropensci/treedata.table" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="https://ropensci.github.io/treedata.table" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/softwares/universal-ortholog.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/softwares/universal-ortholog.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/softwares/universal-ortholog.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">Universal Ortholog Based Phylogenomic Database and Toolset</span><span class="cs-publication-author">Cristian Román-Palacios &amp; MD Nafis Ul Alam</span><span class="cs-desc">
-                                <div class="read-more-text"><p>This research is being conducted with the following goals in mind:</p>
-<ul>
-<li>Facilitate evolutionary genomic analysis in the eukaryotic domain</li>
-<li>Make public genomic data more accessible by increasing information content per unit volume of data</li>
-<li>Develop improved methods and algorithms for genome informatics</li>
-<li>Streamline downstream analyses in genomic workflows</li>
-<li>Analyze patterns of genome evolution during the process of adaptation, speciation, diversification and domestication</li>
-</ul>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">Data Science</div><div class="cs-filter">Biodiversity</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Dataset</div><div class="cs-filter">Web application</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://github.com/DeadlineWasYesterday/phyca/" target="_blank"><img src="../assets/icons/github.svg" alt="github" width="30" height="30" decoding="async" aria-hidden="true"></a><a href="http://www.phyca.org/index.html" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/tools/vi-simposio.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/tools/vi-simposio.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/tools/vi-simposio.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">VI Simposio COLEVOL</span><span class="cs-desc">
-                                <div class="read-more-text"><p>VI Simposio COLEVOL is a website guide to the COLEVOL-UNIVALLE 2017 conference. COLEVOL is the Colombian Association of Evolutionary Biology. This conference was held at the University of Valle in Cali, Colombia and aimed to serve as a symposium on evolutionary biology. This conference also offered a course on the basics of comparative phylogenetic methods. Overall, the event &quot;fostered interaction and connections between students from remote regions of the country and prestigious academic and technological centers of thought in Colombia and around the world&quot;. Read more on the website!</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">People</div><div class="cs-filter">Biodiversity</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Website</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://sites.google.com/view/visimposiocolevol/inicio?authuser=0" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div><div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="/assets/images/databases/screenshot-2026-04-24-at-1.46.35 pm.png">
-                            <source media="(min-width: 601px)" srcset="/assets/images/databases/screenshot-2026-04-24-at-1.46.35 pm.png">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="/assets/images/databases/screenshot-2026-04-24-at-1.46.35 pm.png" alt="" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">Website for SCORCH Grant</span><span class="cs-desc">
-                                <div class="read-more-text"><p>The Southwest Center on Resilience for Climate Change and Health (SCORCH) brings together transdisciplinary research groups to conduct solutions-oriented team-science projects responsive to the health needs of arid lands communities adapting to climate change. The Integrated Data Visualization Core (IDVC) supports the overall Center mission through the provision of data science, visualization, and management expertise.</p>
-</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            
-                            <div class="cs-item-categories" style="display: none;"><div class="cs-filter">People</div></div>
-                            
-                            <div class="cs-item-filters"><div class="cs-filter">Website</div></div><div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social"><a href="https://scorch-idvc.github.io/" target="_blank"><img src="../assets/icons/link.svg" alt="link" width="30" height="30" decoding="async" aria-hidden="true"></a></div></div>
-                    </div></div>
+
+        <h2 class="tl-label">All tools and data</h2>
+        <div class="tl-chips" role="group" aria-label="Filter">
+            <button type="button" class="tl-chip is-on" data-chip="all" aria-pressed="true">All<em>24</em></button>
+            <button type="button" class="tl-chip" data-chip="topic:Data Science" aria-pressed="false">Data Science<em>16</em></button>
+            <button type="button" class="tl-chip" data-chip="topic:People" aria-pressed="false">People<em>9</em></button>
+            <button type="button" class="tl-chip" data-chip="topic:Biodiversity" aria-pressed="false">Biodiversity<em>8</em></button>
+            <button type="button" class="tl-chip" data-chip="topic:Software" aria-pressed="false">Software<em>4</em></button>
+            <button type="button" class="tl-chip" data-chip="live" aria-pressed="false">Try it now<em>12</em></button>
+        </div>
+
+        <div class="tl-status" aria-live="polite">
+            <span id="tl-count">24 tools and datasets</span>
+            <button type="button" class="tl-clear" id="tl-clear" hidden>Clear filters</button>
+        </div>
+
+        <div class="tl-grid" id="tl-grid">
+<article class="tl-card"
+    data-name="salphycon"
+    data-types="Web application"
+    data-topics="Data Science"
+    data-live="1"
+    data-hay="Salphycon Cristian Román-Palacios Salphycon is a shiny app that extends the functionalities of the (phruta) R package. Salphycon is able to (1) find potentially (phylogenetically) relevant gene regions for a given set of taxa on GenBank, (2) retrieve gene sequences and curate taxonomic information from the same database, (3) combine downloaded and local gene sequences, and (4) perform sequence alignment, phylogenetic inference, and basic tree dating tasks. Both phruta and salphycon are focused on species-level analyses. Web application Data Science">
+    <div class="tl-img"><img src="/assets/images/softwares/salphycon.png" alt="Salphycon  image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Web application</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">Salphycon</h3><p class="tl-summary">Salphycon is a shiny app that extends the functionalities of the (phruta) R package.</p><p class="tl-authors">Cristian Román-Palacios</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="/phylogenetics_salphycon/">Open</a><a class="tl-btn" href="https://github.com/datadiversitylab/salphycon" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="barriomap"
+    data-types="Web application"
+    data-topics="Data Science"
+    data-live="1"
+    data-hay="BarrioMap Cristian Román-Palacios &amp; Sarthak Halder Barrio Map offers fundamental functionalities like finding locations by conducting searches or selecting coordinates. Users can select from predefined scales and export the scaled maps to particular page sizes. Maps generated using Barrio Map are formal descriptions of particular sites with defined values of resolution, scales, and explicit information on distances. Barrio Map, in conjunction with OpenStreetMaps, is written in R, with functionalities largely leveraged from packages such as Leaflet and Shiny. Web application Data Science">
+    <div class="tl-img"><img src="/assets/images/softwares/barriomap.png" alt="BarrioMap  image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Web application</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">BarrioMap</h3><p class="tl-summary">Barrio Map offers fundamental functionalities like finding locations by conducting searches or selecting coordinates.</p><p class="tl-authors">Cristian Román-Palacios &amp; Sarthak Halder</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="/barriomap/">Open</a><a class="tl-btn" href="https://github.com/datadiversitylab/BarrioMap" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="citycomp"
+    data-types="Web application"
+    data-topics="Data Science"
+    data-live="1"
+    data-hay="CityComp Cristian Román-Palacios CityComp is a Shiny app developed to support the use of the comparative framework developed in Arechiga et al. (2023). In the app, users can directly visualize the results presented in the same paper. Specifically, a graphical and interactive version of Fig. 6 in the same paper is presented in the app. Users can further define a target city and estimate their similarity to cities across the globe. Dynamic filtering and mapping are implemented within the app. Web application Data Science">
+    <div class="tl-img"><img src="/assets/images/softwares/citycomp.png" alt="CityComp  image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Web application</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">CityComp</h3><p class="tl-summary">CityComp is a Shiny app developed to support the use of the comparative framework developed in Arechiga et al.</p><p class="tl-authors">Cristian Román-Palacios</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://datadiversitylab.github.io/citycomp/" target="_blank" rel="noopener">Open</a><a class="tl-btn" href="https://github.com/datadiversitylab/CityComp" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="phruta"
+    data-types="R package"
+    data-topics="Data Science"
+    data-live=""
+    data-hay="phruta Cristian Román-Palacios Maëlle Salmon &amp; Heidi Steiner The phruta R package is designed to simplify the basic phylogenetic pipeline. All the code is run within the same program and data from intermediate steps are saved in independent folders (optional). phruta retrieves gene sequences, combines newly downloaded to local gene sequences, performs sequence alignments, and basic phylogenetic inference. R package Data Science">
+    <div class="tl-img"><img src="/assets/images/softwares/phruta.png" alt="Phruta  image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">R package</span>
+        </div>
+        <h3 class="tl-name">phruta</h3><p class="tl-summary">The phruta R package is designed to simplify the basic phylogenetic pipeline.</p><p class="tl-authors">Cristian Román-Palacios, Maëlle Salmon, &amp; Heidi Steiner</p>
+        <div class="tl-install">
+            <code>devtools::install_github(&quot;ropensci/phruta&quot;)</code>
+            <button type="button" data-copy="devtools::install_github(&quot;ropensci/phruta&quot;)">Copy</button>
+        </div>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://ropensci.github.io/phruta/" target="_blank" rel="noopener">Open</a><a class="tl-btn" href="https://github.com/ropensci/phruta/" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="treedata.table"
+    data-types="R package"
+    data-topics="Biodiversity|Software|Data Science"
+    data-live=""
+    data-hay="treedata.table Cristian Román-Palacios Josef Uyeda April Wright &amp; Luke Harmon The data.table package enables high-performance extended functionality for data tables in R. treedata.table is a wrapper for data.table for phylogenetic analyses that matches a phylogeny to the data.table, and preserves matching during data.table operations. R package Biodiversity Software Data Science">
+    <div class="tl-img"><img src="/assets/images/softwares/treedata-table.png" alt="treedata.table  image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">R package</span>
+        </div>
+        <h3 class="tl-name">treedata.table</h3><p class="tl-summary">The data.table package enables high-performance extended functionality for data tables in R.</p><p class="tl-authors">Cristian Román-Palacios, Josef Uyeda, April Wright, &amp; Luke Harmon</p>
+        <div class="tl-install">
+            <code>devtools::install_github(&quot;ropensci/treedata.table&quot;)</code>
+            <button type="button" data-copy="devtools::install_github(&quot;ropensci/treedata.table&quot;)">Copy</button>
+        </div>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://ropensci.github.io/treedata.table" target="_blank" rel="noopener">Open</a><a class="tl-btn" href="https://github.com/ropensci/treedata.table" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="barn"
+    data-types="Python library"
+    data-topics="Data Science|Software"
+    data-live=""
+    data-hay="BARN Danielle Van Boxel Bayesian Additive Regression Networks. We apply Bayesian Additive Regression Tree (BART) principles to training an ensemble of small neural networks for regression tasks. Using Markov Chain Monte Carlo, Bayesian Additive Regression Net- works (BARN) samples from the space of single hidden layer neural networks that are conditioned on their fit to data. You can find more information in barnpy and its associated documentation Python library Data Science Software">
+    <div class="tl-img"><img src="/assets/images/softwares/barmpy_logo.png" alt="BARN  image" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Python library</span>
+        </div>
+        <h3 class="tl-name">BARN</h3><p class="tl-summary">Bayesian Additive Regression Networks.</p><p class="tl-authors">Danielle Van Boxel</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://dvbuntu.github.io/barmpy/" target="_blank" rel="noopener">Open</a><a class="tl-btn" href="https://github.com/dvbuntu/barn" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="autograder"
+    data-types="R package"
+    data-topics="People"
+    data-live=""
+    data-hay="autogradeR Cristian Roman autogradeR is expected to help instructors grade pre-defined assignments using a particular and relatively simple set of functions. Authograder generates basic templates that can only be accessed by instructors using a pre-defined encrypted password. The current release is based on RMarkdown files. R package People">
+    <div class="tl-img"><img src="/assets/images/softwares/logo.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">R package</span>
+        </div>
+        <h3 class="tl-name">autogradeR</h3><p class="tl-summary">autogradeR is expected to help instructors grade pre-defined assignments using a particular and relatively simple set of functions.</p><p class="tl-authors">Cristian Roman</p>
+        <div class="tl-install">
+            <code>devtools::install_github(&quot;datadiversitylab/autogradeR&quot;)</code>
+            <button type="button" data-copy="devtools::install_github(&quot;datadiversitylab/autogradeR&quot;)">Copy</button>
+        </div>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://datadiversitylab.github.io/autogradeR/" target="_blank" rel="noopener">Open</a><a class="tl-btn" href="https://github.com/datadiversitylab/autogradeR" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="bayclump"
+    data-types="Web application"
+    data-topics="Data Science"
+    data-live="1"
+    data-hay="BayClump Cristian Román-Palacios &amp; Hannah Carroll BayClump is a Shiny Dashboard application that is associated with the bayclumpr R package. All the functions implemented in BayClump are sourced from bayclumpr. We eveloped BayClump to allow users with less coding experience to be able to access standarized resources to calibrate and derive reconstructions using clumped isotope datasets. Web application Data Science">
+    <div class="tl-img"><img src="/assets/images/softwares/figure-8.jpg" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Web application</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">BayClump</h3><p class="tl-summary">BayClump is a Shiny Dashboard application that is associated with the bayclumpr R package.</p><p class="tl-authors">Cristian Román-Palacios &amp; Hannah Carroll</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://bayclump.tripatilab.epss.ucla.edu/" target="_blank" rel="noopener">Open</a><a class="tl-btn" href="https://github.com/Tripati-Lab/BayClump" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="bayclumpr"
+    data-types="R package"
+    data-topics="Data Science"
+    data-live=""
+    data-hay="bayclumpr Cristian Román-Palacios Hannah M. Carroll &amp; Aradhna Tripati bayclumpr is a self-contained R package that supports the use of Bayesian models and the analytical framework developed in Román-Palacios et al. (2022) for clumped isotope calibration, temperature reconstructions, and facilitatation of comparisons on Bayesian and classical models. bayclumpr fits both frequentist and Bayesian linear regressions to calibration datasets and performs temperature reconstructions under both frameworks. R package Data Science">
+    <div class="tl-img"><img src="/assets/images/softwares/logobayclumpr.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">R package</span>
+        </div>
+        <h3 class="tl-name">bayclumpr</h3><p class="tl-summary">bayclumpr is a self-contained R package that supports the use of Bayesian models and the analytical framework developed in Román-Palacios et al.</p><p class="tl-authors">Cristian Román-Palacios, Hannah M. Carroll, &amp; Aradhna Tripati</p>
+        <div class="tl-install">
+            <code>devtools::install_github(&quot;Tripati-Lab/bayclumpr&quot;)</code>
+            <button type="button" data-copy="devtools::install_github(&quot;Tripati-Lab/bayclumpr&quot;)">Copy</button>
+        </div>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://tripati-lab.github.io/bayclumpr/" target="_blank" rel="noopener">Open</a><a class="tl-btn" href="https://github.com/Tripati-Lab/bayclumpr" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="chorus"
+    data-types="Web application"
+    data-topics="People"
+    data-live="1"
+    data-hay="Chorus Cristian Román-Palacios Chorus is a live polling platform designed for conferences, events, workshops, meetings, and similar events. Admins can create unique rooms, design questions, and enable access for attendees via unique tokens. Attendees can suggest answers and vote in real-time. Admins can manage questions, voting settings, and get summary statistics. Web application People">
+    <div class="tl-img"><img src="/assets/images/softwares/screenshot-2026-03-06-at-7.11.10 pm.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Web application</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">Chorus</h3><p class="tl-summary">Chorus is a live polling platform designed for conferences, events, workshops, meetings, and similar events.</p><p class="tl-authors">Cristian Román-Palacios</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="/poll_chorus/">Open</a><a class="tl-btn" href="https://github.com/datadiversitylab/chorus" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="classr"
+    data-types="R package"
+    data-topics="People|Data Science"
+    data-live=""
+    data-hay="classR Cristian Román-Palacios A minimal GitHub Classroom replacement in R. Run a course on GitHub without GitHub Classroom: each student gets a private repo in a given organization, starter files get pushed in, and the student is added as a collaborator. R package People Data Science">
+    <div class="tl-img"><img src="/assets/images/tools/screenshot-2026-08-28-at-1.40.11 pm.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">R package</span>
+        </div>
+        <h3 class="tl-name">classR</h3><p class="tl-summary">A minimal GitHub Classroom replacement in R.</p><p class="tl-authors">Cristian Román-Palacios</p>
+        <div class="tl-actions"><a class="tl-btn" href="https://datadiversitylab.github.io/classR/" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="cophy_abc"
+    data-types="R package"
+    data-topics="Biodiversity|Data Science"
+    data-live=""
+    data-hay="cophy_ABC Yichao Zeng This project presents an Approximate Bayesian Computation (ABC) approach to estimating speciation and extinction rates from cophylogenetic systems. The rates of four types of speciation and two types of extinction can be inferred: host speciation (λH), symbiont speciation without host switching (λS), cospeciation (λC), symbiont speciation with host switching (λW), host extinction (μH), and symbiont extinction (μS). The speciation and extinction rates follow: μH=ϵH(λH+λC) μS=ϵS(λS+λC+λW) where ϵH and ϵS range between 0 and 1. We define the net diversification rate of the cophylogeny as r=2∗rhost∗rsymbiontrhost+rsymbiont where host=λH+λC−μH and symbiont=λS+λC+λW−μS are the net diversification rates of the host and symbiont clades, respectively. For the user&#39;s information, some parameters are assigned a different name in the code: λW - expH, ϵH - muHfrac, and ϵS - muSfrac. The tutorial provided here is the full procedure to estimate macroevolutionary rates from a given cophylogeny, using the BLenD-a / BLenD-b curves and tree sizes as summary statistics. This procedure is illustrated with a re-analysis of the cophylogenetic dataset from Van Dam et al. (2024) R package Biodiversity Data Science">
+    <div class="tl-img"><img src="/assets/images/tools/tools-and-data.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">R package</span>
+        </div>
+        <h3 class="tl-name">cophy_ABC</h3><p class="tl-summary">This project presents an Approximate Bayesian Computation (ABC) approach to estimating speciation and extinction rates from cophylogenetic systems.</p><p class="tl-authors">Yichao Zeng</p>
+        <div class="tl-install">
+            <code>devtools::install_github(&quot;yichaozeng/cophy_ABC&quot;)</code>
+            <button type="button" data-copy="devtools::install_github(&quot;yichaozeng/cophy_ABC&quot;)">Copy</button>
+        </div>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://academic.oup.com/sysbio/advance-article/doi/10.1093/sysbio/syag070/8789437" target="_blank" rel="noopener">Open</a><a class="tl-btn" href="https://github.com/yichaozeng/cophy_ABC" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="enhanced personal protective equipment detection (ui)"
+    data-types="Web application"
+    data-topics="People|Data Science"
+    data-live=""
+    data-hay="Enhanced Personal Protective Equipment Detection (UI) Jiayue He Enhannced PPE2 is a Human-Machine Interface (HMI) tailored for real-time object detection, with a specific focus on hard hat compliance monitoring in industrial settings. Although this project is tailored for hard hat compliance monitoring, the modular architecture allows easy adaptation for other applications like gengeral PPE detection including masks, goggles, vest and so on. This project focuses on developing the UI associated to the ML model detection algorithm. Web application People Data Science">
+    <div class="tl-img"><img src="/assets/images/softwares/screenshot-from-2024-06-28-13-51-03.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Web application</span>
+        </div>
+        <h3 class="tl-name">Enhanced Personal Protective Equipment Detection (UI)</h3><p class="tl-summary">Enhannced PPE2 is a Human-Machine Interface (HMI) tailored for real-time object detection, with a specific focus on hard hat...</p><p class="tl-authors">Jiayue He</p>
+        <div class="tl-actions"><a class="tl-btn" href="https://github.com/datadiversitylab/Enhanced-PPE2" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="facade detection from google street view images"
+    data-types="Web application"
+    data-topics="Data Science|People"
+    data-live=""
+    data-hay="Facade Detection from Google Street View Images Shih-Hsuan Lo This Neural Network-based tool facilitates extraction of building facade color patterns from Google Street View Images. Web application Data Science People">
+    <div class="tl-img"><img src="/assets/images/softwares/screenshot-from-2024-06-28-13-36-03.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Web application</span>
+        </div>
+        <h3 class="tl-name">Facade Detection from Google Street View Images</h3><p class="tl-summary">This Neural Network-based tool facilitates extraction of building facade color patterns from Google Street View Images.</p><p class="tl-authors">Shih-Hsuan Lo</p>
+        <div class="tl-actions"><a class="tl-btn" href="https://github.com/datadiversitylab/NN_FACADE" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="gradpath extension"
+    data-types="Web application"
+    data-topics="People|Data Science"
+    data-live=""
+    data-hay="GradPath Extension Cristian Román-Palacios This repo hosts a simple Firefox extension that checks on whether the requierements for a given program (or subplan) are being met by the student. This version focuses on Data Science and Information Science programs in InfoSci. However, this extension can be easily modified to enable other programs or subplans. It can also be adjusted in the requirements it check for. I did not implement an automatic submission. Web application People Data Science">
+    <div class="tl-img"><img src="/assets/images/softwares/screenshot-2026-03-18-at-9.05.43 pm.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Web application</span>
+        </div>
+        <h3 class="tl-name">GradPath Extension</h3><p class="tl-summary">This repo hosts a simple Firefox extension that checks on whether the requierements for a given program (or subplan) are being met by the student.</p><p class="tl-authors">Cristian Román-Palacios</p>
+        <div class="tl-actions"><a class="tl-btn" href="https://github.com/datadiversitylab/ms_advising_checker" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="plagiarized"
+    data-types="Web application"
+    data-topics="People"
+    data-live="1"
+    data-hay="plagiaRized Cristian Román-Palacios This is a basic shiny dashboard to perform pairwise comparison of different file submissions. The app is intended to help identify instances of potential plagiarism in coding-based assignments. Web application People">
+    <div class="tl-img"><img src="/assets/images/softwares/screenshot-2024-06-27-at-8.51.02-am.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Web application</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">plagiaRized</h3><p class="tl-summary">This is a basic shiny dashboard to perform pairwise comparison of different file submissions.</p><p class="tl-authors">Cristian Román-Palacios</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://viz.datascience.arizona.edu/plagiarized/" target="_blank" rel="noopener">Open</a><a class="tl-btn" href="https://github.com/datadiversitylab/plagiaRized" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="salphycon"
+    data-types="R package"
+    data-topics="Biodiversity|Software"
+    data-live=""
+    data-hay="salphycon Cristian Román-Palacios salphycon is a front end for the phruta R package. It&#39;s meant to introduce the early steps of a phylogenetics pipeline (taxon and gene selection, sequence retrieval, curation, and alignment) in a classroom setting, while staying flexible enough for a quick real research workflow, before moving to heavier computational steps like tree inference. R package Biodiversity Software">
+    <div class="tl-img"><img src="/assets/images/tools/screenshot-2026-09-16-at-6.43.26 pm.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">R package</span>
+        </div>
+        <h3 class="tl-name">salphycon</h3><p class="tl-summary">salphycon is a front end for the phruta R package.</p><p class="tl-authors">Cristian Román-Palacios</p>
+        <div class="tl-install">
+            <code>devtools::install_github(&quot;datadiversitylab/salphycon&quot;)</code>
+            <button type="button" data-copy="devtools::install_github(&quot;datadiversitylab/salphycon&quot;)">Copy</button>
+        </div>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="/phylogenetics_salphycon/">Open</a><a class="tl-btn" href="https://github.com/datadiversitylab/salphycon" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="santa cruz e. coli predictions"
+    data-types="Web application"
+    data-topics="Data Science"
+    data-live="1"
+    data-hay="Santa Cruz E. coli Predictions Cristian Román-Palacios &amp; Laura Palacios-Falk This tool predicts Escherichia coli (E. coli) levels in the Upper Santa Cruz River using a model trained on public data from 2009-2022. It is intended as a warning of possible high bacterial loads; water quality must still be verified using coliform testing procedures to ensure public safety. Web application Data Science">
+    <div class="tl-img"><img src="/assets/images/softwares/santa_cruz_river_arizona_map.jpg" alt="Map of the Santa Cruz River" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Web application</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">Santa Cruz E. coli Predictions</h3><p class="tl-summary">This tool predicts Escherichia coli (E.</p><p class="tl-authors">Cristian Román-Palacios &amp; Laura Palacios-Falk</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://laurafalk.github.io/SantaCruzPredictions.html" target="_blank" rel="noopener">Open</a><a class="tl-btn" href="https://github.com/LauraFalk/SantaCruz_Ecoli_ShinyApp" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="ssarp"
+    data-types="R package"
+    data-topics="Software|Biodiversity"
+    data-live=""
+    data-hay="ssarp Kristen Martinet Cristian Román-Palacios Luke Harmon ssarp (Species-/Speciation-Area Relationship Projector) is an R package that provides a suite of functions to help users create speciation- and species- area relationships for island-dwelling taxa using occurrence data from GBIF (Global Biodiversity Information Facility) or the user’s own occurrence data. R package Software Biodiversity">
+    <div class="tl-img"><img src="/assets/images/softwares/screenshot-2025-10-02-at-9.09.11 am.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">R package</span>
+        </div>
+        <h3 class="tl-name">ssarp</h3><p class="tl-summary">ssarp (Species-/Speciation-Area Relationship Projector) is an R package that provides a suite of functions to help users create...</p><p class="tl-authors">Kristen Martinet, Cristian Román-Palacios, Luke Harmon</p>
+        <div class="tl-install">
+            <code>devtools::install_github(&quot;ropensci/ssarp&quot;)</code>
+            <button type="button" data-copy="devtools::install_github(&quot;ropensci/ssarp&quot;)">Copy</button>
+        </div>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://docs.ropensci.org/ssarp/" target="_blank" rel="noopener">Open</a><a class="tl-btn" href="https://github.com/ropensci/ssarp" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="the acc: the animal chromosome count database"
+    data-types="Website"
+    data-topics="Biodiversity"
+    data-live="1"
+    data-hay="The ACC: The Animal Chromosome Count Database Cristian Román-Palacios The ACC is the largest database of animal chromosomal counts. We have curated chromosome numbers across the animal Tree of Life to make data accessible for people interested in understanding the potential links between biological processes and patterns to broad chromosomal changes in animals. Website Biodiversity">
+    <div class="tl-img"><img src="/assets/images/databases/screenshot-2025-02-13-at-9.58.39 pm.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Website</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">The ACC: The Animal Chromosome Count Database</h3><p class="tl-summary">The ACC is the largest database of animal chromosomal counts.</p><p class="tl-authors">Cristian Román-Palacios</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://cromanpa94.github.io/ACC/" target="_blank" rel="noopener">Open</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="the acdb: the animal culture database"
+    data-types="Website"
+    data-topics="Biodiversity|Data Science"
+    data-live="1"
+    data-hay="The ACDB: The Animal Culture Database Cristian Román-Palacios &amp; Kiran Basava The Animal Culture Database (ACDB) is a database of cultural behaviors across nonhuman animal species. It synthesizes current literature on intra-species behavioral variation in contexts such as communication, foraging, and migration, along with data on effects of human disturbances to the environment, to facilitate comparative research on interactions between animal social learning and climate change. Website Biodiversity Data Science">
+    <div class="tl-img"><img src="/assets/images/databases/screenshot-2025-02-19-at-1.52.00 pm.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Website</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">The ACDB: The Animal Culture Database</h3><p class="tl-summary">The Animal Culture Database (ACDB) is a database of cultural behaviors across nonhuman animal species.</p><p class="tl-authors">Cristian Román-Palacios &amp; Kiran Basava</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="/ddl_acdb/">Open</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="universal ortholog based phylogenomic database and toolset"
+    data-types="Dataset|Web application"
+    data-topics="Data Science|Biodiversity"
+    data-live="1"
+    data-hay="Universal Ortholog Based Phylogenomic Database and Toolset Cristian Román-Palacios &amp; MD Nafis Ul Alam This research is being conducted with the following goals in mind: Facilitate evolutionary genomic analysis in the eukaryotic domain Make public genomic data more accessible by increasing information content per unit volume of data Develop improved methods and algorithms for genome informatics Streamline downstream analyses in genomic workflows Analyze patterns of genome evolution during the process of adaptation, speciation, diversification and domestication Dataset Web application Data Science Biodiversity">
+    <div class="tl-img"><img src="/assets/images/softwares/universal-ortholog.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Dataset + Web application</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">Universal Ortholog Based Phylogenomic Database and Toolset</h3><p class="tl-summary">This research is being conducted with the following goals in mind: Facilitate evolutionary genomic analysis in the eukaryotic domain...</p><p class="tl-authors">Cristian Román-Palacios &amp; MD Nafis Ul Alam</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="http://www.phyca.org/index.html" target="_blank" rel="noopener">Open</a><a class="tl-btn" href="https://github.com/DeadlineWasYesterday/phyca/" target="_blank" rel="noopener">Code</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="vi simposio colevol"
+    data-types="Website"
+    data-topics="People|Biodiversity"
+    data-live="1"
+    data-hay="VI Simposio COLEVOL  VI Simposio COLEVOL is a website guide to the COLEVOL-UNIVALLE 2017 conference. COLEVOL is the Colombian Association of Evolutionary Biology. This conference was held at the University of Valle in Cali, Colombia and aimed to serve as a symposium on evolutionary biology. This conference also offered a course on the basics of comparative phylogenetic methods. Overall, the event &quot;fostered interaction and connections between students from remote regions of the country and prestigious academic and technological centers of thought in Colombia and around the world&quot;. Read more on the website! Website People Biodiversity">
+    <div class="tl-img"><img src="/assets/images/tools/vi-simposio.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Website</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">VI Simposio COLEVOL</h3><p class="tl-summary">VI Simposio COLEVOL is a website guide to the COLEVOL-UNIVALLE 2017 conference.</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://sites.google.com/view/visimposiocolevol/inicio?authuser=0" target="_blank" rel="noopener">Open</a>
+        </div>
+    </div>
+</article>
+
+<article class="tl-card"
+    data-name="website for scorch grant"
+    data-types="Website"
+    data-topics="People"
+    data-live="1"
+    data-hay="Website for SCORCH Grant  The Southwest Center on Resilience for Climate Change and Health (SCORCH) brings together transdisciplinary research groups to conduct solutions-oriented team-science projects responsive to the health needs of arid lands communities adapting to climate change. The Integrated Data Visualization Core (IDVC) supports the overall Center mission through the provision of data science, visualization, and management expertise. Website People">
+    <div class="tl-img"><img src="/assets/images/databases/screenshot-2026-04-24-at-1.46.35 pm.png" alt="" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">Website</span><span class="tl-live">Try it</span>
+        </div>
+        <h3 class="tl-name">Website for SCORCH Grant</h3><p class="tl-summary">The Southwest Center on Resilience for Climate Change and Health (SCORCH) brings together transdisciplinary research groups to conduct...</p>
+        <div class="tl-actions"><a class="tl-btn tl-btn-dark" href="https://scorch-idvc.github.io/" target="_blank" rel="noopener">Open</a>
+        </div>
+    </div>
+</article>
+
+        </div>
+
+        <div class="tl-empty" id="tl-empty" hidden>
+            <p>No tools match those filters.</p>
+            <button type="button" class="tl-btn" data-reset>Clear filters</button>
         </div>
     </div>
 </section>
@@ -786,7 +876,7 @@
         <script defer src="/assets/js/nav.js"></script>
 
         
-            <script defer src="/assets//js/tools-and-data.js"></script>
+            <script defer src="/assets/js/tools-page.js"></script>
         
 
         
