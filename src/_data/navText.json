@@ -1,0 +1,64 @@
+{
+    "items": [
+        {
+            "page": "Overview",
+            "text": "Who we are and what we study"
+        },
+        {
+            "page": "Our work",
+            "text": "Papers, tools and grants in one list"
+        },
+        {
+            "page": "Join us",
+            "text": "Open positions and how to reach out"
+        },
+        {
+            "page": "Grants",
+            "text": "Who funds the lab"
+        },
+        {
+            "page": "Space and tech",
+            "text": "Rooms, computers and software"
+        },
+        {
+            "page": "Lab meetings",
+            "text": "Schedule and who presents"
+        },
+        {
+            "page": "Lab manual",
+            "text": "Guides and policies for lab members"
+        },
+        {
+            "page": "Teaching",
+            "text": "Courses by term"
+        },
+        {
+            "page": "Senate",
+            "text": "Faculty senate service"
+        },
+        {
+            "page": "Advising",
+            "text": "Master's student advising"
+        },
+        {
+            "page": "Tool and data library",
+            "text": "Apps, packages and datasets"
+        },
+        {
+            "page": "Blog",
+            "text": "Notes from the lab"
+        },
+        {
+            "page": "Lab news",
+            "text": "What the lab has been up to"
+        },
+        {
+            "page": "News coverage",
+            "text": "The lab in the press"
+        },
+        {
+            "page": "Photos",
+            "text": "Pictures from lab life"
+        }
+    ]
+}

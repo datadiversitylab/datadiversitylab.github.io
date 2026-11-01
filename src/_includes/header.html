@@ -41,7 +41,7 @@
                     {%- for entry in navPages %}
                         {%- if (entry.children | length > 0) %}
                             <li class="cs-li cs-dropdown" tabindex="0">
-                                <span {% if entry.url == page.url %} class="cs-li-link cs-active" {% else %} class="cs-li-link" {% endif %} href="{{ entry.url }}">
+                                <span {% if entry.url == page.url %} class="cs-li-link cs-active" {% else %} class="cs-li-link" {% endif %}>
                                     {{ entry.title }}
                                     {% if page.url == '/'%}
                                         <img class="cs-drop-icon" src="/assets/icons/chevron-down-white.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
@@ -49,6 +49,7 @@
                                         <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
                                     {% endif %}
                                 </span>
+                                {#- A child that has pages of its own becomes a small heading with its pages under it. -#}
                                 <ul class="cs-drop-ul">
                                     {%- if entry.url %}
                                     <li class="cs-drop-li">
@@ -56,9 +57,20 @@
                                     </li>
                                     {%- endif %}
                                     {%- for child in entry.children %}
+                                        {%- if child.children | length > 0 %}
+                                        <li class="cs-drop-li cs-drop-group">
+                                            <span class="cs-drop-head">{{ child.title }}</span>
+                                            <ul class="cs-drop-sub">
+                                                {%- for sub in child.children %}
+                                                <li><a href="{{ sub.url }}" class="cs-li-link cs-drop-link">{{ sub.title }}</a></li>
+                                                {%- endfor %}
+                                            </ul>
+                                        </li>
+                                        {%- else %}
                                         <li class="cs-drop-li">
                                             <a href="{{ child.url }}" class="cs-li-link cs-drop-link">{{ child.title }}</a>
                                         </li>
+                                        {%- endif %}
                                     {%- endfor %}
                                 </ul>
                         </li>

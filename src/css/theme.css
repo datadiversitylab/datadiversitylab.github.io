@@ -38,3 +38,60 @@ main { background-color: transparent; }
    On the white bar both should be dark, in every state, so only the white one needs a filter. */
 body:not(.no-theme) #cs-navigation img.cs-drop-icon { filter: none; }
 body:not(.no-theme) #cs-navigation img.cs-drop-icon[src*="chevron-down-white"] { filter: invert(0.8); }
+
+/* Navigation: soft pills for links and a clean card for each dropdown */
+.cs-drop-head { display: none; }
+
+@media only screen and (min-width: 64rem) {
+    #cs-navigation .cs-ul { gap: 0.2rem; }
+    #cs-navigation .cs-li { padding: 1.55rem 0; }
+    #cs-navigation .cs-li-link {
+        padding: 0.45rem 0.9rem;
+        font-weight: 400;
+        border-radius: 999px;
+        transition: background 0.2s, color 0.2s;
+    }
+    #cs-navigation .cs-li-link:before { display: none; }
+    #cs-navigation .cs-li:hover > .cs-li-link,
+    #cs-navigation .cs-li:focus-within > .cs-li-link { background: #eef4f0; }
+    #cs-navigation .cs-li-link.cs-active { background: #e4efe8; color: #2f6b50; }
+
+    #cs-navigation .cs-drop-ul {
+        left: 50%;
+        right: auto;
+        top: calc(100% - 0.6rem);
+        min-width: 14rem;
+        margin: 0;
+        padding: 0.5rem;
+        border: 0;
+        border-radius: 14px;
+        background: #fff;
+        box-shadow: 0 14px 36px rgba(43, 58, 50, 0.16);
+        transform: translateX(-50%) translateY(-4px);
+        transform-origin: top center;
+        transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+        z-index: 5;
+    }
+    #cs-navigation .cs-dropdown:hover .cs-drop-ul,
+    #cs-navigation .cs-dropdown:focus-within .cs-drop-ul { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+    #cs-navigation .cs-drop-li { list-style: none; transition-delay: 0s; opacity: 1; transform: none; }
+    #cs-navigation .cs-li-link.cs-drop-link {
+        padding: 0.6rem 0.85rem;
+        font-size: var(--bodyFontSize);
+        font-weight: 400;
+        white-space: nowrap;
+        border-radius: 9px;
+        display: block;
+    }
+    #cs-navigation .cs-li-link.cs-drop-link:hover { background: #e9f2ec; color: #2f6b50; }
+    .cs-drop-head { display: block; margin-top: 0.3rem; padding: 0.5rem 0.85rem 0.2rem; border-top: 1px solid #e1ebe5; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5d6b63; }
+    .cs-drop-sub { margin: 0; padding: 0; list-style: none; }
+}
+
+/* Phones: group titles are small headings */
+@media only screen and (max-width: 63.9375rem) {
+    #cs-navigation .cs-drop-ul { background: #eef4f0; }
+    #cs-navigation .cs-li-link.cs-drop-link { color: #2b3a32; font-weight: 400; }
+    .cs-drop-head { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5d6b63; }
+    .cs-drop-sub { margin: 0; padding: 0; list-style: none; }
+}

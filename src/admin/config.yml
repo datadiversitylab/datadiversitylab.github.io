@@ -23,29 +23,29 @@ collections:
     identifier_field: memberName
     slug: '{{memberName}}'
     fields:
-      - { label: 'Member Name', name: 'memberName', widget: 'string', required: true }
+      - { label: 'Member Name', name: 'memberName', widget: 'string', required: true, hint: 'First and last name, as you want it shown.' }
       - { label: 'Start year', name: 'memberDate', widget: 'string', required: false, hint: 'For example: 2024. Not needed for the PI.' }
       - { label: 'End year', name: 'memberDateEnd', widget: 'string', required: false, hint: 'Leave empty for current members. For one semester, use the same year as the start.' }
       - { label: 'After the lab: position', name: 'afterRole', widget: 'string', required: false, hint: 'Alumni only. For example: Data Scientist' }
       - { label: 'After the lab: organization', name: 'afterOrg', widget: 'string', required: false, hint: 'For example: Credit One. It is shown as Position, Organization.' }
       - { label: 'After the lab: link', name: 'afterLink', widget: 'string', required: false }
-      - { label: 'After the lab (old text, used only if the three fields above are empty)', name: 'currentPosition', widget: 'string', required: false }
+      - { label: 'After the lab (old single line)', name: 'currentPosition', widget: 'string', required: false, hint: 'Old entries only. Leave empty and use the three fields above.' }
       - { label: 'Also published as', name: 'alsoPublishedAs', widget: 'list', required: false, hint: 'Other spellings of the name in papers, one per line. For example: C. Román-Palacios' }
-      - { label: 'Member Bio', name: 'memberBio', widget: 'string', required: true }
+      - { label: 'Member Bio', name: 'memberBio', widget: 'string', required: true, hint: 'Two or three sentences, in the third person.' }
       - { label: 'Education (degree shown after the name)', name: 'memberEducation', widget: 'select', required: false, options: ['BSc', 'MSc', 'PhD'] }
       - { label: 'Role and status (pick Current or Former, plus the role)', name: 'tags', widget: 'select', default: ['Current'], required: true, options: ['Current', 'Former', 'Honorary', 'Intern', 'MS advising team', 'MSc capstone student', 'PhD student', 'PI', 'Postdoc', Staff, 'Undergraduate student', 'VIP student'], multiple: true }
-      - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false }
+      - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false, hint: 'Full link to the profile.' }
       - { label: 'Email', name: 'email', widget: 'string', required: false, hint: 'Shown for current members only.' }
       - { label: 'Github handle (not full link)', name: 'github', widget: 'string', required: false }
       - { label: 'Google Scholar', name: 'scholar', widget: 'string', required: false, hint: 'Full link to the profile.' }
       - { label: 'ORCID', name: 'orcid', widget: 'string', required: false, hint: 'The id, for example 0000-0002-1825-0097, or the full link.' }
       - { label: 'Bluesky', name: 'bluesky', widget: 'string', required: false, hint: 'The handle, for example name.bsky.social, or the full link.' }
-      - { label: 'Website', name: 'link', widget: 'string', required: false }
+      - { label: 'Website', name: 'link', widget: 'string', required: false, hint: 'Full link, starting with https://' }
       - { label: 'CV (PDF)', name: 'resume', widget: 'file', required: false, media_folder: '/src/assets/documents/our-team', public_folder: '/assets/documents/our-team' }
-      - { label: 'Member Image', name: 'image', widget: 'image', required: false }
-      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
-      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Photo', name: 'image', widget: 'image', required: false, hint: 'Head and shoulders, with the face in the upper half.' }
+      - { label: 'Photo description', name: 'imageAlt', widget: 'string', required: false, hint: 'One short sentence for screen readers. For example: Ana smiling in the lab.' }
+      - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Optional. Lower numbers come first within the same role. Leave empty if unsure.' }
+      - { label: 'Date', name: 'date', widget: 'datetime', required: false, hint: 'Not shown on the site. Leave as is.' }
       - { label: 'Co-advisor', name: 'coAdvisor', widget: 'string', required: false }
       - { label: 'Co-advisor website', name: 'coAdvisorLink', widget: 'string', required: false }
       - label: 'Additional affiliations'
@@ -65,29 +65,30 @@ collections:
     identifier_field: publicationTitle
     slug: '{{publicationTitle}}'
     fields:
-      - { label: 'Publication Title', name: 'publicationTitle', widget: 'markdown', required: true }
-      - { label: 'Author', name: 'publicationAuthor', widget: 'string', required: false }
-      - { label: 'Year', name: 'publicationDate', widget: 'string', required: false }
+      - { label: 'Publication Title', name: 'publicationTitle', widget: 'markdown', required: true, hint: 'The full title, as published. Use italics for species names.' }
+      - { label: 'Authors', name: 'publicationAuthor', widget: 'string', required: false, hint: 'All authors in the order of the paper, separated by commas. For example: Ana Lopez, Bo Chen & Cy Diaz' }
+      - { label: 'Year', name: 'publicationDate', widget: 'string', required: false, hint: 'Four digits, for example: 2025' }
       - { label: 'Month', name: 'publicationMonth', widget: 'select', options: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], required: false }
       - { label: 'Journal Name', name: 'publicationType', widget: 'string', required: false }
       - { label: 'Volume', name: 'publicationVolume', widget: 'string', required: false, hint: 'For example: 75' }
       - { label: 'Issue', name: 'publicationIssue', widget: 'string', required: false, hint: 'For example: 2' }
       - { label: 'Pages or article number', name: 'publicationPages', widget: 'string', required: false, hint: 'For example: 215-230 or e12345' }
       - { label: 'DOI', name: 'publicationDoi', widget: 'string', required: false, hint: 'Only the number, for example: 10.1093/sysbio/syaf001' }
-      - { label: 'Abstract', name: 'publicationAbstract', widget: 'markdown', required: true }
-      - { label: 'Keywords', name: 'tags', widget: 'list', required: true }
-      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Abstract', name: 'publicationAbstract', widget: 'markdown', required: true, hint: 'Paste the abstract from the paper.' }
+      - { label: 'Keywords', name: 'tags', widget: 'list', required: true, hint: 'One per line, from the paper. Three to six is enough.' }
+      - { label: 'Image', name: 'image', widget: 'image', required: false, hint: 'A figure from the paper. Used on the cards.' }
       - { label: 'PDF', name: 'pdfDocument', widget: 'file', required: false, media_folder: '/src/assets/documents/publications', public_folder: '/assets/documents/publications'}
-      - { label: 'Badge', name: 'badgeImage', widget: 'string', required: false }
-      - { label: 'PDF Url', name: 'pdfLink', widget: 'string', required: false }
-      - { label: 'Web Url', name: 'webLink', widget: 'string', required: false }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
-      - { label: 'Output type', name: 'outputType', widget: 'select', required: false, options: ['Journal article', 'Preprint', 'Review', 'Commentary', 'Popular writing'] }
-      - { label: 'Research areas (fine-grained, e.g. macroevolution)', name: 'researchAreas', widget: 'select', multiple: true, required: false, options: ['Macroevolution', 'Phylogenetics', 'Biogeography', 'Conservation biology', 'Climate change', 'Ecology', 'Biostatistics', 'Machine learning', 'Tools', 'Climate science'] }
+      - { label: 'Badge', name: 'badgeImage', widget: 'string', required: false, hint: 'Optional. A link to a badge image, for example an open-access logo. Leave empty if unsure.' }
+      - { label: 'PDF link', name: 'pdfLink', widget: 'string', required: false, hint: 'Only if the PDF is hosted elsewhere. If you uploaded the PDF above, leave empty.' }
+      - { label: 'Link to the paper', name: 'webLink', widget: 'string', required: false, hint: 'The journal or preprint page. Full link, starting with https://' }
+      - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Optional. Lower numbers come first. Leave empty if unsure.' }
+      - { label: 'Output type', name: 'outputType', widget: 'select', required: false, options: ['Journal article', 'Preprint', 'Review', 'Commentary', 'Popular writing'], hint: 'What kind of publication it is.' }
+      - { label: 'Research areas', name: 'researchAreas', widget: 'select', multiple: true, required: false, hint: 'The specific fields the paper belongs to. Pick as many as fit.', options: ['Macroevolution', 'Phylogenetics', 'Biogeography', 'Conservation biology', 'Climate change', 'Ecology', 'Biostatistics', 'Machine learning', 'Tools', 'Climate science'] }
       - label: "Topics"
         name: "topics"
         widget: "select"
         multiple: true
+        hint: "The big themes. Pick one or two."
         options:
           - "Biodiversity"
           - "Data Science"
@@ -140,21 +141,21 @@ collections:
     identifier_field: grantName
     slug: '{{grantName}}'
     fields:
-      - { label: 'Name', name: 'grantName', widget: 'string', required: true }
-      - { label: 'Subaward', name: 'subawardAmount', widget: 'string', required: false }
+      - { label: 'Name', name: 'grantName', widget: 'string', required: true, hint: 'The title of the grant or award.' }
+      - { label: 'Amount for the lab', name: 'subawardAmount', widget: 'string', required: false, hint: 'Only when the lab gets part of a larger grant. For example: $120,000' }
       - { label: 'Start year', name: 'startYear', widget: 'number', value_type: 'int', min: 2000, max: 2100, required: true }
       - { label: 'End year', name: 'endYear', widget: 'number', value_type: 'int', min: 2000, max: 2100, required: true, hint: 'A grant is shown as active through its end year.' }
-      - { label: 'PI', name: 'pi', widget: 'string', required: false }
-      - { label: 'Co-PI(s)', name: 'copi', widget: 'list', required: false }
+      - { label: 'PI', name: 'pi', widget: 'string', required: false, hint: 'Full name of the principal investigator.' }
+      - { label: 'Co-PI(s)', name: 'copi', widget: 'list', required: false, hint: 'One full name per line.' }
       - { label: 'Project staff (paid by this grant)', name: 'team', widget: 'relation', collection: 'team', search_fields: ['memberName'], value_field: 'memberName', display_fields: ['memberName'], multiple: true, required: false, hint: 'They show on their own profile with a Project staff tag.' }
-      - { label: 'Total amount', name: 'grantAmount', widget: 'string', required: false }
-      - { label: 'Description', name: 'grantDesc', widget: 'string', required: false }
-      - { label: 'Funder', name: 'tags', widget: 'list', required: true }
+      - { label: 'Total amount', name: 'grantAmount', widget: 'string', required: false, hint: 'The whole award. For example: $1,500,000' }
+      - { label: 'Description', name: 'grantDesc', widget: 'string', required: false, hint: 'Two or three sentences on what the project does.' }
+      - { label: 'Funder', name: 'tags', widget: 'list', required: true, hint: 'One per line. For example: NSF' }
       - { label: 'Document', name: 'document', widget: 'file', required: false, media_folder: '/src/assets/documents/grants', public_folder: '/assets/documents/grants' }
-      - { label: 'Link', name: 'link', widget: 'string', required: false }
-      - { label: 'Member Image', name: 'image', widget: 'image', required: false }
-      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Link', name: 'link', widget: 'string', required: false, hint: 'The project page. Full link, starting with https://' }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Image description', name: 'imageAlt', widget: 'string', required: false, hint: 'One short sentence for screen readers.' }
+      - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Optional. Lower numbers come first. Leave empty if unsure.' }
       - label: "Topics"
         name: "topics"
         widget: "select"
@@ -322,27 +323,29 @@ collections:
     slug: '{{Name}}'
     fields:
       - { label: 'Name', name: 'Name', widget: 'string', required: true }
-      - { label: 'Authors', name: 'authors', widget: 'list', required: true }
-      - { label: 'Description', name: 'Description', widget: 'markdown', required: false }
-      - { label: 'Github', name: 'github', widget: 'string', required: false }
-      - { label: 'Link', name: 'link', widget: 'string', required: false }
-      - { label: 'Image', name: 'image', widget: 'image', required: false }
-      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Authors', name: 'authors', widget: 'list', required: true, hint: 'One full name per line. Use the same spelling as on Team to show their photo.' }
+      - { label: 'Description', name: 'Description', widget: 'markdown', required: false, hint: 'The first sentence is the short line on the cards. Say what it does and who it is for.' }
+      - { label: 'Github', name: 'github', widget: 'string', required: false, hint: 'Full link to the repository.' }
+      - { label: 'Link', name: 'link', widget: 'string', required: false, hint: 'Where people use it: the app or the website. Full link, starting with https://' }
+      - { label: 'Image', name: 'image', widget: 'image', required: false, hint: 'A screenshot works best.' }
+      - { label: 'Image description', name: 'imageAlt', widget: 'string', required: false, hint: 'One short sentence for screen readers.' }
+      - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Optional. Lower numbers come first in the list. Leave empty if unsure.' }
       - label: "Topics"
         name: "topics"
         widget: "select"
         multiple: true
+        hint: "The big themes. Pick one or two."
         options:
           - "Biodiversity"
           - "Data Science"
           - "Software"
           - "People"
-      - label: 'Type tags'
+      - label: 'Type'
         name: 'tags'
         widget: 'select'
         multiple: true
         required: true
+        hint: 'What it is. Pick all that fit. Web applications and websites get a Try it label.'
         options:
           - 'Web application'
           - 'Website'
@@ -361,15 +364,15 @@ collections:
     identifier_field: publicationTitle
     slug: '{{publicationTitle}}'
     fields:
-      - { label: 'Name', name: 'publicationTitle', widget: 'string', required: true }
+      - { label: 'Name', name: 'publicationTitle', widget: 'string', required: true, hint: 'The name of the event. For example: 2025 Lab Retreat' }
       - { label: 'Location', name: 'Location', widget: 'string', required: false }
-      - { label: 'Year', name: 'publicationDate', widget: 'list', required: true }
+      - { label: 'Year', name: 'publicationDate', widget: 'list', required: true, hint: 'Type the year and press Enter. For example: 2025' }
       - { label: 'Month', name: 'publicationMonth', widget: 'select', options: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], required: true }
       - { label: 'Description', name: 'publicationAbstract', widget: 'string', required: false }
-      - { label: 'Images', name: 'images', widget: 'list', required: false, field: { label: 'Image', name: 'image', widget: 'image' } }
-      - { label: 'Tag', name: 'tags', widget: 'string', required: true }
-      - { label: 'Link', name: 'webLink', widget: 'string', required: false }
-      - { label: 'PDF', name: 'pdfDocument', widget: 'string', required: false }
+      - { label: 'Photos', name: 'images', widget: 'list', required: false, hint: 'The first photo is the cover. It is also the one used on Overview and Join us.', field: { label: 'Photo', name: 'image', widget: 'image' } }
+      - { label: 'Type of event', name: 'tags', widget: 'select', required: true, options: ['Award', 'Conference', 'Graduation', 'Interview', 'Meeting', 'Outreach', 'Retreat', 'Social', 'Talk'], hint: 'Pick the closest one.' }
+      - { label: 'Link', name: 'webLink', widget: 'string', required: false, hint: 'For example a video or the event page. Full link.' }
+      - { label: 'PDF link', name: 'pdfDocument', widget: 'string', required: false, hint: 'Only if there is a PDF online, for example slides. Leave empty if unsure.' }
   - name: 'news'
     label: 'News'
     folder: 'src/news'
@@ -381,29 +384,24 @@ collections:
     sortable_fields: ['tags']
     slug: '{{Name}}-{{tags}}'
     fields:
-      - { label: 'Name', name: 'Name', widget: 'string', required: true }
-      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
-      - { label: 'Order',name: 'order', widget: 'number', required: false }
-      - { label: "Body", name: "body", widget: "markdown"}
+      - { label: 'Semester', name: 'Name', widget: 'string', required: true, hint: 'Spring, Summer or Fall.' }
+      - { label: 'Year', name: 'tags', widget: 'list', required: true, hint: 'Type the year and press Enter. For example: 2026' }
+      - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Optional. Lower numbers come first within the same year. Leave empty if unsure.' }
+      - { label: 'News', name: 'body', widget: 'markdown', hint: 'One short bullet per item.' }
   - name: "inthenews"
     label: "In the News"
     folder: "src/inthenews"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "newsTitle", widget: "string" }
-      - { label: "Outlet", name: "Outlet", widget: "string", required: true }
-      - { label: "Year", name: "tags", widget: "list", required: true }
-      - { label: "Semester", name: "newsDate", widget: "string" , required: true}
-      - { label: "Description", name: "newsDesc", widget: "text" }
-      - { label: "Link to article", name: "link", widget: "string", required: false }
-      - { label: "Document (PDF)", name: "document", widget: "file", required: false }
-      - {
-          label: "Images",
-          name: "images",
-          widget: "list",
-          field: { label: "Image", name: "", widget: "image" }
-        }
+      - { label: "Title", name: "newsTitle", widget: "string", hint: "The headline of the article or the name of the interview." }
+      - { label: "Outlet", name: "Outlet", widget: "string", required: true, hint: "Where it appeared. For example: Arizona Daily Star" }
+      - { label: "Year", name: "tags", widget: "list", required: true, hint: "Type the year and press Enter. For example: 2026" }
+      - { label: "Semester", name: "newsDate", widget: "string", required: true, hint: "Spring, Summer or Fall." }
+      - { label: "Description", name: "newsDesc", widget: "text", hint: "One or two sentences on what it covered." }
+      - { label: "Link to article", name: "link", widget: "string", required: false, hint: "Full link, starting with https://" }
+      - { label: "Document (PDF)", name: "document", widget: "file", required: false, hint: "Only if there is no link." }
+      - { label: "Images", name: "images", widget: "list", required: false, field: { label: "Image", name: "image", widget: "image" } }
   - name: 'blog'
     label: 'Blog'
     folder: 'src/blog'
@@ -434,7 +432,7 @@ collections:
           - 'Mapping'
           - 'Welcome'
           - 'Español'
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Optional. Lower numbers come first. Leave empty if unsure.' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'jobs'
     label: 'Jobs'
@@ -445,53 +443,13 @@ collections:
     identifier_field: jobTitle
     slug: '{{jobTitle}}'
     fields:
-      - { label: 'Job Title', name: 'jobTitle', widget: 'string', required: true }
-      - { label: 'Status', name: 'status', widget: 'select', required: true, default: 'Open', options: ['Open', 'Closed'] }
-      - { label: 'Job Start Date', name: 'jobStartDate', widget: 'string', required: false }
-      - { label: 'Job Apply By', name: 'jobApplyBy', widget: 'string', required: false }
-      - { label: 'Job Description', name: 'jobDesc', widget: 'markdown', required: false }
-      - { label: 'Job Pdf', name: 'jobPdf', widget: 'file', required: false, media_folder: '/src/assets/documents/jobs', public_folder: '/assets/documents/jobs' }
-      - { label: 'Order',name: 'order', widget: 'number', required: false }
-  - name: 'collaborators'
-    label: 'Collaborators'
-    folder: 'src/collaborators'
-    media_folder: '/src/assets/images/collaborators'
-    public_folder: '/assets/images/collaborators'
-    create: true
-    identifier_field: collaboratorName
-    slug: '{{collaboratorName}}'
-    fields:
-      - { label: 'Collaborator Name', name: 'collaboratorName', widget: 'string', required: true }
-      - { label: 'Collaborator Title', name: 'collaboratorTitle', widget: 'string', required: false }
-      - { label: 'Collaborator Date', name: 'collaboratorDate', widget: 'string', required: false }
-      - { label: 'Collaborator Bio', name: 'collaboratorBio', widget: 'string', required: false }
-      - { label: 'Tags', name: 'tags', widget: 'list', required: true }
-      - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false }
-      - { label: 'Email', name: 'email', widget: 'string', required: false }
-      - { label: 'Link', name: 'link', widget: 'string', required: false }
-      - { label: 'Resume', name: 'resume', widget: 'string', required: false }
-      - { label: 'Member Image', name: 'image', widget: 'image', required: false }
-      - { label: 'Image Alt', name: 'imageAlt', widget: 'string', required: false }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
-      - { label: 'Date', name: 'date', widget: 'datetime' }
-  - name: 'teachingExperience'
-    label: 'Teaching Experience'
-    folder: 'src/teachingExperience'
-    media_folder: '/src/assets/images/teaching-experience'
-    public_folder: '/assets/images/teaching-experience'
-    create: true
-    identifier_field: title
-    slug: '{{title}}'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Rows', name: 'rows', widget: 'list', required: true, fields: [
-          { label: 'Year-Semester', name: 'yearSemester', widget: 'string', required: true },
-          { label: 'Course', name: 'course', widget: 'string', required: true },
-          { label: 'Role', name: 'role', widget: 'string', required: true },
-          { label: 'Number of Students', name: 'studentsAmount', widget: 'number', required: true }
-        ]
-      }
-      - { label: 'Year', name: 'year', widget: 'number', required: true }
+      - { label: 'Title', name: 'jobTitle', widget: 'string', required: true }
+      - { label: 'Status', name: 'status', widget: 'select', required: true, default: 'Open', options: ['Open', 'Closed'], hint: 'Open shows on Join us under Current opportunities. Closed moves it to the past list.' }
+      - { label: 'Start date', name: 'jobStartDate', widget: 'string', required: false, hint: 'For example: Fall 2026' }
+      - { label: 'Apply by', name: 'jobApplyBy', widget: 'string', required: false, hint: 'For example: December 15, 2026' }
+      - { label: 'Description', name: 'jobDesc', widget: 'markdown', required: false, hint: 'What the person will do, who should apply and how.' }
+      - { label: 'Full description (PDF)', name: 'jobPdf', widget: 'file', required: false, media_folder: '/src/assets/documents/jobs', public_folder: '/assets/documents/jobs' }
+      - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Optional. Lower numbers come first. Leave empty if unsure.' }
   - name: 'wiki'
     label: 'Lab manual'
     folder: 'src/wiki'
@@ -585,7 +543,7 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - { label: 'Description', name: 'body', widget: 'markdown', required: true }
       - { label: 'Link', name: 'link', widget: 'string', required: false }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Optional. Lower numbers come first. Leave empty if unsure.' }
   - name: 'transparencys'
     label: 'Transparency cards'
     folder: 'src/transparencys'
@@ -598,19 +556,7 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - { label: 'Year Range', name: 'yearRange', widget: 'string', required: true }
       - { label: 'Body', name: 'body', widget: 'markdown', required: true }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
-  - name: 'studentEvaluations'
-    label: 'Student Evaluations'
-    folder: 'src/studentEvaluations'
-    media_folder: '/src/assets/images/student-evaluations'
-    public_folder: '/assets/images/student-evaluations'
-    identifier_field: title
-    create: true
-    slug: '{{title}}'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
-      - { label: 'Order', name: 'order', widget: 'number', required: false }
+      - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Optional. Lower numbers come first. Leave empty if unsure.' }
   - name: 'pages'
     label: "Home page"
     media_folder: '/src/assets/images'
@@ -623,7 +569,7 @@ collections:
           - label: Title
             name: title
             widget: string
-          - label: sub title
+          - label: Subtitle
             name: subTitle
             widget: string
           - label: Description
@@ -794,10 +740,10 @@ collections:
         name: 'eleventyNavigation'
         widget: 'object'
         collapsed: false
-        hint: 'How the item appears in the main menu, under Outreach.'
+        hint: 'How the item appears in the main menu, under News and outreach.'
         fields:
           - { label: 'Name in the menu', name: 'key', widget: 'string', hint: 'Usually the same as the title. It must not repeat another menu item.' }
-          - { label: 'Parent menu', name: 'parent', widget: 'hidden', default: 'Outreach' }
+          - { label: 'Parent menu', name: 'parent', widget: 'hidden', default: 'News and outreach' }
           - { label: 'Order', name: 'order', widget: 'number', value_type: 'int', default: 500, hint: 'Lower numbers come first.' }
       - { label: 'Banner image', name: 'image', widget: 'image', required: false, media_folder: '/src/assets/images/outreach', public_folder: '/assets/images/outreach' }
       - { label: 'Banner image description', name: 'imageAlt', widget: 'string', required: false }
@@ -823,34 +769,3 @@ collections:
     slug: '{{title}}'
     fields:
       - { label: 'Logo Image', name: 'image', widget: 'image', required: true }
-  - name: 'favicons'
-    label: 'Favicons'
-    media_folder: '/src/assets/favicons'
-    public_folder: '/assets/favicons'
-    files:
-      - label: "Favicons refer to directions inside"
-        name: "Favicons"
-        file: "src/_data/favicons.json"
-        fields:
-          - label: Directions
-            name: readonlyField
-            widget: text
-            required: false
-          - label: Favicon ICO
-            name: faviconIco
-            widget: image
-          - label: Favicon 32x32
-            name: faviconBrowser32
-            widget: image
-          - label: Favicon 16x16
-            name: faviconBrowser16
-            widget: image
-          - label: Apple Touch Icon
-            name: appleTouchIcon
-            widget: image
-          - label: Android Chrome 192
-            name: androidChrome192
-            widget: image
-          - label: Android Chrome 384
-            name: androidChrome384
-            widget: image
