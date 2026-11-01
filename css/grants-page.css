@@ -1,0 +1,114 @@
+/* Grants page. Colors come from root.css and theme.css. */
+
+.gp {
+    --gp-ink: var(--headerColor, #2b3a32);
+    --gp-body: var(--bodyTextColor, #3d4d44);
+    --gp-line: var(--lineColor, #c2d6cc);
+    --gp-green: var(--secondaryDark, #4a7c65);
+    --gp-mute: #5a6d62;
+    --gp-shadow: 0 2px 16px rgba(43, 58, 50, 0.08);
+    padding: clamp(7rem, 12vw, 9rem) 0 4rem;
+    color: var(--gp-body);
+}
+.gp-wrap { width: 100%; max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; box-sizing: border-box; }
+
+/* Header, centered like the rest of the site */
+.gp-head { text-align: center; }
+.gp-h1 { margin: 0 0 0.6rem; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.15; color: var(--gp-ink); }
+.gp-sub { margin: 0 auto 1.6rem; max-width: 40rem; font-size: 1.05rem; line-height: 1.55; }
+
+/* Numbers */
+.gp-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin-bottom: 1.5rem; }
+.gp-stats div { min-width: 5.5rem; padding: 0.6rem 1.3rem; text-align: center; background: #fff; border: 1px solid var(--gp-line); border-radius: 12px; }
+.gp-stats b { display: block; font-size: 1.6rem; line-height: 1.2; color: var(--gp-ink); }
+.gp-stats span { font-size: 0.85rem; color: var(--gp-mute); }
+
+/* Filters */
+.gp-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin: 0.5rem 0 0; }
+.gp-pill {
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--gp-ink);
+    background: #fff;
+    border: 1px solid var(--gp-line);
+    border-radius: 999px;
+    padding: 0.5rem 1.1rem;
+    cursor: pointer;
+}
+.gp-pill:hover { border-color: var(--gp-green); }
+.gp-pill.is-on { background: var(--gp-ink); border-color: var(--gp-ink); color: #fff; }
+.gp-pills-sub .gp-pill { font-size: 0.88rem; font-weight: 500; padding: 0.35rem 0.9rem; background: transparent; }
+.gp-pills-sub .gp-pill.is-on { background: #e7f1ec; border-color: var(--gp-green); color: var(--gp-ink); }
+
+/* Sections */
+.gp-block[hidden], .gp-card[hidden], .gp-row[hidden] { display: none !important; }
+.gp-h2 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.8rem; margin: 2.4rem 0 1rem; font-size: 1.9rem; color: var(--gp-ink); }
+.gp-n { font-family: Figtree, Arial, sans-serif; font-size: 0.9rem; font-weight: 400; color: var(--gp-mute); }
+
+/* Role badges */
+.gp-role { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.7rem; border-radius: 999px; white-space: nowrap; }
+.gp-role-pi { background: #2b3a32; color: #fff; }
+.gp-role-copi { background: #e0a82e; color: #2b3a32; }
+.gp-role-collaborator { background: #e6eee9; color: #4a5d52; }
+
+/* Active cards */
+.gp-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; align-items: start; }
+.gp-card { background: #fff; border-top: 4px solid #e0a82e; border-radius: 12px; box-shadow: var(--gp-shadow); overflow: hidden; }
+.gp-media { position: relative; display: flex; align-items: center; justify-content: center; height: 8.75rem; background: #eef5f0; }
+.gp-media img { max-width: 88%; max-height: 6.9rem; object-fit: contain; }
+.gp-media .gp-role { position: absolute; top: 0.6rem; left: 0.6rem; }
+.gp-body { padding: 0.9rem 1.2rem 1.2rem; }
+.gp-kicker { margin: 0 0 0.25rem; font-size: 0.8rem; font-weight: 700; color: var(--gp-green); }
+.gp-name { margin: 0; font-size: 1.15rem; line-height: 1.3; color: var(--gp-ink); }
+.gp-amount { margin: 0.5rem 0 0.1rem; font-size: 1.3rem; font-weight: 700; color: var(--gp-ink); }
+.gp-amount em { font-size: 0.8rem; font-style: normal; font-weight: 400; color: var(--gp-mute); }
+.gp-people { margin: 0; max-width: none; font-size: 0.85rem; color: var(--gp-mute); }
+.gp-desc {
+    margin: 0.6rem 0 0.7rem;
+    max-width: none;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.gp-card.is-open .gp-desc { display: block; -webkit-line-clamp: unset; overflow: visible; }
+.gp-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.9rem; margin-top: 0.5rem; }
+.gp-live { font-size: 0.8rem; font-weight: 700; color: #2f6b4d; background: #e0f1e8; padding: 0.2rem 0.7rem; border-radius: 999px; }
+.gp-link, .gp-more { font: inherit; font-size: 0.88rem; font-weight: 700; color: var(--gp-green); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: none; }
+.gp-link:hover, .gp-more:hover { text-decoration: underline; }
+.gp-more { margin-left: auto; }
+
+/* Past rows */
+.gp-row { position: relative; border-top: 1px solid #dde7e1; }
+.gp-line { display: grid; grid-template-columns: 8rem minmax(0, 1fr) 6.5rem 8.5rem; gap: 0.9rem; align-items: center; padding: 0.85rem 0.25rem; }
+.gp-year { font-size: 0.9rem; font-weight: 700; color: var(--gp-mute); }
+.gp-title { font-weight: 700; color: var(--gp-ink); line-height: 1.35; }
+.gp-title i { display: block; margin-top: 0.1rem; font-size: 0.8rem; font-style: normal; font-weight: 400; color: var(--gp-mute); }
+.gp-line .gp-role { justify-self: start; }
+.gp-sum { text-align: right; font-weight: 600; }
+.gp-toggle { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; background: transparent; border: 0; cursor: pointer; }
+.gp-toggle:focus-visible { outline: 2px solid var(--gp-green); outline-offset: -2px; }
+.gp-row:hover .gp-title { color: var(--gp-green); }
+.gp-detail { position: relative; z-index: 1; padding: 0 0.25rem 1rem 8.9rem; }
+.gp-detail[hidden] { display: none; }
+.gp-detail p { margin: 0 0 0.5rem; max-width: 44rem; font-size: 0.92rem; line-height: 1.5; }
+.gp-detail .gp-people { font-size: 0.85rem; }
+.gp-detail .gp-link { margin-right: 1rem; }
+
+.gp-empty { text-align: center; padding: 3rem 1rem; }
+.gp-empty p { margin: 0 0 1rem; font-size: 1.05rem; }
+.gp-btn { font: inherit; font-size: 0.9rem; font-weight: 700; color: var(--gp-ink); background: #fff; border: 1px solid var(--gp-line); border-radius: 999px; padding: 0.7rem 1.15rem; cursor: pointer; }
+.gp-btn:hover { border-color: var(--gp-green); }
+
+@media only screen and (max-width: 48rem) {
+    .gp-cards { grid-template-columns: 1fr; }
+    .gp-line { grid-template-columns: minmax(0, 1fr) auto; gap: 0.3rem 0.8rem; }
+    .gp-year { grid-column: 1; grid-row: 1; }
+    .gp-line .gp-role { grid-column: 2; grid-row: 1; }
+    .gp-title { grid-column: 1 / -1; grid-row: 2; }
+    .gp-sum { grid-column: 1 / -1; grid-row: 3; text-align: left; }
+    .gp-detail { padding-left: 0.25rem; }
+}

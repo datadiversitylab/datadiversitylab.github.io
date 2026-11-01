@@ -135,7 +135,8 @@ collections:
     fields:
       - { label: 'Name', name: 'grantName', widget: 'string', required: true }
       - { label: 'Subaward', name: 'subawardAmount', widget: 'string', required: false }
-      - { label: 'Years', name: 'grantYears', widget: 'string', required: false }
+      - { label: 'Start year', name: 'startYear', widget: 'number', value_type: 'int', min: 2000, max: 2100, required: true }
+      - { label: 'End year', name: 'endYear', widget: 'number', value_type: 'int', min: 2000, max: 2100, required: true, hint: 'A grant is shown as active through its end year.' }
       - { label: 'PI', name: 'pi', widget: 'string', required: false }
       - { label: 'Co-PI(s)', name: 'copi', widget: 'list', required: false }
       - { label: 'Total amount', name: 'grantAmount', widget: 'string', required: false }
