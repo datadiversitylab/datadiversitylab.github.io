@@ -1,0 +1,8 @@
+{
+  "title": "Featured tools and data",
+  "picks": [
+    { "tool": "salphycon" },
+    { "tool": "the-acdb-the-animal-culture-database" },
+    { "tool": "barriomap" }
+  ]
+}

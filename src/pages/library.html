@@ -1,140 +1,114 @@
 ---
 layout: 'base.html'
-description: "Tools and data released by the Data Diversity Lab"
+description: "Tools and data released by the Data Diversity Lab. Try the apps, install the packages, or read the code."
 metaTitle: 'Library'
 tagTitle: 'Library'
 preloadImg: ''
-preloadCSS: '/css/tools-and-data.css'
-preloadJS: '/js/tools-and-data.js'
+preloadCSS: '/css/tools-page.css'
+preloadJS: 'js/tools-page.js'
 permalink: 'library/'
 eleventyNavigation:
     parent: Tools and data
     key: Tool and data library
     order: 100
 ---
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
+{#- Everything below comes from src/_data/toolsData.js. Tools, types, images and counts update by themselves. -#}
+{% set td = toolsData %}
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">Tools and data library</h1>
-            <p class="cs-text">
-                Software, web apps, and datasets built and released by members of the lab. Everything here is open and free to use.
-            </p>
+{% macro card(t, featured) %}
+<article class="tl-card{% if featured %} is-featured{% endif %}"
+    data-name="{{ t.name | lower }}"
+    data-types="{{ t.types | join('|') }}"
+    data-topics="{{ t.topics | join('|') }}"
+    data-live="{% if t.live %}1{% endif %}"
+    data-hay="{{ t.hay }}">
+    <div class="tl-img">
+        {%- if t.image %}<img src="{{ t.image }}" alt="{{ t.imageAlt }}" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='/assets/images/placeholder-image.png';">{% endif %}
+    </div>
+    <div class="tl-body">
+        <div class="tl-top">
+            <span class="tl-type">{{ t.typeLabel }}</span>
+            {%- if t.live %}<span class="tl-live">Try it</span>{% endif %}
+        </div>
+        <h3 class="tl-name">{{ t.name }}</h3>
+        {%- if t.summary %}<p class="tl-summary">{{ t.summary }}</p>{% endif %}
+        {%- if t.authors | length %}<p class="tl-authors">{{ t.authors | join(', ') }}</p>{% endif %}
+        {%- if t.install %}
+        <div class="tl-install">
+            <code>{{ t.install }}</code>
+            <button type="button" data-copy="{{ t.install }}">Copy</button>
+        </div>
+        {%- endif %}
+        <div class="tl-actions">
+            {%- if t.open %}<a class="tl-btn tl-btn-dark" href="{{ t.open }}"{% if t.external %} target="_blank" rel="noopener"{% endif %}>Open</a>{% endif %}
+            {%- if t.github %}<a class="tl-btn" href="{{ t.github }}" target="_blank" rel="noopener">Code</a>{% endif %}
         </div>
     </div>
-</section>
+</article>
+{% endmacro %}
 
-<div aria-hidden="true" class="line"></div>
+<section class="tl" id="tl">
+    <div class="tl-wrap">
 
-<!-- ============================================ -->
-<!--                Tools & Data                  -->
-<!-- ============================================ -->
-{# Collect category (topics) and keyword (tags) values across all tools #}
-{%- set categories = [] -%}
-{%- set keywords = [] -%}
-{%- for tool in collections.tools | sort(attribute='data.order') -%}
-    {%- for topic in tool.data.topics -%}
-        {%- if topic and not categories.includes(topic | string) -%}
-            {%- set categories = categories.concat(topic | string) -%}
-        {%- endif -%}
-    {%- endfor -%}
-    {%- for tag in tool.data.tags -%}
-        {%- if tag and not keywords.includes(tag | string) and tag != "tools" -%}
-            {%- set keywords = keywords.concat(tag | string) -%}
-        {%- endif -%}
-    {%- endfor -%}
-{%- endfor -%}
+        <header class="tl-head">
+            <h1 class="tl-h1">Tools and data</h1>
+            {%- if td.tools | length %}
+            <p class="tl-sub">{{ td.tools | length }} tools and datasets built by the lab. Try them in the browser, install them, or read the code. Everything is open and free to use.</p>
+            {%- endif %}
+            <label class="tl-search">
+                <span class="tl-visually-hidden">Search tools and data</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <input type="search" id="tl-q" placeholder="Search tools and data" autocomplete="off">
+            </label>
+        </header>
 
-<section id="tools-section">
-    <div class="cs-container">
-        <div class="cs-content cs-sidebar cs-filter-searchable">
-            <div class="cs-search-title-wrapper">
-                <h6 class="cs-title">Search</h6>
-                <div aria-hidden="true" class="line line-full"></div>
-                <div class="cs-search-wrapper">
-                    <input type="text" id="search" class="cs-search" placeholder="Name or description">
-                </div>
-            </div>
-            <div class="cs-filter-button-wrapper">
-                <div class="cs-add-filter-wrapper">
-                    <h6 class="cs-title">Add filters</h6>
-                    <img src="../assets/icons/plus.svg" class="plus-button" alt="filter" width="25" height="25">
-                </div>
+        {%- if td.types | length %}
+        <h2 class="tl-label">Browse by type</h2>
+        <div class="tl-tiles">
+            {%- for k in td.types %}
+            <button type="button" class="tl-tile" data-type="{{ k.name }}" aria-pressed="false">
+                <span class="tl-tile-img{% if not k.image %} is-empty{% endif %}">
+                    {%- if k.image %}<img src="{{ k.image }}" alt="" loading="lazy" decoding="async">{% endif %}
+                </span>
+                <span class="tl-tile-name">{{ k.name }}</span>
+                <span class="tl-tile-n">{{ k.count }} {% if k.count == 1 %}tool{% else %}tools{% endif %}</span>
+            </button>
+            {%- endfor %}
+        </div>
+        {%- endif %}
 
-                <div class="cs-filter-category-wrapper">
-                    <h6 class="cs-title">Category</h6>
-                    <div aria-hidden="true" class="line line-full"></div>
-                    <div class="cs-filter-wrapper cs-text">
-                        <div data-filter="all" class="active filter-option">All</div>
-                        {%- for category in categories | sort(true) -%}
-                            <div data-filter="{{ category }}" class="filter-option">{{ category }}</div>
-                        {%- endfor -%}
-                    </div>
-                </div>
-
-                <div class="cs-filter-keywords-wrapper">
-                    <h6 class="cs-title">Keywords</h6>
-                    <div aria-hidden="true" class="line line-full"></div>
-                    <div class="cs-filter-wrapper cs-text">
-                        <div data-filter="all" class="active filter-option">All</div>
-                        {%- for keyword in keywords | sort(true) -%}
-                            <div data-filter="{{ keyword }}" class="filter-option">{{ keyword }}</div>
-                        {%- endfor -%}
-                    </div>
-                </div>
+        {%- if td.featured | length %}
+        <div id="tl-featured">
+            <h2 class="tl-label">{{ td.featuredTitle }}</h2>
+            <div class="tl-grid">
+                {%- for t in td.featured %}{{ card(t, true) }}{% endfor %}
             </div>
         </div>
-        <div class="cs-title-card-wrapper">
-            <div class="cs-card-group">
-                {%- for tool in collections.tools | sort(attribute='data.order') -%}
-                    <div class="cs-item">
-                        <picture class="cs-picture">
-                            <source media="(max-width: 600px)" srcset="{{ tool.data.image }}">
-                            <source media="(min-width: 601px)" srcset="{{ tool.data.image }}">
-                            <img loading="lazy" onerror="this.onerror=null; this.src='../assets/images/placeholder-image.png';" decoding="async" src="{{ tool.data.image }}" alt="{{ tool.data.imageAlt }}" width="522" height="370" aria-hidden="true">
-                        </picture>
-                        <div class="cs-flex-group">
-                            <span class="cs-name">{{ tool.data.Name }}</span>
-                            {%- if tool.data.authors -%}
-                                <span class="cs-publication-author">{{ tool.data.authors | join(', ') }}</span>
-                            {%- endif -%}
-                            <span class="cs-desc">
-                                <div class="read-more-text">{{ tool.data.Description | markdown | safe }}</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            {# Category chips (hidden, used for filtering) #}
-                            <div class="cs-item-categories" style="display: none;">
-                                {%- for topic in tool.data.topics -%}
-                                    <div class="cs-filter">{{ topic }}</div>
-                                {%- endfor -%}
-                            </div>
-                            {# Keyword chips (visible) #}
-                            <div class="cs-item-filters">
-                                {%- for filter in tool.data.tags -%}
-                                    {%- if filter and filter != 'tools' -%}
-                                        <div class="cs-filter">{{ filter }}</div>
-                                    {%- endif -%}
-                                {%- endfor -%}
-                            </div>
-                            {%- if tool.data.github or tool.data.link -%}
-                                <div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social">
-                                    {%- set socials = [{'platform': 'github', 'icon': 'github.svg'}, {'platform': 'link', 'icon': 'link.svg'}] -%}
-                                    {%- for social in socials -%}
-                                        {%- if tool.data[social.platform] -%}
-                                            <a href="{{ tool.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
-                                        {%- endif -%}
-                                    {%- endfor -%}
-                                </div>
-                            {%- endif -%}
-                        </div>
-                    </div>
-                {%- endfor -%}
-            </div>
+        {%- endif %}
+
+        <h2 class="tl-label">All tools and data</h2>
+        <div class="tl-chips" role="group" aria-label="Filter">
+            <button type="button" class="tl-chip is-on" data-chip="all" aria-pressed="true">All<em>{{ td.tools | length }}</em></button>
+            {%- for k in td.topics %}
+            <button type="button" class="tl-chip" data-chip="topic:{{ k.name }}" aria-pressed="false">{{ k.name }}<em>{{ k.count }}</em></button>
+            {%- endfor %}
+            {%- if td.liveCount %}
+            <button type="button" class="tl-chip" data-chip="live" aria-pressed="false">Try it now<em>{{ td.liveCount }}</em></button>
+            {%- endif %}
+        </div>
+
+        <div class="tl-status" aria-live="polite">
+            <span id="tl-count">{{ td.tools | length }} tools and datasets</span>
+            <button type="button" class="tl-clear" id="tl-clear" hidden>Clear filters</button>
+        </div>
+
+        <div class="tl-grid" id="tl-grid">
+            {%- for t in td.tools %}{{ card(t, false) }}{% endfor %}
+        </div>
+
+        <div class="tl-empty" id="tl-empty" hidden>
+            <p>No tools match those filters.</p>
+            <button type="button" class="tl-btn" data-reset>Clear filters</button>
         </div>
     </div>
 </section>

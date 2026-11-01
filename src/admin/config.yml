@@ -106,6 +106,24 @@ collections:
               - { label: 'Paper', name: 'paper', widget: 'relation', collection: 'publication', search_fields: ['publicationTitle'], value_field: '{{slug}}', display_fields: ['publicationTitle'] }
               - { label: 'Why read it (one short line, optional)', name: 'note', widget: 'string', required: false, hint: 'For example: A good first read on deep time' }
 
+  - name: 'toolsPage'
+    label: 'Tools and data page'
+    files:
+      - label: 'Featured tools and data (the three at the top)'
+        name: 'toolsFeatured'
+        file: 'src/_data/toolsFeatured.json'
+        fields:
+          - { label: 'Heading', name: 'title', widget: 'string', default: 'Featured tools and data' }
+          - label: 'Tools (choose exactly three)'
+            name: 'picks'
+            widget: 'list'
+            min: 3
+            max: 3
+            summary: '{{fields.tool}}'
+            hint: 'Pick three. If one is removed later, the tools with an order number fill the gap.'
+            fields:
+              - { label: 'Tool', name: 'tool', widget: 'relation', collection: 'tools', search_fields: ['Name'], value_field: '{{slug}}', display_fields: ['Name'] }
+
   - name: 'grants'
     label: 'Grants'
     folder: 'src/grants'
