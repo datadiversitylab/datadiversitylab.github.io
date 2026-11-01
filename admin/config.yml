@@ -223,13 +223,13 @@ collections:
             fields:
               - { label: 'Event', name: 'event', widget: 'relation', collection: 'socials', search_fields: ['publicationTitle'], value_field: '{{slug}}', display_fields: ['publicationTitle'] }
               - { label: 'Caption', name: 'caption', widget: 'string', required: false }
-          - label: 'Join us photos (exactly 3 events)'
+          - label: 'Join us photos (1 to 5 events)'
             name: 'join'
             widget: 'list'
-            min: 3
-            max: 3
+            min: 1
+            max: 5
             summary: '{{fields.event}}'
-            hint: 'Pick three events from Socials. The first photo of each event is used.'
+            hint: 'Pick up to five events from Socials. The first one is shown largest. The first photo of each event is used. Group photos where people smile work best.'
             fields:
               - { label: 'Event', name: 'event', widget: 'relation', collection: 'socials', search_fields: ['publicationTitle'], value_field: '{{slug}}', display_fields: ['publicationTitle'] }
 
@@ -241,6 +241,7 @@ collections:
         file: 'src/_data/joinPage.json'
         fields:
           - { label: 'Intro', name: 'intro', widget: 'string', required: false }
+          - { label: 'Line under the photos', name: 'photosLine', widget: 'string', required: false, hint: 'Optional. A warm sentence under the photos.' }
           - { label: 'Email', name: 'email', widget: 'string' }
           - label: 'Paths (one card each)'
             name: 'paths'
