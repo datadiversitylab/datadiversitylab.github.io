@@ -6,6 +6,7 @@ tagTitle: 'Publications'
 preloadImg: ''
 preloadCSS: '/css/publications-page.css'
 preloadJS: 'js/publications-page.js'
+preloadSecondJS: 'js/cite-menu.js'
 permalink: 'publications/'
 eleventyNavigation:
     key: Publications
@@ -153,7 +154,7 @@ eleventyNavigation:
                     </div>
                     <h3 class="pl-card-title"><a href="{{ p.url }}">{{ p.titleHtml | safe }}</a></h3>
                     <p class="pl-authors">{{ p.authorShort }}</p>
-                    <div class="pl-faces">{%- for n in p.authors %}{% set w = teamData.faces[n] %}{% if w %}<a href="{{ w.url }}" title="{{ w.name }}"><img src="{{ w.image }}" alt="{{ w.name }}" loading="lazy"></a>{% endif %}{% endfor -%}</div>
+                    <div class="pl-faces">{%- for n in p.authors %}{% set w = teamData.faces[n] %}{% if w %}<a href="{{ w.url }}" title="{{ w.name }}"><img width="28" height="28" src="{{ w.image }}" alt="{{ w.name }}" loading="lazy"></a>{% endif %}{% endfor -%}</div>
                     {%- if p.summary %}<p class="pl-summary">{{ p.summary }}</p>{% endif %}
                     <div class="pl-card-foot">
                         <div class="pl-tags">
@@ -162,7 +163,7 @@ eleventyNavigation:
                         </div>
                         <div class="pl-acts">
                             <a href="{{ p.url }}">Read</a>
-                            <button type="button" data-copy="{{ p.citation }}">Cite</button>
+                            <button type="button" data-cite data-citation="{{ p.citation }}" data-bibtex="{{ p.bibtex }}" aria-haspopup="menu" aria-expanded="false">Cite</button>
                             {%- if p.pdf %}<a href="{{ p.pdf }}" target="_blank" rel="noopener">PDF</a>{% elif p.link %}<a href="{{ p.link }}" target="_blank" rel="noopener">Journal</a>{% endif %}
                         </div>
                     </div>

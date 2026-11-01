@@ -1,0 +1,137 @@
+---
+layout: 'base.html'
+preloadCSS: '/css/tool-page.css'
+preloadJS: 'js/tools-page.js'
+preloadSecondJS: 'js/cite-menu.js'
+preloadImg: ''
+pagination:
+    data: toolsData.tools
+    size: 1
+    alias: tool
+permalink: "library/{{ tool.slug }}/"
+eleventyComputed:
+    title: "{{ tool.name }}"
+    metaTitle: "{{ tool.name }}"
+    description: "{{ tool.summary }}"
+---
+{#- One page for each tool in src/tools. Nothing here is edited by hand. Text, image, links and authors come from Netlify > Tools. -#}
+<section class="td">
+    <div class="td-wrap">
+
+        <nav class="td-crumb" aria-label="Breadcrumb">
+            <a href="/library/">Tools and data</a>
+            {%- if tool.typeLabel %}
+            <span aria-hidden="true">&rsaquo;</span>
+            <span>{{ tool.typeLabel }}</span>
+            {%- endif %}
+        </nav>
+
+        <header class="td-head">
+            <div class="td-head-text">
+                <div class="td-meta">
+                    {%- for k in tool.types %}<span class="td-pill">{{ k }}</span>{% endfor %}
+                    {%- if tool.live %}<span class="td-pill td-pill-live">Try it</span>{% endif %}
+                </div>
+                <h1 class="td-title">{{ tool.name }}</h1>
+                {%- if tool.summary %}<p class="td-lead">{{ tool.summary }}</p>{% endif %}
+
+                <div class="td-actions">
+                    {%- if tool.open %}<a class="td-btn td-btn-dark" href="{{ tool.open }}"{% if tool.external %} target="_blank" rel="noopener"{% endif %}>{{ 'Try it' if tool.live else 'Open' }}</a>{% endif %}
+                    {%- if tool.github %}<a class="td-btn" href="{{ tool.github }}" target="_blank" rel="noopener">Code on GitHub</a>{% endif %}
+                    {%- if tool.cite %}<button class="td-btn" type="button" data-cite data-citation="{{ tool.cite.citation }}" data-bibtex="{{ tool.cite.bibtex }}" aria-haspopup="menu" aria-expanded="false">Cite</button>{% endif %}
+                </div>
+
+                {%- if tool.install %}
+                <div class="td-install">
+                    <code>{{ tool.install }}</code>
+                    <button type="button" data-copy="{{ tool.install }}">Copy</button>
+                </div>
+                {%- endif %}
+            </div>
+
+            {%- if tool.image %}
+            <figure class="td-fig">
+                <img src="{{ tool.image }}" alt="{{ tool.imageAlt or tool.name }}" decoding="async" onerror="this.onerror=null; this.parentNode.hidden=true;">
+            </figure>
+            {%- endif %}
+        </header>
+
+        <div class="td-cols">
+            <div class="td-main">
+                {%- if tool.descriptionHtml %}
+                <h2 class="td-h2">About</h2>
+                <div class="td-about">{{ tool.descriptionHtml | safe }}</div>
+                {%- endif %}
+
+                {%- if tool.papers | length %}
+                <h2 class="td-h2">Papers</h2>
+                <ul class="td-papers">
+                    {%- for p in tool.papers %}
+                    <li>
+                        <a href="{{ p.url }}">
+                            <span class="td-p-title">{{ p.titleHtml | safe }}</span>
+                            <span class="td-p-meta">{{ p.authorShort }}{% if p.venue %}, {{ p.venue }}{% endif %}{% if p.year %}, {{ p.year }}{% endif %}</span>
+                        </a>
+                    </li>
+                    {%- endfor %}
+                </ul>
+                {%- endif %}
+            </div>
+
+            <aside class="td-side">
+                {%- if tool.authors | length %}
+                <div class="td-box">
+                    <h2 class="td-h4">Built by</h2>
+                    <ul class="td-people">
+                        {%- for n in tool.authors %}{% set w = teamData.faces[n] %}
+                        <li>
+                            {%- if w %}<a href="{{ w.url }}"><img width="36" height="36" src="{{ w.image }}" alt="" loading="lazy"><span>{{ n }}</span></a>
+                            {%- else %}<span class="td-nophoto" aria-hidden="true">{{ n | first }}</span><span>{{ n }}</span>{% endif %}
+                        </li>
+                        {%- endfor %}
+                    </ul>
+                </div>
+                {%- endif %}
+
+                {%- if tool.cite %}
+                <div class="td-box">
+                    <h2 class="td-h4">If you use it, please cite</h2>
+                    <p class="td-cite">{{ tool.cite.citation }}</p>
+                    <button class="td-btn td-btn-small" type="button" data-cite data-citation="{{ tool.cite.citation }}" data-bibtex="{{ tool.cite.bibtex }}" aria-haspopup="menu" aria-expanded="false">Cite</button>
+                </div>
+                {%- endif %}
+
+                <div class="td-box">
+                    <h2 class="td-h4">At a glance</h2>
+                    <dl class="td-glance">
+                        {%- if tool.typeLabel %}<div><dt>Type</dt><dd>{{ tool.typeLabel }}</dd></div>{% endif %}
+                        {%- if tool.topics | length %}<div><dt>Topics</dt><dd>{% for k in tool.topics %}<a href="/our-work/?topic={{ k | urlencode }}">{{ k }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</dd></div>{% endif %}
+                        {%- if tool.github %}<div><dt>Code</dt><dd><a href="{{ tool.github }}" target="_blank" rel="noopener">GitHub</a></dd></div>{% endif %}
+                        {%- if tool.papers | length %}<div><dt>Papers</dt><dd>{{ tool.papers | length }}</dd></div>{% endif %}
+                    </dl>
+                </div>
+
+                {%- if tool.related | length %}
+                <div class="td-box">
+                    <h2 class="td-h4">More tools</h2>
+                    <ul class="td-related">
+                        {%- for r in tool.related %}
+                        <li><a href="{{ r.url }}"><span class="td-r-name">{{ r.name }}</span><span class="td-r-meta">{{ r.typeLabel }}</span></a></li>
+                        {%- endfor %}
+                    </ul>
+                </div>
+                {%- endif %}
+            </aside>
+        </div>
+    </div>
+</section>
+
+<script type="application/ld+json">{{ {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": tool.name,
+    "description": tool.summary,
+    "applicationCategory": tool.typeLabel,
+    "codeRepository": tool.github,
+    "url": tool.open
+} | dump | safe }}</script>

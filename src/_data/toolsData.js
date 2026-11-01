@@ -19,6 +19,38 @@ const escapeRegExp = (s) => text(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 const LIVE_TYPES = ['Web application', 'Website'];
 
+let renderer = null;
+try { renderer = new (require('markdown-it'))({ html: true, linkify: true }); } catch (e) { renderer = null; }
+const html = (s) => {
+    const raw = text(s).trim();
+    if (!raw) return '';
+    if (renderer) { try { return renderer.render(raw); } catch (e) { /* fall through */ } }
+    return raw.split(/\n\s*\n/).map((p) => '<p>' + p.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</p>').join('\n');
+};
+
+// "Ana Lopez & Bo Chen" and "& Cy Diaz" become separate clean names
+const names = (v) => list(v).map(text).reduce((out, s) => out.concat(s.split(/\s*(?:&|\band\b|;)\s*/i)), [])
+    .map((s) => s.replace(/^(&|and)\s+/i, '').trim()).filter(Boolean);
+
+// Papers that mention a tool. The name is looked for as a whole word. Short names must match exactly,
+// and so must any acronym in a long name (ACC, ACDB). A paper with the name in its title is the one to cite.
+function termsOf(name) {
+    const full = text(name).trim();
+    const caps = (full.match(/\b[A-Z][A-Z0-9]{2,}\b/g) || []);
+    const before = full.split(/[:\u2013\u2014]/)[0].trim();
+    const out = [{ s: full, exact: full.length < 7 }];
+    caps.forEach((c) => out.push({ s: c, exact: true }));
+    if (before && before !== full && before.length >= 4) out.push({ s: before, exact: false });
+    // "The ACDB: The Animal Culture Database" is also found by the part after the colon
+    const after = full.split(/[:\u2013\u2014]/).slice(1).join(' ').replace(/^\s*the\s+/i, '').trim();
+    if (after.length >= 12) out.push({ s: after, exact: false });
+    return out.filter((x) => x.s.length >= 3 && !/^(the|data|website|dataset)$/i.test(x.s));
+}
+function mentions(haystack, term) {
+    const re = new RegExp('(^|[^A-Za-z0-9_])' + escapeRegExp(term.s) + '([^A-Za-z0-9_]|$)', term.exact ? '' : 'i');
+    return re.test(haystack);
+}
+
 function readFolder(folder, ext) {
     const dir = path.join(process.cwd(), 'src', folder);
     let files = [];
@@ -81,8 +113,10 @@ module.exports = function () {
             const order = typeof d.order === 'number' ? d.order : null;
             return {
                 slug: t.slug,
+                url: '/library/' + t.slug + '/',
                 name,
-                authors: list(d.authors).map(text).filter(Boolean),
+                descriptionHtml: html(d.Description),
+                authors: names(d.authors),
                 summary: summarize(d.Description),
                 image: text(d.image).trim(),
                 imageAlt: text(d.imageAlt).trim(),
@@ -97,7 +131,7 @@ module.exports = function () {
                 live: !!open && types.some((x) => LIVE_TYPES.indexOf(x) > -1),
                 install: types.indexOf('R package') > -1 && repo ? 'devtools::install_github("' + repo[1] + '/' + repo[2].replace(/\.git$/, '') + '")' : '',
                 order,
-                hay: [name, list(d.authors).join(' '), plain(d.Description), types.join(' '), list(d.topics).join(' ')].join(' '),
+                hay: [name, names(d.authors).join(' '), plain(d.Description), types.join(' '), list(d.topics).join(' ')].join(' '),
             };
         })
         // Tools with an order come first, then the rest by name
@@ -105,6 +139,33 @@ module.exports = function () {
 
     const bySlug = {};
     tools.forEach((t) => { bySlug[t.slug] = t; });
+
+    // ---- Papers about each tool, found by name ----
+    let papers = [];
+    try { papers = require('./publicationsData.js')().papers || []; } catch (e) { papers = []; }
+    tools.forEach((tool) => {
+        const terms = termsOf(tool.name);
+        const found = papers.map((p) => {
+            const inTitle = terms.some((x) => mentions(text(p.title), x));
+            const inText = inTitle || terms.some((x) => mentions(text(p.abstractText) + ' ' + list(p.keywords).join(' '), x));
+            return inText ? { p, inTitle } : null;
+        }).filter(Boolean);
+        const brief = (p) => ({ url: p.url, title: p.title, titleHtml: p.titleHtml, venue: p.venue, year: p.year, authorShort: p.authorShort });
+        tool.papers = found.sort((a, b) => (b.inTitle - a.inTitle) || (b.p.year - a.p.year)).map((x) => brief(x.p));
+        // The paper to cite: the earliest one with the tool in its title
+        const titled = found.filter((x) => x.inTitle).sort((a, b) => (a.p.year - b.p.year));
+        tool.cite = titled.length ? { url: titled[0].p.url, title: titled[0].p.title, citation: titled[0].p.citation, bibtex: titled[0].p.bibtex } : null;
+    });
+
+    // ---- Related tools: shared type or topic ----
+    tools.forEach((tool) => {
+        tool.related = tools.filter((o) => o !== tool)
+            .map((o) => ({ o, shared: o.types.filter((x) => tool.types.indexOf(x) > -1).length * 2 + o.topics.filter((x) => tool.topics.indexOf(x) > -1).length }))
+            .filter((x) => x.shared > 0)
+            .sort((a, b) => b.shared - a.shared || a.o.name.localeCompare(b.o.name))
+            .slice(0, 3)
+            .map((x) => ({ url: x.o.url, name: x.o.name, image: x.o.image, imageAlt: x.o.imageAlt, summary: x.o.summary, typeLabel: x.o.typeLabel }));
+    });
 
     // ---- Types, each with its own image ----
     // Screenshots are preferred over logos. An image is never used twice.

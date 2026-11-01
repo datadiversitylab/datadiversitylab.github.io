@@ -71,6 +71,7 @@ module.exports = function () {
             copi: list(d.copi).map((s) => text(s).trim()).filter(Boolean),
             team: list(d.team).map((s) => text(s).trim()).filter(Boolean),
             desc: text(d.grantDesc).trim(),
+            topics: list(d.topics).map((s) => text(s).trim()).filter(Boolean),
             image: text(d.image).trim(),
             imageAlt: text(d.imageAlt).trim(),
             link: text(d.link).trim(),

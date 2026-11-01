@@ -2,6 +2,7 @@
 layout: 'base.html'
 preloadCSS: '/css/publications-page.css'
 preloadJS: 'js/publications-page.js'
+preloadSecondJS: 'js/cite-menu.js'
 preloadImg: ''
 pagination:
     data: publicationsData.papers
@@ -42,7 +43,7 @@ eleventyComputed:
         <p class="pp-authors">
             {%- for a in paper.authorList -%}
                 {%- set who = teamData.faces[a.name] -%}
-                {%- if who %}<a class="pp-person" href="{{ who.url }}"><img src="{{ who.image }}" alt="" loading="lazy"><strong>{{ a.name }}</strong></a>{% elif a.lab %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif -%}
+                {%- if who %}<a class="pp-person" href="{{ who.url }}"><img width="24" height="24" src="{{ who.image }}" alt="" loading="lazy"><strong>{{ a.name }}</strong></a>{% elif a.lab %}<strong>{{ a.name }}</strong>{% else %}{{ a.name }}{% endif -%}
                 {%- if not loop.last %}{% if loop.revindex == 2 and loop.length == 2 %} and {% elif loop.revindex == 2 %}, and {% else %}, {% endif %}{% endif -%}
             {%- endfor -%}
         </p>
@@ -51,7 +52,7 @@ eleventyComputed:
         <div class="pp-actions">
             {%- if paper.link %}<a class="pp-btn pp-btn-dark" href="{{ paper.link }}" target="_blank" rel="noopener">Read the paper</a>{% endif %}
             {%- if paper.pdf and paper.pdf != paper.link %}<a class="pp-btn" href="{{ paper.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
-            <button class="pp-btn" type="button" data-copy="{{ paper.citation }}">Cite</button>
+            <button class="pp-btn" type="button" data-cite data-citation="{{ paper.citation }}" data-bibtex="{{ paper.bibtex }}" aria-haspopup="menu" aria-expanded="false">Cite</button>
             <button class="pp-btn" type="button" data-share>Share</button>
         </div>
 

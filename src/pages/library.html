@@ -30,7 +30,7 @@ eleventyNavigation:
             <span class="tl-type">{{ t.typeLabel }}</span>
             {%- if t.live %}<span class="tl-live">Try it</span>{% endif %}
         </div>
-        <h3 class="tl-name">{{ t.name }}</h3>
+        <h3 class="tl-name"><a href="{{ t.url }}">{{ t.name }}</a></h3>
         {%- if t.summary %}<p class="tl-summary">{{ t.summary }}</p>{% endif %}
         {%- if t.authors | length %}
         <p class="tl-authors">
@@ -48,6 +48,7 @@ eleventyNavigation:
         <div class="tl-actions">
             {%- if t.open %}<a class="tl-btn tl-btn-dark" href="{{ t.open }}"{% if t.external %} target="_blank" rel="noopener"{% endif %}>Open</a>{% endif %}
             {%- if t.github %}<a class="tl-btn" href="{{ t.github }}" target="_blank" rel="noopener">Code</a>{% endif %}
+            <a class="tl-more" href="{{ t.url }}">Details &rarr;</a>
         </div>
     </div>
 </article>

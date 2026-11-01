@@ -1,0 +1,84 @@
+/* Our work. Colors come from root.css and theme.css. */
+
+.ow {
+    --ow-ink: var(--headerColor, #2b3a32);
+    --ow-body: var(--bodyTextColor, #3d4d44);
+    --ow-line: var(--lineColor, #c2d6cc);
+    --ow-green: var(--secondaryDark, #4a7c65);
+    --ow-mint: #e7f1ec;
+    --ow-mute: #5a6d62;
+    --ow-amber: #e0a82e;
+    --ow-shadow: 0 2px 16px rgba(43, 58, 50, 0.08);
+    padding: clamp(7rem, 12vw, 9rem) 0 4rem;
+    color: var(--ow-body);
+}
+.ow-wrap { width: 100%; max-width: 62rem; margin: 0 auto; padding: 0 1.25rem; box-sizing: border-box; }
+.ow-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ow a { text-decoration: none; }
+.ow a:focus-visible, .ow button:focus-visible, .ow input:focus-visible, .ow select:focus-visible { outline: 2px solid var(--ow-green); outline-offset: 2px; }
+
+.ow-head { text-align: center; }
+.ow-h1 { margin: 0 0 0.8rem; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.15; color: var(--ow-ink); }
+.ow-sub { margin: 0 auto 1.6rem; max-width: 40rem; font-size: 1.05rem; line-height: 1.6; }
+.ow-search { display: flex; align-items: center; gap: 0.6rem; max-width: 34rem; margin: 0 auto; padding: 0.7rem 1.1rem; color: var(--ow-mute); background: #fff; border: 1px solid var(--ow-line); border-radius: 999px; box-shadow: var(--ow-shadow); }
+.ow-search input { flex: 1; min-width: 0; font: inherit; font-size: 1rem; color: var(--ow-ink); background: none; border: 0; outline: none; }
+
+.ow-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.8rem 1.2rem; margin-top: 1.8rem; }
+.ow-types { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.ow-type, .ow-topic { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.45rem 1rem; font: inherit; font-size: 0.92rem; font-weight: 700; color: var(--ow-ink); background: #fff; border: 1px solid var(--ow-line); border-radius: 999px; cursor: pointer; transition: background-color 0.2s, border-color 0.2s; }
+.ow-type:hover, .ow-topic:hover { border-color: var(--ow-green); }
+.ow-type em, .ow-topic em { font-size: 0.8rem; font-style: normal; font-weight: 700; color: var(--ow-mute); }
+.ow-type.is-on, .ow-topic.is-on { color: #fff; background: var(--ow-ink); border-color: var(--ow-ink); }
+.ow-type.is-on em, .ow-topic.is-on em { color: rgba(255, 255, 255, 0.75); }
+.ow-sort { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--ow-mute); }
+.ow-sort select { padding: 0.4rem 0.8rem; font: inherit; font-size: 0.9rem; color: var(--ow-ink); background: #fff; border: 1px solid var(--ow-line); border-radius: 999px; }
+
+.ow-topics { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 0.9rem; }
+.ow-topics:empty { display: none; }
+.ow-topics-label { margin-right: 0.2rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ow-mute); }
+.ow-topic { padding: 0.3rem 0.85rem; font-size: 0.85rem; background: var(--ow-mint); border-color: transparent; }
+
+.ow-status { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 2rem; margin: 1.4rem 0 0.8rem; font-size: 0.9rem; color: var(--ow-mute); }
+.ow-status p { margin: 0; max-width: none; }
+.ow-clear { font: inherit; font-size: 0.9rem; font-weight: 700; color: var(--ow-green); background: none; border: 0; cursor: pointer; }
+.ow-clear:hover { text-decoration: underline; }
+.ow-clear[hidden], .ow-more[hidden], .ow-empty[hidden], .ow-detail[hidden] { display: none; }
+
+/* One row for each item */
+.ow-list { display: grid; gap: 0.7rem; margin: 0; padding: 0; list-style: none; }
+.ow-row { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 1rem; padding: 1rem 1.2rem; background: #fff; border-radius: 14px; box-shadow: var(--ow-shadow); }
+.ow-year { padding-top: 0.15rem; font-size: 0.95rem; font-weight: 700; line-height: 1.3; color: var(--ow-mute); }
+.ow-top { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; }
+.ow-badge { padding: 0.1rem 0.65rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; border-radius: 999px; }
+.ow-badge-paper { color: #2f6b50; background: #dcefe4; }
+.ow-badge-tool { color: #2d5a80; background: #deeaf4; }
+.ow-badge-grant { color: #8a5d00; background: #faebc4; }
+.ow-pill { padding: 0.1rem 0.65rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; color: var(--ow-mute); background: #eef2ef; border-radius: 999px; }
+.ow-title { display: block; font-size: 1.12rem; font-weight: 700; line-height: 1.35; color: var(--ow-ink); overflow-wrap: anywhere; }
+.ow-title:hover { color: var(--ow-green); text-decoration: underline; }
+.ow-meta { margin: 0.3rem 0 0; max-width: none; font-size: 0.92rem; line-height: 1.45; }
+.ow-actions { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; margin-top: 0.6rem; }
+.ow-act { padding: 0; font: inherit; font-size: 0.9rem; font-weight: 700; color: var(--ow-green); background: none; border: 0; cursor: pointer; }
+.ow-act:hover { text-decoration: underline; }
+.ow-detail { margin: 0.7rem 0 0; max-width: 44rem; padding: 0.7rem 0.9rem; font-size: 0.93rem; line-height: 1.55; background: var(--ow-mint); border-radius: 10px; }
+
+.ow-empty { margin: 2rem 0; text-align: center; color: var(--ow-mute); }
+.ow-more-wrap { margin-top: 1.4rem; text-align: center; }
+.ow-more { padding: 0.7rem 1.5rem; font: inherit; font-size: 0.95rem; font-weight: 700; color: #fff; background: var(--ow-ink); border: 0; border-radius: 999px; cursor: pointer; }
+.ow-more:hover { background: var(--ow-green); }
+
+@media only screen and (max-width: 40rem) {
+    .ow-row { grid-template-columns: minmax(0, 1fr); gap: 0.3rem; }
+    .ow-year { order: -1; padding: 0; font-size: 0.82rem; }
+    .ow-year:empty { display: none; }
+    .ow-sort { margin-left: auto; }
+}
+
+/* The whole row opens the page. Links and buttons inside stay clickable. */
+.ow-row { position: relative; transition: box-shadow 0.2s; }
+.ow-row:hover { box-shadow: 0 6px 24px rgba(43, 58, 50, 0.16); }
+.ow-title::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.ow-actions, .ow-detail, .ow-faces { position: relative; z-index: 2; }
+.ow-faces { display: flex; margin: 0.5rem 0 0; }
+.ow-faces a { margin-right: -0.35rem; }
+.ow-faces img { display: block; width: 1.75rem; height: 1.75rem; object-fit: cover; object-position: 50% 20%; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px #c2d6cc; }

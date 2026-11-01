@@ -466,3 +466,9 @@
 .pl-faces:empty { display: none; }
 .pl-faces a { margin-right: -0.35rem; }
 .pl-faces img { display: block; width: 1.7rem; height: 1.7rem; object-fit: cover; object-position: 50% 20%; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px var(--pp-line, #c2d6cc); }
+
+/* The whole card opens the paper. Buttons and links inside stay clickable. */
+.pl-card { position: relative; transition: box-shadow 0.2s; }
+.pl-card:hover { box-shadow: 0 6px 24px rgba(43, 58, 50, 0.16); }
+.pl-card-title a::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.pl-card .pl-faces, .pl-card .pl-acts { position: relative; z-index: 2; }

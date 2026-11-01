@@ -137,3 +137,15 @@
 .tl-person { display: inline-flex; align-items: center; gap: 0.35rem; color: inherit; text-decoration: none; }
 a.tl-person:hover { text-decoration: underline; }
 .tl-person img { width: 1.5rem; height: 1.5rem; object-fit: cover; object-position: 50% 20%; border-radius: 50%; }
+
+/* Each card links to the page of the tool */
+.tl-name a { color: inherit; text-decoration: none; }
+.tl-name a:hover { color: var(--tl-green); text-decoration: underline; }
+.tl-more { align-self: center; margin-left: auto; font-size: 0.9rem; font-weight: 700; color: var(--tl-green); text-decoration: none; }
+.tl-more:hover { text-decoration: underline; }
+
+/* The whole card opens the page of the tool. Buttons and links inside stay clickable. */
+.tl-card { position: relative; transition: box-shadow 0.2s, transform 0.2s; }
+.tl-card:hover { box-shadow: 0 6px 24px rgba(43, 58, 50, 0.16); transform: translateY(-2px); }
+.tl-name a::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.tl-card .tl-actions, .tl-card .tl-install, .tl-card .tl-authors { position: relative; z-index: 2; }
