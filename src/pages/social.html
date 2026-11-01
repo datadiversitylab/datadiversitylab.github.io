@@ -4,257 +4,82 @@ description: "Social and academic events at the Data Diversity Lab"
 metaTitle: 'Social'
 tagTitle: 'Social'
 preloadImg: ''
-preloadCSS: '/css/social.css'
-preloadJS: '/js/social.js'
+preloadCSS: '/css/social-page.css'
+preloadJS: 'js/social-page.js'
 permalink: 'social/'
 eleventyNavigation:
     key: Photos
     parent: News
     order: 400
 ---
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
+{#- Everything below comes from the files in src/socials. Nothing here is edited by hand. -#}
+<section class="sp" id="sp">
+    <div class="sp-wrap">
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">Social and academic events</h1>
-            <p class="cs-text">
-                We tend to post updates on different social activities that happen within and outside of the lab.
-            </p>
+        <header class="sp-head">
+            <h1 class="sp-h1">Life in the lab</h1>
+            <p class="sp-sub">Talks, trips, celebrations and everyday moments from the Data Diversity Lab.</p>
+            <label class="sp-search">
+                <span class="sp-visually-hidden">Search events</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <input type="search" id="sp-q" placeholder="Search all years" autocomplete="off">
+            </label>
+        </header>
+
+        <div class="sp-pills" id="sp-years" role="group" aria-label="Year"></div>
+        <div class="sp-pills sp-pills-tags" id="sp-tags" role="group" aria-label="Type of event"></div>
+        <p class="sp-count" id="sp-count" aria-live="polite"></p>
+
+        <div class="sp-grid" id="sp-grid">
+            {%- for e in collections.socials | sort(attribute='data.order', reverse=true) %}
+            {%- set d = e.data %}
+            {%- if d.images and d.images | length %}
+            {%- set tags = d.tags %}
+            {%- if tags is string %}{% set tags = [tags] %}{% endif %}
+            {%- set title = d.publicationTitle %}
+            <article class="sp-tile" data-year="{{ d.publicationDate | string | trim }}" data-month="{{ d.publicationMonth | string | trim }}" data-tags="{% for t in tags %}{% if t != 'socials' %}{{ t }}{% if not loop.last %}|{% endif %}{% endif %}{% endfor %}" data-hay="{{ title }} {{ d.Location }} {{ d.publicationAbstract }}">
+                <img class="sp-img" src="{{ d.images[0] }}" alt="" loading="lazy" decoding="async">
+                <span class="sp-badge">{{ d.images | length }} photos</span>
+                <div class="sp-cap">
+                    <b class="sp-name">{{ title }}</b>
+                    <i class="sp-meta">{% if d.Location %}<span class="sp-place">{{ d.Location | trim }}</span> &middot; {% endif %}{% if d.publicationMonth %}{{ d.publicationMonth | string | trim | truncate(3, true, '') }} {% endif %}{{ d.publicationDate | string | trim }}</i>
+                    {%- if d.publicationAbstract %}<span class="sp-peek">{{ d.publicationAbstract | markdown | striptags | truncate(110) | safe }}</span>{% endif %}
+                </div>
+                <button type="button" class="sp-open" aria-label="Open photos: {{ title }}"></button>
+
+                <ul class="sp-photos" hidden>
+                    {%- for image in d.images %}<li data-src="{{ image }}"></li>{% endfor %}
+                </ul>
+                <div class="sp-story" hidden>{{ d.publicationAbstract | markdown | safe }}</div>
+                <div class="sp-links" hidden>
+                    {%- if d.webLink %}<a href="{{ d.webLink | trim }}" target="_blank" rel="noopener">Read more</a>{% endif %}
+                    {%- if d.pdfLink %}<a href="{{ d.pdfLink | trim }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+                    {%- if d.pdfDocument %}<a href="{{ d.pdfDocument | trim }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+                </div>
+            </article>
+            {%- endif %}
+            {%- endfor %}
+        </div>
+
+        <div class="sp-empty" id="sp-empty" hidden>
+            <p>Nothing matches that search.</p>
+            <button type="button" class="sp-btn" id="sp-clear">Show all photos</button>
         </div>
     </div>
 </section>
 
-<div aria-hidden="true" class="line"></div>
-
-
-<!-- ============================================ -->
-<!--                Publications                      -->
-<!-- ============================================ -->
-
-{# Use the processedPublications1 collection #}
-{# Use the processedPublicationsJournalTypes1 collection #}
-
-<section id="publications-section">
-    <div class="cs-container">
-        <div class="cs-content cs-sidebar cs-filter-searchable">
-            <div class="cs-search-title-wrapper">
-                <h6 class="cs-title">Search</h6>
-                <div aria-hidden="true" class="line line-full"></div>
-                <div class="cs-search-wrapper">
-                    <input type="text" id="search" class="cs-search" placeholder="Title or Author">
-                    <img src="../assets/icons/order-desc.svg" class="order-by-button" alt="order by" width="25" height="25">
-                </div>
-                <div class="cs-pi-only-checkbox">
-                    <input id="piOnlyCheckbox" type="checkbox"><label for="piOnlyCheckbox">~</label>
-                </div>
-            </div>
-            <div class="cs-filter-button-wrapper">
-                <div class="cs-add-filter-wrapper">
-                    <h6 class="cs-title">Add filters</h6>
-                    <img src="../assets/icons/plus.svg" class="plus-button" alt="filter" width="25" height="25">
-                </div>
-
-                <div class="cs-filter-year-wrapper">
-                    <h6 class="cs-title">Year</h6>
-                    <div aria-hidden="true" class="line line-full"></div>
-                    <div class="cs-start-end-wrapper">
-                        <input type="text" id="startYear" placeholder="Start Year">
-                        <input type="text" id="endYear" placeholder="End Year">
-                    </div>
-                </div>
-
-                <div class="cs-filter-keywords-wrapper">
-                    <h6 class="cs-title">Tag</h6>
-                    <div aria-hidden="true" class="line line-full"></div>
-                    <div class="cs-filter-wrapper cs-text">
-                        <div data-filter="all" class="active filter-option">All ({{ collections.processedPublications1["socials"] }})</div>
-                        {% for keyword, count in collections.processedPublications1 %}
-                            {% if keyword != 'socials' %}
-                                <div data-filter="{{ keyword }}" class="filter-option">{{ keyword }} ({{ count }})</div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-        <div class="cs-title-card-wrapper">
-            <div class="cs-card-group">
-                {%- for publication in collections.socials | sort(attribute='data.order', reverse=true) -%}
-{%- set monthNums = {"Jan":1,"Feb":2,"Mar":3,"Apr":4,"May":5,"Jun":6,"Jul":7,"Aug":8,"Sep":9,"Oct":10,"Nov":11,"Dec":12} -%}
-                    <div class="cs-item" data-year="{{ publication.data.publicationDate }}" data-month="{{ monthNums[publication.data.publicationMonth] or 0 }}">
-                           
-                        <div class="cs-gallery">
-                          {%- for image in publication.data.images -%}
-                              <picture class="cs-slide">
-                                  <source media="(max-width: 600px)" srcset="{{ image }}">
-                                  <source media="(min-width: 601px)" srcset="{{ image }}">
-                                  <img loading="lazy" decoding="async" src="{{ image }}" alt="Image {{ loop.index }}" width="522" height="370" class="enlargeable-image">
-                              </picture>
-                          {%- endfor -%}
-                          {% if publication.data.images | length > 1 %}
-                              <button class="prev-btn" aria-label="Previous image">&#8249;</button>
-                              <button class="next-btn" aria-label="Next image">&#8250;</button>
-                              <div class="cs-gallery-dots">
-                                  {% for image in publication.data.images %}
-                                      <div class="cs-gallery-dot {{ 'active' if loop.first else '' }}"></div>
-                                  {% endfor %}
-                              </div>
-                              <div class="cs-gallery-counter">1 / {{ publication.data.images | length }}</div>
-                          {% endif %}
-
-                      </div>
-
-                        <div class="cs-flex-group">
-                            <span class="cs-name">{{ publication.data.publicationTitle | markdown | safe }}</span>
-                            <div class="cs-event-meta">
-                                {%- if publication.data.publicationMonth -%}
-                                    <span class="cs-publication-month">{{ publication.data.publicationMonth }}</span>
-                                {%- endif -%}
-                                <span class="cs-publication-year">{{ publication.data.publicationDate }}</span>
-                            </div>
-                            <span class="cs-timeline">{{ publication.data.Location }}</span>
-                            <span class="cs-desc">
-                                <div class="read-more-text">{{ publication.data.publicationAbstract | markdown | safe }}</div>
-                                <span class="read-more-btn">...read more</span>
-                            </span>
-                            <div aria-hidden="true" class="line line-full"></div>
-                            <div class="cs-item-filters">
-                                {%- for filter in publication.data.tags -%}
-                                    {%- if filter != 'socials' -%}
-                                        <div class="cs-filter">{{ filter }}</div>
-                                    {%- endif -%}
-                                {%- endfor -%}
-                            </div>
-                            {%- if publication.data.pdfLink or publication.data.webLink or publication.data.pdfDocument -%}
-                                <div aria-hidden="true" class="line line-full"></div>
-                                <div class="cs-item-social">
-                                    {%- set socials = [ {'platform': 'pdfLink', 'icon': 'pdf.svg'}, {'platform': 'pdfDocument', 'icon': 'pdf.svg'}, {'platform': 'webLink', 'icon': 'link.svg'}] -%}
-                                    {%- for social in socials -%}
-                                        {%- if publication.data[social.platform] -%}
-                                            <a href="{{ publication.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
-                                        {%- endif -%}
-                                    {%- endfor -%}
-                                </div>
-                            {%- endif -%}
-                        </div>
-                    </div>
-                {%- endfor -%}
-            </div>
-        </div>
-
+<div class="sp-view" id="sp-view" role="dialog" aria-modal="true" aria-label="Event photos" hidden>
+    <button type="button" class="sp-x" id="sp-x" aria-label="Close">&times;</button>
+    <button type="button" class="sp-arrow sp-prev" id="sp-prev" aria-label="Previous photo">&#8249;</button>
+    <button type="button" class="sp-arrow sp-next" id="sp-next" aria-label="Next photo">&#8250;</button>
+    <figure class="sp-stage">
+        <img id="sp-big" alt="">
+    </figure>
+    <div class="sp-info">
+        <h2 class="sp-vtitle" id="sp-vtitle"></h2>
+        <p class="sp-vmeta" id="sp-vmeta"></p>
+        <div class="sp-vstory" id="sp-vstory"></div>
+        <div class="sp-vlinks" id="sp-vlinks"></div>
+        <p class="sp-vcount" id="sp-vcount"></p>
     </div>
-</section>
-
-
-
-
-
-<!-- Image modal: hidden by default -->
-<div id="image-modal">
-  <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
-  <img class="modal-content" id="modal-img" alt="">
-  <div class="modal-caption" id="modal-caption"></div>
 </div>
-
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const group = document.querySelector("#publications-section .cs-card-group");
-    if (!group) return;
-    const items = Array.from(group.querySelectorAll(".cs-item"));
-    items.sort((a, b) => {
-        const yearDiff = parseInt(b.dataset.year || 0) - parseInt(a.dataset.year || 0);
-        if (yearDiff !== 0) return yearDiff;
-        return parseInt(b.dataset.month || 0) - parseInt(a.dataset.month || 0);
-    });
-    items.forEach(item => group.appendChild(item));
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".cs-gallery").forEach(gallery => {
-        const slides = gallery.querySelectorAll(".cs-slide img");
-        const dots   = gallery.querySelectorAll(".cs-gallery-dot");
-        const counter = gallery.querySelector(".cs-gallery-counter");
-        let index = 0;
-
-        function showSlide(i) {
-            // Hide/show the whole <picture> wrapper so hidden slides
-            // don't sit on top and swallow clicks
-            const pictures = gallery.querySelectorAll(".cs-slide");
-            pictures.forEach((pic, idx) => {
-                pic.style.display = idx === i ? "block" : "none";
-            });
-            slides.forEach((slide, idx) => {
-                slide.style.display = idx === i ? "block" : "none";
-            });
-            dots.forEach((dot, idx) => {
-                dot.classList.toggle("active", idx === i);
-            });
-            if (counter) counter.textContent = (i + 1) + " / " + slides.length;
-        }
-
-        const prevBtn = gallery.querySelector(".prev-btn");
-        const nextBtn = gallery.querySelector(".next-btn");
-
-        if (prevBtn && nextBtn) {
-            prevBtn.addEventListener("click", function (e) {
-                e.stopPropagation();
-                index = index === 0 ? slides.length - 1 : index - 1;
-                showSlide(index);
-            });
-            nextBtn.addEventListener("click", function (e) {
-                e.stopPropagation();
-                index = index === slides.length - 1 ? 0 : index + 1;
-                showSlide(index);
-            });
-        }
-
-        showSlide(0);
-    });
-});
-</script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const modal    = document.getElementById('image-modal');
-  const modalImg = document.getElementById('modal-img');
-  const modalCap = document.getElementById('modal-caption');
-  const closeBtn = document.getElementById('modal-close');
-
-  function openModal(src, alt) {
-    modalImg.src = src;
-    modalCap.textContent = alt || '';
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-  }
-
-  // Event delegation — catches clicks on all .enlargeable-image
-  // regardless of when they become visible
-  document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('enlargeable-image')) {
-      openModal(e.target.src, e.target.alt);
-    }
-  });
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
-  });
-});
-</script>

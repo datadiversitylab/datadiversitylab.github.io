@@ -4,8 +4,8 @@ description: "Grants of the Data Diversity Lab"
 metaTitle: 'Grants'
 tagTitle: 'Grants'
 preloadImg: ''
-preloadCSS: '/css/grants.css'
-preloadJS: '/js/scrollTo.js'
+preloadCSS: '/css/grants-page.css'
+preloadJS: 'js/grants-page.js'
 permalink: 'grants/'
 eleventyNavigation:
     key: Grants
@@ -14,100 +14,97 @@ eleventyNavigation:
 navOptions:
     includeSelf: true
 ---
-<!-- ============================================ -->
-<!--                  Content                     -->
-<!-- ============================================ -->
+{#- Everything below comes from src/_data/grantsData.js, which reads src/grants. -#}
+{% set gd = grantsData %}
 
-<section id="content-1450" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <h1 class="cs-title">Explore grants</h1>
-            <p class="cs-text">
-                At the Data Diversity Lab, our work is often supported by research grants. In this grants section, we offer a window into the current and past funding landscape within the lab. We are committed to transparency and accountability in our research program.
-            </p>
-            <br>
-            <p class="cs-text">
-                We express our gratitude to the funding agencies and organizations that believe in our work. If you have any inquiries or would like to collaborate on future grant opportunities, please contact us.
-            </p>
+<section class="gp" id="gp">
+    <div class="gp-wrap">
+
+        <header class="gp-head">
+            <h1 class="gp-h1">Grants</h1>
+            <p class="gp-sub">Research funding for the Data Diversity Lab, from active awards to past ones. For questions or ideas for new projects, please get in touch.</p>
+        </header>
+
+        <div class="gp-stats">
+            <div><b>{{ gd.active | length }}</b><span>active</span></div>
+            {%- for r in gd.roles %}{% if r.name != 'Collaborator' %}
+            <div><b>{{ r.count }}</b><span>as {{ r.name }}</span></div>
+            {%- endif %}{% endfor %}
+            <div><b>{{ gd.funders | length }}</b><span>funders</span></div>
         </div>
-    </div>
-</section>
 
-<div aria-hidden="true" class="line"></div>
+        <div class="gp-pills" id="gp-roles" role="group" aria-label="Role">
+            <button type="button" class="gp-pill is-on" data-role="" aria-pressed="true">All ({{ gd.total }})</button>
+            {%- for r in gd.roles %}{% if r.count %}
+            <button type="button" class="gp-pill" data-role="{{ r.name }}" aria-pressed="false">{{ r.name }} ({{ r.count }})</button>
+            {%- endif %}{% endfor %}
+        </div>
+        <div class="gp-pills gp-pills-sub" id="gp-funders" role="group" aria-label="Funder">
+            <button type="button" class="gp-pill is-on" data-funder="" aria-pressed="true">All funders</button>
+            {%- for f in gd.funders %}
+            <button type="button" class="gp-pill" data-funder="{{ f.name }}" aria-pressed="false">{{ f.name }} ({{ f.count }})</button>
+            {%- endfor %}
+        </div>
 
-<!-- ============================================ -->
-<!--                Grant                         -->
-<!-- ============================================ -->
-{%- set tags = [] -%}
-{%- for grant in collections.grants | sort(attribute='data.order') -%}
-    {%- for tag in grant.data.tags -%}
-        {%- if not tags.includes(tag | string) and tag != "grants" and tag != "" -%}
-            {%- set tags = tags.concat(tag | string) -%}
-        {%- endif -%}
-    {%- endfor -%}
-{%- endfor -%}
-
-<section id="grant-547">
-    <div class="cs-container">
-        <div class="cs-content cs-sidebar">
-            <h6 class="cs-title">Grant providers</h6>
-            <div class="cs-filter-wrapper cs-text">
-                {%- for tag in tags | sort(true) -%}
-                    <div data-filter="{{ tag }}" class="{{ 'active' if loop.index == 1 else '' }}">{{ tag }}</div>
-                {%- endfor -%}
+        {%- if gd.active | length %}
+        <section class="gp-block" data-block="active">
+            <h2 class="gp-h2">Active <span class="gp-n" data-n>{{ gd.active | length }} {% if gd.active | length == 1 %}grant{% else %}grants{% endif %} running in {{ gd.year }}</span></h2>
+            <div class="gp-cards">
+                {%- for g in gd.active %}
+                <article class="gp-card" data-role="{{ g.role }}" data-funder="{{ g.funder }}">
+                    <div class="gp-media">
+                        {%- if g.image %}<img src="{{ g.image }}" alt="{{ g.imageAlt }}" loading="lazy" decoding="async">{% endif %}
+                        <span class="gp-role gp-role-{{ g.role | lower | replace('-', '') }}">{{ g.role }}</span>
+                    </div>
+                    <div class="gp-body">
+                        <p class="gp-kicker">{{ g.funder }}{% if g.period %} &middot; {{ g.period }}{% endif %}</p>
+                        <h3 class="gp-name">{{ g.name }}</h3>
+                        {%- if g.amount %}<p class="gp-amount">{{ g.amount }}{% if g.subaward %} <em>(subaward {{ g.subaward }})</em>{% endif %}</p>{% endif %}
+                        {%- if g.pi %}<p class="gp-people">PI {{ g.pi }}{% if g.copi | length %} &middot; Co-PI {{ g.copi | join(', ') }}{% endif %}</p>{% endif %}
+                        {%- if g.desc %}<p class="gp-desc">{{ g.desc }}</p>{% endif %}
+                        <div class="gp-foot">
+                            <span class="gp-live">Active through {{ g.end }}</span>
+                            {%- if g.link %}<a class="gp-link" href="{{ g.link }}" target="_blank" rel="noopener">Project page</a>{% endif %}
+                            {%- if g.document %}<a class="gp-link" href="{{ g.document }}" target="_blank" rel="noopener">Document</a>{% endif %}
+                            {%- if g.desc %}<button type="button" class="gp-more" aria-expanded="false">Read more</button>{% endif %}
+                        </div>
+                    </div>
+                </article>
+                {%- endfor %}
             </div>
-        </div>
-        <div class="cs-title-card-wrapper">
-            {%- for tag in tags | sort(true) -%}
-                <h3 class="cs-title cs-group-title">{{ tag }}</h3>
-                <div id="section{{ tag }}" class="cs-card-group">
-                    {%- for grant in collections.grants | sort(attribute='data.order') -%}
-                        {%- if grant.data.tags.toString().includes(tag) -%}
-                            <div class="cs-item">
-                                <picture class="cs-picture">
-                                    <!--Mobile Image-->
-                                    <source media="(max-width: 600px)" srcset="{{ grant.data.image }}">
-                                    <!--Tablet and up Image-->
-                                    <source media="(min-width: 601px)" srcset="{{ grant.data.image }}">
-                                    <img loading="lazy" decoding="async" src="{{ grant.data.image }}" alt="{{ grant.data.imageAlt }}" width="522" height="370" aria-hidden="true">
-                                </picture>
-                                <div class="cs-flex-group">
-                                    <span class="cs-name">{{ grant.data.grantName }}</span>
-                                    <span class="cs-timeline"><strong>Grant amount:</strong> {{ grant.data.grantAmount }}</span>
-                                    {%- if grant.data.pi -%}
-                                      <span class="cs-timeline"><strong>PI:</strong> {{ grant.data.pi }}</span>
-                                    {%- endif -%}
-                                    {%- if grant.data.copi -%}
-                                      <span class="cs-timeline"><strong>Co-PI(s):</strong> {{ grant.data.copi | join(', ') }}</span>
-                                    {%- endif -%}
-                                    {%- if grant.data.subawardAmount -%}
-                                      <span class="cs-timeline"><strong>Subaward:</strong> {{ grant.data.subawardAmount }}</span>
-                                    {%- endif -%}
-                                    {%- if grant.data.grantYears -%}
-                                      <span class="cs-timeline"><strong>Years:</strong> {{ grant.data.grantYears }}</span>
-                                    {%- endif -%}
-                                    <span class="cs-desc">
-                                        <span class="read-more-text">{{ grant.data.grantDesc }}</span>
-                                        <span class="read-more-btn">...read more</span>
-                                    </span>
-                                    {%- if grant.data.link or grant.data.document -%}
-                                        <div aria-hidden="true" class="line line-full"></div>
-                                        <div class="cs-item-social">
-                                            {%- set socials = [{'platform': 'link', 'icon': 'link.svg'}, {'platform': 'document', 'icon': 'pdf.svg'}] -%}
-                                            {%- for social in socials -%}
-                                                {%- if grant.data[social.platform] -%}
-                                                    <a href="{{ grant.data[social.platform] }}" target="_blank"><img src="../assets/icons/{{ social.icon }}" alt="{{ social.platform }}" width="30" height="30" decoding="async" aria-hidden="true"></a>
-                                                {%- endif -%}
-                                            {%- endfor -%}
-                                        </div>
-                                    {%- endif -%}
-                                </div>
-                            </div>
-                        {%- endif -%}
-                    {%- endfor -%}
-                </div>
-            {%- endfor -%}
-        </div>
+        </section>
+        {%- endif %}
 
+        {%- if gd.past | length %}
+        <section class="gp-block" data-block="past">
+            <h2 class="gp-h2">Past grants <span class="gp-n" data-n>{{ gd.past | length }} completed</span></h2>
+            <div class="gp-rows">
+                {%- for g in gd.past %}
+                <article class="gp-row" data-role="{{ g.role }}" data-funder="{{ g.funder }}">
+                    <div class="gp-line">
+                        <span class="gp-year">{{ g.period }}</span>
+                        <span class="gp-title">{{ g.name }}<i>{{ g.funder }}</i></span>
+                        <span class="gp-role gp-role-{{ g.role | lower | replace('-', '') }}">{{ g.role }}</span>
+                        <span class="gp-sum">{{ g.amount }}</span>
+                    </div>
+                    {%- if g.desc or g.link or g.document %}
+                    <div class="gp-detail" hidden>
+                        {%- if g.pi %}<p class="gp-people">PI {{ g.pi }}{% if g.copi | length %} &middot; Co-PI {{ g.copi | join(', ') }}{% endif %}</p>{% endif %}
+                        {%- if g.desc %}<p>{{ g.desc }}</p>{% endif %}
+                        {%- if g.link %}<a class="gp-link" href="{{ g.link }}" target="_blank" rel="noopener">Project page</a>{% endif %}
+                        {%- if g.document %}<a class="gp-link" href="{{ g.document }}" target="_blank" rel="noopener">Document</a>{% endif %}
+                    </div>
+                    <button type="button" class="gp-toggle" aria-expanded="false" aria-label="Show details for {{ g.name }}"></button>
+                    {%- endif %}
+                </article>
+                {%- endfor %}
+            </div>
+        </section>
+        {%- endif %}
+
+        <div class="gp-empty" id="gp-empty" hidden>
+            <p>No grants match that selection.</p>
+            <button type="button" class="gp-btn" id="gp-clear">Show all grants</button>
+        </div>
     </div>
 </section>
