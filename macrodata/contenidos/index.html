@@ -189,14 +189,24 @@
                                         <img class="cs-drop-icon" src="/assets/icons/chevron-down.svg" alt="dropdown icon" width="30" height="30" decoding="async" aria-hidden="true">
                                     
                                 </span><ul class="cs-drop-ul">
+                                        <li class="cs-drop-label">Projects</li>
+                                        <li class="cs-drop-li cs-drop-app">
+                                            <a href="/outreach/gis-for-community-health/" class="cs-li-link cs-drop-link cs-app-link"><span class="cs-app-tile" aria-hidden="true">G</span>
+                                                <span class="cs-app-text">
+                                                    <span class="cs-app-name">GIS for community health</span><span class="cs-app-desc">Mapping with communities</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="cs-drop-li cs-drop-app">
+                                            <a href="/macrodata/" class="cs-li-link cs-drop-link cs-app-link"><span class="cs-app-tile" aria-hidden="true">M</span>
+                                                <span class="cs-app-text">
+                                                    <span class="cs-app-name">MacroData</span><span class="cs-app-desc">R workshops in Colombia</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="cs-drop-rule" aria-hidden="true"></li>
                                         <li class="cs-drop-li">
                                             <a href="/blog/" class="cs-li-link cs-drop-link">Blog</a>
-                                        </li>
-                                        <li class="cs-drop-li">
-                                            <a href="/macrodata/" class="cs-li-link cs-drop-link">MacroData</a>
-                                        </li>
-                                        <li class="cs-drop-li">
-                                            <a href="/outreach/gis-for-community-health/" class="cs-li-link cs-drop-link">GIS for community health</a>
                                         </li>
                                 </ul>
                         </li>
@@ -259,106 +269,145 @@
         <main id="main"><!-- ============================================ -->
 <!--       MacroData (Outreach > MacroData)       -->
 <!-- ============================================ -->
-<!-- Pages: src/macrodata. Numbers, map text and spotlight: MacroData > Home page blocks.
-     Workshops: MacroData > Workshops. Team: MacroData > Team. News: MacroData > News. -->
+<!-- Pages: src/macrodata. Menu: MacroData > Data and settings > Menu. Settings (applications on/off, forms, texts): the same place.
+     Workshops, team, participants, results, numbers: the same place. News: MacroData > News. -->
 
-<section id="md-hero" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            <nav class="md-crumbs" aria-label="Breadcrumb"><a href="/macrodata/">MacroData</a></nav>
-            <h1 class="cs-title">Contenidos</h1>
-            <p class="cs-text">Detalles sobre los temas a ser tratados</p>
-        </div>
-    </div>
-</section>
+<div class="mdx">
+<nav class="mdx-sub" aria-label="Menú de MacroData">
+    <div class="mdx-sub-in">
+        <a class="mdx-sub-name" href="/macrodata/">MacroData</a>
 
-<div aria-hidden="true" class="line"></div>
+        <ul class="mdx-sub-list">
+            <li class="mdx-dd">
+                <button type="button" class="mdx-sub-link" aria-haspopup="true" aria-expanded="false">Sobre MacroData</button>
+                <div class="mdx-menu">
+                    <ul>
+                        <li><a href="/macrodata/el-proyecto/">
+                            <span><b>Qué es MacroData</b><small>El proyecto, por qué existe y con quién lo hacemos</small></span>
+                        </a></li>
+                        <li><a href="/macrodata/objetivos/">
+                            <span><b>Objetivos</b><small>Lo que queremos lograr con los talleres</small></span>
+                        </a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mdx-dd is-current">
+                <button type="button" class="mdx-sub-link is-current" aria-haspopup="true" aria-expanded="false">Talleres</button>
+                <div class="mdx-menu">
+                    <ul>
+                        <li><a href="/macrodata/fechas/">
+                            <span><b>Sedes y fechas</b><small>Dónde y cuándo es cada taller</small></span>
+                        </a></li>
+                        <li><a href="/macrodata/contenidos/" aria-current="page">
+                            <span><b>Contenidos</b><small>Los temas de los dos días</small></span>
+                        </a></li>
+                        <li><a href="/macrodata/proyecto-final/">
+                            <span><b>Proyecto final</b><small>Mismos datos, distintos análisis</small></span>
+                        </a></li>
+                        <li><a href="/macrodata/resultados/">
+                            <span><b>Resultados</b><small>Materiales y resultados de los talleres</small></span>
+                        </a></li>
+                        <li><a href="/macrodata/politicas/">
+                            <span><b>Políticas</b><small>Selección, autoría y convivencia</small></span>
+                        </a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a class="mdx-sub-link" href="/macrodata/participantes/">Participantes</a></li>
+            <li><a class="mdx-sub-link" href="/macrodata/galeria/">Galería</a></li>
+            <li><a class="mdx-sub-link" href="/macrodata/noticias/">Noticias</a></li>
+            <li><a class="mdx-sub-link" href="/macrodata/equipo/">Equipo</a></li>
+        </ul>
+    </div><ul class="mdx-chips" aria-label="Páginas de MacroData">
+        <li><a href="/macrodata/el-proyecto/">Qué es MacroData</a></li>
+        <li><a href="/macrodata/objetivos/">Objetivos</a></li>
+        <li><a href="/macrodata/fechas/">Sedes y fechas</a></li>
+        <li><a class="is-current" aria-current="page" href="/macrodata/contenidos/">Contenidos</a></li>
+        <li><a href="/macrodata/proyecto-final/">Proyecto final</a></li>
+        <li><a href="/macrodata/resultados/">Resultados</a></li>
+        <li><a href="/macrodata/politicas/">Políticas</a></li>
+        <li><a href="/macrodata/participantes/">Participantes</a></li>
+        <li><a href="/macrodata/galeria/">Galería</a></li>
+        <li><a href="/macrodata/noticias/">Noticias</a></li>
+        <li><a href="/macrodata/equipo/">Equipo</a></li>
+    </ul>
+</nav>
 
-<section id="md">
-    <div class="cs-container md-grid">
-
-        <!-- Menu: pages come from src/macrodata, grouped by the "Group" field -->
-        <aside class="md-side">
-            <nav class="md-menu" aria-label="Menú de MacroData">
-                <p class="md-menu-title">MacroData</p>
-                <ul>
-                    <li class=""><a href="/macrodata/">Inicio</a></li>
-                    <li class="md-group">
-                        <span class="md-group-title">El proyecto</span>
-                        <ul>
-                            <li class=""><a href="/macrodata/el-proyecto/">El proyecto</a></li></ul>
-                    </li>
-                    <li class="md-group">
-                        <span class="md-group-title">El curso</span>
-                        <ul>
-                            <li class=""><a href="/macrodata/fechas/">Fechas</a></li>
-                            <li class=""><a href="/macrodata/objetivos/">Objetivos</a></li>
-                            <li class=""><a href="/macrodata/proyecto-final/">Proyecto final</a></li>
-                            <li class="is-current"><a href="/macrodata/contenidos/">Contenidos</a></li>
-                            <li class=""><a href="/macrodata/politicas/">Políticas</a></li>
-                            <li class=""><a href="/macrodata/aplicaciones/">Aplicaciones</a></li></ul>
-                    </li>
-                    <li class="md-group">
-                        <span class="md-group-title">Comunidad</span>
-                        <ul>
-                            <li class=""><a href="/macrodata/galeria/">Galería</a></li>
-                            <li class=""><a href="/macrodata/noticias/">Noticias</a></li>
-                            <li class=""><a href="/macrodata/recursos/">Recursos y comunidad</a></li>
-                            <li class=""><a href="/macrodata/equipo/">Quiénes somos</a></li></ul>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-
-        <article class="md-article">
-            <div class="md-body">
-                <p>MacroData es un taller intensivo de dos días que busca introducir a estudiantes/profesionales de Biología en el uso de herramientas de programación en R y métodos comparativos filogenéticos. A través de sesiones teóricas y prácticas, aprenderán a manipular datos, trabajar con filogenias y explorar preguntas macroevolutivas usando principios de ciencia abierta. Como resultado del proceso formativo se desarrollará una publicación científica colaborativa con la contribución de cada participante. Los siguientes son los temas generales que tenemos en mente. Si quieres revisar el cronograma mas detallado, puedes usar el <a href="https://nextcloud.datadiversitylab.synology.me/s/RpAYTQgPBt44kSq">siguiente enlace para ver detalles en los dos dias del curso</a>.</p>
-<h2>Fundamentos de programación en R</h2>
+<!-- ================= Inner pages ================= -->
+<header class="mdx-head mdx-wrap">
+    <p class="mdx-kicker">Talleres</p>
+    <h1 class="mdx-h1">Contenidos</h1><p class="mdx-sub-text">Detalles sobre los temas a ser tratados</p>
+</header>
+<section id="md" class="mdx-wrap mdx-main is-contenidos">
+<div class="mdx-split has-toc">
+    <aside class="mdx-toc" aria-label="En esta página">
+        <p>En esta página</p>
+        <ol><li><a href="#s1">Fundamentos de programación en R</a></li><li><a href="#s2">Ciencia de datos para biología</a></li><li><a href="#s3">Filogenias y macroevolución</a></li><li><a href="#s4">Métodos comparativos filogenéticos</a></li><li><a href="#s5">Ciencia abierta y colaboración</a></li><li><a href="#s6">Proyecto final</a></li><li><a href="#s7">GitHub</a></li>
+        </ol>
+    </aside>
+    <div class="mdx-split-main"><div class="mdx-sec md-body"><p>MacroData es un taller intensivo de dos días que busca introducir a estudiantes/profesionales de Biología en el uso de herramientas de programación en R y métodos comparativos filogenéticos. A través de sesiones teóricas y prácticas, aprenderán a manipular datos, trabajar con filogenias y explorar preguntas macroevolutivas usando principios de ciencia abierta. Como resultado del proceso formativo se desarrollará una publicación científica colaborativa con la contribución de cada participante. Los siguientes son los temas generales que tenemos en mente. El cronograma detallado de los dos días está en los documentos al final de esta página.</p>
+</div><div class="mdx-cardgrid">
+    <section id="s1" class="mdx-sec mdx-tc c0"><div class="md-body"><h2>Fundamentos de programación en R</h2>
 <ul>
 <li>Introducción a R y un IDE.</li>
 <li>Tipos de datos, estructuras básicas, funciones y control de flujo.</li>
 <li>Manipulación de datos con <code>base</code> R y <code>tidyverse</code> breve.</li>
 <li>Visualización con <code>ggplot2</code>.</li>
 </ul>
-<h2>Ciencia de datos para biología</h2>
+</div></section>
+    <section id="s2" class="mdx-sec mdx-tc c1"><div class="md-body"><h2>Ciencia de datos para biología</h2>
 <ul>
 <li>Importación, limpieza y organización de datos.</li>
 <li>Exploración y análisis estadístico básico.</li>
 <li>Principios de reproducibilidad: proyectos, scripts y documentación.</li>
 <li>Introducción al uso de Git y GitHub en proyectos colaborativos.</li>
 </ul>
-<h2>Filogenias y macroevolución</h2>
+</div></section>
+    <section id="s3" class="mdx-sec mdx-tc c2"><div class="md-body"><h2>Filogenias y macroevolución</h2>
 <ul>
 <li>¿Qué es una filogenia? ¿Cómo se interpreta?</li>
 <li>Reconstrucción filogenética con datos moleculares.</li>
 <li>Uso del paquete <strong>phruta</strong> para filogenias automatizadas.</li>
 <li>Calibración temporal.</li>
 </ul>
-<h2>Métodos comparativos filogenéticos</h2>
+</div></section>
+    <section id="s4" class="mdx-sec mdx-tc c3"><div class="md-body"><h2>Métodos comparativos filogenéticos</h2>
 <ul>
 <li>Análisis de rasgos continuos y discretos en contextos filogenéticos.</li>
 <li>Modelos de evolución de caracteres.</li>
 <li>Identificación de correlaciones evolutivas y patrones macroevolutivos.</li>
 <li>Uso de herramientas como <code>ape</code>, <code>geiger</code>, <code>phytools</code>.</li>
 </ul>
-<h2>Ciencia abierta y colaboración</h2>
+</div></section>
+    <section id="s5" class="mdx-sec mdx-tc c4"><div class="md-body"><h2>Ciencia abierta y colaboración</h2>
 <ul>
 <li>Documentación y licencias para proyectos científicos abiertos.</li>
 <li>Prácticas de citación y ética en el trabajo colaborativo.</li>
 <li>Herramientas para compartir datos, scripts y resultados.</li>
 </ul>
-<h2>Proyecto final</h2>
+</div></section>
+    <section id="s6" class="mdx-sec mdx-tc c5"><div class="md-body"><h2>Proyecto final</h2>
 <ul>
 <li>Aplicación de lo aprendido en un análisis real.</li>
 <li>Discusión y escritura colectiva de un manuscrito científico.</li>
 </ul>
-<h2>GitHub</h2>
+</div></section>
+    <section id="s7" class="mdx-sec mdx-tc c0"><div class="md-body"><h2>GitHub</h2>
 <p>Todo el codigo relacionado con este curso estará depositado en el siguiente repositorio: <a href="https://github.com/datadiversitylab/macrodata-taller">https://github.com/datadiversitylab/macrodata-taller</a>.</p>
-
-            </div>
-        </article>
+</div></section></div>
+    <div class="mdx-docs">
+        <div class="mdx-gh"><h3>Documentos</h3></div>
+        <ul>
+            <li><a href="https://nextcloud.datadiversitylab.synology.me/s/RpAYTQgPBt44kSq" target="_blank" rel="noopener">
+                <span class="mdx-doc-icon" aria-hidden="true">↗</span>
+                <span><b>Cronograma detallado de los dos días</b><small>Los temas hora por hora</small></span>
+            </a></li>
+        </ul>
     </div>
+    </div>
+</div>
 </section>
+</div>
 </main>
         <!-- ============================================ -->
 <!--                   Footer                     -->
