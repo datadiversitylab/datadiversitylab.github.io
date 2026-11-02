@@ -83,7 +83,7 @@ collections:
       - { label: 'Link to the paper', name: 'webLink', widget: 'string', required: false, hint: 'The journal or preprint page. Full link, starting with https://' }
       - { label: 'Order', name: 'order', widget: 'number', required: false, hint: 'Optional. Lower numbers come first. Leave empty if unsure.' }
       - { label: 'Output type', name: 'outputType', widget: 'select', required: false, options: ['Journal article', 'Preprint', 'Review', 'Commentary', 'Popular writing'], hint: 'What kind of publication it is.' }
-      - { label: 'Research areas', name: 'researchAreas', widget: 'select', multiple: true, required: false, hint: 'The specific fields the paper belongs to. Pick as many as fit.', options: ['Macroevolution', 'Phylogenetics', 'Biogeography', 'Conservation biology', 'Climate change', 'Ecology', 'Biostatistics', 'Machine learning', 'Tools', 'Climate science'] }
+      - { label: 'Research areas', name: 'researchAreas', widget: 'select', multiple: true, required: false, hint: 'The specific fields the paper belongs to. Pick as many as fit.', options: ['Phylogenetics', 'Macroevolution', 'Biogeography', 'Conservation and ecology', 'Biodiversity informatics', 'Machine learning', 'Data science', 'Open data', 'Research software', 'Climate and environmental data', 'Community and participatory data', 'Data science education', 'Geospatial analysis', 'Biostatistics', 'Tools', 'Conservation biology', 'Ecology', 'Climate change', 'Climate science'] }
       - label: "Topics"
         name: "topics"
         widget: "select"
@@ -617,7 +617,8 @@ collections:
               - { label: 'Name', name: 'name', widget: 'string', required: false }
               - { label: 'Affiliation', name: 'affiliation', widget: 'string', required: false }
               - { label: 'Affiliation link', name: 'link', widget: 'string', required: false, hint: 'Optional. Opens in a new tab.' }
-          - { label: 'Statement (what the lab does)', name: 'statement', widget: 'text', hint: 'Two sentences at most. It sits under the lab name. The theme tags below it are built from your publications.' }
+          - { label: 'Statement (what the lab does)', name: 'statement', widget: 'text', hint: 'Two sentences at most. It sits under the lab name. The theme tags below it come from Home themes.' }
+          - { label: 'Home themes (the tags under the statement)', name: 'themes', widget: 'list', required: false, max: 6, hint: 'Type the names in the order you want, five works best. Each one links to Our work filtered by that word. Leave empty to use the five most common research areas of your papers.' }
           - label: 'Main buttons (under the announcement)'
             name: 'doors'
             widget: 'list'
@@ -721,39 +722,6 @@ collections:
             fields:
               - { label: 'Title', name: 'title', widget: 'string' }
               - { label: 'Text', name: 'description', widget: 'text', hint: 'Leave a blank line between paragraphs. Web addresses become links on their own.' }
-  - name: 'outreach'
-    label: 'Outreach items'
-    folder: 'src/outreach'
-    create: true
-    extension: 'md'
-    format: 'frontmatter'
-    identifier_field: title
-    slug: '{{slug}}'
-    summary: '{{title}}'
-    sortable_fields: ['title', 'order']
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Subtitle', name: 'subtitle', widget: 'string', required: false }
-      - { label: 'When', name: 'when', widget: 'string', required: false, hint: 'For example: December 11, 2024' }
-      - { label: 'Where or event', name: 'where', widget: 'string', required: false, hint: 'For example: AGU24' }
-      - { label: 'Name in the menu (optional)', name: 'menuLabel', widget: 'string', required: false, hint: 'Leave empty to use the title. It must not repeat another menu item.' }
-      - { label: 'Order in the menu', name: 'order', widget: 'number', required: false, hint: 'Lower numbers come first. Empty means 500.' }
-      - { label: 'Menu group', name: 'navGroup', widget: 'string', required: false, hint: 'For example Projects. Fill it to show this item as a tile in the Outreach menu. Items with the same group are listed together. Leave empty for a plain link.' }
-      - { label: 'Menu description', name: 'navDesc', widget: 'string', required: false, hint: 'About five words, shown under the name in the menu. For example Mapping with communities.' }
-      - { label: 'Draft (hide from the site and the menu)', name: 'draft', widget: 'boolean', default: false, required: false }
-      - { label: 'Banner image', name: 'image', widget: 'image', required: false, media_folder: '/src/assets/images/outreach', public_folder: '/assets/images/outreach' }
-      - { label: 'Banner image description', name: 'imageAlt', widget: 'string', required: false }
-      - { label: 'Poster (PDF or image)', name: 'poster', widget: 'file', required: false, media_folder: '/src/assets/documents/outreach', public_folder: '/assets/documents/outreach', hint: 'A PDF shows a preview on desktop and a button on phones. An image is shown on the page.' }
-      - label: 'Links (buttons at the end)'
-        name: 'links'
-        widget: 'list'
-        required: false
-        summary: '{{fields.label}}'
-        fields:
-          - { label: 'Text', name: 'label', widget: 'string' }
-          - { label: 'Link', name: 'link', widget: 'string' }
-      - { label: 'Topics (small labels)', name: 'topics', widget: 'list', required: false }
-      - { label: 'Text', name: 'body', widget: 'markdown', required: false, media_folder: '/src/assets/images/outreach', public_folder: '/assets/images/outreach' }
   - name: 'macrodata'
     label: 'MacroData pages'
     folder: 'src/macrodata'
@@ -766,7 +734,7 @@ collections:
     slug: '{{slug}}'
     summary: '{{title}}'
     sortable_fields: ['title']
-    hint: 'The order and groups of the menu are in MacroData: data and settings > Menu. A new page needs a line there to show in the menu.'
+    hint: 'The order, groups and icons of the menu are in MacroData: data and settings > Menu. A new page needs a line there to show in the menu.'
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - { label: 'Subtitle', name: 'subtitle', widget: 'string', required: false }
@@ -776,13 +744,11 @@ collections:
         widget: 'object'
         collapsed: true
         required: false
-        hint: 'It places MacroData under Outreach in the main menu. Group and description make it a tile with a short line.'
+        hint: 'Leave it as it is. It places MacroData under Outreach in the main menu.'
         fields:
           - { label: 'Name in the menu', name: 'key', widget: 'string', required: false }
           - { label: 'Parent menu', name: 'parent', widget: 'hidden', default: 'Outreach' }
           - { label: 'Order', name: 'order', widget: 'number', value_type: 'int', default: 900, required: false }
-          - { label: 'Menu group', name: 'group', widget: 'string', required: false, default: 'Projects', hint: 'Shows MacroData as a tile under this label in the Outreach menu.' }
-          - { label: 'Menu description', name: 'desc', widget: 'string', required: false, default: 'R workshops in Colombia' }
       - { label: 'Index on the left', name: 'toc', widget: 'boolean', default: false, required: false, hint: 'Shows a list of the sections on the left of the page.' }
       - { label: 'Sections as cards', name: 'cards', widget: 'boolean', default: false, required: false, hint: 'Shows the sections in two columns, each one with its own color.' }
       - { label: 'Number the sections', name: 'numbered', widget: 'number', value_type: 'int', required: false, hint: 'Optional. For example 5 numbers the first five sections with 1, 2, 3, 4, 5.' }
@@ -971,7 +937,7 @@ collections:
     media_folder: '/src/assets/images/apps'
     public_folder: '/assets/images/apps'
     files:
-      - label: 'Logos in the Tools and data and Outreach menus'
+      - label: 'Logos in the Tools and data menu'
         name: 'navApps'
         file: 'src/_data/navApps.json'
         fields:
@@ -979,8 +945,6 @@ collections:
           - { label: 'BarrioMap', name: 'barriomap', widget: 'image', required: false }
           - { label: 'Chorus', name: 'chorus', widget: 'image', required: false }
           - { label: 'salphycon', name: 'salphycon', widget: 'image', required: false }
-          - { label: 'MacroData', name: 'macrodata', widget: 'image', required: false, hint: 'Shown in the Outreach menu.' }
-          - { label: 'GIS for community health', name: 'gisforcommunityhealth', widget: 'image', required: false, hint: 'Shown in the Outreach menu.' }
   - name: 'logos'
     label: 'Logos'
     folder: 'src/logos'
