@@ -10,255 +10,400 @@ layout: 'base.html'
         {%- endfor -%}
     {%- endif -%}
 {%- endmacro -%}
-{%- set pages = collections.macrodata | sort(attribute='data.mdOrder') -%}
-{%- set groups = ['El proyecto', 'El curso', 'Comunidad'] -%}
+{%- macro closed(s) -%}
+<div class="mdx-notice">
+    <h2>{{ s.closedTitle }}</h2>
+    <p>{{ s.closedText }}</p>
+    {%- if s.notifyLink %}
+    <a class="md-button" href="{{ s.notifyLink }}">{{ s.notifyLabel }}</a>
+    {%- else %}
+    <a class="md-button" href="mailto:{{ s.email }}?subject=Avísenme%20cuando%20abran%20las%20inscripciones%20de%20MacroData">{{ s.notifyLabel }}</a>
+    {%- endif %}
+</div>
+{%- endmacro -%}
+{%- macro pageHead(kicker, heading, sub) -%}
+<header class="mdx-head mdx-wrap">
+    <p class="mdx-kicker">{{ kicker }}</p>
+    <h1 class="mdx-h1">{{ heading | safe }}</h1>
+    {%- if sub %}<p class="mdx-sub-text">{{ sub }}</p>{% endif %}
+</header>
+{%- endmacro -%}
+{%- set s = macrodataSettings -%}
+{%- set maps = macrodataMaps -%}
 {%- set news = (collections.macrodataNews or []) | sort(attribute='data.newsKey') | reverse | list -%}
 {%- set home = macrodataHome -%}
 <!-- ============================================ -->
 <!--       MacroData (Outreach > MacroData)       -->
 <!-- ============================================ -->
-<!-- Pages: src/macrodata. Numbers, map text and spotlight: MacroData > Home page blocks.
-     Workshops: MacroData > Workshops. Team: MacroData > Team. News: MacroData > News. -->
+<!-- Pages: src/macrodata. Menu: MacroData > Data and settings > Menu. Settings (applications on/off, forms, texts): the same place.
+     Workshops, team, participants, results, numbers: the same place. News: MacroData > News. -->
 
-<section id="md-hero" class="cs-top-section">
-    <div class="cs-container">
-        <div class="cs-content">
-            {%- if mdSlug != 'index' %}
-            <nav class="md-crumbs" aria-label="Breadcrumb"><a href="/macrodata/">MacroData</a></nav>
-            {%- endif %}
-            <h1 class="cs-title">{{ title }}</h1>
-            {%- if subtitle %}
-            <p class="cs-text">{{ subtitle }}</p>
-            {%- endif %}
+<div class="mdx">
+{% include "macrodata-subnav.html" %}
+
+{%- if mdSlug == 'index' %}
+<!-- ================= Home page ================= -->
+<section class="mdx-hero">
+    <div class="mdx-hero-text">
+        <h1 class="mdx-title">MacroData</h1>
+        <p class="mdx-lead">{{ s.heroText }}</p>
+        {%- if s.heroTags | length %}
+        <ul class="mdx-tags">
+            {%- for t in s.heroTags %}<li>{{ t }}</li>{%- endfor %}
+        </ul>
+        {%- endif %}
+
+        <div class="mdx-fund">
+            <span class="mdx-fund-text">{{ s.fundingText }}</span>
+            <a class="mdx-fund-link" href="{{ s.grantLink }}">{{ s.fundingLinkLabel }} →</a>
         </div>
-        {%- if image %}
-        <img class="md-banner" src="{{ image }}" alt="" decoding="async">
+
+        {%- if s.applicationsOpen %}
+        <div class="mdx-doors">
+            <a class="mdx-door is-main" href="/macrodata/aplicaciones/">Aplicar</a>
+        </div>
+        {%- endif %}
+        {%- if not s.applicationsOpen %}
+        <p class="mdx-closed-line">Las inscripciones están cerradas por ahora. <a href="{{ s.notifyLink or ('mailto:' + s.email) }}">{{ s.notifyLabel }}</a></p>
+        {%- endif %}
+
+        {%- if macrodataTeam.people | length %}
+        <div class="mdx-faces">
+            <p class="mdx-faces-head">El equipo</p>
+            <ul>
+                {%- for p in macrodataTeam.people %}
+                {%- if p.photo and loop.index <= 4 %}
+                <li><img src="{{ p.photo }}" alt="" width="58" height="58" loading="lazy"><span>{{ p.name.split(' ')[0] }}</span><small>{{ p.role }}</small></li>
+                {%- endif %}
+                {%- endfor %}
+            </ul>
+        </div>
+        {%- endif %}
+
+        {%- if home.stats | length %}
+        <ul class="mdx-stats">
+            {%- for st in home.stats %}
+            {%- if loop.index <= 3 %}<li><b>{{ st.number }}</b> {{ st.label | lower }}</li>{% endif %}
+            {%- endfor %}
+        </ul>
         {%- endif %}
     </div>
-</section>
 
-<div aria-hidden="true" class="line"></div>
-
-<section id="md">
-    <div class="cs-container md-grid">
-
-        <!-- Menu: pages come from src/macrodata, grouped by the "Group" field -->
-        <aside class="md-side">
-            <nav class="md-menu" aria-label="Menú de MacroData">
-                <p class="md-menu-title">MacroData</p>
-                <ul>
-                    <li class="{{ 'is-current' if page.url == '/macrodata/' }}"><a href="/macrodata/">Inicio</a></li>
-                    {%- for g in groups %}
-                    {%- set items %}
-                        {%- for p in pages %}
-                            {%- if p.data.group == g and p.data.mdSlug != 'index' %}
-                            <li class="{{ 'is-current' if p.url == page.url }}"><a href="{{ p.url }}">{{ p.data.mdLabel }}</a></li>
-                            {%- endif %}
-                        {%- endfor %}
-                    {%- endset %}
-                    {%- if items | trim %}
-                    <li class="md-group">
-                        <span class="md-group-title">{{ g }}</span>
-                        <ul>{{ items | safe }}</ul>
-                    </li>
-                    {%- endif %}
-                    {%- endfor %}
-                </ul>
-            </nav>
-        </aside>
-
-        <article class="md-article">
-
-            {%- if mdSlug == 'index' %}
-            <!-- Welcome box: the text of this page -->
-            <div class="md-welcome md-body">
-                {{ content | safe }}
-            </div>
-
-            {%- if home.stats | length %}
-            <div class="md-block">
-                <h2 class="md-block-title">{{ home.statsTitle }}</h2>
-                <ul class="md-stats">
-                    {%- for s in home.stats %}
-                    <li><span class="md-stat-number">{{ s.number }}</span><span class="md-stat-label">{{ s.label }}</span></li>
-                    {%- endfor %}
-                </ul>
-            </div>
-            {%- endif %}
-
-            {%- if macrodataEvents.events | length %}
-            <div class="md-block">
-                <h2 class="md-block-title">{{ home.mapTitle }}</h2>
-                {%- if home.mapText %}<p class="md-block-text">{{ home.mapText }}</p>{% endif %}
-                <div id="md-map" class="md-map" aria-label="Mapa de las sedes"></div>
-                <script type="application/json" id="md-events">{{ macrodataEvents.events | dump | safe }}</script>
-            </div>
-            {%- endif %}
-
-            {%- if home.spotlightTitle %}
-            <div class="md-spotlight">
-                <p class="md-spotlight-kicker">{{ home.spotlightTitle }}</p>
-                <h2 class="md-spotlight-title">{{ home.spotlightSubtitle }}</h2>
-                {{ paras(home.spotlightText, 'md-spotlight-text') }}
-                {%- if home.spotlightTags | length %}
-                <ul class="md-pills">
-                    {%- for t in home.spotlightTags %}<li>{{ t }}</li>{%- endfor %}
-                </ul>
-                {%- endif %}
-                {%- if home.spotlightButtonLink %}
-                <a class="md-button" href="{{ home.spotlightButtonLink }}">{{ home.spotlightButtonText }}</a>
-                {%- endif %}
-            </div>
-            {%- endif %}
-
-            {%- if news | length %}
-            <div class="md-block">
-                <h2 class="md-block-title">{{ home.newsTitle }}</h2>
-                <ul class="md-news">
-                    {%- for n in news %}
-                    {%- if loop.index <= 2 %}
-                    <li class="md-news-item">
-                        <p class="md-news-date">{{ n.data.dateLabel }}</p>
-                        <h3 class="md-news-title">{{ n.data.title }}</h3>
-                        <div class="md-news-body md-body">{{ n.content | safe }}</div>
-                    </li>
-                    {%- endif %}
-                    {%- endfor %}
-                </ul>
-                <a class="md-more" href="/macrodata/noticias/">Ver todas las noticias</a>
-            </div>
-            {%- endif %}
-
-            {%- else %}
-            {%- if intro %}
-            <div class="md-intro">{{ paras(intro, 'md-lead') }}</div>
-            {%- endif %}
-
-            {%- if mdSlug == 'fechas' %}
-            <!-- Table of workshops: edited in MacroData > Workshops -->
-            <div class="md-table-wrap">
-                <table class="md-table">
-                    <thead>
-                        <tr><th>Lugar del taller</th><th>Fechas del taller</th><th>Fecha limite de inscripción</th><th>Publicación de selección de estudiantes</th></tr>
-                    </thead>
-                    <tbody>
-                        {%- for e in macrodataEvents.events %}
-                        <tr>
-                            <td data-label="Lugar del taller">{{ e.name }}</td>
-                            <td data-label="Fechas del taller">{{ e.dates }}</td>
-                            <td data-label="Fecha limite de inscripción">{{ e.deadline }}</td>
-                            <td data-label="Publicación de selección de estudiantes">{{ e.selection }}</td>
-                        </tr>
-                        {%- endfor %}
-                    </tbody>
-                </table>
-            </div>
-            {%- endif %}
-
-            {%- if mdSlug == 'galeria' %}
-            <!-- Photos of each workshop: edited in MacroData > Workshops -->
-            {%- for e in macrodataEvents.events %}
-            <section class="md-event" id="{{ e.name | lower | replace(' ', '-') }}">
-                <h2 class="md-event-title">
-                    {{ e.name }}, {{ e.city }}
-                    {%- if e.status == 'completado' %}<span class="md-status is-done">Completado</span>
-                    {%- elif e.status == 'activo' %}<span class="md-status is-live">En curso</span>
-                    {%- else %}<span class="md-status">Próximo · {{ e.dates }}</span>{% endif %}
-                </h2>
-                {%- if e.photo %}
-                <figure class="md-group-photo">
-                    <img src="{{ e.photo }}" alt="Foto grupal, {{ e.name }}" loading="lazy">
-                    {%- if e.participants | length %}
-                    <figcaption>
-                        <strong>Participantes:</strong><br>
-                        {%- for line in e.participants %}{{ line }}{% if not loop.last %}<br>{% endif %}{%- endfor %}
-                    </figcaption>
-                    {%- endif %}
-                </figure>
-                {%- endif %}
-                {%- if e.gallery | length %}
-                <div class="md-gallery">
-                    {%- for g in e.gallery %}
-                    <img src="{{ g.image }}" alt="{{ e.name }}" loading="lazy">
-                    {%- endfor %}
-                </div>
-                {%- elif not e.photo %}
-                <p class="md-placeholder">Las fotos de este taller estarán disponibles pronto.</p>
-                {%- endif %}
-            </section>
-            {%- endfor %}
-            {%- endif %}
-
-            {%- if mdSlug == 'equipo' %}
-            <!-- Team: edited in MacroData > Team -->
-            <ul class="md-people">
-                {%- for p in macrodataTeam.people %}
-                <li class="md-person" id="{{ teamData.macroSlugs[p.name] }}">
-                    {%- if p.photo %}<img src="{{ p.photo }}" alt="{{ p.photoAlt or p.name }}" loading="lazy">{% endif %}
-                    <h3>{{ p.name }}</h3>
-                    <p class="md-person-role">{{ p.role }}</p>
-                    {%- if p.website or p.bluesky or p.linkedin %}
-                    <p class="md-person-links">
-                        {%- if p.website %}<a href="{{ p.website }}" target="_blank" rel="noopener">Sitio web</a>{% endif %}
-                        {%- if p.bluesky %}<a href="{{ p.bluesky }}" target="_blank" rel="noopener">BlueSky</a>{% endif %}
-                        {%- if p.linkedin %}<a href="{{ p.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
-                    </p>
-                    {%- endif %}
-                    {%- set w = teamData.faces[p.name] %}
-                    {%- if w %}<p class="md-person-links"><a href="{{ w.url }}">Perfil en el Data Diversity Lab</a></p>{% endif %}
-                    <p class="md-person-bio">{{ p.bio }}</p>
-                    {%- if p.interests | length %}
-                    <p class="md-person-tags">
-                        {%- for t in p.interests %}<span>#{{ t }}</span>{%- endfor %}
-                    </p>
-                    {%- endif %}
-                </li>
-                {%- endfor %}
-            </ul>
-            {%- endif %}
-
-            {%- if mdSlug == 'noticias' %}
-            <!-- News: one file per item, edited in MacroData > News -->
-            <ul class="md-news md-news-all">
-                {%- for n in news %}
-                <li class="md-news-item">
-                    <p class="md-news-date">{{ n.data.dateLabel }}</p>
-                    <h2 class="md-news-title">{{ n.data.title }}</h2>
-                    <div class="md-news-body md-body">{{ n.content | safe }}</div>
-                    {%- if n.data.image %}
-                    <img class="md-news-image" src="{{ n.data.image }}" alt="{{ n.data.imageAlt or n.data.title }}" loading="lazy">
-                    {%- endif %}
-                </li>
-                {%- endfor %}
-            </ul>
-            {%- endif %}
-
-            {%- if content | trim %}
-            <div class="md-body">
-                {{ content | safe }}
-            </div>
-            {%- endif %}
-
-            {%- if topics | length %}
-            <ul class="md-pills md-pills-page">
-                {%- for t in topics %}<li>{{ t }}</li>{%- endfor %}
-            </ul>
-            {%- endif %}
-
-            {%- if buttons | length %}
-            <div class="md-cta">
-                {%- for b in buttons %}
-                <a class="md-button{{ ' is-secondary' if not loop.first }}" href="{{ b.link }}">{{ b.label }}</a>
-                {%- endfor %}
-            </div>
-            {%- endif %}
-            {%- endif %}
-
-            {%- if mdSlug == 'index' or mdSlug == 'el-proyecto' %}
-            {%- for g in grantsData.all %}{% if g.link == '/macrodata/' %}
-            <p class="md-fund">Este proyecto cuenta con el apoyo de <strong>{{ g.funder }}</strong>. <a href="/grants/#{{ g.slug }}">Ver la subvención</a></p>
-            {%- endif %}{% endfor %}
-            {%- endif %}
-        </article>
+    <div class="mdx-herom">
+        <div class="mdx-map-d">{{ maps.hero.d | safe }}</div>
+        <div class="mdx-map-m">{{ maps.hero.m | safe }}</div>
+        <div class="mdx-mf">
+            <span><i class="is-done"></i>Completado <i class="is-next"></i>Próximo</span>
+        </div>
     </div>
 </section>
+
+<section class="mdx-wrap mdx-english" lang="en">
+    <div class="mdx-english-box">
+        <span class="mdx-english-label">{{ s.englishLabel }}</span>
+        <p>{{ s.englishText }} <a href="{{ s.grantLink }}">{{ s.englishLinkText }}</a>.</p>
+    </div>
+</section>
+
+{%- if news | length %}
+<section class="mdx-wrap mdx-latest">
+    <div class="mdx-latest-head">
+        <h2>{{ s.newsTitle }}</h2>
+    </div>
+    <ul class="mdx-tl">
+        {%- for n in news %}
+        {%- if loop.index <= 4 %}
+        <li>
+            <a href="/macrodata/noticias/#n-{{ n.data.newsKey }}">
+                {%- if n.data.image %}<img src="{{ n.data.image }}" alt="" loading="lazy">{% else %}<span class="mdx-tl-dot"></span>{% endif %}
+                <span><small>{{ n.data.dateLabel }}</small><b>{{ n.data.title }}</b></span>
+            </a>
+        </li>
+        {%- endif %}
+        {%- endfor %}
+    </ul>
+</section>
+{%- endif %}
+
+<p class="mdx-foot">¿Dudas? Escríbenos a <a href="mailto:{{ s.email }}">{{ s.email }}</a></p>
+<script type="application/ld+json">{{ macrodataSeo.jsonLd | safe }}</script>
+
+{%- elif mdSlug == 'participantes' %}
+<!-- ================= Participants (city counts) ================= -->
+{{ pageHead('MacroData', title ~ ('<span class="mdx-example">Datos de ejemplo</span>' if maps.isExample else ''), subtitle) }}
+<div class="mdx-wrap">
+{%- if maps.stats.students %}
+    <ul class="mdx-tiles">
+        <li><b>{{ maps.stats.students }}</b><span>estudiantes en los talleres completados</span></li>
+        <li><b>{{ maps.stats.cities }}</b><span>ciudades de origen</span></li>
+        <li><b>{{ maps.stats.travelPct }}%</b><span>viajó desde otra ciudad para asistir</span></li>
+        <li><b>{{ maps.stats.medianKm }} km</b><span>distancia mediana de quienes viajaron</span></li>
+    </ul>
+
+    <div class="mdx-cols">
+        <div class="mdx-card mdx-flow">
+            <h2>De dónde llegaron los estudiantes</h2>
+            <p>Cada línea une una ciudad de origen con la sede. Más gruesa, más estudiantes.</p>
+            {{ maps.flow | safe }}
+            <div class="mdx-mf">
+                <span class="mdx-leg">
+                    {%- for l in maps.legend %}<i style="background: {{ l.color }}"></i>{{ l.name }}, {{ l.city }} {% endfor %}
+                </span>
+            </div>
+        </div>
+        <div>
+            <div class="mdx-card">
+                <h2>De dónde llegó cada grupo</h2>
+                <p class="mdx-card-sub">Cada barra es un taller. Los colores son ciudades de origen.</p>
+                {%- for m in maps.mix %}
+                <div class="mdx-mix">
+                    <div class="mdx-mix-t">{{ m.name }}<span>{{ m.students }} estudiantes · {{ m.travelPct }}% viajó desde otra ciudad</span></div>
+                    <div class="mdx-bar" role="img" aria-label="Ciudades de origen de {{ m.name }}">
+                        {%- for g in m.segs %}<i style="width: {{ g.pct | round(1) }}%; background: {{ g.color }}">{% if g.showName %}{{ g.city }}{% elif g.showNum %}{{ g.students }}{% endif %}</i>{% endfor %}
+                    </div>
+                    <p class="mdx-keys">
+                        {%- for g in m.segs %}<em style="--c: {{ g.color }}">{{ g.city }} {{ g.students }}</em>{% endfor %}
+                    </p>
+                </div>
+                {%- endfor %}
+            </div>
+            <div class="mdx-card">
+                <h2>Cuánto viajaron</h2>
+                <p class="mdx-card-sub">Distancia en línea recta entre la ciudad de origen y la sede.</p>
+                <div class="mdx-dist">
+                    {%- for b in maps.bins %}
+                    <div><span>{{ b.label }}</span><div class="mdx-track"><i style="width: {{ b.pct }}%"></i></div><b>{{ b.n }}</b></div>
+                    {%- endfor %}
+                </div>
+            </div>
+            <div class="mdx-card">
+                <h2>Ciudades de origen</h2>
+                <p class="mdx-card-sub">Número de estudiantes por ciudad.</p>
+                <ul class="mdx-cities">
+                    {%- for c in maps.cities %}<li>{{ c.city }}<span>{{ c.students }}</span></li>{% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{%- else %}
+    <p class="md-placeholder">Pronto publicaremos de dónde llegaron los estudiantes.</p>
+{%- endif %}
+    {%- if content | trim %}
+    <div class="md-body mdx-after">{{ content | safe }}</div>
+    {%- endif %}
+</div>
+
+{%- else %}
+<!-- ================= Inner pages ================= -->
+{{ pageHead(mdGroup or 'MacroData', title, subtitle) }}
+{%- set parts = content.split('<h2') if (content | trim) else [] %}
+<section id="md" class="mdx-wrap mdx-main is-{{ mdSlug }}">
+<div class="mdx-split{{ ' has-toc' if (toc and parts | length > 2) }}">
+    {%- if toc and parts | length > 2 %}
+    <aside class="mdx-toc" aria-label="En esta página">
+        <p>En esta página</p>
+        <ol{{ ' class="is-num"' | safe if numbered }}>
+            {%- for part in parts %}
+            {%- if not loop.first %}<li><a href="#s{{ loop.index0 }}">{{ part.split('</h2>')[0].split('>') | last | safe }}</a></li>{% endif %}
+            {%- endfor %}
+        </ol>
+    </aside>
+    {%- endif %}
+    <div class="mdx-split-main">
+
+    {%- if intro %}
+    <div class="mdx-sec mdx-intro">{{ paras(intro, 'md-lead') }}</div>
+    {%- endif %}
+
+    {%- if mdSlug == 'aplicaciones' %}
+    {%- if s.applicationsOpen %}
+    <div class="mdx-sec md-body">{{ s.process | markdown | safe }}</div>
+    <div class="md-cta"><a class="md-button" href="{{ s.applicationsLink }}">Abrir el formulario de aplicación</a></div>
+    {%- else %}
+    {{ closed(s) }}
+    {%- endif %}
+    {%- endif %}
+
+    {%- if mdSlug == 'fechas' %}
+    {%- if s.applicationsOpen %}
+    <div class="mdx-notice is-open"><h2>Las inscripciones están abiertas</h2><p>Para participar en el proceso de selección, completa el formulario de aplicación.</p><a class="md-button" href="{{ s.applicationsLink }}">Aplicar</a></div>
+    {%- else %}
+    {{ closed(s) }}
+    {%- endif %}
+    <div class="mdx-evs">
+        {%- for e in macrodataEvents.events %}
+        <article class="mdx-ev{{ ' is-done' if e.status == 'completado' }}">
+            <div class="mdx-ev-img">
+                {%- if e.photo %}<img src="{{ e.photo }}" alt="Foto grupal, {{ e.name }}" loading="lazy">{% endif %}
+            </div>
+            <div class="mdx-ev-body">
+                <p class="mdx-ev-top">
+                    {%- if e.status == 'completado' %}<span class="mdx-pill is-done">Completado</span>
+                    {%- elif e.status == 'activo' %}<span class="mdx-pill is-live">En curso</span>
+                    {%- else %}<span class="mdx-pill is-next">Próximo</span>{% endif %}
+                    {%- if e.region %}<span class="mdx-ev-reg">{{ e.region }}</span>{% endif %}
+                </p>
+                <h2>{{ e.city }}</h2>
+                <p class="mdx-ev-uni">{{ e.name }}</p>
+                <ol class="mdx-steps">
+                    <li><small>Inscripción hasta</small><b>{{ e.deadline }}</b></li>
+                    <li><small>Selección</small><b>{{ e.selection }}</b></li>
+                    <li class="is-main"><small>Taller</small><b>{{ e.dates }}</b></li>
+                </ol>
+            </div>
+        </article>
+        {%- endfor %}
+    </div>
+    {%- endif %}
+
+    {%- if mdSlug == 'galeria' %}
+    {%- for e in macrodataEvents.events %}
+    {%- set eslug = e.city | lower | replace(' ', '-') %}
+    {%- set cover = e.photo or (e.gallery[0].image if (e.gallery | length) else '') %}
+    <section class="mdx-place" id="{{ eslug }}">
+        <div class="mdx-place-main{{ ' is-soon' if not cover }}">
+            {%- if cover %}
+            <div class="mdx-pm-left">
+                <a class="mdx-pm-photo" href="{{ cover }}" data-shot="{{ eslug }}" data-full="{{ cover }}" data-alt="{{ e.city }}">
+                    <img src="{{ cover }}" alt="Foto grupal, {{ e.name }}" loading="lazy">
+                </a>
+                {%- if e.gallery | length %}
+                <div class="mdx-thumbs">
+                    {%- for g in e.gallery %}
+                    {%- if g.image != cover %}
+                    <a href="{{ g.image }}" data-shot="{{ eslug }}" data-full="{{ g.image }}" data-alt=""><img src="{{ g.image }}" alt="" loading="lazy"></a>
+                    {%- endif %}
+                    {%- endfor %}
+                </div>
+                {%- endif %}
+            </div>
+            {%- endif %}
+            <div class="mdx-pm-info">
+                <p class="mdx-ev-top">
+                    {%- if e.status == 'completado' %}<span class="mdx-pill is-done">Completado</span>
+                    {%- elif e.status == 'activo' %}<span class="mdx-pill is-live">En curso</span>
+                    {%- else %}<span class="mdx-pill is-next">Próximo</span>{% endif %}
+                    {%- if e.region %}<span class="mdx-ev-reg">{{ e.region }}</span>{% endif %}
+                </p>
+                <h2>{{ e.city }}</h2>
+                <p class="mdx-ev-uni">{{ e.name }}</p>
+                <p class="mdx-pm-dates">{{ e.dates }}</p>
+                {%- if e.participants | length %}
+                <h3>Quiénes participaron</h3>
+                <ul>{%- for line in e.participants %}<li>{{ line }}</li>{%- endfor %}</ul>
+                {%- elif not cover %}
+                <p class="mdx-pm-soon">Las fotos y la lista de participantes se publican después del taller.</p>
+                {%- endif %}
+            </div>
+        </div>
+    </section>
+    {%- endfor %}
+    {%- endif %}
+
+    {%- if mdSlug == 'equipo' %}
+    <div class="mdx-cards">
+        {%- for p in macrodataTeam.people %}
+        <a class="mdx-pc" href="{{ p.profile or '/our-team/' }}">
+            {%- if p.photo %}<span class="mdx-pc-photo"><img src="{{ p.photo }}" alt="{{ p.photoAlt or p.name }}" loading="lazy"></span>{% endif %}
+            <span class="mdx-name">{{ p.name }}</span>
+            <span class="mdx-role">{{ p.role }}</span>
+            <span class="mdx-bio">{{ p.bio }}</span>
+            {%- if p.interests | length %}<span class="mdx-chipset">{%- for t in p.interests %}<span>{{ t }}</span>{%- endfor %}</span>{% endif %}
+            <span class="mdx-go">Ver en el laboratorio →</span>
+        </a>
+        {%- endfor %}
+    </div>
+    {%- endif %}
+
+    {%- if mdSlug == 'noticias' %}
+    {%- if news | length %}
+    <ol class="mdx-feed">
+        {%- for n in news %}
+        {%- set dl = n.data.dateLabel.split(' ') %}
+        <li class="mdx-post" id="n-{{ n.data.newsKey }}">
+            <time class="mdx-post-date" datetime="{{ n.data.newsKey }}"><b>{{ dl[1] | replace(',', '') }}</b><span>{{ dl[0] | truncate(3, true, '') }} {{ dl[2] }}</span></time>
+            <article class="mdx-post-card{{ ' has-img' if n.data.image }}">
+                <div class="mdx-post-text">
+                    <h2>{{ n.data.title }}</h2>
+                    <div class="md-body">{{ n.content | safe }}</div>
+                </div>
+                {%- if n.data.image %}
+                <a class="mdx-post-img" href="{{ n.data.image }}" data-shot="noticias" data-full="{{ n.data.image }}" data-alt=""><img src="{{ n.data.image }}" alt="{{ n.data.imageAlt or n.data.title }}" loading="lazy"></a>
+                {%- endif %}
+            </article>
+        </li>
+        {%- endfor %}
+    </ol>
+    {%- else %}
+    <p class="md-placeholder">Pronto publicaremos las primeras noticias.</p>
+    {%- endif %}
+    {%- endif %}
+
+    {%- if mdSlug == 'resultados' %}
+    {%- if macrodataOutputs.intro %}<div class="mdx-sec mdx-intro"><p class="md-lead">{{ macrodataOutputs.intro }}</p></div>{% endif %}
+    <ul class="mdx-results">
+        {%- for o in macrodataOutputs['items'] %}
+        {%- set href = o.file or o.link %}
+        <li class="mdx-result">
+            <div>
+                <p class="mdx-result-kind">{{ o.kind }}{% if o.status and not href %}<span class="mdx-pill is-next">{{ o.status }}</span>{% endif %}</p>
+                <h2>{{ o.title }}</h2>
+                {%- if o.description %}<p>{{ o.description }}</p>{% endif %}
+            </div>
+            {%- if href %}<a class="md-button" href="{{ href }}"{{ ' target="_blank" rel="noopener"' | safe if not o.file }}>{{ 'Descargar' if o.file else 'Abrir' }}</a>{% endif %}
+        </li>
+        {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    {#- The text of the page, one card per second-level heading -#}
+    {%- if parts | length %}
+    {%- if parts[0] | trim %}<div class="mdx-sec md-body">{{ parts[0] | safe }}</div>{% endif %}
+    {%- if cards %}<div class="mdx-cardgrid">{% endif %}
+    {%- for part in parts %}
+    {%- if not loop.first %}
+    <section id="s{{ loop.index0 }}" class="mdx-sec{{ ' is-num' if (numbered and loop.index0 <= numbered) }}{{ ' mdx-tc c' ~ ((loop.index0 - 1) % 6) if cards }}"><div class="md-body"><h2{{ part | safe }}</div></section>
+    {%- endif %}
+    {%- endfor %}
+    {%- if cards %}</div>{% endif %}
+    {%- endif %}
+
+    {#- Documents: upload a PDF in the CMS. Until a PDF is uploaded, the old link is used. -#}
+    {%- if documents | length %}
+    <div class="mdx-docs">
+        <div class="mdx-gh"><h3>Documentos</h3></div>
+        <ul>
+            {%- for d in documents %}
+            {%- set href = d.file or d.link %}
+            {%- if href %}
+            <li><a href="{{ href }}"{{ ' target="_blank" rel="noopener"' | safe if not d.file }}>
+                <span class="mdx-doc-icon" aria-hidden="true">{{ 'PDF' if d.file else '↗' }}</span>
+                <span><b>{{ d.label }}</b>{% if d.description %}<small>{{ d.description }}</small>{% endif %}</span>
+            </a></li>
+            {%- endif %}
+            {%- endfor %}
+        </ul>
+    </div>
+    {%- endif %}
+
+    {%- if topics | length %}
+    <ul class="mdx-chipset mdx-topics">
+        {%- for t in topics %}<li>{{ t }}</li>{%- endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if buttons | length %}
+    <div class="md-cta">
+        {%- for b in buttons %}
+        {#- The apply button is hidden while applications are closed -#}
+        {%- if s.applicationsOpen or b.link != '/macrodata/aplicaciones/' %}
+        <a class="md-button{{ ' is-secondary' if (not loop.first and s.applicationsOpen) }}" href="{{ b.link }}">{{ b.label }}</a>
+        {%- endif %}
+        {%- endfor %}
+    </div>
+    {%- endif %}
+    </div>
+</div>
+</section>
+{%- endif %}
+</div>

@@ -1,8 +1,6 @@
 ---
-title: Quiénes somos
-subtitle: El equipo
-group: Comunidad
-order: 4
+title: Equipo
+subtitle: Las personas que hacen MacroData
 ---
 
 

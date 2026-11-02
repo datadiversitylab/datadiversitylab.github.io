@@ -1,0 +1,69 @@
+{
+  "items": [
+    {
+      "label": "Sobre MacroData",
+      "children": [
+        {
+          "label": "Qué es MacroData",
+          "slug": "el-proyecto",
+          "desc": "El proyecto, por qué existe y con quién lo hacemos"
+        },
+        {
+          "label": "Objetivos",
+          "slug": "objetivos",
+          "desc": "Lo que queremos lograr con los talleres"
+        }
+      ]
+    },
+    {
+      "label": "Talleres",
+      "children": [
+        {
+          "label": "Sedes y fechas",
+          "slug": "fechas",
+          "desc": "Dónde y cuándo es cada taller"
+        },
+        {
+          "label": "Contenidos",
+          "slug": "contenidos",
+          "desc": "Los temas de los dos días"
+        },
+        {
+          "label": "Proyecto final",
+          "slug": "proyecto-final",
+          "desc": "Mismos datos, distintos análisis"
+        },
+        {
+          "label": "Resultados",
+          "slug": "resultados",
+          "desc": "Materiales y resultados de los talleres"
+        },
+        {
+          "label": "Políticas",
+          "slug": "politicas",
+          "desc": "Selección, autoría y convivencia"
+        }
+      ]
+    },
+    {
+      "label": "Participantes",
+      "slug": "participantes",
+      "desc": "De dónde llegaron los estudiantes"
+    },
+    {
+      "label": "Galería",
+      "slug": "galeria",
+      "desc": "Fotos de cada sede"
+    },
+    {
+      "label": "Noticias",
+      "slug": "noticias",
+      "desc": "Novedades de MacroData"
+    },
+    {
+      "label": "Equipo",
+      "slug": "equipo",
+      "desc": "Quiénes hacen MacroData"
+    }
+  ]
+}

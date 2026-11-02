@@ -721,11 +721,9 @@ collections:
             fields:
               - { label: 'Title', name: 'title', widget: 'string' }
               - { label: 'Text', name: 'description', widget: 'text', hint: 'Leave a blank line between paragraphs. Web addresses become links on their own.' }
-  - name: 'macrodata'
-    label: 'MacroData pages'
-    folder: 'src/macrodata'
-    media_folder: '/src/assets/images/macrodata'
-    public_folder: '/assets/images/macrodata'
+  - name: 'outreach'
+    label: 'Outreach items'
+    folder: 'src/outreach'
     create: true
     extension: 'md'
     format: 'frontmatter'
@@ -736,15 +734,13 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - { label: 'Subtitle', name: 'subtitle', widget: 'string', required: false }
-      - label: 'Menu'
-        name: 'eleventyNavigation'
-        widget: 'object'
-        collapsed: false
-        hint: 'How the item appears in the main menu, under Outreach.'
-        fields:
-          - { label: 'Name in the menu', name: 'key', widget: 'string', hint: 'Usually the same as the title. It must not repeat another menu item.' }
-          - { label: 'Parent menu', name: 'parent', widget: 'hidden', default: 'Outreach' }
-          - { label: 'Order', name: 'order', widget: 'number', value_type: 'int', default: 500, hint: 'Lower numbers come first.' }
+      - { label: 'When', name: 'when', widget: 'string', required: false, hint: 'For example: December 11, 2024' }
+      - { label: 'Where or event', name: 'where', widget: 'string', required: false, hint: 'For example: AGU24' }
+      - { label: 'Name in the menu (optional)', name: 'menuLabel', widget: 'string', required: false, hint: 'Leave empty to use the title. It must not repeat another menu item.' }
+      - { label: 'Order in the menu', name: 'order', widget: 'number', required: false, hint: 'Lower numbers come first. Empty means 500.' }
+      - { label: 'Menu group', name: 'navGroup', widget: 'string', required: false, hint: 'For example Projects. Fill it to show this item as a tile in the Outreach menu. Items with the same group are listed together. Leave empty for a plain link.' }
+      - { label: 'Menu description', name: 'navDesc', widget: 'string', required: false, hint: 'About five words, shown under the name in the menu. For example Mapping with communities.' }
+      - { label: 'Draft (hide from the site and the menu)', name: 'draft', widget: 'boolean', default: false, required: false }
       - { label: 'Banner image', name: 'image', widget: 'image', required: false, media_folder: '/src/assets/images/outreach', public_folder: '/assets/images/outreach' }
       - { label: 'Banner image description', name: 'imageAlt', widget: 'string', required: false }
       - { label: 'Poster (PDF or image)', name: 'poster', widget: 'file', required: false, media_folder: '/src/assets/documents/outreach', public_folder: '/assets/documents/outreach', hint: 'A PDF shows a preview on desktop and a button on phones. An image is shown on the page.' }
@@ -758,12 +754,224 @@ collections:
           - { label: 'Link', name: 'link', widget: 'string' }
       - { label: 'Topics (small labels)', name: 'topics', widget: 'list', required: false }
       - { label: 'Text', name: 'body', widget: 'markdown', required: false, media_folder: '/src/assets/images/outreach', public_folder: '/assets/images/outreach' }
+  - name: 'macrodata'
+    label: 'MacroData pages'
+    folder: 'src/macrodata'
+    media_folder: '/src/assets/images/macrodata'
+    public_folder: '/assets/images/macrodata'
+    create: true
+    extension: 'md'
+    format: 'frontmatter'
+    identifier_field: title
+    slug: '{{slug}}'
+    summary: '{{title}}'
+    sortable_fields: ['title']
+    hint: 'The order and groups of the menu are in MacroData: data and settings > Menu. A new page needs a line there to show in the menu.'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Subtitle', name: 'subtitle', widget: 'string', required: false }
+      - { label: 'Introduction', name: 'intro', widget: 'text', required: false, hint: 'Optional. A short text at the top. Leave a blank line between paragraphs.' }
+      - label: 'Menu of the whole site (only for the MacroData home page)'
+        name: 'eleventyNavigation'
+        widget: 'object'
+        collapsed: true
+        required: false
+        hint: 'It places MacroData under Outreach in the main menu. Group and description make it a tile with a short line.'
+        fields:
+          - { label: 'Name in the menu', name: 'key', widget: 'string', required: false }
+          - { label: 'Parent menu', name: 'parent', widget: 'hidden', default: 'Outreach' }
+          - { label: 'Order', name: 'order', widget: 'number', value_type: 'int', default: 900, required: false }
+          - { label: 'Menu group', name: 'group', widget: 'string', required: false, default: 'Projects', hint: 'Shows MacroData as a tile under this label in the Outreach menu.' }
+          - { label: 'Menu description', name: 'desc', widget: 'string', required: false, default: 'R workshops in Colombia' }
+      - { label: 'Index on the left', name: 'toc', widget: 'boolean', default: false, required: false, hint: 'Shows a list of the sections on the left of the page.' }
+      - { label: 'Sections as cards', name: 'cards', widget: 'boolean', default: false, required: false, hint: 'Shows the sections in two columns, each one with its own color.' }
+      - { label: 'Number the sections', name: 'numbered', widget: 'number', value_type: 'int', required: false, hint: 'Optional. For example 5 numbers the first five sections with 1, 2, 3, 4, 5.' }
+      - { label: 'Description for search engines', name: 'seoDescription', widget: 'text', required: false, hint: 'One or two sentences. Leave empty to use the subtitle.' }
+      - label: 'Documents (PDF)'
+        name: 'documents'
+        widget: 'list'
+        required: false
+        summary: '{{fields.label}}'
+        hint: 'Upload a PDF here. It shows as a download at the end of the page. If no PDF is uploaded, the old link is used.'
+        fields:
+          - { label: 'Name', name: 'label', widget: 'string' }
+          - { label: 'One short line', name: 'description', widget: 'string', required: false }
+          - { label: 'PDF', name: 'file', widget: 'file', required: false, media_folder: '/src/assets/documents/macrodata', public_folder: '/assets/documents/macrodata' }
+          - { label: 'Old link (used only when there is no PDF)', name: 'link', widget: 'string', required: false }
+      - { label: 'Topics (small labels)', name: 'topics', widget: 'list', required: false }
+      - label: 'Buttons (at the end)'
+        name: 'buttons'
+        widget: 'list'
+        required: false
+        summary: '{{fields.label}}'
+        hint: 'A button that goes to /macrodata/aplicaciones/ is hidden while applications are closed.'
+        fields:
+          - { label: 'Text', name: 'label', widget: 'string' }
+          - { label: 'Link', name: 'link', widget: 'string' }
+      - { label: 'Text', name: 'body', widget: 'markdown', required: false }
+
+  - name: 'macrodataNews'
+    label: 'MacroData news'
+    folder: 'src/macrodataNews'
+    media_folder: '/src/assets/images/macrodata'
+    public_folder: '/assets/images/macrodata'
+    create: true
+    extension: 'md'
+    format: 'frontmatter'
+    identifier_field: title
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{date}} | {{title}}'
+    sortable_fields: ['date', 'title']
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Image description', name: 'imageAlt', widget: 'string', required: false }
+      - { label: 'Text', name: 'body', widget: 'markdown', hint: 'Forms stay as links. Files go as PDFs: add them to the page that needs them.' }
+
+  - name: 'macrodataData'
+    label: 'MacroData: data and settings'
+    files:
+      - label: 'Menu of MacroData (order and groups)'
+        name: 'menu'
+        file: 'src/_data/macrodataMenu.json'
+        fields:
+          - label: 'Menu items, in order'
+            name: 'items'
+            widget: 'list'
+            summary: '{{fields.label}}'
+            hint: 'A menu item is either a single page (fill Page address) or a group with a drop-down (fill Pages in the group).'
+            fields:
+              - { label: 'Name', name: 'label', widget: 'string' }
+              - { label: 'Page address', name: 'slug', widget: 'string', required: false, hint: 'The file name of the page, for example participantes. Leave empty for a group.' }
+              - { label: 'One short line', name: 'desc', widget: 'string', required: false }
+              - label: 'Pages in the group'
+                name: 'children'
+                widget: 'list'
+                required: false
+                summary: '{{fields.label}}'
+                fields:
+                  - { label: 'Name', name: 'label', widget: 'string' }
+                  - { label: 'Page address', name: 'slug', widget: 'string', hint: 'The file name of the page, for example fechas.' }
+                  - { label: 'One short line', name: 'desc', widget: 'string', required: false }
+      - label: 'Settings: applications, forms and home page text'
+        name: 'settings'
+        file: 'src/_data/macrodataSettings.json'
+        fields:
+          - { label: 'Applications are open', name: 'applicationsOpen', widget: 'boolean', default: false, hint: 'On: the Aplicar button shows in the menu and on the home page, and the application text and form show on the Aplicaciones page. Off: people see that applications are closed and a way to be notified.' }
+          - { label: 'Application form (Nextcloud link)', name: 'applicationsLink', widget: 'string', required: false }
+          - { label: 'Application process text', name: 'process', widget: 'markdown', required: false, hint: 'Shown on the Aplicaciones page only while applications are open.' }
+          - { label: 'Notify me form (Nextcloud link)', name: 'notifyLink', widget: 'string', required: false, hint: 'Where people leave their email to hear when applications open. Leave empty to send them to your email.' }
+          - { label: 'Notify me button text', name: 'notifyLabel', widget: 'string' }
+          - { label: 'Closed message: title', name: 'closedTitle', widget: 'string' }
+          - { label: 'Closed message: text', name: 'closedText', widget: 'string' }
+          - { label: 'Instructors form (Nextcloud link)', name: 'instructorsLink', widget: 'string', required: false }
+          - { label: 'Email', name: 'email', widget: 'string' }
+          - { label: 'Home: main text', name: 'heroText', widget: 'text', hint: 'Two sentences at most.' }
+          - { label: 'Home: keywords', name: 'heroTags', widget: 'list', required: false }
+          - { label: 'Home: funding line', name: 'fundingText', widget: 'string', hint: 'For example: Con el apoyo de National Geographic' }
+          - { label: 'Home: funding link text', name: 'fundingLinkLabel', widget: 'string' }
+          - { label: 'Link to the grant', name: 'grantLink', widget: 'string', hint: 'The grant on the Grants page. For example: /grants/#supporting-colombian-undergraduates-through-programming-and-phylogenetic-comparative-methods-in-r' }
+          - { label: 'English note: label', name: 'englishLabel', widget: 'string' }
+          - { label: 'English note: text', name: 'englishText', widget: 'text', hint: 'Ends before the grant title, which comes next as a link.' }
+          - { label: 'English note: grant title (link)', name: 'englishLinkText', widget: 'string' }
+          - { label: 'News heading', name: 'newsTitle', widget: 'string' }
+          - { label: 'Description for search engines', name: 'seoDescription', widget: 'text', hint: 'The text under the title in Google. Up to about 160 characters.' }
+          - { label: 'Image when the page is shared', name: 'shareImage', widget: 'image', required: false, media_folder: '/src/assets/images/macrodata', public_folder: '/assets/images/macrodata' }
+      - label: 'Numbers on the home page'
+        name: 'home'
+        file: 'src/_data/macrodataHome.json'
+        fields:
+          - { label: 'Heading', name: 'statsTitle', widget: 'string', required: false }
+          - label: 'Numbers (the first three show on the home page)'
+            name: 'stats'
+            widget: 'list'
+            summary: '{{fields.number}} {{fields.label}}'
+            fields:
+              - { label: 'Number', name: 'number', widget: 'string' }
+              - { label: 'Label', name: 'label', widget: 'string' }
+      - label: 'Workshops (map, dates and photos)'
+        name: 'events'
+        file: 'src/_data/macrodataEvents.json'
+        fields:
+          - label: 'Workshops'
+            name: 'events'
+            widget: 'list'
+            summary: '{{fields.city}} | {{fields.name}} | {{fields.status}}'
+            fields:
+              - { label: 'University', name: 'name', widget: 'string' }
+              - { label: 'City', name: 'city', widget: 'string' }
+              - { label: 'Region', name: 'region', widget: 'string', required: false, hint: 'Shown on the map. For example: Caribe, Andes, Pacífico.' }
+              - { label: 'Dates', name: 'dates', widget: 'string', hint: 'With the year. For example: Julio 21–22, 2026' }
+              - { label: 'Application deadline', name: 'deadline', widget: 'string', required: false }
+              - { label: 'Selection published', name: 'selection', widget: 'string', required: false }
+              - { label: 'Latitude', name: 'lat', widget: 'number', value_type: 'float' }
+              - { label: 'Longitude', name: 'lng', widget: 'number', value_type: 'float' }
+              - { label: 'Status', name: 'status', widget: 'select', options: ['completado', 'activo', 'proximo'] }
+              - { label: 'Group photo (shown on the map)', name: 'photo', widget: 'image', required: false, hint: 'Until there is a photo, the map shows Pronto.' }
+              - { label: 'Who is in the photo', name: 'participants', widget: 'list', required: false, field: { label: 'Line', name: 'line', widget: 'text' } }
+              - label: 'More photos'
+                name: 'gallery'
+                widget: 'list'
+                required: false
+                field: { label: 'Photo', name: 'image', widget: 'image' }
+      - label: 'Team'
+        name: 'team'
+        file: 'src/_data/macrodataTeam.json'
+        fields:
+          - label: 'People'
+            name: 'people'
+            widget: 'list'
+            summary: '{{fields.name}} | {{fields.role}}'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Role', name: 'role', widget: 'string' }
+              - { label: 'Photo', name: 'photo', widget: 'image', required: false }
+              - { label: 'Photo description', name: 'photoAlt', widget: 'string', required: false }
+              - { label: 'Profile page in the lab site', name: 'profile', widget: 'string', required: false, hint: 'For example /our-team/cristian-roman-palacios/. Leave empty if there is none.' }
+              - { label: 'Website', name: 'website', widget: 'string', required: false }
+              - { label: 'Bluesky', name: 'bluesky', widget: 'string', required: false }
+              - { label: 'LinkedIn', name: 'linkedin', widget: 'string', required: false }
+              - { label: 'Bio', name: 'bio', widget: 'text' }
+              - { label: 'Interests', name: 'interests', widget: 'list', required: false }
+      - label: 'Participants (students per city and workshop)'
+        name: 'participants'
+        file: 'src/_data/macrodataParticipants.json'
+        fields:
+          - { label: 'These numbers are examples', name: 'isExample', widget: 'boolean', default: false, hint: 'On: the page shows a Datos de ejemplo label. Turn it off when you load real numbers.' }
+          - label: 'Rows (one per city and workshop)'
+            name: 'rows'
+            widget: 'list'
+            summary: '{{fields.workshop}} | {{fields.city}} | {{fields.students}}'
+            hint: 'Only totals, never names. One row: how many students from a city went to a workshop.'
+            fields:
+              - { label: 'Workshop', name: 'workshop', widget: 'relation', collection: 'macrodataData', file: 'events', search_fields: ['events.*.name'], value_field: 'events.*.name', display_fields: ['events.*.name'] }
+              - { label: 'City of origin', name: 'city', widget: 'string' }
+              - { label: 'Latitude', name: 'lat', widget: 'number', value_type: 'float' }
+              - { label: 'Longitude', name: 'lng', widget: 'number', value_type: 'float' }
+              - { label: 'Students', name: 'students', widget: 'number', value_type: 'int', min: 1 }
+      - label: 'Results (page Resultados)'
+        name: 'outputs'
+        file: 'src/_data/macrodataOutputs.json'
+        fields:
+          - { label: 'Introduction', name: 'intro', widget: 'string', required: false }
+          - label: 'Items'
+            name: 'items'
+            widget: 'list'
+            summary: '{{fields.kind}} | {{fields.title}}'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Type', name: 'kind', widget: 'select', options: ['Materiales', 'Resultados', 'Artículo', 'Código', 'Datos'] }
+              - { label: 'Description', name: 'description', widget: 'text', required: false }
+              - { label: 'Status', name: 'status', widget: 'string', required: false, hint: 'For example: Próximamente. Shown only while there is no file or link.' }
+              - { label: 'Link', name: 'link', widget: 'string', required: false }
+              - { label: 'File (PDF)', name: 'file', widget: 'file', required: false, media_folder: '/src/assets/documents/macrodata', public_folder: '/assets/documents/macrodata' }
   - name: 'navApps'
     label: 'Menu logos for the apps'
     media_folder: '/src/assets/images/apps'
     public_folder: '/assets/images/apps'
     files:
-      - label: 'Logos in the Tools and data menu'
+      - label: 'Logos in the Tools and data and Outreach menus'
         name: 'navApps'
         file: 'src/_data/navApps.json'
         fields:
@@ -771,6 +979,8 @@ collections:
           - { label: 'BarrioMap', name: 'barriomap', widget: 'image', required: false }
           - { label: 'Chorus', name: 'chorus', widget: 'image', required: false }
           - { label: 'salphycon', name: 'salphycon', widget: 'image', required: false }
+          - { label: 'MacroData', name: 'macrodata', widget: 'image', required: false, hint: 'Shown in the Outreach menu.' }
+          - { label: 'GIS for community health', name: 'gisforcommunityhealth', widget: 'image', required: false, hint: 'Shown in the Outreach menu.' }
   - name: 'logos'
     label: 'Logos'
     folder: 'src/logos'

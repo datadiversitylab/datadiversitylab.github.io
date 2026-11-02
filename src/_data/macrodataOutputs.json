@@ -1,0 +1,21 @@
+{
+  "intro": "Lo que producen los talleres y dónde encontrarlo.",
+  "items": [
+    {
+      "title": "Presentaciones y código de los talleres",
+      "kind": "Materiales",
+      "description": "Las presentaciones y los scripts de R que usamos en cada taller.",
+      "status": "Próximamente",
+      "link": "",
+      "file": ""
+    },
+    {
+      "title": "Resultados del proyecto final",
+      "kind": "Resultados",
+      "description": "Los análisis y los resultados que producen los equipos en el proyecto final.",
+      "status": "Próximamente",
+      "link": "",
+      "file": ""
+    }
+  ]
+}

@@ -1,11 +1,16 @@
 ---
+toc: true
+cards: true
 title: Contenidos
 subtitle: Detalles sobre los temas a ser tratados
-group: El curso
-order: 3
+documents:
+- label: Cronograma detallado de los dos días
+  description: Los temas hora por hora
+  file: ''
+  link: https://nextcloud.datadiversitylab.synology.me/s/RpAYTQgPBt44kSq
 ---
 
-MacroData es un taller intensivo de dos días que busca introducir a estudiantes/profesionales de Biología en el uso de herramientas de programación en R y métodos comparativos filogenéticos. A través de sesiones teóricas y prácticas, aprenderán a manipular datos, trabajar con filogenias y explorar preguntas macroevolutivas usando principios de ciencia abierta. Como resultado del proceso formativo se desarrollará una publicación científica colaborativa con la contribución de cada participante. Los siguientes son los temas generales que tenemos en mente. Si quieres revisar el cronograma mas detallado, puedes usar el [siguiente enlace para ver detalles en los dos dias del curso](https://nextcloud.datadiversitylab.synology.me/s/RpAYTQgPBt44kSq).
+MacroData es un taller intensivo de dos días que busca introducir a estudiantes/profesionales de Biología en el uso de herramientas de programación en R y métodos comparativos filogenéticos. A través de sesiones teóricas y prácticas, aprenderán a manipular datos, trabajar con filogenias y explorar preguntas macroevolutivas usando principios de ciencia abierta. Como resultado del proceso formativo se desarrollará una publicación científica colaborativa con la contribución de cada participante. Los siguientes son los temas generales que tenemos en mente. El cronograma detallado de los dos días está en los documentos al final de esta página.
 
 ## Fundamentos de programación en R
 

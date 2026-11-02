@@ -1,0 +1,89 @@
+{
+  "isExample": true,
+  "rows": [
+    {
+      "workshop": "Universidad de la Salle",
+      "city": "Bogotá",
+      "lat": 4.711,
+      "lng": -74.072,
+      "students": 14
+    },
+    {
+      "workshop": "Universidad de la Salle",
+      "city": "Tunja",
+      "lat": 5.535,
+      "lng": -73.367,
+      "students": 2
+    },
+    {
+      "workshop": "Universidad de la Salle",
+      "city": "Ibagué",
+      "lat": 4.438,
+      "lng": -75.232,
+      "students": 2
+    },
+    {
+      "workshop": "Universidad de la Salle",
+      "city": "Villavicencio",
+      "lat": 4.142,
+      "lng": -73.627,
+      "students": 2
+    },
+    {
+      "workshop": "Universidad de la Salle",
+      "city": "Medellín",
+      "lat": 6.244,
+      "lng": -75.581,
+      "students": 2
+    },
+    {
+      "workshop": "Universidad de la Salle",
+      "city": "Manizales",
+      "lat": 5.07,
+      "lng": -75.517,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad de la Salle",
+      "city": "Cali",
+      "lat": 3.452,
+      "lng": -76.532,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad del Atlántico",
+      "city": "Barranquilla",
+      "lat": 10.968,
+      "lng": -74.781,
+      "students": 11
+    },
+    {
+      "workshop": "Universidad del Atlántico",
+      "city": "Santa Marta",
+      "lat": 11.24,
+      "lng": -74.2,
+      "students": 3
+    },
+    {
+      "workshop": "Universidad del Atlántico",
+      "city": "Cartagena",
+      "lat": 10.391,
+      "lng": -75.479,
+      "students": 3
+    },
+    {
+      "workshop": "Universidad del Atlántico",
+      "city": "Montería",
+      "lat": 8.75,
+      "lng": -75.88,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad del Atlántico",
+      "city": "Sincelejo",
+      "lat": 9.305,
+      "lng": -75.397,
+      "students": 1
+    }
+  ]
+}

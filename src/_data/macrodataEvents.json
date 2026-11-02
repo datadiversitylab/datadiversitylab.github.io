@@ -3,6 +3,7 @@
     {
       "name": "Universidad de la Salle",
       "city": "Bogotá",
+      "region": "Andes",
       "dates": "Julio 21–22, 2026",
       "deadline": "Junio 30, 2026",
       "selection": "Julio 10, 2026",
@@ -26,6 +27,7 @@
     {
       "name": "Universidad del Atlántico",
       "city": "Barranquilla",
+      "region": "Caribe",
       "dates": "Agosto 1–2, 2026",
       "deadline": "Junio 30, 2026",
       "selection": "Julio 10, 2026",
@@ -53,6 +55,7 @@
     {
       "name": "Universidad de Nariño",
       "city": "Pasto",
+      "region": "Sur andino",
       "dates": "Noviembre 21–22, 2026",
       "deadline": "Septiembre 30, 2026",
       "selection": "Octubre 15, 2026",
@@ -66,6 +69,7 @@
     {
       "name": "Universidad Tecnológica del Chocó",
       "city": "Quibdó",
+      "region": "Pacífico",
       "dates": "Noviembre 28–29, 2026",
       "deadline": "Septiembre 30, 2026",
       "selection": "Octubre 15, 2026",

@@ -2,6 +2,8 @@
 title: GIS for community health
 subtitle: Presented with members of Esperanza Community Housing
 order: 200
+navGroup: Projects
+navDesc: Mapping with communities
 when: December 11, 2024
 where: AGU24
 links:

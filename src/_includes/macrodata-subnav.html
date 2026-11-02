@@ -1,0 +1,46 @@
+{#- Menu of the MacroData section. Order, groups, icons and short descriptions are in src/_data/macrodataMenu.json. -#}
+{%- set menu = macrodataMenu['items'] -%}
+<nav class="mdx-sub" aria-label="Menú de MacroData">
+    <div class="mdx-sub-in">
+        <a class="mdx-sub-name" href="/macrodata/">MacroData</a>
+
+        <ul class="mdx-sub-list">
+            {%- for item in menu %}
+            {%- if item.children %}
+            <li class="mdx-dd{{ ' is-current' if mdGroup == item.label }}">
+                <button type="button" class="mdx-sub-link{{ ' is-current' if mdGroup == item.label }}" aria-haspopup="true" aria-expanded="false">{{ item.label }}</button>
+                <div class="mdx-menu">
+                    <ul>
+                        {%- for c in item.children %}
+                        <li><a href="/macrodata/{{ c.slug }}/"{{ ' aria-current="page"' | safe if mdSlug == c.slug }}>
+                            <span><b>{{ c.label }}</b><small>{{ c.desc }}</small></span>
+                        </a></li>
+                        {%- endfor %}
+                    </ul>
+                </div>
+            </li>
+            {%- else %}
+            <li><a class="mdx-sub-link{{ ' is-current' if mdSlug == item.slug }}" href="/macrodata/{{ item.slug }}/"{{ ' aria-current="page"' | safe if mdSlug == item.slug }}>{{ item.label }}</a></li>
+            {%- endif %}
+            {%- endfor %}
+        </ul>
+
+        {%- if macrodataSettings.applicationsOpen %}
+        <a class="mdx-sub-apply{{ ' is-current' if mdSlug == 'aplicaciones' }}" href="/macrodata/aplicaciones/">Aplicar</a>
+        {%- endif %}
+    </div>
+
+    {#- Phones: every page in one row you can swipe, nothing is hidden behind a menu -#}
+    <ul class="mdx-chips" aria-label="Páginas de MacroData">
+        {%- if macrodataSettings.applicationsOpen %}<li><a class="is-apply{{ ' is-current' if mdSlug == 'aplicaciones' }}" href="/macrodata/aplicaciones/">Aplicar</a></li>{% endif %}
+        {%- for item in menu %}
+        {%- if item.children %}
+        {%- for c in item.children %}
+        <li><a{{ ' class="is-current" aria-current="page"' | safe if mdSlug == c.slug }} href="/macrodata/{{ c.slug }}/">{{ c.label }}</a></li>
+        {%- endfor %}
+        {%- else %}
+        <li><a{{ ' class="is-current" aria-current="page"' | safe if mdSlug == item.slug }} href="/macrodata/{{ item.slug }}/">{{ item.label }}</a></li>
+        {%- endif %}
+        {%- endfor %}
+    </ul>
+</nav>

@@ -66,15 +66,17 @@
                                                 {%- endfor %}
                                             </ul>
                                         </li>
-                                        {%- elif child.app %}
-                                        {#- Apps get a tile, a name and a short description. Mark a page with "app: true" and "desc:" under eleventyNavigation. -#}
-                                        {%- if loop.first or not entry.children[loop.index0 - 1].app %}
-                                        <li class="cs-drop-label">Apps</li>
+                                        {%- elif child.app or child.group %}
+                                        {#- A tile, a name and a short description. Tools and data pages use "app: true" and "desc:". Outreach pages use the Menu group and Menu description fields in Netlify. -#}
+                                        {%- set grp = child.group or 'Apps' -%}
+                                        {%- set prev = entry.children[loop.index0 - 1] if loop.index0 > 0 else none -%}
+                                        {%- if not prev or (prev.group or ('Apps' if prev.app else '')) != grp %}
+                                        <li class="cs-drop-label">{{ grp }}</li>
                                         {%- endif %}
                                         <li class="cs-drop-li cs-drop-app">
                                             <a href="{{ child.url }}" class="cs-li-link cs-drop-link cs-app-link">
                                                 {#- Logo from Netlify > Navigation logos. Without one, the tile shows the first letter. -#}
-                                                {%- set appLogo = navApps[child.title | lower] -%}
+                                                {%- set appLogo = navApps[child.title | lower | replace(' ', '')] -%}
                                                 <span class="cs-app-tile" aria-hidden="true">{% if appLogo %}<img src="{{ appLogo }}" alt="" width="34" height="34" loading="lazy" decoding="async">{% else %}{{ child.title | first | upper }}{% endif %}</span>
                                                 <span class="cs-app-text">
                                                     <span class="cs-app-name">{{ child.title }}</span>
@@ -83,7 +85,7 @@
                                             </a>
                                         </li>
                                         {%- else %}
-                                        {%- if loop.index0 > 0 and entry.children[loop.index0 - 1].app %}
+                                        {%- if loop.index0 > 0 and (entry.children[loop.index0 - 1].app or entry.children[loop.index0 - 1].group) %}
                                         <li class="cs-drop-rule" aria-hidden="true"></li>
                                         {%- endif %}
                                         <li class="cs-drop-li">

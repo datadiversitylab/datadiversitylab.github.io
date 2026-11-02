@@ -1,0 +1,22 @@
+{
+  "applicationsOpen": false,
+  "applicationsLink": "https://nextcloud.datadiversitylab.synology.me/apps/forms/s/ybJmkt7cW7o4nHF3nQs49nFx",
+  "notifyLink": "",
+  "notifyLabel": "Avísame cuando abran",
+  "instructorsLink": "https://nextcloud.datadiversitylab.synology.me/apps/forms/s/WwsZoWDSnpWAFmBT6SnEoHmZ",
+  "email": "SI-DSEVO@arizona.edu",
+  "closedTitle": "Las inscripciones están cerradas por ahora",
+  "closedText": "Si quieres que te avisemos cuando abran de nuevo, déjanos tu correo.",
+  "process": "## Proceso de aplicación\n\nGracias por tu interés en ser parte de este proyecto de formación en programación y métodos comparativos filogenéticos. El formulario es una herramienta para conocerte un poco más: tu experiencia previa, tus intereses y tus condiciones de acceso. Toda la información que compartas es confidencial. Solo se usa para el proceso de selección.\n\n## ¿Cómo aplicar?\n\n1. **Lee la información de esta página.** Allí encuentras las fechas, los requisitos y las sedes confirmadas.\n2. **Completa el formulario de aplicación.** No necesitas experiencia previa, pero sí motivación y compromiso.\n3. **Espera los resultados.** Los listados se publican en la sección de Aplicaciones y te avisamos por correo.",
+  "heroText": "Talleres presenciales de programación en R y métodos comparativos filogenéticos para estudiantes de biología en Colombia. Se realizan en universidades de todo el país.",
+  "heroTags": ["R", "Filogenias", "Ciencia abierta"],
+  "fundingText": "Con el apoyo de National Geographic",
+  "fundingLinkLabel": "Conoce la financiación",
+  "grantLink": "/grants/#supporting-colombian-undergraduates-through-programming-and-phylogenetic-comparative-methods-in-r",
+  "englishLabel": "In English",
+  "englishText": "MacroData teaches R programming and phylogenetic comparative methods to undergraduate biology students in Colombia. The workshops are in person and in Spanish, and they are hosted by universities across the country. It is funded by a National Geographic grant to Cristian Román-Palacios:",
+  "englishLinkText": "Supporting Colombian Undergraduates through Programming and Phylogenetic Comparative Methods in R",
+  "newsTitle": "Noticias",
+  "seoDescription": "MacroData: talleres presenciales de programación en R y métodos comparativos filogenéticos para estudiantes de biología en Colombia. Universidad de la Salle, Universidad del Atlántico, Universidad de Nariño y Universidad Tecnológica del Chocó.",
+  "shareImage": "/assets/images/macrodata/grupo-lasalle.jpg"
+}

@@ -1,8 +1,6 @@
 ---
 title: Noticias
-subtitle: Novedades de MacroData
-group: Comunidad
-order: 2
+subtitle: Novedades de los talleres y del proyecto
 ---
 
 

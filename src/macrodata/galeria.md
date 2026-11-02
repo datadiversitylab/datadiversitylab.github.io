@@ -1,8 +1,6 @@
 ---
 title: Galería
-subtitle: Fotos de los talleres de MacroData
-group: Comunidad
-order: 1
+subtitle: Una foto principal por sede y más fotos de cada taller
 ---
 
 

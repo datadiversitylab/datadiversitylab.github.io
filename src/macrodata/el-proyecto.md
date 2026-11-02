@@ -1,15 +1,13 @@
 ---
-title: El proyecto
-subtitle: Qué es MacroData, por qué existe y hacia dónde va
-group: El proyecto
-order: 1
+toc: true
+title: Qué es MacroData
+subtitle: El proyecto, por qué existe y con quién lo hacemos
 ---
 
 ## ¿Qué es MacroData?
 
 **MacroData** es un proyecto que nace con el propósito de fortalecer, de manera descentralizada, las capacidades de programación y análisis de datos en biología evolutiva. El énfasis principal es apoyar y conectar a estudiantxs e investigadorxs en Colombia. Los cursos y recursos disponibles estarán principalmente relacionados con disciplinas biológicas, con enfasis en ciencia de datos y metodos filogeneticos comparativos.
 
-![Concepto](/assets/images/macrodata/concepto.jpg)
 
 Durante el desarrollo del proyecto (2025 y 2026), se pretende generar información base en ciencia de datos y herramientas en macroevolución, comunicarla mediante cursos cortos presenciales, y propiciar la creación de conexiones claras y duraderas entre quienes participen en el curso o se beneficien de los recursos. Los talleres presenciales estarán enfocados en el uso de **R** (tanto introductorio como para el desarrollo de recursos), en la aplicación de métodos filogenéticos comparativos, y en la discusión de herramientas en macroevolución desarrolladas por investigadores en América del Sur.
 

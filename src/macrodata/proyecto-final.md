@@ -1,10 +1,8 @@
 ---
+toc: true
 title: Proyecto final
 subtitle: ¿La altitud predice la masa corporal en los colibríes?
-group: El curso
-order: 2
 intro: 'Mismos datos, distintos análisis. Cada equipo toma sus propias decisiones analíticas y el conjunto de resultados es el estudio. Tu análisis no es un ejercicio: es un dato.'
-image: /assets/images/macrodata/arbol-angiospermas.jpg
 topics:
 - Colibríes
 - Altitud · masa corporal
@@ -13,11 +11,6 @@ topics:
 - Decisiones analíticas
 - Ciencia abierta
 - R
-buttons:
-- label: Aplicar al taller
-  link: /macrodata/aplicaciones/
-- label: Ver los contenidos
-  link: /macrodata/contenidos/
 ---
 
 ## Lo que estamos midiendo no es la respuesta

@@ -1,15 +1,26 @@
 ---
+toc: true
 title: Políticas
-subtitle: Detalles sobre las políticas en MacroData
-group: El curso
-order: 4
+subtitle: Selección, autoría y convivencia
+documents:
+- label: Código de conducta
+  description: Cómo nos relacionamos durante los talleres
+  file: ''
+  link: https://nextcloud.datadiversitylab.synology.me/s/GsJ57SzM3wATWKD
+- label: Tratamiento de datos
+  description: Qué datos recogemos y cómo los usamos
+  file: ''
+  link: https://nextcloud.datadiversitylab.synology.me/s/bGjpENe5kLd7x3d
+- label: Rúbrica de evaluación de participantes
+  description: Cómo evaluamos la participación
+  file: ''
+  link: https://nextcloud.datadiversitylab.synology.me/s/jEg7oJGGRcALBA2
 ---
 
 ## Lineamientos generales
 
 En MacroData apoyamos la ciencia abierta, colaborativa y justa. Por eso, nos guiamos por una serie de principios que buscan garantizar el respeto mutuo y el reconocimiento del trabajo colectivo. Aquí compartimos nuestras políticas principales:
 
-![politicas](/assets/images/macrodata/politicas.jpg)
 
 ---
 
@@ -43,10 +54,3 @@ Esperamos que todas las personas participantes:
 - Eviten cualquier forma de discriminación, acoso o exclusión.
 - Contribuyan a una comunidad científica solidaria.
 
----
-
-## Documentos de politicas
-
-- [Codigo de conducta](https://nextcloud.datadiversitylab.synology.me/s/GsJ57SzM3wATWKD)
-- [Tratamiento de datos](https://nextcloud.datadiversitylab.synology.me/s/bGjpENe5kLd7x3d)
-- [Rubrica de evaluacion participantes](https://nextcloud.datadiversitylab.synology.me/s/jEg7oJGGRcALBA2)
