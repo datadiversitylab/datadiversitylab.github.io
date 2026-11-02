@@ -99,9 +99,11 @@ eleventyNavigation:
                 <h1 id="home-h" class="cs-title">{{ home.title }}</h1>
             </div>
             <p class="hero-description hero-statement hero-animate hero-animate-3">{{ homeFeatured.statement or home.description }}</p>
-            {%- if homeData.themes | length %}
+            {#- Themes: the list in Netlify > Home page > ... > Home themes. If it is empty, the five most common research areas are used. -#}
+            {%- set themes = homeFeatured.themes if (homeFeatured.themes | length) else homeData.themes %}
+            {%- if themes | length %}
             <ul class="hero-tags hero-animate hero-animate-3" aria-label="Research themes">
-                {%- for theme in homeData.themes %}
+                {%- for theme in themes %}
                 <li><a href="/our-work/?q={{ theme | urlencode }}">{{ theme }}</a></li>
                 {%- endfor %}
             </ul>
@@ -112,17 +114,6 @@ eleventyNavigation:
                 {%- for door in homeFeatured.doors %}
                 <a class="hero-door{{ ' is-primary' if loop.first }}" href="{{ door.link }}">{{ door.label }}</a>
                 {%- endfor %}
-            </div>
-            {%- endif %}
-            {%- if homeData.faces | length %}
-            <!-- The team, current members. Built from src/team (see homeData.js) -->
-            <div class="hero-faces hero-animate hero-animate-4">
-                <p class="hero-faces-head">The team <a href="/our-team/">Meet everyone &rarr;</a></p>
-                <ul class="hero-faces-row">
-                    {%- for f in homeData.faces %}
-                    <li><a class="hero-face" href="/our-team/"><img src="{{ f.image }}" alt="" width="54" height="54" loading="lazy" decoding="async"><span>{{ f.name }}</span></a></li>
-                    {%- endfor %}
-                </ul>
             </div>
             {%- endif %}
             <div class="hero-stats hero-animate hero-animate-4">
@@ -137,11 +128,11 @@ eleventyNavigation:
                         {%- endfor -%}
                     {%- endif -%}
                 {%- endfor -%}
-                <a class="hero-stat" href="/publications/">
+                <a class="hero-stat" href="/our-work/?type=Paper">
                     <span class="hero-stat-number" data-target="{{ collections.publications | length }}">{{ collections.publications | length }}</span>
                     <span class="hero-stat-label">Publications</span>
                 </a>
-                <a class="hero-stat" href="/library/">
+                <a class="hero-stat" href="/our-work/?type=Tool">
                     <span class="hero-stat-number" data-target="{{ collections.tools | length }}">{{ collections.tools | length }}</span>
                     <span class="hero-stat-label">Tools &amp; data</span>
                 </a>
@@ -150,7 +141,6 @@ eleventyNavigation:
                     <span class="hero-stat-label">Lab members</span>
                 </a>
             </div>
-            <p class="hero-more hero-animate hero-animate-4">Want the details? Start with <a href="/our-work/">Our work</a>. <a href="/grants/">Grants and funding</a>, <a href="/space-and-tech/">space and tech</a> and the <a href="/lab-manual/about-the-lab/">lab manual</a> are under About in the menu.</p>
         </div>
     </div>
 

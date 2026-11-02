@@ -12,9 +12,21 @@
     "link": "https://infosci.arizona.edu/"
   },
   "statement": "We analyze how biodiversity evolves and responds to change. We also build the datasets, software and methods behind that work, and we train the students who carry it forward.",
+  "themes": [
+    "Phylogenetics",
+    "Conservation and ecology",
+    "Machine learning",
+    "Data science"
+  ],
   "doors": [
-    { "label": "Explore our work", "link": "/our-work/" },
-    { "label": "Join the lab", "link": "/join-us/" }
+    {
+      "label": "Explore our work",
+      "link": "/our-work/"
+    },
+    {
+      "label": "Join the lab",
+      "link": "/join-us/"
+    }
   ],
   "labLife": {
     "show": true,
