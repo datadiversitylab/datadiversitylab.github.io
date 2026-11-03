@@ -11,7 +11,7 @@ tags:
   - Current
   - Staff
 email: perezcastillok@arizona.edu
-link: https://datadiversitylab.github.io/macrodata/quienes/
+link: https://datadiversitylab.github.io/macrodata/equipo/
 image: /assets/images/our-team/perfil-kathe.jpeg
 date: 2026-10-26T11:11:00.000-07:00
 memberTitle:
