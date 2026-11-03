@@ -1,16 +1,15 @@
 ---
 memberName: Jhan C. Salazar
-memberTitle:
-  - Intern
-currentPosition: Postdoctoral Research Fellow and a Bioinformatician at Mayo
-  Clinic FL for the Neurogenesis and Brain Tumors Laboratory
 memberDate: 2023
 memberDateEnd: null
+currentPosition: Postdoctoral Research Fellow and a Bioinformatician at Mayo
+  Clinic FL for the Neurogenesis and Brain Tumors Laboratory
 memberBio: Jhan joined the data diversity lab during Summer 2023. He wrote the
   first draft of an online book focused on teaching Machine Learning to a
   Spanish-speaking audience. This book was contextualized using examples from
   different recent papers in Ecology. By the same time, Jhan was completing his
   Ph.D. at the Losos Lab at Washington University St. Louis.
+memberEducation: PhD
 tags:
   - Intern
   - Honorary
@@ -23,4 +22,6 @@ image: /assets/images/our-team/jhan-c-salazar.png
 imageAlt: Portrait of Jhan C. Salazar
 order: 140
 date: 2024-04-17T10:45:00.000Z
+memberTitle:
+  - Intern
 ---
