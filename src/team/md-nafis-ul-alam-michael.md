@@ -1,7 +1,5 @@
 ---
 memberName: MD Nafis Ul Alam
-memberTitle:
-  - PhD student
 memberDate: "2024"
 memberBio: Md has a background in statistical and computational genomics. He
   specializes in the analysis of DNA sequence data and genome assembly. His PhD
@@ -9,6 +7,7 @@ memberBio: Md has a background in statistical and computational genomics. He
   methods for ancestral reconstruction within the eukaryotic domain. Michael is
   co-advised by Dr. Rod A. Wing (Professor at Plant Science, University of
   Arizona)
+memberEducation: BSc
 tags:
   - Current
   - PhD student
@@ -19,4 +18,6 @@ order: 6
 date: 2024-11-07T12:34:00.000Z
 coAdvisor: Rod Wing
 coAdvisorLink: https://www.genome.arizona.edu/person/rod-wing
+memberTitle:
+  - PhD student
 ---

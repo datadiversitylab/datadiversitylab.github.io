@@ -1,7 +1,5 @@
 ---
 memberName: Sarah Gonzalez-Coffin
-memberTitle:
-  - Postdoc
 memberDate: "2026"
 memberDateEnd: ""
 memberBio: "Postdoctoral Fellow, Lovejoy Center for Bridging Biodiversity,
@@ -10,6 +8,7 @@ memberBio: "Postdoctoral Fellow, Lovejoy Center for Bridging Biodiversity,
   quantitative/experimental social psychologist, Sarah earned her PhD from the
   University of Colorado Boulder, where she studied climate change communication
   and technology adoption. "
+memberEducation: PhD
 tags:
   - Current
   - Postdoc
@@ -23,4 +22,6 @@ date: 2026-07-16T11:55:00.000-05:00
 coAdvisor: Aaron Lien
 coAdvisorLink: https://snre.arizona.edu/aaron-lien
 affiliations: []
+memberTitle:
+  - Postdoc
 ---

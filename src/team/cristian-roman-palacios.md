@@ -1,7 +1,5 @@
 ---
 memberName: Cristian Román-Palacios
-memberTitle:
-  - Principal Investigator, Assistant Professor
 memberDate: null
 memberDateEnd: ""
 memberBio: Assistant Professor at the College of Information Science, UArizona
@@ -10,6 +8,7 @@ memberBio: Assistant Professor at the College of Information Science, UArizona
   intersection between evolutionary biology, climate change, and applied machine
   learning. He is generally interested in answering questions in Evolutionary
   Biology and developing methods and tools for different fields.
+memberEducation: PhD
 tags:
   - Current
   - PI
@@ -46,4 +45,6 @@ affiliations:
   - name: Faculty at the Computational and Mathematical Modeling of Biomedical
       Systems program
     url: https://cmmbs.arizona.edu/
+memberTitle:
+  - Principal Investigator, Assistant Professor
 ---

@@ -1,11 +1,10 @@
 ---
 memberName: Daniel McNair
-memberTitle:
-  - PhD student
 memberDate: August 2026
 memberBio: Daniel is interested in plants, their evolution and ecology, their
   survival on our changing planet, and the ways that humans continue to produce
   and share knowledge of their many forms and uses.
+memberEducation: MSc
 tags:
   - Current
   - PhD student
@@ -18,4 +17,6 @@ image: /assets/images/our-team/daniel-updated-headshot.png
 date: 2026-09-08T16:30:00.000-07:00
 coAdvisor: Andrea Thomer
 coAdvisorLink: https://infosci.arizona.edu/person/andrea-thomer
+memberTitle:
+  - PhD student
 ---
