@@ -948,6 +948,7 @@ collections:
           - { label: 'BarrioMap', name: 'barriomap', widget: 'image', required: false }
           - { label: 'Chorus', name: 'chorus', widget: 'image', required: false }
           - { label: 'salphycon', name: 'salphycon', widget: 'image', required: false }
+          - { label: 'PHYCA', name: 'phyca', widget: 'image', required: false }
   - name: 'logos'
     label: 'Logos'
     folder: 'src/logos'
