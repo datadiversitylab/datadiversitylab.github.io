@@ -13,6 +13,7 @@ eleventyNavigation:
     order: 300
 ---
 <link rel="stylesheet" href="/css/overview-page.css">
+<link rel="stylesheet" href="/css/our-work-extra.css">
 {#- The photos come from Netlify > Lab photos, through src/_data/labData.js. -#}
 {%- set areas = [
     { 'name': 'Biology', 'short': 'Ongoing projects in bioinformatics, phylogenetics, and local extinctions reveal what shapes evolutionary relationships.', 'full': 'Ongoing projects in general bioinformatics, phylogenetics, and local extinctions reveal the factors behind evolutionary relationships and explore the implications of climate change on biodiversity and its structures. We encourage students interested in biology to join us and bring their own ideas toward an official lab project.' },
@@ -95,7 +96,6 @@ eleventyNavigation:
             </article>
             {%- endfor %}
         </div>
-        <p class="ov-bridge"><a class="ov-btn ov-btn-dark" href="#ow">Browse everything we've made</a></p>
     </div>
 </section>
 
@@ -142,6 +142,7 @@ eleventyNavigation:
         <ul class="ow-list" id="ow-list"></ul>
         <p class="ow-empty" id="ow-empty" hidden>Nothing matches these filters.</p>
         <div class="ow-more-wrap"><button type="button" class="ow-more" id="ow-more" hidden>Show more</button></div>
+        <nav class="ow-pager" id="ow-pager" aria-label="Pages" hidden></nav>
 
         <noscript><p class="ow-empty">This list needs JavaScript. You can also browse <a href="/publications/">publications</a>, <a href="/library/">tools and data</a> and <a href="/grants/">grants</a>.</p></noscript>
     </div>

@@ -14,8 +14,8 @@
         return items.some(function (i) { return (i.topics || []).indexOf(t) > -1; });
     });
 
-    var STEP = 25;
-    var state = { type: 'all', topic: 'all', term: '', sort: 'new', shown: STEP };
+    var PAGE = 10;
+    var state = { type: 'all', topic: 'all', term: '', sort: 'new', page: 1 };
 
     var els = {
         q: document.getElementById('ow-q'),
@@ -24,7 +24,8 @@
         summary: document.getElementById('ow-summary'),
         clear: document.getElementById('ow-clear'),
         empty: document.getElementById('ow-empty'),
-        more: document.getElementById('ow-more')
+        more: document.getElementById('ow-more'),
+        pager: document.getElementById('ow-pager')
     };
     var typeButtons = Array.prototype.slice.call(document.querySelectorAll('.ow-type'));
 
@@ -73,29 +74,20 @@
         var meta = [i.who, i.where].filter(Boolean).join(' · ');
         if (meta) { main.appendChild(el('p', 'ow-meta', meta)); }
 
-        // Small photos of the lab members on the paper, tool or grant. Each links to the person.
-        var faces = (i.faces || []).filter(function (f) { return f && f.image; });
-        if (faces.length) {
-            var fl = el('ul', 'ow-faces');
-            fl.setAttribute('aria-label', 'Lab members');
-            faces.slice(0, 6).forEach(function (f) {
-                var item = el('li');
-                var a = el('a');
-                a.href = f.url || '/our-team/';
-                a.title = f.name;
-                var img = el('img');
-                img.src = f.image;
-                img.alt = f.name;
-                img.width = 30;
-                img.height = 30;
-                img.loading = 'lazy';
-                img.decoding = 'async';
+        if ((i.people || []).length) {
+            var faces = el('div', 'ow-faces');
+            faces.setAttribute('aria-label', 'Lab members involved');
+            i.people.slice(0, 8).forEach(function (m) {
+                var a = el('a', 'ow-face');
+                a.href = m.u;
+                a.title = m.n;
+                var img = document.createElement('img');
+                img.src = m.i; img.alt = m.n; img.width = 28; img.height = 28; img.loading = 'lazy'; img.decoding = 'async';
                 a.appendChild(img);
-                item.appendChild(a);
-                fl.appendChild(item);
+                faces.appendChild(a);
             });
-            if (faces.length > 6) { fl.appendChild(el('li', 'ow-faces-more', '+' + (faces.length - 6))); }
-            main.appendChild(fl);
+            if (i.people.length > 8) { faces.appendChild(el('span', 'ow-face-more', '+' + (i.people.length - 8))); }
+            main.appendChild(faces);
         }
 
         var actions = el('div', 'ow-actions');
@@ -146,7 +138,7 @@
             b.appendChild(el('em'));
             b.addEventListener('click', function () {
                 state.topic = state.topic === t ? 'all' : t;
-                state.shown = STEP;
+                state.page = 1;
                 render();
             });
             els.topics.appendChild(b);
@@ -159,8 +151,42 @@
         if (state.topic !== 'all') { p.set('topic', state.topic); }
         if (state.term) { p.set('q', state.term); }
         if (state.sort !== 'new') { p.set('sort', state.sort); }
+        if (state.page > 1) { p.set('page', state.page); }
         var qs = p.toString();
         try { history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '')); } catch (e) { /* ignore */ }
+    }
+
+    function drawPager(pages) {
+        if (!els.pager) { return; }
+        els.pager.innerHTML = '';
+        els.pager.hidden = pages < 2;
+        if (pages < 2) { return; }
+        function go(n, label, cls, current) {
+            var b = el('button', 'ow-pg' + (cls ? ' ' + cls : ''), label);
+            b.type = 'button';
+            if (current) { b.classList.add('is-on'); b.setAttribute('aria-current', 'page'); }
+            b.setAttribute('aria-label', cls ? label : 'Page ' + n);
+            if (n < 1 || n > pages) { b.disabled = true; }
+            b.addEventListener('click', function () { state.page = n; render(); toTop(); });
+            els.pager.appendChild(b);
+        }
+        go(state.page - 1, 'Previous', 'ow-pg-step');
+        var nums = [];
+        for (var n = 1; n <= pages; n++) {
+            if (n === 1 || n === pages || Math.abs(n - state.page) <= 1) { nums.push(n); }
+        }
+        var last = 0;
+        nums.forEach(function (n) {
+            if (n - last > 1) { els.pager.appendChild(el('span', 'ow-pg-gap', '...')); }
+            go(n, String(n), '', n === state.page);
+            last = n;
+        });
+        go(state.page + 1, 'Next', 'ow-pg-step');
+    }
+
+    function toTop() {
+        var top = document.getElementById('ow');
+        if (top) { top.scrollIntoView({ block: 'start' }); }
     }
 
     function render() {
@@ -180,20 +206,23 @@
         });
 
         var all = items.filter(function (i) { return matches(i); }).sort(compare);
-        var slice = all.slice(0, state.shown);
+        var pages = Math.max(1, Math.ceil(all.length / PAGE));
+        if (state.page > pages) { state.page = pages; }
+        var from = (state.page - 1) * PAGE;
+        var slice = all.slice(from, from + PAGE);
         list.innerHTML = '';
         slice.forEach(function (i) { list.appendChild(row(i)); });
 
         els.empty.hidden = all.length !== 0;
-        els.more.hidden = all.length <= slice.length;
-        els.more.textContent = 'Show ' + Math.min(STEP, all.length - slice.length) + ' more';
+        els.more.hidden = true;
         els.clear.hidden = !(state.type !== 'all' || state.topic !== 'all' || state.term);
-        els.summary.textContent = all.length ? 'Showing ' + slice.length + ' of ' + all.length + (all.length === 1 ? ' item' : ' items') : '';
+        els.summary.textContent = all.length ? 'Showing ' + (from + 1) + ' to ' + (from + slice.length) + ' of ' + all.length + (all.length === 1 ? ' item' : ' items') : '';
+        drawPager(pages);
         syncUrl();
     }
 
     typeButtons.forEach(function (b) {
-        b.addEventListener('click', function () { state.type = b.getAttribute('data-type'); state.shown = STEP; render(); });
+        b.addEventListener('click', function () { state.type = b.getAttribute('data-type'); state.page = 1; render(); });
     });
 
     var timer;
@@ -201,14 +230,13 @@
         clearTimeout(timer);
         timer = setTimeout(function () {
             state.term = els.q.value.trim().toLowerCase().replace(/\s+/g, ' ');
-            state.shown = STEP;
+            state.page = 1;
             render();
         }, 120);
     });
-    els.sort.addEventListener('change', function () { state.sort = els.sort.value; state.shown = STEP; render(); });
-    els.more.addEventListener('click', function () { state.shown += STEP; render(); });
+    els.sort.addEventListener('change', function () { state.sort = els.sort.value; state.page = 1; render(); });
     els.clear.addEventListener('click', function () {
-        state.type = 'all'; state.topic = 'all'; state.term = ''; els.q.value = ''; state.shown = STEP; render();
+        state.type = 'all'; state.topic = 'all'; state.term = ''; els.q.value = ''; state.page = 1; render();
     });
 
     // Start from the address
@@ -217,6 +245,8 @@
     if (topics.indexOf(q.get('topic')) > -1) { state.topic = q.get('topic'); }
     if (q.get('q')) { state.term = q.get('q').toLowerCase(); els.q.value = q.get('q'); }
     if (['new', 'old', 'az'].indexOf(q.get('sort')) > -1) { state.sort = q.get('sort'); els.sort.value = state.sort; }
+
+    if (parseInt(q.get('page'), 10) > 1) { state.page = parseInt(q.get('page'), 10); }
 
     buildTopics();
     render();

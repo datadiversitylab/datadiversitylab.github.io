@@ -1,4 +1,4 @@
-// Data for the Our work page, available there as `ourWorkData`.
+// Data for the Our work page, available there as `ourWork`.
 // It puts papers, tools and grants in one list. Each item opens its own page on this site.
 // Nothing is maintained by hand, and a missing or odd value never stops the build.
 
@@ -8,6 +8,12 @@ const clean = (v) => text(v).replace(/<[^>]*>/g, '').replace(/[*`]/g, '').replac
 const short = (s, n) => { const c = clean(s); return c.length <= n ? c : c.slice(0, n - 1).replace(/\s+\S*$/, '') + '...'; };
 const load = (file) => { try { return require(file)() || {}; } catch (e) { return {}; } };
 const year = (v) => { const m = text(v).match(/\d{4}/); return m ? parseInt(m[0], 10) : 0; };
+const fold = (s) => text(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const norm = (s) => fold(s).replace(/[^a-z]+/g, ' ').trim();
+const shortKey = (s) => {
+    const parts = norm(s).split(' ').filter(Boolean);
+    return parts.length > 1 ? parts[0] + ' ' + parts[parts.length - 1] : '';
+};
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 // Topics shown as chips, in this order. Others are added after them, by how many items they hold.
@@ -19,12 +25,17 @@ module.exports = function () {
     const grants = load('./grantsData.js');
 
     const team = load('./teamData.js');
-    // Small faces for lab members, found by the names written on the paper, tool or grant
-    const faces = (names) => {
+    const withPhoto = list(team.people).filter((m) => m.image);
+
+    // Lab members named in a list of authors, as small cards for the faces under each item
+    const facesFor = (names) => {
         const out = [];
         list(names).forEach((n) => {
-            const w = team.faces && team.faces[clean(n)];
-            if (w && w.image && !out.some((x) => x.url === w.url)) out.push({ name: w.name, url: w.url, image: w.image });
+            const k = norm(n);
+            const s = shortKey(n);
+            if (!k) return;
+            const m = withPhoto.find((x) => x.keys.indexOf(k) > -1 || (s && x.keys.indexOf(s) > -1));
+            if (m && !out.some((o) => o.u === m.url)) out.push({ n: m.name, u: m.url, i: m.image });
         });
         return out;
     };
@@ -44,8 +55,8 @@ module.exports = function () {
             year: year(p.year),
             month: MONTHS.indexOf(p.month) + 1,
             shownYear: text(p.year),
-            faces: faces(p.authors),
             who: clean(p.authorShort),
+            people: facesFor(p.authors),
             where: clean(p.venue),
             pills: [p.outputType, p.studentLed ? 'Student-led' : ''].filter(Boolean),
             detail: short(p.summary, 420)
@@ -64,8 +75,8 @@ module.exports = function () {
             year: 0,
             month: 0,
             shownYear: '',
-            faces: faces(t.authors),
             who: list(t.authors).join(', '),
+            people: facesFor(t.authors),
             where: '',
             pills: list(t.types),
             detail: short(t.summary, 420)
@@ -84,8 +95,8 @@ module.exports = function () {
             year: g.start || g.end || 0,
             month: 0,
             shownYear: g.period || '',
-            faces: faces([g.pi].concat(list(g.copi), list(g.team))),
             who: g.pi ? 'PI: ' + g.pi : '',
+            people: facesFor([g.pi].concat(list(g.copi), list(g.team))),
             where: [g.funder, g.amount].filter(Boolean).join(' · '),
             pills: [g.active ? 'Active' : ''].filter(Boolean),
             detail: short(g.desc, 420)

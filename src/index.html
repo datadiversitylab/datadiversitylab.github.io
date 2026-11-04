@@ -13,6 +13,7 @@ eleventyNavigation:
   order: 100
 ---
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/home-faces.css">
 {%- set ll = homeFeatured.labLife -%}
 {%- set llOn = ll and ll.show != false -%}
 <section id="hero"{% if llOn %} class="hero-tree-on"{% endif %}>
@@ -104,7 +105,7 @@ eleventyNavigation:
             {%- if themes | length %}
             <ul class="hero-tags hero-animate hero-animate-3" aria-label="Research themes">
                 {%- for theme in themes %}
-                <li><a href="/our-work/?q={{ theme | urlencode }}">{{ theme }}</a></li>
+                <li><a href="/our-work/?q={{ theme | urlencode }}#ow">{{ theme }}</a></li>
                 {%- endfor %}
             </ul>
             {%- endif %}
@@ -114,6 +115,23 @@ eleventyNavigation:
                 {%- for door in homeFeatured.doors %}
                 <a class="hero-door{{ ' is-primary' if loop.first }}" href="{{ door.link }}">{{ door.label }}</a>
                 {%- endfor %}
+            </div>
+            {%- endif %}
+            <!-- The team: current members, first names only. Built from Our team (src/_data/teamData.js) -->
+            {%- set faces = [] %}
+            {%- for m in teamData.people | sort(attribute='rank') %}
+            {%- if m.status == 'current' and m.image and (m.roles | length) %}{% set faces = faces.concat([m]) %}{% endif %}
+            {%- endfor %}
+            {%- if faces | length %}
+            <div class="hero-faces hero-animate hero-animate-4">
+                <p class="hero-faces-head">The team <a href="/our-team/">Meet everyone &rarr;</a></p>
+                {%- set faceCols = (faces | length) if (faces | length) <= 5 else ((faces | length) / 2) | round(0, 'ceil') %}
+                <ul class="hero-faces-row" style="--face-cols: {{ faceCols }}">
+                    {%- for m in faces %}
+                    {%- set parts = m.name.split(' ') %}
+                    <li><a class="hero-face" href="{{ m.url }}"><img src="{{ m.image }}" alt="" width="54" height="54" loading="lazy" decoding="async"><span>{{ (parts[0] + ' ' + parts[1]) if (parts[0] | length <= 2 and parts[1]) else parts[0] }}</span></a></li>
+                    {%- endfor %}
+                </ul>
             </div>
             {%- endif %}
             <div class="hero-stats hero-animate hero-animate-4">
@@ -128,11 +146,11 @@ eleventyNavigation:
                         {%- endfor -%}
                     {%- endif -%}
                 {%- endfor -%}
-                <a class="hero-stat" href="/our-work/?type=Paper">
+                <a class="hero-stat" href="/publications/">
                     <span class="hero-stat-number" data-target="{{ collections.publications | length }}">{{ collections.publications | length }}</span>
                     <span class="hero-stat-label">Publications</span>
                 </a>
-                <a class="hero-stat" href="/our-work/?type=Tool">
+                <a class="hero-stat" href="/library/">
                     <span class="hero-stat-number" data-target="{{ collections.tools | length }}">{{ collections.tools | length }}</span>
                     <span class="hero-stat-label">Tools &amp; data</span>
                 </a>
