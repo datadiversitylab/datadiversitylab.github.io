@@ -1,0 +1,9 @@
+/* Degree after the name on Our team */
+.tm-name .tm-edu {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 0.82em;
+    letter-spacing: 0.01em;
+    color: #5f7167;
+    white-space: nowrap;
+}

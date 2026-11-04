@@ -24,6 +24,7 @@ collections:
     slug: '{{memberName}}'
     fields:
       - { label: 'Member Name', name: 'memberName', widget: 'string', required: true, hint: 'First and last name, as you want it shown.' }
+      - { label: 'Pronouns', name: 'pronouns', widget: 'string', required: false, hint: 'Optional. For example: she/her, he/him or they/them. Shown next to the name on the profile page. Leave empty to show nothing.' }
       - { label: 'Start year', name: 'memberDate', widget: 'string', required: false, hint: 'For example: 2024. Not needed for the PI.' }
       - { label: 'End year', name: 'memberDateEnd', widget: 'string', required: false, hint: 'Leave empty for current members. For one semester, use the same year as the start.' }
       - { label: 'After the lab: position', name: 'afterRole', widget: 'string', required: false, hint: 'Alumni only. For example: Data Scientist' }
@@ -32,6 +33,8 @@ collections:
       - { label: 'After the lab (old single line)', name: 'currentPosition', widget: 'string', required: false, hint: 'Old entries only. Leave empty and use the three fields above.' }
       - { label: 'Also published as', name: 'alsoPublishedAs', widget: 'list', required: false, hint: 'Other spellings of the name in papers, one per line. For example: C. Román-Palacios' }
       - { label: 'Member Bio', name: 'memberBio', widget: 'string', required: true, hint: 'Two or three sentences, in the third person.' }
+      - { label: 'Bio in a second language', name: 'memberBio2', widget: 'text', required: false, hint: 'Optional. Shown under the bio on the profile page.' }
+      - { label: 'Name of that language', name: 'memberBio2Lang', widget: 'string', required: false, hint: 'For example: Español or Português. Shown as a small label above the text.' }
       - { label: 'Education (degree shown after the name)', name: 'memberEducation', widget: 'select', required: false, options: ['BSc', 'MSc', 'PhD'] }
       - { label: 'Role and status (pick Current or Former, plus the role)', name: 'tags', widget: 'select', default: ['Current'], required: true, options: ['Current', 'Former', 'Honorary', 'Intern', 'MS advising team', 'MSc capstone student', 'PhD student', 'PI', 'Postdoc', Staff, 'Undergraduate student', 'VIP student'], multiple: true }
       - { label: 'Linkedin', name: 'linkedin', widget: 'string', required: false, hint: 'Full link to the profile.' }

@@ -266,7 +266,7 @@
         </nav>
     </div>
 </header>
-        <main id="main">
+        <main id="main"><link rel="stylesheet" href="/css/publications-featured.css">
 
 <section class="pl" id="pl">
     <div class="pl-wrap">
@@ -275,54 +275,6 @@
             <h1 class="pl-h1">Publications</h1>
             <p class="pl-sub">57 papers since 2014. Start with a topic, or search for something specific.</p>
         </header>
-
-        <div class="pl-bar" role="search">
-            <label class="pl-search">
-                <span class="pl-visually-hidden">Search publications</span>
-                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                <input type="search" id="pl-q" placeholder="Search titles, authors, keywords" autocomplete="off">
-            </label>
-            <label class="pl-select">
-                <span class="pl-visually-hidden">Sort</span>
-                <select id="pl-sort">
-                    <option value="new">Newest first</option>
-                    <option value="old">Oldest first</option>
-                    <option value="title">Title, A to Z</option>
-                </select>
-            </label>
-            <div class="pl-seg" role="group" aria-label="View">
-                <button type="button" class="is-on" data-view="cards" aria-pressed="true">Cards</button>
-                <button type="button" data-view="list" aria-pressed="false">List</button>
-            </div>
-            <button type="button" class="pl-btn pl-btn-dark" id="pl-surprise">Surprise me</button>
-        </div>
-        <h2 class="pl-label">Browse by topic</h2>
-        <div class="pl-tiles">
-            <button type="button" class="pl-tile" data-topic="Biodiversity" aria-pressed="false">
-                <span class="pl-tile-img"><img src="/assets/images/publications/hurricane-paper-option2.png" alt="" loading="lazy" decoding="async">
-                </span>
-                <span class="pl-tile-name">Biodiversity</span>
-                <span class="pl-tile-n">49 papers</span>
-            </button>
-            <button type="button" class="pl-tile" data-topic="Data Science" aria-pressed="false">
-                <span class="pl-tile-img"><img src="/assets/images/publications/barn.jpg" alt="" loading="lazy" decoding="async">
-                </span>
-                <span class="pl-tile-name">Data Science</span>
-                <span class="pl-tile-n">22 papers</span>
-            </button>
-            <button type="button" class="pl-tile" data-topic="Software" aria-pressed="false">
-                <span class="pl-tile-img"><img src="/assets/images/publications/barmpy.jpg" alt="" loading="lazy" decoding="async">
-                </span>
-                <span class="pl-tile-name">Software</span>
-                <span class="pl-tile-n">6 papers</span>
-            </button>
-            <button type="button" class="pl-tile" data-topic="People" aria-pressed="false">
-                <span class="pl-tile-img"><img src="/assets/images/publications/journal.pcbi.1013248.g001.png" alt="" loading="lazy" decoding="async">
-                </span>
-                <span class="pl-tile-name">People</span>
-                <span class="pl-tile-n">4 papers</span>
-            </button>
-        </div>
         <div id="pl-featured">
             <h2 class="pl-label">Featured publications</h2>
             <div class="pl-feats">
@@ -350,7 +302,27 @@
             </div>
         </div>
 
-        <h2 class="pl-label">What kind of read?</h2>
+        <div class="pl-bar" role="search">
+            <label class="pl-search">
+                <span class="pl-visually-hidden">Search publications</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <input type="search" id="pl-q" placeholder="Search titles, authors, keywords" autocomplete="off">
+            </label>
+            <label class="pl-select">
+                <span class="pl-visually-hidden">Sort</span>
+                <select id="pl-sort">
+                    <option value="new">Newest first</option>
+                    <option value="old">Oldest first</option>
+                    <option value="title">Title, A to Z</option>
+                </select>
+            </label>
+            <div class="pl-seg" role="group" aria-label="View">
+                <button type="button" class="is-on" data-view="cards" aria-pressed="true">Cards</button>
+                <button type="button" data-view="list" aria-pressed="false">List</button>
+            </div>
+            <button type="button" class="pl-btn pl-btn-dark" id="pl-surprise">Surprise me</button>
+        </div>
+
         <div class="pl-chips" role="group" aria-label="Kind of paper">
             <button type="button" class="pl-chip is-on" data-kind="all" aria-pressed="true">All<em>57</em></button>
             <button type="button" class="pl-chip" data-kind="article" aria-pressed="false">Articles<em>47</em></button>

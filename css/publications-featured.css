@@ -1,0 +1,12 @@
+/* Featured papers above the search bar */
+#pl-featured { margin: 0.2rem 0 2rem; }
+#pl-featured .pl-label { margin: 0 0 0.8rem; }
+
+/* Featured papers stay on top whatever the filters are (the page script hides them while filtering) */
+#pl-featured[hidden] { display: block !important; }
+
+/* Space between the search bar, the filter chips and the rest */
+.pl-bar { margin-bottom: 1.25rem; }
+.pl-chips { gap: 0.55rem; margin-bottom: 1.1rem; }
+.pl-more { margin-top: 0; }
+.pl-status { margin-top: 1.5rem; }
