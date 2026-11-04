@@ -12,6 +12,7 @@ eleventyNavigation:
     key: Publications
     order: 200
 ---
+<link rel="stylesheet" href="/css/publications-featured.css">
 {#- Everything below comes from src/_data/publicationsData.js. Papers, topics, images and counts update by themselves. -#}
 {% set pd = publicationsData %}
 
@@ -24,6 +25,24 @@ eleventyNavigation:
             <p class="pl-sub">{{ pd.counts.all }} papers since {{ pd.firstYear }}. Start with a topic, or search for something specific.</p>
             {%- endif %}
         </header>
+
+        {%- if pd.featured | length %}
+        <div id="pl-featured">
+            <h2 class="pl-label">{{ pd.featuredTitle }}</h2>
+            <div class="pl-feats">
+                {%- for f in pd.featured %}
+                <a class="pl-feat" href="{{ f.url }}">
+                    <img src="{{ f.image }}" alt="" loading="lazy" decoding="async">
+                    <span class="pl-feat-body">
+                        {%- if f.note %}<span class="pl-feat-note">{{ f.note }}</span>{% endif %}
+                        <span class="pl-feat-title">{{ f.title }}</span>
+                        <span class="pl-feat-meta">{{ f.venue }}{% if f.venue and f.year %}, {% endif %}{{ f.year }}</span>
+                    </span>
+                </a>
+                {%- endfor %}
+            </div>
+        </div>
+        {%- endif %}
 
         <div class="pl-bar" role="search">
             <label class="pl-search">
@@ -46,40 +65,6 @@ eleventyNavigation:
             <button type="button" class="pl-btn pl-btn-dark" id="pl-surprise">Surprise me</button>
         </div>
 
-        {%- if pd.topics | length %}
-        <h2 class="pl-label">Browse by topic</h2>
-        <div class="pl-tiles">
-            {%- for t in pd.topics %}
-            <button type="button" class="pl-tile" data-topic="{{ t.name }}" aria-pressed="false">
-                <span class="pl-tile-img{% if not t.image %} is-empty{% endif %}">
-                    {%- if t.image %}<img src="{{ t.image }}" alt="" loading="lazy" decoding="async">{% endif %}
-                </span>
-                <span class="pl-tile-name">{{ t.name }}</span>
-                <span class="pl-tile-n">{{ t.count }} {% if t.count == 1 %}paper{% else %}papers{% endif %}</span>
-            </button>
-            {%- endfor %}
-        </div>
-        {%- endif %}
-
-        {%- if pd.featured | length %}
-        <div id="pl-featured">
-            <h2 class="pl-label">{{ pd.featuredTitle }}</h2>
-            <div class="pl-feats">
-                {%- for f in pd.featured %}
-                <a class="pl-feat" href="{{ f.url }}">
-                    <img src="{{ f.image }}" alt="" loading="lazy" decoding="async">
-                    <span class="pl-feat-body">
-                        {%- if f.note %}<span class="pl-feat-note">{{ f.note }}</span>{% endif %}
-                        <span class="pl-feat-title">{{ f.title }}</span>
-                        <span class="pl-feat-meta">{{ f.venue }}{% if f.venue and f.year %}, {% endif %}{{ f.year }}</span>
-                    </span>
-                </a>
-                {%- endfor %}
-            </div>
-        </div>
-        {%- endif %}
-
-        <h2 class="pl-label">What kind of read?</h2>
         <div class="pl-chips" role="group" aria-label="Kind of paper">
             <button type="button" class="pl-chip is-on" data-kind="all" aria-pressed="true">All<em>{{ pd.counts.all }}</em></button>
             {%- for k in pd.kinds %}

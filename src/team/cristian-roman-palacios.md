@@ -47,4 +47,7 @@ affiliations:
     url: https://cmmbs.arizona.edu/
 memberTitle:
   - Principal Investigator, Assistant Professor
+memberBio2: Profesor asistente en la Facultad de Ciencias de la Información de la Universidad de Arizona y becario Early Career en el Center for Diverse Leadership in Science de la Universidad de California, Los Ángeles. Su investigación se centra en la intersección entre la biología evolutiva, el cambio climático y el aprendizaje automático aplicado. Le interesa responder preguntas de biología evolutiva y desarrollar métodos y herramientas para distintos campos.
+memberBio2Lang: Español
+pronouns: he/him
 ---

@@ -13,6 +13,7 @@ eleventyComputed:
     metaTitle: "{{ person.name }}"
     description: "{{ person.name }}{% if person.title %}, {{ person.title }}{% endif %}, at the Data Diversity Lab."
 ---
+<link rel="stylesheet" href="/css/team-bio2.css">
 {#- One page for each person in src/team. Nothing here is edited by hand. -#}
 <section class="tp" id="tp">
     <div class="tp-wrap">
@@ -42,7 +43,7 @@ eleventyComputed:
             </aside>
 
             <div class="tp-main">
-                <h1 class="tp-name">{{ person.name }}</h1>
+                <h1 class="tp-name">{{ person.name }}{% if person.pronouns %} <span class="tp-pronouns">{{ person.pronouns }}</span>{% endif %}</h1>
                 {%- if person.title %}<p class="tp-title">{{ person.title }}</p>{% endif %}
                 <div class="tp-tags">
                     {%- for r in person.roles %}<span>{{ r }}</span>{% endfor %}
@@ -50,6 +51,12 @@ eleventyComputed:
                 </div>
 
                 {%- if person.bio %}<p class="tp-bio">{{ person.bio }}</p>{% endif %}
+                {%- if person.bio2 %}
+                <div class="tp-bio2">
+                    {%- if person.bio2Lang %}<span class="tp-bio2-lang">{{ person.bio2Lang }}</span>{% endif %}
+                    <p>{{ person.bio2 }}</p>
+                </div>
+                {%- endif %}
 
                 {%- set hasGlance = person.term or person.education or person.coAdvisor or person.after.text or person.macrodata %}
                 {%- if hasGlance %}
@@ -93,31 +100,36 @@ eleventyComputed:
                 {%- endif %}
 
                 {%- if person.tools | length %}
-                <h2 class="tp-h2">Tools and data <small>{{ person.tools | length }}</small></h2>
-                <div class="tp-list" data-fold="3">
+                <h2 class="tp-h2">Tools and data <small>{% if person.toolCount > 5 %}5 of {{ person.toolCount }}{% else %}{{ person.toolCount }}{% endif %}</small></h2>
+                <div class="tp-list">
                     {%- for t in person.tools %}
-                    {%- set tag = 'a' if t.open else 'div' %}
-                    <{{ tag }} class="tp-tool{% if loop.index > 3 %} is-extra{% endif %}"{% if t.open %} href="{{ t.open }}"{% if t.external %} target="_blank" rel="noopener"{% endif %}{% endif %}{% if loop.index > 3 %} hidden{% endif %}>
-                        <span class="tp-thumb tp-thumb-sm">{% if t.image %}<img src="{{ t.image }}" alt="" loading="lazy" decoding="async">{% endif %}</span>
+                    <a class="tp-paper" href="{{ t.url }}">
+                        <span class="tp-thumb">{% if t.image %}<img src="{{ t.image }}" alt="" loading="lazy" decoding="async">{% endif %}</span>
                         <span class="tp-info">
                             <b>{{ t.name }}</b>
                             {%- if t.typeLabel %}<span>{{ t.typeLabel }}</span>{% endif %}
-                            {%- if t.summary %}<span>{{ t.summary }}</span>{% endif %}
+                            <span class="tp-faces">
+                                {%- for m in t.lab %}{% if loop.index <= 10 %}<img width="27" height="27" src="{{ m.image }}" alt="" title="{{ m.name }}" loading="lazy">{% endif %}{% endfor %}
+                                <em>{{ t.count }} author{% if t.count != 1 %}s{% endif %}</em>
+                            </span>
                         </span>
-                    </{{ tag }}>
+                    </a>
                     {%- endfor %}
                 </div>
-                {%- if person.tools | length > 3 %}<button type="button" class="tp-more" data-label="tools and data">Show all {{ person.tools | length }} tools and data</button>{% endif %}
                 {%- endif %}
 
                 {%- if person.grants | length %}
-                <h2 class="tp-h2">Grants <small>{{ person.grants | length }}</small></h2>
+                <h2 class="tp-h2">Grants <small>{% if person.grantCount > 5 %}5 most recent of {{ person.grantCount }}{% else %}{{ person.grantCount }}{% endif %}</small></h2>
                 <div class="tp-list">
                     {%- for g in person.grants %}
-                    <a class="tp-grant" href="/grants/">
+                    <a class="tp-grant" href="{{ g.url }}">
                         <span class="tp-info">
                             <b>{{ g.name }}</b>
                             <span>{{ g.funder }}{% if g.period %} &middot; {{ g.period }}{% endif %}{% if g.active %} &middot; Active{% endif %}</span>
+                            <span class="tp-faces">
+                                {%- for m in g.lab %}{% if loop.index <= 10 %}<img width="27" height="27" src="{{ m.image }}" alt="" title="{{ m.name }}" loading="lazy">{% endif %}{% endfor %}
+                                <em>{{ g.count }} {% if g.count != 1 %}people{% else %}person{% endif %}</em>
+                            </span>
                         </span>
                         <span class="tp-role tp-role-{{ g.role | lower | replace(' ', '') | replace('-', '') }}">{{ g.role }}</span>
                     </a>

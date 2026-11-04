@@ -168,6 +168,9 @@ module.exports = function () {
             roles,
             education: clean(d.memberEducation),
             bio: clean(d.memberBio),
+            pronouns: clean(d.pronouns),
+            bio2: clean(d.memberBio2),
+            bio2Lang: clean(d.memberBio2Lang),
             image: clean(d.image),
             hasAlt: !!clean(d.imageAlt),
             imageAlt: clean(d.imageAlt) || 'Portrait of ' + name,
@@ -243,12 +246,14 @@ module.exports = function () {
     const tl = load('toolsData');
     ((tl && tl.tools) || []).forEach((tool) => {
         list(tool.authors).forEach(seen);
-        people.forEach((p) => {
-            if (list(tool.authors).some((a) => owns(p, a))) {
-                p.tools.push({ name: tool.name, summary: tool.summary, image: tool.image, open: tool.open, external: tool.external, typeLabel: tool.typeLabel });
-            }
+        const involved = people.filter((p) => list(tool.authors).some((a) => owns(p, a)));
+        const lab = involved.map(cardOf);
+        involved.forEach((p) => {
+            p.tools.push({ url: tool.url, name: tool.name, summary: tool.summary, image: tool.image, typeLabel: tool.typeLabel, count: list(tool.authors).length, lab });
         });
     });
+    // Same as papers: only the five first tools are shown, the total is kept for the heading
+    people.forEach((p) => { p.toolCount = p.tools.length; p.tools = p.tools.slice(0, 5); });
 
     // Blog posts have one author field, which may name several people
     readFolder('blog').forEach((post) => {
@@ -262,13 +267,21 @@ module.exports = function () {
     const gd = load('grantsData');
     const grants = gd ? gd.active.concat(gd.past) : [];
     grants.forEach((g) => {
-        people.forEach((p) => {
-            const role = owns(p, g.pi) ? 'PI' : list(g.copi).some((c) => owns(p, c)) ? 'Co-PI' : list(g.team).some((t) => owns(p, t)) ? 'Project staff' : '';
-            if (role) p.grants.push({ name: g.name, funder: g.funder, period: g.period, active: g.active, role, end: g.end });
+        const roles = people.map((p) => ({
+            p,
+            role: owns(p, g.pi) ? 'PI' : list(g.copi).some((c) => owns(p, c)) ? 'Co-PI' : list(g.team).some((t) => owns(p, t)) ? 'Project staff' : ''
+        })).filter((x) => x.role);
+        const lab = roles.map((x) => cardOf(x.p));
+        const count = (g.pi ? 1 : 0) + list(g.copi).length + list(g.team).length;
+        roles.forEach((x) => {
+            x.p.grants.push({ url: '/grants/#' + g.slug, name: g.name, funder: g.funder, period: g.period, active: g.active, role: x.role, start: g.start, end: g.end, count, lab });
         });
     });
+    // Newest first, as for papers. The five most recent are shown and the total is kept for the heading.
     people.forEach((p) => {
-        p.grants.sort((a, b) => (ORDER.indexOf(a.role) - ORDER.indexOf(b.role)) || (b.end - a.end));
+        p.grants.sort((a, b) => (b.end - a.end) || (b.start - a.start) || (ORDER.indexOf(a.role) - ORDER.indexOf(b.role)));
+        p.grantCount = p.grants.length;
+        p.grants = p.grants.slice(0, 5);
     });
 
     // Current people by role, for pages that show a team, for example people.byTag['ms advising team']

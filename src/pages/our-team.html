@@ -11,6 +11,7 @@ eleventyNavigation:
     key: Our team
     order: 200
 ---
+<link rel="stylesheet" href="/css/team-edu.css">
 {#- Everything below comes from src/_data/teamData.js, which reads src/team. The intro and the order of the categories come from Netlify > Team page. -#}
 {% set td = teamData %}
 
@@ -39,7 +40,6 @@ eleventyNavigation:
         <section class="tm-block" data-block="{{ s.id }}">
             <div class="tm-sec">
                 <h2 class="tm-h2">{{ s.title }}</h2>
-                {%- if s.id == 'alumni' %}<p class="tm-note">{{ s.count }} people who worked with us, and where they went next.</p>{% endif %}
             </div>
 
             {%- for g in s.groups %}
@@ -53,7 +53,7 @@ eleventyNavigation:
                 <a class="tm-feat tm-item" href="{{ p.url }}" data-status="{{ p.status }}" data-hay="{{ p.hay }}">
                     <span class="tm-feat-photo"><img src="{{ p.image }}" alt="{{ p.imageAlt }}" decoding="async"></span>
                     <span class="tm-feat-body">
-                        <span class="tm-name">{{ p.name }}</span>
+                        <span class="tm-name">{{ p.name }}{% if p.education %}<i class="tm-edu">, {{ p.education }}</i>{% endif %}</span>
                         <span class="tm-role">{{ p.title }}</span>
                         <span class="tm-bio">{{ p.bio | truncate(260) }}</span>
                         <span class="tm-go">View profile &rarr;</span>
@@ -66,11 +66,10 @@ eleventyNavigation:
                     {%- for p in g.people %}
                     <a class="tm-al tm-item" href="{{ p.url }}" data-status="{{ p.status }}" data-hay="{{ p.hay }}">
                         <span class="tm-round"><img src="{{ p.image }}" alt="{{ p.imageAlt }}" loading="lazy" decoding="async"></span>
-                        <span class="tm-name">{{ p.name }}</span>
+                        <span class="tm-name">{{ p.name }}{% if p.education %}<i class="tm-edu">, {{ p.education }}</i>{% endif %}</span>
                         <span class="tm-role">{{ p.title }}</span>
                         {%- if p.after.text %}<span class="tm-after"><i>{% if p.status == 'honorary' %}Now at{% else %}After the lab{% endif %}</i>{{ p.after.text }}</span>{% endif %}
                         {%- if p.term %}<span class="tm-term">{{ p.term }}</span>{% endif %}
-                        {%- if p.blurb %}<span class="tm-desc">{{ p.blurb }}</span>{% endif %}
                     </a>
                     {%- endfor %}
                 </div>
@@ -80,7 +79,7 @@ eleventyNavigation:
                     {%- for p in g.people %}
                     <a class="tm-card tm-item" href="{{ p.url }}" data-status="{{ p.status }}" data-hay="{{ p.hay }}">
                         <span class="tm-photo"><img src="{{ p.image }}" alt="{{ p.imageAlt }}" loading="lazy" decoding="async"></span>
-                        <span class="tm-name">{{ p.name }}</span>
+                        <span class="tm-name">{{ p.name }}{% if p.education %}<i class="tm-edu">, {{ p.education }}</i>{% endif %}</span>
                         <span class="tm-role">{{ p.title }}</span>
                         {%- if p.term %}<span class="tm-term">{{ p.term }}</span>{% endif %}
                         {%- if p.blurb %}<span class="tm-desc">{{ p.blurb }}</span>{% endif %}
