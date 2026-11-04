@@ -1,0 +1,19 @@
+/* Our work: the table starts right at its section, faces on each item, and pages */
+#ow { scroll-margin-top: 4.5rem; }
+
+.ow-faces { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; margin: 0.55rem 0 0; }
+.ow-face { display: inline-flex; line-height: 0; border-radius: 50%; transition: transform 0.15s ease; }
+.ow-face img { width: 1.75rem; height: 1.75rem; border-radius: 50%; object-fit: cover; object-position: center top; background: #e9e4d6; }
+.ow-face:hover { transform: translateY(-2px); }
+.ow-face-more { font-size: 0.78rem; font-weight: 700; color: #5f7167; }
+
+.ow-pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem; margin: 1.6rem 0 0; }
+.ow-pager[hidden] { display: none; }
+.ow-pg { min-width: 2.4rem; height: 2.4rem; padding: 0 0.8rem; font: inherit; font-size: 0.92rem; font-weight: 700; color: #2b3a32; background: #fff; border: 1px solid rgba(43, 58, 50, 0.18); border-radius: 999px; cursor: pointer; }
+.ow-pg:hover:not(:disabled) { border-color: #2b3a32; }
+.ow-pg.is-on { color: #fff; background: #2b3a32; border-color: #2b3a32; }
+.ow-pg:disabled { opacity: 0.4; cursor: default; }
+.ow-pg-gap { color: #5f7167; }
+@media (max-width: 600px) {
+    .ow-pg { min-width: 2.2rem; height: 2.2rem; padding: 0 0.6rem; }
+}

@@ -270,7 +270,8 @@
         </nav>
     </div>
 </header>
-        <main id="main"><link rel="stylesheet" href="/css/home.css"><section id="hero" class="hero-tree-on">
+        <main id="main"><link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/home-faces.css"><section id="hero" class="hero-tree-on">
     <!-- Circular tree of photos from Socials and MacroData. Settings: Netlify > Home page > ... > Lab life -->
     <div class="hero-visual">
         <div class="hero-tree" id="hero-tree" role="group" aria-label="Photos from lab life" data-count="6">
@@ -1320,21 +1321,38 @@
             </div>
             <p class="hero-description hero-statement hero-animate hero-animate-3">We analyze how biodiversity evolves and responds to change. We also build the datasets, software and methods behind that work, and we train the students who carry it forward.</p>
             <ul class="hero-tags hero-animate hero-animate-3" aria-label="Research themes">
-                <li><a href="/our-work/?q=Phylogenetics">Phylogenetics</a></li>
-                <li><a href="/our-work/?q=Conservation%20and%20ecology">Conservation and ecology</a></li>
-                <li><a href="/our-work/?q=Machine%20learning">Machine learning</a></li>
-                <li><a href="/our-work/?q=Data%20science">Data science</a></li>
+                <li><a href="/our-work/?q=Phylogenetics#ow">Phylogenetics</a></li>
+                <li><a href="/our-work/?q=Conservation%20and%20ecology#ow">Conservation and ecology</a></li>
+                <li><a href="/our-work/?q=Machine%20learning#ow">Machine learning</a></li>
+                <li><a href="/our-work/?q=Data%20science#ow">Data science</a></li>
             </ul>
             <!-- Main buttons: edited in Netlify > Home page > ... > Main buttons -->
             <div class="hero-doors hero-animate hero-animate-4">
                 <a class="hero-door is-primary" href="/our-work/">Explore our work</a>
                 <a class="hero-door" href="/join-us/">Join the lab</a>
             </div>
-            <div class="hero-stats hero-animate hero-animate-4"><a class="hero-stat" href="/our-work/?type=Paper">
+            <!-- The team: current members, first names only. Built from Our team (src/_data/teamData.js) -->
+            <div class="hero-faces hero-animate hero-animate-4">
+                <p class="hero-faces-head">The team <a href="/our-team/">Meet everyone &rarr;</a></p>
+                <ul class="hero-faces-row" style="--face-cols: 6">
+                    <li><a class="hero-face" href="/our-team/cristian-roman-palacios/"><img src="/assets/images/our-team/cristian-roman-palacios.png" alt="" width="54" height="54" loading="lazy" decoding="async"><span>Cristian</span></a></li>
+                    <li><a class="hero-face" href="/our-team/kiran-basava/"><img src="/assets/images/our-team/kiran05hs.jpg" alt="" width="54" height="54" loading="lazy" decoding="async"><span>Kiran</span></a></li>
+                    <li><a class="hero-face" href="/our-team/sarah-gonzalez-coffin/"><img src="/assets/images/our-team/sgc_2026.jpeg" alt="" width="54" height="54" loading="lazy" decoding="async"><span>Sarah</span></a></li>
+                    <li><a class="hero-face" href="/our-team/daniel-mcnair/"><img src="/assets/images/our-team/daniel-updated-headshot.png" alt="" width="54" height="54" loading="lazy" decoding="async"><span>Daniel</span></a></li>
+                    <li><a class="hero-face" href="/our-team/julia-dias/"><img src="/assets/images/our-team/julia-dias-ddl-headshot.jpg" alt="" width="54" height="54" loading="lazy" decoding="async"><span>Julia</span></a></li>
+                    <li><a class="hero-face" href="/our-team/md-nafis-ul-alam/"><img src="/assets/images/our-team/michael00hs.jpg" alt="" width="54" height="54" loading="lazy" decoding="async"><span>MD Nafis</span></a></li>
+                    <li><a class="hero-face" href="/our-team/delaney-scott-martin/"><img src="/assets/images/our-team/delaney04.jpg" alt="" width="54" height="54" loading="lazy" decoding="async"><span>Delaney</span></a></li>
+                    <li><a class="hero-face" href="/our-team/katherine-perez/"><img src="/assets/images/our-team/perfil-kathe.jpeg" alt="" width="54" height="54" loading="lazy" decoding="async"><span>Katherine</span></a></li>
+                    <li><a class="hero-face" href="/our-team/kennedy-gezella/"><img src="/assets/images/our-team/kg-headshot-2025.jpg" alt="" width="54" height="54" loading="lazy" decoding="async"><span>Kennedy</span></a></li>
+                    <li><a class="hero-face" href="/our-team/natalia-ramirez/"><img src="/assets/images/our-team/natalia.jpg" alt="" width="54" height="54" loading="lazy" decoding="async"><span>Natalia</span></a></li>
+                    <li><a class="hero-face" href="/our-team/isabella-ortiz/"><img src="/assets/images/our-team/isabella-picture.jpeg" alt="" width="54" height="54" loading="lazy" decoding="async"><span>Isabella</span></a></li>
+                </ul>
+            </div>
+            <div class="hero-stats hero-animate hero-animate-4"><a class="hero-stat" href="/publications/">
                     <span class="hero-stat-number" data-target="57">57</span>
                     <span class="hero-stat-label">Publications</span>
                 </a>
-                <a class="hero-stat" href="/our-work/?type=Tool">
+                <a class="hero-stat" href="/library/">
                     <span class="hero-stat-number" data-target="24">24</span>
                     <span class="hero-stat-label">Tools &amp; data</span>
                 </a>
