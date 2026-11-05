@@ -1,7 +1,9 @@
 ---
 memberName: Salena Torres
 memberDate: 2022
-memberDateEnd: null
+memberDateEnd: "2022"
+afterRole: Instructor
+afterOrg: College of Informational Science at the University of Arizona
 currentPosition: Instructor in the College of Informational Science at the University of Arizona
 memberBio: Dr. Román-Palacios was Salena’s faculty advisor for the Data Science
   ambassador’s fellowship during 2023. Salena project focused on discussing
@@ -9,7 +11,7 @@ memberBio: Dr. Román-Palacios was Salena’s faculty advisor for the Data Scien
   students with different degrees of hearing loss. During the same time, Salena
   was working towards her PhD at the Machine Learning for Artificial
   Intelligence lab, led by Dr. Clayton Morrison, at the School of Information.
-memberEducation: PhD
+memberEducation: null
 tags:
   - Intern
   - Former
