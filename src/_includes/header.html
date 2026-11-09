@@ -74,7 +74,7 @@
                                         <li class="cs-drop-label">{{ grp }}</li>
                                         {%- endif %}
                                         <li class="cs-drop-li cs-drop-app">
-                                            <a href="{{ child.url }}" class="cs-li-link cs-drop-link cs-app-link">
+                                            <a href="{{ child.url }}" class="cs-li-link cs-drop-link cs-app-link"{% if child.url.startsWith('http') %} target="_blank" rel="noopener"{% endif %}>
                                                 {#- Logo from Netlify > Navigation logos. Without one, the tile shows the first letter. -#}
                                                 {%- set appLogo = navApps[child.title | lower | replace(' ', '')] -%}
                                                 <span class="cs-app-tile" aria-hidden="true">{% if appLogo %}<img src="{{ appLogo }}" alt="" width="34" height="34" loading="lazy" decoding="async">{% else %}{{ child.title | first | upper }}{% endif %}</span>
