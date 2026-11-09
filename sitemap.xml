@@ -106,7 +106,12 @@
 </url>
 </urlset>
 <url>
-  <loc>https://datadiversitylab.github.io/ddl_acdb/</loc>
+  <loc>https://datadiversitylab.github.io/ACDB/</loc>
+  <lastmod>2026-11-09T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/ACC/</loc>
   <lastmod>2026-11-09T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
