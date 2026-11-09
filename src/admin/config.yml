@@ -949,6 +949,7 @@ collections:
           - { label: 'Chorus', name: 'chorus', widget: 'image', required: false }
           - { label: 'salphycon', name: 'salphycon', widget: 'image', required: false }
           - { label: 'PHYCA', name: 'phyca', widget: 'image', required: false }
+          - { label: 'Animal Chromosomes', name: 'animalchromosomes', widget: 'image', required: false }
   - name: 'logos'
     label: 'Logos'
     folder: 'src/logos'
