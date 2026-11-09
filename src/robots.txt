@@ -3,3 +3,4 @@ Disallow: /admin/
 Allow: /
 
 Sitemap: https://datadiversitylab.github.io/sitemap.xml
+Sitemap: https://datadiversitylab.github.io/ACC/sitemap.xml
