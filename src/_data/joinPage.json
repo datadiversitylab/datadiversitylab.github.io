@@ -1,32 +1,36 @@
 {
-  "intro": "We are a small group that studies biodiversity with data. If you want to work on that with us, here is where to start.",
+  "intro": "If you want to work on that with us, here is where to start.",
   "email": "cromanpa@arizona.edu",
   "paths": [
     {
       "title": "Undergraduate students",
       "text": "Research assistant roles come up now and then. Most are 10 hours a week, paid or with research credit.",
-      "chips": ["10 hrs a week", "$14.50 to $16 an hour", "Research credit"],
+      "chips": [
+        "10 hrs a week",
+        "$19/hour",
+        "Research credit"
+      ],
       "buttonLabel": "Through UArizona VIP",
       "buttonLink": "https://uavip.arizona.edu/"
     },
     {
-      "title": "Graduate students (admitted)",
+      "title": "Graduate students",
       "text": "Paid research or teaching assistant roles can open for MSc and PhD students. They can cover part of tuition. US students can also apply for the NSF GRFP.",
-      "chips": ["10 to 20 hrs a week", "Partial tuition", "NSF GRFP $37,000 a year"],
+      "chips": [
+        "10 to 20 hrs a week",
+        "Partial tuition",
+        "NSF GRFP $37.000 a year"
+      ],
       "buttonLabel": "Talk to us",
       "buttonLink": ""
     },
     {
-      "title": "Aspiring PhD students",
-      "text": "The iSchool funds PhD students with a multi-year stipend and full tuition. Projects are defined with me once you are admitted.",
-      "chips": ["Multi-year stipend", "Full tuition"],
-      "buttonLabel": "iSchool admissions",
-      "buttonLink": "https://ischool.arizona.edu/phd-information/admissions-funding"
-    },
-    {
       "title": "Postdocs",
       "text": "Two paths. I have some funding for a postdoc, or I can help you write a fellowship proposal, such as the NSF PRFB.",
-      "chips": ["$60,000 a year stipend", "$20,000 a year research funds"],
+      "chips": [
+        "NIH-based salary",
+        "$5.000 in research funds"
+      ],
       "buttonLabel": "Talk to us",
       "buttonLink": ""
     }
