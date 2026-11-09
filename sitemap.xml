@@ -1,117 +1,312 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://datadiversitylab.github.io/blog/2026-10-01-macrodata-in-bogotá-and-barranquilla-colombia/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/blog/2026-10-01-primera-parte-de-macrodata-colombia/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/blog/2026-10-01-welcome/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/blog/2026-10-02-haz-el-mapa-de-tu-barrio-con-barriomap/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/blog/2026-10-02-make-a-map-of-your-neighborhood-with-barriomap/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/blog/2026-10-03-github-classroom-with-classr/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/blog/2026-10-29-working-in-the-data-diversity-lab-as-an-undergraduate-student/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/assets/images/databases/placeholder/</loc>
+</url>
 <url>
   <loc>https://datadiversitylab.github.io/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/the-lab/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/aplicaciones/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/our-team/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/contenidos/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/lab-policies/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/el-proyecto/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/our-resources/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/equipo/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/social/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/fechas/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/collaborators/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/galeria/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/join-us/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/research/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/noticias/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/publications/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/objetivos/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/grants/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/participantes/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/conferences/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/politicas/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/lab-ops/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/proyecto-final/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/teaching/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/recursos/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/the-data-hub/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/macrodata/resultados/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/ms-advising/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/outreach/gis-for-community-health/</loc>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/software/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://datadiversitylab.github.io/news/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://datadiversitylab.github.io/transparency/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://datadiversitylab.github.io/contact/</loc>
-  <lastmod>2024-04-11T22:17:49+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/innews/</loc>
 </url>
 <url>
   <loc>https://datadiversitylab.github.io/ACDB/</loc>
-  <lastmod>2026-11-09T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://datadiversitylab.github.io/ACC/</loc>
-  <lastmod>2026-11-09T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://datadiversitylab.github.io/barriomap/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/blog/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/poll_chorus/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/collaborators/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/contact/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/grants/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/join-us/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-meetings/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-ops/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/labops/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/library/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/advising/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/labnews/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/space-and-tech/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/our-team/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/our-work/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/publications/macroevolutionary-rates-of-species-interactions-approximate-bayesian-inference-from-cophylogenies/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/publications/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/phylogenetics_salphycon/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/senate/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/social/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/teaching/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/our-team/ani-chitransh/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/the-data-hub/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/library/salphycon/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/transparency/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/autograder/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/barn/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/barriomap/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/bayclump/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/bayclumpr/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/citycomp/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/classr/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/cophy_abc/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/enhanced-ppe/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/gradpath-extension/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/nn_facade/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/phruta/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/plagiarized/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/polapp/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/salphycon-1/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/salphycon/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/santa-cruz-e-coli-predictions/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/ssarp/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/the-acc-the-animal-chromosome-count-database/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/the-acdb-the-animal-culture-database/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/treedatatable/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/universal-ortholog-based-phylogenomic-database-and-toolset/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/vi-simposio-colevol-1/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/tools/website-for-scorch-grant/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/about-the-lab/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/ai-use-in-lab/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/authorship/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/bibliography/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/code-documentation/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/code-of-conduct/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/how-the-lab-works/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/lab-social-events/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/letters-of-recommendation/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/mattermost-code-of-conduct/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/mentoring-students/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/nextcloud-access-review/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/policies-and-agreements/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/presentations-and-conferences/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/lab-manual/work-ethics/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/offboarding/offboarding-guide/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/onboarding/interview-questions/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/onboarding/onboarding-agreement/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/onboarding/onboarding-guide/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/resources/access-to-server/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/resources/infographic/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/resources/lab-printing/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/resources/nsf-access/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/resources/overleaf/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/resources/photo-headshot-guidelines/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/resources/postdoc-resources/</loc>
+</url>
+<url>
+  <loc>https://datadiversitylab.github.io/resources/zotero/</loc>
 </url>
 </urlset>
