@@ -10,6 +10,6 @@ order: 1
 * We recently helped secure the renewal of the Computational and Mathematical Modeling of Biomedical Systems (NIH) grant for $2,156,685! PIs included Ryan, Joanna, and Travis: <https://cmmbs.arizona.edu/contact>
 * Our PI, Cristian Román-Palacios was recently appointed to the [Research Policy Committee](https://facultygovernance.arizona.edu/other-committees/research-policy-committee) at Faculty Senate. Congratulations Cristian, this is well deserved!
 * One of our postdocs, Kiran Basava, will be attending a conference this upcoming December!
-* The Animal Culture Database has been updated, check it out [here](https://datadiversitylab.github.io/ddl_acdb/)!
+* The Animal Culture Database has been updated, check it out [here](https://datadiversitylab.github.io/ACDB/)!
 * One of our undergraduate students, Delaney Scott-Martin recently submitted an application to the NSF Graduate Research Fellowship Program. Congratulations Delaney, we know this was a lot of hard work!
 * One of our postdocs, Sarah Gonzalez-Coffin, recently attended a conference as well as submitted an NSF grant! Congratulations on all of your hard work Sarah!
