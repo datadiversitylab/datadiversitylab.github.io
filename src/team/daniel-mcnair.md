@@ -1,5 +1,6 @@
 ---
 memberName: Daniel McNair
+pronouns: he/him/they
 memberDate: "2026"
 memberBio: Daniel is interested in plants, their evolution and ecology, their
   survival on our changing planet, and the ways that humans continue to produce
