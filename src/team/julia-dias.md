@@ -6,6 +6,11 @@ memberBio: "Julia is a first-year PhD student. Her research involves using
   machine learning to create models capable of identifying diagnoses from
   medical images. She completed her bachelor's degree in Computer Science in
   Brazil. "
+memberBio2: Pretendo explorar a aplicação de aprendizado de máquina, aprendizado
+  profundo e visão computacional em imagens médicas, com foco na detecção do
+  câncer de mama e na generalização de modelos entre diferentes bases de dados e
+  instituições hospitalares.
+memberBio2Lang: Português
 memberEducation: BSc
 tags:
   - Current
