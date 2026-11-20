@@ -2,6 +2,7 @@
 jobTitle: PhD student (CAMBIUM NRT)
 status: Open
 jobStartDate: Fall 2027
+jobApplyBy: December 1, 2026
 jobDesc: >-
   Climate change Adaptation and Mitigation through Biodiversity Informatics
   education and Mentoring (University of Arizona), or CAMBIUM, is a 2-year fully
@@ -21,4 +22,5 @@ jobDesc: >-
 
   • Fellowships are designated for incoming students, starting in the Fall.
 jobPdf: https://cambium.arizona.edu/
+order: 3
 ---
