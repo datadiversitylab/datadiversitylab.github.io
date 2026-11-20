@@ -2,7 +2,7 @@
 jobTitle: Tom Lovejoy Conservation Fellow
 status: Open
 jobStartDate: Summer 2027
-jobApplyBy: December 15, 2026
+jobApplyBy: January 4, 2027
 jobDesc: >-
   My lab is open to hosting a Tom Lovejoy Conservation fellow. Please reach out
   with a brief email before Dec 15 if you’re interested in applying. I’m looking
