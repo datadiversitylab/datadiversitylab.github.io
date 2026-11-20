@@ -2,6 +2,7 @@
 jobTitle: PhD student (CMMBS training program)
 status: Open
 jobStartDate: Fall 2027
+jobApplyBy: December 1, 2027
 jobDesc: >-
   Fellowship for graduate students working at the interface of computation and
   mathematics and the biological and biomedical sciences at the University of
@@ -19,4 +20,5 @@ jobDesc: >-
 
   * Areas of interest should fall within the broad scope of NIH, including biomedical and basic biological areas.
 jobPdf: https://cmmbs.arizona.edu/
+order: 3
 ---
