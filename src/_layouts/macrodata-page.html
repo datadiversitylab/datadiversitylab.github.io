@@ -143,8 +143,11 @@ layout: 'base.html'
     <div class="mdx-cols">
         <div class="mdx-card mdx-flow">
             <h2>De dónde llegaron los estudiantes</h2>
-            <p>Cada línea une una ciudad de origen con la sede. Más gruesa, más estudiantes.</p>
+            <p>Cada línea une una ciudad de origen con la sede. Más gruesa, más estudiantes. Solo se nombran las ciudades con más estudiantes. La lista completa está en «Ciudades de origen».</p>
             {{ maps.flow | safe }}
+            {%- if maps.abroad %}
+            <p class="mdx-card-sub">{{ maps.abroad }}</p>
+            {%- endif %}
             <div class="mdx-mf">
                 <span class="mdx-leg">
                     {%- for l in maps.legend %}<i style="background: {{ l.color }}"></i>{{ l.name }}, {{ l.city }} {% endfor %}
@@ -176,14 +179,23 @@ layout: 'base.html'
                     {%- endfor %}
                 </div>
             </div>
-            <div class="mdx-card">
-                <h2>Ciudades de origen</h2>
-                <p class="mdx-card-sub">Número de estudiantes por ciudad.</p>
-                <ul class="mdx-cities">
-                    {%- for c in maps.cities %}<li>{{ c.city }}<span>{{ c.students }}</span></li>{% endfor %}
-                </ul>
-            </div>
         </div>
+    </div>
+    <div class="mdx-card mdx-wide">
+        <h2>Ciudades de origen</h2>
+        <p class="mdx-card-sub">Estudiantes por ciudad. El color de cada barra indica a qué taller asistieron.</p>
+        <p class="mdx-keys mdx-keys-top">
+            {%- for l in maps.legend %}<em style="--c: {{ l.color }}">{{ l.name }}</em>{% endfor %}
+        </p>
+        <ul class="mdx-cities">
+            {%- for c in maps.cities %}
+            <li>
+                <span class="mdx-cn">{{ c.city }}{% if c.host %}<small>sede</small>{% elif c.country %}<small>{{ c.country }}</small>{% endif %}</span>
+                <span class="mdx-cbar" style="width: {{ c.pct | round(1) }}%">{% for p in c.parts %}<i style="width: {{ p.pct | round(1) }}%; background: {{ p.color }}" title="{{ p.workshop }}: {{ p.students }}"></i>{% endfor %}</span>
+                <b>{{ c.students }}</b>
+            </li>
+            {%- endfor %}
+        </ul>
     </div>
 {%- else %}
     <p class="md-placeholder">Pronto publicaremos de dónde llegaron los estudiantes.</p>

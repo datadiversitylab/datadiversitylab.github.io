@@ -115,7 +115,8 @@
 .mdx-tiles li { background: #fff; border-radius: 16px; padding: 1rem 1.1rem; box-shadow: 0 2px 14px rgba(43, 58, 50, 0.08); }
 .mdx-tiles b { display: block; font-family: var(--headerFontFamily, Georgia, serif); font-size: 2.2rem; line-height: 1; color: var(--mdx-ink); }
 .mdx-tiles span { display: block; margin-top: 0.35rem; font-size: 0.88rem; color: var(--mdx-muted); line-height: 1.3; }
-.mdx-cols { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 1.2rem; align-items: start; padding-bottom: 3rem; }
+.mdx-cols { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 1.2rem; align-items: start; }
+.mdx-wide { margin-bottom: 3rem; }
 .mdx-card { background: #fff; border-radius: 18px; padding: 1.3rem 1.4rem; box-shadow: var(--mdx-shadow); margin-bottom: 1.2rem; }
 .mdx-card > p { margin: 0 0 0.6rem; font-size: 0.9rem; color: var(--mdx-muted); }
 .mdx-card h2 { font-family: var(--headerFontFamily, Georgia, serif); font-size: 1.2rem; margin: 0 0 0.2rem; color: var(--mdx-ink); }
@@ -133,9 +134,14 @@
 .mdx-track { background: var(--mdx-mint); border-radius: 6px; height: 1.1rem; overflow: hidden; }
 .mdx-track i { display: block; height: 100%; background: var(--mdx-green); border-radius: 6px; }
 .mdx-dist b { text-align: right; }
-.mdx-cities { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.2rem 1.4rem; font-size: 0.9rem; }
-.mdx-cities li { display: flex; justify-content: space-between; border-bottom: 1px solid var(--mdx-mint); padding: 0.3rem 0; }
-.mdx-cities span { color: var(--mdx-muted); }
+.mdx-keys-top { margin: 0 0 0.9rem; }
+.mdx-cities { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr)); gap: 0 2.2rem; font-size: 0.9rem; }
+.mdx-cities li { display: grid; grid-template-columns: 8.5rem 1fr 1.8rem; gap: 0.7rem; align-items: center; border-bottom: 1px solid var(--mdx-mint); padding: 0.4rem 0; }
+.mdx-cn { color: var(--mdx-ink); font-weight: 600; white-space: nowrap; }
+.mdx-cn small { margin-left: 0.4rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--mdx-green); background: var(--mdx-mint); border-radius: 6px; padding: 0.1rem 0.4rem; }
+.mdx-cbar { display: flex; height: 0.8rem; min-width: 0.6rem; border-radius: 5px; overflow: hidden; gap: 1px; }
+.mdx-cbar i { display: block; height: 100%; }
+.mdx-cities b { text-align: right; color: var(--mdx-ink); }
 .mdx-after { padding-bottom: 2rem; }
 
 
@@ -351,7 +357,6 @@
   .mdx-english-box { grid-template-columns: 1fr; gap: 0.4rem; }
   .mdx-tiles { grid-template-columns: 1fr 1fr; }
   .mdx-cols { grid-template-columns: 1fr; }
-  .mdx-cities { grid-template-columns: 1fr; }
   .mdx-result { flex-wrap: wrap; }
   .mdx-evs, .mdx-cardgrid, .mdx-cards { grid-template-columns: 1fr; }
   .mdx-place-main { grid-template-columns: 1fr; }

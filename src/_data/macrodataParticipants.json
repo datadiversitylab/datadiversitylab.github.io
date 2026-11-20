@@ -1,25 +1,32 @@
 {
-  "isExample": true,
+  "isExample": false,
   "rows": [
     {
       "workshop": "Universidad de la Salle",
       "city": "Bogotá",
       "lat": 4.711,
       "lng": -74.072,
-      "students": 14
+      "students": 11
     },
     {
       "workshop": "Universidad de la Salle",
-      "city": "Tunja",
-      "lat": 5.535,
-      "lng": -73.367,
-      "students": 2
+      "city": "Armenia",
+      "lat": 4.534,
+      "lng": -75.681,
+      "students": 5
     },
     {
       "workshop": "Universidad de la Salle",
-      "city": "Ibagué",
-      "lat": 4.438,
-      "lng": -75.232,
+      "city": "Cali",
+      "lat": 3.452,
+      "lng": -76.532,
+      "students": 3
+    },
+    {
+      "workshop": "Universidad de la Salle",
+      "city": "Medellín",
+      "lat": 6.244,
+      "lng": -75.581,
       "students": 2
     },
     {
@@ -31,10 +38,19 @@
     },
     {
       "workshop": "Universidad de la Salle",
-      "city": "Medellín",
-      "lat": 6.244,
-      "lng": -75.581,
-      "students": 2
+      "city": "Berlín",
+      "lat": 52.52,
+      "lng": 13.405,
+      "students": 1,
+      "country": "Alemania",
+      "abroad": true
+    },
+    {
+      "workshop": "Universidad de la Salle",
+      "city": "Bucaramanga",
+      "lat": 7.119,
+      "lng": -73.123,
+      "students": 1
     },
     {
       "workshop": "Universidad de la Salle",
@@ -45,6 +61,57 @@
     },
     {
       "workshop": "Universidad de la Salle",
+      "city": "Neiva",
+      "lat": 2.927,
+      "lng": -75.282,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad de la Salle",
+      "city": "Sincelejo",
+      "lat": 9.305,
+      "lng": -75.398,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad de la Salle",
+      "city": "São Paulo",
+      "lat": -23.551,
+      "lng": -46.633,
+      "students": 1,
+      "country": "Brasil",
+      "abroad": true
+    },
+    {
+      "workshop": "Universidad del Atlántico",
+      "city": "Manizales",
+      "lat": 5.07,
+      "lng": -75.517,
+      "students": 6
+    },
+    {
+      "workshop": "Universidad del Atlántico",
+      "city": "Barranquilla",
+      "lat": 10.968,
+      "lng": -74.781,
+      "students": 4
+    },
+    {
+      "workshop": "Universidad del Atlántico",
+      "city": "Sincelejo",
+      "lat": 9.305,
+      "lng": -75.398,
+      "students": 2
+    },
+    {
+      "workshop": "Universidad del Atlántico",
+      "city": "Bogotá",
+      "lat": 4.711,
+      "lng": -74.072,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad del Atlántico",
       "city": "Cali",
       "lat": 3.452,
       "lng": -76.532,
@@ -52,37 +119,198 @@
     },
     {
       "workshop": "Universidad del Atlántico",
-      "city": "Barranquilla",
-      "lat": 10.968,
-      "lng": -74.781,
-      "students": 11
-    },
-    {
-      "workshop": "Universidad del Atlántico",
-      "city": "Santa Marta",
-      "lat": 11.24,
-      "lng": -74.2,
-      "students": 3
-    },
-    {
-      "workshop": "Universidad del Atlántico",
-      "city": "Cartagena",
-      "lat": 10.391,
-      "lng": -75.479,
-      "students": 3
-    },
-    {
-      "workshop": "Universidad del Atlántico",
-      "city": "Montería",
-      "lat": 8.75,
-      "lng": -75.88,
+      "city": "El Dorado",
+      "lat": 3.742,
+      "lng": -73.835,
       "students": 1
     },
     {
       "workshop": "Universidad del Atlántico",
+      "city": "Medellín",
+      "lat": 6.244,
+      "lng": -75.581,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad del Atlántico",
+      "city": "Puerto Colombia",
+      "lat": 10.988,
+      "lng": -74.956,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad del Atlántico",
+      "city": "Soledad",
+      "lat": 10.918,
+      "lng": -74.765,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad del Atlántico",
+      "city": "Villavicencio",
+      "lat": 4.142,
+      "lng": -73.627,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad de Nariño",
+      "city": "Pasto",
+      "lat": 1.214,
+      "lng": -77.281,
+      "students": 8
+    },
+    {
+      "workshop": "Universidad de Nariño",
+      "city": "Bogotá",
+      "lat": 4.711,
+      "lng": -74.072,
+      "students": 3
+    },
+    {
+      "workshop": "Universidad de Nariño",
+      "city": "Villavicencio",
+      "lat": 4.142,
+      "lng": -73.627,
+      "students": 3
+    },
+    {
+      "workshop": "Universidad de Nariño",
+      "city": "Manizales",
+      "lat": 5.07,
+      "lng": -75.517,
+      "students": 2
+    },
+    {
+      "workshop": "Universidad de Nariño",
+      "city": "Armenia",
+      "lat": 4.534,
+      "lng": -75.681,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad de Nariño",
+      "city": "Cali",
+      "lat": 3.452,
+      "lng": -76.532,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad de Nariño",
+      "city": "Facatativá",
+      "lat": 4.815,
+      "lng": -74.354,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad de Nariño",
+      "city": "Popayán",
+      "lat": 2.444,
+      "lng": -76.614,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad de Nariño",
+      "city": "Quibdó",
+      "lat": 5.692,
+      "lng": -76.658,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad de Nariño",
       "city": "Sincelejo",
       "lat": 9.305,
-      "lng": -75.397,
+      "lng": -75.398,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad de Nariño",
+      "city": "Tabio",
+      "lat": 4.917,
+      "lng": -74.097,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad de Nariño",
+      "city": "Tocancipá",
+      "lat": 4.966,
+      "lng": -73.912,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad Tecnológica del Chocó",
+      "city": "Quibdó",
+      "lat": 5.692,
+      "lng": -76.658,
+      "students": 5
+    },
+    {
+      "workshop": "Universidad Tecnológica del Chocó",
+      "city": "Armenia",
+      "lat": 4.534,
+      "lng": -75.681,
+      "students": 3
+    },
+    {
+      "workshop": "Universidad Tecnológica del Chocó",
+      "city": "Bogotá",
+      "lat": 4.711,
+      "lng": -74.072,
+      "students": 2
+    },
+    {
+      "workshop": "Universidad Tecnológica del Chocó",
+      "city": "Cali",
+      "lat": 3.452,
+      "lng": -76.532,
+      "students": 2
+    },
+    {
+      "workshop": "Universidad Tecnológica del Chocó",
+      "city": "Medellín",
+      "lat": 6.244,
+      "lng": -75.581,
+      "students": 2
+    },
+    {
+      "workshop": "Universidad Tecnológica del Chocó",
+      "city": "Sincelejo",
+      "lat": 9.305,
+      "lng": -75.398,
+      "students": 2
+    },
+    {
+      "workshop": "Universidad Tecnológica del Chocó",
+      "city": "Arbeláez",
+      "lat": 4.272,
+      "lng": -74.416,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad Tecnológica del Chocó",
+      "city": "Calarcá",
+      "lat": 4.529,
+      "lng": -75.641,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad Tecnológica del Chocó",
+      "city": "Manizales",
+      "lat": 5.07,
+      "lng": -75.517,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad Tecnológica del Chocó",
+      "city": "Tadó",
+      "lat": 5.267,
+      "lng": -76.567,
+      "students": 1
+    },
+    {
+      "workshop": "Universidad Tecnológica del Chocó",
+      "city": "Villavicencio",
+      "lat": 4.142,
+      "lng": -73.627,
       "students": 1
     }
   ]

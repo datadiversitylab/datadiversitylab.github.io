@@ -106,6 +106,12 @@ const median = travelers.length ? (travelers.length % 2 ? travelers[(travelers.l
 const cityTotals = {};
 rows.forEach((r) => { cityTotals[r.city] = (cityTotals[r.city] || 0) + r.students; });
 
+// Students from outside Colombia count in every figure but are not drawn on the map
+const abroadRows = rows.filter((r) => r.abroad);
+const abroadN = abroadRows.reduce((a, r) => a + r.students, 0);
+const abroadPlaces = [...new Set(abroadRows.map((r) => r.country))];
+const abroad = abroadN ? `${abroadN} ${abroadN === 1 ? 'estudiante llegó' : 'estudiantes llegaron'} desde el exterior (${abroadPlaces.length > 1 ? abroadPlaces.slice(0, -1).join(', ') + ' y ' + abroadPlaces[abroadPlaces.length - 1] : abroadPlaces[0]}) y no ${abroadN === 1 ? 'aparece' : 'aparecen'} en el mapa.` : '';
+
 const stats = {
   students: total,
   workshops: byEvent.length,
@@ -119,7 +125,14 @@ const bins = [
   { label: '250 a 500 km', test: (d) => d > 250 && d <= 500 },
   { label: 'Más de 500 km', test: (d) => d > 500 },
 ].map((b) => { const n = expanded.filter(b.test).length; return { label: b.label, n, pct: total ? Math.round((100 * n) / total) : 0 }; });
-const cities = Object.entries(cityTotals).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([city, students]) => ({ city, students }));
+const hostCityNames = new Set(events.map((e) => e.city));
+const cities = Object.entries(cityTotals).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([city, students]) => {
+  const here = rows.filter((r) => r.city === city);
+  const parts = byEvent.map((g) => ({ workshop: g.e.name, color: g.color, students: here.filter((r) => r.workshop === g.e.name).reduce((a, r) => a + r.students, 0) })).filter((p) => p.students > 0);
+  return { city, students, parts, host: hostCityNames.has(city), country: (here.find((r) => r.abroad) || {}).country || '' };
+});
+const cityMax = cities.length ? cities[0].students : 1;
+cities.forEach((c) => { c.pct = (100 * c.students) / cityMax; c.parts.forEach((p) => { p.pct = (100 * p.students) / c.students; }); });
 
 const mix = byEvent.map((g) => {
   const n = g.rows.reduce((a, r) => a + r.students, 0);
@@ -133,56 +146,76 @@ const mix = byEvent.map((g) => {
 });
 
 // ------------------------------------------------------------ movement map
+// One dot per city of origin, even when students came to more than one workshop.
+// Lines are coloured by workshop. Only the host cities and the cities with the most students get a name.
+// The full list, with numbers, is in the card "Ciudades de origen".
 function flowMap() {
   const S = 42, x0 = -80.2, y0 = 13, W = Math.round(15.2 * S), H = Math.round(16.6 * S);
   const P = project(S, x0, y0);
+  const LABEL_MIN = 5;
   let grid = '';
   for (let lat = -4; lat <= 13; lat += 4) { const y = P(lat, 0)[1]; grid += `<line x1="0" x2="${W}" y1="${num(y)}" y2="${num(y)}"/>`; }
+  const hostCities = new Set(events.map((e) => e.city));
+  // Origin cities, away from the host of each group
+  const origin = {};
+  byEvent.forEach((g) => g.rows.forEach((r) => {
+    if (r.city === g.e.city || r.abroad) return;
+    const o = origin[r.city] || (origin[r.city] = { city: r.city, lat: r.lat, lng: r.lng, n: 0 });
+    o.n += r.students;
+  }));
   let arcs = '', dots = '';
-  const labels = [];
   byEvent.forEach((g) => {
-    const e = g.e, [hx, hy] = P(e.lat, e.lng);
+    const [hx, hy] = P(g.e.lat, g.e.lng);
     g.rows.forEach((r) => {
-      if (r.city === e.city) return;
+      if (r.city === g.e.city || r.abroad) return;
       const [x, y] = P(r.lat, r.lng), mx = (x + hx) / 2, my = (y + hy) / 2, d = Math.hypot(hx - x, hy - y);
-      arcs += `<path d="M${num(x)},${num(y)} Q${num(mx - d * 0.18)},${num(my - d * 0.28)} ${num(hx)},${num(hy)}" fill="none" stroke="${g.color}" stroke-opacity=".85" stroke-width="${num(1.2 + r.students * 1.1)}" stroke-linecap="round"/>`;
-      dots += `<circle cx="${num(x)}" cy="${num(y)}" r="${num(3.5 + r.students * 1.1)}" fill="${g.color}" stroke="#fff" stroke-width="1.8"/>`;
-      const west = x < hx;
-      labels.push({ x: x + (west ? -10 : 10), y: y + 4, anchor: west ? 'end' : 'start', text: r.city, n: r.students });
+      arcs += `<path d="M${num(x)},${num(y)} Q${num(mx - d * 0.18)},${num(my - d * 0.28)} ${num(hx)},${num(hy)}" fill="none" stroke="${g.color}" stroke-opacity=".5" stroke-width="${num(1 + Math.min(r.students, 8) * 0.55)}" stroke-linecap="round"/>`;
     });
   });
-  // Nudge labels that would sit on top of each other
-  labels.sort((a, b) => a.y - b.y);
-  for (let i = 1; i < labels.length; i++) {
-    for (let j = 0; j < i; j++) {
-      const a = labels[j], b = labels[i];
-      if (a.anchor === b.anchor && Math.abs(a.y - b.y) < 14) b.y = a.y + 14;
-    }
-  }
-  const lab = labels.map((l) => `<text x="${num(l.x)}" y="${num(l.y)}" text-anchor="${l.anchor}" font-size="13.5" fill="${INK}">${esc(l.text)} <tspan fill="${MUTED}">${l.n}</tspan></text>`).join('');
+  Object.values(origin).sort((a, b) => b.n - a.n).forEach((o) => {
+    const [x, y] = P(o.lat, o.lng);
+    dots += `<circle cx="${num(x)}" cy="${num(y)}" r="${num(3 + Math.sqrt(o.n) * 1.7)}" fill="${INK}" fill-opacity=".78" stroke="#fff" stroke-width="1.6"><title>${esc(o.city)}: ${o.n}</title></circle>`;
+  });
+  // Hosts
   let hosts = '';
+  const taken = [];
   events.forEach((e) => {
     if (typeof e.lat !== 'number') return;
     const [x, y] = P(e.lat, e.lng), g = byEvent.find((b) => b.e === e);
+    taken.push({ x0: x - 16, x1: x + 16, y0: y - 16, y1: y + 16 });
     if (g) {
       // Put the name on the side with fewer origin dots nearby
-      const others = g.rows.filter((r) => r.city !== e.city).map((r) => P(r.lat, r.lng));
+      const others = Object.values(origin).map((o) => P(o.lat, o.lng));
       const crowd = (sign) => others.filter((o) => (o[0] - x) * sign > 0 && (o[0] - x) * sign < 120 && Math.abs(o[1] - y) < 22).length;
       const leftSide = crowd(-1) < crowd(1);
+      const w = e.city.length * 9.6;
+      taken.push(leftSide ? { x0: x - 19 - w, x1: x - 19, y0: y - 28, y1: y - 8 } : { x0: x + 19, x1: x + 19 + w, y0: y - 28, y1: y - 8 });
       hosts += `<circle cx="${num(x)}" cy="${num(y)}" r="13" fill="#fff" stroke="${g.color}" stroke-width="5"/><text x="${num(x + (leftSide ? -19 : 19))}" y="${num(y - 12)}" text-anchor="${leftSide ? 'end' : 'start'}" font-size="17" font-weight="700" fill="${INK}">${esc(e.city)}</text>`;
     } else {
       hosts += `<circle cx="${num(x)}" cy="${num(y)}" r="10" fill="#fff8e4" stroke="${AMBER}" stroke-width="2.5" stroke-dasharray="4 3"/><text x="${num(x - 17)}" y="${num(y + 5)}" text-anchor="end" font-size="14" font-weight="700" fill="#7a5600">${esc(e.city)}</text>`;
     }
   });
+  // Names for the larger origin cities, placed where they do not cover another name or a host
+  let lab = '';
+  const hit = (b) => taken.some((t) => b.x0 < t.x1 && b.x1 > t.x0 && b.y0 < t.y1 && b.y1 > t.y0);
+  Object.values(origin).filter((o) => o.n >= LABEL_MIN && !hostCities.has(o.city)).sort((a, b) => b.n - a.n).forEach((o) => {
+    const [x, y] = P(o.lat, o.lng), r = 3 + Math.sqrt(o.n) * 1.7, w = o.city.length * 7.4;
+    const spots = [[1, 0], [-1, 0], [1, -1], [-1, -1], [1, 1], [-1, 1]].map(([sx, sy]) => ({ sx, sy, b: { x0: sx > 0 ? x + r + 4 : x - r - 4 - w, x1: sx > 0 ? x + r + 4 + w : x - r - 4, y0: y + sy * 15 - 10, y1: y + sy * 15 + 4 } }));
+    const spot = spots.find((p) => !hit(p.b));
+    if (!spot) return;
+    taken.push(spot.b);
+    lab += `<text x="${num(spot.sx > 0 ? x + r + 4 : x - r - 4)}" y="${num(y + spot.sy * 15 + 4)}" text-anchor="${spot.sx > 0 ? 'start' : 'end'}" font-size="13.5" fill="${INK}" stroke="#fff" stroke-width="3" paint-order="stroke">${esc(o.city)}</text>`;
+  });
   return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mapa de las ciudades de origen de los estudiantes y las sedes"><g stroke="rgba(43,58,50,.07)" fill="none">${grid}</g>` +
     `<path d="${path(geo.neighbors, P)}" fill="#e3ece6" stroke="#cbdad0"/><path d="${path(geo.colombia, P)}" fill="#cfe5d8" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>` +
-    arcs + dots + lab + hosts + '</svg>';
+    arcs + dots + hosts + lab + '</svg>';
 }
 
 module.exports = {
   isExample: !!participants.isExample,
   hero: { d: heroMap('d'), m: heroMap('m') },
   flow: byEvent.length ? flowMap() : '',
+  abroad,
   legend: byEvent.map((g) => ({ name: g.e.name, city: g.e.city, color: g.color })),
   stats,
   bins,
