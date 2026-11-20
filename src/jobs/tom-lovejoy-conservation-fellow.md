@@ -22,4 +22,5 @@ jobDesc: >-
 
   * More information can be found on the Lovejoy Center FAQ page.
 jobPdf: https://lovejoycenter.arizona.edu/lovejoy-fellows
+order: 0
 ---
