@@ -1,87 +1,11 @@
 ---
-layout: 'base.html'
-description: "The Animal Culture Database (ACDB): the first open-access, comparative database of socially transmitted behaviors and traditions in wild animal populations."
-metaTitle: 'Animal Culture Database (ACDB)'
-tagTitle: 'Animal Culture Database (ACDB)'
-preloadImg: ''
-preloadCSS: '/css/acdb.css'
-preloadJS: '/js/acdb.js'
-permalink: 'ACDB/'
+permalink: false
 eleventyNavigation:
     key: ACDB
-    title: Animal Culture Database
-    desc: Map and browse animal cultures
-    app: true
     parent: Tools and data
     order: 100
+    app: true
+    desc: Map and browse animal cultures
+    url: https://datadiversitylab.github.io/ACDB
 ---
-<!-- ============================================ -->
-<!--               App Embed                      -->
-<!-- ============================================ -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Dataset",
-  "name": "The Animal Culture Database (ACDB)",
-  "description": "An open-access, comparative database of socially transmitted behaviors and traditions in wild animal populations, with an interactive web app to explore it.",
-  "url": "https://datadiversitylab.github.io/ACDB/",
-  "sameAs": [
-    "https://doi.org/10.1038/s41597-025-05315-y",
-    "https://figshare.com/articles/dataset/The_Animal_Culture_Database_ACDB_v1_0_0_data_and_code/28850996",
-    "https://github.com/datadiversitylab/ACDB"
-  ],
-  "creator": [
-    {
-      "@type": "Person",
-      "name": "Cristian Román-Palacios"
-    },
-    {
-      "@type": "Person",
-      "name": "Kiran Basava"
-    }
-  ],
-  "publisher": {
-    "@type": "Organization",
-    "name": "Data Diversity Lab, University of Arizona"
-  },
-  "isAccessibleForFree": true,
-  "keywords": [
-    "animal culture",
-    "social learning",
-    "animal behavior",
-    "comparative database"
-  ]
-}
-</script>
-<section id="acdb-app-section">
-    <h1 class="cs-sr-only">Animal Culture Database</h1>
-    <!-- Fixed below the site header. The page itself does not scroll, so the app never hands the scroll to the page -->
-    <div class="cs-app-frame-wrapper" id="acdb-frame-wrapper">
-        <!-- Shown at once, while the app starts on the server. The script hides it when the app is ready -->
-        <div class="cs-app-loading" id="acdb-loading" role="status" aria-live="polite">
-            <img class="cs-app-loading-logo" src="/assets/images/acdb/ddl-logo-white.png" alt="" width="54" height="54" decoding="async">
-            <p class="cs-app-loading-title">Animal Culture Database</p>
-            <p class="cs-app-loading-text" id="acdb-loading-text">Loading the database</p>
-            <div class="cs-app-loading-track" aria-hidden="true"><div class="cs-app-loading-bar"></div></div>
-        </div>
-        <!-- The script sets the address, so that a shared link can open a tab or a species -->
-        <iframe
-            id="acdb-iframe"
-            data-src="https://viz.datascience.arizona.edu/ACDB/"
-            title="Animal Culture Database (ACDB), an interactive app"
-            allow="clipboard-write; fullscreen"
-            allowfullscreen>
-        </iframe>
-        <noscript>
-            <p class="cs-app-fallback">
-                The ACDB needs JavaScript here. You can
-                <a href="https://viz.datascience.arizona.edu/ACDB/" target="_blank" rel="noopener">open it in its own tab</a>.
-            </p>
-        </noscript>
-        <p class="cs-app-fallback" id="acdb-fallback" hidden>
-            The embedded app didn't load. You can
-            <a href="https://viz.datascience.arizona.edu/ACDB/" target="_blank" rel="noopener">open the ACDB in its own tab</a>
-            instead.
-        </p>
-    </div>
-</section>
+
